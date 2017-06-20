@@ -1,27 +1,33 @@
 %!TEX root = thesis.tex
 \chapter{Introduction}
 At high temperature, an isolated collection of spherical particles is a uniform system, i.e. the probability of finding a particle at a specific position is constant and only depends on the density of the particles.
-As this system is invariant under all possible rotations and translations, we say that the system has complete continuous translational and rotational symmetry.
+As this system is invariant under all possible rotations and translations, the system has complete continuous translational and rotational symmetry.
 If we lower the temperature, the particle collection will eventually develop order, where the individual particles have a preferred local arrangement.
-This ``ordered'' phase has lower symmetry than the isotropic phase.
-For example, a periodic crystalline phase has only discrete translations and rotations under which the structure is invariant.
-Here, the advent of order is characterized by breaking the continuous symmetry of the isotropic phase.
+For example, a crystalline phase has particles in periodic locations and thus is invariant only with respect to discrete translations and rotations.
+Thus the ``ordered'' phase has lower symmetry than the isotropic phase as the continuous symmetry of the isotropic phase was broken to achieve the ordered phase.
+The advent of order as a result of a continuous symmetry breaking is general and is a hallmark of transitions between a multitude of different phases. For example, in three dimensions the isotropic-to-crystalline phase transition is characterized by three broken continuous translations and three broken continuous rotations\fxnote{ref}, the isotropic-to-nematic phase transition has no broken continuous translations and either two or three broken continuous rotations\fxnote{ref}, and the isotropic-to-ferromagnetic phase transition has no broken continuous translations and two broken continuous rotations\fxnote{ref}.
 With the development of order comes the possibility of locations in the material where the preferred local arrangement is not satisfied.
-These locations are known as defects.
-While defects can arise from kinetics (grain boundaries in polycrstalline materials) or even energetics (proliferation of defects as a 2D system approaches a phase transition), they can also be be required due to the geometrical frustration that arises from confinement.
-Example is packing on a sphere.
-The presence of defects is a global constraint due to the topology of the sphere.
-Here I introduce the idea of the Euler characteristic as a topological invariant using the tesselation definition.
+These ''defects'' in the order can result from multiple sources.
+For example, grain boundaries in polycrystalline materials are a result of kinetics \fxnote{ref}, while the proliferation of defects in the celebrated KTHNY phase transition is a consequence of energetics\fxnote{ref}.
+The presence of defects in a material can also be required due to constraints imposed by confinement.
+For example, consider packing spherical particles on a plane.
+In order to maximize the packing, every particle will be have 6 neighbors --- if we triangulate the particle positions we are left with a hexagonal lattice that can fill space.
+However, if we now try to pack spherical particles on the surface of a sphere, we can no longer impose a perfect hexagonal lattice.
+In fact, at least 12 particles will have only 5 neighbors instead of the preferred 6, giving us a hexagonal lattice that has at least 12 pentagons in it.
+Here, the pentagons are defects, and their presence is a result of a global constraint imposed by the topology of the sphere.
+This constraint can be expressed through the Euler theorem\fxnote{ref Giomi AdvMat}.
+Here I introduce the idea of the Euler characteristic as a topological invariant that can be related to the genus for a compact surface with no boundary.
 There are many ways to satisfy the global constraint, the material chooses the way that minimizes its energy.
 Example of scars vs isolated defects.
 This is a reflection that locally, defects are a response to the strain on the order caused by the curvature of the confining surface.
 Here I introduce curvature and Gaussian curvature and introduce Gauss-Bonnet to relate the integral of K with the Euler characteristic.
 Defects act as isolated sources of curvature that interact with the curvature of the surface.
-If we now take the spheres and elongate them into rods, the order changes from the 6-fold xtalline order to the 2-fold preferred alignment of nematic order.
-Again use the packing on a sphere example of the defects.
+If we now take the spheres and elongate them into rods, the order changes from the 6-fold crystalline order to the 2-fold preferred alignment of nematic order.
+Again use the packing of rods on a sphere to highlight that confinement is important.
 Introduce this as a consequence of the Poincare-Hopf theorem where the defect charge is defined as the director rotation about a path encircling the defect.
-Example of concentric and bipolar emulsion droplets, the droplet minimizes its bulk free energy under the constraint that the surface satisfies the P-H theorem.
-In the absence of the bulk, the surface alone minimizes its energy differently, with 4 $+1/2$ defects, i.e. the change in dimensionality allows different types of defects to form.
+Example of concentric and bipolar emulsion droplets, the droplet minimizes its bulk free energy under the constraint that the surface satisfies the P-H theorem.\\
+
+In the absence of the bulk, the surface alone minimizes its energy with 4 $+1/2$ defects, i.e. the change in dimensionality allows different types of defects to form.
 Use example that free energy can be written in terms of the Gaussian curvature and the local defect charge.
 The interplay between curvature, topology, and order means that studying ordered materials in non-spherical surfaces opens a new world of interesting physics.
 Consider the torus.
