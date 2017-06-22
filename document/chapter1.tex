@@ -9,25 +9,43 @@ The advent of order as a result of a continuous symmetry breaking is general and
 With the development of order comes the possibility of locations in the material where the preferred local arrangement is not satisfied.
 These ''defects'' in the order can result from multiple sources.
 For example, grain boundaries in polycrystalline materials are a result of kinetics \fxnote{ref}, while the proliferation of defects in the celebrated KTHNY phase transition is a consequence of energetics\fxnote{ref}.
-The presence of defects in a material can also be required due to constraints imposed by confinement.
+These examples also illustrate the significance of defects in a material --- they can affect everything from material properties to phase transitions in condensed systems.
+Furthermore, in soft condensed systems, defects have been used to assemble hierarchical structures via preferential chemical linking as well as through long-range defect-defect interactions.
+Apart from their effect on physical systems, defects are fascinating objects in their own right as they are extremely sensitive to the intrinsic geometry of the space they inhabit.
+This is easily seen by considering the packing or spherical particles on a surface.
 For example, consider packing spherical particles on a plane.
 In order to maximize the packing, every particle will be have 6 neighbors --- if we triangulate the particle positions we are left with a hexagonal lattice that can fill space.
 However, if we now try to pack spherical particles on the surface of a sphere, we can no longer impose a perfect hexagonal lattice.
 In fact, at least 12 particles will have only 5 neighbors instead of the preferred 6, giving us a hexagonal lattice that has at least 12 pentagons in it.
 Here, the pentagons are defects, and their presence is a result of a global constraint imposed by the topology of the sphere.
 This constraint can be expressed through the Euler theorem\fxnote{ref Giomi AdvMat}.
-Here I introduce the idea of the Euler characteristic as a topological invariant that can be related to the genus for a compact surface with no boundary.
-There are many ways to satisfy the global constraint, the material chooses the way that minimizes its energy.
+I introduce the idea of the Euler characteristic as a topological invariant that can be related to the genus for a compact surface with no boundary.
+Thus, as long as there is no handle, the presence of 12 pentagons is required due to a topological constraint independent of any physical property.
+However, the system is not limited to only 12 pentagons, and the physics comes into play in determining how to satisfy the constraint on the total charge.
 Example of scars vs isolated defects.
-This is a reflection that locally, defects are a response to the strain on the order caused by the curvature of the confining surface.
-Here I introduce curvature and Gaussian curvature and introduce Gauss-Bonnet to relate the integral of K with the Euler characteristic.
+This is a reflection that locally, defects are a response to the strain on the order caused by the confining surface.
+This strain is due to curvature, which I introduce and define via the Weingarten matrix.
+Now I connect the integral of Gaussian curvature with the Euler characteristic through Gauss-Bonnet to relate the local influence of curvature with the global constraint of topology.
 Defects act as isolated sources of curvature that interact with the curvature of the surface.
-If we now take the spheres and elongate them into rods, the order changes from the 6-fold crystalline order to the 2-fold preferred alignment of nematic order.
-Again use the packing of rods on a sphere to highlight that confinement is important.
+This concept of ``geometrical frustration'' is general to ordered materials.
+For example, if we now take the spheres and elongate them into rods, the order changes from the 6-fold crystalline order to the 2-fold preferred alignment of nematic order where the direction is given by $\mathbf{n}$.
+Similar to the inability to tile a sphere with hexagons, you ``cannot comb a hairy ball'', so any director field on a sphere must contain irreducible singularities.
+As it was predicted and then experimentally observed, such a system minimizes its energy with 4 singularities arranged on the vertices of a tetrahedron.
+Each of these singularities is characterized by its topological charge, which we measure by characterizing the director rotation along a closed path encircling the defect such that [[equation here]].
+From the definition, we see that the topological charge is quantized and each of the defects on the sphere has charge $s=+1/2$, such that the total charge on the surface is $2$.
+This constraint can be formally stated through the Poincar\'e-Hopf Theorem.
+
+Again use the packing of rods on a sphere to highlight that confinement is important. 
 Introduce this as a consequence of the Poincare-Hopf theorem where the defect charge is defined as the director rotation about a path encircling the defect.
-Example of concentric and bipolar emulsion droplets, the droplet minimizes its bulk free energy under the constraint that the surface satisfies the P-H theorem.\\
+On a globe, the poles are $+1$ defects; however, physical systems minimize their free energy with $4$ $+1/2$ defects.
+
+
+Example of concentric and bipolar emulsion droplets, the droplet minimizes its bulk free energy under the constraint that the surface satisfies the P-H theorem.
+Confinement can also impose constraints on the bulk itself.
+Now consider rods
 
 In the absence of the bulk, the surface alone minimizes its energy with 4 $+1/2$ defects, i.e. the change in dimensionality allows different types of defects to form.
+
 Use example that free energy can be written in terms of the Gaussian curvature and the local defect charge.
 The interplay between curvature, topology, and order means that studying ordered materials in non-spherical surfaces opens a new world of interesting physics.
 Consider the torus.
