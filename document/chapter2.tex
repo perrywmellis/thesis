@@ -80,11 +80,37 @@ that when diagonalized becomes:
 where in 3D $S = \frac{1}{2} \big \langle 3 \cos^2 \theta^{\alpha}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta^{\alpha}) \big \rangle $,
 where again $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the $2^{nd}$ Legendre Polynomial.
 As in two dimensions, we take the eigenvector associated with the largest eigenvalue to be $\mathbf{n}$.
-Thus, for a collection of rods, we can determine the phase and if applicable, $\mathbf{n}$ by calculating $\mathbf{Q}$ according to Eqs. \ref{e:2-2DOrderRaw} or \ref{e:2-3DOrderRaw} and diagonalizing.
+Thus, for a collection of rods, we can determine the phase and if applicable, $\mathbf{n}$, by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
 
 
 \subsection{Defects in a nematic}
-As with...
+When a material develops order, there comes the possibility of defects in the order, defined generally as regions where the order is not satisfied.
+In NLC, defects are locations where $\mathbf{n}$ is undefined.
+These locations can be $0$-dimension ($0$D) point defects, $1$-dimension ($1$D) line defects, or $2$D wall defects. \\
+
+In 2D, defects are characterized by their ``topological charge'', $s$, which is a measure of how much the director rotates along a path encircling the defect.
+For a director field parametrized by the angle $\phi(\mathbf{R})$, we calculate the topological charge as:
+\begin{equation}
+  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:2-topCharge}
+\end{equation}
+where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.
+Since $\mathbf{n}$ must be continuous on $\partial A$, the symmetry of the nematic phase means that $s \in \frac{1}{2} \mathbb{Z}$, a discrete quantity.
+In addition, note that the sign of the defect reflects how the director changes with respect to the path direction.
+Explicitly, a counter-clockwise (CCW) $\mathbf{n}$ rotation along a CCW path results in a positive defect while a clockwise (CW) $\mathbf{n}$ rotation along a CCW path results in a negative defect.
+Defects are additive, such that $s$ calculated along a path encircling multiple defects will yield a charge that is the sum of the individual charges of the encircled defects.
+For example, a path encircling a $s = +1/2$ point defect and a $s = -1/2$ point defect would yield $s_{net} = 0$ and a path encircling a $s = +1$ point defect and a $s = -1/2$ point defect would yield $s_{net}= +1/2$.\\
+
+In 3D, defects are characterized by their ``hedgehog charge'' defined as $q = \frac{1}{4 \pi} \oint_{\partial V}d \theta d \phi \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ]$, where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
+The volume $V$ must be topologically like a sphere --- this means that the volume has no no holes not handles such that the Euler characteristic is $\chi = 2$.
+Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a surface that is topologically like a sphere enclosing the defect to the number of times the orientations cover the unit sphere.
+Note that due to the added dimension, $q \in \mathbb{Z}$ --- half-integer hedgehog structures are unstable.
+In addition, since there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit sphere, any structure in isolation can only be determined up to $|q|$ as the chosen projection will determine the sign.
+However, once a projection is chosen, a collection of defects with the same magnitude $|q|$ can be separated by sign into charges with $+q$ and charges with $-q$.
+Similar to topological charge in 2D, hedgehog charge is additive such that calculating $q$ in a volume containing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$. \\
+
+The use of the term ``charge'' to characterize defects in NLC is no accident.
+The analogy to electric charges goes beyond the additivity of defect charges --- the analogy also extends to their interactions.
+Defects in 2D and 3D with like-signed charge repel and defects with opposite-signed charge attract and even annihilate.
 
 
 
