@@ -1,1 +1,56 @@
+%!TEX root = thesis.tex
 \chapter{Introduction}
+At high temperature, an isolated collection of spherical particles is a uniform system, i.e. the probability of finding a particle at a specific position is constant and only depends on the density of the particles.
+As this system is invariant under all possible rotations and translations, the system has complete continuous translational and rotational symmetry.
+If we lower the temperature, the particle collection will eventually develop order, where the individual particles have a preferred local arrangement.
+For example, a crystalline phase has particles in periodic locations and thus is invariant only with respect to discrete translations and rotations.
+Thus the ``ordered'' phase has lower symmetry than the isotropic phase as the continuous symmetry of the isotropic phase was broken to achieve the ordered phase.
+The advent of order as a result of a continuous symmetry breaking is general and is a hallmark of transitions between a multitude of different phases. For example, in three dimensions the isotropic-to-crystalline phase transition is characterized by three broken continuous translations and three broken continuous rotations\fxnote{ref}, the isotropic-to-nematic phase transition has no broken continuous translations and either two or three broken continuous rotations\fxnote{ref}, and the isotropic-to-ferromagnetic phase transition has no broken continuous translations and two broken continuous rotations\fxnote{ref}.
+With the development of order comes the possibility of locations in the material where the preferred local arrangement is not satisfied.
+These ''defects'' in the order can result from multiple sources.
+For example, grain boundaries in polycrystalline materials are a result of kinetics \fxnote{ref}, while the proliferation of defects in the celebrated KTHNY phase transition is a consequence of energetics\fxnote{ref}.
+These examples also illustrate the significance of defects in a material --- they can affect everything from material properties to phase transitions in condensed systems.
+Furthermore, in soft condensed systems, defects have been used to assemble hierarchical structures via preferential chemical linking as well as through long-range defect-defect interactions.
+Apart from their effect on physical systems, defects are fascinating objects in their own right as they are extremely sensitive to the intrinsic geometry of the space they inhabit.
+This is easily seen by considering the packing of rods on a surface.
+For example, consider packing rods on a plane.
+In order to maximize the packing, the rods need to align along the same direction, breaking a continuous rotational symmetry and yielding the the 2-fold order of the uniaxial nematic phase.
+We can characterize this preferred local alignment with a bivector $\mathbf{n}$, called the director.
+Clearly, it is easy to fill space with a homogeneous director field.
+However, if we now try to pack rods on the surface of a sphere, for example along wither the latitude or longitude lines on a globe, we see that there are defects in the order that correspond to the singular points at the poles.
+Since you ``cannot comb a hairy ball'', the presence of singularities is no accident --- it is a consequence of confining the nematic to the surface of a sphere.
+Each of these singularities is characterized by its topological charge, which we measure by characterizing the director rotation along a closed path encircling the defect such that [[equation here]].
+Thus we see that regardless of aligning along the latitudes or the longitudes, both poles have charge $s = +1$, bringing the total charge on the surface to $+2$.
+We can formally state the constraint with the Poincar\'e-Hopf Theorem, which connects the total topological charge on the surface to the Euler characteristic.
+I introduce the idea of the Euler characteristic as a topological invariant that can be related to the genus for a compact surface with no boundary.
+Thus, as long as there is no handle, the presence of some defects is required due to a topological constraint independent of any physical property.
+However, the system is not limited to only two $s=+1$ defects, the physics comes into play in determining how to satisfy the constraint on the total charge.
+As it was predicted and then experimentally observed using a thin shell of nematic liquid crystal, such a physical system minimizes its energy not with$2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
+The connection between defects and the space they inhabit is predicted to go beyond topology.
+The theory of defects on curved surfaces connects the topology of the confining surface to the free energy associated to a given defect configuration via the curvature of the surface.
+This is a reflection that locally, defects are a response to the strain on the order caused by the confining surface, i.e. ``geometrical frustration''.
+This strain is due to curvature, which I introduce and define via the Weingarten matrix.
+Now I connect the integral of Gaussian curvature with the Euler characteristic through Gauss-Bonnet to relate the local influence of curvature with the global constraint of topology.
+Defects act as isolated sources of Gaussian curvature that are predicted interact with the Gaussian curvature of the surface.
+Motivate how spheres and flat spaces are not enough, need to go to spaces with both positive and negative Gaussian curvature.
+The easiest space to achieve this is a torus, where the outer portion of the torus has positive Gaussian curvature and the inner portion has negative Gaussian curvature.
+Since the torus has a handle, the Euler Characteristic is now 0; this means that the total integrated Gaussian curvature must also be 0 and any director field on the surface of the torus must have net charge 0.
+We have done previous work as investigated NLC in a toroid, where the system is now 3D and the bulk matters.
+While the system satisfied the topological constraint with no defects, the varying curvature still led to new insights about the role of a previously-neglected distortion called saddle-splay that couples the director orientation in the plane of the surface to the surface curvature.
+The saddle-splay distortion caused a novel twisted state that manifested itself through a spontaneous symmetry breaking reminiscent of magnetism.
+This is a reflection of how confinement can affect a system, even in the absence of defects.
+In addition to surface constraints, confinement can impose bulk constraints.
+If we consider again a sphere filled with a nematic such that the director is perpendicular to the boundary, we see that again, there is an irreducible singularity in the bulk.
+These bulk singularities are known as hedgehogs and are characterized by their hedgehog charge [[equation here]].
+The hedgehog charge measures the number of times the director orientations on a topologically spherical surface enclosing the defect mapped onto the unit sphere cover the unit sphere.
+Thus, we see that the director field for a sphere filled with NLC under hometropic boundary conditions must have total hedgehog charge $|d| = 1$, where again, the interplay between the material and the confining surface determines how to satisfy the topological constraint.
+Typically in soft condensed systems, temperature is the driving influence causing the material to equilibrate.
+However, the recent advent of active materials, where the individual mesogens of the material have their own source of internal energy, has provided opportunities to study non-equilibrium physics where temperature takes a back seat.
+When defects are combined with these force-generating active materials, the ordered phase is driven out-of-equilibrium and ``comes to life,'' giving rise to a variety of self-regulated behaviors, such as self-sustained oscillations, spontaneous formation of morphological features, and undirected mobility.
+In this Thesis, we investigate the role of geometry on the interplay between order and confinement, both in scenarios where temperature drives the system to the ground state and in scenarios where activity brings about non-equilibrium dynamics.
+In Chapter 2, we begin with an introduction to the theory of nematic liquid crystals.
+Then, in Chapter 3, we consider a two-dimensional active nematic on the surface of a torus and gain insights into the role of both activity and curvature on defect dynamics.
+In Chapter 4, we return to equilibrium nematics and investigate a NLC toroid with hometropic boundary conditions and see how curvature can drive the formation of a twisted state even in the absence of the influence of saddle-splay.
+Next, in Chapter 5, we use a NLC capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.
+Finally, in Chapter 6, we use toroids and spherical droplets to uncover the role of the curvature of the confining interface on the anchoring of NLC.
+In Chapter 7, we conclude.
