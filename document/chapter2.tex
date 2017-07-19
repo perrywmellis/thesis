@@ -2,7 +2,7 @@
 \chapter{Fundamentals of nematic liquid crystals}
 
 \section{Local order and defects}
-Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotation symmetry of a collection of either rod-like or plate-like particles.
+Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotation symmetry of a collection of either rod-like or plate-like particles~\cite{RN33}.
 In both cases, the shape is anisotropic and characterized by one lengthscale that is different from the other two.
 As either the concentration of the particles is increased or the temperature of the system is decreased, the system breaks two continuous rotational symmetries and develops order.
 The order is characterized by a preferred direction, where rod-like particles prefer to have their long axis aligned parallel to each other and plate-like particles prefer to have their short axis parallel to each other.
@@ -59,17 +59,17 @@ This yields:
     0 & -S/2
   \end{pmatrix},\label{e:2-2DOrderDiagBig}
 \end{equation}
-where $S = 2 \langle \cos^2 \theta^{\alpha} \rangle_{\alpha} - 1$ is often called the scalar order parameter and denotes how well-aligned the system is.
+where $S = 2 \langle \cos^2 \theta^{\alpha} \rangle_{\alpha} - 1$ is often called the scalar order parameter and denotes how well-aligned the system is~\cite{RN33}.
 For example, if every rod was aligned along $\hat{e}_1'$ such that $\mathbf{u}^{\alpha} = \hat{e}'_1$, $S = 1$.
 Similarly, if we again check the isotropic limit of a random collection of rods, we see that $S = 0$, as desired.
-Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the alignment direction corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter.
-We denote this preferred alignment direction in a uniaxial nematic liquid crystalline material with the unit bivector, $\mathbf{n}$, called the director.
+Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the alignment direction corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter~\cite{RN33}.
+We denote this preferred alignment direction in a uniaxial nematic liquid crystalline material with the unit bivector, $\mathbf{n}$, called the director~\cite{RN33}.
 In terms of the director, we can now write the diagonalized $\mathbf{Q}$ in 2D as:
 \begin{equation}
   \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{2}\mathbb{1} \right ),\label{e:2-2DOrderDiag}
 \end{equation}
 where $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$.
-Generalizing to 3D, we have a similar expression for a collection of rods:
+Generalizing to 3D, we have a similar expression for a collection of rods~\cite{RN33}:
 \begin{equation}
   \mathbf{Q} =  \left \langle \mathbf{u}^{\alpha} \otimes \mathbf{u}^{\alpha} - \frac{1}{3} \mathbb{1} \right \rangle_{\alpha},\label{e:2-3DOrderRaw}
 \end{equation}
@@ -78,7 +78,7 @@ that when diagonalized becomes:
   \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{3}\mathbb{1} \right ),\label{e:2-3DOrderDiag}
 \end{equation}
 where in 3D $S = \frac{1}{2} \big \langle 3 \cos^2 \theta^{\alpha}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta^{\alpha}) \big \rangle $,
-where again $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the $2^{nd}$ Legendre Polynomial.
+where again $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the $2^{nd}$ Legendre Polynomial~\cite{RN33}.
 As in two dimensions, we take the eigenvector associated with the largest eigenvalue to be $\mathbf{n}$.
 Thus, for a collection of rods, we can determine the phase and if applicable, $\mathbf{n}$, by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
 
@@ -119,6 +119,20 @@ Defects in 2D and 3D with like-signed charge repel and defects with opposite-sig
 
 
 
+\section{Frank-Oseen free energy}
+\subsection{A brief derivation}
+\subsection{Nehring, Saupe, and second derivatives}
+\subsection{Insights from microscopic calculations}
+\subsection{Saddle-splay and curvature-coupling}
+
+\section{Landau-deGennes free energy}
+\subsection{The isotropic-nematic phase transition}
+\subsection{The distortion free-energy}
+\subsection{The scaling of the Frank elastic constants}
+
+
+
+
 \section{Experimental characterization of nematic liquid crystals}
 \subsection{Confinement and boundary conditions}
 Successfully confining nematic materials is more than simply forcing the nematic into an arbitrary volume, we also have to specify the boundary conditions.
@@ -144,10 +158,14 @@ If the temperature is too high, the nematic phase will melt to the isotropic pha
 Lyotropic phases are sensitive to concentration as well as temperature.
 They are generally composed of a solid dispersed in a solvent such that the suspended solid is free to flow and orient as it chooses.
 In this Thesis, we will primarily use 4-Cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $~20$ \AA\ long.\@
-5CB belongs to the cyanobiphynyl family of NLC.
-The cyanobiphynyls are thermotropic materials characterized by a cyano $(CN)$ group bonded to a biphenyl $(C_6 H_4)(C_6 H_4)$ group bonded to an alkyl group of given length, $C_p H_{2p+1}$, where $p$ is the number of Carbon atoms in the group.
-In the case of 5CB, we can write the chemical formula as: $CN(C_6 H_4)(C_6 H_4)C_5 H_{11}$.
+5CB belongs to the cyanobiphenyl family of NLC.
+The cyanobiphynyls are thermotropic materials characterized by a cyano $\textrm{(CN)}$ group bonded to a biphenyl $\textrm{(C_6 H_4)(C_6 H_4)}$ group bonded to an alkyl group of given length, $\textrm{C_p H_{2p+1}}$, where ``p'' is the number of Carbon atoms in the group.
+In the case of 5CB, we can write the chemical formula as: $\textrm{CN(C_6 H_4)(C_6 H_4)C_5 H_{11}}$.
 Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
+Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any pCB. \\
+
+To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, we deposit
+
 
 
 
@@ -155,14 +173,3 @@ Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the a
 Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
 This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
 For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$,
-
-\section{Frank-Oseen free energy}
-\subsection{A brief derivation}
-\subsection{Nehring, Saupe, and second derivatives}
-\subsection{Insights from microscopic calculations}
-\subsection{Saddle-splay and curvature-coupling}
-
-\section{Landau-deGennes free energy}
-\subsection{The isotropic-nematic phase transition}
-\subsection{The distortion free-energy}
-\subsection{The scaling of the Frank elastic constants}
