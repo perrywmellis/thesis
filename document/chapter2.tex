@@ -41,7 +41,7 @@ Let us now assume that we chose the $\hat{e}'_i$ to be the eigenvectors of $\mat
 Then $ \mathbf{V}^T \mathbf{Q} \mathbf{V}$ must be diagonal such that $\langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} = \langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$.
 This occurs in two ways.
 First, if we choose the collection of rods to be randomly oriented as if we were in the isotropic phase, $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$ as $\sin$ is an odd function.
-However, for a randomly oriented set of rods, $langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = langle \sin^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = 0$, such that $\mathbf{Q} = 0$.
+However, for a randomly oriented set of rods, $\langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = \langle \sin^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = 0$, such that $\mathbf{Q} = 0$.
 Hence, we haven't really diagonalized $\mathbf{Q}$ but instead shown that $\mathbf{Q}$ has the correct behavior in the isotropic phase.
 The second way for $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$ is if the collection of rods on average points along $\hat{e}'_i$.
 In this scenario, $\theta^{\alpha} \approx 0 \textrm{ or } \pi/2$ such that $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$.
@@ -100,10 +100,14 @@ Explicitly, a counter-clockwise (CCW) $\mathbf{n}$ rotation along a CCW path res
 Defects are additive, such that $s$ calculated along a path encircling multiple defects will yield a charge that is the sum of the individual charges of the encircled defects.
 For example, a path encircling a $s = +1/2$ point defect and a $s = -1/2$ point defect would yield $s_{net} = 0$ and a path encircling a $s = +1$ point defect and a $s = -1/2$ point defect would yield $s_{net}= +1/2$.\\
 
-In 3D, defects are characterized by their ``hedgehog charge'' defined as $q = \frac{1}{4 \pi} \oint_{\partial V}d \theta d \phi \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ]$, where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
+In 3D, defects are characterized by their ``hedgehog charge'' defined as
+\begin{equation}
+  q = \frac{1}{4 \pi} \oint_{\partial V}d \theta d \phi \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:2-hedCharge}
+\end{equation}
+ where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
 The volume $V$ must be topologically like a sphere --- this means that the volume has no no holes not handles such that the Euler characteristic is $\chi = 2$.
 Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a surface that is topologically like a sphere enclosing the defect to the number of times the orientations cover the unit sphere.
-Note that due to the added dimension, $q \in \mathbb{Z}$ --- half-integer hedgehog structures are unstable.
+Note that due to the added dimension, half-integer hedgehog structures are unstable such that $q \in \mathbb{Z}$.
 In addition, since there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit sphere, any structure in isolation can only be determined up to $|q|$ as the chosen projection will determine the sign.
 However, once a projection is chosen, a collection of defects with the same magnitude $|q|$ can be separated by sign into charges with $+q$ and charges with $-q$.
 Similar to topological charge in 2D, hedgehog charge is additive such that calculating $q$ in a volume containing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$. \\
@@ -117,7 +121,24 @@ Defects in 2D and 3D with like-signed charge repel and defects with opposite-sig
 
 \section{Experimental characterization of nematic liquid crystals}
 \subsection{Confinement and boundary conditions}
+Successfully confining nematic materials is more than simply forcing the nematic into an arbitrary volume, we also have to specify the boundary conditions.
+For example, confining NLC to a sphere where the material is free to take any orientation on the boundary is uninteresting as the director field can remain homogeneous, as if the sphere did not exist.
+However, if we enforce homeotropic boundary conditions such that the director must be everywhere perpendicular to the surface, then we see that their must be a defect in the volume.
+In fact, according to Eq.~\ref{e:2-hedCharge}, we see that the sum of all the defects in a spherical volume must have $|q_{net}| = 1$.
+Similarly, if we instead enforce degenerate planar boundary conditions such that the director must everywhere lie parallel to the surface, the Poincar\'e-Hopf Theorem requires a total topological charge of $s = +2$ on the surface.
+Formally, if $\mathbf{k}$ be the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
+These are not the only two options, we can also have degenerate tilt boundary conditions, where $0< |\mathbf{k} \cdot \mathbf{n}| < 1$, with a tilt angle given by $\theta = \arcos |\mathbf{k} \cdot \mathbf{n}| $.
+The direction in the plane of the boundary can be specified as well, with $\mathbf{k} \times \mathbf{n} = \mathbf{sigma}$, where $\mathbf{\sigma}$ is a unit vector. \\
+
+In an experiment 
+
+
+
+
 \subsection{Birefringence and optically polarized microscopy}
+Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
+This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
+For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$,
 
 \section{Frank-Oseen free energy}
 \subsection{A brief derivation}
