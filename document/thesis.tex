@@ -14,7 +14,7 @@
 \usepackage[page]{appendix}  %for appendices
 \usepackage{rotating}  %for rotated, landscape images
 \usepackage[normalem]{ulem}  %for italicized text
-\usepackage{bbold}
+\usepackage{bbold, bm}
 \usepackage{amsmath,amssymb}
 
 \usepackage[inline]{fixme}
@@ -64,6 +64,9 @@
   \ifentrytype{online}
     {}
     {\clearfield{urlyear}\clearfield{urlmonth}\clearfield{urlday}}}
+
+% allow subletters in eq numbering
+\renewcommand{\theequation}{\thechapter.\arabic{equation}}
 
 %%%%%%%%%%%%%%%%%%%%%%
 % Start of Document

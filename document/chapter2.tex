@@ -123,18 +123,19 @@ Defects in 2D and 3D with like-signed charge repel and defects with opposite-sig
 Since the mesogens in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned monodomain with $\mathbf{n}$ a constant everywhere.
 Distortions from this uniform state cost energy.
 Since in most experiments the director distortions occur over much larger length scales than the molecular length --- $|\nabla \mathbf{n}| a << 1$, where $a$ is the molecular length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free-energy density that depends on $\mathbf{n}$ only.
-Here, we follow the work of F.C. Frank, and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
+Here, we follow the work of F.C. Frank and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
 This is a phenomenological approach similar to Hooke's elasticity theory of a solid; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
 This is again a reflection that there is no restriction to the center-of-mass positions of the nematic mesogens, the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
 Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, $\hat{e}_i$ is the unit vector associated with $x_i$.
 If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point, we can write the $n_i$ as:
+\refstepcounter{equation}\label{e:2-LocalCoord}
 \begin{align}
   n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
-      &= a_1 x_1 + a_2 x_2 + a_3 x_3 + + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordn1}  \\
+      &= a_1 x_1 + a_2 x_2 + a_3 x_3 + + \mathcal{O}\big (x^2 \big )\tag{\theequation a}\label{e:2-LocalCoordA}  \\
   n_2 &= \frac{\partial n_2}{\partial x_1}x_1 + \frac{\partial n_2}{\partial x_2}x_2 + \frac{\partial n_2}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber  \\
-      &= a_4 x_1 + a_5 x_2 + a_6 x_3 + + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordn2}  \\
+      &= a_4 x_1 + a_5 x_2 + a_6 x_3 + + \mathcal{O}\big (x^2 \big )\tag{\theequation b}\label{e:2-LocalCoordB}  \\
   n_3 &= 1 + \mathcal{O}\big (x^2 \big ). \nonumber
 \end{align}
 Now expanding about the undistorted state, we can write the free-energy density to quadratic order in the first-derivatives as:
@@ -157,16 +158,81 @@ Under these conditions, all of the 6 $K_i$ vanish and of the 36 $K_{ij}$, 26 van
 \end{equation}
 Collecting terms, we are left with the expression:
 \begin{align}
-  f(\mathbf{n}) = \frac{1}{2}K_{11} (a_1 + a_5)^2 + \frac{1}{2}&K_{22} (a_2 - a_4)^2 + \frac{1}{2}K_{33} (a_3 + a_6)^2 \nonumber \\
-    + \frac{1}{2}(K_{22} + K_{24}) (a_1 a_5 - a_2 a_4)^2.\label{e:2-FrankLocalExpansion}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (a_1 + a_5)^2 + \frac{1}{2}&K_{22} (a_2 - a_4)^2 + \frac{1}{2}K_{33} (a_3^2 + a_6^2) \nonumber \\
+    &- (K_{22} + K_{24}) (a_1 a_5 - a_2 a_4).\label{e:2-FrankLocalExpansion}
 \end{align}
-If we return to the source of the $a_I$ coefficients, we can uncover the physical significance of the distortions:
+If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoord}(a,b), we can uncover the physical significance of the distortions:
+\refstepcounter{equation}\label{e:2-PhysicalDistortions}
 \begin{align}
-  
+  s_1 = a_1 = \frac{\partial n_1}{\partial x_1} \quad & \quad s_2 = a_5 = \frac{\partial n_2}{\partial x_2} \tag{\theequation a} \\
+  t_1 = - a_4 = \frac{\partial n_2}{\partial x_1} \quad & \quad t_2 = a_2 = \frac{\partial n_1}{\partial x_2} \tag{\theequation b} \\
+  b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3}, \tag{\theequation c}
 \end{align}
+where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion,.
+Now if we use Eqs.~\ref{e:2-PhysicalDistorions}(a-c) to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (s_1 + s_2)^2 + \frac{1}{2}&K_{22} (t_1 + t_2)^2 + \frac{1}{2}K_{33} (b_1^2 + b_2^2) \nonumber \\
+    & - (K_{22} + K_{24}) (s_1 s_2 + t_1 t_2).\label{e:2-FrankPhysicalExpansion}
+\end{align}
+Hence, we see that each term in the free-energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
+For example, consider a NLC with $K_{11} >> K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
+Finally, we can move from the local frame and re-cast the $a_i$ in Eq.~\ref{e:2-FrankLocalExpansion} in terms of a single global coordinate system:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}&K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}K_{33} (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
+    & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}),\label{e:2-FrankFinalExpansion}
+\end{align}
+arriving at the well-known expression for the Frank-Oseen Free Energy.\\
+
+Note that while Frank pioneered the phenomenological approach for a liquid crystalline free-energy, his was not the first attempt to construct a free-energy for liquid crytals.
+Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules.
+While Oseen's final expression for a nematic misses some of the terms in Eq.~\ref{e:2-FrankFinalExpansion}, it is close enough that Eq.~\ref{e:2-FrankFinalExpansion} carries the names of both Frank and Oseen.
+
 
 \subsection{Nehring, Saupe, and second derivatives}
+We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^{st}$ derivatives of $\mathbf{n}$.
+Due to the symmetry of the nematic, all of the terms linear in $\nabla \mathbf{n}$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
+However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^{nd}$ derivatives of $\mathbf{n}$ as they can contribute to order $\mathcal{O}(x^2)$ as well.
+In fact, Oseen's original free-energy expression also included terms depending on 2$^{nd}$ derivatives of $\mathbf{n}$ that Frank neglected.
+Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
+\begin{equation}
+  f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
+\end{equation}
+where $a_{i,j}$ represents $\dfrac{\partial a_i}{\partial x_j}$, giving us 18 terms in the $K'_{ij}$ coefficient matrix.
+Again using the symmetries of a nematic, collecting terms, and transforming into a global coordinate system, we arrive at a new expression for the free-energy:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}&(K_{11} - 2K'_{13}) (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}(K_{33} + 2K'_{13}) (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
+    & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})
+      + K'_{13} \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n}),\label{e:2-NSFinalExpansion}
+\end{align}
+where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared. \\
+
+Since Eqs~\ref{e:2-FrankFinalExpansion} and~\ref{e:2-NSFinalExpansion} are phenomenological expressions, renormalizing the splay and bend elastic constants doesn't affect underlying physics.
+This leaves the addition of the splay-bend term as the most significant effect of considering 2$^{nd}$ derivatives of $\mathbf{n}$.
+The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize.
+This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$.
+These excess boundary conditions mean that the 2$^{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
+Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$.
+While there have been attempts to solve the paradox by introducing higher-order terms, or constraining the normal derivatives in the splay-bend term, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''.
+
 \subsection{Insights from microscopic calculations}
+There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase.
+While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
+At the most basic level, a free-energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
+However, this is a many-body problem requiring us to know the position and orientation of each individual mesogen.
+Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume.
+This is a density functional theoretic approach and thus yields a nonlocal free energy like:
+\begin{equation}
+  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
+\end{equation}
+where $\mathbf{r}$ and $\mathbf{r}'$ are positions and $G(\mathbf{r},\mathbf{r}') = 0$ for $|\mathbf{r}-\mathbf{r}'| \gg 1$, reflecting the finite interaction range of the mesogens.
+However, since we are looking to derive the macroscopic $K_{ij}$ from the microscopic interactions, we must satisfy
+\begin{equation}
+  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}') = \int \textrm{d} \mathbf{R} \, f(\mathbf{R})
+\end{equation}
+Since there are an infinite number of possibilities to map $(\mathbf{r},\mathbf{r}') \rarrow \mathbf{R}$, we see that the $f(\mathbf{R})$ is not necessarily a unique functional of $\mathbf{n}$ unless two conditions are satisfied.
+First, this calculation needs to be done in the limit of long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon << 1)$ distortions to ensure that $\delta F$ is a unique function of $\mathbf{n}$.
+Second, any $K_{ij}$ that result cannot depend on the choice of mapping.
+
 \subsection{Saddle-splay and curvature-coupling}
 
 \section{Landau-deGennes free energy}
@@ -187,7 +253,7 @@ Similarly, if we instead enforce degenerate planar boundary conditions such that
 Formally, if $\mathbf{k}$ be the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
 These are not the only two options, we can also have degenerate tilt boundary conditions, where $0< |\mathbf{k} \cdot \mathbf{n}| < 1$, with a tilt angle given by $\theta = \arccos |\mathbf{k} \cdot \mathbf{n}| $.
 Note that planar anchoring does not have to be degenerate.
-The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \mathbf{sigma}$, where $\mathbf{\sigma}$ is a unit vector.\\
+The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector.\\
 
 In an experiment, confinement take place either with either solid boundaries, such as glass cells and capillaries, or fluid boundaries such as in emulsions of a nematic material dispersed in an outer immiscible liquid phase.
 It is also possible to confine a nematic using both solid boundaries and fluid boundaries, such as in a sessile drop.
