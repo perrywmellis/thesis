@@ -2,20 +2,284 @@
 \chapter{Fundamentals of nematic liquid crystals}
 
 \section{Local order and defects}
-\subsection{The director and the order parameter}
-\subsection{Defects in a nematic}
+Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotation symmetry of a collection of either rod-like or plate-like particles~\cite{RN33}.
+In both cases, the shape is anisotropic and characterized by one lengthscale that is different from the other two.
+As either the concentration of the particles is increased or the temperature of the system is decreased, the system breaks two continuous rotational symmetries and develops order.
+The order is characterized by a preferred direction, where rod-like particles prefer to have their long axis aligned parallel to each other and plate-like particles prefer to have their short axis parallel to each other.
+Thus, the system still possesses continuous rotational symmetry about the preferred alignment direction as well as continuous translation symmetry in  all directions.
+If the concentration of the particles were further increased of the temperature were further decreased, the particles would break translational symmetry and the nematic phase would transition to a crystalline phase, with three broken continuous translational symmetries.
+Hence, the liquid-crystalline nematic phase is an intermediate ``mesophase'' that possesses the continuous translational symmetries of the isotropic ``liquid phase'' as well as some of the broken rotational symmetries of the ``crystalline'' phase.
+In the remainder of this chapter and in the rest of the Thesis, we will focus on NLC whose constituent particles are rod-like.
 
-\section{Experimental characterization of nematic liquid crystals}
-\subsection{Confinement and boundary conditions}
-\subsection{Birefringence and optically polarized microscopy}
+
+\subsection{The director and the order parameter}
+Given a group of rods, we want to determine the phase as well as the alignment direction provided that the rods are in the nematic phase.
+Thus, we need an order parameter that goes to $0$ in the isotropic phase, is nonzero in the nematic phase, and contains the preferred alignment direction in the nematic phase.
+We will first derive this quantity for a collection of rods laying in a two-dimensional (2D) plane and then generalize to three-dimensions (3D).
+Let a collection of rods laying in a 2D plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{\alpha} = u^{\alpha}_i\hat{e}_i$, where we use the Einstein summation convention to sum over repeated indices.
+Note that due to the inversion symmetry of the nematic phase $\langle \mathbf{u}^{\alpha}\rangle_{\alpha} = 0$, where $\langle \cdot \rangle_{\alpha}$ represents an ensemble average over all $\alpha$.
+Thus, we need a rank-2 object to accomodate the nematic symmetry.
+Let:
+\begin{equation}
+  \mathbf{Q} = \left \langle \mathbf{u}^{\alpha} \otimes \mathbf{u}^{\alpha} - \frac{1}{2} \mathbb{1} \right \rangle,\label{e:2-2DOrderRaw}
+\end{equation}
+such that $\textrm{Tr}\big \{ \mathbf{Q} \big \} = \langle u^{\alpha}_i u^{\alpha}_i - 1 \rangle = 0$, making $\mathbf{Q}$ traceless and symmetric.
+We need $\mathbf{Q}$ to be traceless if we wish $Q_{ij} = 0$ in the isotropic phase.
+Without loss of generality, we can define another arbitrary orthonormal basis in the plane given by $\hat{e}_i'$ such that the transformation from the primed coordinates to the unprimed coordinates is given by $V_{ij} = \hat{e}'_i \cdot \hat{e}_j$.
+Note that $\mathbf{V} \cdot \mathbf{V} = V_{ij}V_{ji} = \hat{e}'_i \cdot \hat{e}_j \cdot \hat{e}'_j \cdot \hat{e}_i = \delta_{ij} = \mathbb{1}$, such that $\mathbf{V} = \mathbf{V}^{-1}$, making $\mathbf{V}$ self-adjoint.
+Applying $\mathbf{V}$ to $\mathbf{Q}$, we have:
+\begin{align}
+  \mathbf{V}^T \mathbf{Q} \mathbf{V} &=
+  \bigg \langle \big ( \mathbf{V}^T \mathbf{u}^{\alpha} \big ) \otimes \big ( \mathbf{V}^T \mathbf{u}^{\alpha} \big )\bigg \rangle_{\alpha}  - \frac{1}{2} \mathbb{1} \nonumber \\ & =
+  \begin{pmatrix}
+    \langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 & \langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} \\
+    \langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} & \langle \sin^2 \theta^{\alpha} \rangle_{\alpha} - 1/2
+  \end{pmatrix},\label{e:2-2DOrderRot}
+\end{align}
+where $\cos \theta^{\alpha} = \mathbf{u}^{\alpha} \cdot \hat{e}_1'$.
+Let us now assume that we chose the $\hat{e}'_i$ to be the eigenvectors of $\mathbf{Q}$.
+Then $ \mathbf{V}^T \mathbf{Q} \mathbf{V}$ must be diagonal such that $\langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} = \langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$.
+This occurs in two ways.
+First, if we choose the collection of rods to be randomly oriented as if we were in the isotropic phase, $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$ as $\sin$ is an odd function.
+However, for a randomly oriented set of rods, $\langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = \langle \sin^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 = 0$, such that $\mathbf{Q} = 0$.
+Hence, we haven't really diagonalized $\mathbf{Q}$ but instead shown that $\mathbf{Q}$ has the correct behavior in the isotropic phase.
+The second way for $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$ is if the collection of rods on average points along $\hat{e}'_i$.
+In this scenario, $\theta^{\alpha} \approx 0 \textrm{ or } \pi/2$ such that $\langle \sin (2 \theta^{\alpha}) \rangle_{\alpha} = 0$.
+Thus, we see that by diagonalizing Eq.~\ref{e:2-2DOrderRot}, we have determined that the average alignment direction is either along $\hat{e}_1'$ or along $\hat{e}_2'$.
+We now take Eq.~\ref{e:2-2DOrderRot} and write it assuming the collection of rods on average points along $\hat{e}'_1$.
+This yields:
+\begin{equation}
+  \mathbf{V}^T \mathbf{Q} \mathbf{V} =
+  \begin{pmatrix}
+    \langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 & 0 \\
+    0 & \langle \sin^2 \theta^{\alpha} \rangle_{\alpha} - 1/2
+  \end{pmatrix} =
+  \begin{pmatrix}
+    S/2 & 0 \\
+    0 & -S/2
+  \end{pmatrix},\label{e:2-2DOrderDiagBig}
+\end{equation}
+where $S = 2 \langle \cos^2 \theta^{\alpha} \rangle_{\alpha} - 1$ is often called the scalar order parameter and denotes how well-aligned the system is~\cite{RN33}.
+For example, if every rod was aligned along $\hat{e}_1'$ such that $\mathbf{u}^{\alpha} = \hat{e}'_1$, $S = 1$.
+Similarly, if we again check the isotropic limit of a random collection of rods, we see that $S = 0$, as desired.
+Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the alignment direction corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter~\cite{RN33}.
+We denote this preferred alignment direction in a uniaxial nematic liquid crystalline material with the unit bivector, $\mathbf{n}$, called the director~\cite{RN33}.
+In terms of the director, we can now write the diagonalized $\mathbf{Q}$ in 2D as:
+\begin{equation}
+  \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{2}\mathbb{1} \right ),\label{e:2-2DOrderDiag}
+\end{equation}
+where $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$.
+Generalizing to 3D, we have a similar expression for a collection of rods~\cite{RN33}:
+\begin{equation}
+  \mathbf{Q} =  \left \langle \mathbf{u}^{\alpha} \otimes \mathbf{u}^{\alpha} - \frac{1}{3} \mathbb{1} \right \rangle_{\alpha},\label{e:2-3DOrderRaw}
+\end{equation}
+that when diagonalized becomes:
+\begin{equation}
+  \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{3}\mathbb{1} \right ),\label{e:2-3DOrderDiag}
+\end{equation}
+where in 3D $S = \frac{1}{2} \big \langle 3 \cos^2 \theta^{\alpha}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta^{\alpha}) \big \rangle $,
+where again $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the $2^{nd}$ Legendre Polynomial~\cite{RN33}.
+As in two dimensions, we take the eigenvector associated with the largest eigenvalue to be $\mathbf{n}$.
+Thus, for a collection of rods, we can determine the phase and if applicable, $\mathbf{n}$, by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
+
+
+\subsection{Defects in a nematic}
+When a material develops order, there comes the possibility of defects in the order, defined generally as regions where the order is not satisfied.
+In NLC, defects are locations where $\mathbf{n}$ is undefined.
+These locations can be $0$-dimension ($0$D) point defects, $1$-dimension ($1$D) line defects, or $2$D wall defects. \\
+
+In 2D, defects are characterized by their ``topological charge'', $s$, which is a measure of how much the director rotates along a path encircling the defect.
+For a director field parametrized by the angle $\phi(\mathbf{R})$, we calculate the topological charge as:
+\begin{equation}
+  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:2-topCharge}
+\end{equation}
+where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.
+Since $\mathbf{n}$ must be continuous on $\partial A$, the symmetry of the nematic phase means that $s \in \frac{1}{2} \mathbb{Z}$, a discrete quantity.
+In addition, note that the sign of the defect reflects how the director changes with respect to the path direction.
+Explicitly, a counter-clockwise (CCW) $\mathbf{n}$ rotation along a CCW path results in a positive defect while a clockwise (CW) $\mathbf{n}$ rotation along a CCW path results in a negative defect.
+Defects are additive, such that $s$ calculated along a path encircling multiple defects will yield a charge that is the sum of the individual charges of the encircled defects.
+For example, a path encircling a $s = +1/2$ point defect and a $s = -1/2$ point defect would yield $s_{net} = 0$ and a path encircling a $s = +1$ point defect and a $s = -1/2$ point defect would yield $s_{net}= +1/2$.\\
+
+In 3D, defects are characterized by their ``hedgehog charge'' defined as
+\begin{equation}
+  q = \frac{1}{4 \pi} \oint_{\partial V}d \theta d \phi \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:2-hedCharge}
+\end{equation}
+ where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
+The volume $V$ must be topologically like a sphere --- this means that the volume has no no holes not handles such that the Euler characteristic is $\chi = 2$.
+Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a surface that is topologically like a sphere enclosing the defect to the number of times the orientations cover the unit sphere.
+Note that due to the added dimension, half-integer hedgehog structures are unstable such that $q \in \mathbb{Z}$.
+In addition, since there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit sphere, any structure in isolation can only be determined up to $|q|$ as the chosen projection will determine the sign.
+However, once a projection is chosen, a collection of defects with the same magnitude $|q|$ can be separated by sign into charges with $+q$ and charges with $-q$.
+Similar to topological charge in 2D, hedgehog charge is additive such that calculating $q$ in a volume containing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$. \\
+
+The use of the term ``charge'' to characterize defects in NLC is no accident.
+The analogy to electric charges goes beyond the additivity of defect charges --- the analogy also extends to their interactions.
+Defects in 2D and 3D with like-signed charge repel and defects with opposite-signed charge attract and even annihilate.
+
+
+
 
 \section{Frank-Oseen free energy}
+Since the mesogens in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned monodomain with $\mathbf{n}$ a constant everywhere.
+Distortions from this uniform state cost energy.
+Since in most experiments the director distortions occur over much larger length scales than the molecular length --- $|\nabla \mathbf{n}| a << 1$, where $a$ is the molecular length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free-energy density that depends on $\mathbf{n}$ only.
+Here, we follow the work of F.C. Frank and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
+This is a phenomenological approach similar to Hooke's elasticity theory of a solid; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
+This is again a reflection that there is no restriction to the center-of-mass positions of the nematic mesogens, the nematic elasticity only opposes deformations in the orientations of the mesogens.
+
 \subsection{A brief derivation}
+Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, $\hat{e}_i$ is the unit vector associated with $x_i$.
+If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point, we can write the $n_i$ as:
+\refstepcounter{equation}\label{e:2-LocalCoord}
+\begin{align}
+  n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
+      &= a_1 x_1 + a_2 x_2 + a_3 x_3 + + \mathcal{O}\big (x^2 \big )\tag{\theequation a}\label{e:2-LocalCoordA}  \\
+  n_2 &= \frac{\partial n_2}{\partial x_1}x_1 + \frac{\partial n_2}{\partial x_2}x_2 + \frac{\partial n_2}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber  \\
+      &= a_4 x_1 + a_5 x_2 + a_6 x_3 + + \mathcal{O}\big (x^2 \big )\tag{\theequation b}\label{e:2-LocalCoordB}  \\
+  n_3 &= 1 + \mathcal{O}\big (x^2 \big ). \nonumber
+\end{align}
+Now expanding about the undistorted state, we can write the free-energy density to quadratic order in the first-derivatives as:
+\begin{equation}
+  f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j,\label{e:2-FrankGeneralExpansion}
+\end{equation}
+where $i,j = \{ 1,2 \dots, 6 \}$, giving us 42 possible terms.
+However, any free-energy must respect the symmetry of the nematic, hence it must be invariant under exchange, invariant under inversion, invariant under arbitrary rotations about $\mathbf{n}$, and invariant with respect to the handedness of the coordinate system.
+Under these conditions, all of the 6 $K_i$ vanish and of the 36 $K_{ij}$, 26 vanish and only 4 are independent, giving the coefficient matrix:
+\begin{equation}
+  K_{ij} =
+  \begin{pmatrix}
+    K_{11} & 0 & 0 & 0 & (K_{11}-K_{22}-K_{24}) & 0 \\
+    0 & K_{22} & 0 & K_{24} & 0 & 0 \\
+    0 & 0 & K_{33} & 0 & 0 & 0 \\
+    0 & K_{24} & 0 & K_{22} & 0 & 0 \\
+    (K_{11}-K_{22}-K_{24}) & 0 & 0 & 0 & K_{11} & 0 \\
+    0 & 0 & 0 & 0 & 0 & K_{33} \\
+  \end{pmatrix}.
+\end{equation}
+Collecting terms, we are left with the expression:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (a_1 + a_5)^2 + \frac{1}{2}&K_{22} (a_2 - a_4)^2 + \frac{1}{2}K_{33} (a_3^2 + a_6^2) \nonumber \\
+    &- (K_{22} + K_{24}) (a_1 a_5 - a_2 a_4).\label{e:2-FrankLocalExpansion}
+\end{align}
+If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoord}(a,b), we can uncover the physical significance of the distortions:
+\refstepcounter{equation}\label{e:2-PhysicalDistortions}
+\begin{align}
+  s_1 = a_1 = \frac{\partial n_1}{\partial x_1} \quad & \quad s_2 = a_5 = \frac{\partial n_2}{\partial x_2} \tag{\theequation a} \\
+  t_1 = - a_4 = \frac{\partial n_2}{\partial x_1} \quad & \quad t_2 = a_2 = \frac{\partial n_1}{\partial x_2} \tag{\theequation b} \\
+  b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3}, \tag{\theequation c}
+\end{align}
+where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion,.
+Now if we use Eqs.~\ref{e:2-PhysicalDistorions}(a-c) to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (s_1 + s_2)^2 + \frac{1}{2}&K_{22} (t_1 + t_2)^2 + \frac{1}{2}K_{33} (b_1^2 + b_2^2) \nonumber \\
+    & - (K_{22} + K_{24}) (s_1 s_2 + t_1 t_2).\label{e:2-FrankPhysicalExpansion}
+\end{align}
+Hence, we see that each term in the free-energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
+For example, consider a NLC with $K_{11} >> K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
+Finally, we can move from the local frame and re-cast the $a_i$ in Eq.~\ref{e:2-FrankLocalExpansion} in terms of a single global coordinate system:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}K_{11} (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}&K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}K_{33} (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
+    & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}),\label{e:2-FrankFinalExpansion}
+\end{align}
+arriving at the well-known expression for the Frank-Oseen Free Energy.\\
+
+Note that while Frank pioneered the phenomenological approach for a liquid crystalline free-energy, his was not the first attempt to construct a free-energy for liquid crytals.
+Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules.
+While Oseen's final expression for a nematic misses some of the terms in Eq.~\ref{e:2-FrankFinalExpansion}, it is close enough that Eq.~\ref{e:2-FrankFinalExpansion} carries the names of both Frank and Oseen.
+
+
 \subsection{Nehring, Saupe, and second derivatives}
+We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^{st}$ derivatives of $\mathbf{n}$.
+Due to the symmetry of the nematic, all of the terms linear in $\nabla \mathbf{n}$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
+However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^{nd}$ derivatives of $\mathbf{n}$ as they can contribute to order $\mathcal{O}(x^2)$ as well.
+In fact, Oseen's original free-energy expression also included terms depending on 2$^{nd}$ derivatives of $\mathbf{n}$ that Frank neglected.
+Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
+\begin{equation}
+  f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
+\end{equation}
+where $a_{i,j}$ represents $\dfrac{\partial a_i}{\partial x_j}$, giving us 18 terms in the $K'_{ij}$ coefficient matrix.
+Again using the symmetries of a nematic, collecting terms, and transforming into a global coordinate system, we arrive at a new expression for the free-energy:
+\begin{align}
+  f(\mathbf{n}) = \frac{1}{2}&(K_{11} - 2K'_{13}) (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}(K_{33} + 2K'_{13}) (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
+    & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})
+      + K'_{13} \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n}),\label{e:2-NSFinalExpansion}
+\end{align}
+where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared. \\
+
+Since Eqs~\ref{e:2-FrankFinalExpansion} and~\ref{e:2-NSFinalExpansion} are phenomenological expressions, renormalizing the splay and bend elastic constants doesn't affect underlying physics.
+This leaves the addition of the splay-bend term as the most significant effect of considering 2$^{nd}$ derivatives of $\mathbf{n}$.
+The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize.
+This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$.
+These excess boundary conditions mean that the 2$^{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
+Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$.
+While there have been attempts to solve the paradox by introducing higher-order terms, or constraining the normal derivatives in the splay-bend term, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''.
+
 \subsection{Insights from microscopic calculations}
+There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase.
+While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
+At the most basic level, a free-energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
+However, this is a many-body problem requiring us to know the position and orientation of each individual mesogen.
+Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume.
+This is a density functional theoretic approach and thus yields a nonlocal free energy like:
+\begin{equation}
+  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
+\end{equation}
+where $\mathbf{r}$ and $\mathbf{r}'$ are positions and $G(\mathbf{r},\mathbf{r}') = 0$ for $|\mathbf{r}-\mathbf{r}'| \gg 1$, reflecting the finite interaction range of the mesogens.
+However, since we are looking to derive the macroscopic $K_{ij}$ from the microscopic interactions, we must satisfy
+\begin{equation}
+  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}') = \int \textrm{d} \mathbf{R} \, f(\mathbf{R})
+\end{equation}
+Since there are an infinite number of possibilities to map $(\mathbf{r},\mathbf{r}') \rarrow \mathbf{R}$, we see that the $f(\mathbf{R})$ is not necessarily a unique functional of $\mathbf{n}$ unless two conditions are satisfied.
+First, this calculation needs to be done in the limit of long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon << 1)$ distortions to ensure that $\delta F$ is a unique function of $\mathbf{n}$.
+Second, any $K_{ij}$ that result cannot depend on the choice of mapping.
+
 \subsection{Saddle-splay and curvature-coupling}
 
 \section{Landau-deGennes free energy}
 \subsection{The isotropic-nematic phase transition}
 \subsection{The distortion free-energy}
 \subsection{The scaling of the Frank elastic constants}
+
+
+
+
+\section{Experimental characterization of nematic liquid crystals}
+\subsection{Confinement and boundary conditions}
+Successfully confining nematic materials is more than simply forcing the nematic into an arbitrary volume, we also have to specify the boundary conditions.
+For example, confining NLC to a sphere where the material is free to take any orientation on the boundary is uninteresting as the director field can remain homogeneous, as if the sphere did not exist.
+However, if we enforce homeotropic boundary conditions such that the director must be everywhere perpendicular to the surface, then we see that their must be a defect in the volume.
+In fact, according to Eq.~\ref{e:2-hedCharge}, we see that the sum of all the defects in a spherical volume must have $|q_{net}| = 1$.
+Similarly, if we instead enforce degenerate planar boundary conditions such that the director must everywhere lie parallel to the surface, the Poincar\'e-Hopf Theorem requires a total topological charge of $s = +2$ on the surface.
+Formally, if $\mathbf{k}$ be the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
+These are not the only two options, we can also have degenerate tilt boundary conditions, where $0< |\mathbf{k} \cdot \mathbf{n}| < 1$, with a tilt angle given by $\theta = \arccos |\mathbf{k} \cdot \mathbf{n}| $.
+Note that planar anchoring does not have to be degenerate.
+The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector.\\
+
+In an experiment, confinement take place either with either solid boundaries, such as glass cells and capillaries, or fluid boundaries such as in emulsions of a nematic material dispersed in an outer immiscible liquid phase.
+It is also possible to confine a nematic using both solid boundaries and fluid boundaries, such as in a sessile drop.
+In a sessile drop, the solid boundary provides a flat base for the NLC;\@ however, the remainder of the confinement is provided by the free surface, where the NLC is contact with air.
+In general, NLC in contact with an arbitrary boundary will be subject to degenerate tilt boundary conditions.
+Thus, for experiments that require a specific boundary condition we must treat the boundary.\\
+
+In order to discuss specific strategies for enforcing anchoring, we must first narrow down the compounds we are dealing with.
+NLC can be divided into two broad categories, thermotropics and lyotropics.
+Thermotropics phases are determined by their temperature.
+If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will crystallize.
+Lyotropic phases are sensitive to concentration as well as temperature.
+They are generally composed of a solid dispersed in a solvent such that the suspended solid is free to flow and orient as it chooses.
+In this Thesis, we will primarily use 4-Cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long.\@
+5CB belongs to the cyanobiphenyl family of NLC.
+The cyanobiphynyls are thermotropic materials characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group.
+In the case of 5CB, we can write the chemical formula as: CN(C$_6$H$_4$)(C$_6$H$_4$)C$_5$H$_{11}$.
+Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
+Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any pCB. \\
+
+To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, we deposit
+
+
+
+
+\subsection{Birefringence and optically polarized microscopy}
+Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
+This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
+For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$,
