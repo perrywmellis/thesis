@@ -218,22 +218,42 @@ While there have been attempts to solve the paradox by introducing higher-order 
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
 At the most basic level, a free-energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
-However, this is a many-body problem requiring us to know the position and orientation of each individual mesogen.
+Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0.
+However, a free-energy constructed upon the physical mesogens themselves is a many-body problem requiring us to know the position and orientation of each individual mesogen.
 Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume.
-This is a density functional theoretic approach and thus yields a nonlocal free energy like:
+This is a density functional theoretic approach and thus yields a nonlocal free energy similar to the general expression:
 \begin{equation}
-  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
+  \delta F = \int \textrm{d}\mathbf{r} \textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
 \end{equation}
-where $\mathbf{r}$ and $\mathbf{r}'$ are positions and $G(\mathbf{r},\mathbf{r}') = 0$ for $|\mathbf{r}-\mathbf{r}'| \gg 1$, reflecting the finite interaction range of the mesogens.
-However, since we are looking to derive the macroscopic $K_{ij}$ from the microscopic interactions, we must satisfy
+where $\mathbf{r}$ and $\mathbf{r}'$ are positions, and $G(\mathbf{r},\mathbf{r}') = 0$ for $|\mathbf{r}-\mathbf{r}'| \gg 1$, reflecting the finite interaction range of the mesogens.
+However, since we are looking to derive a local expression for the free-energy as a functional of director field, we must satisfy
 \begin{equation}
-  \delta F = \int \textrm{d}\mathbf{r}\textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}') = \int \textrm{d} \mathbf{R} \, f(\mathbf{R})
+  \delta F = \int \textrm{d}\mathbf{r} \textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}')
+  = \int \textrm{d} \mathbf{R} \, g(\mathbf{R}),\label{e:2-NonlocalLocal}
 \end{equation}
-Since there are an infinite number of possibilities to map $(\mathbf{r},\mathbf{r}') \rarrow \mathbf{R}$, we see that the $f(\mathbf{R})$ is not necessarily a unique functional of $\mathbf{n}$ unless two conditions are satisfied.
-First, this calculation needs to be done in the limit of long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon << 1)$ distortions to ensure that $\delta F$ is a unique function of $\mathbf{n}$.
-Second, any $K_{ij}$ that result cannot depend on the choice of mapping.
+where $g(\mathbf{R})$ is a local function of position, $\mathbf{R}$.
+Since there are an infinite number of possibilities to perform the nonlocal-to-local mapping $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$, any elastic constants in $f(\mathbf{R})$ cannot depend on the choice of mapping.
+In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{R},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
+Thus, we must also need to satisfy:
+\begin{equation}
+  \delta F[\mathbf{n}] = \int \textrm{d} \mathbf{R} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{R} \, g \big ( \rho(\mathbf{R},\mathbf{\omega}) \big),\label{e:2-LessInfo}
+\end{equation}
+where $\mathbf{n}$ is a function of $\mathbf{R}$.
+Since the director contains less information than the complete density function, in general there is not a unique mapping from  $\rho(\mathbf{R},\mathbf{\omega})$ to $\mathbf{n}(\mathbf{R})$.
+To get a unique mapping, we have to restrict the possible distortions to the weakest possible modes in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
+These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$.
+These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$. \\
+
+Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties.
+However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$.
+Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid.
+Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
+With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
+
 
 \subsection{Saddle-splay and curvature-coupling}
+
+
 
 \section{Landau-deGennes free energy}
 \subsection{The isotropic-nematic phase transition}
