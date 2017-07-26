@@ -246,13 +246,32 @@ These soft modes are the weakest modes possible and thus will define the leading
 
 Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties.
 However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$.
+The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained.
+Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
 Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid.
 Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
-With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
+With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}. \\
+
+Microscopic calulations show that the free-energy of a NLC is composed of terms quadratic in $\nabla \mathbf{n}$.
+Even though terms linear in $\nabla ^2 \mathbf{n}$ appear to contribute to the free-energy to the same order, microscopic calculations show that the coefficients associated to 2$^{nd}$ derivative distortions vanish, thus removing the problems that the 2$^{nd}$ derivatives distortions bring.
+In addition, since the free-energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free-energy expressions must be greater than or equal to 0.
 
 
 \subsection{Saddle-splay and curvature-coupling}
-
+If we take a look at the terms in the Frank-Oseen free-energy in Eq.~\ref{e:2-FrankFinalExpansion}, we can see a difference between the saddle-splay term and the splay, twist, and bend terms.
+Notice that since all the $K_{ij} \geq 0$, the energetic cost of splay, bend, and twist distortions are positive semi-definite.
+However, notice that the saddle-play distortion can be either positive or negative.
+In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Gauss's theorem:
+\begin{equation}
+  F_{24}[\mathbf{n}] = - \frac{1}{2}(K_{22} + K_{24})\int_{V} \textup{d}^3  \mathbf{R} \bigg \{   \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \} =
+  - \frac{1}{2}(K_{22} + K_{24}) \oint_{\partial V} \textup{d}^2  \mathbf{R} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},\label{e:2-F24Gauss}
+\end{equation}
+where $V$ is a volume and $\partial V$ is a piecewise-smooth manifold bounding $V$.
+Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$ such that the manifold needs to defect-free.
+However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude the defects.
+This means that any nontrivial saddle-splay distortion in a volume must affect $\mathbf{n}$ on $\partial V$.
+Due to this connection between the bulk distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term.
+However, we point out that $K_{22}$ and $K_{24}$ are real material constants that do not depend on the surface.
 
 
 \section{Landau-deGennes free energy}
