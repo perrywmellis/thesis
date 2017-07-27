@@ -265,22 +265,109 @@ If we take a look at the terms in the Frank-Oseen free-energy in Eq.~\ref{e:2-Fr
 Notice that since all the $K_{ij} \geq 0$, the energetic cost of splay, bend, and twist distortions are positive semi-definite.
 However, notice that the saddle-play distortion can be either positive or negative.
 In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Gauss's theorem:
+\refstepcounter{equation}\label{e:2-F24Gauss}
 \begin{align}
-  F_{24}[\mathbf{n}] &= - \frac{1}{2}(K_{22} + K_{24})\int_{V} \textup{d}^3  \mathbf{R} \bigg \{   \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \} \nonumber \\ &=
-  - \frac{1}{2}(K_{22} + K_{24}) \oint_{\partial V} \textup{d}^2  \mathbf{R} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},\label{e:2-F24Gauss}
+  F_{24}[\mathbf{n}] &= - \frac{1}{2}\int_{V} \textup{d}^3  \mathbf{R} \bigg \{ (K_{22} + K_{24})  \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \}\tag{\theequation a}  \\ &=
+  - \frac{1}{2}(K_{22} + K_{24}) \oint_{\partial V} \textup{d}^2  \mathbf{R} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},\tag{\theequation b}
 \end{align}
 where $V$ is a volume and $\partial V$ is a piecewise-smooth manifold bounding $V$.
-Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$ such that the manifold needs to defect-free.
+Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$, meaning that the manifold needs to defect-free.
 However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
-Therefore, Gauss's law can always be applied such that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
+Therefore, Gauss's law can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
 In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
-In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions. \\
+In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions.
+In these measurements, the bulk volume is always large enough such that any contribution from the position-dependence of $K_{ij}$ near the boundaries is negligible. \\
 
-Due to this connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term.
-However, we point out that $K_{22}$ and $K_{24}$ are real material constants that do not depend on the surface.
+Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term.
+Since any measurement of $K_{24}$ requires $\mathbf{n}$ to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
+However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like:
+\begin{equation}
+  F_{24}[\mathbf{n}] = - \frac{1}{2}(K_{22}(\mathbf{R}) + K_{24}(\mathbf{R}))_{\mathbf{R} \rightarrow \partial V} \oint_{\partial V} \textup{d}^2  \mathbf{R} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},
+\end{equation}
+this is incorrect as Stokes's theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24Gauss}a is no longer a total differential.
+In fact, measuring $K_{24}$ is in principle no different than measuring any of the $K_{ii}$ --- provided the volume of the bulk is much larger than the boundary layer, the influence of the position-dependence of $K_{ij}$ is negligible.
+To demonstrate this, we return to Eq.~\ref{e:2-F24Gauss}a and insert the position-dependence:
+\begin{equation}
+  F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3 \left \{\mathbf{R} (K_{22} (\mathbf{R}) + K_{24}(\mathbf{R})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \},\label{e:2-F24GaussPosition}
+\end{equation}
+Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{R}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$ and $K_*(\mathbf{R}) = K_{22} (\mathbf{R}) + K_{24}(\mathbf{R})$ yields:
+\begin{align}
+  \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} &=
+  \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{ \mathbf{k} \cdot (K_{*} (\partial V) \mathbf{A}(\partial V) \right \} -  \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{R}) \right \}  \\ &=
+  K_*(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} - \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{R}) \right \}, \label{e:2-pos_stokes1}
+\end{align}
+where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary.
+Now, if we separate $K_*(\mathbf{R}) = K_*^0 + K_*^s(\mathbf{R})$ into the bulk material constant $K_*^0$ and the position-dependent contribution $K_*^s(\mathbf{R})$, where $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$.
+Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
+\begin{align}
+  \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} &=
+  (K_*^0+K_*^s(\partial V)) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} \nonumber \\&
+  \quad \quad - \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{R}) \right \}. \label{e:2-pos_stokes2}
+\end{align}
+If we now expand $\mathbf{A}(\mathbf{R})$ and $\nabla K_*^s(\mathbf{R})$ over the boundary layer with $\mathbf{R} = \bm{\alpha} - \zeta \mathbf{k}$, where $\bm{\alpha}$ describes the boundary and $\zeta$ the distance from the boundary, we have:
+\begin{align}
+  \mathbf{A}(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{A}(\bm{\alpha}) - \zeta (\mathbf{k} \cdot \nabla \mathbf{A}(\bm{\alpha}))_{\zeta = 0} \label{e:2-expandA} \\
+  \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}))_{\zeta = 0} - \zeta\, \mathbf{k}(\mathbf{k} \cdot \nabla (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k})))_{\zeta = 0}
+\end{align}
+As $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$, we can approximate the leading order term in $\nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k})$ as:
+\begin{equation}
+  \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}))_{\zeta = 0} =
+  \begin{cases}
+    \mathbf{k}\frac{K_*^s(\bm{\alpha})}{d_l} & 0 \leq \zeta \leq d_l \\
+    0 & \textup{otherwise}
+  \end{cases}
+\end{equation}
+Thus, to leading order we can write the 2$^\textrm{nd}$ term in Eq.~\ref{e:2-pos_stokes2} as
+\begin{align}
+  \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{R}) \right \} & \approx
+  \int_{V} \textup{d}^3\mathbf{R} \left \{\mathbf{A}(\partial V) \cdot \mathbf{k}(\mathbf{k} \cdot \nabla K_*^s(\partial V))  + \mathcal{O}(\zeta) \right \} \\ & \approx
+  \mathbf{k} \cdot \nabla K_*^s(\partial V) \int_{V} \textup{d}^3\mathbf{R}\left \{\mathbf{A}(\partial V) \cdot \mathbf{k} + \mathcal{O}(\zeta) \right \} \\ & \approx
+  \frac{K_*^s(\partial V)}{d_l} \oint_{\partial V} \textup{d}^2\mathbf{R}\left \{\mathbf{A}(\partial V) \cdot \mathbf{k} \int\limits_{0}^{d_l} \textup{d}\zeta \left \{ 1 + \mathcal{O}(\zeta) \right \}\right \} \\ & \approx
+  K_*^s(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{R}\left \{ \mathbf{k}  \cdot \mathbf{A}(\partial V) \right \} + \mathcal{O}(d_l^2).
+\end{align}
+Substituting back into Eq.~\ref{e:2-pos_stokes2}, we have:
+\begin{equation}
+  \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} \approx
+  K_*^0 \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} + \mathcal{O}(d_l^2).\label{e:2-positionF24}
+\end{equation}
+Now that we again have a total differential, we can use Stokes's theorem and write saddle-splay free energy in Eq.~\ref{e:2-positionF24} as:
+\begin{equation}
+  F_{24} \approx -\frac{1}{2}(K_{22}^0 + K_{24}^0)
+  \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\mathbf{k} \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \} + \mathcal{O}(d_l^2). \label{e:2-positionF24_surf}
+\end{equation}
+Thus, even through the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free-energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.\\
+
+The saddle-splay distortion can also serve to couple the director to the curvature of the interface.
+Consider a nematic constrained to lie in the plane of the interface.
+Then, ignoring the corrections in Eq.~\ref{e:2-positionF24_surf}, we can write the free-energy of the saddle-splay distortion as:
+\begin{equation}
+  F_{24} = -\frac{1}{2}(K_{22} + K_{24})
+  \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) \right \},\label{e:2-K24PlanDegen}
+\end{equation}
+since $\mathbf{n} \cdot \mathbf{k} = 0$. Now re-arranging the integrand, we can take advantage of the fact that $\mathbf{n} \cdot \mathbf{n}=1$ and write:
+\begin{equation}
+  \mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) = -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}.\label{e:2-K24rearrange1}
+\end{equation}
+Since $\mathbf{k} \cdot \mathbf{n} = 0$, we can re-write the left-hand side (LHS) of Eq.~\ref{e:2-K24rearrange1} as:
+\begin{equation}
+  -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n} = \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} = -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
+\end{equation}
+where $\mathbf{L}$ is the Weingarten Matrix as defined in Eq.~[INTRO]\fxnote{ref Intro}.
+Note that because $\mathbf{n} \cdot \mathbf{k}=0$, we can re-write $\mathbf{n}$ in terms of an orthonormal basis defined on the surface like $\mathbf{n} = (\hat{e}_i \cdot \mathbf{n})\hat{e}_i$, where now $i = 1,2$ as we have restricted $\mathbf{n}$ to be on the 2D surface.
+This lets us write the saddle-splay free energy in terms of the principle curvatures $\kappa_1$ and $\kappa_2$ as:
+\begin{equation}
+  F_{24} = \frac{1}{2}(K_{22} + K_{24})
+  \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\kappa_1 n_1^2 + \kappa_2 n_2^2 \right \},\label{e:2-K24SurfCouple}
+\end{equation}
+where $n_1$ and $n_2$ are the components of the director along the $1^{st}$ and $2^{nd}$ principle curvatures, respectively.
+Thus, for $\mathbf{n}$ at an interface constrained to lie in the plane of  the interface, the free-energy of the saddle-splay distortion is minimized when $\mathbf{n}$ at the interface is aligned along most negative curvature.
+We emphasize that this curvature-coupling does not result from interactions between the NLC mesogens at the interface and the material outside of the nematic volume --- it comes from the interactions in the nematic volume itself.
+
+
 
 
 \section{Landau-deGennes free energy}
+The Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion} is not the only phenomenological free energy expression.
 \subsection{The isotropic-nematic phase transition}
 \subsection{The distortion free-energy}
 \subsection{The scaling of the Frank elastic constants}
