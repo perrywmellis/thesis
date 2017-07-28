@@ -369,9 +369,73 @@ We emphasize that this curvature-coupling does not result from interactions betw
 \section{Landau-deGennes free energy}
 The Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion} is not the only phenomenological free energy expression.
 In fact, if we wish to understand the nematic-isotropic phase transition, we need to write a phenomenological free energy that depends on $\mathbf{Q}$.
-This tensor approach free-energy was developed by Landau and de Gennes and can be used not only to understand the nematic-to-isotropic phase transition, but also can be used to calculate a distortion free-energy similar to the Frank-Oseen free energy.
+This tensor approach free-energy was developed by de Gennes in the spirit of a Landau-type theory.
+However, the $\mathbf{Q}$-based phenomenological free energy can can also be used to calculate a distortion free-energy by expanding in invariants of $\nabla \mathbf{Q}$, similar to the derivation of the Frank-Oseen free energy.
+
+
 \subsection{The isotropic-nematic phase transition}
+We consider a free-energy density built on an expansion in powers of $\mathbf{Q}(\mathbf{R})$.
+Crucially, the symmetry of a Landau-type free energy describing a phase transition needs to be the same as the higher-symmetry phase.
+Thus, to describe the isotropic-nematic phase transition we need the free energy to be rotation and translation invariant --- the expansion is not just in powers of $\mathbf{Q}$, but in terms of scalar invariants of powers of $\mathbf{Q}$.
+Given that we wish to predict the phase transition, the positional dependence of $\mathbf{Q}(\mathbf{R})$ is unnecessary, so we will instead consider a mean field approximation $\langle \mathbf{Q}(\mathbf{R}) \rangle = \bm{\mathcal{Q}}$, such that we can write $\bm{\mathcal{Q}}$ in 3D without loss of generality as:
+\begin{equation}
+  \bm{\mathcal{Q}} =
+    \begin{pmatrix}
+        -\frac{S}{3} & 0 & 0 \\
+        0 & -\frac{S}{3} & 0 \\
+        0 & 0 & \frac{2S}{3}
+    \end{pmatrix}.
+\end{equation}
+If we consider the trace and determinant of $\bm{\mathcal{Q}}^p$, where $p \in \mathbb{N}$, we see from Table~\ref{t:2-powersQ} that invariants of powers of $\bm{\mathcal{Q}}$ can be written in terms of powers of $S$.
+Therefore, we can write the Landau-de Gennes free energy for the phase transition in 3D in the form:
+\begin{equation}
+  f(\bm{\mathcal{Q}}) = f(S) = f_0 + \frac{1}{2}A S^2 + \frac{1}{3}B S^3 + \frac{1}{4}C S^4 + \mathcal{O} \left (S^5 \right ),\label{e:2-LdGTransGeneral}
+\end{equation}
+where $f(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f(S) = 0$.
+\begin{table}[t]
+  \centering
+  \caption{Scalar invariants of powers of $\bm{\mathcal{Q}}$ in 3D}
+  \label{t:2-powersQ}
+  \begin{tabular}{|l l|}
+    \hline
+    $\textup{Tr} \big \{ \bm{\mathcal{Q}} \big \} = 0$ & \\
+    $\textup{Tr} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^p,$ & $p = 2,3, \dots$ \\
+    $\textup{Det} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^{3p}$, & $p = 1,2,3,\dots$ \\
+    \hline
+  \end{tabular}
+\end{table}
+In principle, the coefficients $A$, $B$, and $C$ are temperature dependent.
+However, in practice, often only the coefficient associated with the lowest order term contains temperature dependence.
+Specifically, limiting the temperature dependence to only $A$ is also consistent with molecular theories of the nematic-isotroic phase transition.
+Thus, let $A = A_0(T-T_{NI})$, $B = B_0$, and $C = C_0$, allowing us to rewrite Eq.~\ref{e:2-LdGTransGeneral} as:
+\begin{equation}
+  f(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{3}B_0 S^3 + \frac{1}{4}C_0 S^4.\label{e:2-LdGTransFinal}
+\end{equation}
+We see that Eq.~\ref{e:2-LdGTransFinal} predicts a first-order phase transition provided $B_0 \neq  0$, as a nonvanishing $B_0$ means that at $T = T_{NI}$, the minima in $f(S)$ occur at $S = 0$ and $S = -\frac{B}{C}$, giving a discontinuity in $S$ across the transtion.
+Indeed, observations that state functions such as the density and $S$ are discontinuous through the nematic-isotropic transition confirm that the nematic-isotropic phase transition in 3D is first-order. \\
+
+
+Briefly, if we follow the same procedure for the nematic-isotropic phase transition in 2D, we can write $\bm{\mathcal{Q}}$ as:
+\begin{equation}
+  \bm{\mathcal{Q}} =
+  \begin{pmatrix}
+    S/2 & 0 \\
+    0 & -S/2
+  \end{pmatrix},
+\end{equation}
+such that $\textup{Tr} \big \{ \bm{\mathcal{Q}}^p \big \} = 0$ for $p = 1,3,5,\dots$.
+This implies that a Landau-type free-energy in 2D will look like:
+\begin{equation}
+  f(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{4}C_0 S^4.
+\end{equation}
+Now with the absence of a term proportional to $S^3$, the phase transition is predicted to be continuous, as $S$ can vary continuously from $S=0$ in the isotropic phase to $S \neq 0$ in the nematic phase as $T$ passes through $T_{NI}$.
+This can be seen by setting $T = T_{NI}$ and noticing that there is only one minimum in $f(S)$, and it occurs at $S=0$.
+Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in a truly 2D geometry.
+However, the nematic-isotropic phase transition has been explored heavily in simulations, and while the literature agree that the transition should be continuous, there is no clear consensus on the specific order of the transition.
+
+
 \subsection{The distortion free-energy}
+If we consider $\mathbf{Q}(\mathbf{R})$ instead of the mean-field approximation $\bm{\mathcal{Q}}$, we can write a distortion free-energy similar to the Frank-Oseen free energy. 
 \subsection{The scaling of the Frank elastic constants}
 
 
