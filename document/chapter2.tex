@@ -122,7 +122,7 @@ Defects in 2D and 3D with like-signed charge repel and defects with opposite-sig
 \section{Frank-Oseen free energy}
 Since the mesogens in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned monodomain with $\mathbf{n}$ a constant everywhere.
 Distortions from this uniform state cost energy.
-Since in most experiments the director distortions occur over much larger length scales than the molecular length --- $|\nabla \mathbf{n}| a << 1$, where $a$ is the molecular length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free-energy density that depends on $\mathbf{n}$ only.
+Since in most experiments the director distortions occur over much larger length scales than the molecular length --- $|\nabla \mathbf{n}| a \ll 1$, where $a$ is the molecular length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free-energy density that depends on $\mathbf{n}$ only.
 Here, we follow the work of F.C. Frank and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
 This is a phenomenological approach similar to Hooke's elasticity theory of a solid; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
 This is again a reflection that there is no restriction to the center-of-mass positions of the nematic mesogens, the nematic elasticity only opposes deformations in the orientations of the mesogens.
@@ -169,13 +169,13 @@ If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoord
   b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3}, \tag{\theequation c}
 \end{align}
 where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion,.
-Now if we use Eqs.~\ref{e:2-PhysicalDistorions}(a-c) to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
+Now if we use Eqs.~\ref{e:2-PhysicalDistortions}(a-c) to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (s_1 + s_2)^2 + \frac{1}{2}&K_{22} (t_1 + t_2)^2 + \frac{1}{2}K_{33} (b_1^2 + b_2^2) \nonumber \\
     & - (K_{22} + K_{24}) (s_1 s_2 + t_1 t_2).\label{e:2-FrankPhysicalExpansion}
 \end{align}
 Hence, we see that each term in the free-energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
-For example, consider a NLC with $K_{11} >> K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
+For example, consider a NLC with $K_{11} \gg K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
 Finally, we can move from the local frame and re-cast the $a_i$ in Eq.~\ref{e:2-FrankLocalExpansion} in terms of a single global coordinate system:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}&K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}K_{33} (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
@@ -389,9 +389,9 @@ Given that we wish to predict the phase transition, the positional dependence of
 If we consider the trace and determinant of $\bm{\mathcal{Q}}^p$, where $p \in \mathbb{N}$, we see from Table~\ref{t:2-powersQ} that invariants of powers of $\bm{\mathcal{Q}}$ can be written in terms of powers of $S$.
 Therefore, we can write the Landau-de Gennes free energy for the phase transition in 3D in the form:
 \begin{equation}
-  f(\bm{\mathcal{Q}}) = f(S) = f_0 + \frac{1}{2}A S^2 + \frac{1}{3}B S^3 + \frac{1}{4}C S^4 + \mathcal{O} \left (S^5 \right ),\label{e:2-LdGTransGeneral}
+  f_{phase}(\bm{\mathcal{Q}}) = f(S) = f_0 + \frac{1}{2}A S^2 + \frac{1}{3}B S^3 + \frac{1}{4}C S^4 + \mathcal{O} \left (S^5 \right ),\label{e:2-LdGTransGeneral}
 \end{equation}
-where $f(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f(S) = 0$.
+where $f_{phase}(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f_{phase}(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f_{phase}(S) = 0$.
 \begin{table}[t]
   \centering
   \caption{Scalar invariants of powers of $\bm{\mathcal{Q}}$ in 3D}
@@ -406,14 +406,13 @@ where $f(S) > 0$ implies the isotropic phase is stable against the nematic phase
 \end{table}
 In principle, the coefficients $A$, $B$, and $C$ are temperature dependent.
 However, in practice, often only the coefficient associated with the lowest order term contains temperature dependence.
-Specifically, limiting the temperature dependence to only $A$ is also consistent with molecular theories of the nematic-isotroic phase transition.
+Specifically, limiting the temperature dependence to only $A$ is also consistent with molecular theories of the nematic-isotropic phase transition.
 Thus, let $A = A_0(T-T_{NI})$, $B = B_0$, and $C = C_0$, allowing us to rewrite Eq.~\ref{e:2-LdGTransGeneral} as:
 \begin{equation}
-  f(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{3}B_0 S^3 + \frac{1}{4}C_0 S^4.\label{e:2-LdGTransFinal}
+  f_{phase}(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{3}B_0 S^3 + \frac{1}{4}C_0 S^4.\label{e:2-LdGTransFinal}
 \end{equation}
-We see that Eq.~\ref{e:2-LdGTransFinal} predicts a first-order phase transition provided $B_0 \neq  0$, as a nonvanishing $B_0$ means that at $T = T_{NI}$, the minima in $f(S)$ occur at $S = 0$ and $S = -\frac{B}{C}$, giving a discontinuity in $S$ across the transtion.
+We see that Eq.~\ref{e:2-LdGTransFinal} predicts a first-order phase transition provided $B_0 \neq  0$, as a nonvanishing $B_0$ means that at $T = T_{NI}$, the minima in $f_{phase}(S)$ occur at $S = 0$ and $S = -\frac{B}{C}$, giving a discontinuity in $S$ across the transtion.
 Indeed, observations that state functions such as the density and $S$ are discontinuous through the nematic-isotropic transition confirm that the nematic-isotropic phase transition in 3D is first-order. \\
-
 
 Briefly, if we follow the same procedure for the nematic-isotropic phase transition in 2D, we can write $\bm{\mathcal{Q}}$ as:
 \begin{equation}
@@ -426,16 +425,89 @@ Briefly, if we follow the same procedure for the nematic-isotropic phase transit
 such that $\textup{Tr} \big \{ \bm{\mathcal{Q}}^p \big \} = 0$ for $p = 1,3,5,\dots$.
 This implies that a Landau-type free-energy in 2D will look like:
 \begin{equation}
-  f(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{4}C_0 S^4.
+  f_{phase}(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{4}C_0 S^4.
 \end{equation}
 Now with the absence of a term proportional to $S^3$, the phase transition is predicted to be continuous, as $S$ can vary continuously from $S=0$ in the isotropic phase to $S \neq 0$ in the nematic phase as $T$ passes through $T_{NI}$.
-This can be seen by setting $T = T_{NI}$ and noticing that there is only one minimum in $f(S)$, and it occurs at $S=0$.
+This can be seen by setting $T = T_{NI}$ and noticing that there is only one minimum in $f_{phase}(S)$, and it occurs at $S=0$.
 Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in a truly 2D geometry.
-However, the nematic-isotropic phase transition has been explored heavily in simulations, and while the literature agree that the transition should be continuous, there is no clear consensus on the specific order of the transition.
+However, the nematic-isotropic phase transition in 2D has been explored heavily in simulations, and while the literature agree that the transition should be continuous, there is no clear consensus on the specific order of the transition.
 
 
 \subsection{The distortion free-energy}
-If we consider $\mathbf{Q}(\mathbf{R})$ instead of the mean-field approximation $\bm{\mathcal{Q}}$, we can write a distortion free-energy similar to the Frank-Oseen free energy. 
+If we consider $\mathbf{Q}(\mathbf{R})$ instead of the mean-field approximation $\bm{\mathcal{Q}}$, we can write a distortion free-energy similar to the Frank-Oseen free energy.
+Since a Landau-type free energy is an expansion near in the order parameter near the phase transition, in general is is only valid near the phase transition.
+However, in NLC $S(T_{NI}) \approx 0.3 \textup{ to } 0.4$, and $S(T > T_{NI}) \approx 0.6 \textup{ to } 0.8$, making the Landau-deGennes free energy valid ``deep'' into the nematic phase.
+There are 3 independent scalar invariants quadratic in $\nabla\mathbf{Q}$, allowing us to write the distortion free-energy density as:
+\begin{equation}
+  f_d(\mathbf{Q}) = \frac{1}{2} L_1 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k}
+    + \frac{1}{2} L_2 \frac{\partial Q_{ij}}{\partial x_j} \frac{\partial Q_{ik}}{\partial x_k}
+    + \frac{1}{2} L_3 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{kj}}{\partial x_i}\label{e:2-LdGDistGeneralQuadOrder}
+\end{equation}
+Note that the $L_i$ are constants that only depend on the interactions between the molecules and are temperature independent.
+The temperature-dependence of the Landau-deGennes distortion free energy is included in $\mathbf{Q}$ through $S$.
+Since the Frank-Oseen free energy does not include $S$, the $K_{ij}$ themselves must change with temperature such that the magnitude  of the free energy is temperature dependent.
+Thus, reconciling the Frank-Oseen free energy and the Landau-deGennes distortion free energy can yield insights into the temperature dependence of the $K_{ij}$.
+To do this, we start by substituting the definition of $\mathbf{Q}$ from Eq.~\ref{e:2-3DOrderDiag} into the terms of Eq.~\ref{e:2-LdGDistGeneralQuadOrder} and simplifying. Using the notation that
+    $A_1 = (\nabla \cdot \mathbf{n})^2$,
+    $A_2 = (\mathbf{n} \cdot \nabla \times \mathbf{n})^2$,
+    $A_3 = (\mathbf{n} \times \nabla \times \mathbf{n})^2$, and
+    $A_24 = \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$, we have the relations:
+\refstepcounter{equation}\label{e:2-LdGRelationsQuadOrder}
+\begin{align}
+  \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k} & =
+    2 S^2(A_1 + A_2 + A_3 -A_{24})\tag{\theequation a} \\
+  \frac{\partial Q_{ij}}{\partial x_j} \frac{\partial Q_{ik}}{\partial x_k} &=
+    S^2 (A_1 + A_3)\tag{\theequation b}\\
+  \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{kj}}{\partial x_i} &=
+    S^2 (A_1 + A_3 - A_{24})\tag{\theequation b}
+\end{align}
+Now we can re-write Eq.~\ref{e:2-LdGDistGeneralQuadOrder} using Eqs.~\ref{e:2-LdGRelationsQuadOrder}(a-d) and collect terms like:
+\begin{align}
+  f_d &= L_1 S^2 (A_1 + A_2 + A_3 -A_{24}) + \frac{1}{2}L_2 S^2 (A_1 + A_3) \nonumber\\
+  & \quad + \frac{1}{2}L_3 S^2 (A_1 + A_3 - A_{24}) \\
+      &= \frac{1}{2}A_1(2 L_1 S^2 + L_2 S^2 +L_3 S^2) + \frac{1}{2}A_2(2 L_1 S^2) \nonumber \\
+      & \quad + \frac{1}{2}A_3(2 L_1 S^2 + L_2 S^2 +L_3 S^2) \nonumber \\
+      & \quad - \frac{1}{2}A_{24}(2 L_1 S^2 + L_3 S^2),
+\end{align}
+allowing us to write the relations:
+\refstepcounter{equation}
+\begin{align}
+  K_{11} &= K_{33} = 2 L_1 S^2 + L_2 S^2 +L_3 S^2\tag{\theequation a}\\
+  K_{22} &= 2 L_1 S^2\tag{\theequation b}\\
+  K_{24} &= 2 L_1 S^2 + L_3 S^2.\tag{\theequation c}
+\end{align}
+Unfortunately, note that the Landau-deGennes distortion free energy to quadratic order requires $K_{11}$ and $K_{33}$.
+As $K_{11} \neq K_{33}$ generally, it is common to add a single higher-order invariant that contains both $\mathbf{Q}$ and $\nabla \mathbf{Q}$.
+While there are 6 possible invariants that could be added, the invariant
+\begin{equation}
+  Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j} = S^3 \left [\frac{2}{3}A_3 - \frac{1}{3}(A_1+A_2+A_3-A_24) \right ],
+\end{equation}
+yields the best agreement with experimental data and is thus the most commonly chosen invariant.
+We add this invariant to Eq.~\ref{e:2-LdGDistGeneralQuadOrder} to get:
+\begin{equation}
+  f_d(\mathbf{Q}) = \frac{1}{2} L_1 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k}
+    + \frac{1}{2} L_2 \frac{\partial Q_{ij}}{\partial x_j} \frac{\partial Q_{ik}}{\partial x_k}
+    + \frac{1}{2} L_3 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{kj}}{\partial x_i}
+    + \frac{1}{2} L_4 Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j},\label{e:2-LdGDistGeneralHighOrder}
+\end{equation}
+such that we can write the modified relations between the $K_{ij}$ and the $L_i$:
+\refstepcounter{equation}
+\begin{align}\label{e:2-LdGFrankRelations}
+  K_{11} &= 2 L_1 S^2 + L_2 S^2 +L_3 S^2 - \frac{2}{3}L_4 S^3\tag{\theequation a} \\
+  K_{22} &= 2 L_1 S^2 - \frac{2}{3}L_4 S^3\tag{\theequation b} \\
+  K_{33} &= 2 L_1 S^2 + L_2 S^2 +L_3 S^2 + \frac{4}{3}L_4 S^3\tag{\theequation c}\\
+  K_{24} &= 2 L_1 S^2 + L_3 S^2 - \frac{2}{3}L_4 S^3\tag{\theequation d}.
+\end{align}
+
+We briefly note that decoupling $S$ from the elastic constants $L_i$ in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
+Since $\mathbf{n}$ is undefined at a defect, simulating a direcotr field that contains defects requries one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
+In addition, it is not trivial to represent to represent a bivector field using rank-1 objects.
+In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
+In addition, since $\mathbf{Q}$ contains S, it can go to 0 at a defect such that no part of the simulation volume needs to be excluded.
+This makes the Landau-deGennes distortion free energy the preferred method for numerical simulations of nematic materials.
+However, due to its simplicity and the fact that the $K_{ij}$ are associated with distinct distortions that are easily visualized, the Frank-Oseen free energy is typically used in analytic theory.\\
+
+
 \subsection{The scaling of the Frank elastic constants}
 
 
