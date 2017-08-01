@@ -589,11 +589,35 @@ In addition, we note that even though 5CB exhibits degenerate planar anchoring a
 
 
 
-
-
-
-
 \subsection{Birefringence and optically polarized microscopy}
 Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
 This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
-For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$,
+For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$, and the index of refraction perpendicular to $\mathbf{n}$ is called the ``ordinary index of refraction'', denoted as $n_o$.
+The orientation of $n_E$ is known as the optic axis and in the case of a nematic material corresponds to $\mathbf{n}$.
+The birefringence is characterized by $\delta n = n_E-n_o$, the difference in the indices of refraction in the material.
+If $n_E > n_o$, $\delta n > 0$ and the material has positive birefringence.
+Conversely, if $\delta n < 0$, the material has negative birefringence.
+Thus, the index of refraction affecting a light ray incident upon a birefringent material will depend on the polarization of the light ray.
+While unpolarized light will be unaffected by the birefringent material, in general any ray of polarized light will have its polarization state affected by the light ray.
+Consider linearly polarized light incident upon a birefringent material with $n_E$ along $\hat{x}$ and $n_o$ along $\hat{y}$.
+If the incident light is polarized along $\hat{x}$ or $\hat{y}$, the light ray will see only either the extraordinary index of refraction of the ordinary index of refraction and will leave the sample with no change in its polarization state.
+However, now let the incident light have a wavelength $\lambda$ and be linearly polarized at $45^o$ such that the incident ray can be decomposed into one component along $\hat{x}$ and another along $\hat{y}$.
+Since each component will see a different index of refraction, they will propagate at different speeds, creating a phase difference between the two components of the incident ray.
+This phase difference is known as the retardation and in terms of multiples of $2 \pi$ by $\Gamma = \frac{2 \pi \delta n d}{\lambda}$, where $d$ is the thickness of the birefringent material.
+For our example of incident light linearly polarized at $45^o$, let $\delta n d = \lambda / 2$ such that $\Gamma =  pi$.
+The light after leaving the sample will now be polarized at $-45^o$, and the birefringent material has the properties of a half-waveplate.
+Similarly, if $\delta n d = \lambda$, $\Gamma =  2 pi$, the birefringent material is a full-waveplate and the output light will be unchanged.\\
+
+Optical polarized microscopy (OPM) takes advantage of birefringence and turns the change in polarization into changes in transmitted intensity.
+The typical setup adds a pair of linear polarizers into the light path of a standard wide-field optical microscope.
+A linear polarizer is an optical element that only passes light polarized along a specific axis known as the ``pass axis''.
+Thus, unpolarized light incident upon a linear polarizer will have its intensity reduced by half and the output light will be linearly polarized along the pass axis of the polarizer.
+Illustrating the light path for optical polarized microscopy, the incident light passes through the first linear polarizer, known as the ``polarizer'', through the sample, through the objective, and through the second linear polarizer, known as the ``analyzer'', before it is incident on the eyepiece or the camera used to capture the microscope image.
+If the polarizer and analyzer are ``crossed'', or oriented with their pass axes orthogonal to each other, any isotropic sample will be entirely dark.
+This is because the sample does not affect the polarization of the light such that the linearly polarized light from the polarizer cannot pass through the analyzer.
+However, if the sample is birefringent, the polarization state of the incident light is changed and some of the light will pass through the analyzer and be transmitted onto the eyepiece or camera.
+The intensity pattern in the image output from an OPM setup can then be used to deduce information about the sample.
+While for our purposes we typically care about the spatial variation of the optic axis, and thus the spatial variation in $\mathbf{n}$, OPM can also be used to determine the birefringence of the sample.
+For example, we consider 5CB confined to spherical nematic droplets.
+Under homotropic anchoring the droplet will have the classic ``radial'' director field while under degernate planar anchoring the droplet will have the classic ``bipolar'' configuration.
+These configurations can be distinguished by their OPM textures.
