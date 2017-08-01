@@ -451,7 +451,7 @@ To do this, we start by substituting the definition of $\mathbf{Q}$ from Eq.~\re
     $A_1 = (\nabla \cdot \mathbf{n})^2$,
     $A_2 = (\mathbf{n} \cdot \nabla \times \mathbf{n})^2$,
     $A_3 = (\mathbf{n} \times \nabla \times \mathbf{n})^2$, and
-    $A_24 = \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$, we have the relations:
+    $A_{24} = \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$, we have the relations:
 \refstepcounter{equation}\label{e:2-LdGRelationsQuadOrder}
 \begin{align}
   \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k} & =
@@ -463,11 +463,11 @@ To do this, we start by substituting the definition of $\mathbf{Q}$ from Eq.~\re
 \end{align}
 Now we can re-write Eq.~\ref{e:2-LdGDistGeneralQuadOrder} using Eqs.~\ref{e:2-LdGRelationsQuadOrder}(a-d) and collect terms like:
 \begin{align}
-  f_d &= L_1 S^2 (A_1 + A_2 + A_3 -A_{24}) + \frac{1}{2}L_2 S^2 (A_1 + A_3) \nonumber\\
-  & \quad + \frac{1}{2}L_3 S^2 (A_1 + A_3 - A_{24}) \\
+  f_d &= L_1 S^2 (A_1 + A_2 + A_3 -A_{24}) + \frac{1}{2}L_2 S^2 (A_1 + A_3) \nonumber \\
+  & \quad \quad + \frac{1}{2}L_3 S^2 (A_1 + A_3 - A_{24}) \\
       &= \frac{1}{2}A_1(2 L_1 S^2 + L_2 S^2 +L_3 S^2) + \frac{1}{2}A_2(2 L_1 S^2) \nonumber \\
-      & \quad + \frac{1}{2}A_3(2 L_1 S^2 + L_2 S^2 +L_3 S^2) \nonumber \\
-      & \quad - \frac{1}{2}A_{24}(2 L_1 S^2 + L_3 S^2),
+      & \quad \quad + \frac{1}{2}A_3(2 L_1 S^2 + L_2 S^2 +L_3 S^2) \nonumber \\
+      & \quad \quad - \frac{1}{2}A_{24}(2 L_1 S^2 + L_3 S^2),
 \end{align}
 allowing us to write the relations:
 \refstepcounter{equation}
@@ -480,7 +480,7 @@ Unfortunately, note that the Landau-deGennes distortion free energy to quadratic
 As $K_{11} \neq K_{33}$ generally, it is common to add a single higher-order invariant that contains both $\mathbf{Q}$ and $\nabla \mathbf{Q}$.
 While there are 6 possible invariants that could be added, the invariant
 \begin{equation}
-  Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j} = S^3 \left [\frac{2}{3}A_3 - \frac{1}{3}(A_1+A_2+A_3-A_24) \right ],
+  Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j} = S^3 \left [\frac{2}{3}A_3 - \frac{1}{3}(A_1+A_2+A_3-A_{24}) \right ],
 \end{equation}
 yields the best agreement with experimental data and is thus the most commonly chosen invariant.
 We add this invariant to Eq.~\ref{e:2-LdGDistGeneralQuadOrder} to get:
@@ -499,16 +499,31 @@ such that we can write the modified relations between the $K_{ij}$ and the $L_i$
   K_{24} &= 2 L_1 S^2 + L_3 S^2 - \frac{2}{3}L_4 S^3\tag{\theequation d}.
 \end{align}
 
+
+Similar to the approach of Nehring and Saupe with the Frank-Oseen free energy, we can also consider the role of terms linear in $2^{nd}$ derivatives of $\mathbf{Q}$.
+The $2^{nd}$ derivative terms predict that both $K_{13}$ and $K_{24}$ could depend linearly on $S$.
+However, once $K_{13}$ is required to be zero, all the contributions from the $2^{nd}$ derivative terms vanish.\\
+
+
 We briefly note that decoupling $S$ from the elastic constants $L_i$ in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
-Since $\mathbf{n}$ is undefined at a defect, simulating a direcotr field that contains defects requries one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
+Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
 In addition, it is not trivial to represent to represent a bivector field using rank-1 objects.
 In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
 In addition, since $\mathbf{Q}$ contains S, it can go to 0 at a defect such that no part of the simulation volume needs to be excluded.
 This makes the Landau-deGennes distortion free energy the preferred method for numerical simulations of nematic materials.
+It is worth noting that a majority of the simulation works ignore the role of $K_{24}$ when making a mapping of $L_i$ to the Frank-Oseen elastic constants.
+Thus, since $L_1$ and $L_3$ differ only by the saddle-splay distortion, $L_3$ is typically folded into $L_1$ and the Landau-deGennes free energy is written only in terms of $L_1$, $L_2$, and $L_4$.
 However, due to its simplicity and the fact that the $K_{ij}$ are associated with distinct distortions that are easily visualized, the Frank-Oseen free energy is typically used in analytic theory.\\
 
 
 \subsection{The scaling of the Frank elastic constants}
+From the relations in Eqs.~\ref{e:2-LdGFrankRelations}(a-d), we see that to leading order the Frank-Oseen elastic constants scale with $S^2$.
+In fact, the $S^3$ scaling comes entirely from the single higher-order term.
+Since $S$ is a monotomic function of $T$, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
+However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S_{T > T_{NI}} \approx S(T_{NI})$, the temperature scaling predicted by the Landau-deGennes free energy can still be used throughout the nematic phase.
+In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelations}(a-c) to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range.
+Since all the $K_{ii}$ generally scale the same with $S$, it is common to treat their ratio as temperature-independent.
+Practically this means that the equilibrium director configuration in a sample is also temperature-independent, even if the acutal magnitude of the Frank-Oseen free energy does vary with temperature.
 
 
 
@@ -544,7 +559,21 @@ In the case of 5CB, we can write the chemical formula as: CN(C$_6$H$_4$)(C$_6$H$
 Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
 Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any pCB. \\
 
-To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, we deposit
+To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, it is common to either deposit surfactant molecules or bond silanes to the surface.
+In both cases, the smooth surface becomes decorated with long chains that stick up normal to the surface.
+These nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface.
+For example, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
+When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass.\\
+
+Similarly, it is common to enforce homeotropic anchoring in solution again using surfactants.
+Here, for an oily NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface.
+For example, we use Sodium Dodecyl Sulfate (SDS) in water to enforce homeotropic anchoring in 5CB emulsions and liquid bridges.
+While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring.
+At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength.
+This concentrations is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules. \\
+
+
+
 
 
 
