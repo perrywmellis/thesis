@@ -505,7 +505,7 @@ The $2^{nd}$ derivative terms predict that both $K_{13}$ and $K_{24}$ could depe
 However, once $K_{13}$ is required to be zero, all the contributions from the $2^{nd}$ derivative terms vanish.\\
 
 
-We briefly note that decoupling $S$ from the elastic constants $L_i$ in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
+We briefly note that decoupling $S$ from the elastic constants in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
 Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
 In addition, it is not trivial to represent to represent a bivector field using rank-1 objects.
 In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
@@ -523,7 +523,7 @@ Since $S$ is a monotomic function of $T$, the $S$-dependence of $K_{ij}$ also re
 However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S_{T > T_{NI}} \approx S(T_{NI})$, the temperature scaling predicted by the Landau-deGennes free energy can still be used throughout the nematic phase.
 In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelations}(a-c) to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range.
 Since all the $K_{ii}$ generally scale the same with $S$, it is common to treat their ratio as temperature-independent.
-Practically this means that the equilibrium director configuration in a sample is also temperature-independent, even if the acutal magnitude of the Frank-Oseen free energy does vary with temperature.
+Practically this means that the equilibrium director configuration in a sample is also temperature-independent, even if the actual magnitude of the Frank-Oseen free energy does vary with temperature.
 
 
 
@@ -548,7 +548,7 @@ Thus, for experiments that require a specific boundary condition we must treat t
 
 In order to discuss specific strategies for enforcing anchoring, we must first narrow down the compounds we are dealing with.
 NLC can be divided into two broad categories, thermotropics and lyotropics.
-Thermotropics phases are determined by their temperature.
+Thermotropic phases are determined only by their temperature.
 If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will crystallize.
 Lyotropic phases are sensitive to concentration as well as temperature.
 They are generally composed of a solid dispersed in a solvent such that the suspended solid is free to flow and orient as it chooses.
@@ -562,7 +562,7 @@ Since the different cyanobiphenyls generally only differ in the number of Carbon
 To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, it is common to either deposit surfactant molecules or bond silanes to the surface.
 In both cases, the smooth surface becomes decorated with long chains that stick up normal to the surface.
 These nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface.
-For example, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
+For example, to enforce homeotropic anchoring for 5CB on glass, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
 When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass.\\
 
 Similarly, it is common to enforce homeotropic anchoring in solution again using surfactants.
@@ -570,7 +570,22 @@ Here, for an oily NLC dispersed in an aqueous phase, the polar head of the surfa
 For example, we use Sodium Dodecyl Sulfate (SDS) in water to enforce homeotropic anchoring in 5CB emulsions and liquid bridges.
 While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring.
 At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength.
-This concentrations is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules. \\
+This concentration is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules. \\
+
+While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring, in general the anchoring will be degenerate and tilted.
+Thus, surface is often coated with a polymer such that the polymer orientationson the surface are random.
+For example, spin-coating poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB.
+If a preferred anchoring direction in the plane is desired, the polymer coating can be rubbed in the desired direction, creating ``grooves'' in the polymer coating along the rubbing direction.
+The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring.
+Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle.
+Thus, when designing planar-aligned liquid crystalline cells, where the NLC is confined between two parallel plates with planar anchoring, the rubbing direction on the plates will be anti-parallel.
+The anti-parallel rubbing aligns the tilt angles at the plates such that the NLC can still form a homogeneously-aligned domain between the plates. \\
+
+For dispersions of oily NLC such as 5CB in a continuous aqueous phase, we add a polymer like PEO or PVA to the aqueous phase.
+The polymer adsorbs to the interface between the NLC and the continuous phase, giving degenerate planar anchoring.
+We know of no easy way to break the planar degeneracy in the anchoring when dealing with a liquid-liquid interface.
+In addition, we note that even though 5CB exhibits degenerate planar anchoring at the interface with pure water, the addition of a polymer strengthens the anchoring as well as acting to stabilize the emulsion when 5Cb is dispersed in H$_2$O. \\
+
 
 
 
