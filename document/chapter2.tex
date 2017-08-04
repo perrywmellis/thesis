@@ -4,7 +4,7 @@
 \section{Local order and defects}
 Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotation symmetry of a collection of either rod-like or plate-like particles~\cite{RN33}.
 In both cases, the shape is anisotropic and characterized by one lengthscale that is different from the other two.
-As either the concentration of the particles is increased\fxnote{ref Onsager} or the temperature of the system is decreased\fxnote{see Darmon's thesis for refs. Friedel?}, the system breaks two continuous rotational symmetries and develops order.
+As either the concentration of the particles is increased~\cite{RN204} or the temperature of the system is decreased\cite{RN202}, the system breaks two continuous rotational symmetries and develops order.
 The order is characterized by a preferred direction, where rod-like particles prefer to have their long axis aligned parallel to each other and plate-like particles prefer to have their short axis parallel to each other~\cite{RN33,RN175}.
 Thus, the system still possesses continuous rotational symmetry about the preferred alignment direction as well as continuous translation symmetry in  all directions.
 This can be seen in the collection of rod-like particles drawn schematically in Figure~\ref{f:2-NematicSym}.
@@ -212,7 +212,7 @@ Finally, we can move from the local frame and re-cast the $a_i$ in Eq.~\ref{e:2-
 arriving at the well-known expression for the Frank-Oseen Free Energy~\cite{RN61}.\\
 
 Note that while Frank pioneered the phenomenological approach for a liquid crystalline free-energy, his was not the first attempt to construct a free-energy for liquid crytals.
-Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules~\fxnote{REf Oseen}.
+Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules~\cite{RN205}.
 While Oseen's final expression for a nematic misses some of the terms in Eq.~\ref{e:2-FrankFinalExpansion}, it is close enough that Eq.~\ref{e:2-FrankFinalExpansion} carries the names of both Frank and Oseen.
 
 
@@ -220,7 +220,7 @@ While Oseen's final expression for a nematic misses some of the terms in Eq.~\re
 We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^\textup{st}$ derivatives of $\mathbf{n}$.
 Due to the symmetry of the nematic, all of the terms linear in $\nabla \mathbf{n}$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
 However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^\textup{nd}$ derivatives of $\mathbf{n}$ as they can contribute to the Frank-Oseen free energy at order $\mathcal{O}(x^2)$ as well~\cite{RN60}.
-In fact, Oseen's original free-energy expression also included terms depending on 2$^\textup{nd}$ derivatives of $\mathbf{n}$ that Frank neglected~\fxnote{Ref Oseen}.
+In fact, Oseen's original free-energy expression also included terms depending on 2$^\textup{nd}$ derivatives of $\mathbf{n}$ that Frank neglected~\cite{RN205}.
 Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
 \begin{equation}
   f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
@@ -236,20 +236,20 @@ where we see that the elastic constants associated with splay and bend are renor
 
 Since Eqs~\ref{e:2-FrankFinalExpansion} and~\ref{e:2-NSFinalExpansion} are phenomenological expressions, renormalizing the splay and bend elastic constants doesn't affect underlying physics.
 This leaves the addition of the splay-bend term as the most significant effect of considering 2$^\textup{nd}$ derivatives of $\mathbf{n}$.
-The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize~\fxnote{Oldano Barbero refs}.
-This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$~\fxnote{analysis of ob}.
+The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize~\cite{RN214,RN215,RN216}.
+This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$~\cite{RN216,RN220,RN219,RN221}.
 These excess boundary conditions mean that the 2$^\textup{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
-Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$~\fxnote{analysis of ob}.
-While there have been attempts to solve the paradox by introducing higher-order terms~\fxnote{one solution}, or constraining the normal derivatives in the splay-bend term~\fxnote{other solution}, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''~\fxnote{papers neglecting K13}.
+Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$~\cite{RN219}.
+While there have been attempts to solve the paradox by introducing higher-order terms~\cite{RN220}, or constraining the normal derivatives in the splay-bend term~\cite{RN221}, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''~\fxnote{papers neglecting K13}.
 
 \subsection{Insights from microscopic calculations}
-There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55}\fxnote{add Oseen, Sluckin, Pergmenachik, etc.}.
+There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
 At the most basic level, a free-energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
-Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\fxnote{Oseen here}.
+Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.
 However, a free-energy constructed upon the physical mesogens themselves is a many-body problem requiring us to know the position and orientation of each individual mesogen.
-Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume~\cite{RN55}\fxnote{DFT and Oseen}.
-This is a density functional theoretic approach and thus yields a nonlocal free energy similar to the general expression:
+Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume~\cite{RN222}.
+This is a density functional theoretic approach~\cite{RN223} and thus yields a nonlocal free energy similar to the general expression~\cite{RN56,RN55}:
 \begin{equation}
   \delta F = \int \textrm{d}\mathbf{r} \textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
 \end{equation}
@@ -269,14 +269,14 @@ Thus, we must also need to satisfy:
 where $\mathbf{n}$ is a function of $\mathbf{R}$.
 Since the director contains less information than the complete density function, in general there is not a unique mapping from  $\rho(\mathbf{R},\mathbf{\omega})$ to $\mathbf{n}(\mathbf{R})$~\cite{RN55}.
 To get a unique mapping, we have to restrict the possible distortions to the weakest possible modes in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
-These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175}\fxnote{Nambu and Goldstone}.
+These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175,RN226,RN227,RN228}.
 These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$~\cite{RN55}. \\
 
-Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties~\cite{RN55}\fxnote{See yokoyama's sources}.
-However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$~\cite{RN55}.
+Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties~\cite{RN55,RN56,RN225,RN224,RN217,RN222}.
+However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$~\cite{RN55,RN225}.
 The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
 Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
-Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid~\fxnote{Sluckin, Perg from Yoko's sources}.
+Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations~\cite{RN224,RN217,RN222} have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid.
 Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
 With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 Microscopic calculations also show that close to a boundary, $K_{ij}$ in general become position dependent as the molecules near to the boundary now interact with whatever material is outside of the nematic volume~\cite{RN56,RN57,RN55}.
@@ -292,7 +292,7 @@ In addition, since the free-energy is constructed using a positive-definite pair
 If we take a look at the terms in the Frank-Oseen free-energy in Eq.~\ref{e:2-FrankFinalExpansion}, we can see a difference between the saddle-splay term and the splay, twist, and bend terms.
 Notice that since all the $K_{ij} \geq 0$, the energetic cost of splay, bend, and twist distortions are positive semi-definite.
 However, notice that the saddle-splay distortion can be either positive or negative.
-In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Stokes's theorem~\fxnote{Goldbart}:
+In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Stokes's theorem~\cite{RN230}:
 \refstepcounter{equation}\label{e:2-F24Gauss}
 \begin{align}
   F_{24}[\mathbf{n}] &= - \frac{1}{2}\int_{V} \textup{d}^3  \mathbf{R} \bigg \{ (K_{22} + K_{24})  \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \}\tag{\theequation a}  \\ &=
@@ -303,10 +303,10 @@ Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$, meani
 However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
 Therefore, Gauss's law can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
 In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
-In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions~\cite{RN33,RN188,RN182,RN183}\fxnote{include Freederickz}.
+In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions~\cite{RN212,RN213,RN33,RN188,RN182,RN183}.
 In these measurements, the bulk volume is always large enough such that any contribution from the position-dependence of $K_{ij}$ near the boundaries is negligible. \\
 
-Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term~\cite{RN33,RN194,RN58,RN57}\fxnote{more through time.. maybe d.sec?, rafnik,steb}.
+Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term~\cite{RN206,RN33,RN194,RN58,RN57,RN151}.
 Since any measurement of $K_{24}$ requires $\mathbf{n}$ to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
 However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like:
 \begin{equation}
