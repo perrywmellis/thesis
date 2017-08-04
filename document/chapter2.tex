@@ -79,7 +79,7 @@ This yields:
 where $S = 2 \langle \cos^2 \theta^{\alpha} \rangle_{\alpha} - 1$ is often called the scalar order parameter and denotes how well-aligned the system is~\cite{RN33}.
 For example, if every rod was aligned along $\hat{e}_1'$ such that $\mathbf{u}^{\alpha} = \hat{e}'_1$, $S = 1$.
 Similarly, if we again check the isotropic limit of a random collection of rods, we see that $S = 0$, as desired.
-Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in panel (A)}, and $0 < S(\textup{panel }B) < S(\textup{panel }C) < 1$.
+Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in panel (A), and $0 < S(\textup{panel }B) < S(\textup{panel }C) < 1$.
 Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the director corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter~\cite{RN33,RN175}.
 In terms of the director, we can now write the diagonalized $\mathbf{Q}$ in 2D as:
 \begin{equation}
@@ -217,10 +217,10 @@ While Oseen's final expression for a nematic misses some of the terms in Eq.~\re
 
 
 \subsection{Nehring, Saupe, and second derivatives}
-We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^{st}$ derivatives of $\mathbf{n}$.
+We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^\textup{st}$ derivatives of $\mathbf{n}$.
 Due to the symmetry of the nematic, all of the terms linear in $\nabla \mathbf{n}$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
-However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^{nd}$ derivatives of $\mathbf{n}$ as they can contribute to order $\mathcal{O}(x^2)$ as well.
-In fact, Oseen's original free-energy expression also included terms depending on 2$^{nd}$ derivatives of $\mathbf{n}$ that Frank neglected.
+However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^\textup{nd}$ derivatives of $\mathbf{n}$ as they can contribute to the Frank-Oseen free energy at order $\mathcal{O}(x^2)$ as well~\cite{RN60}.
+In fact, Oseen's original free-energy expression also included terms depending on 2$^\textup{nd}$ derivatives of $\mathbf{n}$ that Frank neglected~\fxnote{Ref Oseen}.
 Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
 \begin{equation}
   f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
@@ -232,23 +232,23 @@ Again using the symmetries of a nematic, collecting terms, and transforming into
     & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})
       + K'_{13} \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n}),\label{e:2-NSFinalExpansion}
 \end{align}
-where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared. \\
+where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared~\cite{RN60}. \\
 
 Since Eqs~\ref{e:2-FrankFinalExpansion} and~\ref{e:2-NSFinalExpansion} are phenomenological expressions, renormalizing the splay and bend elastic constants doesn't affect underlying physics.
-This leaves the addition of the splay-bend term as the most significant effect of considering 2$^{nd}$ derivatives of $\mathbf{n}$.
-The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize.
-This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$.
-These excess boundary conditions mean that the 2$^{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
-Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$.
-While there have been attempts to solve the paradox by introducing higher-order terms, or constraining the normal derivatives in the splay-bend term, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''.
+This leaves the addition of the splay-bend term as the most significant effect of considering 2$^\textup{nd}$ derivatives of $\mathbf{n}$.
+The splay-bend term itself is subject to controversy as its inclusion to the free-energy makes the free-energy impossible to minimize~\fxnote{Oldano Barbero refs}.
+This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$~\fxnote{analysis of ob}.
+These excess boundary conditions mean that the 2$^\textup{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
+Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$~\fxnote{analysis of ob}.
+While there have been attempts to solve the paradox by introducing higher-order terms~\fxnote{one solution}, or constraining the normal derivatives in the splay-bend term~\fxnote{other solution}, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''~\fxnote{papers neglecting K13}.
 
 \subsection{Insights from microscopic calculations}
-There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase.
+There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55}\fxnote{add Oseen, Sluckin, Pergmenachik, etc.}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
 At the most basic level, a free-energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
-Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0.
+Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\fxnote{Oseen here}.
 However, a free-energy constructed upon the physical mesogens themselves is a many-body problem requiring us to know the position and orientation of each individual mesogen.
-Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume.
+Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible points in the volume~\cite{RN55}\fxnote{DFT and Oseen}.
 This is a density functional theoretic approach and thus yields a nonlocal free energy similar to the general expression:
 \begin{equation}
   \delta F = \int \textrm{d}\mathbf{r} \textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}'),
@@ -260,39 +260,39 @@ However, since we are looking to derive a local expression for the free-energy a
   = \int \textrm{d} \mathbf{R} \, g(\mathbf{R}),\label{e:2-NonlocalLocal}
 \end{equation}
 where $g(\mathbf{R})$ is a local function of position, $\mathbf{R}$.
-Since there are an infinite number of possibilities to perform the nonlocal-to-local mapping $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$, any elastic constants in $f(\mathbf{R})$ cannot depend on the choice of mapping.
+Since there are an infinite number of possibilities to perform the nonlocal-to-local mapping $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$, any elastic constants in $f(\mathbf{R})$ cannot depend on the choice of mapping~\cite{RN55}.
 In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{R},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
 Thus, we must also need to satisfy:
 \begin{equation}
   \delta F[\mathbf{n}] = \int \textrm{d} \mathbf{R} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{R} \, g \big ( \rho(\mathbf{R},\mathbf{\omega}) \big),\label{e:2-LessInfo}
 \end{equation}
 where $\mathbf{n}$ is a function of $\mathbf{R}$.
-Since the director contains less information than the complete density function, in general there is not a unique mapping from  $\rho(\mathbf{R},\mathbf{\omega})$ to $\mathbf{n}(\mathbf{R})$.
+Since the director contains less information than the complete density function, in general there is not a unique mapping from  $\rho(\mathbf{R},\mathbf{\omega})$ to $\mathbf{n}(\mathbf{R})$~\cite{RN55}.
 To get a unique mapping, we have to restrict the possible distortions to the weakest possible modes in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
-These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$.
-These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$. \\
+These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175}\fxnote{Nambu and Goldstone}.
+These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$~\cite{RN55}. \\
 
-Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties.
-However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$.
-The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained.
+Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties~\cite{RN55}\fxnote{See yokoyama's sources}.
+However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$~\cite{RN55}.
+The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
 Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
-Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid.
+Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{R}$ mapping, rendering their $K'_{13}$ values invalid~\fxnote{Sluckin, Perg from Yoko's sources}.
 Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
 With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
-Microscopic calculations also show that close to a boundary, $K_{ij}$ in general become position dependent as the molecules near to the boundary now interact with whatever material is outside of the nematic volume.
+Microscopic calculations also show that close to a boundary, $K_{ij}$ in general become position dependent as the molecules near to the boundary now interact with whatever material is outside of the nematic volume~\cite{RN56,RN57,RN55}.
 However, this interaction limited by the range of the intermolecular potential, such that the position dependence of the $K_{ij}$ vanishes over a small boundary layer --- beyond this layer the $K_{ij}$ return to their bulk values that depend only on the specific nematic material.\\
 
 
 In summary, microscopic calulations show that the free-energy of a NLC is composed of terms quadratic in $\nabla \mathbf{n}$.
-Even though terms linear in $\nabla ^2 \mathbf{n}$ could in principle contribute to the free-energy to the same order as terms quadratic in the 1$^{st}$ derivatives, microscopic calculations show that the coefficients associated to 2$^{nd}$ derivative distortions vanish, thus removing the problems that the 2$^{nd}$ derivatives distortions bring
+Even though terms linear in $\nabla ^2 \mathbf{n}$ could in principle contribute to the free-energy to the same order as terms quadratic in the 1$^\textup{st}$ derivatives, microscopic calculations show that the coefficients associated to 2$^\textup{nd}$ derivative distortions vanish, thus removing the problems that the 2$^\textup{nd}$ derivatives distortions bring.
 In addition, since the free-energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free-energy expressions must be greater than or equal to 0.
 
 
 \subsection{Saddle-splay and curvature-coupling}
 If we take a look at the terms in the Frank-Oseen free-energy in Eq.~\ref{e:2-FrankFinalExpansion}, we can see a difference between the saddle-splay term and the splay, twist, and bend terms.
 Notice that since all the $K_{ij} \geq 0$, the energetic cost of splay, bend, and twist distortions are positive semi-definite.
-However, notice that the saddle-play distortion can be either positive or negative.
-In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Gauss's theorem:
+However, notice that the saddle-splay distortion can be either positive or negative.
+In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using Stokes's theorem~\fxnote{Goldbart}:
 \refstepcounter{equation}\label{e:2-F24Gauss}
 \begin{align}
   F_{24}[\mathbf{n}] &= - \frac{1}{2}\int_{V} \textup{d}^3  \mathbf{R} \bigg \{ (K_{22} + K_{24})  \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \}\tag{\theequation a}  \\ &=
@@ -303,10 +303,10 @@ Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$, meani
 However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
 Therefore, Gauss's law can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
 In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
-In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions.
+In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions~\cite{RN33,RN188,RN182,RN183}\fxnote{include Freederickz}.
 In these measurements, the bulk volume is always large enough such that any contribution from the position-dependence of $K_{ij}$ near the boundaries is negligible. \\
 
-Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term.
+Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term~\cite{RN33,RN194,RN58,RN57}\fxnote{more through time.. maybe d.sec?, rafnik,steb}.
 Since any measurement of $K_{24}$ requires $\mathbf{n}$ to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
 However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like:
 \begin{equation}
@@ -324,12 +324,12 @@ Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{R})
   \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{ \mathbf{k} \cdot (K_{*} (\partial V) \mathbf{A}(\partial V) \right \} -  \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{R}) \right \}  \\ &=
   K_*(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} - \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{R}) \right \}, \label{e:2-pos_stokes1}
 \end{align}
-where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary.
-Now, if we separate $K_*(\mathbf{R}) = K_*^0 + K_*^s(\mathbf{R})$ into the bulk material constant $K_*^0$ and the position-dependent contribution $K_*^s(\mathbf{R})$, where $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$.
+where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary~\cite{RN55}.
+Now, if we separate $K_*(\mathbf{R}) = K_* + K_*^s(\mathbf{R})$ into the bulk material constant $K_*$ and the position-dependent contribution $K_*^s(\mathbf{R})$, where $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$.
 Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
 \begin{align}
   \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} &=
-  (K_*^0+K_*^s(\partial V)) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} \nonumber \\&
+  (K_*+K_*^s(\partial V)) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} \nonumber \\&
   \quad \quad - \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{R}) \right \}. \label{e:2-pos_stokes2}
 \end{align}
 If we now expand $\mathbf{A}(\mathbf{R})$ and $\nabla K_*^s(\mathbf{R})$ over the boundary layer with $\mathbf{R} = \bm{\alpha} - \zeta \mathbf{k}$, where $\bm{\alpha}$ describes the boundary and $\zeta$ the distance from the boundary, we have:
@@ -356,18 +356,18 @@ Thus, to leading order we can write the 2$^\textrm{nd}$ term in Eq.~\ref{e:2-pos
 Substituting back into Eq.~\ref{e:2-pos_stokes2}, we have:
 \begin{equation}
   \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} \approx
-  K_*^0 \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} + \mathcal{O}(d_l^2).\label{e:2-positionF24}
+  K_* \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} + \mathcal{O}(d_l^2).\label{e:2-positionF24}
 \end{equation}
 Now that we again have a total differential, we can use Stokes's theorem and write saddle-splay free energy in Eq.~\ref{e:2-positionF24} as:
 \begin{equation}
-  F_{24} \approx -\frac{1}{2}(K_{22}^0 + K_{24}^0)
+  F_{24} \approx -\frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\mathbf{k} \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \} + \mathcal{O}(d_l^2). \label{e:2-positionF24_surf}
 \end{equation}
 Thus, even through the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free-energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.\\
 
 The saddle-splay distortion can also serve to couple the director to the curvature of the interface.
 Consider a nematic constrained to lie in the plane of the interface.
-Then, ignoring the corrections in Eq.~\ref{e:2-positionF24_surf}, we can write the free-energy of the saddle-splay distortion as:
+Then, ignoring the corrections in Eq.~\ref{e:2-positionF24_surf} for simplicity, we can write the free-energy of the saddle-splay distortion as:
 \begin{equation}
   F_{24} = -\frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) \right \},\label{e:2-K24PlanDegen}
@@ -380,9 +380,9 @@ Since $\mathbf{k} \cdot \mathbf{n} = 0$, we can re-write the left-hand side (LHS
 \begin{equation}
   -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n} = \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} = -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
 \end{equation}
-where $\mathbf{L}$ is the Weingarten Matrix as defined in Eq.~[INTRO]\fxnote{ref Intro}.
+where $\mathbf{L}$ is the Weingarten Matrix as defined in Eq.~[INTRO]~\cite{RN23,RN35}\fxnote{ref Intro}.
 Note that because $\mathbf{n} \cdot \mathbf{k}=0$, we can re-write $\mathbf{n}$ in terms of an orthonormal basis defined on the surface like $\mathbf{n} = (\hat{e}_i \cdot \mathbf{n})\hat{e}_i$, where now $i = 1,2$ as we have restricted $\mathbf{n}$ to be on the 2D surface.
-This lets us write the saddle-splay free energy in terms of the principle curvatures $\kappa_1$ and $\kappa_2$ as:
+This lets us write the saddle-splay free energy in terms of the principle curvatures $\kappa_1$ and $\kappa_2$ as~\cite{RN59}:
 \begin{equation}
   F_{24} = \frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{R} \left \{\kappa_1 n_1^2 + \kappa_2 n_2^2 \right \},\label{e:2-K24SurfCouple}
