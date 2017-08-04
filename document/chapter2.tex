@@ -8,11 +8,11 @@ As either the concentration of the particles is increased\fxnote{ref Onsager} or
 The order is characterized by a preferred direction, where rod-like particles prefer to have their long axis aligned parallel to each other and plate-like particles prefer to have their short axis parallel to each other~\cite{RN33,RN175}.
 Thus, the system still possesses continuous rotational symmetry about the preferred alignment direction as well as continuous translation symmetry in  all directions.
 This can be seen in the collection of rod-like particles drawn schematically in Figure~\ref{f:2-NematicSym}.
-In panel $\emph{A}$ the rods possess complete continuous rotational and translational symmetry; however, in panel \emph{B} and panel \emph{C} the rods now point preferentially along a preferred direction denoted by $\mathbf{n}$, and known as the director.
-In panel \emph{B} and panel \emph{C}, the system has broken continuous rotational symmetry about the two axes orthogonal to $\mathbf{n}$.
-Note that even though in panel \emph{C} the rods align more strongly along $\mathbf{n}$ than the rods in panel \emph{B}, the system possesses the same symmetry in both panels.
+In panel (A) the rods possess complete continuous rotational and translational symmetry; however, in panel (B) and panel (C) the rods now point preferentially along a preferred direction denoted by $\mathbf{n}$, and known as the director.
+In panel (B)) and panel (C)), the system has broken continuous rotational symmetry about the two axes orthogonal to $\mathbf{n}$.
+Note that even though in panel (C)) the rods align more strongly along $\mathbf{n}$ than the rods in panel (B)), the system possesses the same symmetry in both panels.
 Regardless of the rotational symmetry of the system, the system never breaks translational symmetry.
-This can be seen in panel \emph{D}, where only the centers of mass of the rods are displayed, highlighting the continuous translational symmetry.
+This can be seen in panel (D)), where only the centers of mass of the rods are displayed, highlighting the continuous translational symmetry.
 If the concentration of the particles were further increased or the temperature were further decreased, the particles would break translational symmetry and the nematic phase would transition to a crystalline phase, with three broken continuous translational symmetries~\cite{RN33}.
 Hence, the liquid-crystalline nematic phase is an intermediate ``mesophase'' that possesses the continuous translational symmetries of the isotropic ``liquid phase'' as well as some of the broken rotational symmetries of the ``crystalline'' phase.
 In the remainder of this chapter and in the rest of the Thesis, we will focus on NLC whose constituent particles are rod-like.
@@ -20,13 +20,12 @@ In the remainder of this chapter and in the rest of the Thesis, we will focus on
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_NematicSym.png}
-  \caption{{\bf Symmetries in nematic phase} (\emph{A}), A collection of rod-like particles in the isotropic phase.
+  \caption{ Symmetries in nematic phase. (A), A collection of rod-like particles in the isotropic phase.
   The orientation of the rod indexed by ``$\alpha$'' is given by the angle $\phi_{\alpha}$ defined schematically in the image.
-  (\emph{B}), The rods from \emph{A} in the nematic phase.
+  (B), The rods from (A) in the nematic phase.
   The rods are preferentially but weakly aligned along the director $\mathbf{n}$, denoted in the panel.
-  (\emph{C}), The rods from \emph{A,B} in the nematic phase. Here, the rods are strongly aligned along $\mathbf{n}$, denoted in the panel.
-  (\emph{D}), The positions of the center of mass of the rods in \emph{A}--\emph{C}, highlighting the continuous translational symmetry of the rods.}
-  \label{f:2-NematicSym}
+  (C), The rods from (A,B) in the nematic phase. Here, the rods are strongly aligned along $\mathbf{n}$, denoted in the panel.
+  (D), The positions of the center of mass of the rods in (A--C), highlighting the continuous translational symmetry of the rods.}\label{f:2-NematicSym}
 \end{figure}
 
 \subsection{The director and the order parameter}
@@ -34,7 +33,7 @@ Given a group of rods, we want to determine if the system is in the isotropic or
 Since we have a collection of rods with no specified head nor tail, the director is a unit bivector such that $\mathbf{n} = \mathbf{n}$ and $\mathbf{n}\cdot\mathbf{n} = 1$.
 Thus, we need an order parameter that goes to $0$ in the isotropic phase, is nonzero in the nematic phase, and contains the director when the system is in the nematic phase~\cite{RN33,RN175}.
 We will first derive this quantity for a collection of rods laying in a two-dimensional (2D) plane and then generalize to three-dimensions (3D).
-Let a collection of rods laying in a 2D plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{\alpha} = u^{\alpha}_i\hat{e}_i$, as seen in Figure~\ref{f:2-NematicSym}\emph{A}, where we use the Einstein summation convention to sum over repeated indices.
+Let a collection of rods laying in a 2D plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{\alpha} = u^{\alpha}_i\hat{e}_i$, as seen in Figure~\ref{f:2-NematicSym}(A), where we use the Einstein summation convention to sum over repeated indices.
 Note that due to the inversion symmetry of the nematic phase $\langle \mathbf{u}^{\alpha}\rangle_{\alpha} = 0$, where $\langle \cdot \rangle_{\alpha}$ represents an ensemble average over all $\alpha$.
 Thus, we need a rank-2 object to accomodate the nematic symmetry.
 Let:
@@ -80,7 +79,7 @@ This yields:
 where $S = 2 \langle \cos^2 \theta^{\alpha} \rangle_{\alpha} - 1$ is often called the scalar order parameter and denotes how well-aligned the system is~\cite{RN33}.
 For example, if every rod was aligned along $\hat{e}_1'$ such that $\mathbf{u}^{\alpha} = \hat{e}'_1$, $S = 1$.
 Similarly, if we again check the isotropic limit of a random collection of rods, we see that $S = 0$, as desired.
-Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in panel \emph{A}, and $0 < S(\textup{panel }B) < S(\textup{panel }C) < 1$.
+Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in panel (A)}, and $0 < S(\textup{panel }B) < S(\textup{panel }C) < 1$.
 Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the director corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter~\cite{RN33,RN175}.
 In terms of the director, we can now write the diagonalized $\mathbf{Q}$ in 2D as:
 \begin{equation}
@@ -141,8 +140,8 @@ Defects in 2D and 3D with like-signed charge repel and defects with opposite-sig
 Since the mesogens in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned monodomain with $\mathbf{n}$ a constant everywhere.
 Distortions from this uniform state cost energy.
 Since in most experiments the director distortions occur over much larger length scales than the molecular length --- $|\nabla \mathbf{n}| a \ll 1$, where $a$ is the molecular length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free-energy density that depends on $\mathbf{n}$ only.
-Here, we follow the work of F.C. Frank and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
-This is a phenomenological approach similar to Hooke's elasticity theory of a solid; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
+Here, we follow the work of F.C. Frank~\cite{RN61} and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
+This is a phenomenological approach similar to Hooke's elasticity theory of a solid~\cite{RN175,RN178}; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
 This is again a reflection that there is no restriction to the center-of-mass positions of the nematic mesogens, the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
@@ -161,7 +160,7 @@ Now expanding about the undistorted state, we can write the free-energy density 
   f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j,\label{e:2-FrankGeneralExpansion}
 \end{equation}
 where $i,j = \{ 1,2 \dots, 6 \}$, giving us 42 possible terms.
-However, any free-energy must respect the symmetry of the nematic, hence it must be invariant under exchange, invariant under inversion, invariant under arbitrary rotations about $\mathbf{n}$, and invariant with respect to the handedness of the coordinate system.
+However, any free-energy must respect the symmetry of the nematic, hence it must be invariant under exchange, invariant under inversion, invariant under arbitrary rotations about $\mathbf{n}$, and invariant with respect to the handedness of the coordinate system~\cite{RN61}.
 Under these conditions, all of the 6 $K_i$ vanish and of the 36 $K_{ij}$, 26 vanish and only 4 are independent, giving the coefficient matrix:
 \begin{equation}
   K_{ij} =
@@ -186,23 +185,34 @@ If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoord
   t_1 = - a_4 = \frac{\partial n_2}{\partial x_1} \quad & \quad t_2 = a_2 = \frac{\partial n_1}{\partial x_2} \tag{\theequation b} \\
   b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3}, \tag{\theequation c}
 \end{align}
-where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion,.
+where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion.
+These distortions in the local frame are easily visualized, as seen for the splay,twist, and bend distortions depicted schematically in Figure~\ref{f:2-FrankDist}(A--C), respectively.
 Now if we use Eqs.~\ref{e:2-PhysicalDistortions}(a-c) to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (s_1 + s_2)^2 + \frac{1}{2}&K_{22} (t_1 + t_2)^2 + \frac{1}{2}K_{33} (b_1^2 + b_2^2) \nonumber \\
     & - (K_{22} + K_{24}) (s_1 s_2 + t_1 t_2).\label{e:2-FrankPhysicalExpansion}
 \end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_FrankDist.png}
+  \caption{Nematic distortions in the local frame. (A), A schematic showing a splay distortion corresponding to a nonzero $s_2$.
+  (B), A schematic showing a twist distortion corresponding to a nonzero $t_2$.
+  (C), A schematic showing a bend distortion corresponding to a nonzero $b_2$.}
+  \label{f:2-FrankDist}
+\end{figure}
 Hence, we see that each term in the free-energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
 For example, consider a NLC with $K_{11} \gg K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
+This gives the Frank-Oseen free energy incredible intuitive power as it is easy to visualize each distortion's contribution to the director field.
 Finally, we can move from the local frame and re-cast the $a_i$ in Eq.~\ref{e:2-FrankLocalExpansion} in terms of a single global coordinate system:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}&K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}K_{33} (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
     & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}),\label{e:2-FrankFinalExpansion}
 \end{align}
-arriving at the well-known expression for the Frank-Oseen Free Energy.\\
+arriving at the well-known expression for the Frank-Oseen Free Energy~\cite{RN61}.\\
 
 Note that while Frank pioneered the phenomenological approach for a liquid crystalline free-energy, his was not the first attempt to construct a free-energy for liquid crytals.
-Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules.
+Oseen arrived at a similar expression to Eq.~\ref{e:2-FrankFinalExpansion} before Frank, but he approached the problem from a microscopic approach under the assumption that the free-energy could be calculated considering interactions between all possible pairs of molecules~\fxnote{REf Oseen}.
 While Oseen's final expression for a nematic misses some of the terms in Eq.~\ref{e:2-FrankFinalExpansion}, it is close enough that Eq.~\ref{e:2-FrankFinalExpansion} carries the names of both Frank and Oseen.
 
 
