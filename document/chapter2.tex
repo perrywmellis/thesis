@@ -198,8 +198,7 @@ Now if we use Eqs.~\ref{e:2-PhysicalDistortions}(a-c) to re-write Eq.~\ref{e:2-F
   \includegraphics{figures/C2/Ch2-Figs_FrankDist.png}
   \caption{Nematic distortions in the local frame. (A), A schematic showing a splay distortion corresponding to a nonzero $s_2$.
   (B), A schematic showing a twist distortion corresponding to a nonzero $t_2$.
-  (C), A schematic showing a bend distortion corresponding to a nonzero $b_2$.}
-  \label{f:2-FrankDist}
+  (C), A schematic showing a bend distortion corresponding to a nonzero $b_2$.}\label{f:2-FrankDist}
 \end{figure}
 Hence, we see that each term in the free-energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
 For example, consider a NLC with $K_{11} \gg K_{33} = K_{22} = K_{24}$ --- under confinement or strain, this material will prefer to bend and twist instead of splay.
@@ -240,7 +239,7 @@ The splay-bend term itself is subject to controversy as its inclusion to the fre
 This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$~\cite{RN216,RN220,RN219,RN221}.
 These excess boundary conditions mean that the 2$^\textup{nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
 Since the free-energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$~\cite{RN219}.
-While there have been attempts to solve the paradox by introducing higher-order terms~\cite{RN220}, or constraining the normal derivatives in the splay-bend term~\cite{RN221}, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''~\fxnote{papers neglecting K13}.
+While there have been attempts to solve the paradox by introducing higher-order terms~\cite{RN220}, or constraining the normal derivatives in the splay-bend term~\cite{RN221}, the most common approach seems to be to neglect the splay-bend term altogether due to its ``unphysical nature''~\cite{RN55,RN222}.
 
 \subsection{Insights from microscopic calculations}
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
@@ -457,7 +456,7 @@ This implies that a Landau-type free-energy in 2D will look like:
 \end{equation}
 Now with the absence of a term proportional to $S^3$, the phase transition is predicted to be continuous, as $S$ can vary continuously from $S=0$ in the isotropic phase to $S \neq 0$ in the nematic phase as $T$ passes through $T_{NI}$~\cite{RN33}.
 This can be seen by setting $T = T_{NI}$ and noticing that there is only one minimum in $f_{phase}(S)$, and it occurs at $S=0$.
-Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in a truly 2D geometry~\fxnote{cite Thickness dependent stallinga}.
+Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in a truly 2D geometry~\cite{RN231}.
 However, the nematic-isotropic phase transition in 2D has been explored heavily in simulations, and while the literature agree that the transition should be continuous, there is no clear consensus on the specific order of the transition~\cite{RN172}.
 
 
@@ -559,60 +558,83 @@ Practically this means that the equilibrium director configuration in a sample i
 \section{Experimental characterization of nematic liquid crystals}
 \subsection{Confinement and boundary conditions}
 Successfully confining nematic materials is more than simply forcing the nematic into an arbitrary volume, we also have to specify the boundary conditions.
-For example, confining NLC to a sphere where the material is free to take any orientation on the boundary is uninteresting as the director field can remain homogeneous, as if the sphere did not exist.
-However, if we enforce homeotropic boundary conditions such that the director must be everywhere perpendicular to the surface, then we see that their must be a defect in the volume.
+For example, confining NLC to a spherical volume where the material is free to take any orientation on the boundary is uninteresting as the director field can remain homogeneous, as if the sphere did not exist.
+However, if we enforce homeotropic boundary conditions such that the director must be everywhere perpendicular to the surface, then we see that there must be a defect in the volume, as seen schematically by the red dot in the radial configuration~\cite{RN177} depicted in Figure~\ref{f:2-DropSchem}(A).
 In fact, according to Eq.~\ref{e:2-hedCharge}, we see that the sum of all the defects in a spherical volume must have $|q_{net}| = 1$.
 Similarly, if we instead enforce degenerate planar boundary conditions such that the director must everywhere lie parallel to the surface, the Poincar\'e-Hopf Theorem requires a total topological charge of $s = +2$ on the surface.
-Formally, if $\mathbf{k}$ be the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
+One way to satisfy this condition is with a bipolar configuration where 2 $s = +1$ defects place themselves at opposite poles of the sphere~\cite{RN177}, as seen schematically by the blue dots in Figure~\ref{f:2-DropSchem}(B).
+Formally, if $\mathbf{k}$ is the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
 These are not the only two options, we can also have degenerate tilt boundary conditions, where $0< |\mathbf{k} \cdot \mathbf{n}| < 1$, with a tilt angle given by $\theta = \arccos |\mathbf{k} \cdot \mathbf{n}| $.
 Note that planar anchoring does not have to be degenerate.
-The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector.\\
+The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector.
+Homeotropic anchoring, degenerate planar anchoring, and planar anchoring are illustrated schematically for a flat substrate in Figure~\ref{f:2-Anchor}(A-C), respectively.\\
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_DropSchem.png}
+  \caption{Nematic liquid crystal confined to a spherical volume.
+  (A), The classic radial director configuration found under homeotropic boundary conditions.
+  The defect is highlighted by the red dot.
+  (B), The classic bipolar director configuration found under degenerate planar boundary conditions.
+  The 2 defects are highlighted by the blue dots.}\label{f:2-DropSchem}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_Anchor.png}
+  \caption{Common anchoring schemes for nematic liquid crystals. (A), Homeotropic anchoring enforced by surfactant molecules.
+  The polar heads of the molecules adsorb to the substrate, with the nonpolar tails extending into the NLC.
+  The tails serve to align the nematic mesogens along the surface normal, making $\mathbf{k} \parallel \mathbf{n}$, as seen in the schematic.
+  (B), Degenerate planar anchoring enforced by randomly oriented polymers on the substrate. The polymers only require that the mesogens lie in the plane of the interface such that $\mathbf{k} \perp \mathbf{n}$. Since there is no preferred direction in the plane of the substrate, the mesogens are free to choose any director in the plane, as depicted in the schematic.
+  (C), Planar anchoring enforced via aligned polymers on the substrate. Here, the polymers have an alignment direction that the NLC mesogens also prefer to align along, such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector perpendicular to the polymer alignment direction, as defined in the schematic.}\label{f:2-Anchor}
+\end{figure}
 
 In an experiment, confinement take place either with either solid boundaries, such as glass cells and capillaries, or fluid boundaries such as in emulsions of a nematic material dispersed in an outer immiscible liquid phase.
 It is also possible to confine a nematic using both solid boundaries and fluid boundaries, such as in a sessile drop.
 In a sessile drop, the solid boundary provides a flat base for the NLC;\@ however, the remainder of the confinement is provided by the free surface, where the NLC is contact with air.
 In general, NLC in contact with an arbitrary boundary will be subject to degenerate tilt boundary conditions.
-Thus, for experiments that require a specific boundary condition we must treat the boundary.\\
+Thus, for experiments that require a specific boundary condition we must treat the interface.\\
 
 In order to discuss specific strategies for enforcing anchoring, we must first narrow down the compounds we are dealing with.
-NLC can be divided into two broad categories, thermotropics and lyotropics.
+NLC can be divided into two broad categories, thermotropics and lyotropics~\cite{RN33}.
 Thermotropic phases are determined only by their temperature.
 If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will crystallize.
 Lyotropic phases are sensitive to concentration as well as temperature.
 They are generally composed of a solid dispersed in a solvent such that the suspended solid is free to flow and orient as it chooses.
-In this Thesis, we will primarily use 4-Cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long.\@
+In this Thesis, we will primarily use 4-Cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
 5CB belongs to the cyanobiphenyl family of NLC.
-The cyanobiphynyls are thermotropic materials characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group.
+The cyanobiphynyls are thermotropic materials characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
 In the case of 5CB, we can write the chemical formula as: CN(C$_6$H$_4$)(C$_6$H$_4$)C$_5$H$_{11}$.
 Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
 Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any pCB. \\
 
 To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, it is common to either deposit surfactant molecules or bond silanes to the surface.
 In both cases, the smooth surface becomes decorated with long chains that stick up normal to the surface.
-These nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface.
+These nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface~\cite{RN33}, as seen schematically in Figure~\ref{f:2-Anchor}(A).
 For example, to enforce homeotropic anchoring for 5CB on glass, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
-When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass.\\
+When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass~\cite{RN140}.\\
 
 Similarly, it is common to enforce homeotropic anchoring in solution again using surfactants.
-Here, for an oily NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface.
+Here, for an oily NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface~\cite{RN150,RN235}.
 For example, we use Sodium Dodecyl Sulfate (SDS) in water to enforce homeotropic anchoring in 5CB emulsions and liquid bridges.
-While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring.
-At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength.
-This concentration is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules. \\
+While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring~\cite{RN235}.
+At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength~\cite{RN234}.
+This concentration is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules~\cite{RN233,RN234}. \\
 
 While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring, in general the anchoring will be degenerate and tilted.
-Thus, surface is often coated with a polymer such that the polymer orientationson the surface are random.
+Thus, surface is often coated with a polymer such that the polymer orientations on the surface are random.
+Since the polymers have no preferred alignment in the plane of the surface, the mesogens are free to choose their own director in the plane, as seen schematically in Figure~\ref{f:2-Anchor}(B).
 For example, spin-coating poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB.
-If a preferred anchoring direction in the plane is desired, the polymer coating can be rubbed in the desired direction, creating ``grooves'' in the polymer coating along the rubbing direction.
-The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring.
-Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle.
+If a preferred anchoring direction in the plane is desired, the polymer coating can be rubbed in the desired direction, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
+The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring~\cite{RN33,}.
+Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle~\cite{RN232}.
 Thus, when designing planar-aligned liquid crystalline cells, where the NLC is confined between two parallel plates with planar anchoring, the rubbing direction on the plates will be anti-parallel.
-The anti-parallel rubbing aligns the tilt angles at the plates such that the NLC can still form a homogeneously-aligned domain between the plates. \\
+The anti-parallel rubbing aligns the tilt angles at the plates such that the NLC can still form a homogeneously-aligned domain between the plates~\cite{RN232}. \\
 
-For dispersions of oily NLC such as 5CB in a continuous aqueous phase, we add a polymer like PEO or PVA to the aqueous phase.
+For dispersions of oily NLC such as 5CB in a continuous aqueous phase, we add a polymer like PEO or PVA to the aqueous phase~\cite{RN105,RN93}.
 The polymer adsorbs to the interface between the NLC and the continuous phase, giving degenerate planar anchoring.
 We know of no easy way to break the planar degeneracy in the anchoring when dealing with a liquid-liquid interface.
-In addition, we note that even though 5CB exhibits degenerate planar anchoring at the interface with pure water, the addition of a polymer strengthens the anchoring as well as acting to stabilize the emulsion when 5Cb is dispersed in H$_2$O. \\
+In addition, we note that even though 5CB exhibits degenerate planar anchoring at the interface with pure water, the addition of a polymer strengthens the anchoring as well as acting to stabilize the emulsion when 5Cb is dispersed in H$_2$O~\cite{RN105,RN93}.\\
 
 
 
@@ -621,31 +643,52 @@ In addition, we note that even though 5CB exhibits degenerate planar anchoring a
 Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
 This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
 For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$, and the index of refraction perpendicular to $\mathbf{n}$ is called the ``ordinary index of refraction'', denoted as $n_o$.
-The orientation of $n_E$ is known as the optic axis and in the case of a nematic material corresponds to $\mathbf{n}$.
-The birefringence is characterized by $\delta n = n_E-n_o$, the difference in the indices of refraction in the material.
-If $n_E > n_o$, $\delta n > 0$ and the material has positive birefringence.
-Conversely, if $\delta n < 0$, the material has negative birefringence.
-Thus, the index of refraction affecting a light ray incident upon a birefringent material will depend on the polarization of the light ray.
+Since the index of refraction along $\mathbf{n}$ is $n_E$, the director also serves as the optic axis of uniaxial nematic~\cite{RN232}.
+The birefringence is characterized by $\Delta n = n_E-n_o$, the difference in the indices of refraction in the material~\cite{RN232}.
+If $n_E > n_o$, $\Delta n > 0$ and the material has positive birefringence.
+Conversely, if $\Delta n < 0$, the material has negative birefringence.
+Thus, the index of refraction affecting a light ray incident upon a birefringent material will depend on the polarization of the light ray~\cite{RN232}.
 While unpolarized light will be unaffected by the birefringent material, in general any ray of polarized light will have its polarization state affected by the light ray.
 Consider linearly polarized light incident upon a birefringent material with $n_E$ along $\hat{x}$ and $n_o$ along $\hat{y}$.
 If the incident light is polarized along $\hat{x}$ or $\hat{y}$, the light ray will see only either the extraordinary index of refraction of the ordinary index of refraction and will leave the sample with no change in its polarization state.
-However, now let the incident light have a wavelength $\lambda$ and be linearly polarized at $45^o$ such that the incident ray can be decomposed into one component along $\hat{x}$ and another along $\hat{y}$.
+However, now let the incident light be linearly polarized at $45^o$ such that the incident ray can be decomposed into one component along $\hat{x}$ and another along $\hat{y}$.
 Since each component will see a different index of refraction, they will propagate at different speeds, creating a phase difference between the two components of the incident ray.
-This phase difference is known as the retardation and in terms of multiples of $2 \pi$ by $\Gamma = \frac{2 \pi \delta n d}{\lambda}$, where $d$ is the thickness of the birefringent material.
-For our example of incident light linearly polarized at $45^o$, let $\delta n d = \lambda / 2$ such that $\Gamma =  pi$.
-The light after leaving the sample will now be polarized at $-45^o$, and the birefringent material has the properties of a half-waveplate.
-Similarly, if $\delta n d = \lambda$, $\Gamma =  2 pi$, the birefringent material is a full-waveplate and the output light will be unchanged.\\
+This phase difference is known as the retardation and is given in multiples of $2 \pi$ by $\Gamma = \frac{2 \pi \Delta n d}{\lambda}$, where $d$ is the thickness of the birefringent material, and $\lambda$ is the wavelength of the incident light~\cite{RN232}.
+For our example of incident light linearly polarized at $45^o$, let $\Delta n d = \lambda / 2$ such that $\Gamma =  pi$.
+The light after leaving the sample will now be polarized at $-45^o$, and the birefringent material has the properties of a half-waveplate~\cite{RN232}.
+Similarly, if $\Delta n d = \lambda$, $\Gamma =  2 pi$, the birefringent material is a full-waveplate and the output light will be unchanged~\cite{RN232}.\\
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_OPMSchem.png}
+  \caption{Schematic of the light path and polarization state for Optically Polarized Microscopy (OPM). OPM places a linear polarizer called the ``polarizer'' before the condenser and another linear polarizer called the ``analyzer'' after the objective. The polarization states depicted in the figure assume the sample is birefringent and the pass axes of the polarizer and the analyzer are orthogonal.}\label{f:2-OPMSchem}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_OPMDrops.png}
+  \caption{Example OPM textures for a bipolar drop and a radial drop.
+  (A--C), schematic and textures for a bipolar drop.
+  The textures in (B,C) have the polarizer and analyzer directions specified on the images, with the drops oriented as depicted in (A).
+  Note how the texture changes as the polarizer and analyzer rotate.
+  (D--F), schematic and texture for a radial drop.
+  The textures in (E,F) have the polarizer and analyzer directions specified on the images, with the drops oriented as depicted in (D).
+  Note how the texture only change orientations with the polarizer and analyzer orientation but does not change character.}\label{f:2-OPMDrops}
+\end{figure}
 
 Optical polarized microscopy (OPM) takes advantage of birefringence and turns the change in polarization into changes in transmitted intensity.
 The typical setup adds a pair of linear polarizers into the light path of a standard wide-field optical microscope.
-A linear polarizer is an optical element that only passes light polarized along a specific axis known as the ``pass axis''.
+A linear polarizer is an optical element that only passes light polarized along a specific axis known as the ``pass axis''~\cite{RN232}.
 Thus, unpolarized light incident upon a linear polarizer will have its intensity reduced by half and the output light will be linearly polarized along the pass axis of the polarizer.
-Illustrating the light path for optical polarized microscopy, the incident light passes through the first linear polarizer, known as the ``polarizer'', through the sample, through the objective, and through the second linear polarizer, known as the ``analyzer'', before it is incident on the eyepiece or the camera used to capture the microscope image.
+Illustrating the light path for optical polarized microscopy, the incident light passes through the first linear polarizer, known as the ``polarizer'', through the sample, through the objective, and through the second linear polarizer, known as the ``analyzer'', before it is incident on the eyepiece or the camera used to capture the microscope image~\cite{RN232}.
+The light path is illustrated schematically in Figure~\ref{f:2-OPMSchem}.
 If the polarizer and analyzer are ``crossed'', or oriented with their pass axes orthogonal to each other, any isotropic sample will be entirely dark.
 This is because the sample does not affect the polarization of the light such that the linearly polarized light from the polarizer cannot pass through the analyzer.
 However, if the sample is birefringent, the polarization state of the incident light is changed and some of the light will pass through the analyzer and be transmitted onto the eyepiece or camera.
+This is illustrated in the schematic in Figure~\ref{f:2-OPMSchem}.
 The intensity pattern in the image output from an OPM setup can then be used to deduce information about the sample.
-While for our purposes we typically care about the spatial variation of the optic axis, and thus the spatial variation in $\mathbf{n}$, OPM can also be used to determine the birefringence of the sample.
+While for our purposes we typically care about the spatial variation of the optic axis, and thus the spatial variation in $\mathbf{n}$, OPM can also be used to determine the birefringence of the sample~\cite{RN232}.
 For example, we consider 5CB confined to spherical nematic droplets.
-Under homotropic anchoring the droplet will have the classic ``radial'' director field while under degernate planar anchoring the droplet will have the classic ``bipolar'' configuration.
-These configurations can be distinguished by their OPM textures.
+Under homeotropic anchoring the droplet will have the classic ``radial'' director field while under degenerate planar anchoring the droplet will have the classic ``bipolar'' configuration~\cite{RN177}.
+These configurations can be distinguished by their OPM textures, as seen in Figure~\ref{f:2-OPMDrops}(B,C) for the bipolar drop and Figure~\ref{f:2-OPMDrops}(E,F) for the radial drop.
+Note how the light and dark portions of the bipolar texture change from Figure~\ref{f:2-OPMDrops}(B) to Figure~\ref{f:2-OPMDrops}(C) as the polarizer and analyzer change orientation, while the radial texture only rotates with the polarizer and analyzer but does not change in the frame of the polarizer and analyzer, as seen in Figure~\ref{f:2-OPMDrops}(E,F).
