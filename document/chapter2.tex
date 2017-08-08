@@ -1,5 +1,5 @@
 %!TEX root = thesis.tex
-\chapter{Fundamentals of nematic liquid crystals}
+\chapter{Fundamentals of nematic liquid crystals}\label{c:2}
 
 \section{Local order and defects}
 Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotation symmetry of a collection of either rod-like or plate-like particles~\cite{RN33}.
@@ -104,8 +104,8 @@ Thus, for a collection of rods, we can determine the phase and if applicable, $\
 
 
 \subsection{Defects in a nematic}
-While we briefly menthioned the dimensionality of defectsand their associated classifications schemes in INTRO\fxnote{ref Intro}, here we take a deeper look and use homeotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
-As mentioned earlier in INTRO\fxnote{ref INTRO}, defects in ordered media are defined generally as regions where the characteristic local order is not satisfied.
+While we briefly mentioned the dimensionality of defects and their associated classifications schemes in Section~\ref{c:1}, here we take a deeper look and use homeotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
+As mentioned earlier in Section~\ref{c:1}, defects in ordered media are defined generally as regions where the characteristic local order is not satisfied.
 In a nematic phase, defects are locations where $\mathbf{n}$ is undefined.
 For a nematic in 3D, these locations can be $0$-dimension ($0$D) point defects, $1$-dimension ($1$D) line defects, or $2$D wall defects, while for a nematic in 2D, these locations can only be $0$-dimension ($0$D) point defects or $1$-dimension ($1$D) line defects.
 General examples of defects with different dimensionality  in 3D and 2D are drawn schematically in Figure~\ref{f:2-GenDef}.
@@ -129,7 +129,7 @@ For clarity, we refer to Table~\ref{t:2-GroupTheory} for definitions of some use
 Consider a 2D set of vectors such that their orientations can be described by a single angle.
 We can map these vector orientations onto an \emph{order parameter space} given by the 1-sphere, $\mathbb{S}_1$, the unit circle in the plane, such that $\mathbb{S}_1$ describes all the possible orientations of the vectors.
 If instead we consider a nematic where $\mathbf{n} = -\mathbf{n}$, $\mathbb{S}_1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not the interval $[0,2 \pi)$.
-Instead, for 2D nematics the order parameter space is $\mathbb{R}\mathbb{P}_1$, the real projective plane in 1D, which corresponds to $\mathbb{S}_1$ with antipodal points identified.
+Instead, for 2D nematics the order parameter space is $\mathbb{R}\mathbb{P}_1$, the real projective plane in 1D, which corresponds to $\mathbb{S}_1$ with antipodal points identified~\cite{RN196,RN153,RN236}.
 Thus, specifying the director along a contour in real space will determine a mapping of the contour in real space to a contour in order parameter space.
 More importantly, specifying the director along a closed contour in real space will result in a closed contour in order parameter space, provided the contour doesn't pass through any defects where $\mathbf{n}$ is undefined.\\
 
@@ -140,13 +140,13 @@ Similarly, we see that in the order parameter space in Figure~\ref{f:2-2DMeas}(B
 Thus, the presence of a singularity in the area bounded by the red contour in real space results in a nonzero winding number in the red contour in the order parameter space.
 In fact, it is easy to see that a mapping of the director along the blue contour in Figure~\ref{f:2-2DMeas}(C) will result in a contour in $\mathbb{R}\mathbb{P}_1$ that goes in opposite direction of the red contour in  Figure~\ref{f:2-2DMeas}(B), and that a mapping of the director to $\mathbb{R}\mathbb{P}_1$ along the green contour in Figure~\ref{f:2-2DMeas}(D) will result in a contour that wraps $\mathbb{R}\mathbb{P}_1$ twice in the same direction as the red contour.
 Explicitly, we see that the defect structures in Figure~\ref{f:2-2DMeas}(A-C) all have different winding numbers in $\mathbb{R}\mathbb{P}_1$, and thus cannot be mapped onto each other with continuous deformations.
-In the language of homeotopy thoery, we say that any two contours that can be continuously deformed into each other have a homeomorphism and thus are homeotopic to each other.
-More generally, any contour in $\mathbb{R}\mathbb{P}_1$ with winding number $k$ is homeotopic to any other contour in $\mathbb{R}\mathbb{P}_1$ with winding number $k$, and only to contours with winding number $k$.
+In the language of homeotopy thoery, we say that any two contours that can be continuously deformed into each other have a homeomorphism and thus are homeotopic to each other~\cite{RN196}.
+More generally, any contour in $\mathbb{R}\mathbb{P}_1$ with winding number $k$ is homeotopic to any other contour in $\mathbb{R}\mathbb{P}_1$ with winding number $k$, and only to contours with winding number $k$~\cite{RN196,RN153,RN236}.
 For example, note that as a single point in $\mathbb{R}\mathbb{P}_1$ corresponds to a homogeneous $\mathbf{n}$-field in real space, we see that the singularity-free director field with $k=0$ bounded by the purple contour in Figure~\ref{f:2-2DMeas}(A) is homeotopic to the homogeneous state of any orientation, but is not homeotopic to the director field with $k=1$ bounded by the red contour in Figure~\ref{f:2-2DMeas}(A).
 Thus, contours with the same winding number form a homeotopy class, where we can now start to think about categorizing the different homeotopy classes of defects using a group structure.\\
 
-While we could form the group using the winding numbers in $\mathbb{R}\mathbb{P}_1$ themselves, it is more common to use the results from measuring the amount of director rotation in real space~\cite{RN23,RN153,RN203}.
-Reproducing Eq.~[INTRO]\fxnote{ref INTRO} from [INTRO] for a director field parametrized by the angle $\phi(\mathbf{R})$, we characterize the defects with their ``defect charge'', $s$:
+While we could form the group using the winding numbers in $\mathbb{R}\mathbb{P}_1$ themselves, it is more common to use the winding number about $\mathbb{S}_1$ such that the winding number is equivalent to measuring the amount of director rotation around a contour in real space~\cite{RN23,RN153,RN203}.
+Reproducing Eq.~[INTRO]\fxnote{ref INTRO} from Section~\ref{c:1} for a director field parametrized by the angle $\phi(\mathbf{R})$, we characterize the defects with their ``charge'', $s$~\cite{RN153,RN236}:
 \begin{equation}
   s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:2-topCharge}
 \end{equation}
@@ -157,26 +157,29 @@ The additivity can be seen in Figure~\ref{f:2-2DMeas}(C,D), where a contour surr
 Similarly, the additivity of defects also means that the inverse of a defect with winding number $+k$ is inverse of a defect with winding number $-k$.
 For example, combining and $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
 Finally, we note that the homoegeneous state acts as the identity element for for the set of defects as $k + 0 = k$.
-Thus, we have satisfied the four axioms for a group laid out in Table~\ref{t:2-GroupTheory}, such that we can characterize the homeotopy classes of defects in $\mathbb{R}\mathbb{P}_1$ with the first \emph{fundamental group} c.
-Hence, the quantity $s$ is a topological quantity, such that ``defect charge'' is often referred to as ``topological charge.'' \\
+Thus, we have satisfied the four axioms for a group laid out in Table~\ref{t:2-GroupTheory}, such that we can characterize the homeotopy classes of defects in $\mathbb{R}\mathbb{P}_1$ with the first \emph{fundamental group}~\cite{RN196,RN153,RN236}.
+Hence, the quantity $s$ is a topological quantity, such that ``charge'' is often referred to as ``topological charge.'' \\
 
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_2DMeas.png}
-  \caption{Examples of defect structures in 2D.
-  (A), an $s=+1/2$ defect with the singularity dented with a red dot.
-  Integrating the $\mathbf{n}$-rotation along the red path yields $\pi$.
-  Since the path takes $2 \pi$, $s = (\pi)/(2 \pi) = +1/2$.
-  (B), an $S = -1/2$ defect with the singularity at the blue point.
-  Here, the total $\mathbf{n}$-rotation is $-\pi$ along the blue contour giving $(-\pi)/(2 \pi) = -1/2$.
-  (C), an $s = +1$ defect with an $\mathbf{n}$-rotation of $2 \pi$ along the green contour encircling the singularity at the green dot.
-  (D), two $s = +1/2$ defects placed near to each other such that the green contour encircling both defects sees an $\mathbf{n}$-rotation of $2 \pi$.
-  Thus, far from the defects, we cannot distinguish between structures resulting from a single $s = +1$ defect and 2 $s = +1/2$ defects, reflecting the additivity of defect charge in 2D.}\label{f:2-2DMeas}
+  \caption{Examples of defect structures and the order parameter space in 2D.
+  (A), an $s=+1/2$ defect with the singularity denoted with a red dot.
+  The director along the red and purple contours is mapped to $\mathbb{R}\mathbb{P}_1$ in (B).
+  (B), a schematic showing $\mathbb{R}\mathbb{P}_1$ (black line) as $\mathbb{S}_1$ (full circle) with antipodal points identified.
+  The red and purple contour in $\mathbb{R}\mathbb{P}_1$ correspond to the red and pueple contours in real space drawn schematically in (A).
+  Note that the red contour has a winding number of +1 in $\mathbb{R}\mathbb{P}_1$ and +1/2 in $\mathbb{S}_1$, while the purple contour can be continuously deformed to a point in $\mathbb{R}\mathbb{P}_1$.
+  (C), an $S = -1/2$ defect with the singularity at the blue point.
+  In $\mathbb{R}\mathbb{P}_1$, the blue contour would have the same winding as the red contour in (B), but would go the opposite direction.
+  (D), an $s = +1$ defect (green dot) encircled by the the green contour.
+  In $\mathbb{R}\mathbb{P}_1$, the contour would have the same direction as the red contour in (B), but would cover $\mathbb{R}\mathbb{P}_1$ twice and $\mathbb{S}_1$ once.
+  (E), two $s = +1/2$ defects (red dots) placed near to each other such that the green contour encircling both defects sees the same winding in order parameter space as the green contour in (D)
+  Thus, far from the defects, we cannot distinguish between structures resulting from a single $s = +1$ defect and two $s = +1/2$ defects, reflecting the additivity of topological charge in 2D.}\label{f:2-2DMeas}
 \end{figure}
 
 This approach is not limited to 2D.
-In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the fundamental group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$.
-We note that for codimension $d=0$, there are no topological defects as the defect structure is homeotopic to a nonsingular distortion.
+In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the fundamental group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$~\cite{RN236}.
+We note that for codimension $d=0$, there are no topological defects in nematic materials as any defect structure with $d=0$ is homeotopic to a nonsingular distortion~\cite{RN196}.
 For example, consider the smearing out the line defect in 2D in Figure~\ref{f:2-GenDef} such that far away from the line $\mathbf{n} \cdot \hat{x} = 1$, and at the line itself $\mathbf{n} \cdot \hat{y} = 1$.
 This structure is not singular and thus there are no topological defects.
 This does not mean that lines in 2D or walls in 3D cannot exist, merely that they are not topological structures.
@@ -185,26 +188,31 @@ In addition, we see that point defects in 2D and line defects in 3D not only loo
 Thus, the apparent connection between defect structure in nematics of different dimension seen schematically in Figure~\ref{f:2-GenDef} comes from the order of the fundamental group used to characterize the defects.\\
 
 Now, we consider a nematic in 3D.
-Immediately, we see that the order parameter space is no longer $\mathbb{R}\mathbb{P}_1$, but instead is $\mathbb{R}\mathbb{P}_2$, the unit 2-sphere $\mathbb{S}_2$ with antipodal points identified, as we now need 2 angles to characterize all the possible orientations of $\mathbf{n}$.
+Immediately, we see that the order parameter space is no longer $\mathbb{R}\mathbb{P}_1$, but instead is $\mathbb{R}\mathbb{P}_2$, the unit 2-sphere $\mathbb{S}_2$ with antipodal points identified, as we now need 2 angles to characterize all the possible orientations of $\mathbf{n}$~\cite{RN196,RN153,RN236}.
 We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}_2)$.
-Again, we consider $\mathbf{n}$ along closed contours in real space and the associated contour in $\mathbb{R}\mathbb{P}_2$.
+Again, we consider $\mathbf{n}$ along closed contours in real space and the associated contour in $\mathbb{R}\mathbb{P}_2$, with the topological charge given by the half-integer winding number of the contour in $\mathbb{S}_2$.
 However, we note that in $\mathbb{R}\mathbb{P}_2$, we can only have defects with $s \in \{-1/2,0,+1/2\}$ as any contour on $\mathbb{R}\mathbb{P}_2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}_2$ as ``you cannot lasso a sphere''~\cite{RN153}.
 Since the winding numbers are additive, the inability to have a contour with integer $s$ means that contours with $|s| = \mathbb{N} + 1/2$ are homeotopic to $|s| = 1/2$.
-Thus, the only nontrivial windings in $\mathbb{R}\mathbb{P}_2$ are those that run directly between antipodal points, hence $s \in \{-1/2,0,+1/2\}$.
+Thus, the only nontrivial windings in $\mathbb{R}\mathbb{P}_2$ are those that run directly between antipodal points, hence $s \in \{-1/2,0,+1/2\}$~\cite{RN153}.
 As with walls in 3D and lines in 2D, this does not mean that $s = +1$ structures in 3D are impossible to create, it only means that they are not topological structures and must be stabilized by energetics.\\
 
 We lastly consider point defects in 3D characterized by the second fundamental group $\pi_{2}(\mathbb{R}\mathbb{P}_2)$.
-Now instead of contours on $\mathbb{R}\mathbb{P}_2$, we consider coverings or wrappings of $\mathbb{R}\mathbb{P}_2$.
-In real space, we calculate the topological ``hedgehog charge'' of a defect as:
+Now instead of contours on $\mathbb{R}\mathbb{P}_2$, we consider coverings or wrappings of $\mathbb{R}\mathbb{P}_2$~\cite{RN196,RN153,RN236}.
+In real space, we restate Eq.~\fxnote{INTRO} and calculate the topological ``hedgehog charge'' of a defect as~\cite{RN153}:
 \begin{equation}
   q = \frac{1}{4 \pi} \oint_{\partial V}d \theta d \phi \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:2-hedCharge}
 \end{equation}
  where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
-The volume $V$ must be homeotopic to a sphere --- this means that the volume has neither holes nor handles such that the Euler characteristic is $\chi = 2$.
-Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a topologically spherical surface enclosing the defect to the number of times the orientations cover $\mathbb{S}_2$.
-In addition, since there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit 2-sphere, any structure in isolation can only be determined up to $|q|$ as the chosen projection will determine the sign.
-However, once a projection is chosen, a collection of defects with the same magnitude $|q|$ can be separated by sign into charges with $+q$ and charges with $-q$.
-Similar to topological charge in 2D, hedgehog charge is additive such that calculating $q$ in a volume containing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$. \\
+The volume $V$ must be homeotopic to a sphere.
+As with the winding numbers, this means that $V$ can be smoothly deformed into a sphere such that $V$ cannot have any holes or handles.
+From Section~\ref{c:1}, we know that this means that the Euler characteristic of $V$ is $\chi = 2$.
+Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a topologically spherical surface enclosing the defect to the number of times the orientations cover $\mathbb{S}_2$~\cite{RN153}.
+Thus, $q \in \mathbb{Z}$, and the combination rule is again additivity as $\pi_{2}(\mathbb{R}\mathbb{P}_2)$ is abelian.
+As hedgehog charge is additive such that calculating $q$ in a volume containing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$.
+It is important to note that since there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit 2-sphere, any structure in isolation can only be determined up to $|q|$ as the chosen projection will determine the sign~\cite{RN153}.
+Thus, the defect structures drawn schematically in Figure~\ref{f:2-3DMeas}(A,B) cannot be distinguished \emph{a priori} in order parameter space.
+However, once a projection convention is chosen via a \emph{basepoint}, a collection of defects with the same magnitude $|q|$ can be separated by sign into charges with $+q$ and charges with $-q$~\cite{RN153}.
+For the remainder of the Thesis, we will choose the common convention that structures like Figure~\ref{f:2-3DMeas}(A) correspond $q = +1$ such that the structure in Figure~\ref{f:2-3DMeas}(B) has $q = -1$. \\
 
 \begin{figure}[h]
   \centering
@@ -218,8 +226,15 @@ Similar to topological charge in 2D, hedgehog charge is additive such that calcu
   Note that the ring defects in (C,D) are formed by an $s = +1/2 $ and an $s = -1/2$ line defect that has closed in on itself.}\label{f:2-3DMeas}
 \end{figure}
 
-The use of the term ``charge'' to characterize defects in NLC is no accident.
-The analogy to electric charges goes beyond the additivity of defect charges --- the analogy also extends to their interactions.
+Similar to how additivity means that a volume enclosing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$, the point defect structures in Figure~\ref{f:2-3DMeas}(A,B) are note the only structures with $|q| = 1$.
+In fact, ring defects, as depicted schematically in Figure~\ref{f:2-3DMeas}(C,D) are homeotopic to their respective point defect counterparts in Figure~\ref{f:2-3DMeas}(A,B).
+Shrinking the ring radius of the radial ring in Figure~\ref{f:2-3DMeas}(C) yields the radial hedgehog like the one shown in Figure~\ref{f:2-3DMeas}(A) and shrinking the ring radius in the hyperbolic ring in Figure~\ref{f:2-3DMeas}(D) yields a hyperbolic hedgehog like the one shown in Figure~\ref{f:2-3DMeas}(B).
+The ring defects are a line defect in 3D that closes upon itself.
+Hence, if we were to draw a contour that ``linked'' with a defect, we would find that radial rings with $q = +1$ are formed with $s = +1/2$ lines and hyperbolic rings with $q = -1$ are formed with $s = -1/2$ lines.\\
+
+Finally, we briefly want to touch on the use of the term ``charge'' to characterize defects in NLC.\@
+The choice of this term is no accident and reflects an analogy with electric charges.
+This analogy is born out not only in the additivity of both defect charges and electric charges, but also in their pairwise interactions~\cite{RN33,RN175,RN207}.
 Defects in 2D and 3D with like-signed charge repel and defects with opposite-signed charge attract and even annihilate.
 
 
@@ -622,7 +637,7 @@ However, once $K_{13}$ is required to be zero, all the contributions from the $2
 
 
 We briefly note that decoupling $S$ from the elastic constants in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
-Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging~\fxnote{see Shengnan's proposal for a ref}.
+Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
 In addition, it is not trivial to represent to represent a bivector field using rank-1 objects~\fxnote{see Shengnan's proposal for a ref}.
 In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
 In addition, since $\mathbf{Q}$ contains S, it can go to 0 at a defect such that no part of the simulation volume needs to be excluded.
