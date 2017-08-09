@@ -30,7 +30,7 @@ In this scenario with nematic order, the topological charge is expected to unbin
 In this chapter we consider a 2D extensile active nematic composed of microtubules driven by kinesin motors fueled by adenosine triphosphate (ATP) on the surface of a torus.
 Since the torus the torus has a handle, it has a genus of one and thus according to the Poincar\'e-Hopf Theorem written in Eq.~[INTRO] must have vanishing net topological charge.
 We note that a nematic on a torus can satisfy this condition by either being defect-free or by having the same amount of positive and negative charge.
-While strong spatial confinement or low activity can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN9}\fxnote{cite green}, we perform our experiments in the turbulent regime such that the torus is always populated with a sea of constantly moving $s = \pm 1/2$ defects that are dynamically created and annihilated.\\
+While strong spatial confinement or low activity can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN9,RN247}, we perform our experiments in the turbulent regime such that the torus is always populated with a sea of constantly moving $s = \pm 1/2$ defects that are dynamically created and annihilated.\\
 
 Despite such chaotic and highly nonequilibrium dynamics, we find that on average, topological defects unbind and segregate in regions of oppositely-signed Gaussian curvature.
 Notably, due to the chaotic dynamics and the averaging process, the topological charge ceases to be a discrete variable and instead approaches a continuous distribution.
@@ -46,7 +46,102 @@ Overall, out results not only confirm the theory of topological defects on curve
 
 \section{Making active nematic toroids}
 \subsection{Active nematic formulation}
-We use the mictotubule-kinesin active nematic system pioneered by the Dogic Group at Brandeis.
+We use the mictotubule-kinesin active nematic system pioneered by the Dogic Group at Brandeis University as published in references~\cite{RN3,RN27,RN9,RN135,RN134}.
+Microtubules are long, hollow rods that self-assemble from dimers of the $\alpha$- and $\beta$-tubulin proteins~\cite{RN248}.
+The $\alpha$/$\beta$-tubulin dimers polymerize end-to-end to form long chains that then polymerize laterally to create cylindrical structures with a helical wrapping of $\alpha$- and $\beta$-tubulin chains~\cite{RN248,RN249}.
+This structure gives microtubules a polarity with the (+) end associated with the exposed $\beta$-tubulin subunits and the (-) end associated with the exposed $\alpha$-tubulin subunits~\cite{RN248,RN249}.
+While the microtubules serve as the mesogens of the active nematic, the activity comes from kinesin motor proteins bound in clusters to a streptavidin protein.
+When in contact with a microtubule, kinesan ``walks'' along the microtubule in discrete steps from the (-) end towards the (+) end, hydrolyzing one ATP molecule into an adenosinediphosphate (ADP) molecule for every 8 nm step~\cite{RN250}.
+Thus, a kinesin cluster in contact with two antiparallel microtubules will produce a sliding motion between the two microtubules as the motion of the kinesin motors on the microtubules will displace the two microtubules in opposite directions~\cite{RN4,RN3}.
+Conversely, a kinesin cluster in contact with two parallel microtubules will simply walk along both microtubules in the same direction and thus produce no relative motion between the microtubules~\cite{RN4,RN3}. \\
+
+Apart from the activity provided by the kinesin motors, the dominant interaction between the microtubules in an active nematic solution is the depletion interaction~\cite{RN251}, introduced via the presence of poly(ethylene glycol) (PEG, 20 kDa) as a depletant.
+The depletion interaction ``bundles'' the microtubules together to form filaments that continuously grow due to the extensile interaction between microtubules provided by the kinesin motors~\cite{RN244,RN4,RN3}.
+When the concentration of filaments in the active nematic solution is large enough, the filaments form a viscoelastic network~\cite{RN253,RN3}.
+This network inhibits the growth of the filaments such that the filaments buckle at a critical length scale~\cite{RN253,RN3} and fracture into smaller fragments that recombine with other filaments, starting the growth-and-buckling process anew.
+In the presence of a liquid-liquid interface, the depletion interaction drives the filaments to the interface between the active nematic solution and outer phase, increasing the concentration such that the filaments locally align and express the orientational order of the nematic phase~\cite{RN3,RN135,RN134}.
+Thus, the filament direction serves as the director for the 2D active nematic localized to the interface.
+We note that the growth-and-buckling phenomenology of the active filaments is a physical consequence of the extensile dynamics and in the nematic phase is directly responsible for the bend instability and associated defect formation in the  microtubule-kinesin active nematics.
+As the filaments buckle and fracture, an $s = +1/2$ and $s = -1/2$ defect pair is produced, with the defects nucleating at opposite ends of the fracture line~\cite{RN3,RN11}.
+Hence, with microtubules, kinesin-streptavidin complexes (K/SA), ATP, a depletant, and a liquid outer phase, we have the essential ingredients for an active nematic.\\
+
+However, there are many more compounds in an active nematic solution that serve to allow for measurements~\cite{RN3,RN135}, prolong activity~\cite{RN3,RN135}, and allow for a silicone-based outer phases~\cite{RN135}.
+The microtubules are fluorescently labeled such that the active nematic can be images with fluorescence or fluorescence confocal microscopy.
+To prevent photobleaching and phototoxicity during imaging, the active solution contains trolox (Sigma, 238813) and two anti-oxidant solutions.
+Anti-oxident solution 1 (AO1) is composed of glucose and dithiothreitol (DTT) and Anti-oxident solution 2 (AO2) is composed of glucose oxidase (Sigma, 238813) and catalase (Sigma, C40).
+The active solution also includes an ATP regeneration system to keep the ATP concentration in an active nematic solution constant.
+This system is driven by the enzyme mixture pyruvate kinase/lactate dehydrogenase (PK/LDH, Sigma, P-0294) which consumes phoshoenol pyruvate (PEP) to convert ADP to ATP at a rate faster than the K/SA hydrolyzes ATP to ADP~\cite{RN246}.
+When driven the the liquid-liquid interface, the active filaments do not ever contact the outer phase.
+Instead, the interface is packed with a suitable surfactant such that the active nematic filaments deplete to the polar portion of the surfactant molecule.
+In fact, the surfactant is then moved along the interface by the motion of the active filaments such that the viscosity of the outer oil phase significantly affects the dynamics of an active nematic~\cite{RN135}.
+For a silicone-based outer fluid, we include the triblock copolymer Pluronic F127 (F127) composed of 2 hydrophilic PEG block attached to a central hydrophobic poly(propylene oxide) (PPO) block like PEG-PPO-PEG~\cite{RN252}.
+The solution is buffered using a specially designed microtubule buffer (M2B) to keep the enzymes and the motors in their preferred environments~\cite{RN3}.\\
+
+For an experiment, we build the active nematic solution from stock solutions.
+The stock solutions in their given compositions are {\bf bolded} such that PEP refers to the general compound while {\bf PEP} refers to the stock concentration/formulation as defined below:
+\begin{itemize}
+  \item[]{\bf M2B}: 80 mM 1,4-piperazinediethanesulphonic (PIPES) buffer~\cite{RN243} +2 mM MgCl$_2$ + 1mM egtazic acid (EGTA), pH 6.8
+  \item[]{\bf PEP}: 200 mM in {\bf M2B}, pH 6.8.
+  \item[]{\bf PK/LDH}: Used as purchased.
+  \item[]{\bf ATP}: 50 mM in {\bf M2B}, pH 6.8
+  \item[]{\bf DTT}: 0.5 mM in {\bf M2B}, pH 6.8
+  \item[]{\bf trolox}: Used as purchased.
+  \item[]{\bf MIX}: 67 mM MgCl$_2$ in {\bf M2B}
+  \item[]{\bf PEG}: (20 kDa) 6\% w/w in {\bf M2B}
+  \item[]{\bf F127}: 12\% w/w in {\bf M2B}
+  \item[]{\bf glucose}: 300 mg/mL in 20 mM K$_2$HPO$_4$ + 70 mM KCl (pH 7.2)
+  \item[]{\bf glucose oxidase}: 20 mg/mL in 20 mM K$_2$HPO$_4$ (pH 7.5)
+  \item[]{\bf catalase}: 3.5 mg/mL in 20 mM K$_2$HPO$_4$ (pH 7.4)
+  \item[]{\bf K/SA}: 0.175 mg/mL K401 + 0.1 mg/mL streptavidin (Invitrogen, S-888) + 12.5 mM imidazole (pH 6.8) + 1 mM MgCl$_2$ + 0.75 mM DTT + 12.5 mM ATP in {\bf M2B}. K401 consits of 401 amino acids of the N-terminal motor domain of \emph{D.~melanogaster} kinesin purified as previously published~\cite{RN3}.
+  \item[]{\bf MT}: 8 mg/mL tubulin labeled with AlexaFluor 647 at 28\% labeling efficiency in {\bf M2B}. Tubulin was purified as previously published~\cite{RN243}.
+\end{itemize}
+The stock solutions were prepared by the Dogic Group at Brandeis and then shipped to Georgia Tech.
+We pipetted the stock solutions as received into aliquots suitable to make 100 $\upmu$L of active nematic solution.
+The aliquots are stored in a freezer at $-80^o$ C to prevent degradation of the active compounds.
+Prior to each experiment, we remove a set of aliquots from the freezer, quickly thaw the aliquots to room temperature by holding them in our closed hands, and then place all the aliquots on ice except for the MT aliquot.
+We leave the MT aliquot out at room temperature so that the tubulin can self-assemble into microtubules.
+The polymerization of microtubules is temperature-dependent: with tubulin polymerizing to form microtubules at room temperature and microtubules depolymerizing into tubulin at low temperature~\cite{RN3}.
+We then make the initial mixtures and the pre-solution as detailed in Table~\ref{t:3-recipe}, leaving the pre-solution on ice.
+We wait at least 90 minutes after bringing the MT aliquot to room temperature before mixing the MT with the pre-solution to form the final active nematic solution as specified in Table~\ref{t:3-recipe}.
+Note that we bring the pre-solution to room temperature before adding in the microtubules such that the microtubules do not depolymerize when they are added to the pre-solution.
+Once we mix the final solution together, we perform our experiments and observe the active nematic until the activity ceases.
+
+\begin{table}[ht]
+  \centering
+  \caption{Recipe for 100 $\upmu$L active nematic solution}
+  \begin{tabular}{|r l|}
+    \hline
+    \multicolumn{2}{|c|}{Initial mixtures}\\
+    \hline
+    A01 & 1.5 $\upmu$L {\bf DTT} + 1.5 $\upmu$L {\bf glucose} \\
+    A02 & 1.5 $\upmu$L {\bf glucose oxidase} + 1.5 $\upmu$L {\bf catalase} \\
+    ATP2 & 2 $\upmu$L {\bf ATP} in:\\
+    & \quad 18 $\upmu$L {\bf M2B} for a 10x dilution.\\
+    & \quad 38 $\upmu$L {\bf M2B} for a 40x dilution.\\
+    \hline
+    \multicolumn{2}{|c|}{Pre-solution}\\
+    \hline
+    2.21 $\upmu$L & A01\\
+    2.21 $\upmu$L & A02\\
+    2.83 $\upmu$L & ATP2\\
+    2.83 $\upmu$L & {\bf PK/LDH} \\
+    4.83 $\upmu$L & {\bf MIX}\\
+    10.00 $\upmu$L & {\bf trolox}\\
+    13.33 $\upmu$L & {\bf PEP}\\
+    13.33 $\upmu$L & {\bf PEG}\\
+    16.67 $\upmu$L & {\bf F127}\\
+    6.67 $\upmu$L & {\bf K/SA}\\
+    8.40 $\upmu$L & {\bf M2B}\\
+    \hline
+    \multicolumn{2}{|c|}{Active nematic solution}\\
+    \hline
+    83.33 $\upmu$L & Pre-solution (full volume is 83.33 $\upmu$L)\\
+    16.67 $\upmu$L & {\bf MT}\\
+    \hline
+  \end{tabular}
+  \label{t:3-recipe}
+\end{table}
+
 \subsection{Flat sample confirmation}
 \subsection{Making toroidal droplets}
 
