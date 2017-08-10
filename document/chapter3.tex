@@ -142,8 +142,118 @@ Once we mix the final solution together, we perform our experiments and observe 
   \label{t:3-recipe}
 \end{table}
 
+
 \subsection{Flat sample confirmation}
+Upon receiving the stock solutions, we first made a bulk active gel according to the procedures published in ref.~\cite{RN3} to confirm the integrity of the solutions through the shipping process.
+To make a gel, we have to construct a sample chamber where the depletion interaction cannot drive the bundles to aggregate at an interface.
+We build the sample chamber from a glass coverslip attached via two-sided tape to a microscope slide to form a rectangular channel.
+Prior to construction, we coat the coverslip and slide with polyacrylamide brushes such that the PEG can penetrate between the brushes, keeping the depletion interaction from driving the active filaments to the interface, where they would asorb to the glass~\cite{RN3}.
+We coat the coverslip and microscope slide according to the published protocol~\cite{RN3}, reproduced below:\\
+{\bf Washing slides}
+\begin{enumerate}
+  \item Place glass into Alconox or Hellmanex solution (prepared per manufacturer specifications)
+  \item Sonicate the container for 5 -- 10 minutes.
+  \item Rinse the glass with pure water until there are no bubbles (7 -- 10 rinses)
+  \item Place glass into a $\geq 70$\% solution of ethanol.
+  \item Sonicate the container for 5 -- 10 minutes.
+  \item Rinse glass with pure water 5 -- 7 times.
+  \item Ensure that water does not bead up on the cleaned glass. If it does, the glass must be washed again.
+  \item Place slides into 0.1 M NaOH solution
+  \item Sonicate the container for 5 -- 10 minutes.
+  \item Rinse glass with pure water 5 -- 7 times.
+  \item Store in pure water
+\end{enumerate}
+{\bf Silane coating for acrylamide polymerization}
+\begin{enumerate}
+  \item Remove cleaned glass from water, dry with compressed air, and place in a dry container.
+  \item Determine the volume of solution needed to cover the glass
+  \item Prepare silane-coupling solution ({\bf Solution is unstable. Prepare right before use}):
+  \begin{itemize}
+    \item 98.5\% v/v Ethanol (200 Proof)
+    \item 1.0\% v/v Acetic Acid
+    \item 0.5\% v/v 3-(trimethoxysilyl)propyl methacrylate
+  \end{itemize}
+  \item Cover the glass with the silane-coupling solution and leave it for 10 -- 15 minutes.
+  \item Rinse with pure water 5 -- 7 times
+\end{enumerate}
+{\bf Acrylamide polymerization to silane-coated glass}
+\begin{enumerate}
+  \item Create or locate stock solution 10\% w/v Potassium Persulfate (KPS) in water
+  \item Determine the volume of acrylamide solution needed to cover the glass
+  \item Create solution of 2\% w/v acrylamide in water
+  \item Degass acrylamide solution under vacuum for 15 -- 30 minutes
+  \item To the acrylamide solution add 10 $\upmu$L 10\%KPS solution per 1 mL of acrylamide solution and gently mix.
+  \item To the acrylamide solution add 2.5 $\upmu$L TEMED per 1 mL of acrylamide solution and gently mix.
+  \item Pour acrylamide solution over coverslips immediately after mixing in the TEMED.
+  \item Wait 2 -- 3 hours for polymerization.
+  \item Let sit in container until ready to use ({\bf Use within weeks}).
+  \item To use, remove glass from container, rinse with pure water, and air dry.
+\end{enumerate}
+
+To make the rectangular sample chambers, cut strips of 2-sided tape such that the are $\approx1$ mm wide and longer than the coverslip.
+Affix the tape strips to the microscope slide in parallel with $\approx 2$ mm between the edges of adjacent strips.
+Stick the coverslip onto the tape to create a parallel series of rectangular channels.
+Press firmly such that the tape is firmly adhered to both the coverslip and the glass.
+Fill the channels with the active nematic solution using capillary action.
+Finally, seal the ends of the channel with epoxy.
+The samples are now ready to be imaged using fluorescence or fluorescence confocal microscopy. \\
+
+We confirmed that the stock solutions received produced a solution with fluorescent active filaments that grew and fractured.
+The activity in the gel sample appeared constant for the entirety of its  $\approx 24$ hr lifespan.
+The observed behavior qualitatively agreed with previously published behavior by the Dogic group~\cite{RN3}.
+
+
 \subsection{Making toroidal droplets}
+With the integrity of the active solution confirmed, we turn to making stable toroidal droplets with our active solution.
+We generate our toroidal droplets following the procedure detailed in Refs.~\cite{RN29,RN47}\fxnote{Teaching RP}.
+Briefly, the setup consists of a rotating stage holding a cuvette containing the continuous, or outer phase, and a syringe holding the dispersed, or inner phase connected to a needle inserted into the cuvette.
+We control the angular velocity of the rotation $\omega$, by driving the rotating the stage with a motor powered by a constant voltage source.
+We control the position of the needle in the cuvette with a micromanipular and we control the flow rate and volume of the inner phase with a syringe pump.
+In addition, we place a camera below the roation stage such that we can image the droplet generation process.
+We insert the needle into the cuvette offset from the center of rotation such that pumping the inner phase into the cuvette while the cuvette is rotating will generate a curved jet.
+Provided that we rotate fast enough such that the curved jet closes upon itself before it undergoes breakup, we form a toroidal droplet.
+This condition is a balance of two timescales: (i) the timescale required to undergo breakup, $t_b \approx \mu_o a_{jet} f(\mu_i/\mu_o)/\gamma$, where $\mu_o$ is the viscosity of the outer phase, $\mu_i$ is the viscosity of the inner phase, $a_{jet}$ is the radius of the jet, and $\gamma$ is the interfacial tension between the inner and outer phases; and (ii), the timescale required to close the curved jet onto itself, $T = 2\pi/\omega = 2 \pi R_{tip}/U$, where $R_{tip}$ is distance from the center of rotation the the needle and $U$ is the linear velocity of the continuous phase at the needle.
+Equating the two timescales and rearranging terms allows us to express this condition in terms of the Capillary number of the outer phase like $\textup{Ca}_o > (2 \pi / f(\mu_i/\mu_o))R_{tip}/a_{jet}$ ,where $\textup{Ca}_o = \mu_c U/\gamma$ a dimensionless group comparing the viscous stresses to the surface tension stresses.
+We note that $a_{jet} \approx a_{tip}$, the radius of the needle.
+Experimentally, it has been found that $\textup{Ca}_o > 2.2 R_{tip}/a_{tip}$ for $\mu_o = 5000$ mPa s and $\mu_i = 1$ mPa s in order to form a torus~\cite{RN29}.
+In practice, we simply look at the video of the process to verify that our chosen parameters generate a jet that closes in upon itself before breaking.\\
+
+Toroidal droplets generated in a simple fluid are unstable due to the influence of surface tension.
+Surface tension acts to minimize the interfacial area between two immisicble fluid phases, hence the ubiquity and stability of spherical droplets in nature; the sphere minimizes the surface area for a given volume.
+The physics behind the surface tension stress at an interface comes through the pressure drop across a fluid-fluid interface:
+\begin{equation}\label{e:3-LapPres}
+  P_i - P_o = 2 \gamma (- H),
+\end{equation}
+where $P_i$ is the pressure in the inner fluid phase, $P_o$ is the pressure in the outer fluid phase, and $H$ is the mean curvature of the interface.
+Recall that $H = \textup{det}\big \{ \mathbf{L} \big \}$, where $\mathbf{L}$ is the Weingarten Matrix from Eq.~[INTRO]\fxnote{ref INTRO} defined such that the mean curvature of a sphere with radius $r$ choosing an outward-facing normal is $H = -1/r$ everywhere on the surface of the sphere.
+Thus, the Laplace pressure tells us that a spherical droplet has greater pressure on the inside than on the outside, and that due to its constant mean curvature, the pressure inside the droplet is also constant such that the droplet is stable.
+However, we know that $H$ for a torus varies along the surface such that the pressure inside the torus must also vary.
+This intrinsic pressure difference creates the flow inside a fluid torus responsible for the shrinking instability in toroidal droplets, where the handle shrinks smoothly until it closes and the toroidal droplet becomes a spherical droplet~\cite{RN29}\fxnote{ref Alex}.
+In addition, the Laplace pressure can also cause the tube of a toroidal droplet to break up reminiscent of the Rayleigh-Plateau instability such that the toroidal droplet breaks into one or more spherical droplets~\cite{RN29}\fxnote{ref Alex}.
+While the study of the fluid modes in nontrivial topologies is interesting in its own right and has lead to interesting insights into fluid phenomena such as charged jets~\fxnote{ref Alex} and viscous fingering~\fxnote{ref Alex}, we are more concerned with creating a stable toroidal droplet. \\
+
+As the surface tension stress is responsible for destabilizing the toroidal droplet, to stabilize a toroidal droplet we need to counter the surface tension stress.
+To do so, we make our toroidal droplets using a yield-stress material as the outer phase~\cite{RN47}.
+Briefly, a yield-stress material has a threshold stress such that the material responds like an elastic solid to imposed stresses less than the yield-stress and flows like a viscous liquid to imposed stresses greater than the yield-stress.
+Thus, provided that the yield-stress is greater than the surface tension stress, the toroidal droplet will be unable to transform to a spherical droplet and will be stable indefinitely. \\
+
+Making a toroidal droplet in a yield-stress material has some key differences to making a toroidal droplet in a viscous fluid.
+Notably, the yield-stress material is only fluid-like in regions where the stress is greater than the yield-stress.
+Thus, for best results, we need to pre-shear the yield-stress medium such that the greatest possible volume of yield-stress material is fluidized.
+We do this by letting the cuvette rotate with the needle inserted for up to 30 s before we begin pumping the inner liquid into the cuvette.
+While a pre-shear is not strictly necessary to form a toroidal droplet, the cross-sections of the tubes of toroidal droplets made with a pre-shear are generally more circular than toroidal droplets made with minimal pre-shear.
+In addition, adding a pre-shear generaly helps the overall toroidal droplet be more axisymmetric.\\
+
+We also find that
+
+.. how to reduce climbing
+
+
+.. how to load the active fluid with a dummy liquid
+
+.. the specific material we use
+
+
 
 \section{Imaging active nematic toroids}
 \subsection{Confocal setup and parameters}
