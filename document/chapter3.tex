@@ -273,15 +273,15 @@ This typically occurs between 6~--~10~hours after making the toroidal droplet.
 
 
 \subsection{Confocal fluorescence microscopy}
-Unlike traditional wide-field microscopy, confocal microscopy allows us to image individual planes in the image such that we can construct a 3D representation of the sample.
-Regardless of the illumination source, confocal microscopy functions by placing an aperture in front of the detector at a confocal plane to the focal plane in the sample.
+Unlike traditional wide-field microscopy, confocal microscopy allows us to image individual planes in the image such that we can construct a 3D representation of the sample~\cite{RN260}.
+Regardless of the illumination source, confocal microscopy functions by placing an aperture in front of the detector at a confocal plane to the focal plane in the sample~\cite{RN259}.
 Thus, only light from the focal plane will pass through the aperture; light from any other plane in the sample will be out of focus in the plane of the aperture and thus will not pass through the aperture.
 Typically, the focal plane is changed in the sample by translating the microscope stage up and down.
-Since the introduction of scanning confocal microscopy, and especially scanning laser confocal fluorescence microscopy, confocal microscopy has seen widespread adoption and is now a standard technique in multiple fields.
+Since the introduction of scanning confocal microscopy, and especially scanning laser confocal fluorescence microscopy, confocal microscopy has seen widespread adoption and is now a standard technique in multiple fields~\cite{RN261,RN262,RN260}.
 Here, the illumination mode is epifluorescent, such that a laser beam is emitted through the objective and incident on a portion of the sample.
 The illuminated portion of the sample then fluoresces and the output intensity from the focal plane is recorded.
 This process is enhanced with a dichroic mirror and a pair of filters such that both the illumination source and the emitted light pass through the objective, but only the emitted light is passed to the detector.
-With a tight laser beam and a set of mirrors to scan the laser beam over the sample, the emitted intensity in the focal plane can be highly localized such that the spatial resolution in the focal plane is set by the size of the laser spot.
+With a tight laser beam and a set of mirrors to scan the laser beam over the sample, the emitted intensity in the focal plane can be highly localized such that the spatial resolution in the focal plane is set by the size of the laser spot~\cite{RN260}.
 This reduces the impact of photobleaching, but more importantly allows the user to `zoom'' into the sample without changing the objective magnification simply by changing the size of the laser spot and detector optics such that a smaller scan area with higher spatial resolution in a given focal plane still illuminates the entire detector.
 We note that the $z$-resolution between focal planes is still set by the diffraction limit of the emitted light, such that the only way to meaningfully improve the $z$-resolution is to change the objective.
 Coupling confocal microscopy to fluorescence microscopy not only improves signal-to-noise ratio, but also allows us to selectively image only the dyed portion of the sample.
@@ -300,23 +300,22 @@ However, even though we can in principle image up to the midpoint of the torus, 
 This is because the time required to adjust the stage height is the slowest portion of the imaging process for both of the confocal microscopes we use.
 Since we wish to acquire as many frames as possible to increase the amount of data we have for each toroid, we must must balance the time required to take an image stack versus the size of the image stack.\\
 
-
-The microtubules are dyed with AlexaFluor 647, which has en excitation peak of 651~nm and an emission peak of 667~nm.
+The microtubules are dyed with AlexaFluor 647, which has en excitation peak of 651~nm and an emission peak of 667~nm~\cite{RN264}.
 Thus, we use a 633~nm laser as our illumination source and a Cy5 filter set such that only the emitted light reaches the detector.
-The Cy5 filter set includes a 590~--~650~nm bandpass excitation filter, a 660~nm longpass dichroic mirror, and a 663~--~738~nm emission filter.
+The Cy5 filter set includes a 590~--~650~nm bandpass excitation filter, a 660~nm longpass dichroic mirror, and a 663~--~738~nm emission filter~\cite{RN263}.
 The filters and mirror are designed with steep passband transitions such that the quoted ranges are good representations of the passband.
 Note that for illumination with a laser, the excitation filter is unnecessary, but is standard when purchasing the filterset.
 The excitation filter is necessary in wide-field fluorescence microscopy when illuminating with a white-light source.\\
 
 While the two confocal microscopes we use operate the same, there are key differences in the detection that affects measurement protocol as we affects the quality of the data.
 The Zeiss microscope uses standard photomultiplier tubes (PMT) as the detector.
-Unfortunately, standard PMTs do not detect wavelengths above 600~nm well, as the quantum efficiency of the detector decreases with increasing wavelength and is typically below 10\% in that wavelength range.
+Unfortunately, standard PMTs do not detect wavelengths above 600~nm well, as the quantum efficiency of the detector decreases with increasing wavelength and is typically below 10\% in that wavelength range~\cite{RN263}.
 This means that we have to increase the intensity of the laser, increase the gain on the detector, and even average two scans of each image plane in order to increase the signal-to-noise ratio to an acceptable level.
 As a result, data from the Zeiss microscope take longer to collect and the active nematic exhibits mild photobleaching for long acquisitions.
 However, we note that the photobleaching is mild enough that it does not appreciably affect our data analysis. \\
 
 In contrast, the Nikon microscope uses a Gallium Arsenide Phosphide (GaAsP) PMT in conjunction with standard PMTs to increase the quantum efficiency of the detector suite for larger wavelengths.
-GaAsP PMTs maintain a roughly constant quantum efficiency of $\approx 50$\% up to 700~nm.
+GaAsP PMTs maintain a roughly constant quantum efficiency of $\approx 50$\% up to 700~nm~\cite{RN263}.
 Thus, we can keep both the laser power and detector gain low while still only needing a single scan of the image plane to acquire a higher quality image stack than we get from the Zeiss microscope.
 We therefore can acquire image stacks with a higher time resolution, a higher image quality, and with no noticeable photobleaching when using the Nikon microscope.\\
 
@@ -341,20 +340,98 @@ Once these parameters have been set, we turn on the Perfect Focus System to elim
 Thermal and mechanical drift in the measuring system means that over time the measured distance between the objective and a given reference plane in the sample will change.
 This will result in the physical sample volume imaged by the confocal changing over time.
 The Perfect Focus System corrects this by maintaining the distance between a specified reference plane and the objective with incredibly high accuracy.
-The microscope then resets its zero to the reference plane before every scan through the image stack, such that the microscope never accumulates error due to drift.
-Finally, we set the microscopes to image continuously such that it will start the next image stack as soon as it finishes previous stack and to image for up to 12 hours.
-This is a practical consideration as we want to capture every frame with activity, but we also need to be able to open the output file.\\
+The microscope then resets its zero to the reference plane before every scan through the image stack and thus will never accumulates error due to drift.
+Finally, we set the microscopes to image continuously for 12 hours, starting the next image stack as soon as it finishes the previous stack until the 12 hours have expired.
+We note that files imaged for longer than 12 hours can be difficult to open due to their large size, even on the computer associated to the microscope.\\
 
 Once the image acquisition is finished, we crop the raw confocal time series to only include the portion where the toroidal droplet is active.
-We save this cropped version in the microscope's proprietary format including all the metadata from the acquisition.
+We save this cropped version in single multi-page \texttt{.tiff} file including the metadata concerning aquisition parameters.
+This standardizes the data format between the different microscopes to make it easier to read in to the computer.
 
 
 \subsection{Passing confocal data into MATLAB}
+The core routine to load the image stack into MATLAB comes from the \texttt{bioformats} toolbox put out by the Open Microscopy Environment~\cite{RN265}.
+The Open Microscopy Environment maintains the open-source \texttt{OME-TIFF} image format for microscopy data.
+The \texttt{bioformats} toolbox allows us to call the imaging parameters such as pixel-to-length conversions, framerate, etc., as well as access the total times series of image stacks as a 3 dimensional array in MATLAB.
+The data are stored in image planes in the order they were taken such that the effect is concatenating the time-series of image stacks along the $z$ dimension in the order they were taken.
+Thus, to locate a specific image stack you have to know which stack in the time series you want as well as the number of planes in each image stack.
+Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the ability to analyze the data.\\
+
+We first determine the surface of the toroidal droplet by averaging all the image stacks together and then applying an intensity threshold.
+Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process.
+We next threshold the data to binarize the image stack and reduce the thickness of the surface in the binary stack.
+Since there are a large range of threshold values that do not change the output surface and it is easy to check the result of an applied threshold, we determine this threshold value by hand.
+From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
+We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}. \\
+
+We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that the only consider pixels within $\pm 5$ planes of the height at each individual point.
+This process largely prevents transient bright filaments in the bulk from affecting our measurements.
+Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
+Finally, we clear the raw confocal data from memory and we turn to determining the director and defects from our intensity projections.
+
+
+
 
 \section{Determining director and defects}
+In the intensity projection of a confocal stack at a time $t_0$, $\mathbf{n}$ is given by the direction of the microtubule bundles.
+This direction is obtained from the greyscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)\cite{RN30}.
+We illustrate this technique with an example analysis of Figure~\fxnote{tings}.
+
+
 \subsection{Coherence-enhanced diffusion filtering}
+To begin with, the original intensity image $I = I(x,y,t_0)$ is denoised using a Gaussian blur of standard deviation $\sigma$ and side length $6 \sigma -1$ to lessen contributions to the intensity fluctuations from random noise, giving us the blurred image $I_{\sigma}$.
+The result of blurring the example full-stack image as well as the inset isolated defect pair in Figure~\fxnote{things} is seen in the main image and inset of Figure~\fxnote{things}, respectively.
+This blur was performed using a $5 \textrm{ px} \times 5 \textrm{ px}$ Gaussian filter with $\sigma= 1$ px.\\
+
+Next, the gradient tensor for $I_{\sigma}$ is calculated for each pixel:
+\begin{equation}
+(\nabla I_{\sigma})(\nabla I_{\sigma})^T =
+\begin{bmatrix}
+(\nabla_x I_{\sigma})(\nabla_x I_{\sigma}) & (\nabla_x I_{\sigma})(\nabla_y I_{\sigma}) \\
+(\nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & (\nabla_y I_{\sigma})(\nabla_y I_{\sigma})
+\end{bmatrix}.
+\end{equation}
+Since the microtubule bundles have head-tail symmetry, we cannot use the gradient vector alone to define the bundle orientation as the vector has a defined head and tail.
+The rank-2 gradient tensor is symmetric and is the same whether it is constructed with the gradient vector or the negative gradient vector.
+Thus, we use the gradient tensor to ``remove the head'' from the gradient vector.
+We now define the coherence direction of a rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue. The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is periodic on the interval $[0^{\circ}, 180^{\circ})$.
+The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\fxnote{things} is seen in the main image and inset of Figure~\fxnote{things}, where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ measured CW off of the horizontal axis.
+We see that there are still too many fluctuations in the coherence directions shown in Figure~\fxnote{things} to determine $\mathbf{n}$.\\
+
+The following step seeks to remove small-scale fluctuations in the coherence direction by averaging once more.
+Here, we perform a component-wise average of the gradient tensor for each pixel to find the structure tensor for each pixel.
+This operation can be written as:
+\begin{equation}
+K_{\rho} \ast (\nabla I_{\sigma})(\nabla I_{\sigma})^T =
+\begin{bmatrix}
+K_{\rho} \ast ( \nabla_x I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nabla_x I_{\sigma})(\nabla_y I_{\sigma}) \\
+K_{\rho} \ast (  \nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nabla_y I_{\sigma})(\nabla_y I_{\sigma})
+\end{bmatrix},
+\end{equation}
+where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image.
+If $\rho$ is too small, the coherence directions of the structure tensor will resemble those from the gradient tensor, while if $\rho$ is too large the desired coherence features will be washed out by the averaging.
+The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\fxnote{things} can be seen in the main image and inset in Figure~\fxnote{things}, respectively.
+As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ measured CW off of the horizontal axis.
+ We take this output of the coherence direction of the structure tensor for each pixel as the local ``molecular director'' $\mathbf{u}$, representing the local orientation of the active nematic.
+
+
 \subsection{Calculating the director}
+From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\fxnote{eq here}, taking the average over all the $\mathbf{u}$ of all points in a 5 pixel radius of the point of interest.
+We then diagonalize the result as shown in Eq.~\fxnote{eq here}, providing $\mathbf{n}$ and $S$ for each pixel.
+For the $\mathbf{u}$ in displayed in Figure~\fxnote{things}, $S$ is found in Figure~\fxnote{things}, where the greyscale intensity $[\textrm{black}, \textrm{gray})$ is mapped to the values $[0, 1]$ such that the dominant grey shade in Figure~\fxnote{things} indicates uniform alignment within the 5 px radius.
+The corresponding $\mathbf{n}$ and defects are plotted in Figure~\fxnote{things}.
+Note that only every $7^{\textrm{th}}$ value of $\mathbf{n}$ is plotted to ensure the $\mathbf{n}$-field is clear to the eye.
+In reality there is a value for $\mathbf{n}$ at every pixel.
+
+
 \subsection{Finding defect location and topological charge}
+The defects are found by selecting pixels with $S < 0.1$ and then characterizing the $\mathbf{n}$-rotation about the point of interest.
+
+he $+1/2$ and $-1/2$ defects are indicated in Fig. ED1f by ${\color{red} \blacktriangle } $  and  ${ \color{blue} \blacktriangledown } $, respectively.
+
+
+
+
 \subsection{Edge charge}
 
 \section{Measuring surface curvature}
