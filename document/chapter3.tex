@@ -217,7 +217,8 @@ This condition is a balance of two timescales: (i) the timescale required to und
 Equating the two timescales and rearranging terms allows us to express this condition in terms of the Capillary number of the outer phase like $\textup{Ca}_o > (2 \pi / f(\mu_i/\mu_o))R_{tip}/a_{jet}$ ,where $\textup{Ca}_o = \mu_c U/\gamma$ a dimensionless group comparing the viscous stresses to the surface tension stresses.
 We note that $a_{jet} \approx a_{tip}$, the radius of the needle.
 Experimentally, it has been found that $\textup{Ca}_o > 2.2 R_{tip}/a_{tip}$ for $\mu_o = 5000$~mPa~s and $\mu_i = 1$~mPa~s in order to form a torus~\cite{RN29}.
-In practice, we simply look at the video of the process to verify that our chosen parameters generate a jet that closes in upon itself before breaking.\\
+In practice, we simply look at the video of the process to verify that our chosen parameters generates a jet that closes in upon itself before breaking.
+To control the size and aspect ratio of the toroidal droplet, we tune $R_0$ by changing $R_{tip}$ and $a$ through the total injected volume. \\
 
 Toroidal droplets generated in a simple fluid are unstable due to the influence of surface tension.
 Surface tension acts to minimize the interfacial area between two immisicble fluid phases, hence the ubiquity and stability of spherical droplets in nature; the sphere minimizes the surface area for a given volume~\cite{RN178}.
@@ -242,7 +243,7 @@ If the smallest radius of curvature on a toroidal drop is larger than $R_c$, the
 However, for toroids with $\xi \sim 1$, the radius of the handle can be the relevant lengthscale determining the stability of a toroidal droplet.
 Since the active nematic solution is aqueous, we use an oil-based yield-stress material, DC-9041 (Dow Corning), a silicone elastomer.
 To tune the yield stress, we dilute pure DC-9041 with 10~cSt PDMS oil (Clearco).\
-We dilute to 74\% -- 77\% w/w DC-9041 to form stable active nematic toroids with tube radii from 150~$\upmu$m~--~300~$\upmu$m.\\
+We dilute to 74\%~--~77\% w/w DC-9041 to form stable active nematic toroids with tube radii from 150~$\upmu$m~--~300~$\upmu$m.\\
 
 Making a toroidal droplet in a yield-stress material has some key differences to making a toroidal droplet in a viscous fluid.
 Notably, the yield-stress material is only fluid-like in regions where the stress is greater than the yield-stress.
@@ -266,7 +267,23 @@ In addition, it is important to withdraw the dummy fluid slowly ($\approx 1$~mL/
 
 
 \section{Imaging active nematic toroids}
+Once the active nematic toroidal droplet is made, we let the droplet rest for 2~--4~4~hours to ensure the nematic is fully formed on the surface of the toroidal droplet.
+We then image the droplet via fluorescence confocal microscopy (Nikon A1R or Zeiss LSM 700) until the activity ceases.
+This typically occurs between 6~--~10~hours after making the toroidal droplet.
+
+
 \subsection{Confocal setup and parameters}
+Both of the confocals we use excite the sample by scanning laser over the image plane, adjusting the height of the stage, and then repeating the process to form an image stack.
+We note that we are inherently restricted to only imaging the lower half of the toroidal droplet due to refraction effects.
+The light emitted from the upper half of the toroidal droplet travels through the aqueous active solution and then is refracted by the curved interface between the active solution and the yield-stress material.
+In contrast, the light from the lower portion of the toroid is emitted directly into the yield-stress material such that it's light path is unaffected by refraction.
+However, even though we can in principle image up to the midpoint of the torus, in practice we typically stop our image stack below the midpoint.
+This is because the time required to adjust the stage height is the slowest portion of the imaging process for both of the confocal microscopes we use.
+Since we wish to acquire as many frames as possible to increase the amount of data we have for each toroid, we must must balance the time required to take an image stack versus the size of the image stack.
+As a rule of thumb we aim for one image stack to take 30~--~50~s to acquire.
+This corresponds to roughly 15~--~25 image planes, depending on the microscope used to acquire the data.
+
+
 \subsection{Passing confocal data into MATLAB}
 
 \section{Determining director and defects}
