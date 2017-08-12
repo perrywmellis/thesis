@@ -375,12 +375,12 @@ Finally, we clear the raw confocal data from memory and we turn to determining t
 \section{Determining director and defects}
 In the intensity projection of a confocal stack at a time $t_0$, $\mathbf{n}$ is given by the direction of the microtubule bundles.
 This direction is obtained from the greyscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)\cite{RN30}.
-We illustrate this technique with an example analysis of Figure~\fxnote{tings}.
+We illustrate this technique with an example analysis of the intensity projection shown in Figure~\ref{f:3-CEDF2}(A).
 
 
 \subsection{Coherence-enhanced diffusion filtering}
 To begin with, the original intensity image $I = I(x,y,t_0)$ is denoised using a Gaussian blur of standard deviation $\sigma$ and side length $6 \sigma -1$ to lessen contributions to the intensity fluctuations from random noise, giving us the blurred image $I_{\sigma}$.
-The result of blurring the example full-stack image as well as the inset isolated defect pair in Figure~\fxnote{things} is seen in the main image and inset of Figure~\fxnote{things}, respectively.
+The result of blurring the example full-stack image as well as the inset isolated defect pair in Figure~\ref{f:3-CEDF2}(A) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B), respectively.
 This blur was performed using a $5 \textrm{ px} \times 5 \textrm{ px}$ Gaussian filter with $\sigma= 1$ px.\\
 
 Next, the gradient tensor for $I_{\sigma}$ is calculated for each pixel:
@@ -394,9 +394,10 @@ Next, the gradient tensor for $I_{\sigma}$ is calculated for each pixel:
 Since the microtubule bundles have head-tail symmetry, we cannot use the gradient vector alone to define the bundle orientation as the vector has a defined head and tail.
 The rank-2 gradient tensor is symmetric and is the same whether it is constructed with the gradient vector or the negative gradient vector.
 Thus, we use the gradient tensor to ``remove the head'' from the gradient vector.
-We now define the coherence direction of a rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue. The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is periodic on the interval $[0^{\circ}, 180^{\circ})$.
-The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\fxnote{things} is seen in the main image and inset of Figure~\fxnote{things}, where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ measured CW off of the horizontal axis.
-We see that there are still too many fluctuations in the coherence directions shown in Figure~\fxnote{things} to determine $\mathbf{n}$.\\
+We now define the coherence direction of a rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue.
+The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is periodic on the interval $[0^{\circ}, 180^{\circ})$.
+The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(C), where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ .
+We see that there are still too many fluctuations in the coherence directions shown in Figure~\ref{f:3-CEDF2}(C) to determine $\mathbf{n}$.\\
 
 The following step seeks to remove small-scale fluctuations in the coherence direction by averaging once more.
 Here, we perform a component-wise average of the gradient tensor for each pixel to find the structure tensor for each pixel.
@@ -410,24 +411,56 @@ K_{\rho} \ast (  \nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nab
 \end{equation}
 where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image.
 If $\rho$ is too small, the coherence directions of the structure tensor will resemble those from the gradient tensor, while if $\rho$ is too large the desired coherence features will be washed out by the averaging.
-The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\fxnote{things} can be seen in the main image and inset in Figure~\fxnote{things}, respectively.
-As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ measured CW off of the horizontal axis.
+The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is shown in the main image and inset in Figure~\ref{f:3-CEDF2}(D), respectively.
+As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$.
  We take this output of the coherence direction of the structure tensor for each pixel as the local ``molecular director'' $\mathbf{u}$, representing the local orientation of the active nematic.
-
-
+\newpage
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{figures/C3/Ch3-Figs_CEDF2.png}
+  \caption{Step-by-step output to find the director and defects from an active nematic image.
+(A), Maximum-intensity projection of a confocal stack along $-\hat{z}$ at a single time.
+Inset: Close up of a defect pair.
+(B), Image from (A) after applying a $5 \textrm{ px} \times 5 \textrm{ px}$ Gaussian blur with standard deviation of 1 px.
+Inset: The same operation applied to the image in the inset of (A).
+(C), Coherence directions of the tensors formed from the gradient of the image in (B).
+Black represents $0^{\circ}$ and white represents $180^{\circ}$ measured CW from the horizontal.
+Inset: The same operation applied to the image in the inset of (B).
+(D), Coherence directions of the structure tensors formed by component-wise averaging the gradient tensors formed from image (B).
+Black represents $0^{\circ}$ and white represents $180^{\circ}$ measured CW from the horizontal.
+The averaging is done with a $29 \times 29$ Gaussian filter with standard deviation of 5 px.
+Inset: The same operation applied to the image in the inset of (B).
+(E), The scalar order parameter $S$ obtained by diagonalizing the $\mathbf{Q}$ formed from the directions in image (D).
+$\mathbf{Q}$ is formed for each point by considering the directions of all points in a 5 pixel radius.
+Inset: The same operation applied to the image in the inset of (D).
+(F), The director obtained by diagonalizing the $\mathbf{Q}$ formed from the direcions in image (D).
+$\mathbf{Q}$ is formed for each point by considering the directions of all points in a 5 pixel radius.
+The defects are calculated by considering points of low $S$ and calculating the $\mathbf{n}$-rotation along a path encircling the point.
+$s = +1/2$ defects are represented by ${\color{red} \blacktriangle  } $  and $s = -1/2$ defects are represented by ${ \color{blue} \blacktriangledown  } $.
+Inset: The same operation applied to the image in the inset of (D).}\label{f:3-CEDF2}
+\end{figure}
+\newpage
 \subsection{Calculating the director}
-From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\fxnote{eq here}, taking the average over all the $\mathbf{u}$ of all points in a 5 pixel radius of the point of interest.
-We then diagonalize the result as shown in Eq.~\fxnote{eq here}, providing $\mathbf{n}$ and $S$ for each pixel.
-For the $\mathbf{u}$ in displayed in Figure~\fxnote{things}, $S$ is found in Figure~\fxnote{things}, where the greyscale intensity $[\textrm{black}, \textrm{gray})$ is mapped to the values $[0, 1]$ such that the dominant grey shade in Figure~\fxnote{things} indicates uniform alignment within the 5 px radius.
-The corresponding $\mathbf{n}$ and defects are plotted in Figure~\fxnote{things}.
-Note that only every $7^{\textrm{th}}$ value of $\mathbf{n}$ is plotted to ensure the $\mathbf{n}$-field is clear to the eye.
-In reality there is a value for $\mathbf{n}$ at every pixel.
+From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over all the $\mathbf{u}$ of all points in a specified radius of the point of interest.
+We perform this averaging using a disc filter of radius $\beta$.
+We then diagonalize the $\mathbf{Q}$ as shown in Eq.~\ref{e:2-2DOrderDiag}, providing $\mathbf{n}$ and $S$ for each pixel.
+For the orientations of $\mathbf{u}$ in displayed in Figure~\ref{f:3-CEDF2}(D), we choose $\beta = 5$~px to produce $S$ and $n$ as shown in Figure~\ref{f:3-CEDF2}(E,F), respectively.
+The greyscale intensity $[\textrm{black}, \textrm{gray})$ in Figure~\ref{f:3-CEDF2}(E) maps to the values $S = [0, 1]$ such that the dominant grey shade in Figure~\ref{f:3-CEDF2}(E) indicates uniform alignment within the 5 px radius.
+In addition, note that only every $7^{\textrm{th}}$ value of $\mathbf{n}$ is plotted in Figure~\ref{f:3-CEDF2}(F) to ensure the $\mathbf{n}$-field is clear to the eye.
+In reality there is a value for $\mathbf{n}$ at every pixel. \\
+
+The process of determining the director relies on the choice of three parameters: $\sigma$, the standard deviation of the filter for the initial blur, $\rho$, the standard deviation of the filter to produce the structure tensor, and $\beta$, the radius of the disc filter used to determine $\mathbf{Q}$.
+We choose the parameters such that the director field calculated on a random sampling of 3~--~5 intensity images in a given time series best agrees by eye with the actual intensity images.
+We find best results keeping $\sigma = 0.5$ px and varying $\rho$ between 5~px and 8~px and varying $\beta$ between 5~px and 6~px.
+The variations in $\rho$ and $\beta$ are a result of different scales between px and $\upmu$m depending on the microscope used, the microscope zoom, and the output image size.
+However, since the initial blur is responsible for removing random noise at the pixel level, we find best results keeping $\sigma = 0.5$ px always.
+Once we determine $\mathbf{n}$ and $S$, we turn to finding the defects.
 
 
 \subsection{Finding defect location and topological charge}
 The defects are found by selecting pixels with $S < 0.1$ and then characterizing the $\mathbf{n}$-rotation about the point of interest.
 
-he $+1/2$ and $-1/2$ defects are indicated in Fig. ED1f by ${\color{red} \blacktriangle } $  and  ${ \color{blue} \blacktriangledown } $, respectively.
+he $s=+1/2$ and $s=-1/2$ defects are indicated in Fig. ED1f by ${\color{red} \blacktriangle } $  and  ${ \color{blue} \blacktriangledown } $, respectively.
 
 
 
