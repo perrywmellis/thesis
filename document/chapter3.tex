@@ -254,7 +254,7 @@ This is because the wider the volume of fluidized yield-stress material, the les
 In addition, adding a pre-shear generally helps the overall toroidal droplet be more axisymmetric.
 We also find that making toroidal droplets close to the free-surface of the yield-stress material helps to reduce climbing, but the physical reason for this is unclear.\\
 
-For general experiments with toroidal droplets where there is a large aamount of the inner phase available, we simply fill the syringe with the inner phase.
+For general experiments with toroidal droplets where there is a large amount of the inner phase available, we simply fill the syringe with the inner phase.
 However, for the active experiments, we have only 100~$\upmu$L of active solution per experiment, which is not enough to even fill the Luer-lock syringe tips we use to connect a syringe to the tubing.
 To accommodate the low sample volume, we fill the syringe with mineral oil (xx cSt, XXX)\fxnote{GET MO source} as a dummy fluid and increase the length of the tubing between the syringe and the needle such that the volume of tubing is greater than $100$~$\upmu$L.
 We pump the dummy fluid until it fills the tubing, insert the filled tubing into the container holding the active nematic solution, and the withdraw the dummy fluid to pull the active nematic solution into the tubing.
@@ -345,7 +345,7 @@ Finally, we set the microscopes to image continuously for 12 hours, starting the
 We note that files imaged for longer than 12 hours can be difficult to open due to their large size, even on the computer associated to the microscope.\\
 
 Once the image acquisition is finished, we crop the raw confocal time series to only include the portion where the toroidal droplet is active.
-We save this cropped version in single multi-page \texttt{.tiff} file including the metadata concerning aquisition parameters.
+We save this cropped version in single multi-page \texttt{.tiff} file including the metadata concerning acquisition parameters.
 This standardizes the data format between the different microscopes to make it easier to read in to the computer.
 
 
@@ -367,7 +367,7 @@ We take this $z$ value to be the height $h$ of the toroidal surface record it in
 We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that the only consider pixels within $\pm 5$ planes of the height at each individual point.
 This process largely prevents transient bright filaments in the bulk from affecting our measurements.
 Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
-Finally, we clear the raw confocal data from memory and we turn to determining the director and defects from our intensity projections.
+Finally, we clear the raw confocal data from memory and work to (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
 
 
 
@@ -451,25 +451,99 @@ In reality there is a value for $\mathbf{n}$ at every pixel. \\
 
 The process of determining the director relies on the choice of three parameters: $\sigma$, the standard deviation of the filter for the initial blur, $\rho$, the standard deviation of the filter to produce the structure tensor, and $\beta$, the radius of the disc filter used to determine $\mathbf{Q}$.
 We choose the parameters such that the director field calculated on a random sampling of 3~--~5 intensity images in a given time series best agrees by eye with the actual intensity images.
-We find best results keeping $\sigma = 0.5$ px and varying $\rho$ between 5~px and 8~px and varying $\beta$ between 5~px and 6~px.
-The variations in $\rho$ and $\beta$ are a result of different scales between px and $\upmu$m depending on the microscope used, the microscope zoom, and the output image size.
+We find best results keeping $\sigma = 0.5$~px and varying $\rho$ between 5~px and 8~px and varying $\beta$ between 5~px and 6~px.
+The variations in $\rho$ and $\beta$ are a result of different scales between pixels and $\upmu$m depending on the microscope used, the microscope zoom, and the output image size.
 However, since the initial blur is responsible for removing random noise at the pixel level, we find best results keeping $\sigma = 0.5$ px always.
 Once we determine $\mathbf{n}$ and $S$, we turn to finding the defects.
 
 
 \subsection{Finding defect location and topological charge}
-The defects are found by selecting pixels with $S < 0.1$ and then characterizing the $\mathbf{n}$-rotation about the point of interest.
+We start by selecting pixels with $S < 0.1$ as potential defect candidates.
+For every candidate, we first consider all pixels in a 5~px~$\times$~5~px plaquette centered on the point of interest and ensure that there are no other candidates in the plaquette with a lower value of $S$.
+We then calculate the $\mathbf{n}$-rotation about the point of interest according to Eq.~\ref{eq:2-topCharge}.
+Explicitly, we numerically evaluate $s = \frac{1}{2\pi} \oint \frac{\textup{d}\mathbf{n}}{\textup{d}u}$ CCW along the edge of the plaquette, where $u$ is the arclength parameter along the square contour.
+We take the point of interest to be a $s = \pm 1/2$ defect if $s \in \pm [0.49,0.51]$.
+The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of the $\mathbf{n}$-field in Figure~\ref{f:3-CEDF2}(F), with $s = +1/2$ defects indicated by ${\color{red} \blacktriangle } $  and $s = -1/2$ defects indicated by ${ \color{blue} \blacktriangledown } $.\\
 
-he $s=+1/2$ and $s=-1/2$ defects are indicated in Fig. ED1f by ${\color{red} \blacktriangle } $  and  ${ \color{blue} \blacktriangledown } $, respectively.
+Due to the discrete nature of our data, it is possible to ``miss'' defects, especially when pairs of defects are close together.
+Typically, since one defect in the pair will have a lower value of $S$, the defect with the larger value of $S$ will be ignored.
+Since topological charge is discrete, every missed defect in a region causes the total topological charge in the region to have an error of $\pm 1/2$.
+However, this error is random such that the time-averaged toplogical charge in a region converges if we average over enough time frames. \\
 
-
+We also characterize the error in the measured topological charge by considering the Gauss-Bonnet Theorem for a compact-orientable surface.
 
 
 \subsection{Edge charge}
+wsdf
+
+
+
 
 \section{Measuring surface curvature}
+From $h(x,y)$, we wish the calculate the Gaussian curvature of the surface.
+Recall from Chapter~\ref{c:1} that $K = \textup{det} \big \{ \mathbf{L} \big \}$.
+Thus, we need to calculate the Weingarten matrix, defined as $L_{ij} = (\mathbf{e}_i \cdot \nabla) \mathbf{k} \cdot \mathbf{e}_j$, where $\mathbf{k}$ is the unit surface normal and $\mathbf{e}_j = d \mathbf{R}/dx_j$ is the tangent vector in the $j^{\textrm{th}}$ direction.
+
+
 \subsection{The Weingarten matrix}
+Since $\mathbf{R} = \{x, y, h(x,y)\}$, it is straightforward to calculate the Weingarten matrix directly.
+However, this involves taking discrete first and second derivatives on a noisy surface.
+To avoid this, we notice that the Weingarten matrix relates a displacement in the tangent plane of a surface with the corresponding change in the unit normal vector along the displacement like:
+\begin{equation}
+\Delta \mathbf{k}_i = L_{ij} \Delta r^j = (\mathbf{e}_i \cdot \nabla) \mathbf{k} \cdot \mathbf{\Delta r},\label{e:3-Kfit1}
+\end{equation}
+with $\mathbf{\Delta r} = \Delta r^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
+Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit the components of $\mathbf{L}$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
+This technique allows us to characterize a noisy surface without taking a discrete derivative and without any prior knowledge about the surface features.
+In addition, an IRLS routine is a robust fit able to reject  outliers and accommodate the noise in our data.
+
+
 \subsection{Iteratively-reweighted least squares}
+Consider a set of observations of an independent dependent random variable where each observation is denoted by $y_i$ and is associated with a dependent variable $x_i$.
+Given a model $y'_i = g(x_i,\bm{\alpha})$, where $\bm{\alpha}$ is the parameter vector for the model, we can define the error of the model for each observation by the residual, $\gamma_i = y_i - y'_i = y_i - g(x_i,\bm{\alpha})$.
+A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of the squared residuals:
+\begin{equation}
+  \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_i^2\big \}.\label{e:3-LeastSquare}
+\end{equation}
+If the model is linear, the fit has an analytic solution.
+In addition, for normally-distributed data, the result of least squares fit gives the maximum-likelihood values of $\bm{\alpha}$.
+This is illustrated in Figure~\fxnote{fits}(A), where $x_i$ and $y_i$ are linearly related such that a line fits the example data well and $\bm{\alpha}$ contains the slope and the intercept of the line.\\
+
+However, least-squares fits are very sensitive to outliers in the data and thus do not do well when the data are very noisy.
+This is easy to see in Figure~\fxnote{fits}(B), where we introduce some outliers into our example data from Figure~\fxnote{fits}(A).
+The fact that Eq.~\ref{e:3-LeastSquare} tries to minimize the sum of the squared errors means that outliers can have a disproportionate effect on the final fit.
+In fact, extreme outliers are often referred to as lever points for this exact reason.\\
+
+One way to treat noisy or uncertain data is to assign a weight to each data point such that data points with larger error are weighted less.
+The fit then becomes:
+\begin{equation}
+  \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_i \gamma_i)^2 \big \},
+\end{equation}
+where $w_i$ is the weight associated to the observation $y_i$.
+A weighted linear least-squares fit of this type is still analytically solvable.
+Unfortunately, weighted least-squares is still very sensitive to outliers if it is not obvious \emph{a priori} which data are the outliers. \\
+
+One way to deal with this is to construct a fit that is inherently less sensitive to outliers.
+For example, we can replace the square of the residual with a general cost function:
+\begin{equation}
+  \argmin_{\bm{\alpha}} \sum\limits_i\,\textrm{cost}(\gamma_i),\label{e:3-GeneralCostFit}
+\end{equation}
+such that the fit could deprioritize or even reject entirely large sources of error.
+These cost functions are known as maximum-likelihood-type estimators, or M-estimators.
+Note that choosing the cost function $\textrm{cost}(\gamma_i) = \gamma_i^2$ gives a regular least-squares fit.
+Unfortunately, a general cost function is not often analytically solvable, and if the cost function is not a globally convex function, the fit is not guaranteed to converge to a global minimum, or perhaps even converge at all.\\
+
+An IRLS method solves Eq.~\ref{e:3-GeneralCostFit} via an iterative process, where each iteration solves a weighted least-squares fit with the weights determined by the residuals of the previous iteration like:
+\begin{equation}
+  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \},
+\end{equation}
+where (p) indexes an iteration and we have expressed $\gamma_i$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
+The entire process is thus described by the recursion relation:
+\begin{equation}
+  \gamma_i^{(p+1)} = y_i - g\big (x_i,\bm{\alpha}^{(p+1)}\big )= y_i - g\Bigg (x_i, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
+\end{equation}
+
+
 \subsection{Fitting the Weingarten matrix on a surface}
 \subsection{Correcting the surface normal vectors}
 \subsection{Finding the area element}
