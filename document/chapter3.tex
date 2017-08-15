@@ -28,7 +28,7 @@ Despite theoretical interest in the interplay between varying Gaussian curvature
 More notably, there has been no work where the defects have the option to explore regions with both positive and negative Gaussian curvature.
 In this scenario with nematic order, the topological charge is expected to unbind such that $s = +1/2$ defects are attracted to regions of positive Gaussian curvature and $s=  -1/2$ defects are attracted to regions of negative Gaussian curvature~\cite{RN17,RN19,RN22}.
 In this chapter we consider a 2D extensile active nematic composed of microtubules driven by kinesin motors fueled by adenosine triphosphate (ATP) on the surface of a torus.
-Since the torus the torus has a handle, it has a genus of one and thus according to the Poincar\'e-Hopf Theorem written in Eq.~[INTRO] must have vanishing net topological charge.
+Since the torus has a handle, it has a genus of one and thus according to the Poincar\'e-Hopf Theorem written in Eq.~[INTRO] must have vanishing net topological charge.
 We note that a nematic on a torus can satisfy this condition by either being defect-free or by having the same amount of positive and negative charge.
 While strong spatial confinement or low activity can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN9,RN247}, we perform our experiments in the turbulent regime such that the torus is always populated with a sea of constantly moving $s = \pm 1/2$ defects that are dynamically created and annihilated.\\
 
@@ -468,22 +468,40 @@ The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of
 Due to the discrete nature of our data, it is possible to ``miss'' defects, especially when pairs of defects are close together.
 Typically, since one defect in the pair will have a lower value of $S$, the defect with the larger value of $S$ will be ignored.
 Since topological charge is discrete, every missed defect in a region causes the total topological charge in that region to have an error of $\pm 1/2$.
-However, this error is random such that the time-averaged topological charge in a region converges if we average over enough time frames. \\
+This gives us a way to characterize the error in our defect-finding routine.
+We consider a region of the surface and monitor the average charge in the region over time.
+We find that the time-averaged topological charge in a region converges if we average over enough time frames, implying that at least some portion of the error is random.
+However, this does not exclude the presence of a systematic error such as consistently missing a single $s = -1/2$ defect --- the time-averaged charge would still converge with enough frames, but the measured value would converge to a value lower than the actual time-averaged topological charge.\\
 
-We also characterize the error in the measured topological charge by considering a region of interrogation as its own entity.
-If it's is a surface with abboundary, extended Guass Bonnet says $\chi = 1$.
-
-HOwever P-H is only valid when the BC are normal or tangential.
-Extended Poincare Hopf that treats the director variation along the boundary and gives the edge charge
+We characterize the systematic error in the measured topological charge by considering a region of interrogation as its own entity.
+Even without knowing the curvature of the surface, any region on the toroidal surface is homeomorphic to a disc with a boundary and thus according to the Guass-Bonnet theorem in Eq.~\fxnote{INTRO} has $\chi = 1$.
+However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either tangential or normal to the boundary.
+In our case, the director if free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
+Instead, we use an extended version of the Poincar\'e-Hopf theorem~\fnote{extendedPH} that allows the director to vary on the boundary:
+\begin{equation}
+  \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
+\end{equation}
+where $s_i$ is the charge of a defect in the bulk of the region calculated via Eq.~\ref{eq:2-topCharge}, and $s_{boundary}$ is the edge charge.
 
 
 \subsection{Edge charge}
-Functoin as a winding number in the frame of a boundary.  Topology says that shit has to add up.
+Recall that the topological charge is the winding number of the director along a closed contour in $\mathbb{R}\mathbb{P}_1$, where the director is specified with respect to a fixed frame.
+To find the edge charge we consider $\mathbf{n}$ along the edge and calculate the associated winding number in $\mathbb{R}\mathbb{P}_1$, but here we measure the director orientation with respect to the Frenet-Serret frame along the edge.
+If we let $\phi$ describe the director orientation with respect to fixed coordinate system and $\psi$ describe the orientation of the unit tangent vector with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame.
+Thus, we calculate the edge charge like:
+\begin{equation}
+  s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\phi'\label{e:3-boundCharge}.
+\end{equation}
+Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundCharge}, we can re-write the edge charge as:
+\begin{equation}
+  s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\psi - \textup{d}\phi = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}\label{e:3-boundChargeExpand},
+\end{equation}
+where here $s_{bulk}$ is calculated directly due to the additivity of defects.
+If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
+Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}.
+The sum of the edge charge and the topological charge from all the defects in the bulk should be equal to one.\\
 
-Can show that our error disappears.
-
-
-Could also calculate the bulk charge directly leveraging additivity of defects. In fact can show the equivalence by writing the edge charge plus bulk charge for an aribitrary director field as blah.
+Procedurally, to calucalate the edge charge, we
 
 
 
@@ -504,7 +522,7 @@ To avoid this, we notice that the Weingarten matrix relates a displacement in th
 with $\mathbf{\Delta r} = \Delta r^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
 Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit the components of $\mathbf{L}$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
 This technique allows us to characterize a noisy surface without taking a discrete derivative and without any prior knowledge about the surface features.
-In addition, an IRLS routine is a robust fit able to reject  outliers and accommodate the noise in our data.
+In addition, an IRLS routine is a robust fit able to reject outliers and accommodate the noise in our data.
 
 
 \subsection{Iteratively-reweighted least squares}
