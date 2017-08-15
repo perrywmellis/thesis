@@ -477,7 +477,7 @@ We characterize the systematic error in the measured topological charge by consi
 Even without knowing the curvature of the surface, any region on the toroidal surface is homeomorphic to a disc with a boundary and thus according to the Guass-Bonnet theorem in Eq.~\fxnote{INTRO} has $\chi = 1$.
 However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either tangential or normal to the boundary.
 In our case, the director if free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
-Instead, we use an extended version of the Poincar\'e-Hopf theorem~\fnote{extendedPH} that allows the director to vary on the boundary:
+Instead, we use an extended version of the Poincar\'e-Hopf theorem~\fxnote{extendedPH} that allows the director to vary on the boundary:
 \begin{equation}
   \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
 \end{equation}
@@ -498,10 +498,29 @@ Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundChar
 \end{equation}
 where here $s_{bulk}$ is calculated directly due to the additivity of defects.
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
-Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}.
-The sum of the edge charge and the topological charge from all the defects in the bulk should be equal to one.\\
+Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}: the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to one.\\
 
-Procedurally, to calucalate the edge charge, we
+We define regions in an intensity image using a binary mask, where a $1$ means the pixel is included in the region of interest and a $0$ means the pixel is excluded.
+We take the boundary of a binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
+Along the boundary, the normalized displacement vector between two pixels indexed with $i$ and $j$ is defined as:
+\begin{align}
+  \Delta \mathbf{R}_{i,j} =  \frac{\mathbf{R}[j]-\mathbf{R}[i]}{|\mathbf{R}[j]-\mathbf{R}[i]|}.
+\end{align}
+We estimate the unit tangent vector for a pixel of interest by averaging the local normalized displacement vectors:
+\begin{equation}
+  \mathbf{T} \approx \frac{\Delta \mathbf{R}_{i,i+1} + \Delta \mathbf{R}_{i,i+2} + \Delta \mathbf{R}_{i-1,i} + \Delta \mathbf{R}_{i-2,i}}{|\Delta \mathbf{R}_{i,i+1} + \Delta \mathbf{R}_{i,i+2} + \Delta \mathbf{R}_{i-1,i} + \Delta \mathbf{R}_{i-2,i}|},
+\end{equation}
+where the pixel of interest is indexed by $i$ and an increasing index corresponds to a CCW displacement along the boundary.
+To complete the Frenet-Serret frame, we estimate the outward pointing unit normal $\mathbf{k}$ by applying a $-\pi/2$ CCW rotation to $\mathbf{T}$ at every pixel.
+Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-boundCharge}.\\
+
+The Turning of the Tangent Theorem lets us test our Frennet-Serret frame; we set $\phi = \textup{cons't}$ and find that $s_{boundary} = 1$ for our set of test masks, as desired.
+We use example director fields with $s = -1, -1/2, +1/2, +1$ defects to test our full routine and confirm that $s_{boundary} + s_{bulk} = 1$ for all of our test cases.\\
+
+
+We now consider a region in the intensity projection for a torus and monitor the average $s_{bulk}$ and $s_{boundary}$ over time, where we calculate $s_{bulk} = \sum_i s_i$, with $s_i$ the charge of a single defect in the bulk of the region.
+We find that even though there is approximately a $50\%$ chance of missing a defect in the region, the error is random and not systematic such that $\overline{s}_{bulk} + \overline{s}_{boundary} = 1$ if we average for enough frames.
+
 
 
 
@@ -519,7 +538,7 @@ To avoid this, we notice that the Weingarten matrix relates a displacement in th
 \begin{equation}
 \Delta \mathbf{k}_i = L_{ij} \Delta r^j = (\mathbf{e}_i \cdot \nabla) \mathbf{k} \cdot \mathbf{\Delta r},\label{e:3-Kfit1}
 \end{equation}
-with $\mathbf{\Delta r} = \Delta r^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
+with $\mathbf{\Delta R} = \Delta R^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
 Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit the components of $\mathbf{L}$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
 This technique allows us to characterize a noisy surface without taking a discrete derivative and without any prior knowledge about the surface features.
 In addition, an IRLS routine is a robust fit able to reject outliers and accommodate the noise in our data.
@@ -558,20 +577,57 @@ For example, we can replace the square of the residual with a general cost funct
 such that the fit could deprioritize or even reject entirely large sources of error.
 These cost functions are known as maximum-likelihood-type estimators, or M-estimators.
 Note that choosing the cost function $\textrm{cost}(\gamma_i) = \gamma_i^2$ gives a regular least-squares fit.
-Unfortunately, a general cost function is not often analytically solvable, and if the cost function is not a globally convex function, the fit is not guaranteed to converge to a global minimum, or perhaps even converge at all.\\
+Unfortunately, a general cost function is not often analytically solvable or easy to minimize.
+However, provided the cost function is differentiable, we can solve Eq.~\ref{e:3-GeneralCostFit} with an IRLS process.\\
 
-An IRLS method solves Eq.~\ref{e:3-GeneralCostFit} via an iterative process, where each iteration solves a weighted least-squares fit with the weights determined by the residuals of the previous iteration like:
+We begin by expressing Eq.~\ref{e:3-GeneralCostFit} in terms of a weighted least-squares fit.
+Taking the derivative of Eq.~\ref{e:3-GeneralCostFit} with respect to $\bm{\alpha}$ gives:
 \begin{equation}
-  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \},
+  \sum\limits_i\,\frac{\partial \, \textrm{cost}(\gamma_i)}{\partial \gamma_i} \frac{\partial \gamma_i}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv1}
 \end{equation}
-where (p) indexes an iteration and we have expressed $\gamma_i$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
-The entire process is thus described by the recursion relation:
+If we define a weight function like $w(\gamma_i) = \dfrac{1}{\gamma_i}\dfrac{\partial \, \textrm{cost}(\gamma_i)}{\partial \gamma_i}$, we can now re-write Eq.~\ref{e:3-IRLSderiv1} as:
+\begin{equation}
+  \sum\limits_i\,w(\gamma_i) \gamma_i \frac{\partial \gamma_i}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv2}
+\end{equation}
+ Solving Eq.~\ref{e:3-IRLSderiv2} for $\bm{\alpha}$ is equivalent to minimizing:
+ \begin{equation}
+   \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_i(\gamma_i) \gamma_i(\bm{\alpha}))^2 \big \},\label{e:3-WeightLS}
+ \end{equation}
+a weighted least-squares fit, where we have expressed $\gamma_i$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
+However, since our weights are dependent on the residuals, we solve Eq.~\ref{e:3-WeightLS} iteratively, where the weights for an iteration $(p)$ are determined by the residuals from the previous iteration, giving:
+\begin{equation}
+  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \}.
+\end{equation}
+With enough iterations, the $\gamma_i$ converge and we have the $\bm{\alpha}$ values that solve Eq.~\ref{e:3-WeightLS}.
+The entire process can described by the recursion relation:
 \begin{equation}
   \gamma_i^{(p+1)} = y_i - g\big (x_i,\bm{\alpha}^{(p+1)}\big )= y_i - g\Bigg (x_i, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
 \end{equation}
 
 
 \subsection{Fitting the Weingarten matrix on a surface}
+We start by computing the Delauney triangulation of $h(x,y)$ such that every pixel in $h(x,y)$ is a vertex in the triangulation.
+From the triangulation, we estimate $\mathbf{k}$ at every vertex as the average of the unit normals of the adjacent faces.
+Once we have a triangulation and the $\mathbf{k}$ estimates, we proceed to fit the curvature.\\
+
+Let $\mathbf{R}_0$ be an example point of interest with normal $\mathbf{k}_0$.
+We first make an initial fit using regular least-squares to serve as an input into the IRLS routine.
+We consider all points within $d_1$ of $\mathbf{R}_0$ to be within the region of interest and then use $\mathbf{k}_0$ to transform the region of interest into the tangent plane of $\mathbf{R}_0$.
+We then calculate $\Delta \mathbf{R}_{ij} = \mathbf{R}[j]-\mathbf{R}[i]$ and $\Delta \mathbf{k}_{ij} = \mathbf{k}[j]-\mathbf{k}[i]$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
+Importantly, the pairs of points do note need to include the $\mathbf{R}_0$; this reduces the influence of error in $\mathbf{R}_0$ and $\mathbf{k}_0$.
+Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to the extended Weingarten matrix $\bm{\Lambda}$:
+
+where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
+This additional information will eventually allow us to re-estimate $\mathbf{k}$. \\
+
+We now have a system of three equations with 5 unknowns, as $L_{12} = L_{21}$.
+If we naively expand Eq. blah directly into the three equations,
+
+we see that $L_{12}$ will be determined entirely by the variation in only one direction on the surface.
+The result of blah will be entered as a fixed parameter into blah.
+Instead, we rearrange Eqs. blah to be:
+
+such that $L_{12}$ is determined using information from the entire region of interest.
 \subsection{Correcting the surface normal vectors}
 \subsection{Finding the area element}
 \subsection{Validation on test surfaces}
@@ -589,19 +645,21 @@ Think mean K is a better parameter.
 
 See that there is deviation in the edges.
 
-Middle still works
+Middle still works.
 
 \subsection{Average defect density}
-
 Average defect density gives blah..
-See dependence on both activity and aspec ratio
-\subsection{Defect number distributions}
+See dependence on both activity and aspec ratio.
 
+
+\subsection{Defect number distributions}
 amke conections to fluctuations. compare as we would for Eq behavior
 
 We're gaussian
 
 Fit and see within error of 0.5
+
+
 
 \section{Defect orientation and curvature}
 
