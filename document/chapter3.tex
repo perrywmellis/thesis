@@ -528,7 +528,7 @@ We find that even though there is approximately a $50\%$ chance of missing a def
 \section{Measuring surface curvature}
 From $h(x,y)$, we wish the calculate the Gaussian curvature of the surface.
 Recall from Chapter~\ref{c:1} that $K = \textup{det} \big \{ \mathbf{L} \big \}$.
-Thus, we need to calculate the Weingarten matrix, defined as $L_{ij} = (\mathbf{e}_i \cdot \nabla) \mathbf{k} \cdot \mathbf{e}_j$, where $\mathbf{k}$ is the unit surface normal and $\mathbf{e}_j = d \mathbf{R}/dx_j$ is the tangent vector in the $j^{\textrm{th}}$ direction.
+Thus, we need to calculate the Weingarten matrix, defined as $L^i_j = -\nabla_j \mathbf{k} \cdot \mathbf{e}^i$, where $\mathbf{k}$ is the unit surface normal and $\mathbf{e}^i = g^{ij}(d \mathbf{R}/dx^j)$ is the basis covector in the $i^{\textrm{th}}$ direction.
 
 
 \subsection{The Weingarten matrix}
@@ -536,10 +536,11 @@ Since $\mathbf{R} = \{x, y, h(x,y)\}$, it is straightforward to calculate the We
 However, this involves taking discrete first and second derivatives on a noisy surface.
 To avoid this, we notice that the Weingarten matrix relates a displacement in the tangent plane of a surface with the corresponding change in the unit normal vector along the displacement like:
 \begin{equation}
-\Delta \mathbf{k}_i = L_{ij} \Delta r^j = (\mathbf{e}_i \cdot \nabla) \mathbf{k} \cdot \mathbf{\Delta r},\label{e:3-Kfit1}
+\nabla_j \mathbf{k} \cdot \Delta \mathbf{r} = -L^i_j \mathbf{e}_i \cdot \Delta \mathbf{r},\label{e:3-Kfit1}
 \end{equation}
-with $\mathbf{\Delta R} = \Delta R^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
-Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit the components of $\mathbf{L}$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
+with $\mathbf{\Delta r} = \Delta r^j \mathbf{e}_j$ an arbitrary displacement in the tangent plane.
+Note that the relation $\nabla_j \mathbf{k} = -L^i_j \mathbf{e}_i$ is called Weingarten's formula and comes from the fact that the change in the surface normal due to infinitesimal displacements in the tangent plane exists solely in the tangent plane.
+Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit $L^i_j$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
 This technique allows us to characterize a noisy surface without taking a discrete derivative and without any prior knowledge about the surface features.
 In addition, an IRLS routine is a robust fit able to reject outliers and accommodate the noise in our data.
 
@@ -616,18 +617,35 @@ We consider all points within $d_1$ of $\mathbf{R}_0$ to be within the region of
 We then calculate $\Delta \mathbf{R}_{ij} = \mathbf{R}[j]-\mathbf{R}[i]$ and $\Delta \mathbf{k}_{ij} = \mathbf{k}[j]-\mathbf{k}[i]$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
 Importantly, the pairs of points do note need to include the $\mathbf{R}_0$; this reduces the influence of error in $\mathbf{R}_0$ and $\mathbf{k}_0$.
 Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to the extended Weingarten matrix $\bm{\Lambda}$:
-
+\begin{equation}
+\begin{pmatrix}
+\Delta \bm{k} \cdot \bm{e}_1 \\
+\Delta \bm{k} \cdot \bm{e}_2 \\
+\Delta \bm{k} \cdot \bm{N}_0
+\end{pmatrix}
+=
+\begin{pmatrix}
+L^1_1 & L^2_1 \\
+L^1_2 & L^2_2 \\
+M_{1} & M_{2}
+\end{pmatrix}
+\begin{pmatrix}
+\Delta \bm{r} \cdot \bm{e}_1 \\
+\Delta \bm{r} \cdot \bm{e}_2
+\end{pmatrix},
+\label{e:fit2}
+\end{equation}
 where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
 This additional information will eventually allow us to re-estimate $\mathbf{k}$. \\
 
-We now have a system of three equations with 5 unknowns, as $L_{12} = L_{21}$.
+We now have a system of three equations with 5 parameters, as $L^2_1 = L^1_2$.
 If we naively expand Eq. blah directly into the three equations,
 
-we see that $L_{12}$ will be determined entirely by the variation in only one direction on the surface.
+we see that $L^2_1$ will be determined entirely by the variation in only one direction on the surface.
 The result of blah will be entered as a fixed parameter into blah.
 Instead, we rearrange Eqs. blah to be:
 
-such that $L_{12}$ is determined using information from the entire region of interest.
+such that $L^2_1$ is determined using information from the entire region of interest.
 \subsection{Correcting the surface normal vectors}
 \subsection{Finding the area element}
 \subsection{Validation on test surfaces}
