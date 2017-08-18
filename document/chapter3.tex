@@ -605,23 +605,49 @@ The entire process can described by the recursion relation:
   \gamma_i^{(p+1)} = y_i - g\big (x_i,\bm{\alpha}^{(p+1)}\big )= y_i - g\Bigg (x_i, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
 \end{equation}
 
+Since these cost functions do not need to be everywhere convex, they may not necessarily have a global minimum, or even a guaranteed convergence.
+However, those that are not globally convex often deal with large error more severely than convex functions.
+Thus, to get the best of both worlds, we will first fit our surface using the convex "Fair" M-estimator until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) cost function.
+The functional forms and weight functions of some common M-estimators as well as the twq M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
+\newpage
+\begin{table}[ht]
+  \centering
+  \caption{Cost and weight functions of common M-estimators.\@$x$ are the residuals and $c$ is a tuning parameter.}
+  \begin{tabular}{|r c c |}
+    \hline \\[-0.45cm]
+     & $\textrm{cost}(x)$ & $w(x)$\\
+    \hline \\[-0.3cm]
+    {\bf least-squares}:& $\dfrac{x^2}{2}$ & 1\\ [0.5cm]
+    {\bf L$_p$}:& $ \dfrac{|x|^p}{p} $ & $|x|^{p-2}$\\[0.5cm]
+    {\bf Fair}:& $c^2 \Bigg [ \dfrac{|x|}{c} - \log \Big ( 1 + \dfrac{|x|}{c}\Big ) \Bigg ]$ & $\dfrac{1}{1 + |x|/c}$ \\ [0.5cm]
+    {\bf Geman-McClure}:& $\dfrac{(x/c)^2}{1+(x/c)^2}$ & $\dfrac{2}{(1+(x/c)^2)^2}$ \\ [0.5cm]
+    {\bf Cauchy}:& $\dfrac{c^2}{2} \log \big ( 1 + (x/c)^2 \big)$ & $\dfrac{1}{1 + (x/c)^2}$\\ [0.5cm]
+    \hline
+  \end{tabular}\label{t:3-CostFxn}
+\end{table}
 
+\begin{figure}[hb]
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitSchem.png}
+  \caption{Plots of the cost functions and weight functions for common M-estimators.}\label{f:3-CostFxn}
+\end{figure}
+\newpage
 \subsection{Fitting the Weingarten matrix on a surface}
-We start by computing the Delauney triangulation of $h(x,y)$ such that every pixel in $h(x,y)$ is a vertex in the triangulation.
+From a Monge parameterization $h(x,y)$ of a surface, ee start by computing the Delauney triangulation such that every point in $h(x,y)$ is a vertex in the triangulation.
 From the triangulation, we estimate $\mathbf{k}$ at every vertex as the average of the unit normals of the adjacent faces.
 Once we have a triangulation and the $\mathbf{k}$ estimates, we proceed to fit the curvature.\\
 
 Let $\mathbf{R}_0$ be an example point of interest with normal $\mathbf{k}_0$.
 We first make an initial fit using regular least-squares to serve as an input into the IRLS routine.
 We consider all points within $d_1$ of $\mathbf{R}_0$ to be within the region of interest and then use $\mathbf{k}_0$ to transform the region of interest into the tangent plane of $\mathbf{R}_0$.
-We then calculate $\Delta \mathbf{R}_{ij} = \mathbf{R}[j]-\mathbf{R}[i]$ and $\Delta \mathbf{k}_{ij} = \mathbf{k}[j]-\mathbf{k}[i]$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
+We then calculate $\Delta \mathbf{R}_{ij} = \mathbf{R}[j]-\mathbf{R}[i]$ and $\Delta \mathbf{k}_{ij} = \mathbf{k}[j]-\mathbf{k}[i]$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$, $\mathbf{R}_0 = \mathbf{R}[0]$, and $\mathbf{k}_0 = \mathbf{k}[0]$ .
 Importantly, the pairs of points do note need to include the $\mathbf{R}_0$; this reduces the influence of error in $\mathbf{R}_0$ and $\mathbf{k}_0$.
-Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to the extended Weingarten matrix $\bm{\Lambda}$:
+Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to an extended Weingarten matrix $\bm{\Lambda}$:
 \begin{equation}
 \begin{pmatrix}
-\Delta \bm{k} \cdot \bm{e}_1 \\
-\Delta \bm{k} \cdot \bm{e}_2 \\
-\Delta \bm{k} \cdot \bm{N}_0
+\Delta \mathbf{k} \cdot \bm{e}_1 \\
+\Delta \mathbf{k} \cdot \bm{e}_2 \\
+\Delta \mathbf{k} \cdot \mathbf{k}_0
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -630,30 +656,156 @@ L^1_2 & L^2_2 \\
 M_{1} & M_{2}
 \end{pmatrix}
 \begin{pmatrix}
-\Delta \bm{r} \cdot \bm{e}_1 \\
-\Delta \bm{r} \cdot \bm{e}_2
+\Delta \bm{R} \cdot \bm{e}_1 \\
+\Delta \bm{R} \cdot \bm{e}_2
 \end{pmatrix},
-\label{e:fit2}
+\label{e:3-Kfit2}
 \end{equation}
 where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
 This additional information will eventually allow us to re-estimate $\mathbf{k}$. \\
 
-We now have a system of three equations with 5 parameters, as $L^2_1 = L^1_2$.
-If we naively expand Eq. blah directly into the three equations,
+We now have a system of three equations to fit with 5 parameters, as $L^2_1 = L^1_2$.
+If we naively expand Eq.~\ref{e:3-Kfit2} directly into three equations,
+\refstepcounter{equation}\label{e:3-KfitNaive}
+\begin{align}
+  \Delta k_1 &= L^1_1 \Delta R_1 + L^2_1 \Delta R_2\tag{\theequation a} \\
+  \Delta k_2 &= L^1_2 \Delta R_1 + L^2_2 \Delta R_2\tag{\theequation b} \\
+  \Delta k_k &= M_1 \Delta R_1 + M_2 \Delta R_2,\tag{\theequation c}
+\end{align}
+where we have expanded the vectors like $\mathbf{v}\cdot \mathbf{e}_i = v^j g_{ij} = v_i$ and $\Delta k_k$ refers to the component of $\Delta \mathbf{k}$ along the surface normal, we see that $L^2_1$ will be determined entirely by the variation along $\mathbf{e}_2$.
+The result of $L^2_1$ from fitting Eq.~\ref{e:3-KfitNaive}a will then set the value of $L^1_2$ in the fit of Eq.~\ref{e:3-KfitNaive}b so that only $L^2_2$ is free to vary during the fit.
+This means that in principle, the choice of $\mathbf{e}_i$ could affect the output curvature.
+To account for this, we rearrange Eq.~\ref{e:3-KfitNaive} to be:
+\refstepcounter{equation}\label{e:3-KfitConstrained}
+\begin{align}
+  \Delta k_2 \Delta R_2 - \Delta k_1 \Delta R_1 &= (\Delta R_2)^2 L^2_2 - (\Delta R_1)^2 L^1_1\tag{\theequation a}\\
+  \Delta k_1 + \Delta k_2 - L^1_1 \Delta R_1 - L^2_2 \Delta R_2 &= (\Delta R_1 + \Delta R_2)L^2_1\tag{\theequation b}\\
+  \Delta k_k &= M_1 \Delta R_1 + M_2 \Delta R_2.\tag{\theequation c}
+\end{align}
+If we do the fits in order, the values of $L^1_1$ and $L^2_2$ from fitting Eq.~\ref{e:3-KfitConstrained}a are inserted as fixed parameters into the fit of Eq.~\ref{e:3-KfitConstrained}b.
+However, now the value of $L^2_1$ is determined by the variation in both directions in the tangent plane.
+Once we have estimates of the elements of $\bm{\Lambda}$ from the initial least-squares fit, we move on to fitting the curvature with the IRLS routine. \\
 
-we see that $L^2_1$ will be determined entirely by the variation in only one direction on the surface.
-The result of blah will be entered as a fixed parameter into blah.
-Instead, we rearrange Eqs. blah to be:
+We now choose all points within $d_2$ of $\mathbf{R}_0$, where $d_2 > d_1$, and as before, transform into the tangent plane and calculate the associated $\mathbf{\Delta N}_{ij}$ and $\mathbf{\Delta r}_{ij}$ between all pairs of points.
+In addition, we calculate a geometric weight for each $\mathbf{\Delta r}_{ij}$:
+\begin{equation}
+  m_{ij} = \frac{\textrm{C}} {(\mathbf{R}[i] - \mathbf{R}_0)^2 + (\mathbf{R}[j]-\mathbf{R}_0)^2},
+\end{equation}
+where $\textrm{C}$ is a normalization constant.
+The geometric weight ensures that data far from $\mathbf{R}_0$ contribute less to the curvature at $\mathbf{R}_0$.
+We then pass the $\mathbf{\Delta N}_{ij}$, the $\mathbf{\Delta r}_{ij}$, the $m_{ij}$, the initial values in $\bm{\Lambda}$, the appropriate tuning parameters, and a convergence tolerance to our IRLS routine.
+Our routine starts by calculating the residuals using $\bm{\Lambda}$ from previous fit like:
+\begin{equation}
+  \gamma_{ij}^{(p)} = \sqrt{(\mathbf{\Delta N}_{ij}- \mathbf{\Lambda}^{(p)} \mathbf{\Delta r}_{ij})^2},
+\end{equation}
+where $p$ is the iteration number and the $0^{\textrm{th}}$ iteration refers to the initial least-squares fit.
+The routine then calculates the weights for the Fair M-estimator seen in Table~\ref{t:3-CostFxn}, multiplies the Fair weights for each pair of points with the associated $m_{ij}$ to get the final fitting weight, performs a weighted least-squares fit of Eqs.~\ref{e:3-KfitConstrained}, and then repeats the process from the beginning until the fit converges.
+For the fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $c_F = 1.3998$ corresponds to 95\% efficiency on a standard normal distribution, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
+Efficiency refers to how much data an M-estimator needs to get the maximum likelihood solution.
+A true least-squares fit has 100\% efficiency --- as data are included in the fit, a least-squared fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient.
+We include the median of the residuals in our tuning constant so that the tuning parameter in the fit doesn't need to be adjusted as much between datasets with different levels of noise.
+In addition, we ensure that the $c_F^{(p)} \leq c_F^{(0)}$.
+The Fair fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
+While we set an upper limit of 50 iterations for the Fair fit, the fit typically converges in fewer than 20 iterations taking the convergence tolerance to be 0.001.\\
 
-such that $L^2_1$ is determined using information from the entire region of interest.
+The final values of $\bm{\Lambda}$ from the Fair fit are then used as the initial values for an IRLS fit using a GMC M-estimator.
+The overall flow of the algorithm is the same for the GMC M-estimator as it was for the Fair M-estimator.
+However, there are some key differences in how the fitting weights are handled.
+Here, we include the possibility to reject outliers by calculating the fitting weights as:
+\begin{equation}
+  w_{ij}^{(p+1)} =
+\begin{cases}
+0, & \text{if} \quad \gamma_{ij}^{(p)} > b \ c_{GMC}^{(p)} \\
+ \dfrac{2}{(1+(\gamma_{ij}^{(p)} / c_{GMC}^{(p)})^2)^2}, & \text{otherwise}
+\end{cases},
+\end{equation}
+where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$ is the tuning constant for the GMC fit, $c_{GMC}^{initial}$ and $b$ are an input parameters, and $c_{GMC} = 1.4826$ corresponds to 95\% efficiency on the standard normal distribution.
+Here we have modified the standard GMC weight function to exclude data whose residual is too large.
+The outlier rejection works fundamentally by comparing each residual against the median residual.
+The parameter $b$ then determines how much variance with respect to the median residual is allowed.
+As with the Fair fit, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.
+The GMC fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
+We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001. \\
+
+The routine outputs the GMC weights from the final fitting iteration and the final values of $\bm{\Lambda}$.
+Finally, we calculate the mean and Gaussian curvature of at $\mathbf{R}_0$ taking $H = \textup{Tr}\{ \mathbf{L} \}/2$ and $K = \textup{det}\{ \mathbf{L} \}$ and move on to correcting $\mathbf{k}_0$.
+
+
 \subsection{Correcting the surface normal vectors}
+We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_0$ according to:
+\begin{equation}
+\mathbf{k}_0^{(p)} = \frac{\sum_i m_{0i}w_{0i}^{(p)}(N_i^{(0)} - \mathbf{\Lambda}^{(p)}\mathbf{\Delta R}_{0i})}{\sum_j m_{0j}w_{0j}^{(p)}},.
+\end{equation}
+where $\mathbf{k}_0^{(p)}$ corresponds to the re-estimated unit normal.
+Note that here we have only used pairs of points that include $\mathbf{R}_0$.
+This re-estimation uses the fitted curvature to determine what the surface normal should be.
+We now transform $\mathbf{k}_0^{(p)}$ back into the original coordinate system, and then repeat the entire fitting process for another point on the surface.
+
+
 \subsection{Finding the area element}
+Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric,
+\begin{equation}
+g = \frac{1}{(\mathbf{k}_0^{(p)} \cdot \mathbf{\hat{z}})^2}.
+\end{equation}
+The determinant of the metric lets us connect areas in our flat intensity projection with areas on our curved toroidal surface via the local area element, $\textrm{dA} = \sqrt{g} \, \textrm{dx}\textrm{dy}$.
+Physically, we see that in the Monge parameterization, $\sqrt{g}$ reflects the tilt angle of the surface when compared to the flat plane that parameterizes the height of the surface.
+
+
 \subsection{Validation on test surfaces}
+We validate our routine on hemispheres and saddle-like surfaces with varying levels of random noise inserted into the height of the surface in order to mimic the noise in our confocal data.
+We specify the noise as a percentage of the radii of curvature used to generate the test surface.
+Surfaces with less than 1\% noise or no noise are overall insensitive to $d_1$, $d_2$, and the tuning constants in the fit.
+We test surfaces with up to 3\% noise and find that setting $b=2$ and $c_{F}^{inital}$ and $c_{GMC}^{inital}$ to their respective 95\% efficiency values works well.
+In addition, we see that $d_2$ matters far more than $d_1$, increasing $d_2$ improves the noise tolerance of the fit.
+For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
+While we could in principle set $d_2$ to the size of the surface, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
+We find that setting $d_2 > 12$ yields impractical runtimes.\\
+
+Overall, our curvature fitting routine works well far from the boundaries.
+Near the boundaries, the curvature fit does not always work very well as there is less long-range information availible when a point is within $d_2$ of a boundary.
+As a consequence, we typically neglect anywhere from 10~px to 30~px from the boundary of the final upsampled $K(x,y)$.
+
+
 \subsection{Measuring the curvature of toroidal droplets}
+Before we measure the curvature of the $h(x,y)$ output from time-averaging the intensity of a confocal image stack, we first have to remove measurement artifacts.
+Since $h(x,y)$ is discrete quantity set by the height resolution of the confocal, the measured surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
+Fitting the curvature on such a surface with reasonable $d_2$ values would yield large areas with vanishing $K$ between steps interspersed with areas with large $|K|$ near each step.
+We remove the steps by downsampling the initial $h(x,y)$ until the output triangulation just appears smooth.
+If we downsample too much, we risk eliminating real curvature features in our data.
+In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px.
+We fit the curvature on the downsampled $h(x,y)$ with $d_1 = 4$ and $d_2 = 12$, and then upsample the final $K(x,y)$, $H(x,y)$, and $\sqrt{g}(x,y)$ back to the original size using linear interpolation.
+
+
+
 
 \section{Defect charge and curvature}
+From the fitted curvatures and the defect locations over time, we look to compare the time-averaged topological charge in a region with the integrated Gaussian curvature of the region.
+
+
 \subsection{Finding regions of specific integrated Gaussian curvature}
+We start by considering a binary mask $\Theta(x,y)$ where the region in the intensity projection where we have data for the director field has a value $1$ and everywhere else has a value $0$.
+We then remove the outer 10~px to 30~px of the region by successively finding the boundary of the region and setting the boundary to $0$ until the mask only indicates places where we trust the curvature.
+This mask serves as our base from which we will determine any region we with to look at.
+For any mask defining a region, we calculate the integrated Gaussian curvature with the sum $\sum_{x,y} \Theta(x,y) K(x,y) \sqrt{g}(x,y)$.
+Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base mask and setting the pixels with $K < 0$ or $K > 0$ to $0$.
+We can also easily divide the base mask into halves or thirds to consider regions of different integrated Gaussian curvature.
+However, in all of these cases the mask is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data. \\
+
+We remedy this with a routine to find masks corresponding to specific values of integrated Gaussian curvature.
+From a starting mask we calculate the starting integrated Gaussian curvature and determine whether it is greater or less than the desired value.
+The routine then finds the boundary of the region and sets the all the pixels on the boundary with the appropriate signed $K$ to $0$.
+For example, if the current value if greater than the target value all the boundary pixels with $K > 0$ are set to $0$.
+This process is repeated until the difference between the current value and the target value changes sign.
+The routine then takes the most recently removed boundary pixels and adds them back to the mask one-by-one until the difference between the current value and the target value has the same sign as the difference between the initial value and the target value.
+
+
 \subsection{Measuring defect charge in a specified region}
+make masks
+
+and them with int K
+
+sum the result to get Ns
+
 \subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: defect unbinding}
 
 \section{Defect number and curvature}
