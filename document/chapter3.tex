@@ -801,6 +801,7 @@ For any mask $\Theta(x,y)$ defining a region, we calculate the integrated Gaussi
   \oint_{\Theta}\,K\textrm{dA} \approx \sum\limits_{x,y} \Theta(x,y) K(x,y). \sqrt{g}(x,y)
 \end{equation}
 Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base mask and setting the pixels with $K < 0$ or $K > 0$ to $0$.
+These two masks define the range of integrated Gaussian curvature that we can probe for a single toroid.
 We can also easily divide the base mask into halves or thirds to consider regions of different integrated Gaussian curvature.
 However, in all of these cases the mask is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data. \\
 
@@ -858,7 +859,16 @@ This means that the defect density is higher in regions of negative Gaussian cur
 
 Since regions with vanishing integrated Gaussian curvature are representative of the full torus, we take the total defect number density $\overbar{N}_{\Theta}/A_{\Theta} = \overbar{N}^{(+)}_{\Theta} + \overbar{N}^{(-)}_{\Theta}/A_{\Theta}$ in regions with $\langle K \rangle_{\Theta} = 0 $ to be the defect number density of the entire toroid.
 For each toroid, this quantity is the intercept of the relation between $\overbar{N}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$.
-We see that higher ATP concentrations result in higher defect densities, consistent with previous experiments.
+We see that higher ATP concentrations result in higher defect densities, consistent with previous experiments. \\
+
+Note that the maximum and minimum $\langle K \rangle_{\Theta}$ values are not given by the regions with maximum and minimum integrated Gaussian curvature.
+To see how the defect density behaves over the entire $\langle K \rangle_{\Theta}$ range, we bin the surface in $K$.
+We set the binsize as a percentage of $M$, the total number of pixels with value $1$ in the base mask, such that the bins have the same number of pixels but different areas on the surface of the torus.
+The first bin contains the $M'$ pixels with the smallest $K$.
+We then form the remaining bins one at a time by removing the pixel in $M'$ with the smallest $K$ and then adding to $M'$ the pixel with the smallest $K$ that has never been in $M'$.
+Thus, the bins overlap as much as possible and there are $M-M'+1$ bins. \\
+
+When we plot $\overbar{N}_{\Theta}/A_{\Theta}$ vs $\langle K \rangle_{\Theta}$ using this protocol, we see that the linear relationship between $\overbar{N}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$ does not persist over the entire surface, but only for a portion of the central region. 
 
 
 \subsection{Defect number distributions}
