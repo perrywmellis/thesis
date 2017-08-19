@@ -19,7 +19,11 @@ In contrast, due to the three-fold symmetry of $s = -1/2$ defects, $s = -1/2$ de
 Recent experimental studies with active nematics yielding self-regulated behaviors such as self-sustained oscillations~\cite{RN9}, spontaneous formation of morphological features such as kinks and protrusions~\cite{RN9,RN3}, and undirected motility~\cite{RN9,RN3} have acted as as stimulus to investigate how biological functionality emerges from the interplay between activity, the geometry of the system, and the structure of the internal phase~\cite{RN160,RN51,RN10}.
 In this context, defects in active nematics could be harnessed to achieve life-like functionality, as defects are extremely sensitive to the intrinsic geometry of the space they inhabit.
 This is easily seen in the connection between the total topological charge on a surface and the topology of the surface, as expressed in the Poincr\'e-hopf Theorem seen in Eq.~[INTRO].
-However, the theory of defects in curved spaces extends this connection beyond topology, predicting that the free-energy of a collection of defects is sensitive to the local geometry through the Gaussian curvature~\cite{RN42}.
+However, the theory of defects in curved spaces extends this connection beyond topology, predicting that the free-energy of a collection of defects on a surface $\partial A$ is sensitive to the local geometry through the Gaussian curvature~\cite{RN42}:
+\begin{equation}
+  \delta F = -\frac{1}{2}\,k_{F, 2D}\int_{\partial A} \textrm{d}^2\mathbf{r}\,\textrm{d}^2\mathbf{r}'\, G(\mathbf{r},\mathbf{r}') \left[\rho(\mathbf{r})-K(\mathbf{r})] [\rho(\mathbf{r}')-K(\mathbf{r}')\right],\label{e:3-DefectsCurvedSurf}
+\end{equation}
+where $k_{F, 2D}$ is the Frank constant in 2D, $\rho(\mathbf{r})$ is the position-dependent defect density, and $G(\mathbf{r},\mathbf{r}')$ is the Laplacian Green's function on the surface.
 Importantly, this implies that even though there have been new discoveries as a result of examining defect structures on spheres~\cite{RN45,RN106,RN26,RN110,RN105,RN76,RN101,RN165}, the Gaussian curvature of a sphere is constant such that the impact of curvature can only enter through the sphere radius.
 This is is born out in the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110} and the degeneracy in the orientation of the 4 $s = +1/2$ defects in nematic shells~\cite{RN45}.
 Even when considering an active nematic on a sphere and the 4 $s = +1/2$ defects become mobile, the defect dynamics can be explained without any mention of Gaussian curvature~\cite{RN9}. \\
@@ -461,12 +465,12 @@ Once we determine $\mathbf{n}$ and $S$, we turn to finding the defects.
 We start by selecting pixels with $S < 0.1$ as potential defect candidates.
 For every candidate, we first consider all pixels in a 5~px~$\times$~5~px plaquette centered on the point of interest and ensure that there are no other candidates in the plaquette with a lower value of $S$.
 We then calculate the $\mathbf{n}$-rotation about the point of interest according to Eq.~\ref{eq:2-topCharge}.
-Explicitly, we numerically evaluate $s = \frac{1}{2\pi} \oint \frac{\textup{d}\mathbf{n}}{\textup{d}u}$ CCW along the edge of the plaquette, where $u$ is the arclength parameter along the square contour.
+Explicitly, we numerically evaluate $s = (1 / 2 \pi)(\oint \partial\phi / \partial u)$ CCW along the edge of the plaquette, where $u$ is the arclength parameter along the square contour and $\phi$ is the orientation of $\mathbf{n}$.
 We take the point of interest to be a $s = \pm 1/2$ defect if $s \in \pm [0.49,0.51]$.
 The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of the $\mathbf{n}$-field in Figure~\ref{f:3-CEDF2}(F), with $s = +1/2$ defects indicated by ${\color{red} \blacktriangle } $  and $s = -1/2$ defects indicated by ${ \color{blue} \blacktriangledown } $.\\
 
 We store the defect locations in a list recording the frame and position of each defect.
-The$s = +1/2$ and $s = -1/2$ defects are stored separately.
+The $s = +1/2$ and $s = -1/2$ defects are stored separately.
 If our time resolution is high enough, we can track the defects.
 We track each species independently using a combinatorics-based particle tracking algorithm.
 For tracked defects, we store the defect identity in addition to the frame and position so that we can reconstruct individual defect trajectories.\\
@@ -500,7 +504,7 @@ Thus, we calculate the edge charge like:
 \end{equation}
 Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundCharge}, we can re-write the edge charge as:
 \begin{equation}
-  s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\psi - \textup{d}\phi = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}\label{e:3-boundChargeExpand},
+  s_{boundary} = \frac{1}{2\pi} \oint \bigg \{ \textup{d}\psi - \textup{d}\phi \bigg \} = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}\label{e:3-boundChargeExpand},
 \end{equation}
 where here $s_{bulk}$ is calculated directly due to the additivity of defects.
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
@@ -524,8 +528,8 @@ The Turning of the Tangent Theorem lets us test our Frennet-Serret frame; we set
 We use example director fields with $s = -1, -1/2, +1/2, +1$ defects to test our full routine and confirm that $s_{boundary} + s_{bulk} = 1$ for all of our test cases.\\
 
 
-We now consider a region in the intensity projection for a torus and monitor the average $s_{bulk}$ and $s_{boundary}$ over time, where we calculate $s_{bulk} = \sum_i s_i$, with $s_i$ the charge of a single defect in the bulk of the region.
-We find that even though there is approximately a $50\%$ chance of missing a defect in the region, the error is random and not systematic such that $\overline{s}_{bulk} + \overline{s}_{boundary} = 1$ if we average for enough frames.
+We now consider a region in the intensity projection for a torus and monitor the average $s_{bulk}$ and $s_{boundary}$ over time, where we calculate $s_{bulk} = \sum\limits_i s_i$, with $s_i$ the charge of a single defect in the bulk of the region.
+We find that even though there is approximately a $50\%$ chance of missing a defect in the region, the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
 
 
 
@@ -738,9 +742,9 @@ Finally, we calculate the mean and Gaussian curvature of at $\mathbf{R}_0$ takin
 
 
 \subsection{Correcting the surface normal vectors}
-We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_0$ according to:
+We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_0$ using a weighted average:
 \begin{equation}
-\mathbf{k}_0^{(p)} = \frac{\sum_i m_{0i}w_{0i}^{(p)}(N_i^{(0)} - \mathbf{\Lambda}^{(p)}\mathbf{\Delta R}_{0i})}{\sum_j m_{0j}w_{0j}^{(p)}},.
+\mathbf{k}_0^{(p)} = \frac{\sum\limits_i m_{0i}w_{0i}^{(p)}(\mathbf{N}_i^{(0)} - \mathbf{\Lambda}^{(p)}\mathbf{\Delta R}_{0i})}{\sum\limits_j m_{0j}w_{0j}^{(p)}},.
 \end{equation}
 where $\mathbf{k}_0^{(p)}$ corresponds to the re-estimated unit normal.
 Note that here we have only used pairs of points that include $\mathbf{R}_0$.
@@ -769,7 +773,7 @@ We find that setting $d_2 > 12$ yields impractical runtimes.\\
 
 Overall, our curvature fitting routine works well far from the boundaries.
 Near the boundaries, the curvature fit does not always work very well as there is less long-range information availible when a point is within $d_2$ of a boundary.
-As a consequence, we typically neglect anywhere from 10~px to 30~px from the boundary of the final upsampled $K(x,y)$.
+As a consequence, we typically neglect curvature values within $d_2/2$ of the boundary.
 
 
 \subsection{Measuring the curvature of toroidal droplets}
@@ -792,7 +796,10 @@ From the fitted curvatures and the defect locations over time, we look to compar
 We start by considering a binary mask where the region in the intensity projection where we have data for the director field has a value $1$ and everywhere else has a value $0$.
 We then remove the outer 10~px to 30~px of the region by successively finding the boundary of the region and setting the boundary to $0$ until the mask only indicates places where we trust the curvature.
 This mask serves as our base from which we will determine any region we with to look at.
-For any mask $\Theta(x,y)$ defining a region, we calculate the integrated Gaussian curvature numerically like $\oint_{\Theta}\,K\textrm{dA} \approx \sum_{x,y} \Theta(x,y) K(x,y) \sqrt{g}(x,y)$.
+For any mask $\Theta(x,y)$ defining a region, we calculate the integrated Gaussian curvature numerically,
+\begin{equation}
+  \oint_{\Theta}\,K\textrm{dA} \approx \sum\limits_{x,y} \Theta(x,y) K(x,y). \sqrt{g}(x,y)
+\end{equation}
 Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base mask and setting the pixels with $K < 0$ or $K > 0$ to $0$.
 We can also easily divide the base mask into halves or thirds to consider regions of different integrated Gaussian curvature.
 However, in all of these cases the mask is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data. \\
@@ -808,19 +815,19 @@ The routine then takes the most recently removed boundary pixels and adds them b
 \subsection{Measuring defect charge in a specified region}
 For each point in time, we create a pair of binary masks to hold the defect locations, giving the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ holding the $s = +1/2$ and $s = -1/2$ defects, respectively.
 Defect locations in $J$ are represented by a $1$ with all other pixels set to $0$.
-Thus, we can determine the number of $s = +1/2$ and $s = -1/2$ defects in a region denoted by $\Theta(x,y)$ over time $N^{(\pm)}_{\Theta}(t)$ with the sum $N^{(\pm)}_{\Theta}(t) = \sum_{xy}\,J^{(\pm)}(x,y)\Theta(x,y)$.
-With $\overline{N}^{(\pm)}_{\Theta} = (1/T)\sum_t \, N^{(\pm)}_{\Theta}(t)$ we calculate the time-averaged topological charge in a region as $\overline{s}_{\Theta} = (\overline{N}^{(+)}_{\Theta} - \overline{N}^{(-)}_{\Theta})/2$.
+Thus, we can determine the number of $s = +1/2$ and $s = -1/2$ defects in a region denoted by $\Theta(x,y)$ over time $N^{(\pm)}_{\Theta}(t)$ with the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
+With $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_t \, N^{(\pm)}_{\Theta}(t)$ we calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.
 
 
 \subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: defect unbinding}
 We correlate the time-averaged topological charge in a region with the integrated Gaussian curvature of that region for both 36~mM ATP and 144~mM ATP.
-We find that for both ATP concentrations, $\overline{s}_{\Theta}$ is linear with $\oint_{\Theta}\,K\textrm{dA}$, a shown in Fig.~\fxnote{Fig}, where we plot data from toroids with a range of $\xi$ and $a$.
-The slope of the curve is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
+We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\oint_{\Theta}\,K\textrm{dA}$, a shown in Fig.~\fxnote{Fig}, where we plot data from toroids with a range of $\xi$ and $a$.
+The slope of the curve, $C'$, is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
 However, due to the large number of defects and their motion, the time-averaged topological charge approaches a continuous distribution.
-Furthermore, $\overline{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
+Furthermore, $\overbar{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
 This implies that the unbinding only depends only on the local geometry and is insensitive to the  global size and shape of the system.
 Note that this is direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$.
-We also note that the line in Fig.~\fxnote{Fig} goes through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overline{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
+We also note that the line in Fig.~\fxnote{Fig} goes through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
 In our case, however, we see that this is true irrespective of the region we consider, provided the region has vanishing integrated Gaussian curvature.
 This implies that a region with $\oint_{\Theta}\,K\textrm{dA} = 0$ is representative of entire toroid.
 Again, this is in contrast to equilibrium nematics, where the small defect number and lack of significant defect motion result in different regions with the same net integrated Gaussian curvature generally enclosing a different topological charge.
@@ -834,25 +841,33 @@ As an equilibrium nematic gets sufficiently close to the nematic-isotropic, ther
 
 
 \section{Defect number and curvature}
-look at density in regions. see linear relationship.
+We also consider the relation between the defect number density and the curvature of the surface.
 
-Think mean K is a better parameter.
 
-See that there is deviation in the edges.
+\subsection{Time-averaged defect density}
+Here, we correlate the time-averaged defect density in a region  $\overbar{N}^{(\pm)}_{\Theta}/A_{\Theta}$ with the mean Gaussian curvature in the region:
+\begin{equation}
+  \langle K \rangle_{\Theta} = \frac{\int_{\Theta}K\textrm{dA}}{A_{\Theta}},
+\end{equation}
+where $A_{\Theta} = \int_{\Theta}\, \textrm{dA} \approx = \sum\limits_{xy}\Theta(x,y)\sqrt{g}(x,y)$ is the area of the region of interest.
+We start by just considering the same regions we used to investigate the relation between integrated Gaussian curvature and time-averaged topological charge.
+Like the topological charge and integrated Gaussian curvature, we see that the time-averaged defect density for both defect species varies linearly with mean Gaussian curvature, with the slope of the relation between $\overbar{N}^{(\pm)}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$ given by $C^{(\pm)}$.
+However, we see that $C^{(\pm)}$ seems to depend on aspect ratio for a 36~$\upmu$M ATP concentration, even though the difference $(C^{(+)} - C^{(-)}) \sim C'$ does not.
+In addition, we see that generally, $C^{(\pm)} < 0$ regardless of ATP concentration.
+This means that the defect density is higher in regions of negative Gaussian curvature. \\
 
-Middle still works.
-
-\subsection{Average defect density}
-Average defect density gives blah..
-See dependence on both activity and aspec ratio.
+Since regions with vanishing integrated Gaussian curvature are representative of the full torus, we take the total defect number density $\overbar{N}_{\Theta}/A_{\Theta} = \overbar{N}^{(+)}_{\Theta} + \overbar{N}^{(-)}_{\Theta}/A_{\Theta}$ in regions with $\langle K \rangle_{\Theta} = 0 $ to be the defect number density of the entire toroid.
+For each toroid, this quantity is the intercept of the relation between $\overbar{N}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$.
+We see that higher ATP concentrations result in higher defect densities, consistent with previous experiments.
 
 
 \subsection{Defect number distributions}
-amke conections to fluctuations. compare as we would for Eq behavior
+Because of the constant creation and annihilation and mobility of the defects, the defect number in a region fluctuates over time.
+For the 144~$\upmu$M ATP toroids, we have enough timeframes to characterize the fluctuations with the defect number distribution.
+We see that the defect number distribution in Gaussian, as shown in Figs.~\fxnote{Fig} for a series of regions with different areas and $\langle K \rangle_{\Theta}$ in toroids with 144~$\upmu$M ATP.
+Furthermore, the relative root-mean-squared (RMS) defect number fluctuations $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, obtained from the width of the distribution, scale as $\displaystyle{\overbar{N}_{\Theta}^{-1/2}}$, regardless of $\xi$ and $a$.
+This scaling is the expected result if we had an equilibrium system of particles in the grand canonical ensemble, again suggesting that activity can play a role akin to temperature in an equilibrium system.
 
-We're gaussian
-
-Fit and see within error of 0.5
 
 
 
