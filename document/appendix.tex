@@ -1,12 +1,101 @@
+%!TEX root = thesis.tex
 \begin{appendices}
 
 %Some Table of Contents entry formatting
-\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}}
+\addtocontents{toc} {\protect\renewcommand{\protect\cftchappresnum} {\appendixname\space}}
 \addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{6em}}
 
 %Begin individual appendices, separated as chapters
 
-\chapter{Something Here?}
+\chapter{A brief introduction to Differential Geometry}
+This appendix briefly introduces some useful ideas and definitions in differential geometry.
+I have followed Refs.~\cite{RN35}\fxnote{Geometry of Physics} and have limited the discussion to the concepts needed to follow the main text of this thesis.
+While much of what follows can be generalized to $n$-dimensions, I will primarily discuss concepts in 3 or fewer dimensions.
 
+
+
+\section{Manifolds and (hyper)surfaces}
+A \emph{manifold} is the most general space where one can do differential and integral calculus.
+The most common manifold we deal with is Euclidean space.
+In fact, most of us learned to do calculus in 3D Euclidean space, $\mathbb{R}^3$, with the global coordinate system, $(x^1,x^2,x^3)$.
+This easily generalizes to $n$-dimensional Euclidean space, $\mathbb{R}^n$, with its global coordinate system, $(x^1,x^2, \ldots , x^n)$.
+Just like a 2D surface embedded in $\mathbb{R}^3$ is some subset of $\mathbb{R}^3$ that locally looks like $\mathbb{R}^2$, a manifold is a space that locally looks Euclidean. \\
+
+Since our 2D surface locally resembles 2D Euclidean space, we see that the surface itself qualifies as a manifold.
+In fact, generalizing this definition gives us \emph{submanifolds}, a subset of a manifold which itself is a manifold.
+More formally, let the subset $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ be the $n$-dimensional submanifold of $\mathbb{R}^{n+p}$ if $\mathbb{X}$ can locally be described by writing $p$ of the coordinates differentially in terms of the $n$ remaining coordinates.
+Explicitly, for $r \in \mathbb{X}$, a neighborhood of $r$ on $\mathbb{X}$ can be described by the local coordinates $(u,v) = (u^1,\ldots,u^n,v^1,\ldots,v^p)$ in $\mathbb{R}^{n+p}$ where $v^j = f^j(u^1,\ldots,u^n)$, with $j = 1,\ldots,p$. \\
+
+Thus, we define a surface as a 2D submanifold of $\mathbb{R}^3$ such that $v = f(u^1,u^2)$, where $u^1$ and $u^2$ are local coordinates that parameterize the surface and $v$ is the local coordinate in $\mathbb{R}^3$.
+Similarly, a curve is a 1D submanifold of $\mathbb{R}^3$ where $v = g^1(u^1) = g^2(u^2)$ and a planar curve is a 1D submanifold of $\mathbb{R}^2$ where $v = f(u)$.
+Note that this definition implies that a curve in general can be considered part of a surface, with a planar curve restricted a globally flat surface.
+If we define the codimension of a submanifold $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ as $p$, we can generalize the concept of a surface: let a hypersurface be a submanifold with codimension $1$.
+
+
+
+
+\section{Tangent space, cotangent space, and the 1$^{\rm st}$ fundamental form }
+The tangent space of an $n$-dimensional manifold $\mathbb{X}^n$ at $r\in \mathbb{X}^n$, denoted as $\mathbb{T}^n_r$, is the real vector space holding all of the vectors tangent to $\mathbb{X}^n$ at $r$.
+Note that the tangent space has the same dimensionality as the manifold it is associated with.
+This makes intuitive sense if we consider that the tangent space to any surface is a plane and the tangent space to a curve is a line. \\
+
+Restricting ourselves to the tangent space at $r$ of a surface, the tangent plane, we define a vector $\mathbf{r}$ in $\mathbb{T}^2_r$ as a function mapping the local coordinate system to $\mathbb{R}^3$.
+If $U \subset \mathbb{R}^2$ describes the local coordinate space with $u^1,u^2 \in U$ local coordinates, then formally, $\mathbf{r}:U \rightarrow \mathbb{R}^3$,such that $\mathbf{r}(u^1,u^2) \in \mathbb{R}^3$.
+Now, we can define a basis in the $\mathbb{T}^2_r$ given by the vectors $\mathbf{e}_i = \partial \mathbf{r} / \partial u^i = \partial_i \mathbf{r}$, where $i = 1,2$.
+Note that these vectors are generally not of unit length. \\
+
+From the tangent space, we define the cotangent space at the duel space of the tangent space.
+Thus, the cotangent space contains linear functionals called covectors on the tangent space that return a scalar.
+For $\mathbb{T}^2_r$, we denote the cotangent plane at $r$ with $\mathbb{T}^{*2}_r$.
+Let $\bm{\varphi}^* \in \mathbb{T}^{*2}_r$ be a general covector.
+Then, $\bm{\varphi}^*: \mathbb{T}^2_r \rightarrow \mathbb{R}$ such that $\bm{\varphi}^*(\mathbf{r}) \in \mathbb{R}$.
+For our discussion of the tangent and cotangent plane, the action of a covector on a vector is given by the Euclidean inner product in $\mathbb{R}^3$, or dot product, $\bm{\varphi}^*(\mathbf{r}) = \bm{\varphi}^* \cdot \mathbf{r} = \mathbf{r} \cdot \bm{\varphi}^*$. \\
+
+In the common matrix representation, vectors are often denoted as column vectors as covectors as row vectors, such that the dot product is given by the matrix product with the row vector placed to the left of the column vector.
+Since we typically turn a row vector into a column vector by taking the transpose, there must be a general way to transform between the tangent space and the cotangent space.
+This general transformation between the tangent and cotangent spaces is given by the 1$^{\rm st}$ fundamental form, or metric, constructed from the basis in the tangent space like:
+\begin{equation}
+  g_{ij} = \mathbf{e}_i \cdot mathbf{e}_j.\label{e:A-metric}
+\end{equation}
+Note that since $mathbf{e}_i$ and $mathbf{e}_j$ are both vectors, the resulting object is not a scalar.
+If we let $\mathbf{e}^i$ be the basis for $\mathbb{T}^{*2}_r$, then we can define a similar object $g^{ij} = \mathbf{e}^i \cdot \mathbf{e}^j$. \\
+
+We emphasize that the choice of upper and lower indices is not arbitrary.
+By convention, a general vector can be described by $\mathbf{r} = r^{i}\mathbf{e}_i$, and a general covector can be described by $\bm{\varphi}^* = \varphi_{i}\mathbf{e}^i$, where the Einstein summation convention still applies.
+Note then, that the components of a vector have upper indices while their corresponding basis have lower indices, and the components of a covector have lower indices while their corresponding basis have upper indices.
+In general, arbitrary objects as well as the basis in the tangent or cotangent plane will be bold, with objects that are not a basis in the cotangent plane denoted with an asterisk.
+Now that we have a basis in both the tangent and cotangent plane, we define their inner product like $\mathbf{e}^i \mathbf{e}_j = \tensor{\delta}{^i_j}$, where
+\begin{equation}
+  \tensor{\delta}{^i_j} = \begin{cases}
+    1, & \textrm{if } i = j \\
+    0, & \textrm{otherwise}
+  \end{cases},
+\end{equation}
+is the Kronecker delta and the dot product is implicit.
+Thus, we now see that $\mathbf{e}_i\mathbf{e}_j\mathbf{e}^j\mathbf{e}^k = g_{ij}g^{jk} = \tensor{\delta}{_i^k}$, giving $(g_{ij})^{-1} = g^{ij}$. \\
+
+Thus, $\mathbf{e}_i g^{ij} = \mathbf{e}^j$ and $\mathbf{e}^ig_{ij} = \mathbf{e_j}$ gives the transformation between the bases in the tangent and cotangent plane.
+Similarly, for $\mathbf{r} = r^i\mathbf{e}_i$, the components transform like $r_i = r^jg_{ij}$.
+Finally, we can combine the above to show the general transformation between a vector and its associated covector, $\mathbf{r}^* =\mathbf{r}\tensor{g}{_i^i} = r^j\mathbf{e}_j\mathbf{e}_i\mathbf{e^i} = r^jg_{ji}\mathbf{e}^i = r_i\mathbf{e}^i$. \\
+
+Since a vector and a covector give a scalar, the metric defines notions of length on the surface.
+For example, we know that the inner product of a vector with itself gives the square of the length of the vector.
+Evaluating this for $\mathbf{r}$, we see that $\mathbf{r} \cdot \mathbf{r} = r^i \mathbf{e}_i r^j \mathbf{e}_j = r^i g_{ij} r^j = r_j r^j = |\mathbf{r}|^2$.
+In this example, the metric lowers the indices and turns the components of a vector into the components of the covector such that the final result is a scalar.
+Similarly, we see that this result is equivalent to directly evaluating the scalar product between a vector and its covector, $\mathbf{r}^* \cdot \mathbf{r} = r_i \mathbf{e}^i r^j \mathbf{e}_j = r_i \tensor{\delta}{^i_j} r^j = r_j r^j = |\mathbf{r}|^2$.
+Since the metric is needed to define lengths on a surface, it must also enter into measures of area; in fact, an infinitesimal area is given by $\textrm{dA} = \sqrt{g}\textrm{d}u^1 \, \textrm{d}u^2$, with $u^1$ and $u^2$ local coordinates on the surface. \\
+
+Another way to describe the role of the metric would be to say that is defines a relationship between vectors.
+In addition, we see that since there are rules governing the transformations between $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j}$, the metric is independent of the basis.
+These properties mean that the metric is a member of a more general class of objects called tensors.
+
+
+
+
+\section{Tensors}
+
+\section{Normal space and the 2$^{\rm nd}$ fundamental form}
+
+\section{Homeo and diffeomorphisms}
 
 \end{appendices}
