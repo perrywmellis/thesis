@@ -55,7 +55,7 @@ In the common matrix representation, vectors are often denoted as column vectors
 Since we typically turn a row vector into a column vector by taking the transpose, there must be a general way to transform between the tangent space and the cotangent space.
 This general transformation between the tangent and cotangent spaces is given by the 1$^{\rm st}$ fundamental form, or metric, constructed from the basis in the tangent space like:
 \begin{equation}
-  g_{ij} = \mathbf{e}_i \cdot mathbf{e}_j.\label{e:A-metric}
+  g_{ij} = \mathbf{e}_i \cdot \mathbf{e}_j.\label{e:A-metric}
 \end{equation}
 Note that since $mathbf{e}_i$ and $mathbf{e}_j$ are both vectors, the resulting object is not a scalar.
 If we let $\mathbf{e}^i$ be the basis for $\mathbb{T}^{*2}_r$, then we can define a similar object $g^{ij} = \mathbf{e}^i \cdot \mathbf{e}^j$. \\
@@ -64,26 +64,28 @@ We emphasize that the choice of upper and lower indices is not arbitrary.
 By convention, a general vector can be described by $\mathbf{r} = r^{i}\mathbf{e}_i$, and a general covector can be described by $\bm{\varphi}^* = \varphi_{i}\mathbf{e}^i$, where the Einstein summation convention still applies.
 Note then, that the components of a vector have upper indices while their corresponding basis have lower indices, and the components of a covector have lower indices while their corresponding basis have upper indices.
 In general, arbitrary objects as well as the basis in the tangent or cotangent plane will be bold, with objects that are not a basis in the cotangent plane denoted with an asterisk.
-Now that we have a basis in both the tangent and cotangent plane, we define their inner product like $\mathbf{e}^i \mathbf{e}_j = \tensor{\delta}{^i_j}$, where
+Now that we have a basis in both the tangent and cotangent plane, we define their inner product like $\mathbf{e}^i \, \mathbf{e}_j = \tensor{\delta}{^i_j}$, where
 \begin{equation}
-  \tensor{\delta}{^i_j} = \begin{cases}
+  \delta_{ij} = \delta^{ij} = \tensor{\delta}{^i_j} = \begin{cases}
     1, & \textrm{if } i = j \\
     0, & \textrm{otherwise}
   \end{cases},
 \end{equation}
 is the Kronecker delta and the dot product is implicit.
-Thus, we now see that $\mathbf{e}_i\mathbf{e}_j\mathbf{e}^j\mathbf{e}^k = g_{ij}g^{jk} = \tensor{\delta}{_i^k}$, giving $(g_{ij})^{-1} = g^{ij}$. \\
+Thus, we now see that $\mathbf{e}_i \, \mathbf{e}_j \, \mathbf{e}^j \, \mathbf{e}^k = g_{ij}g^{jk} = \tensor{\delta}{_i^k}$, giving $(g_{ij})^{-1} = g^{ij}$. \\
 
-Thus, $\mathbf{e}_i g^{ij} = \mathbf{e}^j$ and $\mathbf{e}^ig_{ij} = \mathbf{e_j}$ gives the transformation between the bases in the tangent and cotangent plane.
-Similarly, for $\mathbf{r} = r^i\mathbf{e}_i$, the components transform like $r_i = r^jg_{ij}$.
-Finally, we can combine the above to show the general transformation between a vector and its associated covector, $\mathbf{r}^* =\mathbf{r}\tensor{g}{_i^i} = r^j\mathbf{e}_j\mathbf{e}_i\mathbf{e^i} = r^jg_{ji}\mathbf{e}^i = r_i\mathbf{e}^i$. \\
+As, $\mathbf{e}_i \, g^{ij} = \mathbf{e}^j$ and $\mathbf{e}^i \, g_{ij} = \mathbf{e_j}$, we now see how the metric gives the transformation between the bases in the tangent and cotangent plane.
+Similarly, for $\mathbf{r} = r^i\mathbf{e}_i$, the components transform like $r_i = r^j \, g_{ij}$.
+Finally, we can combine the above to show the general transformation between a vector and its associated covector, $\mathbf{r}^* =\mathbf{r}\,\tensor{g}{_i^i} = r^j\mathbf{e}_j \, \mathbf{e}_i\mathbf{e^i} = r^j \, g_{ji} \, \mathbf{e}^i = r_i\mathbf{e}^i$. \\
 
 Since a vector and a covector give a scalar, the metric defines notions of length on the surface.
 For example, we know that the inner product of a vector with itself gives the square of the length of the vector.
-Evaluating this for $\mathbf{r}$, we see that $\mathbf{r} \cdot \mathbf{r} = r^i \mathbf{e}_i r^j \mathbf{e}_j = r^i g_{ij} r^j = r_j r^j = |\mathbf{r}|^2$.
+Evaluating this for $\mathbf{r}$, we see that $\mathbf{r} \cdot \mathbf{r} = r^i \mathbf{e}_i \,r^j \mathbf{e}_j = r^i \, g_{ij} \, r^j = r_j r^j = |\mathbf{r}|^2$.
 In this example, the metric lowers the indices and turns the components of a vector into the components of the covector such that the final result is a scalar.
-Similarly, we see that this result is equivalent to directly evaluating the scalar product between a vector and its covector, $\mathbf{r}^* \cdot \mathbf{r} = r_i \mathbf{e}^i r^j \mathbf{e}_j = r_i \tensor{\delta}{^i_j} r^j = r_j r^j = |\mathbf{r}|^2$.
-Since the metric is needed to define lengths on a surface, it must also enter into measures of area; in fact, an infinitesimal area is given by $\textrm{dA} = \sqrt{g}\textrm{d}u^1 \, \textrm{d}u^2$, with $u^1$ and $u^2$ local coordinates on the surface. \\
+Similarly, we see that this result is equivalent to directly evaluating the scalar product between a vector and its covector, $\mathbf{r}^* \cdot \mathbf{r} = r_i \mathbf{e}^i \, r^j \mathbf{e}_j = r_i \, \tensor{\delta}{^i_j} \, r^j = r_j r^j = |\mathbf{r}|^2$.
+Since the metric is needed to define lengths on a surface, it must also enter into measures of area in fact, an infinitesimal area is given by $\textrm{dA} = \sqrt{g}\,\textrm{d}u^1 \, \textrm{d}u^2$, with $u^1$ and $u^2$ local coordinates on the surface.
+On a Euclidean surface, which is everywhere flat, $g_{ij} = \delta_{ij}$ everywhere such that there is no distinction between vectors and covectors and the area element on a surface takes the familiar form $\textrm{dA} = \textrm{d}x^1 \, \textrm{d}x^2$.
+Thus, any time $g_{ij} \neq \delta_{ij}$ everywhere, our surface is curved; thus, the metric also gives a measure of the curvature of the surface. \\
 
 Another way to describe the role of the metric would be to say that is defines a relationship between vectors.
 In addition, we see that since there are rules governing the transformations between $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j}$, the metric is independent of the basis.
@@ -93,6 +95,49 @@ These properties mean that the metric is a member of a more general class of obj
 
 
 \section{Tensors}
+Tensors are generalizations of scalars and vectors, defined broadly as objects that give linear relationships between other tensors (i.e. between scalars, vectors, etc.).
+Tensors are basis-independent and thus must follow certain transformation laws such that there is a proscribed way to take a tensor in one basis to another basis.
+Tensors are characterized by the ordered pair $(p,q)$ giving the rank $p + q$, with $p$ upper indices representing $p$ copies of the cotangent space and $q$ lower indices representing $q$ copies of the tangent space.
+Thus, a vector is a $(0,1)$ rank-1 tensor, a covector is a $(1,0)$ rank-1 tensor, and a scalar is a rank-0 tensor.
+Similarly, we now see that the metric is a rank-2 tensor, with $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j} = \tensor{g}{_j^i}$ the $(0,2)$, $(2,0)$, and $(1,1)$ form, respectively.
+In addition, the metric tensor is used to raise and lower indices for any general $(p + q)$-rank tensor. \\
+
+It is common to represent tensors using arrays, as we alluded to earlier when we mentioned the common convention of an object in the tangent plane written as a column vector and an object of the cotangent plane written as a row vector.
+In this case describing a surface, both the row and the column vector have 2 elements, reflecting the 2D nature of our surface.
+As a consequence, in physics it is common to write a (0,1) tensor $\mathbf{r}$ using only its components $r^i$, taking the basis $\mathbf{e}_i$ to be implicit.
+This is much like how the elements of a column vector contain the components of some implicit basis.
+Note, however, that a general rank-2 tensor is not a matrix as commonly defined in linear algebra.
+Only the (1,1) form of a rank-2 tensor can be written and used as a matrix with standard linear algebra rules.
+For example, let a rank-2 tensor $\tensor{G}{^i_j}$ provide a transformation between $r^i$ and $\varphi^i$ like: $\varphi^i = \tensor{G}{^i_j}r^j$.
+In linear algebra notation assuming a 2D space we can write,
+\begin{equation}
+  \begin{pmatrix}
+    \varphi^1 \\
+    \varphi^2
+  \end{pmatrix} =
+  \begin{pmatrix}
+    \tensor{G}{^1_1} & \tensor{G}{^1_2} \\
+    \tensor{G}{^2_1} & \tensor{G}{^2_2}
+  \end{pmatrix}
+  \begin{pmatrix}
+    r^1 \\
+    r^2
+  \end{pmatrix}.
+\end{equation}
+Thus, the 2 ``dimensions'' in a matrix really represent 1 copy of the tangent space and 1 copy of the cotangent space. \\
+
+The distinction that the (1,1) form of a rank-2 tensor corresponds to a matrix in linear algebra extends to the scalar invariants as well.
+Since the scalar invariants of a tensor are independent of the basis, if we wish to calculate the trace of a rank-2 tensor as the sum of its diagonal components, then we must use the (1,1) form.
+This extends to n-dimensional tensors, with $\textrm{Tr}\{ \mathbf{G} \} = \tensor{G}{^i_i}$.
+Similarly, if we wish to calculate the determinant as we would in linear algebra, we must start with the (1,1) form. \\
+
+In moving a rank-2 tensor between its (0,2) and (2,0) form, or even a vector between its (1,0) and (0,1) form, we are performing a basis change, where the metric gives the transformation.
+Note however, that we are not limited to moving between the tangent and cotangent spaces.
+While the particulars of general bases transforms are beyond the scope of this Appendix, it is important to mention that objects in the tangent plane transform like inverses of objects in the cotangent plane.
+For example, if $\varphi^i = \tensor{G}{^i_j}r^j$ takes $r^j$ from one tangent space to $\varphi^i$ in another tangent space, and $\varphi_i = \tensor{G}{^*_i^j}r_j$ is the equivalent covector transformation, then $(\tensor{G}{^i_j}) = \tensor{G}{^*_i^j}$, such that ${(\tensor{G}{^i_j})}^{-1}\,\tensor{G}{^*_j^k} = \tensor{\delta}{^i_k}$.
+
+
+
 
 \section{Normal space and the 2$^{\rm nd}$ fundamental form}
 
