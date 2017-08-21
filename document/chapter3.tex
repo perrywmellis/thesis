@@ -487,7 +487,7 @@ We characterize the systematic error in the measured topological charge by consi
 Even without knowing the curvature of the surface, any region on the toroidal surface is homeomorphic to a disc with a boundary and thus according to the Guass-Bonnet theorem in Eq.~\fxnote{INTRO} has $\chi = 1$.
 However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either tangential or normal to the boundary.
 In our case, the director if free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
-Instead, we use an extended version of the Poincar\'e-Hopf theorem~\fxnote{extendedPH} that allows the director to vary on the boundary:
+Instead, we use an extended version of the Poincar\'e-Hopf theorem~\cite{RN267} that allows the director to vary on the boundary:
 \begin{equation}
   \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
 \end{equation}
@@ -562,8 +562,8 @@ A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of th
 \begin{equation}
   \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_i^2\big \}.\label{e:3-LeastSquare}
 \end{equation}
-If the model is linear, the fit has an analytic solution~\fxnote{ref PRML}.
-In addition, for normally-distributed data, the result of least squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\fxnote{ref PRML}.
+If the model is linear, the fit has an analytic solution~\cite{RN269}.
+In addition, for normally-distributed data, the result of least squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.
 This is illustrated in Figure~\fxnote{fits}(A), where $x_i$ and $y_i$ are linearly related such that a line fits the example data well and $\bm{\alpha}$ contains the slope and the intercept of the line.\\
 
 However, least-squares fits are very sensitive to outliers in the data and thus do not do well when the data are very noisy.
@@ -577,7 +577,7 @@ The fit then becomes:
   \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_i \gamma_i)^2 \big \},
 \end{equation}
 where $w_i$ is the weight associated to the observation $y_i$.
-A weighted linear least-squares fit of this type is still analytically solvable~\fxnote{ref PRML}.
+A weighted linear least-squares fit of this type is still analytically solvable~\cite{RN269}.
 Unfortunately, weighted least-squares is still very sensitive to outliers if it is not obvious \emph{a priori} which data are the outliers. \\
 
 One way to deal with this is to construct a fit that is inherently less sensitive to outliers.
@@ -586,7 +586,7 @@ For example, we can replace the square of the residual with a general cost funct
   \argmin_{\bm{\alpha}} \sum\limits_i\,\textrm{cost}(\gamma_i),\label{e:3-GeneralCostFit}
 \end{equation}
 such that the fit could deprioritize or even reject entirely large sources of error.
-These cost functions are known as maximum-likelihood-type estimators, or M-estimators~\fxnote{ref PRML}.
+These cost functions are known as maximum-likelihood-type estimators, or M-estimators~\cite{RN269}.
 Note that choosing the cost function $\textrm{cost}(\gamma_i) = \gamma_i^2$ gives a regular least-squares fit.
 Unfortunately, a general cost function is not often analytically solvable or easy to minimize.
 However, provided the cost function is differentiable, we can solve Eq.~\ref{e:3-GeneralCostFit} with an IRLS process.\\
@@ -712,7 +712,7 @@ where $p$ is the iteration number and the $0^{\textrm{th}}$ iteration refers to 
 The routine then calculates the weights for the Fair M-estimator seen in Table~\ref{t:3-CostFxn}, multiplies the Fair weights for each pair of points with the associated $m_{ij}$ to get the final fitting weight, performs a weighted least-squares fit of Eqs.~\ref{e:3-KfitConstrained}, and then repeats the process from the beginning until the fit converges.
 For the fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $c_F = 1.3998$ corresponds to 95\% efficiency on a standard normal distribution, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
 Efficiency refers to how much data an M-estimator needs to get the maximum likelihood solution.
-A true least-squares fit has 100\% efficiency --- as data are included in the fit, a least-squared fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\fxnote{ref PRML}.
+A true least-squares fit has 100\% efficiency --- as data are included in the fit, a least-squared fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
 We include the median of the residuals in our tuning constant so that the tuning parameter in the fit doesn't need to be adjusted as much between datasets with different levels of noise.
 In addition, we ensure that the $c_F^{(p)} \leq c_F^{(0)}$.
 The Fair fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
