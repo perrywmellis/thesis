@@ -1,32 +1,52 @@
 %!TEX root = thesis.tex
 \chapter{Active nematics on the surface of a torus}\label{c:3}
 \section{Introduction}
-Active materials are composed of mesogens that each can convert stored internal energy or ambient energy to kinetic energy, thus driving the material out-of equilibrium~\cite{RN237,RN238,RN40}.
-Importantly, this is distinct from global driving mechanisms such as the application of a shear or the imposition of a field; in active materials, the material is driven out-of-equilibrium due to the intrinsic behavior of the constituent particles.
-Thus, the materials cannot be understood within the framework of equilibrium statistical mechanics, as the individual particles are subject to forces independent of thermal fluctuations.
-Since activity applies to each individual mesogen, the framework of ``active matter'' has been used to study self-organization and self-driven behavior in a variety of systems from flocks of starlings~\cite{RN239,RN240}, collections of robots~\cite{RN241}, colonies of fire ants~\cite{RN242}, cell growth and migration~\cite{RN51,RN160}, and self-propelled particles~\cite{RN168,RN38}.
-Note that these examples of active matter span 6 orders of magnitude in size, with behavior such as flocking, giant number fluctuations, chaotic flows, and low-Reynolds number turbulence driven entirely by a single control parameter~\cite{RN237,RN238,RN40}. \\
+Active materials are composed of constituent particles that each can convert stored internal energy or ambient energy to kinetic energy, thus driving the material out-of equilibrium~\cite{RN237,RN238,RN40}.
+Importantly, this is distinct from global driving mechanisms such as the application of a shear or the imposition of a field; in active materials, the material is driven out-of-equilibrium due to the intrinsic nonequilibrium behavior of the constituent particles.
+Thus, the material cannot be understood within the framework of equilibrium statistical mechanics as the individual particles are subject to forces independent of those provided by thermal fluctuations.
+However, this also means that active materials can be composed of constituents of any size, as activity does not care if the constituent particles are thermal or athermal.
+For example, the framework of ``active matter'' has been used to study self-organization and self-driven behavior in flocks of starlings~\cite{RN239,RN240}, collections of robots~\cite{RN241}, colonies of fire ants~\cite{RN242}, cell growth and migration~\cite{RN51,RN160}, and self-propelled colloidal particles~\cite{RN168,RN38}.
+Note that these examples of active matter span 6 orders of magnitude in size, from the starlings at $\mathcal{O}(10^-1)$ m to the colloidal particles at $\mathcal{O}(10^-7)$ m, with behavior such as flocking, giant number fluctuations, chaotic flows, and low-Reynolds number turbulence driven entirely by a single control parameter~\cite{RN237,RN238,RN40}. \\
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_ActiveInteraction.png}
+  \caption{Interactions in extensile and contractile nematics.
+  (A,C), Two-particle interaction for extensile (A) and contractile (C) mesogens.
+  The arrows represent time.
+  (B,D), The homogeneous state is unstable to distortions, with (B) extensile nematics unstable to bend and (D) contractile nematics unstable to splay.
+  The instability leads to the formation of an $s = + 1/2$ and $s = -1/2$ defect pair, indicated by ${\color{red} \bullet}$,${\color{blue} \bullet}$, respectively.}\label{f:3-ActiveInteraction}
+\end{figure}
 
-Much like equilibrium nematics, active nematic materials are composed of individual mesogens that are anisotropic and thus can possess a nematic phase; however, the addition of activity to nematic order brings about an additional contribution to the interaction between the mesogens.
-We note that with the exception of bacteria introduced in lyotropic liquid crystals~\cite{RN86}, to date, the majority of experimental and theoretical work on active nematics takes place in 2D.
-Thus, to highlight the effect of activity on the nematic mesogens, we consider two active rod-like particles in 2D.
-If the active nematic is ``extensile,'' the rods slide past each other; however, if the active nematic is ``contractile,'' the activity drives the rods to slide towards each other.
-These interactions result in extensile active nematics being unstable to bend distortions while contractile active nematics are unstable to splay distortions~\cite{RN171,RN170,RN11}.
+Much like equilibrium nematics, the individual mesogens of active nematic materials are anisotropic and thus the material possesses a nematic phase; however, the addition of activity to nematic order modifies the interaction between the mesogens.
+With the exception of bacteria introduced into lyotropic liquid crystals~\cite{RN86}, to date the majority of experimental and theoretical work on active nematics takes place in 2D.
+Thus, we will highlight the effect of activity on a nematic in 2D.
+Consider a pair of active rod-like particles in 2D.
+If the active nematic is ``extensile,'' the rods slide past each other; however, if the active nematic is ``contractile,'' the activity drives the rods to slide towards each other, as illustrated in Figure~\ref{f:3-ActiveInteraction}(A,C), respectively.
+These interactions result in extensile active nematics being unstable to bend distortions while contractile active nematics are unstable to splay distortions~\cite{RN171,RN170,RN11}, as illustrated in Figure~\ref{f:3-ActiveInteraction}(B,D) respectively.
 Thus, the splay and bend instabilities make the homogeneously-aligned director state unstable such that the steady-state of an active nematic is often turbulent~\cite{RN7} and full of pairs of $s = \pm 1/2$ defects that are continuously created and annihilated~\cite{RN11,RN8,RN3,RN27,RN135,RN86}.
-These turbulent dynamics are driven by the $s = +1/2$ defects, where the activity coupled with the polar structure of the $s = +1/2$ defects causes the  $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}.
-In contrast, due to the three-fold symmetry of $s = -1/2$ defects, $s = -1/2$ defects are not driven by activity and are only advected by interactions between the defects as well as by interactions with the surface.\\
+These turbulent dynamics are driven by the $s = +1/2$ defects, where the activity coupled with the polar structure of the $s = +1/2$ defects causes the  $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}, as illustrated schematically in Figure~\ref{f:3-DefectFlow}(A).
+In contrast, as shown in Figure~\ref{f:3-DefectFlow}(B), due to the three-fold symmetry of $s = -1/2$ defects, $s = -1/2$ defects are not driven by activity and are only advected by interactions between the defects as well as by interactions with the surface.\\
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_DefectFlow.png}
+  \caption{Flow fields for active disclinations.
+  (A,B) Flows generated by active (A) and $s=+1/2$ and (B) $s=-1/2$ disclinations, with the director lines drawn in white.
+  Due to the polar structure of the active flow, $s = +1/2$ disclinations propel along their symmetry axis.
+  The red arrow represents the propulsion direction for an extensile nematic; $s = +1/2$ disclinations will propel in the opposite direction for a contractile nematic.}\label{f:3-DefectFlow}
+\end{figure}
 
 Recent experimental studies with active nematics yielding self-regulated behaviors such as self-sustained oscillations~\cite{RN9}, spontaneous formation of morphological features such as kinks and protrusions~\cite{RN9,RN3}, and undirected motility~\cite{RN9,RN3} have acted as as stimulus to investigate how biological functionality emerges from the interplay between activity, the geometry of the system, and the structure of the internal phase~\cite{RN160,RN51,RN10}.
 In this context, defects in active nematics could be harnessed to achieve life-like functionality, as defects are extremely sensitive to the intrinsic geometry of the space they inhabit.
-This is easily seen in the connection between the total topological charge on a surface and the topology of the surface, as expressed in the Poincr\'e-hopf Theorem seen in Eq.~[INTRO].
+As highlighted in Chapter~\ref{c:1}, this connection between the topological charge and the topology of the surface is easily seen in the Poincr\'e-Hopf Theorem.
 However, the theory of defects in curved spaces extends this connection beyond topology, predicting that the free-energy of a collection of defects on a surface $\partial A$ is sensitive to the local geometry through the Gaussian curvature~\cite{RN42}:
 \begin{equation}
   \delta F = -\frac{1}{2}\,k_{F, 2D}\int_{\partial A} \textrm{d}^2\mathbf{r}\,\textrm{d}^2\mathbf{r}'\, G(\mathbf{r},\mathbf{r}') \left[\rho(\mathbf{r})-K(\mathbf{r})] [\rho(\mathbf{r}')-K(\mathbf{r}')\right],\label{e:3-DefectsCurvedSurf}
 \end{equation}
 where $k_{F, 2D}$ is the Frank constant in 2D, $\rho(\mathbf{r})$ is the position-dependent defect density, and $G(\mathbf{r},\mathbf{r}')$ is the Laplacian Green's function on the surface.
-Importantly, this implies that even though there have been new discoveries as a result of examining defect structures on spheres~\cite{RN45,RN106,RN26,RN110,RN105,RN76,RN101,RN165}, the Gaussian curvature of a sphere is constant such that the impact of curvature can only enter through the sphere radius.
-This is is born out in the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110} and the degeneracy in the orientation of the 4 $s = +1/2$ defects in nematic shells~\cite{RN45}.
-Even when considering an active nematic on a sphere and the 4 $s = +1/2$ defects become mobile, the defect dynamics can be explained without any mention of Gaussian curvature~\cite{RN9}. \\
+Thus, similar to how the Poincar\'e-Hopf Theorem requires the total toplogical charge to be equivalent to the integrated Gaussian curvature, Eq.~\ref{e:3-DefectsCurvedSurf} expresses this locally, with Gaussian curvature acting as a background topological charge density that interacts with and can be screened by the topological charge of the defects.
+Importantly, this implies that even though there have been new discoveries as a result of examining defect structures on spheres~\cite{RN45,RN106,RN26,RN110,RN105,RN76,RN101,RN165}, the Gaussian curvature and therefore the background topological charge density of a sphere is constant such that the impact of curvature can only enter through the sphere radius.
+This is is born out in the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110} and in the fact that the positions of the 4 $s = +1/2$ defects in nematic shells are due entirely to the defect-defect interactions alone with no influence from the Gaussian curvature.~\cite{RN45}.
+Even when considering an active nematic on a sphere and the 4 $s = +1/2$ defects become mobile, the defect dynamics can still be explained without any mention of curvature~\cite{RN9}.\\
 
 Despite theoretical interest in the interplay between varying Gaussian curvature and topological defects, with few exceptions~\cite{RN84,RN25,RN73,RN81}, there has been little experimental work with defects on surfaces where the Gaussian curvature is non-constant.
 More notably, there has been no work where the defects have the option to explore regions with both positive and negative Gaussian curvature.
