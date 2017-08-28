@@ -255,18 +255,19 @@ The physics behind the surface tension stress at an interface comes through the 
   \Delta P = P_i - P_o = 2 \gamma (- H),
 \end{equation}
 where $P_i$ is the pressure in the inner fluid phase, $P_o$ is the pressure in the outer fluid phase, and $H$ is the mean curvature of the interface.
-Recall that $H = \textup{det}\big \{ \mathbf{L} \big \}$, where $\mathbf{L}$ is the Weingarten Matrix from Eq.~[INTRO]\fxnote{ref INTRO} defined such that the mean curvature of a sphere with radius $r$ choosing an outward-facing normal is $H = -1/r$ everywhere on the surface of the sphere.
-Thus, the Laplace pressure tells us that a spherical droplet has greater pressure on the inside than on the outside, and that due to its constant mean curvature, the pressure inside the droplet is also constant such that the droplet is stable.
-However, we know that $H$ for a torus varies along the surface such that the pressure inside the torus must also vary.
-This intrinsic pressure difference creates the flow inside a fluid torus responsible for the shrinking instability in toroidal droplets, where the handle shrinks smoothly until it closes and the toroidal droplet becomes a spherical droplet~\cite{RN29,RN255}.
-In addition, the Laplace pressure can also cause the tube of a toroidal droplet to break up reminiscent of the Rayleigh-Plateau instability such that the toroidal droplet breaks into one or more spherical droplets~\cite{RN29,RN256}.
-While the study of the fluid modes in nontrivial topologies is interesting in its own right and has led to interesting insights into fluid phenomena such as charged jets~\cite{RN256} and viscous fingering~\cite{RN254}, we are more concerned with creating a stable toroidal droplet. \\
+Recall that $H = \textup{tr}\big \{ \mathbf{L} \big \}/2$, where $\mathbf{L}$ is the Weingarten Matrix from Eq.~[INTRO]\fxnote{ref INTRO} defined such that the mean curvature of a sphere with radius $r$ choosing an outward-facing normal is $H = -1/r$ everywhere on the surface of the sphere.
+The Laplace pressure tells us that not only does a spherical droplet have greater pressure on the inside than on the outside, but also that due to its constant mean curvature, the pressure inside the droplet is constant.
+Thus, there is no slow inside a spherical droplet and it is stable.
+However, we know that $H$ for a torus varies along the surface, forcing the pressure inside the torus to also vary.
+The inhomogeneous pressure inside a liquid torus creates the fluid flow responsible for the shrinking instability in toroidal droplets, where the handle shrinks continuously until it closes and the toroidal droplet transforms into a single spherical droplet~\cite{RN29,RN255}.
+In addition, the Laplace pressure can also cause the tube of a toroidal droplet to break up in a manner reminiscent of the Rayleigh-Plateau instability, such that the toroidal droplet breaks into one or more spherical droplets~\cite{RN29,RN256}.
+While the study of the fluid modes in nontrivial topologies is interesting in its own right and has led to insights into fluid phenomena such as charged jets~\cite{RN256} and viscous fingering~\cite{RN254}, we are more concerned with creating a stable toroidal droplet. \\
 
-As the surface tension stress is responsible for destabilizing the toroidal droplet, to stabilize a toroidal droplet we need to counter the surface tension stress.
-To do so, we make our toroidal droplets using a yield-stress material as the outer phase~\cite{RN47,RN258}.
-Briefly, a yield-stress material has a threshold stress such that the material responds like an elastic solid to imposed stresses less than the yield-stress and flows like a viscous liquid to imposed stresses greater than the yield-stress.
-Thus, provided that the yield-stress is greater than the surface tension stress, the toroidal droplet will be unable to transform to a spherical droplet and will be stable indefinitely.
-Since the surface tension stress is given by the Laplace pressure, we see that balancing the Laplace pressure and the yield stress, $\tau_c$, will give us a critical radius of curvature, $R_c$, determining the stability of a toroidal drop, $\gamma/\tau_c \sim R_c$.
+As the surface tension stress is responsible for destabilizing the toroidal droplet, we need to counter the surface tension stress to have a stable toroidal droplet.
+Thus, we make our toroidal droplets using a yield-stress material as the outer phase instead of a viscous liquid~\cite{RN47,RN258}.
+Briefly, a yield-stress material has a threshold stress, $\tau_c$, such that the material responds like an elastic solid to imposed stresses less than $\tau_c$ and flows like a viscous liquid to imposed stresses greater than $\tau_c$.
+Therefore, provided that $\tau_c$ is greater than the surface tension stress, the toroidal droplet will be unable to transform to a spherical droplet and will be stable indefinitely.
+Since the surface tension stress is given by the Laplace pressure, we see that balancing the Laplace pressure and $\tau_c$ will give us a critical radius of curvature, $R_c$, determining the stability of a toroidal drop, $\gamma/\tau_c \sim R_c$.
 If the smallest radius of curvature on a toroidal drop is larger than $R_c$, the toroidal droplet will be stable --- generally, the smallest radius of curvature on a torus is the tube radius.
 However, for toroids with $\xi \sim 1$, the radius of the handle can be the relevant lengthscale determining the stability of a toroidal droplet.
 Since the active nematic solution is aqueous, we use an oil-based yield-stress material, DC-9041 (Dow Corning), a silicone elastomer.
@@ -274,9 +275,9 @@ To tune the yield stress, we dilute pure DC-9041 with 10~cSt PDMS oil (Clearco).
 We dilute to 74\%~--~77\% w/w DC-9041 to form stable active nematic toroids with tube radii from 150~$\upmu$m~--~300~$\upmu$m.\\
 
 Making a toroidal droplet in a yield-stress material has some key differences to making a toroidal droplet in a viscous fluid.
-Notably, the yield-stress material is only fluid-like in regions where the stress is greater than the yield-stress.
+Notably, the yield-stress material is only fluid-like in regions where the stress is greater than $\tau_c$.
 Thus, for best results, we need to pre-shear the yield-stress medium such that the greatest possible volume of yield-stress material is fluidized.
-We do this by letting the cuvette rotate with the needle inserted for up to 30 s before we begin pumping the inner liquid into the cuvette.
+We do this by letting the cuvette rotate with the needle inserted for up to 30~s before we begin pumping the inner liquid into the cuvette.
 While a pre-shear is not strictly necessary to form a toroidal droplet, the cross-sections of the tubes of toroidal droplets made with a pre-shear are generally more circular than toroidal droplets made with minimal pre-shear.
 This is because the wider the volume of fluidized yield-stress material, the less the pumped volume ``climbs'' up the needle.
 In addition, adding a pre-shear generally helps the overall toroidal droplet be more axisymmetric.
@@ -285,10 +286,10 @@ We also find that making toroidal droplets close to the free-surface of the yiel
 For general experiments with toroidal droplets where there is a large amount of the inner phase available, we simply fill the syringe with the inner phase.
 However, for the active experiments, we have only 100~$\upmu$L of active solution per experiment, which is not enough to even fill the Luer-lock syringe tips we use to connect a syringe to the tubing.
 To accommodate the low sample volume, we fill the syringe with mineral oil (xx cSt, XXX)\fxnote{GET MO source} as a dummy fluid and increase the length of the tubing between the syringe and the needle such that the volume of tubing is greater than $100$~$\upmu$L.
-We pump the dummy fluid until it fills the tubing, insert the filled tubing into the container holding the active nematic solution, and the withdraw the dummy fluid to pull the active nematic solution into the tubing.
+We pump the dummy fluid until it fills the tubing, insert the filled tubing into the container holding the active nematic solution, and then withdraw the dummy fluid to pull the active nematic solution into the tubing.
 Once the active nematic solution is loaded into the tubing, we make toroids as if it were any other inner phase.
-It is important to make sure that the tubing is entirely full of mineral oil such that there is no air at the interface between the dummy liquid and the active nematic solution.
-Air bubbles in the tubing will inhibit forming high-quality toroidal droplets as the air bubble acts as a ``spring'' in the fluid system, introducing significant ``lag'' between the start and stop of the syringe pump and the beginning and end of the fluid flow from the needle.
+We make sure that the tubing is entirely full of mineral oil such that there is no air at the interface between the dummy liquid and the active nematic solution.
+Air bubbles in the tubing will inhibit forming high-quality toroidal droplets as the air bubble acts as a ''spring'' in the fluid system, introducing a significant time lag between the start and stop of the syringe pump and the beginning and end of the fluid flow from the needle.
 In addition, it is important to withdraw the dummy fluid slowly ($\approx 1$~mL/s) when loading the active nematic solution to prevent an emulsion between the active fluid and the dummy fluid forming in the tube.\\
 
 
@@ -302,20 +303,36 @@ This typically occurs between 6~--~10~hours after making the toroidal droplet.
 
 \subsection{Confocal fluorescence microscopy}
 Unlike traditional wide-field microscopy, confocal microscopy allows us to image individual planes in the image such that we can construct a 3D representation of the sample~\cite{RN260}.
-Regardless of the illumination source, confocal microscopy functions by placing an aperture in front of the detector at a confocal plane to the focal plane in the sample~\cite{RN259}.
+Regardless of the illumination source, confocal microscopy functions by placing an aperture in front of the detector at a confocal plane to the focal plane in the sample, as depicted in Figure~\ref{f:3-Confocal}(A)~\cite{RN259}.
 Thus, only light from the focal plane will pass through the aperture; light from any other plane in the sample will be out of focus in the plane of the aperture and thus will not pass through the aperture.
-Typically, the focal plane is changed in the sample by translating the microscope stage up and down.
+This is shown by the blue and green out-of-focus rays in Figure~\ref{f:3-Confocal}(A); all of the red in-focus light passes through the aperture but the blue and green rays cannot pass through.
+Typically, the location of the focal plane in the sample is changed by translating the microscope stage up and down.
 Since the introduction of scanning confocal microscopy, and especially scanning laser confocal fluorescence microscopy, confocal microscopy has seen widespread adoption and is now a standard technique in multiple fields~\cite{RN261,RN262,RN260}.
-Here, the illumination mode is epifluorescent, such that a laser beam is emitted through the objective and incident on a portion of the sample.
+In scanning laser confocal microscopy, the illumination mode is epifluorescent, such that a laser beam is emitted through the objective and focused on a portion of the sample.
 The illuminated portion of the sample then fluoresces and the output intensity from the focal plane is recorded.
-This process is enhanced with a dichroic mirror and a pair of filters such that both the illumination source and the emitted light pass through the objective, but only the emitted light is passed to the detector.
-With a tight laser beam and a set of mirrors to scan the laser beam over the sample, the emitted intensity in the focal plane can be highly localized such that the spatial resolution in the focal plane is set by the size of the laser spot~\cite{RN260}.
-This reduces the impact of photobleaching, but more importantly allows the user to `zoom'' into the sample without changing the objective magnification simply by changing the size of the laser spot and detector optics such that a smaller scan area with higher spatial resolution in a given focal plane still illuminates the entire detector.
+This process is enhanced with a dichroic mirror and a pair of filters such that both the illumination source and the emitted light pass through the objective, but only the emitted light is passed to the detector, as depicted schematically in Figure~\ref{f:3-Confocal}(B).
+With a well-focused laser beam and a set of mirrors to scan the laser beam over the sample, the emitted intensity in the focal plane can be highly localized such that the spatial resolution in the focal plane is set by the size of the laser spot~\cite{RN260}.
+This reduces the impact of photobleaching, but more importantly allows the user to `zoom'' into the sample without changing the objective magnification simply by changing the distance between the detector and final pinhole such that a smaller area in the sample illuminates the entire detector.
 We note that the $z$-resolution between focal planes is still set by the diffraction limit of the emitted light, such that the only way to meaningfully improve the $z$-resolution is to change the objective.
 Coupling confocal microscopy to fluorescence microscopy not only improves signal-to-noise ratio, but also allows us to selectively image only the dyed portion of the sample.
 In our case, this corresponds to imaging only the active filaments.
-Thus, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.
-
+Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C)\fxnote{fix figure}, where the data have been false colored by height, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_Confocal.png}
+  \caption{Confocal microscopy.
+  (A) Schematic showing the effect of the confocal aperture in front of the detector.
+  The red light from the focal plane is in focus in the confocal plane and thus can pass entirely through the aperture.
+  In contrast, the blue and green light rays emitted above and below the focal plane, respectively are out of focus in the confocal plane and thus cannot pass through the aperture.
+  Only individual rays of the out-of-focus light are shown for clarity.
+  (B), Schematic of laser confocal fluorescence microscopy.
+  There is a confocal aperature in front of the laser such that the laser is focused by the objective onto the focal plane in the sample.
+  Thus, the maximum excitation will be at the point of interest in the focal plane.
+  As in (A), only the emitted light from the focal plane is incident on the detector.
+  However, the emitted light is also spatially localized by the focused laser spot.
+  Scanning mirrors (not drawn) raster the laser spot over the focal plane to construct a full image of the focal plane.
+  A dichroic mirror allows the excited and emitted light to share the same path to and from the sample, but only allows the emitted light to be incident on the detector.}\label{f:3-Confocal}
+\end{figure}
 
 \subsection{Confocal setup and parameters}
 Both of the confocals we use are scanning laser confocal microscopes.
@@ -328,14 +345,14 @@ However, even though we can in principle image up to the midpoint of the torus, 
 This is because the time required to adjust the stage height is the slowest portion of the imaging process for both of the confocal microscopes we use.
 Since we wish to acquire as many frames as possible to increase the amount of data we have for each toroid, we must must balance the time required to take an image stack versus the size of the image stack.\\
 
-The microtubules are dyed with AlexaFluor 647, which has en excitation peak of 651~nm and an emission peak of 667~nm~\cite{RN264}.
+The microtubules are dyed with AlexaFluor 647, which has en excitation peak at 651~nm and an emission peak at 667~nm~\cite{RN264}.
 Thus, we use a 633~nm laser as our illumination source and a Cy5 filter set such that only the emitted light reaches the detector.
 The Cy5 filter set includes a 590~--~650~nm bandpass excitation filter, a 660~nm longpass dichroic mirror, and a 663~--~738~nm emission filter~\cite{RN263}.
 The filters and mirror are designed with steep passband transitions such that the quoted ranges are good representations of the passband.
 Note that for illumination with a laser, the excitation filter is unnecessary, but is standard when purchasing the filterset.
 The excitation filter is necessary in wide-field fluorescence microscopy when illuminating with a white-light source.\\
 
-While the two confocal microscopes we use operate the same, there are key differences in the detection that affects measurement protocol as we affects the quality of the data.
+While the two confocal microscopes we use operate in the same manner, there are key differences in the detection that affects measurement protocol as we affects the quality of the data.
 The Zeiss microscope uses standard photomultiplier tubes (PMT) as the detector.
 Unfortunately, standard PMTs do not detect wavelengths above 600~nm well, as the quantum efficiency of the detector decreases with increasing wavelength and is typically below 10\% in that wavelength range~\cite{RN263}.
 This means that we have to increase the intensity of the laser, increase the gain on the detector, and even average two scans of each image plane in order to increase the signal-to-noise ratio to an acceptable level.
@@ -347,33 +364,33 @@ GaAsP PMTs maintain a roughly constant quantum efficiency of $\approx 50$\% up t
 Thus, we can keep both the laser power and detector gain low while still only needing a single scan of the image plane to acquire a higher quality image stack than we get from the Zeiss microscope.
 We therefore can acquire image stacks with a higher time resolution, a higher image quality, and with no noticeable photobleaching when using the Nikon microscope.\\
 
-We set up a measurement as follow.
-First, we place the sample on the microscope stage and and find the droplet by eye using standard brightfield microscopy.
-We then set up the confocal such that appropriate laser and filter set are chosen.
+We set up a measurement as follows.
+First, we place the sample on the microscope stage and and find the toroidal droplet by eye using standard brightfield microscopy.
+We then choose the appropriate laser and filter set.
 Next, we set the microscopes to scan the image plane and display the output in real time.
-We move the stage to find the bottom and the sample and then move the stage to determine the highest plane that we will measure.
-As a rule of thumb we aim for one image stack to take 30~--~50~s to acquire.
+We move the stage to find the bottom of the sample, set the location of the bottom of the image stack, and then move the stage to determine the highest plane that we will measure.
+As a rule of thumb we aim for one image stack to take 30~--~60~s to acquire.
 This corresponds to roughly 15~--~25 image planes, depending on the microscope used to acquire the data. \\
 
 Now that we have set up the size of the image stack, we turn to tuning the laser intensity and gain to produce the highest quality images.
 We first find the image plane with the brightest intensity, and manipulate the intensity and gain such that at most $\approx 5$\%  of the pixels are saturated.
 While a higher laser power and lower gain will produce better quality images, setting the laser power too high can lead to photobleaching for long time measurements.
 Thus, we generally keep the gain roughly halfway between the minimum and maximum values and then adjust the laser power accordingly.
-If we are on the Zeiss microscope, we set the microscope to scan each image plane twice and average the measurements such that we can reduce the overall laser power to minimize photobleaching.
-We then go to the bottom plane and set an offset corresponding to an intensity floor for the measurement.
+If we are on the Zeiss microscope, we set the microscope to scan each image plane twice and average the measurements such that we can reduce the overall laser power and minimize photobleaching.
+We then go to the bottom plane where the emitted intensity is weakest and set an offset corresponding to an intensity floor for the measurement.
 Pixels with an intensity below the offset are set to 0.
 This helps to remove some of the thermal noise in the image; in practice, we have enough signal that this parameter is does not really matter.\\
 
 Once these parameters have been set, we turn on the Perfect Focus System to eliminate the effect of thermal and mechanical drift in the measuring system.
 Thermal and mechanical drift in the measuring system means that over time the measured distance between the objective and a given reference plane in the sample will change.
 This will result in the physical sample volume imaged by the confocal changing over time.
-The Perfect Focus System corrects this by maintaining the distance between a specified reference plane and the objective with incredibly high accuracy.
-The microscope then resets its zero to the reference plane before every scan through the image stack and thus will never accumulates error due to drift.
-Finally, we set the microscopes to image continuously for 12 hours, starting the next image stack as soon as it finishes the previous stack until the 12 hours have expired.
+The Perfect Focus System corrects this by maintaining the distance between a specified reference plane and the objective with high accuracy.
+The microscope then resets its zero to the reference plane before every scan through the image stack and thus will never accumulate error due to drift.
+Finally, we set the microscope to image continuously for 12 hours, starting the next image stack as soon as it finishes the previous stack until the 12 hours have expired.
 We note that files imaged for longer than 12 hours can be difficult to open due to their large size, even on the computer associated to the microscope.\\
 
 Once the image acquisition is finished, we crop the raw confocal time series to only include the portion where the toroidal droplet is active.
-We save this cropped version in single multi-page \texttt{.tiff} file including the metadata concerning acquisition parameters.
+We save this cropped version in single multi-page \texttt{.tiff} file including the metadata containing acquisition parameters.
 This standardizes the data format between the different microscopes to make it easier to read in to the computer.
 
 
@@ -383,18 +400,19 @@ The Open Microscopy Environment maintains the open-source \texttt{OME-TIFF} imag
 The \texttt{bioformats} toolbox allows us to call the imaging parameters such as pixel-to-length conversions, framerate, etc., as well as access the total times series of image stacks as a 3 dimensional array in MATLAB.
 The data are stored in image planes in the order they were taken such that the effect is concatenating the time-series of image stacks along the $z$ dimension in the order they were taken.
 Thus, to locate a specific image stack you have to know which stack in the time series you want as well as the number of planes in each image stack.
-Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the ability to analyze the data.\\
+Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the free memory needed to analyze the data.\\
 
-We first determine the surface of the toroidal droplet by averaging all the image stacks together and then applying an intensity threshold.
-Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process.
+We first determine the surface of the toroidal droplet by averaging all the image stacks over time and then applying an intensity threshold.
+Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\fxnote{F9A,B}.
 We next threshold the data to binarize the image stack and reduce the thickness of the surface in the binary stack.
 Since there are a large range of threshold values that do not change the output surface and it is easy to check the result of an applied threshold, we determine this threshold value by hand.
 From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
-We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}. \\
+We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}, as shown in Figure~\fxnote{F9C} for the example image in Figure~\fxnote{F9B}. \\
 
 We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that the only consider pixels within $\pm 5$ planes of the height at each individual point.
 This process largely prevents transient bright filaments in the bulk from affecting our measurements.
 Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
+An example projection at an instant in time for the surface in Figure~\fxnote{F9A} is shown in Figure~\ref{f:3-CEDF2}(A).
 Finally, we clear the raw confocal data from memory and work to (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
 
 
@@ -437,7 +455,7 @@ K_{\rho} \ast ( \nabla_x I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nabl
 K_{\rho} \ast (  \nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nabla_y I_{\sigma})(\nabla_y I_{\sigma})
 \end{bmatrix},
 \end{equation}
-where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image.
+where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image, and $\ast$ is a convolution.
 If $\rho$ is too small, the coherence directions of the structure tensor will resemble those from the gradient tensor, while if $\rho$ is too large the desired coherence features will be washed out by the averaging.
 The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is shown in the main image and inset in Figure~\ref{f:3-CEDF2}(D), respectively.
 As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$.
@@ -469,7 +487,7 @@ Inset: The same operation applied to the image in the inset of (D).}\label{f:3-C
 \end{figure}
 \newpage
 \subsection{Calculating the director}
-From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over all the $\mathbf{u}$ of all points in a specified radius of the point of interest.
+From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over the $\mathbf{u}$ of all points in a specified radius, $\beta$, of the point of interest.
 We perform this averaging using a disc filter of radius $\beta$.
 We then diagonalize the $\mathbf{Q}$ as shown in Eq.~\ref{e:2-2DOrderDiag}, providing $\mathbf{n}$ and $S$ for each pixel.
 For the orientations of $\mathbf{u}$ in displayed in Figure~\ref{f:3-CEDF2}(D), we choose $\beta = 5$~px to produce $S$ and $n$ as shown in Figure~\ref{f:3-CEDF2}(E,F), respectively.
@@ -489,28 +507,45 @@ Once we determine $\mathbf{n}$ and $S$, we turn to finding the defects.
 We start by selecting pixels with $S < 0.1$ as potential defect candidates.
 For every candidate, we first consider all pixels in a 5~px~$\times$~5~px plaquette centered on the point of interest and ensure that there are no other candidates in the plaquette with a lower value of $S$.
 We then calculate the $\mathbf{n}$-rotation about the point of interest according to Eq.~\ref{eq:2-topCharge}.
-Explicitly, we numerically evaluate $s = (1 / 2 \pi)(\oint \partial\phi / \partial u)$ CCW along the edge of the plaquette, where $u$ is the arclength parameter along the square contour and $\phi$ is the orientation of $\mathbf{n}$.
+Explicitly, we numerically evaluate $s = (1 / 2 \pi)(\oint \partial\phi / \partial u)$ CCW along the edge of the plaquette, where $u$ is the arclength along the square contour and $\phi$ is the orientation of $\mathbf{n}$.
 We take the point of interest to be a $s = \pm 1/2$ defect if $s \in \pm [0.49,0.51]$.
 The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of the $\mathbf{n}$-field in Figure~\ref{f:3-CEDF2}(F), with $s = +1/2$ defects indicated by ${\color{red} \blacktriangle } $  and $s = -1/2$ defects indicated by ${ \color{blue} \blacktriangledown } $.\\
 
 We store the defect locations in a list recording the frame and position of each defect.
 The $s = +1/2$ and $s = -1/2$ defects are stored separately.
-If our time resolution is high enough, we can track the defects.
-We track each species independently using a combinatorics-based particle tracking algorithm.
-For tracked defects, we store the defect identity in addition to the frame and position so that we can reconstruct individual defect trajectories.\\
+For toroids made with 36 $\upmu$M ATP, our time resolution is high enough to track the defects.
+We track each defect species independently using a combinatorics-based particle tracking algorithm~\cite{RN54}.
+For tracked defects, we store the defect identity in addition to the frame and position so that we can reconstruct individual defect trajectories.
+
+
+\subsection{Measuring defect charge in a specified region}
+Once we have identified all the defects in all the frames, we want to be able to look at a specific region on the torus and determine the topological charge in that region over time.
+We start by placing the defect locations into a binary array.
+For each point in time, we create a pair of binary masks to hold the $s = \pm 1/2$ defect locations at that time point.
+We then concatenate the masks such that we have the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ holding the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
+Defect locations in $J$ are represented by a $1$ with all other pixels set to $0$.
+Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
+Thus, with $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_t \, N^{(\pm)}_{\Theta}(t)$ we can also calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.\\
 
 Due to the discrete nature of our data, it is possible to ``miss'' defects, especially when pairs of defects are close together.
 Typically, since one defect in the pair will have a lower value of $S$, the defect with the larger value of $S$ will be ignored.
 Since topological charge is discrete, every missed defect in a region causes the total topological charge in that region to have an error of $\pm 1/2$.
 This gives us a way to characterize the error in our defect-finding routine.
-We consider a region of the surface and monitor the average charge in the region over time.
+We monitor $\overbar{s}_{\Theta}$ as a function of averaging time, as shown for three regions in Figure~\ref{f:3-ChargeOverTime}\fxnote{fix symbol in figure, A to $\Theta$}.
 We find that the time-averaged topological charge in a region converges if we average over enough time frames, implying that at least some portion of the error is random.
-However, this does not exclude the presence of a systematic error such as consistently missing a single $s = -1/2$ defect --- the time-averaged charge would still converge with enough frames, but the measured value would converge to a value lower than the actual time-averaged topological charge.\\
+However, this does not exclude the presence of a systematic error such as consistently missing a single $s = \pm 1/2$ defect --- the time-averaged charge would still converge with enough frames, but the measured time-averaged topological charge would converge to a different value than the actual value of the time-averaged topological charge.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_ChargeOverTime.png}
+  \caption{Time-averaged topological charge measured for different areas on a toroid with $\xi = 2.0$ and $a = 372$ $\upmu$m.
+  (A,C,E) The region outlined in white has (A) $(1/2 \pi) \int K \, \textrm{d}A = 0$ and area $A = 0.795$ mm$^{-2}$, (C) $(1/2 \pi) \int K \, \textrm{d}A = 0$ and area $A = 0.211$ mm$^{-2}$, (E) $(1/2 \pi) \int K \, \textrm{d}A = 0$ and area $A = 0.064$ mm$^{-2}$.
+  (B,D,F) Plot of time-averaged topological charge vs averaging time for the region highlighted in (A,C,E), respectively.}\label{f:3-ChargeOverTime}
+\end{figure}
 
 We characterize the systematic error in the measured topological charge by considering a region of interrogation as its own entity.
 Even without knowing the curvature of the surface, any region on the toroidal surface is homeomorphic to a disc with a boundary and thus according to the Guass-Bonnet theorem in Eq.~\fxnote{INTRO} has $\chi = 1$.
-However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either tangential or normal to the boundary.
-In our case, the director if free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
+However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either everywhere tangential or everywhere normal to the boundary.
+In our case, the director is free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
 Instead, we use an extended version of the Poincar\'e-Hopf theorem~\cite{RN267} that allows the director to vary on the boundary:
 \begin{equation}
   \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
@@ -532,29 +567,33 @@ Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundChar
 \end{equation}
 where here $s_{bulk}$ is calculated directly due to the additivity of defects.
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
-Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}: the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to one.\\
+Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
+This calculation is illustrated schematically in Figure~\fxnote{F11(A-C)} for a circular region with a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect, respectively.\\
 
-We define regions in an intensity image using a binary mask, where a $1$ means the pixel is included in the region of interest and a $0$ means the pixel is excluded.
-We take the boundary of a binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
+For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$ of the binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
+An example mask and its boundary are shown in Figure~\fxnote{F12}(A,B), respectively.
 Along the boundary, the normalized displacement vector between two pixels indexed with $i$ and $j$ is defined as:
 \begin{align}
-  \Delta \mathbf{R}_{i,j} =  \frac{\mathbf{R}[j]-\mathbf{R}[i]}{|\mathbf{R}[j]-\mathbf{R}[i]|}.
+  \Delta \mathbf{R}_{[i,j]} =  \frac{\mathbf{R}_{[j]}-\mathbf{R}_{[i]}}{|\mathbf{R}_{[j]}-\mathbf{R}_{[i]}|}.
 \end{align}
 We estimate the unit tangent vector for a pixel of interest by averaging the local normalized displacement vectors:
 \begin{equation}
-  \mathbf{T} \approx \frac{\Delta \mathbf{R}_{i,i+1} + \Delta \mathbf{R}_{i,i+2} + \Delta \mathbf{R}_{i-1,i} + \Delta \mathbf{R}_{i-2,i}}{|\Delta \mathbf{R}_{i,i+1} + \Delta \mathbf{R}_{i,i+2} + \Delta \mathbf{R}_{i-1,i} + \Delta \mathbf{R}_{i-2,i}|},
+  \mathbf{T} \approx \frac{\Delta \mathbf{R}_{[i,i+1]} + \Delta \mathbf{R}_{[i,i+2]} + \Delta \mathbf{R}_{[i-1,i]} + \Delta \mathbf{R}_{[i-2,i]}}{|\Delta \mathbf{R}_{[i,i+1]} + \Delta \mathbf{R}_{[i,i+2]} + \Delta \mathbf{R}_{[i-1,i]} + \Delta \mathbf{R}_{[i-2,i]}|},
 \end{equation}
 where the pixel of interest is indexed by $i$ and an increasing index corresponds to a CCW displacement along the boundary.
 To complete the Frenet-Serret frame, we estimate the outward pointing unit normal $\mathbf{k}$ by applying a $-\pi/2$ CCW rotation to $\mathbf{T}$ at every pixel.
+The normal vectors for the example boundary in Figure~\fxnote{F12}(B) are plotted on the boundary in Figure~\fxnote{F12}(C).
 Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-boundCharge}.\\
 
-The Turning of the Tangent Theorem lets us test our Frennet-Serret frame; we set $\phi = \textup{cons't}$ and find that $s_{boundary} = 1$ for our set of test masks, as desired.
-We use example director fields with $s = -1, -1/2, +1/2, +1$ defects to test our full routine and confirm that $s_{boundary} + s_{bulk} = 1$ for all of our test cases.\\
+We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\fxnote{F12}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
+We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\fxnote{F12}(E).
+From the defects found by our algorithm, with $s = +1/2$ defects indicated by ${\color{magenta} \circ}$ and $s = -1/2$ defects indicated by ${\color{yellow} \circ}$ in the example image in Figure~\fxnote{F12}(E), we calculate $s_{bulk}= \sum\limits_i s_i$ and compare with $s_{boundary}$, where $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\fxnote{F12}(E) is shown in Figure~\fxnote{F12}(F).
+We see that $s_{bulk}+s_{boundary} = 1$, as desired.\\
 
-
-We now consider a region in the intensity projection for a torus and monitor the average $s_{bulk}$ and $s_{boundary}$ over time, where we calculate $s_{bulk} = \sum\limits_i s_i$, with $s_i$ the charge of a single defect in the bulk of the region.
-We find that even though there is approximately a $50\%$ chance of missing a defect in the region, the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
-
+We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
+For the example region in Figure~\fxnote{F12}(G), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\fxnote{F12}F.
+We see in this example that there are \fxnote{X} frames out of \fxnote{Y} frames have an error, but the error in the charge is never more than \fxnote{Err}, and the average error vanishes when we consider all the frames.
+When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
 
 
 
@@ -562,7 +601,7 @@ We find that even though there is approximately a $50\%$ chance of missing a def
 \section{Measuring surface curvature}
 From $h(x,y)$, we wish the calculate the Gaussian curvature of the surface.
 Recall from Chapter~\ref{c:1} that $K = \textup{det} \big \{ \mathbf{L} \big \}$.
-Thus, we need to calculate the Weingarten matrix, defined as $\tensor{L}{_j^i} = -(\nabla_j \mathbf{k}) \cdot \mathbf{e}^i$, where $\mathbf{k}$ is the unit surface normal and $\mathbf{e}^i = g^{ij}(d \mathbf{R}/dx^j)$ is the basis covector in the $i^{\textrm{th}}$ direction~\cite{RN35}.
+Thus, we need to calculate the Weingarten matrix, defined as $\tensor{L}{_j^i} = -(\nabla_j \mathbf{k}) \cdot \mathbf{e}^i$~\cite{RN35}, where $\mathbf{k}$ is the unit surface normal and $\mathbf{e}^i = g^{ij}(d \mathbf{R}/dx^j)$ is the basis covector in the $i^{\textrm{th}}$ direction, where we now employ the formalism of differential geometry as our surface is curved [see Appendix~\ref{a:A}].
 
 
 \subsection{The Weingarten matrix}
@@ -580,15 +619,15 @@ In addition, an IRLS routine is a robust fit able to reject outliers and accommo
 
 
 \subsection{Iteratively-reweighted least squares}
-Consider a set of observations of an independent dependent random variable where each observation is denoted by $y_i$ and is associated with a dependent variable $x_i$.
-Given a model $y'_i = g(x_i,\bm{\alpha})$, where $\bm{\alpha}$ is the parameter vector for the model, we can define the error of the model for each observation by the residual, $\gamma_i = y_i - y'_i = y_i - g(x_i,\bm{\alpha})$.
+Consider a set of observations of an independent dependent random variable where each observation is denoted by $y_{(i)}$ and is associated with a dependent variable $x_{(i)}$.
+Given a model $y'_{(i)} = g(x_{(i)},\bm{\alpha})$, where $\bm{\alpha}$ is the parameter vector for the model, we can define the error of the model for each observation by the residual, $\gamma_{(i)} = y_{(i)} - y'_{(i)} = y_{(i)} - g(x_{(i)},\bm{\alpha})$.
 A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of the squared residuals:
 \begin{equation}
-  \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_i^2\big \}.\label{e:3-LeastSquare}
+  \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_{(i)}^2\big \}.\label{e:3-LeastSquare}
 \end{equation}
 If the model is linear, the fit has an analytic solution~\cite{RN269}.
-In addition, for normally-distributed data, the result of least squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.
-This is illustrated in Figure~\fxnote{fits}(A), where $x_i$ and $y_i$ are linearly related such that a line fits the example data well and $\bm{\alpha}$ contains the slope and the intercept of the line.\\
+In addition, for normally-distributed data, the result of least-squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.
+This is illustrated in Figure~\fxnote{fits}(A), where $x_{(i)}$ and $y_{(i)}$ are linearly related such that a line fits the example data well and $\bm{\alpha}$ contains the slope and the intercept of the line.\\
 
 However, least-squares fits are very sensitive to outliers in the data and thus do not do well when the data are very noisy.
 This is easy to see in Figure~\fxnote{fits}(B), where we introduce some outliers into our example data from Figure~\fxnote{fits}(A).
@@ -598,51 +637,57 @@ In fact, extreme outliers are often referred to as lever points for this exact r
 One way to treat noisy or uncertain data is to assign a weight to each data point such that data points with larger error are weighted less.
 The fit then becomes:
 \begin{equation}
-  \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_i \gamma_i)^2 \big \},
+  \argmin_{\bm{\alpha}} \sum\limits_{(i)}\,\big \{ (w_i \gamma_{(i)})^2 \big \},
 \end{equation}
-where $w_i$ is the weight associated to the observation $y_i$.
+where $w_{(i)}$ is the weight associated to the observation $y_{(i)}$.
 A weighted linear least-squares fit of this type is still analytically solvable~\cite{RN269}.
 Unfortunately, weighted least-squares is still very sensitive to outliers if it is not obvious \emph{a priori} which data are the outliers. \\
 
 One way to deal with this is to construct a fit that is inherently less sensitive to outliers.
 For example, we can replace the square of the residual with a general cost function:
 \begin{equation}
-  \argmin_{\bm{\alpha}} \sum\limits_i\,\textrm{cost}(\gamma_i),\label{e:3-GeneralCostFit}
+  \argmin_{\bm{\alpha}} \sum\limits_{(i)}\,\textrm{cost}(\gamma_{(i)}),\label{e:3-GeneralCostFit}
 \end{equation}
 such that the fit could deprioritize or even reject entirely large sources of error.
 These cost functions are known as maximum-likelihood-type estimators, or M-estimators~\cite{RN269}.
-Note that choosing the cost function $\textrm{cost}(\gamma_i) = \gamma_i^2$ gives a regular least-squares fit.
+Note that choosing the cost function $\textrm{cost}(\gamma_{(i)}) = \gamma_{(i)}^2$ gives a regular least-squares fit.
 Unfortunately, a general cost function is not often analytically solvable or easy to minimize.
 However, provided the cost function is differentiable, we can solve Eq.~\ref{e:3-GeneralCostFit} with an IRLS process.\\
 
 We begin by expressing Eq.~\ref{e:3-GeneralCostFit} in terms of a weighted least-squares fit.
 Taking the derivative of Eq.~\ref{e:3-GeneralCostFit} with respect to $\bm{\alpha}$ gives:
 \begin{equation}
-  \sum\limits_i\,\frac{\partial \, \textrm{cost}(\gamma_i)}{\partial \gamma_i} \frac{\partial \gamma_i}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv1}
+  \sum\limits_i\,\frac{\partial \, \textrm{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}} \frac{\partial \gamma_{(i)}}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv1}
 \end{equation}
-If we define a weight function like $w(\gamma_i) = \dfrac{1}{\gamma_i}\dfrac{\partial \, \textrm{cost}(\gamma_i)}{\partial \gamma_i}$, we can now re-write Eq.~\ref{e:3-IRLSderiv1} as:
+If we define a weight function like $w(\gamma_{(i)}) = \dfrac{1}{\gamma_{(i)}}\dfrac{\partial \, \textrm{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}}$, we can now re-write Eq.~\ref{e:3-IRLSderiv1} as:
 \begin{equation}
-  \sum\limits_i\,w(\gamma_i) \gamma_i \frac{\partial \gamma_i}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv2}
+  \sum\limits_{(i)}\,w(\gamma_{(i)}) \gamma_{(i)} \frac{\partial \gamma_{(i)}}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv2}
 \end{equation}
  Solving Eq.~\ref{e:3-IRLSderiv2} for $\bm{\alpha}$ is equivalent to minimizing:
  \begin{equation}
-   \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_i(\gamma_i) \gamma_i(\bm{\alpha}))^2 \big \},\label{e:3-WeightLS}
+   \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_{(i)}(\gamma_{(i)}) \gamma_{(i)}(\bm{\alpha}))^2 \big \},\label{e:3-WeightLS}
  \end{equation}
-a weighted least-squares fit, where we have expressed $\gamma_i$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
+a weighted least-squares fit, where we have expressed $\gamma_{(i)}$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
 However, since our weights are dependent on the residuals, we solve Eq.~\ref{e:3-WeightLS} iteratively, where the weights for an iteration $(p)$ are determined by the residuals from the previous iteration, giving:
 \begin{equation}
-  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \}.
+  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \}.
 \end{equation}
-With enough iterations, the $\gamma_i$ converge and we have the $\bm{\alpha}$ values that solve Eq.~\ref{e:3-WeightLS}.
+With enough iterations, the $\gamma_{(i)}$ converge and we have the $\bm{\alpha}$ values that solve Eq.~\ref{e:3-WeightLS}.
 The entire process can described by the recursion relation:
-\begin{equation}
-  \gamma_i^{(p+1)} = y_i - g\big (x_i,\bm{\alpha}^{(p+1)}\big )= y_i - g\Bigg (x_i, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_i \big(\gamma_i^{(p)}\big ) \gamma_i(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
-\end{equation}
+\begin{align}
+  \gamma_{(i)}^{(p+1)}
+  &= y_{(i)} - g\big (x_{(i)},\bm{\alpha}^{(p+1)}\big ) \nonumber \\
+  &= y_{(i)} - g\Bigg (x_{(i)}, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
+\end{align}
 
 Since these cost functions do not need to be everywhere convex, they may not necessarily have a global minimum, or even a guaranteed convergence.
 However, those that are not globally convex often deal with large error more severely than convex functions.
 Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator~\fxnote{Fair citation} until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}.
-The functional forms and weight functions of some common M-estimators as well as the twq M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
+The functional forms and weight functions of some common M-estimators as well as the two M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
+We illustrate an example IRLS fit in Figure~\fxnote{F13} using a GMC M-estimator with two different tuning constants, $c = 1.4826$, and $c = 2.9652$.
+For a GMC M-estimator, $c = 1.4826$ corresponds to 95\% efficiency on a standard normal distribution.
+Efficiency refers to how much data an M-estimator needs to converge to the maximum likelihood solution.
+A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
 \newpage
 \begin{table}[ht]
   \centering
@@ -671,11 +716,11 @@ From a Monge parameterization $h(x,y)$ of a surface~\cite{RN35,RN23}, we start b
 From the triangulation, we estimate $\mathbf{k}$ at every vertex as the average of the unit normals of the adjacent faces.
 Once we have a triangulation and the $\mathbf{k}$ estimates, we proceed to fit the curvature.\\
 
-Let $\mathbf{R}_0$ be an example point of interest with normal $\mathbf{k}_0$.
+Let $\mathbf{R}_{[0]}$ be an example point of interest with normal $\mathbf{k}_{[0]}$.
 We first make an initial fit using regular least-squares to serve as an input into the IRLS routine.
-We consider all points within $d_1$ of $\mathbf{R}_0$ to be within the region of interest and then use $\mathbf{k}_0$ to transform the region of interest into the tangent plane of $\mathbf{R}_0$.
-We then calculate $\Delta \mathbf{R}_{ij} = \mathbf{R}[j]-\mathbf{R}[i]$ and $\Delta \mathbf{k}_{ij} = \mathbf{k}[j]-\mathbf{k}[i]$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$, $\mathbf{R}_0 = \mathbf{R}[0]$, and $\mathbf{k}_0 = \mathbf{k}[0]$ .
-Importantly, the pairs of points do note need to include the $\mathbf{R}_0$; this reduces the influence of error in $\mathbf{R}_0$ and $\mathbf{k}_0$.
+We consider all points within $d_1$ of $\mathbf{R}_{[0]}$ to be within the region of interest and then use $\mathbf{k}_{[0]}$ to transform the region of interest into the tangent plane of $\mathbf{R}_{[0]}$.
+We then calculate $\Delta \mathbf{R}_{[i,j]} = \mathbf{R}_{[j]}-\mathbf{R}_{[i]}$ and $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[j]}-\mathbf{k}_{[i]}$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
+Importantly, as depicted in Figure~\ref{f:3-CurvFitSchem}, the pairs of points do note need to include the $\mathbf{R}_{[0]}$; this reduces the influence of error in $\mathbf{R}_{[0]}$ and $\mathbf{k}_{[0]}$.
 Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to an extended Weingarten matrix $\bm{\Lambda}$~\cite{RN31,RN32}:
 \begin{equation}
 \begin{pmatrix}
@@ -697,6 +742,14 @@ M_{1} & M_{2}
 \end{equation}
 where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
 This additional information will eventually allow us to re-estimate $\mathbf{k}$~\cite{RN31}. \\
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitSchem.png}
+  \caption{Schematic of the quantities used to calculate the Gaussian curvature of a triangulated surface.
+  $\mathbf{R}_{[0]}$ is the point of interest.
+  $\mathbf{R}_{[1]}$ and $\mathbf{R}_{[2]}$ are an example pair of points close to the point of interest with $\Delta \mathbf{R}_{[1,2]} = \mathbf{R}_{[2]}-\mathbf{R}_{[1]}$ the displacement vector in the tangent plane of $\mathbf{R}_{[0]}$.
+  $\mathbf{k}_{[1]}$ and $\mathbf{k}_{[2]}$ are the unit surface normal vectors associated to $\mathbf{R}_{[1]}$ and $\mathbf{R}_{[2]}$.}\label{f:3-CurvFitSchem}
+\end{figure}
 
 We now have a system of three equations to fit with 5 parameters, as $\tensor{L}{_1^2} = \tensor{L}{_2^1}$.
 If we naively expand Eq.~\ref{e:3-Kfit2} directly into three equations,
@@ -709,36 +762,33 @@ If we naively expand Eq.~\ref{e:3-Kfit2} directly into three equations,
 where we have expanded the vectors like $\mathbf{v}\cdot \mathbf{e}_i = v^j g_{ij} = v_i$ and $\Delta k_k$ refers to the component of $\Delta \mathbf{k}$ along the surface normal, we see that $\tensor{L}{_1^2}$ will be determined entirely by the variation along $\mathbf{e}_2$.
 The result of $\tensor{L}{_1^2}$ from fitting Eq.~\ref{e:3-KfitNaive}a will then set the value of $\tensor{L}{_2^1}$ in the fit of Eq.~\ref{e:3-KfitNaive}b so that only $\tensor{L}{_2^2}$ is free to vary during the fit.
 This means that in principle, the choice of $\mathbf{e}_i$ could affect the output curvature.
-To account for this, we rearrange Eq.~\ref{e:3-KfitNaive} to be:
+To account for this, we rearrange Eqs.~\ref{e:3-KfitNaive} to be:
 \refstepcounter{equation}\label{e:3-KfitConstrained}
 \begin{align}
   \Delta k_2 \Delta R_2 - \Delta k_1 \Delta R_1 &= (\Delta R_2)^2 \tensor{L}{_2^2} - (\Delta R_1)^2 \tensor{L}{_1^1}\tag{\theequation a}\\
   \Delta k_1 + \Delta k_2 - \tensor{L}{_1^1} \Delta R_1 - \tensor{L}{_2^2} \Delta R_2 &= (\Delta R_1 + \Delta R_2)\tensor{L}{_1^2}\tag{\theequation b}\\
   \Delta k_k &= M_1 \Delta R_1 + M_2 \Delta R_2.\tag{\theequation c}
 \end{align}
-If we do the fits in order, the values of $\tensor{L}{_1^1}$ and $\tensor{L}{_2^2}$ from fitting Eq.~\ref{e:3-KfitConstrained}a are inserted as fixed parameters into the fit of Eq.~\ref{e:3-KfitConstrained}b.
+If we do the fits in Eqs.~\ref{e:3-KfitConstrained} in order, the values of $\tensor{L}{_1^1}$ and $\tensor{L}{_2^2}$ from fitting Eq.~\ref{e:3-KfitConstrained}a are inserted as fixed parameters into the fit of Eq.~\ref{e:3-KfitConstrained}b.
 However, now the value of $\tensor{L}{_1^2}$ is determined by the variation in both directions in the tangent plane.
 Once we have estimates of the elements of $\bm{\Lambda}$ from the initial least-squares fit, we move on to fitting the curvature with the IRLS routine. \\
 
-We now choose all points within $d_2$ of $\mathbf{R}_0$, where $d_2 > d_1$, and as before, transform into the tangent plane and calculate the associated $\mathbf{\Delta N}_{ij}$ and $\mathbf{\Delta r}_{ij}$ between all pairs of points.
-In addition, we calculate a geometric weight for each $\mathbf{\Delta r}_{ij}$:
+We now choose all points within $d_2$ of $\mathbf{R}_{[0]}$, where $d_2 > d_1$, and as before, transform into the tangent plane and calculate the associated $\mathbf{\Delta k}_{[i,j]}$ and $\mathbf{\Delta R}_{[i,j]}$ between all pairs of points.
+In addition, we calculate a geometric weight for each $\mathbf{\Delta R}_{[i,j]}$:
 \begin{equation}
-  m_{ij} = \frac{\textrm{C}} {(\mathbf{R}[i] - \mathbf{R}_0)^2 + (\mathbf{R}[j]-\mathbf{R}_0)^2},
+  m_{(ij)} = \frac{\textrm{C}} {\mathbf{\Delta R}_{[0,i]}^2 + \mathbf{\Delta R}_{[0,j]}^2},
 \end{equation}
 where $\textrm{C}$ is a normalization constant.
-The geometric weight ensures that data far from $\mathbf{R}_0$ contribute less to the curvature at $\mathbf{R}_0$~\cite{RN32,RN31}.
-We then pass the $\mathbf{\Delta N}_{ij}$, the $\mathbf{\Delta r}_{ij}$, the $m_{ij}$, the initial values in $\bm{\Lambda}$, the appropriate tuning parameters, and a convergence tolerance to our IRLS routine.
+The geometric weight ensures that data far from $\mathbf{R}_{[0]}$ contribute less to the curvature at $\mathbf{R}_{[0]}$~\cite{RN32,RN31}.
+We then pass the $\mathbf{\Delta k}_{[i,j]}$, the $\mathbf{\Delta R}_{[i,j]}$, the $m_{[i,j]}$, the initial values in $\bm{\Lambda}$, the appropriate tuning parameters, and a convergence tolerance to our IRLS routine.
 Our routine starts by calculating the residuals using $\bm{\Lambda}$ from previous fit like:
 \begin{equation}
-  \gamma_{ij}^{(p)} = \sqrt{(\mathbf{\Delta N}_{ij}- \mathbf{\Lambda}^{(p)} \mathbf{\Delta r}_{ij})^2},
+  \gamma_{(ij)}^{(p)} = \sqrt{(\mathbf{\Delta k}_{[i,j]}- \mathbf{\Lambda}^{(p)} \mathbf{\Delta R}_{[i,j]})^2},
 \end{equation}
 where $p$ is the iteration number and the $0^{\textrm{th}}$ iteration refers to the initial least-squares fit.
-The routine then calculates the weights for the Fair M-estimator seen in Table~\ref{t:3-CostFxn}, multiplies the Fair weights for each pair of points with the associated $m_{ij}$ to get the final fitting weight, performs a weighted least-squares fit of Eqs.~\ref{e:3-KfitConstrained}, and then repeats the process from the beginning until the fit converges.
-For the fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $c_F = 1.3998$ corresponds to 95\% efficiency on a standard normal distribution, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
-Efficiency refers to how much data an M-estimator needs to get the maximum likelihood solution.
-A true least-squares fit has 100\% efficiency --- as data are included in the fit, a least-squared fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
+The routine then calculates the weights for the Fair M-estimator seen in Table~\ref{t:3-CostFxn}, multiplies the Fair weights for each pair of points with the associated $m_{(ij)}$ to get the final fitting weight, performs a weighted least-squares fit of Eqs.~\ref{e:3-KfitConstrained}, and then repeats the process from the beginning until the fit converges.
+For the fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $c_F = 1.3998$ corresponds to 95\% efficiency on a standard normal distribution for Fair M-estimator, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
 We include the median of the residuals in our tuning constant so that the tuning parameter in the fit doesn't need to be adjusted as much between datasets with different levels of noise.
-In addition, we ensure that the $c_F^{(p)} \leq c_F^{(0)}$.
 The Fair fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
 While we set an upper limit of 50 iterations for the Fair fit, the fit typically converges in fewer than 20 iterations taking the convergence tolerance to be 0.001.\\
 
@@ -747,39 +797,42 @@ The overall flow of the algorithm is the same for the GMC M-estimator as it was 
 However, there are some key differences in how the fitting weights are handled.
 Here, we include the possibility to reject outliers by calculating the fitting weights as:
 \begin{equation}
-  w_{ij}^{(p+1)} =
+  w_{(ij)}^{(p+1)} =
 \begin{cases}
-0, & \text{if} \quad \gamma_{ij}^{(p)} > b \ c_{GMC}^{(p)} \\
- \dfrac{2}{(1+(\gamma_{ij}^{(p)} / c_{GMC}^{(p)})^2)^2}, & \text{otherwise}
+0 & \text{if} \quad \gamma_{(ij)}^{(p)} > b \ c_{GMC}^{(p)} \\
+ \dfrac{2}{(1+(\gamma_{(ij)}^{(p)} / c_{GMC}^{(p)})^2)^2} & \text{otherwise}
 \end{cases},
 \end{equation}
-where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$ is the tuning constant for the GMC fit, $c_{GMC}^{initial}$ and $b$ are an input parameters, and $c_{GMC} = 1.4826$ corresponds to 95\% efficiency on the standard normal distribution.
+where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$ is the tuning constant for the GMC fit, and $c_{GMC}^{initial}$ and $b$ are an input parameters.
 Here we have modified the standard GMC weight function to exclude data whose residual is too large.
 The outlier rejection works fundamentally by comparing each residual against the median residual.
 The parameter $b$ then determines how much variance with respect to the median residual is allowed.
 As with the Fair fit, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.
 The GMC fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
-We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001. \\
+We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001.
+We display this entire IRLS fitting process for an example point, with the residuals, the weights, $\bm{\Lambda}$, and $K$ displayed for the Fair fit and the GMC fit in Figure~\fxnote{F15}(A,B), respectively.
+Note how the ability to reject outliers significantly affects the $K$ values from the GMC fit.
+In the example in Figure~\fxnote{F15}, both fits converge quickly, as seen i the cost function vs iteration number displayed in Figure~\fxnote{F15}(C,D) for the Fair fit and the GMC fit, respectively. \\
 
 The routine outputs the GMC weights from the final fitting iteration and the final values of $\bm{\Lambda}$.
-Finally, we calculate the mean and Gaussian curvature of at $\mathbf{R}_0$ taking $H = \textup{Tr}\{ \mathbf{L} \}/2$ and $K = \textup{det}\{ \mathbf{L} \}$ and move on to correcting $\mathbf{k}_0$.
+Finally, we calculate the Gaussian curvature of at $\mathbf{R}_{[0]}$ taking $K = \textup{det}\{ \mathbf{L} \}$ and move on to correcting $\mathbf{k}_{[0]}$.
 
 
 \subsection{Correcting the surface normal vectors}
-We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_0$ using a weighted average~\cite{RN31}:
+We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_{[0]}$ using a weighted average~\cite{RN31}:
 \begin{equation}
-\mathbf{k}_0^{(p)} = \frac{\sum\limits_i m_{0i}w_{0i}^{(p)}(\mathbf{N}_i^{(0)} - \mathbf{\Lambda}^{(p)}\mathbf{\Delta R}_{0i})}{\sum\limits_j m_{0j}w_{0j}^{(p)}},.
+\mathbf{k}_{[0]}^{(p)} = \frac{\sum\limits_i m_{(0i)}w_{(0i)}^{(p)}(\mathbf{k}_{[i]}^{(0)} - \mathbf{\Lambda}^{(p)}\mathbf{\Delta R}_{[0,i]})}{\sum\limits_j m_{(0j)}w_{(0j)}^{(p)}},.
 \end{equation}
-where $\mathbf{k}_0^{(p)}$ corresponds to the re-estimated unit normal.
-Note that here we have only used pairs of points that include $\mathbf{R}_0$.
+where $\mathbf{k}_{[0]}^{(p)}$ corresponds to the re-estimated unit normal.
+Note that here we have only used pairs of points that include $\mathbf{R}_{[0]}$.
 This re-estimation uses the fitted curvature to determine what the surface normal should be.
-We now transform $\mathbf{k}_0^{(p)}$ back into the original coordinate system, and then repeat the entire fitting process for another point on the surface.
+We now transform $\mathbf{k}_{[0]}^{(p)}$ back into the original coordinate system, and then repeat the entire fitting process for another point on the surface.
 
 
 \subsection{Finding the area element}
 Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric~\cite{RN35},
 \begin{equation}
-g = \frac{1}{(\mathbf{k}_0^{(p)} \cdot \mathbf{\hat{z}})^2}.
+g = \frac{1}{(\mathbf{k}^{(p)} \cdot \mathbf{\hat{z}})^2}.
 \end{equation}
 The determinant of the metric lets us connect areas in our flat intensity projection with areas on our curved toroidal surface via the local area element~\cite{RN35}, $\textrm{dA} = \sqrt{g} \, \textrm{dx}\textrm{dy}$.
 Physically, we see that in the Monge parameterization, $\sqrt{g}$ reflects the tilt angle of the surface when compared to the flat plane that parameterizes the height of the surface.
@@ -788,10 +841,11 @@ Physically, we see that in the Monge parameterization, $\sqrt{g}$ reflects the t
 \subsection{Validation on test surfaces}
 We validate our routine on hemispheres and saddle-like surfaces with varying levels of random noise inserted into the height of the surface in order to mimic the noise in our confocal data.
 We specify the noise as a percentage of the radii of curvature used to generate the test surface.
-Surfaces with less than 1\% noise or no noise are overall insensitive to $d_1$, $d_2$, and the tuning constants in the fit.
-We test surfaces with up to 3\% noise and find that setting $b=2$ and $c_{F}^{inital}$ and $c_{GMC}^{inital}$ to their respective 95\% efficiency values works well.
+Surfaces with less than 1\% noise or no noise are overall insensitive to $d_1$, $d_2$, and the tuning constants in the fit, as seen for the noiseless hemisphere in Figure~\fxnote{F16}(A) with $K = XXXX$\fxnote{test val}, where the initial least-squares fit and the output of the IRLS fit are shown in Figure~\fxnote{F16}(B,C), respectively, and the color scale is displayed in Figure~\fxnote{F16}(J).
+We test surfaces with up to 3\% noise and find that setting $b=2$ and $c_{F}^{initial}$ and $c_{GMC}^{initial}$ to their respective 95\% efficiency values works well.
 In addition, we see that $d_2$ matters far more than $d_1$, increasing $d_2$ improves the noise tolerance of the fit.
 For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
+For the example hemisphere with 3\% noise and an initial $K = XXXX$\fxnote{test val} displayed in Figure~\fxnote{F16}(D), the output from the initial least-squares fit is shown in Figure~\fxnote{F16}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\fxnote{F16}(F-I), where the color scale is displayed in Figure~\fxnote{F16}J.
 While we could in principle set $d_2$ to the size of the surface, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 We find that setting $d_2 > 12$ yields impractical runtimes.\\
 
@@ -802,12 +856,13 @@ As a consequence, we typically neglect curvature values within $d_2/2$ of the bo
 
 \subsection{Measuring the curvature of toroidal droplets}
 Before we measure the curvature of the $h(x,y)$ output from time-averaging the intensity of a confocal image stack, we first have to remove measurement artifacts.
-Since $h(x,y)$ is discrete quantity set by the height resolution of the confocal, the measured surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
+Since $h(x,y)$ is discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
+These steps are readily visible in the example triangulation in Figure~\fxnote{F17}(B) generated from the $h(x,y)$ in Figure~\fxnote{F17}(A).
 Fitting the curvature on such a surface with reasonable $d_2$ values would yield large areas with vanishing $K$ between steps interspersed with areas with large $|K|$ near each step.
 We remove the steps by downsampling the initial $h(x,y)$ until the output triangulation just appears smooth.
 If we downsample too much, we risk eliminating real curvature features in our data.
-In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px.
-We fit the curvature on the downsampled $h(x,y)$ with $d_1 = 4$ and $d_2 = 12$, and then upsample the final $K(x,y)$, $H(x,y)$, and $\sqrt{g}(x,y)$ back to the original size using linear interpolation.
+In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px nad then triangulate, as seen in the triangulation in Figure~\fxnote{F17}(C).
+We fit the curvature on the downsampled triangulation with $d_1 = 4$ and $d_2 = 12$, as shown in Figure~\fxnote{F17}(D), and then use linear interpolation to upsample the final $K(x,y)$ and $\sqrt{g}(x,y)$ back to the original size, as seen in Figure~\fxnote{F17}(E,F).
 
 
 
@@ -817,50 +872,44 @@ From the fitted curvatures and the defect locations over time, we look to compar
 
 
 \subsection{Finding regions of specific integrated Gaussian curvature}
-We start by considering a binary mask where the region in the intensity projection where we have data for the director field has a value $1$ and everywhere else has a value $0$.
-We then remove the outer 10~px to 30~px of the region by successively finding the boundary of the region and setting the boundary to $0$ until the mask only indicates places where we trust the curvature.
-This mask serves as our base from which we will determine any region we with to look at.
-For any mask $\Theta(x,y)$ defining a region, we calculate the integrated Gaussian curvature numerically,
+We start by considering a binary mask $\Theta_0(x,y)$ representing the full area in the intensity projection where we have data for the director field.
+We then remove the outer 10~px to 30~px of $\Theta_0(x,y)$ by successively finding the boundary $\partial \Theta_0$ of the region and setting the pixels to $0$ until $\Theta_0(x,y)$ only contains places where we trust the curvature.
+This mask serves as our base from which we will determine any subregion $\Theta(x,y)$ we wish to look at.
+From some $\Theta(x,y)$, we calculate the integrated Gaussian curvature in that region numerically,
 \begin{equation}
-  \oint_{\Theta}\,K\textrm{dA} \approx \sum\limits_{x,y} \Theta(x,y) K(x,y). \sqrt{g}(x,y)
+  \oint_{\Theta}\,K\textrm{dA} \approx \sum\limits_{x,y} \Theta(x,y) K(x,y) \sqrt{g}(x,y)
 \end{equation}
-Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base mask and setting the pixels with $K < 0$ or $K > 0$ to $0$.
+Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base $\Theta_0(x,y)$ and setting the pixels with $K < 0$ or $K > 0$ to $0$.
 These two masks define the range of integrated Gaussian curvature that we can probe for a single toroid.
-We can also easily divide the base mask into halves or thirds to consider regions of different integrated Gaussian curvature.
-However, in all of these cases the mask is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data. \\
+We can also easily divide the base $\Theta_0(x,y)$ into halves or thirds to consider regions of different integrated Gaussian curvature.
+However, in all of these cases, $\Theta(x,y)$ is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data. \\
 
 We remedy this with a routine to find masks corresponding to specific values of integrated Gaussian curvature.
-From a starting mask we calculate the starting integrated Gaussian curvature and determine whether it is greater or less than the desired value.
-The routine then finds the boundary of the region and sets the all the pixels on the boundary with the appropriate signed $K$ to $0$.
-For example, if the current value if greater than the target value all the boundary pixels with $K > 0$ are set to $0$.
-This process is repeated until the difference between the current value and the target value changes sign.
-The routine then takes the most recently removed boundary pixels and adds them back to the mask one-by-one until the difference between the current value and the target value has the same sign as the difference between the initial value and the target value.
-
-
-\subsection{Measuring defect charge in a specified region}
-For each point in time, we create a pair of binary masks to hold the defect locations, giving the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ holding the $s = +1/2$ and $s = -1/2$ defects, respectively.
-Defect locations in $J$ are represented by a $1$ with all other pixels set to $0$.
-Thus, we can determine the number of $s = +1/2$ and $s = -1/2$ defects in a region denoted by $\Theta(x,y)$ over time $N^{(\pm)}_{\Theta}(t)$ with the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
-With $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_t \, N^{(\pm)}_{\Theta}(t)$ we calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.
+From some starting $\Theta(x,y)$ we calculate the starting integrated Gaussian curvature and determine whether it is greater or less than the desired value.
+The routine then finds the boundary, $\partial \Theta$, and sets the all the pixels on $\partial \Theta$ with the appropriately signed $K$ to $0$.
+For example, if the current integrated Gaussian curvature if greater than the target integrated Gaussian curvature, all the boundary pixels with $K > 0$ are set to $0$.
+This process is repeated until the difference between the current integrated Gaussian curvature and the target integrated Gaussian curvature changes sign.
+The routine then takes the most recently removed boundary pixels and adds them back to the modified $\Theta(x,y)$ one-by-one until the difference between the current integrated Gaussian curvature and the target integrated Gaussian curvature has the same sign as the difference between the initial integrated Gaussian curvature and the target integrated Gaussian curvature.
 
 
 \subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: defect unbinding}
 We correlate the time-averaged topological charge in a region with the integrated Gaussian curvature of that region for both 36~mM ATP and 144~mM ATP.
-We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\oint_{\Theta}\,K\textrm{dA}$, a shown in Fig.~\fxnote{Fig}, where we plot data from toroids with a range of $\xi$ and $a$.
+We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\int_{\Theta}\,K\textrm{dA}$, a shown in Fig.~\fxnote{Fig 19}, where we plot data from toroids with a range of $\xi$ and $a$.
 The slope of the curve, $C'$, is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
 However, due to the large number of defects and their motion, the time-averaged topological charge approaches a continuous distribution.
 Furthermore, $\overbar{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
 This implies that the unbinding only depends only on the local geometry and is insensitive to the  global size and shape of the system.
 Note that this is direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$~\cite{RN36,RN19,RN22,RN20,RN78}.
-We also note that the line in Fig.~\fxnote{Fig} goes through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
+We also note that the lines in Fig.~\fxnote{Fig 19} go through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
 In our case, however, we see that this is true irrespective of the region we consider, provided the region has vanishing integrated Gaussian curvature.
+This is shown explicitly in Figure~\ref{f:3-ChargeOverTime}, where all the regions under consideration [Figure~\ref{f:3-ChargeOverTime}(A,C,E)] have $\int_{\Theta}\,K\textrm{dA} = 0$ and vanishing time-averaged topological charge [Figure~\ref{f:3-ChargeOverTime}(B,D,F)].
 This implies that a region with $\oint_{\Theta}\,K\textrm{dA} = 0$ is representative of entire toroid.
 Again, this is in contrast to equilibrium nematics, where the small defect number and lack of significant defect motion result in different regions with the same net integrated Gaussian curvature generally enclosing a different topological charge.
-Finally, we see that changing the ATP concentration yields a different amount of unbinding, with a lower ATP concentration unbinding more than a higher ATP concentration. \\
+Finally, we see that changing the ATP concentration yields a different amount of unbinding, with $C' = 7 \pm 0.7$\fxnote{check this} for the 144 $\upmu$M ATP concentation and $C' = 7 \pm 0.7$\fxnote{check this} for the 36 $\upmu$M ATP concentration, indicating that increasing activity leads to less unbinding.\\
 
 Thus, our results suggest that activity is playing a role akin to temperature in equilibrium systems.
 In 2D, the  nematic-isotropic phase transition is predicted to be continuous~\cite{RN172}, such that the nematic elasticity should vanish smoothly on the approach to the phase transition.
-As an equilibrium nematic gets sufficiently close to the nematic-isotropic, thermal fluctuations will dominate the vanishing elasticity, mobilizing the defects and producing results qualitatively similar to adding activity to the nematic.
+As an equilibrium nematic gets sufficiently close to the nematic-isotropic phase transition, thermal fluctuations will dominate the vanishing elasticity, mobilizing the defects and producing results qualitatively similar to adding activity to the nematic.
 
 
 
@@ -875,7 +924,6 @@ Here, we correlate the time-averaged defect density in a region  $\overbar{N}^{(
   \langle K \rangle_{\Theta} = \frac{\int_{\Theta}K\textrm{dA}}{A_{\Theta}},
 \end{equation}
 where $A_{\Theta} = \int_{\Theta}\, \textrm{dA} \approx = \sum\limits_{xy}\Theta(x,y)\sqrt{g}(x,y)$ is the area of the region of interest.
-We start by just considering the same regions we used to investigate the relation between integrated Gaussian curvature and time-averaged topological charge.
 Like the topological charge and integrated Gaussian curvature, we see that the time-averaged defect density for both defect species varies linearly with mean Gaussian curvature, with the slope of the relation between $\overbar{N}^{(\pm)}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$ given by $C^{(\pm)}$.
 However, we see that $C^{(\pm)}$ seems to depend on aspect ratio for a 36~$\upmu$M ATP concentration, even though the difference $(C^{(+)} - C^{(-)}) \sim C'$ does not.
 In addition, we see that generally, $C^{(\pm)} < 0$ regardless of ATP concentration.
