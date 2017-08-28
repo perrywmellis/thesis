@@ -933,26 +933,31 @@ Since regions with vanishing integrated Gaussian curvature are representative of
 For each toroid, this quantity is the intercept of the relation between $\overbar{N}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$.
 We see that higher ATP concentrations result in higher defect densities, consistent with previous experiments. \\
 
-Note that the maximum and minimum $\langle K \rangle_{\Theta}$ values are not given by the regions with maximum and minimum integrated Gaussian curvature.
-To see how the defect density behaves over the entire $\langle K \rangle_{\Theta}$ range, we bin the surface in $K$.
-We set the binsize as a percentage of $M$, the total number of pixels with value $1$ in the base mask, such that the bins have the same number of pixels but different areas on the surface of the torus.
-The first bin contains the $M'$ pixels with the smallest $K$.
-We then form the remaining bins one at a time by removing the pixel in $M'$ with the smallest $K$ and then adding to $M'$ the pixel with the smallest $K$ that has never been in $M'$.
-Thus, the bins overlap as much as possible and there are $M-M'+1$ bins.
-When we plot $\overbar{N}_{\Theta}/A_{\Theta}$ vs $\langle K \rangle_{\Theta}$ using this protocol, we see that the linear relationship between $\overbar{N}_{\Theta}/A_{\Theta}$ and $\langle K \rangle_{\Theta}$ does not persist over the entire surface, but only for a portion of the central region.
+To gain more insight into the defect density, we look at the creation and annihilation rate of the defect pairs using the tracked defects from the 36 $\upmu$M ATP toroids.
+We consider the first frame of a single defect trajectory as $1/2$ a creation event and the last frame of the trajectory as $1/2$ an annihilation event if the defect is sufficiently far from the boundary of the full area in the intensity projection where we have a director field.
+From the confocal data, the $s = +1/2$ defects have a characteristic speed of $0.3$ $\upmu$m/s.
+Thus, we start by considering the largest region with $\langle K \rangle_{\Theta} = 0$ where $\partial \Theta$ is at least 30 $\upmu$m from the edge of the measurement area.
+We plot the defect number and the creation and annihilation events over time in an example region shown in Figure~\fxnote{F22}(A), illustrating that the creation and annihilation events [Figure~\fxnote{F22}(C)] fluctuate just like the defect number [Figure~\fxnote{F22}(B)].
+We then bin the region into overlapping bins containing a constant number of pixels.
+Since we have far fewer frames for the toroids with 36 $\upmu$M ATP when compared to the toroids with 144 $\upmu$M ATP, we make sure that we consider a binsize large enough such that $\overbar{N}_{\Theta}/A_{\Theta}$ vs $\langle K \rangle_{\Theta}$ calculated using the bins agrees with the $\overbar{N}_{\Theta}/A_{\Theta}$ vs $\langle K \rangle_{\Theta}$ calculated earlier [Figure~\fxnote{21}A].
+We find t hat like the defect density and the topological charge, the time-averaged creation and annihilation rates depend on $K$, as illustrated for the example toroid in Figure~\fxnote{F21}(B).  \\
+
+For a given region, we now calculate the time-averaged event probabilities like $\overbar{(N^{creat.}_{\Theta}/N_{\Theta})}$, $\overbar{(N^{annih.}_{\Theta}/N_{\Theta})}$.
+Plotting the average event probabilities vs $\langle K \rangle_{\Theta}$, as seen in Figure~\fxnote{F23}(A) for the toroids where we can generate large enough bins, we see that the average event probability does not depend on $K$.
+Even for a binsize where we do not have the statistics for a good average, as shown in Figure~\fxnote{F23}(B), the corresponding average event probability in Figure~\fxnote{F23}(C) is still insensitive to $K$.
+
+
 
 
 \subsection{Defect number distributions}
-Because of the constant creation and annihilation and mobility of the defects, the defect number in a region fluctuates over time.
+Because of the continuous creation, annihilation, and motion of the defects, the defect number in a region fluctuates over time.
 For the 144~$\upmu$M ATP toroids, we have enough timeframes to characterize the fluctuations with the defect number distribution.
-We see that the defect number distribution in Gaussian, as shown in Figs.~\fxnote{Fig} for a series of regions with different areas and $\langle K \rangle_{\Theta}$ in toroids with 144~$\upmu$M ATP.
+We see that the defect number distribution in Gaussian, as shown in Figs.~\fxnote{F24} for a series of regions with different areas in toroids with 144~$\upmu$M ATP.
 Furthermore, the relative root-mean-squared (RMS) defect number fluctuations $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, obtained from the width of the distribution, scale as $\displaystyle{\overbar{N}_{\Theta}^{-1/2}}$, regardless of $\xi$ and $a$.
 This scaling is the expected result if we had an equilibrium system of particles in the grand canonical ensemble, again suggesting that activity can play a role akin to temperature in an equilibrium system.
 
 
 
-
-\section{Defect orientation and curvature}
 
 \section{Comparison with numerical calculations}
 \subsection{Simulation details}
