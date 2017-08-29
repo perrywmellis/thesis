@@ -689,10 +689,11 @@ Since these cost functions do not need to be everywhere convex, they may not nec
 However, those that are not globally convex often deal with large error more severely than convex functions.
 Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator~\fxnote{Fair citation} until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}.
 The functional forms and weight functions of some common M-estimators as well as the two M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
-We illustrate an example IRLS fit in Figure~\fxnote{F13} using a GMC M-estimator with two different tuning constants, $c = 1.4826$, and $c = 2.9652$.
-For a GMC M-estimator, $c = 1.4826$ corresponds to 95\% efficiency on a standard normal distribution.
+Both the Fair and the GMC M-estimator have a tuning constant that adjusts how severely the M-estimator deals with errors.
+For the GMC and the Fair M-estimators, $c = 1.4826$ and $c = 1.3998$ correspond respectively to 95\% efficiency on a standard normal distribution.
 Efficiency refers to how much data an M-estimator needs to converge to the maximum likelihood solution.
 A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
+The effect of adjusting the tuning constant for the various M-estimators is easily seen in the curves in Figure~\ref{f:3-CostFxn}, where the red curves correspond to a tuning constant set to the 95\% efficiency value and the blue curves correspond to setting the tuning constants to twice the 95\% efficiency value.
 \newpage
 \begin{table}[ht]
   \centering
