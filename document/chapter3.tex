@@ -98,8 +98,8 @@ Conversely, a kinesin cluster in contact with two parallel microtubules will sim
   \caption{Microtuble-kinesin active nematic liquid crystal.
   (A) Schematic of tubulin polymerizing into a microtubule. The $\alpha/\beta$-tubulin dimers polymerize end-to-end to form chains which then polymerize laterally to form microtubules.
   The microtubule polarity is indicated on the schematic, with (-) associated to free $\alpha$-tubulin and (+) associated to free $\beta$-tubulin.
-  (B) Kinesin, ${\color{yellow} \bullet}$, walks along microtubules from the (-) end to the (+) end.
-  When kinesin are bound to streptavidin ${\color{gray} \bullet}$ to form clusters, these clusters can generate relative motion between two antiparallel microtubules.
+  (B) Kinesin $({\color{yellow} \bullet})$ walks along microtubules from the (-) end to the (+) end.
+  When kinesin are bound to streptavidin $({\color{gray} \bullet})$ to form clusters, these clusters can generate relative motion between two antiparallel microtubules.
   In contrast, parallel microtubules exhibit no relative motion, with the cluster simply translating itself in the shared (+) direction.
   (C) Microtubules and kinesin-streptavidin clusters bundles together by depletion form fibers that grow.
   When the concentration of fibers is high enough to form a viscoelastic network, individual fibers cannot grow freely and instead will buckle and fracture.
@@ -539,7 +539,15 @@ For each point in time, we create a pair of binary masks to hold the $s = \pm 1/
 We then concatenate the masks such that we have the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ holding the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
 Defect locations in $J$ are represented by a $1$ with all other pixels set to $0$.
 Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
+We plot $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t) = N^{(+)}_{\Theta}(t) + N^{(-)}_{\Theta}(t)$ in the example region in Figure~\ref{f:3-NumberOverTime}(A) over time in Figure~\ref{f:3-NumberOverTime}(B), showing that both $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t)$ fluctuate, with the fluctuations in each quantitiy centered around a mean.
 Thus, with $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_t \, N^{(\pm)}_{\Theta}(t)$ we can also calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_NumberOverTime.png}
+  \caption{Defect number fluctuations in a region.
+  (A) The region outlined in white has $(1/2\pi)\int K\, \textrm{d}A = 0$ and Area $A = 0.795$ mm$^{-2}$.
+  (B) Plot of the number of $({\color{red} \vartriangle})$ $s = + 1/2$ defects, $({\color{blue} \triangledown})$ $s = -1/2$ defects, and $(\bullet)$ total number of defects over time in the region highlighted in (A).}\label{f:3-NumberOverTime}
+\end{figure}
 
 Due to the discrete nature of our data, it is possible to ``miss'' defects, especially when pairs of defects are close together.
 Typically, since one defect in the pair will have a lower value of $S$, the defect with the larger value of $S$ will be ignored.
@@ -910,12 +918,20 @@ As a consequence, we typically neglect curvature values within $d_2/2$ of the bo
 \subsection{Measuring the curvature of toroidal droplets}
 Before we measure the curvature of the $h(x,y)$ output from time-averaging the intensity of a confocal image stack, we first have to remove measurement artifacts.
 Since $h(x,y)$ is discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
-These steps are readily visible in the example triangulation in Figure~\fxnote{F17}(B) generated from the $h(x,y)$ in Figure~\fxnote{F17}(A).
-Fitting the curvature on such a surface with reasonable $d_2$ values would yield large areas with vanishing $K$ between steps interspersed with areas with large $|K|$ near each step.
+Fitting the curvature on such a surface with reasonable $d_2$ values would yield large areas with vanishing $K$ between steps interspersed with areas near each step that have large $|K|$.
 We remove the steps by downsampling the initial $h(x,y)$ until the output triangulation just appears smooth.
 If we downsample too much, we risk eliminating real curvature features in our data.
-In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px nad then triangulate, as seen in the triangulation in Figure~\fxnote{F17}(C).
-We fit the curvature on the downsampled triangulation with $d_1 = 4$ and $d_2 = 12$, as shown in Figure~\fxnote{F17}(D), and then use linear interpolation to upsample the final $K(x,y)$ and $\sqrt{g}(x,y)$ back to the original size, as seen in Figure~\fxnote{F17}(E,F).
+In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px and then triangulate, as seen in the triangulation in Figure~\ref{f:3-CurvFitTorus}(A).
+We fit the curvature on the downsampled triangulation with $d_1 = 4$ and $d_2 = 12$, as shown in Figure~\ref{f:3-CurvFitTorus}(B,D), and then use linear interpolation to upsample the final $K(x,y)$ and $\sqrt{g}(x,y)$ back to the original size, as seen in Figure~\ref{f:3-CurvFitTorus}(E,F), respectively.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitTorus.png}
+  \caption{Measuring the Gaussian curvature and $sqrt{g}$ on a torus.
+  (A) Triangulation colored by height formed from a downsampled $h(x,y)$.
+  (B-D) The Gaussian curvature of the triangulation in (A) displayed as a (B,D) triangulation and an image, respectively, with the values given by the upper colorbar in (C).
+  (E) The Gaussian curvature in (D), upsampled and with missing data filled in using linear interpolation to return the data to its original size.
+  (F) The upsampled and filled in $sqrt{g}$ obtained from the corrected normal vectors with the values given by the lower colorbar in (C).}\label{f:3-CurvFitTorus}
+\end{figure}
 
 
 
@@ -947,18 +963,38 @@ The routine then takes the most recently removed boundary pixels and adds them b
 
 \subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: defect unbinding}
 We correlate the time-averaged topological charge in a region with the integrated Gaussian curvature of that region for both 36~mM ATP and 144~mM ATP.
-We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\int_{\Theta}\,K\textrm{dA}$, a shown in Fig.~\fxnote{Fig 19}, where we plot data from toroids with a range of $\xi$ and $a$.
-The slope of the curve, $C'$, is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
+We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\int_{\Theta}\,K\textrm{dA}$, a shown in Figure~\ref{f:3-DefectUnbinding}, where we plot data from toroids with a range of $\xi$ and $a$.
+The slope of each curve, $C'$, is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
 However, due to the large number of defects and their motion, the time-averaged topological charge approaches a continuous distribution.
 Furthermore, $\overbar{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
 This implies that the unbinding only depends only on the local geometry and is insensitive to the  global size and shape of the system.
 Note that this is direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$~\cite{RN36,RN19,RN22,RN20,RN78}.
-We also note that the lines in Fig.~\fxnote{Fig 19} go through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
+We also note that the lines in Figure~\ref{f:3-DefectUnbinding}(A,B) both go through 0, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
 In our case, however, we see that this is true irrespective of the region we consider, provided the region has vanishing integrated Gaussian curvature.
 This is shown explicitly in Figure~\ref{f:3-ChargeOverTime}, where all the regions under consideration [Figure~\ref{f:3-ChargeOverTime}(A,C,E)] have $\int_{\Theta}\,K\textrm{dA} = 0$ and vanishing time-averaged topological charge [Figure~\ref{f:3-ChargeOverTime}(B,D,F)].
 This implies that a region with $\oint_{\Theta}\,K\textrm{dA} = 0$ is representative of entire toroid.
 Again, this is in contrast to equilibrium nematics, where the small defect number and lack of significant defect motion result in different regions with the same net integrated Gaussian curvature generally enclosing a different topological charge.
-Finally, we see that changing the ATP concentration yields a different amount of unbinding, with $C' = 7 \pm 0.7$\fxnote{check this} for the 144 $\upmu$M ATP concentation and $C' = 7 \pm 0.7$\fxnote{check this} for the 36 $\upmu$M ATP concentration, indicating that increasing activity leads to less unbinding.\\
+Finally, we see that changing the ATP concentration yields a different amount of unbinding, with $C' = 4.3 \pm 0.7$ for the 144 $\upmu$M ATP concentation and $C' = 6.3 \pm 0.5$ for the 36 $\upmu$M ATP concentration, indicating that increasing activity leads to less unbinding.
+This is seen explicitly in Figure~\ref{f:3-DefectUnbinding}(C), where we plot the data for both ATP concentrations to emphasize that ATP and thus activity is the dominant factor in amount of unbinding.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_DefectUnbinding.png}
+  \caption{Defect unbinding in active nematic toroids.
+  (A,B) Time-averaged topological charge in an area vs the integrated Gaussian curvature of the area for toroids with (A) 144 $\upmu$M ATP, (B) 36 $\upmu$M ATP, and (C) both ATP concentrations with the data from (A) in red and the data from (B) in black.
+  The lines in (A) and (B) are weighted averages of a linear fit to the data for each individual toroid in the plot and have slopes $4.3 \pm 0.7$ and $6.3 \pm 0.5$, respectively with intercepts $0.01 \pm 0.02$ and $0.02 \pm 0.03$, respectively.
+  The toroids in (A) have:
+  $({\color{red} \bullet})$ $\xi = 1.6 $ and $a = 275$ $\upmu$m,
+  $({\color{green} \blacktriangle})$ $\xi = 2.0 $ and $a = 372$ $\upmu$m,
+  $({\color{magenta} \blacklozenge})$ $\xi = 2.4 $ and $a = 268$ $\upmu$m,
+  $({\blacksquare})$ $\xi = 5.9$ and $a = 200$ $\upmu$m, and
+  $({\color{blue} \blacktriangledown})$ $\xi = 6.6$ and $a = 167$ $\upmu$m.
+  The torids in (B) have:
+  $({\color{red} \bullet})$ $\xi = 1.6 $ and $a = 275$ $\upmu$m,
+  $({\color{green} \blacktriangle})$ $\xi = 2.0 $ and $a = 372$ $\upmu$m,
+  $({\color{magenta} \blacklozenge})$ $\xi = 2.4 $ and $a = 268$ $\upmu$m,
+  $({\blacksquare})$ $\xi = 5.9$ and $a = 200$ $\upmu$m, and
+  $({\color{blue} \blacktriangledown})$ $\xi = 6.6$ and $a = 167$ $\upmu$.}\label{f:3-DefectUnbinding}
+\end{figure}
 
 Thus, our results suggest that activity is playing a role akin to temperature in equilibrium systems.
 In 2D, the  nematic-isotropic phase transition is predicted to be continuous~\cite{RN172}, such that the nematic elasticity should vanish smoothly on the approach to the phase transition.
