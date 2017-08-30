@@ -7,7 +7,7 @@ Thus, the material cannot be understood within the framework of equilibrium stat
 However, this also means that active materials can be composed of constituents of any size, as activity does not care if the constituent particles are thermal or athermal.
 For example, the framework of ``active matter'' has been used to study self-organization and self-driven behavior in flocks of starlings~\cite{RN239,RN240}, collections of robots~\cite{RN241}, colonies of fire ants~\cite{RN242}, cell growth and migration~\cite{RN51,RN160}, and self-propelled colloidal particles~\cite{RN168,RN38}.
 Note that these examples of active matter span 6 orders of magnitude in size, from the starlings at $\mathcal{O}(10^-1)$ m to the colloidal particles at $\mathcal{O}(10^-7)$ m, with behavior such as flocking, giant number fluctuations, chaotic flows, and low-Reynolds number turbulence driven entirely by a single control parameter~\cite{RN237,RN238,RN40}. \\
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ActiveInteraction.png}
   \caption{Interactions in extensile and contractile nematics.
@@ -26,7 +26,7 @@ These interactions result in extensile active nematics being unstable to bend di
 Thus, the splay and bend instabilities make the homogeneously-aligned director state unstable such that the steady-state of an active nematic is often turbulent~\cite{RN7} and full of pairs of $s = \pm 1/2$ defects that are continuously created and annihilated~\cite{RN11,RN8,RN3,RN27,RN135,RN86}.
 These turbulent dynamics are driven by the $s = +1/2$ defects, where the activity coupled with the polar structure of the $s = +1/2$ defects causes the  $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}, as illustrated schematically in Figure~\ref{f:3-DefectFlow}(A).
 In contrast, as shown in Figure~\ref{f:3-DefectFlow}(B), due to the three-fold symmetry of $s = -1/2$ defects, $s = -1/2$ defects are not driven by activity and are only advected by interactions between the defects as well as by interactions with the surface.\\
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_DefectFlow.png}
   \caption{Flow fields for active disclinations.
@@ -56,7 +56,7 @@ If we compute the integrated Gaussian curvature for the $K>0$ region defined by 
 Similarly, integrating over the $K<0$ region defined by $\theta \in [-\pi/2,\pi/2]$ yields $\int_{K<0}K\,\textrm{d}A = -4\pi$.
 Introducing 4 pairs of $s = \pm 1/2$ defects onto the surface, as depicted in Figure~\ref{f:3-EqDefs}(A), the $s = +1/2$ defects are predicted to minimize their energy by moving to the outside of the handle, thereby screening the positive Gaussian curvature, and the $s = -1/2$ defects are predicted to move to the inside of the handle to screen the negative Gaussian curvature.
 Now if we integrate over the $K>0$ region and $K<0$ region separately as a function of $\varphi$ and compare to the included topological charge, as shown by the red and blue curves in Figure~\ref{f:3-EqDefs}(C), respectively, we see that the curve has a positive slope, reflecting the defect unbinding, and that the curve is stepped, reflecting the discrete nature of topological charge.\\
-\begin{figure}[h]
+\begin{figure}
   \includegraphics{figures/C3/Ch3-Figs_EqDefs.png}
   \caption{Curvature-induced defect unbinding for a nematic on a torus. (A) A schematic of a torus with 4 pairs of unbound pairs of $s = \pm 1/2$ defects. The 3 visible $s=+1/2$ defects are indicated by $\blacktriangle$ and the 3 visible $s = -1/2$ defects are indicated by ${\color{yellow} \bullet}$.
   The red region on the torus has $K >0$ and the blue region has $K<0$.
@@ -104,7 +104,7 @@ Conversely, a kinesin cluster in contact with two parallel microtubules will sim
   (C) Microtubules and kinesin-streptavidin clusters bundles together by depletion form fibers that grow.
   When the concentration of fibers is high enough to form a viscoelastic network, individual fibers cannot grow freely and instead will buckle and fracture.
   (D) In the presence of a liquid-liquid interface, the fibers will deplete to the interface and undergo an isotropic-nematic transition, with the fiber direction giving the nematic director.
-  Pictured is a fluorescence microscopy snapshot of an active nematic, where the microtubules are fluorescently labeled such that the fiber direction is apparent. 
+  Pictured is a fluorescence microscopy snapshot of an active nematic, where the microtubules are fluorescently labeled such that the fiber direction is apparent.
   The director surrounding an $s = \pm 1/2$ defect pair is highlighted by the dashed red and blue lines, respectively, with the fracture line connecting the pair highlighted with a yellow dashed line.}\label{f:3-ActiveBuild}
 \end{figure}
 
@@ -408,16 +408,25 @@ Thus, to locate a specific image stack you have to know which stack in the time 
 Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the free memory needed to analyze the data.\\
 
 We first determine the surface of the toroidal droplet by averaging all the image stacks over time and then applying an intensity threshold.
-Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\fxnote{F9A,B}.
+Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\ref{f:3-SurfaceHeight}(A,B).
 We next threshold the data to binarize the image stack and reduce the thickness of the surface in the binary stack.
 Since there are a large range of threshold values that do not change the output surface and it is easy to check the result of an applied threshold, we determine this threshold value by hand.
 From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
-We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}, as shown in Figure~\fxnote{F9C} for the example image in Figure~\fxnote{F9B}. \\
+We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}, as shown in Figure~\ref{f:3-SurfaceHeight}(C) for the example image in Figure~\ref{f:3-SurfaceHeight}(B). \\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_SurfaceHeight.png}
+  \caption{Determining the surface of a toroid from confocal microscopy data.
+  (A) Example confocal image stack at a moment in time.
+  (B) The average over time of all the image stacks.
+  Here, the averaging washes out stray filaments in the bulk as well as the nematic structure of the filaments, as seen in (A), giving us an intensity image of the surface itself.
+  (C) The height of the surface $h(x,y)$, where $h$ is determined by thresholding (B) and then averaging the height of the bright pixels in the thresholded image stack for every $(x,y)$ position.}\label{f:3-SurfaceHeight}
+\end{figure}
 
 We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that the only consider pixels within $\pm 5$ planes of the height at each individual point.
 This process largely prevents transient bright filaments in the bulk from affecting our measurements.
 Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
-An example projection at an instant in time for the surface in Figure~\fxnote{F9A} is shown in Figure~\ref{f:3-CEDF2}(A).
+An example projection at an instant in time for the image stack in Figure~\ref{f:3-SurfaceHeight}(A) is shown in Figure~\ref{f:3-CEDF2}(A).
 Finally, we clear the raw confocal data from memory and work to (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
 
 
@@ -466,9 +475,9 @@ The coherence direction of the structure tensor calculated with $\rho = 5$ px an
 As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$.
  We take this output of the coherence direction of the structure tensor for each pixel as the local ``molecular director'' $\mathbf{u}$, representing the local orientation of the active nematic.
 \newpage
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/C3/Ch3-Figs_CEDF2.png}
+  \includegraphics{figures/C3/Ch3-Figs_CEDF2.png}
   \caption{Step-by-step output to find the director and defects from an active nematic image.
 (A), Maximum-intensity projection of a confocal stack along $-\hat{z}$ at a single time.
 Inset: Close up of a defect pair.
@@ -572,11 +581,20 @@ Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundChar
 \end{equation}
 where here $s_{bulk}$ is calculated directly due to the additivity of defects.
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
-Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
-This calculation is illustrated schematically in Figure~\fxnote{F11(A-C)} for a circular region with a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect, respectively.\\
+This is illustrated schematically for a circular region containing a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect in Figure~\ref{f:3-EdgeChargeEx}(A-C), respectively.
+Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_EdgeChargeEx.png}
+  \caption{Schematic illustration of boundary and bulk charge.
+  (A,B,C) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frennet-Serret frame.
+  The director orientation $\phi$ in the fixed frame is taken CCW from the horizontal and the director orientation $\phi'$ in the Frennet-Serret frame is taken CW from the horizontal.
+  For the defect-free director field in (A), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
+  Performing the same calculations for the director field containing the (B) $s = +1$ defect and (C) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
+\end{figure}
 
 For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$ of the binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
-An example mask and its boundary are shown in Figure~\fxnote{F12}(A,B), respectively.
+An example mask and its boundary are shown in Figure~\ref{f:3-EdgeChargeErr}(A,B), respectively.
 Along the boundary, the normalized displacement vector between two pixels indexed with $i$ and $j$ is defined as:
 \begin{align}
   \Delta \mathbf{R}_{[i,j]} =  \frac{\mathbf{R}_{[j]}-\mathbf{R}_{[i]}}{|\mathbf{R}_{[j]}-\mathbf{R}_{[i]}|}.
@@ -587,17 +605,29 @@ We estimate the unit tangent vector for a pixel of interest by averaging the loc
 \end{equation}
 where the pixel of interest is indexed by $i$ and an increasing index corresponds to a CCW displacement along the boundary.
 To complete the Frenet-Serret frame, we estimate the outward pointing unit normal $\mathbf{k}$ by applying a $-\pi/2$ CCW rotation to $\mathbf{T}$ at every pixel.
-The normal vectors for the example boundary in Figure~\fxnote{F12}(B) are plotted on the boundary in Figure~\fxnote{F12}(C).
+The normal vectors for the example boundary in Figure~\ref{f:3-EdgeChargeErr}(B) are plotted on the boundary in Figure~\ref{f:3-EdgeChargeErr}(C).
 Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-boundCharge}.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_EdgeChargeErr.png}
+  \caption{Boundary charge and defect detection error on active nematic toroids.
+  (A-D) Validation of the Frennet-Serret frame.
+  For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frennet-Serret frame.
+  We check the Frennet-Serret frame by (C) integrating the change in the unit normal vector along the boundary, $\textrm{d}(\psi - \pi/2) = \textrm{d}\psi = (\partial \psi/\partial \theta) \textrm{d}\theta$, and see that the integral goes to $2 \pi$, as desired.
+  (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by ${\color{magenta} \times}$,${\color{yellow} \circ}$, respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
+  (F) An integral of $\textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$.
+  (G) $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
+  There are 76 frames with $s_{bulk} + s_{boundary} \neq 1$ and 186 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.29$ and mean$(error) = 0.026$.}\label{f:3-EdgeChargeErr}
+\end{figure}
 
-We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\fxnote{F12}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
-We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\fxnote{F12}(E).
-From the defects found by our algorithm, with $s = +1/2$ defects indicated by ${\color{magenta} \circ}$ and $s = -1/2$ defects indicated by ${\color{yellow} \circ}$ in the example image in Figure~\fxnote{F12}(E), we calculate $s_{bulk}= \sum\limits_i s_i$ and compare with $s_{boundary}$, where $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\fxnote{F12}(E) is shown in Figure~\fxnote{F12}(F).
+We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\ref{f:3-EdgeChargeErr}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
+We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\ref{f:3-EdgeChargeErr}(E).
+From the defects found by our algorithm, with $s = +1/2$ defects indicated by ${\color{magenta} \times}$ and $s = -1/2$ defects indicated by ${\color{yellow} \circ}$ in the example image in Figure~\ref{f:3-EdgeChargeErr}(E), we calculate $s_{bulk}= \sum\limits_i s_i=-1/2$ and compare with $s_{boundary}$, where $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\ref{f:3-EdgeChargeErr}(E) is shown in Figure~\ref{f:3-EdgeChargeErr}(F).
 We see that $s_{bulk}+s_{boundary} = 1$, as desired.\\
 
 We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
-For the example region in Figure~\fxnote{F12}(G), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\fxnote{F12}F.
-We see in this example that there are \fxnote{X} frames out of \fxnote{Y} frames have an error, but the error in the charge is never more than \fxnote{Err}, and the average error vanishes when we consider all the frames.
+For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(F).
+We see in this example that there are 76 frames out of 262 frames have an error, but the error in the charge is never more than 2, and the average error vanishes when we consider all the frames.
 When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
 
 
@@ -631,11 +661,9 @@ A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of th
   \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_{(i)}^2\big \}.\label{e:3-LeastSquare}
 \end{equation}
 If the model is linear, the fit has an analytic solution~\cite{RN269}.
-In addition, for normally-distributed data, the result of least-squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.
-This is illustrated in Figure~\fxnote{fits}(A), where $x_{(i)}$ and $y_{(i)}$ are linearly related such that a line fits the example data well and $\bm{\alpha}$ contains the slope and the intercept of the line.\\
+In addition, for normally-distributed data, the result of least-squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.\\
 
 However, least-squares fits are very sensitive to outliers in the data and thus do not do well when the data are very noisy.
-This is easy to see in Figure~\fxnote{fits}(B), where we introduce some outliers into our example data from Figure~\fxnote{fits}(A).
 The fact that Eq.~\ref{e:3-LeastSquare} tries to minimize the sum of the squared errors means that outliers can have a disproportionate effect on the final fit.
 In fact, extreme outliers are often referred to as lever points for this exact reason.\\
 
@@ -687,7 +715,7 @@ The entire process can described by the recursion relation:
 
 Since these cost functions do not need to be everywhere convex, they may not necessarily have a global minimum, or even a guaranteed convergence.
 However, those that are not globally convex often deal with large error more severely than convex functions.
-Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator~\fxnote{Fair citation} until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}.
+Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}.
 The functional forms and weight functions of some common M-estimators as well as the two M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
 Both the Fair and the GMC M-estimator have a tuning constant that adjusts how severely the M-estimator deals with errors.
 For the GMC and the Fair M-estimators, $c = 1.4826$ and $c = 1.3998$ correspond respectively to 95\% efficiency on a standard normal distribution.
@@ -711,10 +739,13 @@ The effect of adjusting the tuning constant for the various M-estimators is easi
   \end{tabular}\label{t:3-CostFxn}
 \end{table}
 
-\begin{figure}[hb]
+\begin{figure}[H]
   \centering
-  \includegraphics{figures/C3/Ch3-Figs_CurvFitSchem.png}
-  \caption{Plots of the cost functions and weight functions for common M-estimators.}\label{f:3-CostFxn}
+  \includegraphics{figures/C3/Ch3-Figs_IRLSfxn.png}
+  \caption{Plots of the cost functions and weight functions for common M-estimators.
+  (A) The cost and weight function for a least-squares fit.
+  (B-D) The cost and weight functions for a (B) Cauchy M-estimator, a (C) Fair M-estimator, and a (D) GMC M-Estimator, with the tuning parameter for the red curves set to yield 95\% efficiency on a standard normal, and the tuning parameter for the blue curve set to twice the value in the red curve.
+  The least-squares estimator in (A) and the Fair estimator in (C) have everywhere convex cost functions, in contrast to the Cauchy and the GMC M-estimators in (B,D), respectively.}\label{f:3-CostFxn}
 \end{figure}
 \newpage
 \subsection{Fitting the Weingarten matrix on a surface}
@@ -748,7 +779,7 @@ M_{1} & M_{2}
 \end{equation}
 where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
 This additional information will eventually allow us to re-estimate $\mathbf{k}$~\cite{RN31}. \\
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_CurvFitSchem.png}
   \caption{Schematic of the quantities used to calculate the Gaussian curvature of a triangulated surface.
@@ -813,16 +844,22 @@ where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} 
 Here we have modified the standard GMC weight function to exclude data whose residual is too large.
 The outlier rejection works fundamentally by comparing each residual against the median residual.
 The parameter $b$ then determines how much variance with respect to the median residual is allowed.
-As with the Fair fit, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.
+As with the Fair fit, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.\\
+
 The GMC fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
 We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001.
-We display this entire IRLS fitting process for an example point, with the residuals, the weights, $\bm{\Lambda}$, and $K$ displayed for the Fair fit and the GMC fit in Figure~\fxnote{F15}(A,B), respectively.
-Note how the ability to reject outliers significantly affects the $K$ values from the GMC fit.
-In the example in Figure~\fxnote{F15}, both fits converge quickly, as seen i the cost function vs iteration number displayed in Figure~\fxnote{F15}(C,D) for the Fair fit and the GMC fit, respectively. \\
-
+We display this entire IRLS fitting process for an example point, with the residuals, the weights, $\bm{\Lambda}$, and $K$ displayed for the Fair fit and the GMC fit in Figure~\ref{f:3-IRLSexample}(A,B), respectively.
+Note how the ability to reject outliers lets the GMC fit in Figure~\ref{f:3-IRLSexample}(B) find a solution where a majority of the residuals are small.
+In the example in Figure~\ref{f:3-IRLSexample}, both fits converge quickly in a combined 10 iterations.
 The routine outputs the GMC weights from the final fitting iteration and the final values of $\bm{\Lambda}$.
 Finally, we calculate the Gaussian curvature of at $\mathbf{R}_{[0]}$ taking $K = \textup{det}\{ \mathbf{L} \}$ and move on to correcting $\mathbf{k}_{[0]}$.
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.95]{figures/C3/Ch3-Figs_IRLSexample.png}
+  \caption{Example IRLS fit of the curvature at a point on a surface.
+  (A,B) Residuals, weights, $\bm{\Lambda}$, $K$, and cost for the (A) Fair M-estimator and (B) GMC M-estimator over multiple iterations, with the iteration number to the left of the residuals.
+  The 0$^{\rm th}$ iteration corresponds to the output from the initial least-squares fit.}\label{f:3-IRLSexample}
+\end{figure}
 
 \subsection{Correcting the surface normal vectors}
 We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_{[0]}$ using a weighted average~\cite{RN31}:
@@ -847,16 +884,26 @@ Physically, we see that in the Monge parameterization, $\sqrt{g}$ reflects the t
 \subsection{Validation on test surfaces}
 We validate our routine on hemispheres and saddle-like surfaces with varying levels of random noise inserted into the height of the surface in order to mimic the noise in our confocal data.
 We specify the noise as a percentage of the radii of curvature used to generate the test surface.
-Surfaces with less than 1\% noise or no noise are overall insensitive to $d_1$, $d_2$, and the tuning constants in the fit, as seen for the noiseless hemisphere in Figure~\fxnote{F16}(A) with $K = XXXX$\fxnote{test val}, where the initial least-squares fit and the output of the IRLS fit are shown in Figure~\fxnote{F16}(B,C), respectively, and the color scale is displayed in Figure~\fxnote{F16}(J).
+Surfaces with no noise are overall insensitive to $d_1$, $d_2$, and the tuning constants in the fit, as seen for the noiseless hemisphere in Figure~\ref{f:3-CurvFitSphere}(A) with $K = 1.1 \times 10^{-3}$ px$^{-2}$, where the initial least-squares fit and the output of the IRLS fit are shown in Figure~\ref{f:3-CurvFitSphere}(B,C), respectively, and the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
 We test surfaces with up to 3\% noise and find that setting $b=2$ and $c_{F}^{initial}$ and $c_{GMC}^{initial}$ to their respective 95\% efficiency values works well.
 In addition, we see that $d_2$ matters far more than $d_1$, increasing $d_2$ improves the noise tolerance of the fit.
 For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
-For the example hemisphere with 3\% noise and an initial $K = XXXX$\fxnote{test val} displayed in Figure~\fxnote{F16}(D), the output from the initial least-squares fit is shown in Figure~\fxnote{F16}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\fxnote{F16}(F-I), where the color scale is displayed in Figure~\fxnote{F16}J.
-While we could in principle set $d_2$ to the size of the surface, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
+This process is illustrated for the example hemisphere with 1\% noise and an initial $K =1.1 \times 10^{-3}$ px$^{-2}$ displayed in Figure~\ref{f:3-CurvFitSphere}(D), the output from the initial least-squares fit is shown in Figure~\ref{f:3-CurvFitSphere}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\ref{f:3-CurvFitSphere}(F-H), where the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
+Note how $K$ does not change appreciable between $d_2 = 8$ in Figure~\ref{f:3-CurvFitSphere}(G) and $d_2 = 10$ in ~\ref{f:3-CurvFitSphere}(H), signifying that we do not need to increase $d_2$ any further.
+While we could in principle set $d_2$ to the size of the surface to elimate this step, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 We find that setting $d_2 > 12$ yields impractical runtimes.\\
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitSphere.png}
+  \caption{Fitting the curvature of hemispheres with varying noise.
+  (A-C) A hemisphere with $r = 30$ px and $K = 1.1 \times 10^{-3}$ px$^{-2}$ everywhere.
+  The original triangulation is displayed in (A), the output of the initial least-squared fit with $d_1=2$ in (B), and the output of the IRLS fit with $d_2=4$ in (C), with the color scale for the curvature in (I).
+  (D-H) The hemisphere in (A) with random noise from a distribution with mean 0 px and width 0.3 px added to the height at every point in the triangulation.
+  The triangulation is displayed in (D), the output of the initial least-squared fit with $d_1=4$ in (E), and the output of the IRLS fit with $d_2=6,8,10$ in (F-H), respectively, with the color scale for the curvature in (I).}\label{f:3-CurvFitSphere}
+\end{figure}
 
 Overall, our curvature fitting routine works well far from the boundaries.
-Near the boundaries, the curvature fit does not always work very well as there is less long-range information availible when a point is within $d_2$ of a boundary.
+Near the boundaries, the curvature fit does not always work very well, as seen in the curvature near the corners in Figure~\ref{f:3-CurvFitSphere}(C,F-H), as there is less long-range information available when a point is within $d_2$ of a boundary.
 As a consequence, we typically neglect curvature values within $d_2/2$ of the boundary.
 
 
