@@ -671,8 +671,7 @@ A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of th
 If the model is linear, the fit has an analytic solution~\cite{RN269}.
 In addition, for normally-distributed data, the result of least-squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.\\
 
-However, least-squares fits are very sensitive to outliers in the data and thus do not do well when the data are very noisy.
-The fact that Eq.~\ref{e:3-LeastSquare} tries to minimize the sum of the squared errors means that outliers can have a disproportionate effect on the final fit.
+However, since the cost of an error in a least squares fit scales quadratically with the size of the error, outliers can have a disproportionate effect on the final fit.
 In fact, extreme outliers are often referred to as lever points for this exact reason.\\
 
 One way to treat noisy or uncertain data is to assign a weight to each data point such that data points with larger error are weighted less.
@@ -684,8 +683,7 @@ where $w_{(i)}$ is the weight associated to the observation $y_{(i)}$.
 A weighted linear least-squares fit of this type is still analytically solvable~\cite{RN269}.
 Unfortunately, weighted least-squares is still very sensitive to outliers if it is not obvious \emph{a priori} which data are the outliers. \\
 
-One way to deal with this is to construct a fit that is inherently less sensitive to outliers.
-For example, we can replace the square of the residual with a general cost function:
+Instead, we can construct a fit that is inherently less sensitive to outliers by replacing the square of the residual with a general cost function:
 \begin{equation}
   \argmin_{\bm{\alpha}} \sum\limits_{(i)}\,\textrm{cost}(\gamma_{(i)}),\label{e:3-GeneralCostFit}
 \end{equation}
@@ -723,12 +721,10 @@ The entire process can described by the recursion relation:
 
 Since these cost functions do not need to be everywhere convex, they may not necessarily have a global minimum, or even a guaranteed convergence.
 However, those that are not globally convex often deal with large error more severely than convex functions.
-Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}.
-The functional forms and weight functions of some common M-estimators as well as the two M-estimators we use are found in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
-Both the Fair and the GMC M-estimator have a tuning constant that adjusts how severely the M-estimator deals with errors.
-For the GMC and the Fair M-estimators, $c = 1.4826$ and $c = 1.3998$ correspond respectively to 95\% efficiency on a standard normal distribution.
+Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}, where the functional forms of the cost function and weight functions are provided in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn} .
+Both the GMC and the Fair M-estimator have a tuning constant, $c$, that adjusts how severely the M-estimator deals with errors, with $c = 1.4826$ and $c = 1.3998$ corresponding respectively to 95\% efficiency on a standard normal distribution.
 Efficiency refers to how much data an M-estimator needs to converge to the maximum likelihood solution.
-A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
+A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the model parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
 The effect of adjusting the tuning constant for the various M-estimators is easily seen in the curves in Figure~\ref{f:3-CostFxn}, where the red curves correspond to a tuning constant set to the 95\% efficiency value and the blue curves correspond to setting the tuning constants to twice the 95\% efficiency value.
 \newpage
 \begin{table}[ht]
@@ -850,9 +846,9 @@ Here, we include the possibility to reject outliers by calculating the fitting w
 \end{equation}
 where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$ is the tuning constant for the GMC fit, and $c_{GMC}^{initial}$ and $b$ are an input parameters.
 Here we have modified the standard GMC weight function to exclude data whose residual is too large.
-The outlier rejection works fundamentally by comparing each residual against the median residual.
+The outlier rejection works by comparing each residual against the median residual.
 The parameter $b$ then determines how much variance with respect to the median residual is allowed.
-As with the Fair fit, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.\\
+In addition, since the GMC fit is not guaranteed to converge, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$.\\
 
 The GMC fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
 We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001.
@@ -898,8 +894,7 @@ In addition, we see that $d_2$ matters far more than $d_1$, increasing $d_2$ imp
 For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
 This process is illustrated for the example hemisphere with 1\% noise and an initial $K =1.1 \times 10^{-3}$ px$^{-2}$ displayed in Figure~\ref{f:3-CurvFitSphere}(D), the output from the initial least-squares fit is shown in Figure~\ref{f:3-CurvFitSphere}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\ref{f:3-CurvFitSphere}(F-H), where the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
 Note how $K$ does not change appreciable between $d_2 = 8$ in Figure~\ref{f:3-CurvFitSphere}(G) and $d_2 = 10$ in ~\ref{f:3-CurvFitSphere}(H), signifying that we do not need to increase $d_2$ any further.
-While we could in principle set $d_2$ to the size of the surface to elimate this step, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
-We find that setting $d_2 > 12$ yields impractical runtimes.\\
+While we could in principle set $d_2$ to the size of the surface to eliminate this step, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_CurvFitSphere.png}
