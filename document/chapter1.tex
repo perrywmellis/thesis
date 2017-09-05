@@ -32,40 +32,106 @@ In order to maximize the volume fraction of the rods, the rods need to align alo
 We can characterize this preferred local alignment with a director, $\mathbf{n}$, where $\mathbf{n} = \mathbf{-n}$.
 Clearly, it is easy to fill space on the plane with a homogeneous director field.
 However, if we now try to pack rods on the surface of a sphere, for example along either the latitude or longitude lines on the Earth's globe, we see that there are defects in the order that correspond to the singular points at the poles, where $\mathbf{n}$ is undefined.
-Each of these singularities are disclinations; we characterize them with their topological charge, measured by quantifying the director rotation along a closed path encircling the disclination~\cite{RN23,RN153,RN203}, defined as:
-\begin{equation}
-  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:1-topCharge}
-\end{equation}
-with $\partial A$ giving the contour and the angle $\phi(\mathbf{R})$ parameterizing the director field.
-If $\phi(\partial A)$ represents the director orientations along the contour enclosing the disclination, then we see that the topological charge of the disclination is the winding number of $\phi(\partial A)$ on the unit circle, $\mathbb{S}_1$.
-Hence, we see that regardless of aligning along the latitudes or the longitudes, the director along a contour encircling either pole rotates by $2 \pi$ such that both poles have charge $s = +1$, bringing the total charge on the surface to $+2$.
 Since you ``cannot comb a hairy ball'', the presence of singularities is no accident --- it is a consequence of confining the nematic to the surface with the topology of a sphere~\cite{RN209,RN169}.
 
 To formally relate the topology of the sphere with the presence of singularities, we first briefly introduce the necessary topological notions.
-The sphere is an example of a differentiable surface that is compact, without boundary, and orientable, where compact surfaces must both be bounded and contain their limit points; the boundary of a surface is defined as the set of points that can be approached from both within and outside the surface; and orientable surfaces have a defined normal vector everywhere.
+The sphere is an example of a differentiable surface that is compact, without boundary, and orientable.
+Compact surfaces must both be bounded and contain their limit points; the boundary of a surface is defined as the set of points that can be approached from both within and outside the surface; and orientable surfaces have a defined normal vector everywhere.
 For example, 2D Euclidean space, $\mathbb{R}_2$ is a surface but it is not bounded and thus is not compact.
 Similarly, the 2D open unit disc $\mathbf{r} < d$ is not compact since it does not contain the circle with radius $d$.
 However, the 2D unit disc $\mathbf{r} \leq d$ satisfies both conditions and thus is compact.
 In addition, we see that $\mathbf{r} \leq d$ has a boundary $\partial \mathbf{R}$ at $|\mathbf{r}| = d$, as $\partial \mathbf{R}$ can be approached by points both within and outside the disc.
-We call compact boundary-less surfaces closed surfaces.
+We call compact surfaces without a boundary closed surfaces.
 Finally, all of these examples are also orientable; it is trivial to define the surface normal everywhere.
+For a closed surface, we can write the Gauss-Bonnet theorem like,
+\begin{equation}
+  \chi = \mathbf{R} = 2(1-g),\label{e:1-GB}
+\end{equation}
+where $g$ is the genus, or number of handles, of the surface, and $\chi$ is the Euler characteristic of the surface.
+The Euler characteristic is a topological invariant --- continuously deforming a surface, i.e. under a homeomorphism, does not change the Euler characteristic.
+This implies that any surface with $g=0$ is topologically equivalent, or homoemorphic, to the sphere and thus also has $\chi=2$.
+Thus, it is perhaps more appropriate to say, ``you cannot comb a hairy surface with $\chi=2$,'' such that packing rods on any handle-less closed surface will necessarily result in a director field that has singularities.
 
-For a vector field $v$ parameterized by the angle $\phi(\mathbf{R})$ on a closed, differentiable, and orientable surface, the Poincar\'e-Hopf Theorem states:
+These singularities are disclinations; we characterize disclinations with their topological charge, measured by quantifying the director rotation along a closed path encircling the disclination~\cite{RN23,RN153,RN203}, defined as:
+\begin{equation}
+  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:1-topCharge}
+\end{equation}
+with $\partial A$ giving the contour and the angle $\phi(\mathbf{R})$ parameterizing the director field.
+If $\phi(\partial A)$ represents the director orientations along the contour enclosing the disclination, we then see that the topological charge of the disclination is the winding number of $\phi(\partial A)$ on the unit circle, $\mathbb{S}_1$.
+Hence, we see that regardless of aligning rods along the latitudes or the longitudes on the Earth's globe, the director along a contour encircling either pole rotates by $2 \pi$ such that both poles have charge $s = +1$, bringing the total charge on the surface to $+2$.
+A formal statement connecting a vector field on a closed surface with the topology of the surface is given by the Poincar\'e-Hopf theorem:
 \begin{equation}
   \sum\limits_i s_i = \chi,\label{e:1-PH}
 \end{equation}
-where $\chi$ is a topological invariant called the Euler characteristic and $s_i$ is the topological charge of the $i^{\rm th}$ singularity, as defined in Eq.~\ref{eq:1-topCharge}.
+where $\chi$ is the Euler characteristic and $s_i$ is the topological charge of the $i^{\rm th}$ singularity, as defined in Eq.~\ref{eq:1-topCharge}.
 Importantly, we now see that Eq.~\ref{eq:1-topCharge} is not limited to disclinations in director fields, but can be generally applied to any vector field.
-Note then, that the symmetry of the field on the surface dictates the minimum topological charge of any singularity.
-For nematics where $\mathbf{n} = -\mathbf{n}$, $s \in \mathbf{Z}/2$, while for an ordinary vector field, $s \in \mathbf{Z}$.
+Note then, that the symmetry of the field on the surface dictates the minimum topological charge of any singularity as the field needs to continuous everywhere along $\partial A$.
+For nematic director field where $\mathbf{n} = -\mathbf{n}$, $s \in \mathbf{Z}/2$, while for ordinary polar vector fields, $s \in \mathbf{Z}$.
+In addition, the Poincar\'e-Hopf Theorem only constrains the total charge on the surface, such that we could construct a director field on a topologically spherical surface with any combination of defects so long as the total topological charge was equal to $+2$.
+Physical ordered systems constrained to a closed surface thus must minimize their free energy with respect to the constraint imposed by the topology.
+
+intro curvature here, connect $\chi$ with K
+
+topological theory of defects, finishe with sphere example
+
+
+For example, as it was predicted~\cite{RN42,RN104,RN43}, such a physical system minimizes its energy not with$2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
+
+this situation was experimentally addressed in our group using shells of nematic liquid crystal.
+
+drops made with a microfluidic device
+
+osmotic pressure used to make shit thin
+
+ and then experimentally observed using a thin shell of nematic liquid crystal~\cite{RN105}
+
+however thick shells are interesting as well since the system is no longer 2D, but there is still a topologiacal constraint on the surface
+
+when bulk is availible, singular lines cost energy
+
+
+can minimize this energy by nucleating boojums to get rid of singular limie
+
+in bulk drop limit we see bipolar drop
+
+new para, return to the topological  theory of defects ... since K is constant it's not actually that interesting
+
+what happens ifwe want varying curvature
+
+one way to gaurentet this is to go to a torus with a handle
+
+we did this already, but we made the torus from a bulk LC.  Again saw no defects.
+
+but did see interetesting K24
+
+confinement it ineteresting even w/o defects
+
+pppp
+
+up to this point we have considered surface constraints on a surface and considered how surface constraints can metter even when there is a bulk or no defects
+
+
+we can also consider constaints on a bulk.
+
+once more consider sphere, now homeotripc
+
+papp
+
+in this thesis
+
+
+active nematic is an experimental quirk but is also interesting in own right
+
+etc.
 
 
 
-I introduce the idea of the Euler characteristic as a topological invariant that can be related to the genus for a compact surface with no boundary. I start with the full definition and then simplify.
-Thus, as long as there is no handle, the presence of some defects is required due to a topological constraint independent of any physical property.
-However, the system is not limited to only two $s=+1$ defects, the physics comes into play in determining how to satisfy the constraint on the total charge.
-As it was predicted and then experimentally observed using a thin shell of nematic liquid crystal, such a physical system minimizes its energy not with$2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
+
 The connection between defects and the space they inhabit is predicted to go beyond topology.
+The Gaussian curvature of a surface is the product of the principal curvatures $\kappa_1$ and $\kappa_2$ of the surface at every point.
+For
+$
+ \frac{1}{2\pi} \int K\, \textrm{d}^2$
 The theory of defects on curved surfaces connects the topology of the confining surface to the free energy associated to a given defect configuration via the curvature of the surface.
 This is a reflection that locally, defects are a response to the strain on the order caused by the confining surface, i.e. ``geometrical frustration''.
 This strain is due to curvature, which I introduce and define via the Weingarten matrix.
