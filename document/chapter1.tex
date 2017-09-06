@@ -37,26 +37,26 @@ Since you ``cannot comb a hairy ball'', the presence of singularities is no acci
 To formally relate the topology of the sphere with the presence of singularities, we first briefly introduce the necessary topological notions.
 The sphere is an example of a differentiable surface that is compact, without boundary, and orientable.
 Compact surfaces must both be bounded and contain their limit points; the boundary of a surface is defined as the set of points that can be approached from both within and outside the surface; and orientable surfaces have a defined normal vector everywhere.
-For example, 2D Euclidean space, $\mathbb{R}_2$ is a surface but it is not bounded and thus is not compact.
-Similarly, the 2D open unit disc $\mathbf{r} < d$ is not compact since it does not contain the circle with radius $d$.
+For example, 2D Euclidean space, $\mathbb{R}^2$ is a surface but it is not bounded and thus is not compact.
+With $\mathbf{r}$ a vector in $\mathbb{R}^2$, the 2D open unit disc $\mathbf{r} < d$ is not compact since it does not contain the circle with radius $d$.
 However, the 2D unit disc $\mathbf{r} \leq d$ satisfies both conditions and thus is compact.
-In addition, we see that $\mathbf{r} \leq d$ has a boundary $\partial \mathbf{R}$ at $|\mathbf{r}| = d$, as $\partial \mathbf{R}$ can be approached by points both within and outside the disc.
+In addition, we see that $\mathbf{r} \leq d$ has a boundary $\partial \mathbf{r}$ at $|\mathbf{r}| = d$, as $\partial \mathbf{r}$ can be approached by points both within and outside the disc.
 We call compact surfaces without a boundary closed surfaces.
 Finally, all of these examples are also orientable; it is trivial to define the surface normal everywhere.
+
 For a closed surface, we can write the Gauss-Bonnet theorem like,
 \begin{equation}
-  \chi = \mathbf{R} = 2(1-g),\label{e:1-GB}
+  \chi = 2(1-g),\label{e:1-GB1}
 \end{equation}
 where $g$ is the genus, or number of handles, of the surface, and $\chi$ is the Euler characteristic of the surface.
 The Euler characteristic is a topological invariant --- continuously deforming a surface, i.e. under a homeomorphism, does not change the Euler characteristic.
 This implies that any surface with $g=0$ is topologically equivalent, or homoemorphic, to the sphere and thus also has $\chi=2$.
 Thus, it is perhaps more appropriate to say, ``you cannot comb a hairy surface with $\chi=2$,'' such that packing rods on any handle-less closed surface will necessarily result in a director field that has singularities.
-
 These singularities are disclinations; we characterize disclinations with their topological charge, measured by quantifying the director rotation along a closed path encircling the disclination~\cite{RN23,RN153,RN203}, defined as:
 \begin{equation}
-  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{R} \cdot \nabla\phi(\mathbf{R}),\label{eq:1-topCharge}
+  s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{r} \cdot \nabla\phi(\mathbf{r}),\label{eq:1-topCharge}
 \end{equation}
-with $\partial A$ giving the contour and the angle $\phi(\mathbf{R})$ parameterizing the director field.
+with $\partial A$ giving the contour and the angle $\phi(\mathbf{r})$ parameterizing the director field, with $\mathbf{r}$ giving the position on the surface.
 If $\phi(\partial A)$ represents the director orientations along the contour enclosing the disclination, we then see that the topological charge of the disclination is the winding number of $\phi(\partial A)$ on the unit circle, $\mathbb{S}_1$.
 Hence, we see that regardless of aligning rods along the latitudes or the longitudes on the Earth's globe, the director along a contour encircling either pole rotates by $2 \pi$ such that both poles have charge $s = +1$, bringing the total charge on the surface to $+2$.
 A formal statement connecting a vector field on a closed surface with the topology of the surface is given by the Poincar\'e-Hopf theorem:
@@ -64,18 +64,23 @@ A formal statement connecting a vector field on a closed surface with the topolo
   \sum\limits_i s_i = \chi,\label{e:1-PH}
 \end{equation}
 where $\chi$ is the Euler characteristic and $s_i$ is the topological charge of the $i^{\rm th}$ singularity, as defined in Eq.~\ref{eq:1-topCharge}.
-Importantly, we now see that Eq.~\ref{eq:1-topCharge} is not limited to disclinations in director fields, but can be generally applied to any vector field.
+Importantly, we now see that Eq.~\ref{eq:1-topCharge} is not limited to disclinations in director fields, but can be generally applied to disclinations in any system characterized by orientational order.
 Note then, that the symmetry of the field on the surface dictates the minimum topological charge of any singularity as the field needs to continuous everywhere along $\partial A$.
-For nematic director field where $\mathbf{n} = -\mathbf{n}$, $s \in \mathbf{Z}/2$, while for ordinary polar vector fields, $s \in \mathbf{Z}$.
-In addition, the Poincar\'e-Hopf Theorem only constrains the total charge on the surface, such that we could construct a director field on a topologically spherical surface with any combination of defects so long as the total topological charge was equal to $+2$.
+For a nematic director field where $\mathbf{n} = -\mathbf{n}$, $s \in \mathbf{Z}/2$, while for a polar vector field, $s \in \mathbf{Z}$.
+In addition, the Poincar\'e-Hopf Theorem only constrains the total charge on the surface, such that we could construct a director or a vector field on a topologically spherical surface with any combination of defects so long as the total topological charge was equal to $+2$.
 Physical ordered systems constrained to a closed surface thus must minimize their free energy with respect to the constraint imposed by the topology.
 
-intro curvature here, connect $\chi$ with K
+Since the individual particles in an orientationally ordered phase prefer to align along each other, we can express the free-energy in the continuum limit as a functional of the orientation field,
+\begin{equation}
+  F_d = \frac{1}{2} k_F \int \textrm{d}^2\mathbf{r} \, |\nabla \phi(\mathbf{r})|^2,\label{e:2-XY}
+\end{equation}
+where $k_F$ is the elastic constant governing the cost of a distortion.
+If we have polar order, then Eq.~\ref{e:2-XY} is the classical 2D X-Y model governing spins on a fixed lattice; for nematic order, Eq.~\ref{e:2-XY} is the 2D Frank-Oseen free energy~\cite{RN61} in the 1-constant approximation~\cite{RN33}.
+For a nematic material on a sphere, it was predicted~\cite{RN42,RN104,RN43} that such a physical system minimizes its energy not with $2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
+We addressed this situation experimentally in prior work in our group using glass-based microfluidic devices to fabricate double emulsions, with a shell of nematic liquid crystal between an inner water droplet and an outer water continuous phase. 
 
-topological theory of defects, finishe with sphere example
 
 
-For example, as it was predicted~\cite{RN42,RN104,RN43}, such a physical system minimizes its energy not with$2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
 
 this situation was experimentally addressed in our group using shells of nematic liquid crystal.
 
@@ -95,6 +100,50 @@ can minimize this energy by nucleating boojums to get rid of singular limie
 in bulk drop limit we see bipolar drop
 
 new para, return to the topological  theory of defects ... since K is constant it's not actually that interesting
+
+
+It is clear from Eq.~\ref{e:2-XY} that a homogeneous orientation field corresponds to the zero energy configuration and any deviation from the homogeneous state costs energy.
+As we have seen by packing rods onto a sphere, sometimes distortions are unavoidable due to the topological constraints imposed by the surface; however, ordered materials are also sensitive to the local geometry.
+For example, consider once more rods packed on a plane with a homogeneous director field.
+If we change the geometry and introduce a hemispherical ``bump'' into the plane, we see that we can no longer maintain a homogeneous director everywhere on the surface.
+This inability to maintain the preferred local order due to the geometry of the surface is called ``geometrical frustration''.
+
+We characterize the local geometry of a surface with its curvature; consider a planar curve $\mathbf{r}(s)$, with $s$ the arclength parameter constrained to lie in $\mathbb{R}^2$.
+The unit tangent to the curve at $s$ is given by $\mathbf{T}(s) = \mathbf{r}'(s)$, and the local curvature by $\kappa(s) = |\textrm{d} \mathbf{T}(s)/\textrm{d}s^2| = | \textrm{d}^2\mathbf{r}/\textrm{d}s^2 |$.
+Physically, $\kappa(s) = 1/R(s)$, where $R(s)$ is the radius of the circle that best approximates $\mathbf{r}(s)$ at $s$, also known as the ``radius of curvature'' at $s$.
+For an orientable surface defined by $\mathbf{R}(u^1,u^2)$, with $(u^1,u^2) \in U$ local coordinates on the surface, we define a normal section at a point $\mathbf{r} \in U$ on the surface as the planar curve generated from intersecting $\mathbf{R}$ with a plane containing $\mathbf{k}(\mathbf{x})$, the unit normal to the surface at $\mathbf{x}$.
+The curvature of a given normal section at $\mathbf{x}$ is thus called the normal curvature.
+Taking all possible normal sections at $\mathbf{r}$, the principle curvatures $\kappa_1 (\mathbf{r})$ and $\kappa_2(\mathbf{r})$ are the maximum and minimum normal curvatures at $\mathbf{r}$, and their associated tangent vectors are called the principal normal directions.
+We can now define the Gaussian curvature $K  = \kappa_1 \kappa_2)$ and the mean curvature $H = (1/2) (\kappa_1+\kappa_2)$.
+Returning our example, we see that adding the hemisphere to the plane takes our previously flat surface with $K = H = 0$ everywhere and changes the geometry by adding curvature.
+However, it is Gaussian curvature and not the mean curvature that is responsible for geometrical frustration.
+This is evidenced by taking a flat plane and modulating it with a sine wave in one direction, keeping $K=0$ everywhere, but changing $H$.
+We see that we can still maintain a homogeneous director field on the surface, in contrast to our example surface where $K \neq 0$ everywhere.
+This reflects the fact that Gaussian curvature, also known as intrinsic curvature, is a property of the surface alone --- we can determine the Gaussian curvature of a surface without knowing anything about the space the surface is embedded in.
+However, determining the mean, or extrinsic, curvature of a surface requires us to know what space the surface is embedded in.
+Revisiting the Euler characteristic, we can now rewrite the Gauss-Bonnet theorem for a differentiable closed surface,
+\begin{equation}
+  \chi = \frac{1}{2 \pi} \int \, K \textrm{d}^2\mathbf{r} = 2(1-g),\label{e:1-GB2}.
+\end{equation}
+The Gaussian curvature provides the connection between the local geometry and the topology of a closed surface.
+
+In addition, as demonstrated through our example of geometrical frustration, Gaussian curvature must also couple to the free-energy of an orientationally ordered phase confined to a surface.
+In fact, for a topological charge density
+\begin{equation}
+  \rho(\mathbf{r}) = 2 \pi \sum\limits_i s_{(i)}\delta(\mathbf{r},\mathbf{r}_(i)),
+\end{equation}
+with disclinations indexed by $i$ possessing charge $s_(i)$ and position $\mathbf{r}_(i)$, and $\delta(\mathbf{r},\mathbf{r}_(i))$ the Kronecker delta, we can express Eq~\ref{e:2-XY} as~\cite{RN42,RN175,RN17}:
+\begin{equation}
+  F_d = -\frac{1}{2} k_f \int \textrm{d}^2\mathbf{r}\textrm{d}^2\mathbf{r}' G_L(\mathbf{r},\mathbf{r}') [\rho(\mathbf{r})-K(\mathbf{r})] [\rho(\mathbf{r}')-K(\mathbf{r}')],\label{e:1-TopTheoryofDefects}
+\end{equation}
+where $G_L$ is the Green's function of the Laplace-Beltrami operator, the standard Laplacian operator generalized to curved space.
+It is worth mentioning that Eq.~\ref{e:1-TopTheoryofDefects} is identical to the Coulomb energy of a multicomponent plasma with charge density $\rho$ in a background of charge density $-K$~\cite{RN17}.
+Thus, from the continuum theory, we see topological defects emerge as particle-like objects that possess topological charge and couple to the Gaussian curvature of the underlying substrate.
+
+
+
+
+
 
 what happens ifwe want varying curvature
 
