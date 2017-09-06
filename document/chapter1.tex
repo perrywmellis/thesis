@@ -77,32 +77,23 @@ Since the individual particles in an orientationally ordered phase prefer to ali
 where $k_F$ is the elastic constant governing the cost of a distortion.
 If we have polar order, then Eq.~\ref{e:2-XY} is the classical 2D X-Y model governing spins on a fixed lattice; for nematic order, Eq.~\ref{e:2-XY} is the 2D Frank-Oseen free energy~\cite{RN61} in the 1-constant approximation~\cite{RN33}.
 For a nematic material on a sphere, it was predicted~\cite{RN42,RN104,RN43} that such a physical system minimizes its energy not with $2$ $s=+1$ defects but with $4$ $s=+1/2$ defects arranged on the vertices of a tetrahedron.
-We addressed this situation experimentally in prior work in our group using glass-based microfluidic devices to fabricate double emulsions, with a shell of nematic liquid crystal between an inner water droplet and an outer water continuous phase. 
+Prior work in our group addressed this situation experimentally using glass-based microfluidic devices to fabricate double emulsions~\cite{RN272}, with a shell of nematic liquid crystal (NLC) between an inner water droplet and an outer water continuous phase~\cite{RN105,RN45}.
+By decreasing the osmotic pressure in the outer continuous phase of the nematic shells, swelling was induced in the inner water droplet, decreasing the thickness of the NLC shell to create a truly 2D nematic on the surface of a sphere~\cite{RN45}.
+In this thin shell limit, our group found that the minimum energy state for a NLC on a sphere is indeed 4 $s = +1/2$ defects that arrange themselves on the vertices of a tetrahedron.
 
+However, this configuration only exists in for thin enough shells, characterized by the relative shell thickness $h' = (R^{out}-R^{in})/R^{out}$, with $R^{out}$ the radius of the nematic shell and $R^{in}$ the radius of the inner water doplet.
+As $h'$ increases, the nematic can no longer be considered 2D; in fact, there are now 2 spherical interfaces where the topological charge on the interface is constrained by the Poincar\'e-Hopf theorem with a bulk region filled with NLC between the the two surfaces.
+Hence the situation is now 3D and the nematic directions are now parameterized by 2 angles.
+If we naively assume that the director field is invariant along the radius of each emulsion droplet, each $s = +1/2$ disclination on the outer surface is now connected to a corresponding $s = +1/2$ disclination via a singular line that propagates through the bulk.
+Thus, as $h'$ increases, so does the cost of each singular line.
+Eventually, as $h'\lesssim 1/2$, the cost of propagating the singular lines through the bulk is too great and the 4 $s = +1/2$ disclinations on each surface transition to 2 $s = +1$ disclinations~\cite{RN105}, known colloquially as boojums~\cite{RN273}.
+Unlike the $s = +1/2$ defects, the boojums are not connected by a singular line; instead, the director in the shell region acquires a component along the radius of the droplet, removing all the singularities in the bulk.
+The increased energetic cost of a single boojum as compared to 2 $s = +1/2$ defect is compensated by the energetic decrease of removing the singular regions in the bulk of the shell.
+This is an example of how a 3D system with a bulk volume minimizes its free-energy in the presence of 2D constraints.
+Taking the limit that $h' \rightarrow 0$, the inner water droplet disappears and we have a single droplet of NLC in a continuous water phase, with the boojums on opposite poles and the director on the surface aligned along the longitude lines.
+This director arrangement is the classic bipolar configuration.
 
-
-
-this situation was experimentally addressed in our group using shells of nematic liquid crystal.
-
-drops made with a microfluidic device
-
-osmotic pressure used to make shit thin
-
- and then experimentally observed using a thin shell of nematic liquid crystal~\cite{RN105}
-
-however thick shells are interesting as well since the system is no longer 2D, but there is still a topologiacal constraint on the surface
-
-when bulk is availible, singular lines cost energy
-
-
-can minimize this energy by nucleating boojums to get rid of singular limie
-
-in bulk drop limit we see bipolar drop
-
-new para, return to the topological  theory of defects ... since K is constant it's not actually that interesting
-
-
-It is clear from Eq.~\ref{e:2-XY} that a homogeneous orientation field corresponds to the zero energy configuration and any deviation from the homogeneous state costs energy.
+Returning to order in 2D, it is clear from Eq.~\ref{e:2-XY} that a homogeneous orientation field corresponds to the zero energy configuration and any deviation from the homogeneous state costs energy.
 As we have seen by packing rods onto a sphere, sometimes distortions are unavoidable due to the topological constraints imposed by the surface; however, ordered materials are also sensitive to the local geometry.
 For example, consider once more rods packed on a plane with a homogeneous director field.
 If we change the geometry and introduce a hemispherical ``bump'' into the plane, we see that we can no longer maintain a homogeneous director everywhere on the surface.
@@ -139,72 +130,46 @@ with disclinations indexed by $i$ possessing charge $s_(i)$ and position $\mathb
 where $G_L$ is the Green's function of the Laplace-Beltrami operator, the standard Laplacian operator generalized to curved space.
 It is worth mentioning that Eq.~\ref{e:1-TopTheoryofDefects} is identical to the Coulomb energy of a multicomponent plasma with charge density $\rho$ in a background of charge density $-K$~\cite{RN17}.
 Thus, from the continuum theory, we see topological defects emerge as particle-like objects that possess topological charge and couple to the Gaussian curvature of the underlying substrate.
+Importantly, this implies that even though there have been new discoveries as a result of examining defect structures on spheres~\cite{RN106,RN26,RN110,RN76,RN101,RN165}, including our prior work with spherical nematic shells highlighted earlier~\cite{RN45,RN105}, the Gaussian curvature and therefore the background topological charge density of a sphere is constant such that the impact of curvature can only enter through the sphere radius.
+This is is born out in the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110} and in the fact that the positions of the 4 $s = +1/2$ defects in nematic shells are due entirely to the defect-defect interactions alone with no influence from the Gaussian curvature.~\cite{RN45}.
+If we want to investigate the role of curvature on ordered materials, we need to consider a space with varying Gaussian curvature and ideally, Gaussian curvature of different sign.
 
+The simplest closed surface that satisfies these criteria is the torus, with $g = 1$ and thus $\chi = 0$.
+In addition, we see that not only does a torus have sphere-like positive Gaussian curvature on the outer portion of the handle and saddle-like negative Gaussian curvature on the inner portion of the handle, but according to Eq~\ref{e:1-GB2}, the integrated Gaussian curvature over an entire torus must vanish.
+Similarly, by Eq.~\ref{e:1-PH}, an orientationally ordered material on the surface of a torus must have vanishing topological charge and thus can support a defect-free configuration.
+Prior work in our group investigated nematic order on the surface of a torus using toroidal droplets made from a NLC, with the NLC constrained to lie parallel to the interface between the toroidal droplet and the outer continuous medium~\cite{RN46,RN47}.
+Like the thick spherical shells or a bipolar droplet, here we have a 3D nematic that must minimize its free-energy in the presence of a constraint on the topological charge on the 2D confining interface.
+While we found that toroidal droplets have a defect-free ground state, the varying curvature still led to new insights about the role of a distortion called saddle-splay, revealing that saddle-splay drives the director in the plane of the surface to align along the smallest principle curvature~\cite{RN59}, yielding a doubly-twisted ground state in our toroidal droplets~\cite{RN46}.
+We see that the amount of twist in the ground state can be controlled by the aspect ratio, or slenderness of the torus $\xi = R_0/a$, with $R_0$ the radius of the central circle of the torus and $a$ the tube radius of the torus.
+In addition, this doubly-twisted state manifests itself through a spontaneous reflection symmetry breaking, where the free-energy resembles that of the Landau theory of magnetism.
+In fact, in the cylindrical limit where $\xi \rightarrow \infty$, the free-energy of the doubly-twisted state has exactly the functional form of the Landau theory of magnetism.
+This is an example of how confinement can affect a system, even in the absence of defects.
 
+Up to this point we have considered how constraints imposed on a surface affect ordered materials constrained to lie on the surface or confined by the surface.
+However, we can also use confinement to impose constraints on the bulk.
+For example, consider the bipolar configuration where the director at the surface of the droplet is forced to lie tangential to the surface.
+If we instead require the director at the surface of the droplet to be perpendicular to the interface, we see that there must be an irreducible singularity in the bulk.
+These bulk singularities are known as hedgehogs and are characterized by their hedgehog charge,
+\begin{equation}
+  d = \frac{1}{4 \pi} \int_{\mathbb{S}^2} d\theta \: d\phi \: \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:1-HedgehogCharge}
+\end{equation}
+where the integral is taken over a spherical surface enclosing the defect, and $\theta$ and $\phi$ are, respectively, the polar and azimuthal angles on that surface~\cite{RN153}
+Geometrically, the hedgehog charge relates the orientations of $\mathbf{n}$ taken on a surface that is topologically equivalent to a sphere enclosing the defect to the number of times the orientations of $\mathbf{n}$ cover the unit sphere~\cite{RN153}.
+Thus, we see that confining a NLC to a volume that is topologically spherical with homeotropic boundary conditions must yield a total ``hedgehog charge'' $|d|=1$.
 
-
-
-
-what happens ifwe want varying curvature
-
-one way to gaurentet this is to go to a torus with a handle
-
-we did this already, but we made the torus from a bulk LC.  Again saw no defects.
-
-but did see interetesting K24
-
-confinement it ineteresting even w/o defects
-
-pppp
-
-up to this point we have considered surface constraints on a surface and considered how surface constraints can metter even when there is a bulk or no defects
-
-
-we can also consider constaints on a bulk.
-
-once more consider sphere, now homeotripc
-
-papp
-
-in this thesis
-
-
-active nematic is an experimental quirk but is also interesting in own right
-
-etc.
-
-
-
-
-The connection between defects and the space they inhabit is predicted to go beyond topology.
-The Gaussian curvature of a surface is the product of the principal curvatures $\kappa_1$ and $\kappa_2$ of the surface at every point.
-For
-$
- \frac{1}{2\pi} \int K\, \textrm{d}^2$
-The theory of defects on curved surfaces connects the topology of the confining surface to the free energy associated to a given defect configuration via the curvature of the surface.
-This is a reflection that locally, defects are a response to the strain on the order caused by the confining surface, i.e. ``geometrical frustration''.
-This strain is due to curvature, which I introduce and define via the Weingarten matrix.
-Now I connect the integral of Gaussian curvature with the Euler characteristic through Gauss-Bonnet to relate the local influence of curvature with the global constraint of topology.
-Defects act as isolated sources of Gaussian curvature that are predicted interact with the Gaussian curvature of the surface.
-Motivate how spheres and flat spaces are not enough, need to go to spaces with both positive and negative Gaussian curvature.
-The easiest space to achieve this is a torus, where the outer portion of the torus has positive Gaussian curvature and the inner portion has negative Gaussian curvature.
-Since the torus has a handle, the Euler Characteristic is now 0; this means that the total integrated Gaussian curvature must also be 0 and any director field on the surface of the torus must have net charge 0.
-We have done previous work as investigated NLC in a toroid, where the system is now 3D and the bulk matters.
-While the system satisfied the topological constraint with no defects, the varying curvature still led to new insights about the role of a previously-neglected distortion called saddle-splay that couples the director orientation in the plane of the surface to the surface curvature.
-The saddle-splay distortion caused a novel twisted state that manifested itself through a spontaneous symmetry breaking reminiscent of magnetism.
-This is a reflection of how confinement can affect a system, even in the absence of defects.
-In addition to surface constraints, confinement can impose bulk constraints.
-If we consider again a sphere filled with a nematic such that the director is perpendicular to the boundary, we see that again, there is an irreducible singularity in the bulk.
-These bulk singularities are known as hedgehogs and are characterized by their hedgehog charge [[equation here]].
-The hedgehog charge measures the number of times the director orientations on a topologically spherical surface enclosing the defect mapped onto the unit sphere cover the unit sphere.
-Thus, we see that the director field for a sphere filled with NLC under hometropic boundary conditions must have total hedgehog charge $|d| = 1$, where again, the interplay between the material and the confining surface determines how to satisfy the topological constraint.
-Typically in soft condensed systems, temperature is the driving influence causing the material to equilibrate.
-However, the recent advent of active materials, where the individual mesogens of the material have their own source of internal energy, has provided opportunities to study non-equilibrium physics where temperature takes a back seat.
-When defects are combined with these force-generating active materials, the ordered phase is driven out-of-equilibrium and ``comes to life'', giving rise to a variety of self-regulated behaviors, such as self-sustained oscillations, spontaneous formation of morphological features, and undirected mobility.
-In this Thesis, we investigate the role of geometry on the interplay between order and confinement, both in scenarios where temperature drives the system to the ground state and in scenarios where activity brings about non-equilibrium dynamics.
+In this Thesis, we investigate the role of geometry on the interplay between order and confinement.
 In Chapter 2, we begin with an introduction to the theory of nematic liquid crystals.
-Then, in Chapter 3, we consider a two-dimensional active nematic on the surface of a torus and gain insights into the role of both activity and curvature on defect dynamics.
-In Chapter 4, we return to equilibrium nematics and investigate a NLC toroid with hometropic boundary conditions and see how curvature can drive the formation of a twisted state even in the absence of the influence of saddle-splay.
-Next, in Chapter 5, we use a NLC capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.
-Finally, in Chapter 6, we use toroids and spherical droplets to uncover the role of the curvature of the confining interface on the anchoring of NLC.
+Then, in Chapter 3, we consider nematic order on the surface of a torus.
+Due to the difficulty of creating a thin, stable, toroidal shell of a NLC, we use a polymeric nematic that self-assembles at the interface between two immiscible liquids.
+Importantly, this lets us make stable toroidal droplets as in our previous work yet investigate 2D nematic order on the toroidal surface.
+In addition, the nematic is active, such that the individual mesogens of the material have their own source of internal energy.
+The activity then drives the nematic out of equilibrium at the individual particle level, generally filling the nematic with pairs of $s = \pm 1/2$ defects that are constantly in motion and constantly being created and annihilated.
+Thus, even though we we have an inherently nonequilibrium materiel, we find that predictions built upon Eq.~\ref{e:1-TopTheoryofDefects} hold and that adding activity to order qualitatively resembles bringing an equilibrium system to the high temperature limit.
+
+In Chapter 4, we consider NLC confined to toroidal droplets under homeotropic boundary conditions.
+With the director constrained to lie perpendicular to the surface, the saddle-splay distortion does not affect the free-energy minimization.
+However, we still find that a twisted ground-state configuration, where the amount of twist depends on $\xi$, eventually disappearing as $\xi \rightarrow \infty$.
+Experiments with NLC confined under homeotropic boundary conditions to straight and bent cylindrical capillaries reveal that the twist is a response to the additional curvature induced when deforming a cylinder of homeotropic nematic into a torus.
+In Chapter 5, we return to a spherical topology, confining NLC to a capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.
+Finally, in Chapter 6, we use toroids and spherical droplets to uncover the role of surface curvature of the anchoring of NLC.
 In Chapter 7, we conclude.
