@@ -54,12 +54,14 @@ The water contains 8 mM SDS to enforce homeotropic anchoring.
 
 
 \section{Shape of capillary bridges}
-\subsection{Measuring the shape}
 We begin by viewing the bridges from the side and characterizing their shapes.
 Bridges with air as an outer medium have a waist-like shape with negative Gaussian curvature everywhere on the free surface and bridges with water and SDS as the outer medium have a barrel-like shape.
-For some example bridges, we record the shape contours on both the left and the right of the bridge as a function of $\Gamma$.
+
+
+\subsection{Measuring the shape}
+For some example bridges, we record the shape contours on both the left and the right of the bridge as a function of $\Gamma$, where we calculate an effective aspect ratio by taking $R$ as the radius of the circular cross-section of the bridge midway between the two confining plates and taking $H$ as the distance between the plates.
 We then plot the contours normalized by the bridge height, with the left contours reflected about the vertical axis, and all contours shifted so that their lowest point corresponds to the origin.
-For both the barrels and the waists, the contours all approximately have the same shape regardless of aspect ratio or experiment.
+For both the barrels and the waists, the contours all approximately have the same shape regardless of $\Gamma$ or experiment.
 
 
 \subsection{Constant mean curvature surfaces}
@@ -75,20 +77,38 @@ Thus, the contours for a surface of revolution in cylindrical coordinates $\{r,\
 where $\Delta P$ is the Laplace Pressure from Eq.~\ref{e:3-LapPres}, $\gamma$ is the surface tension, and $\Theta$ and $s$ are the elevation angle and arclength parameter, respectively, as defined in Figure~\fxnote{Fig here}.
 This further implies that the contact angle $\theta_0$ between the lecithin-coated glass slide, the outer medium, and the 5CB should set the shape~\cite{RN178}.
 
-To confirm this, we consider each example bridge and calculate constant-mean curvature contours that capture the envelope of the observed contours for each bridge.
-Each calculated contour is completely determined by a contact angle and a constant mean curvature value.
-We average the contact angles for all the contours from the waists and barrels to get blah and blah
-
-
-\subsection{Contact angle comparisons}
-We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium.
+To confirm this, we consider each example bridge and numerically solve Eq.~\ref{e:5-ConsMeanCurv} to produce constant-mean curvature contours that capture the envelope of the observed contours for each bridge.
+We take $\theta(0)$ and $\delta P$ as initial conditions for each solution, corresponding to setting the contact angle $\theta_0$ and the value of the constant mean curvature.
+We average the contact angles from the numerically-solved contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$\fxnote{confirm these}.
+We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta^{water} = 123^{\circ} \pm 5^{\circ}$, in agreement with our data from the bridges.
 
 
 
 
 \section{Defect structure transitions}
+We view the bridge from the top to determine whether the defect is a ring or a point; examples of these situations are shown in the bright-field images of a waist-like bridge in Figure~\fxnote{Fig here} and the corresponding crossed-polar images in  Figure~\fxnote{Fig here}.
+
+
 \subsection{Defect transitions in a waist}
+We start at large $\Gamma$, where we observe a ring defect, and determine the radius of the ring, $R_{ring}$, as we decrease $\Gamma$ by increasing $H$ in discrete steps.
+At each $H$, we monitor the bridge over time to ensure that the defect state no longer changes and the system is in equilibrium.
+In addition, as we decrease $\Gamma$ in each bridge, we also determine the effective aspect ratio for the defect transition, $\Gamma_c$.
+Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\xnote{Fig here}, where we have plotted each observation of a stable ring defect with open circles and of a stable point defect with ``x'' symbols.
+The ring radius, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\xnote{Fig here}, where we have again plotted every measurement we have performed.
+At $\Gamma_c$, the  ring becomes unstable, and collapses to a point defect, yielding the discontinuity in $R_{ring}$ shown with a dashed line in Figure~\xnote{Fig here}, where the point defect is represented as having a vanishing $R_{ring}$.
+
+However, when we start at $\Gamma < \Gamma_c$ in a point defect state and increase $\Gamma$, the point defect never transitions to a ring, as seen in the lower contour in Figure~\fxnote{Fig here}.
+Interestingly, if for $\Gamma > \Gamma_c$, we melt the nematic phase in a bridge containing a point defect, we always  recover a ring defect state when we let the bridge cool back to the nematic phase.
+This suggests that the point defect is metastable for $\Gamma > \Gamma_c$.
+
+
 \subsection{Defect transitions in a barrel}
+As with the waist structures, we start at a large $\Gamma$ with the bridge containing a ring defect and decrease $\Gamma$ in discrete steps, monitoring the bridge over time at each step to ensure that the bridge has equilibrated.
+As with the wasit-shaped bridges, we observe that the ring radius decreases with $\Gamma$.
+However, in contrast to the waist-shaped bridges, we do not observe a transition from to a point defect in the barrel-shaped bridges.
+
+
+
 
 \section{Measuring defect conformation using fluorescence microscopy}
 \subsection{Theoretical overview of fluorescence}
