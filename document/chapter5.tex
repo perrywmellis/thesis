@@ -208,10 +208,59 @@ As shown in the plots of $\delta'$ on top of epifluorescent images of barrels wi
 Thus, we see that the shape of the bridge, driven by the contact angle, determines if the defect is radial or hyperbolic.
 This makes sense intuitively as the homeotropic boundary conditions cause the the boundary to act as a level surface for the director.
 Due to the ability of shape to bias the defect structure, the cylindrical bridge with $\Gamma \sim \mathcal{O}\left (1 \right )$ becomes an interestingly peculiar case, as the shape is neither a waist nor a barrel.
+While accomplishing this experimentally in our system would be technically difficult due to the requirement of maintaining $\Theta_0 = 90^{\circ}$, we can turn to numerical calculations to explore this scenario.
 
 
 
 
 \section{Comparison with numerical calculations}
+We compare our results with numerical calculations performed by Shengnan Huang and Paul Goldbart.
+Briefly, we assume the problem is completely 2D; for a bridge parameterized in cylindrical coordinates, $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega = f(r,z)$ only.
+We then minimize the free-energy using a modified version of the finite difference method laid out in Ref.~\cite{RN144}.
+Although the free energy in the algorithm presented there depends on the cut-off length of the defect core, the equilibrium defect configuration is independent of this length scale provided it is reasonably small.
+We modify the algorithm to treat the small region containing the defect separately from the remainder of the computation volume, such that the calculated free energy converges as the mesh size grows~\cite{RN199,RN200,RN201}.
+
+We start by modeling a cylindrical bridge.
+For the 5CB values of $K_{11}/K_{33} = 0.74$, a bridge should undergo a defect transition between a radial ring and a hyperbolic point, as highlighted by the dashed line in the phase diagram in Figure~\fxnote{fig ehre}.
+This result is consistent with prior computational modeling~\cite{RN144}, and highlights the peculiarity of the cylindrical case.
+However, we predict ring-to-point defect transitions at aspect ratios that are significantly smaller than previously reported~\cite{RN144}.
+In addition, in contrast to prior modeling, we find that there is no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [see Figure~\fxnote{fig ehre}].
+Instead, our numerical calculations predict that the radius of the radial ring should vary linearly with $\Gamma$, smoothly collapsing to a point defect for low enough $\Gamma$.
+Recent experimental results examining the structure of radial point defects in cylindrical capillaries where $\Gamma \rightarrow \infty$ validate this prediction, finding that radial point defects are instead radial rings with a ring radius $R \sim \mathcal{O}(10^{-8})$ m~\cite{RN280}.
+
+We then change the shape of the boundaries in the numerical calculations.
+Consistent with our experiments, we see that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ that we used, as shown in Figure~\fxnote{fig ehre}.
+Furthermore, we find that the ring defect radius predicted by our calculations [circles, Figure~\fxnote{fig ehre}] for a waist-like shape agrees well with our experimental data [squares, Figure~\fxnote{fig ehre}].
+In addition, we see that the hyperbolic-ring to hyperbolic-point transition happens at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$, in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
+
+We also investigate the hysteresis in our experimental hyperbolic ring to hyperbolic point transition by calculating the energy landscape of a waist-shaped nematic bridge as a function of ring radius.
+Results for for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\fxnote{fig ehre}, where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
+We indeed see that the point defect is metastable for $\Gamma > \Gamma_c$, consistent with our interpretation of the experimental results.
+In addition, given a representative bridge height of $H = 100$ $\upmu$m and $K_{33} \approx 10^{-11}$ N, we note that the height of the barrier is always $\mathcal{O} \left ( 10^{4} \right )$ k$_\textrm{B}$T, implying that a point defect will not spontaneously transform into a ring defect in the length of our experiments, also consistent with our experimental observations.
+For $\Gamma < \Gamma_c$, this metastability disappears, and the point defect is the only stable defect state.
+
+Turning to barrel-shaped bridges, our calculations show that all hyperbolic defects disappear from the phase diagram, leaving the radial ring as the only equilibrium state for the range of $\Gamma$ and $K_{11/K_{33}}$ explored.
+Thus, we confirm that the shape of the free-surface determines if the enclosed defect is radial or hyperbolic.
+Barrel-like shapes with positive Gaussian curvature favor radial defects and waist-like shapes with negative Gaussian curvature favor hyperbolic defects.
+We also see that the ring radius predicted by our calculations in a barrel-shaped bridge qualitatively agrees with our experimental results, despite the unknown influence of the SDS micelles.
+
+
+
 
 \section{Conclusions}
+In conclusion, the equilibrium defect structure in a nematic capillary bridge under homeotropic boundary conditions is found to depend on both the shape of the bounding surface as well as the aspect ratio of the bridge.
+The aspect ratio determines whether the defect is a ring defect or a point defect, and the boundary shape determines whether the defect is radial or hyperbolic, with waist-like shapes containing hyperbolic defects and barrel-like shapes containing radial defects.
+In addition, we find that in a waist structure the point defect can be metastable,  causing the transition between a ring defect and a point defect to exhibit hysteresis.
+Starting at $\Gamma > \Gamma_c$ and decreasing $\Gamma$ to below $\Gamma_c$ brings about the collapse of the ring defect to a point defect, with the collapse occurring at a nonzero value of the ring radius.
+However, starting with a point defect at $\Gamma < \Gamma_c$ and increasing $\Gamma$ never yields a transition from a point defect to a ring defect.
+
+Although prior computations with thin films~\cite{RN141} or perforated sheets~\cite{RN149} have been used to attribute the radial or hyperbolic character of defects to confinement shape, our work provides the first experimental evidence of this phenomenon.
+We accomplish this by developing PFM, a simpler technique than its confocal counterpart that enables us, despite refraction, to determine the director field when viewing the bridge from the side.
+Thus, our work confirms that shape can be used to influence and control the equilibrium defect states in confined NLC under homeotropic boundary conditions.
+
+As mentioned earlier, the cylindrical bridge with the predicted hyperbolic ring to radial point transition with is a peculiar case.
+Specifically, we note that even though the transition from a hyperbolic ring to a hyperbolic point is discontinuous in the ring radius, the transition is still accomplished with a smooth deformation; the radius of the ring simply shrinks until a point defect is formed, similar to the behavior for radial rings as $\Gamma$ decreases.
+However, the transition between a hyperbolic ring and a radial point will require the director field to reorient throughout the entire bridge at some point during the transition.
+The specific pathway for this transition is unclear and would be an interesting direction for future work.
+Further interesting results would also be expected if the shape of the bridge is not fixed by surface tension, but can instead change and contribute to the free energy minimization \cite{RN12}.
+Our work is thus one of many interesting studies that can be performed with nematic bridges to probe how shape and elasticity dictate the equilibrium defect structure of the liquid crystal.
