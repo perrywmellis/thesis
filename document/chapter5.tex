@@ -79,8 +79,8 @@ where $\Delta P$ is the Laplace Pressure from Eq.~\ref{e:3-LapPres}, $\gamma$ is
 This further implies that the contact angle $\theta_0$ between the lecithin-coated glass slide, the outer medium, and the 5CB should set the shape~\cite{RN178}.
 
 To confirm this, we consider each example bridge and numerically solve Eq.~\ref{e:5-ConsMeanCurv} to produce constant-mean curvature contours that capture the envelope of the observed contours for each bridge.
-We take $\theta(0)$ and $\delta P$ as initial conditions for each solution, corresponding to setting the contact angle $\theta_0$ and the value of the constant mean curvature.
-We average the contact angles from the numerically-solved contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$\fxnote{confirm these}.
+Since the bridge height and $\Gamma$ are measured in each experiment, we only need to specify $\Delta P$ and choose the contact angle, $\theta_0 = \theta(0)$ as an initial condition for each solution.
+We average the contact angles from the numerically-solved contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$.
 We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta^{water} = 123^{\circ} \pm 5^{\circ}$, in agreement with our data from the bridges.
 
 
@@ -150,14 +150,13 @@ However, as we use wide-field fluorescent microscopy, the recorded intensity at 
 Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for the simplicity of PFM.
 
 
-
 \subsection{Experimental realization}
 We add $0.01$ wt\% Nile red to 5CB; at this concentration, Nile red does not affect the director configuration~\cite{RN173}.
 We image our sample using with a standard epifluorescent setup with an analyzer in the emitted light path, as shown schematically from the side in Figure~\fxnote{Fig Here}, with a short-arc lamp as our light source.
 We use filter set \#20 from Zeiss, with a 534~nm~--~558~nm bandpass excitation filter, a 560~nm longpass dichroic mirror, and a 575~--~640~nm emission filter ~\cite{RN288}.
-For a sample, we record the output intensity $I$ as a function of $\Phi_A$, perform a spatial average using a Gaussian filter, and then fit the intensity as a function of $\Phi_A$ at every pixel to the form:
+For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$, perform a spatial average using a Gaussian filter, and then fit the intensity as a function of $\Phi_A$ at every pixel to the form:
 \begin{equation}
-    I = A + B \cos^2{(\Phi_A-\delta')},\label{e:5-IntFit}
+    I(x,y) = A + B \cos^2{(\Phi_A-\delta'(x,y))},\label{e:5-IntFit}
 \end{equation}
 where $A$, $B$ and $\delta'$ are fitting parameters; $A$ and $B$ set the minimum value and range of $I$, respectively, and $\delta'$ reflects an average of the director orientation along the light path.
 Using the extracted $\delta'$ values, we can then plot the associated director field for a sample.
@@ -166,12 +165,52 @@ Importantly, we note that the dichroic mirror in our filter set is birefringent,
 We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$; in fact our analysis is able to distinguish between the two alignments easily.
 However, when the rubbing direction is perfectly parallel to or perpendicular to the optic axis of the dichroic mirror, we see that the fit returns values that are biased towards $0^{\circ}$ or $90^{\circ}$.
 Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
-We also melt the 5Cb in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$.
+We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$.
 
 
 \subsection{Validation in spherical droplets and capillaries}
-\subsection{Defect conformation in a waist}
-\subsection{Defect conformation in a barrel}
+We now turn to validating PFM using objects with a spatially varying director field.
+We start by considering spherical droplets of the Nile red-doped 5CB in water, with 8 mM SDS in the water to enforce homeotropic anchoring.
+By rotating the crossed polarizer and analyzer, we confirm that the droplets have the classic radial configuration~\cite{RN177}, with a single radial hedgehog at the center of each droplet.
+Importantly, we also notice that when rotating the analyzer the entire image appears to translate along a circular trajectory.
+This translation comes from the analyzer; it has a wedge angle of $3^{\circ}$ to prevent specular reflections from affecting the final image quality.
+However, this also serves to displace the image along the orientation of the wedge angle such that rotating the analyzer by $360^{\circ}$ results in translating the image along a circular contour.
+Thus, in order to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, we have to correct this displacement so that $I(x,y)$ comes from the same $\delta'(x,y)$ for all $\Phi_A$.
+
+We accomplish this by translating all the images along a vector with a fixed magnitude and an orientation given by $\Phi_A$, removing the effect of the displacement due to the analyzer wedge angle for each image.
+For our 5x objective, the magnitude of the translation vector is 6 px.
+While in principle we could consider $\delta'(x,y)$ for every pixel, that is more information than we need and is susceptible to pixel-level noise.
+Instead, we blur each image with a Gaussian filter with standard deviation 5 px to remove noise and locally average the $\delta'$, and then downsample each image by a factor of 10\fxnote{check this} to reduce the number of fits we need to perform.
+We now fit the downsampled image with Eq~\ref{e:5-IntFit} and plot $\delta'(x,y)$ on top of our original intensity image\fxnote{check this}.
+Indeed, we see that we capture reasonably well the radial texture, with the birefringence of the dichroic mirror biasing the output $\delta'$ to be along $0^{\circ}$ and $90^{\circ}$.
+Note that we are unable to distinguish the actual point singularity due to the wide-field nature of our technique and the influence of the mirror; however, we clearly detect the presence of a radial defect in each droplet.
+
+We next consider a cylindrical capillary filled with Nile red-doped 5CB.\@
+The capillary has a 600 $\upmu$m inner diameter and is coated with lecithin to enforce homeotropic anchoring; it has a escaped-radial configuration with a point defect separating regions that escape in opposite directions~\cite{RN179}.
+We confirm that the defect is a radial point by rotating the crossed polarizer and analyzer and observing that the brushes follow the sense of rotation.
+We then image the capillary using PFM, where we have shifted, blurred, and downsampled the images as with the radial droplets.
+As with the droplets, we see that we capture reasonably well the expected escaped-radial texture, we capture the radial character of the defect between the two escaped domains, and we do not resolve the singularity itself in our output.
+Since the escaped-radial director field for 5CB has been analytically solved~\fxnote{find this... maybe Allender?}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\delta), 0, \cos(\delta)   \right \}$, where $\delta_{theory} = 2 \arctan(r/R) $ and $R$ the capillary radius in cylindrical coordiantes with $\hat{z}$ along the capillary axis, we can compare  $\delta_{theory}$ with our $\delta'_{measured}$.
+Again, we see deviation, with our results biased towards $0^{\circ}$ and $90^{\circ}$.
+However, we can clearly see from both the plots of $\delta'$ vs $r/R$ and the plotted $\delta'$ fields that we capture the different escape directions, demonstrating that we can resolve the differences between a hyperbolic and a radial defect.
+
+
+\subsection{Defect conformation in a waists and barrels}
+We now use PFM on our waist-shaped bridges to determine if the defect is radial or hyperbolic.
+To illustrate this, we take an example Nile red-doped NLC bridge seen under bright-field illumination in Figure~\fxnote{fig ehre} and in PFM after shifting, blurring, and downsampling in Figure~\fxnote{fig ehre}, where the analyzer angle is depicted schematically in the lower-right corner of each image.
+For this example, we focus on the point $(x_0,y_0)$ highlighted by the white square in Figure~\fxnote{fig ehre}, plot the mean intensity as a function of $\Phi_A$, and fit to Eq.~\ref{e:5-IntFit}, as shown in Figure~\fxnote{fig ehre}, yielding $\delta'(x_0,y_0) = -45^o$.
+We do this throughout the whole image, and plot the director orientations on top of an epifluorescent image in Figure~\fxnote{fig ehre}.
+We find that the defect is clearly hyperbolic.
+We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, as shown in Figure~\fxnote{fig ehre}, and find that the defect is always hyperbolic, implying that our bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
+
+We now turn to barrel-shaped bridges, where we add the water and SDS mixture when the 5CB is in the isotropic phase, and we consider barrels made with both a large and a small initial $\Gamma$.
+As shown in the plots of $\delta'$ on top of epifluorescent images of barrels with different $\Gamma$ in Figure~\fxnote{fig ehre}, the barrel-shaped bridges at all measured $\Gamma$ have radial defects.
+Thus, we see that the shape of the bridge, driven by the contact angle, determines if the defect is radial or hyperbolic.
+This makes sense intuitively as the homeotropic boundary conditions cause the the boundary to act as a level surface for the director.
+Due to the ability of shape to bias the defect structure, the cylindrical bridge with $\Gamma \sim \mathcal{O}\left (1 \right )$ becomes an interestingly peculiar case, as the shape is neither a waist nor a barrel.
+
+
+
 
 \section{Comparison with numerical calculations}
 
