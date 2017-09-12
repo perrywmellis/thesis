@@ -41,22 +41,22 @@ Note that due to the inversion symmetry of the nematic phase $\langle \mathbf{u}
 Thus, to accommodate the $\mathbf{u}^{(\alpha)} = -\mathbf{u}^{(\alpha)}$ inversion symmetry of a nematic, we will construct a symmetric rank-2 tensor from $\mathbf{u}^{(\alpha)}$.
 Let:
 \begin{equation}
-  \mathbf{Q} = \left \langle \mathbf{u}^{\alpha} \otimes \mathbf{u}^{\alpha} - \frac{1}{2} \mathbb{1} \right \rangle_{\alpha},\label{e:2-2DOrderRaw}
+  \mathbf{Q} = \left \langle \mathbf{u}^{(\alpha)} \otimes \mathbf{u}^{(\alpha)} - \frac{1}{2} \mathbb{1} \right \rangle_{\alpha},\label{e:2-2DOrderRaw}
 \end{equation}
-such that $\textrm{Tr}\big \{ \mathbf{Q} \big \} = \langle u^{\alpha}_i u^{\alpha}_i - 1 \rangle_{\alpha} = 0$, making $\mathbf{Q}$ traceless and symmetric~\cite{RN33,RN175}.
+such that $\textrm{tr}\big \{ \mathbf{Q} \big \} = \langle u^{(\alpha)}_i u^{(\alpha)}_i - 1 \rangle_{\alpha} = 0$, making $\mathbf{Q}$ traceless and symmetric~\cite{RN33,RN175}.
 We need $\mathbf{Q}$ to be traceless if we wish $Q_{ij} = 0$ in the isotropic phase.
 Without loss of generality, we can define another arbitrary orthonormal basis in the plane given by $\hat{e}_i'$ such that the transformation from the primed coordinates to the unprimed coordinates is given by $V_{ij} = \hat{e}'_i \cdot \hat{e}_j$.
-Note that $\mathbf{V}^T \mathbf{V} = V_{ij}V_{ji} =  \mathbb{1}$, implying that $\mathbf{V} = \mathbf{V}^{-1}$, and $\mathbf{V}$ is an orthogonal matrix.
+Note that $\mathbf{V}^T \mathbf{V} = V_{ij}V_{jk} =  \mathbb{1}$, implying that $\mathbf{V} = \mathbf{V}^{-1}$, and $\mathbf{V}$ is an orthogonal matrix.
 Applying $\mathbf{V}$ to $\mathbf{Q}$, we have:
 \begin{align}
   \mathbf{V}^T \mathbf{Q} \mathbf{V} &=
-  \bigg \langle \big ( \mathbf{V}^T \mathbf{u}^{\alpha} \big ) \otimes \big ( \mathbf{V}^T \mathbf{u}^{\alpha} \big )\bigg \rangle_{\alpha}  - \frac{1}{2} \mathbb{1} \nonumber \\ & =
+  \bigg \langle \big ( \mathbf{V}^T \mathbf{u}^{(\alpha)} \big ) \otimes \big ( \mathbf{V}^T \mathbf{u}^{(\alpha)} \big )\bigg \rangle_{\alpha}  - \frac{1}{2} \mathbb{1} \nonumber \\ & =
   \begin{pmatrix}
-    \langle \cos^2 \theta^{\alpha}\rangle_{\alpha} - 1/2 & \langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} \\
-    \langle \sin \theta^{\alpha} \cos \theta^{\alpha} \rangle_{\alpha} & \langle \sin^2 \theta^{\alpha} \rangle_{\alpha} - 1/2
+    \langle \cos^2 \theta^{(\alpha)}\rangle_{\alpha} - 1/2 & \langle \sin \theta^({\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} \\
+    \langle \sin \theta^{(\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} & \langle \sin^2 \theta^{(\alpha)} \rangle_{\alpha} - 1/2
   \end{pmatrix},\label{e:2-2DOrderRot}
 \end{align}
-where $\cos \theta^{\alpha} = \mathbf{u}^{\alpha} \cdot \hat{e}_1'$.
+where $\cos \theta^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_1'$.
 Let us now assume that we chose the $\hat{e}'_i$ to be the eigenvectors of $\mathbf{Q}$.
 Then $ \mathbf{V}^T \mathbf{Q} \mathbf{V}$ must be diagonal such that $\langle \sin \theta^{(\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} = \langle \sin (2 \theta^{(\alpha)}) \rangle_{\alpha} = 0$.
 This occurs in two ways.
@@ -107,9 +107,10 @@ Thus, for a collection of rods, we can determine the phase and if applicable, $\
 While we briefly mentioned the dimensionality of defects and their associated classifications schemes in Section~\ref{c:1}, here we take a deeper look and use homotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
 As mentioned in Chapter~\ref{c:1}, defects in ordered media are defined generally as regions where locally, the characteristic order of the phase is not satisfied.
 In a nematic phase, defects are locations where $\mathbf{n}$ is undefined.
-For a nematic in 3D, these locations can be $0$-dimension ($0$D) point defects, $1$-dimension ($1$D) line defects, or $2$D wall defects, while for a nematic in 2D, these locations can only be $0$-dimension ($0$D) point defects or $1$-dimension ($1$D) line defects.
+For a nematic in 3D, these locations can be $0$-dimension ($0$D) point defects, $1$-dimension ($1$D) line defects, or $2$D wall defects, while for a nematic in 2D, these locations can only be 0D point defects or 1D line defects.
 General examples of defects with different dimensionality  in 3D and 2D are drawn schematically in Figure~\ref{f:2-GenDef}.
-Note that when the 3D defects structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall defects and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D, where a wall in 3D is similar to line in 2D and a line in 3D is similar to a point in 2D, as highlighted by the arrows in Figure~\ref{f:2-GenDef}.
+Note that when the 3D defects structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall defects and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D.
+For example, a wall in 3D is similar to line in 2D and a line in 3D is similar to a point in 2D, as highlighted by the arrows in Figure~\ref{f:2-GenDef}.
 However, while it is appealing to equate similar-looking structures in 2D and 3D, the additional possible director orientations in a 3D nematic mean that a 3D nematic is fundamentally different than a 2D nematic.
 To characterize these differences as well as classify the defects themselves we turn to the homotopy theory of defects.
 For clarity, we refer to Table~\ref{t:2-GroupTheory} for definitions of some useful concepts from group theory.\\
@@ -131,13 +132,13 @@ Consider a 2D set of vectors such that their orientations can be described by a 
 We can map these vector orientations onto an \emph{order parameter space} given by the 1-sphere, $\mathbb{S}_1$, the unit circle in the plane, such that $\mathbb{S}_1$ describes all the possible orientations of the vectors.
 If instead we consider a nematic where $\mathbf{n} = -\mathbf{n}$, $\mathbb{S}_1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not the interval $[0,2 \pi)$.
 Instead, for 2D nematics the order parameter space is $\mathbb{R}\mathbb{P}_1$, the real projective plane in 1D, which corresponds to $\mathbb{S}_1$ with antipodal points identified~\cite{RN196,RN153,RN236}.
-Thus, specifying the director along a contour in real space will determine a mapping of the contour in real space to a contour in order parameter space.
-More importantly, specifying the director along a closed contour in real space will result in a closed contour in order parameter space, provided the contour doesn't pass through any defects where $\mathbf{n}$ is undefined.\\
+This means that specifying the director along a contour in real space will determine a mapping of the contour in real space to a contour in order parameter space.
+More importantly, specifying the director along a closed contour in real space will result in a closed contour in order parameter space, provided the contour doesn't pass through any points where $\mathbf{n}$ is undefined.\\
 
 For example, consider both the purple contour and the red contour in the real space director schematic in Figure~\ref{f:2-2DMeas}(A) and their associated mappings to $\mathbb{R}\mathbb{P}_1$ in the schematic in Figure~\ref{f:2-2DMeas}(B).
 Both contours are closed, regardless of the space we consider.
-However, we see in Figure~\ref{f:2-2DMeas}(A) that the red contour contains a singularity while the purple contour does not.
-Similarly, we see that in the order parameter space in Figure~\ref{f:2-2DMeas}(B), the purple contour can be continuously deformed to a point in $\mathbb{R}\mathbb{P}_1$ while the red contour cannot be continuously deformed to a point in $\mathbb{R}\mathbb{P}_1$ as the red contour wraps the entirety of $\mathbb{R}\mathbb{P}_1$.
+However, we see in Figure~\ref{f:2-2DMeas}(A) that the red contour encloses a singularity while the purple contour does not.
+Similarly, we see that in the order parameter space in Figure~\ref{f:2-2DMeas}(B), the purple contour can be continuously deformed to a point in $\mathbb{R}\mathbb{P}_1$ while the red contour cannot, as the red contour wraps the entirety of $\mathbb{R}\mathbb{P}_1$.
 Thus, the presence of a singularity in the area bounded by the red contour in real space results in a nonzero winding number in the red contour in the order parameter space.
 In fact, it is easy to see that a mapping of the director along the blue contour in Figure~\ref{f:2-2DMeas}(C) will result in a contour in $\mathbb{R}\mathbb{P}_1$ that goes in opposite direction of the red contour in  Figure~\ref{f:2-2DMeas}(B), and that a mapping of the director to $\mathbb{R}\mathbb{P}_1$ along the green contour in Figure~\ref{f:2-2DMeas}(D) will result in a contour that wraps $\mathbb{R}\mathbb{P}_1$ twice in the same direction as the red contour.
 Explicitly, we see that the defect structures in Figure~\ref{f:2-2DMeas}(A-C) all have different winding numbers in $\mathbb{R}\mathbb{P}_1$, and thus cannot be mapped onto each other with continuous deformations.
@@ -153,12 +154,12 @@ Reproducing Eq.~[INTRO]\fxnote{ref INTRO} from Section~\ref{c:1} for a director 
 \end{equation}
 where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.
 Since we have already established that the defects in a 2D nematic have integer winding numbers in $\mathbb{R}\mathbb{P}_1$, we see that $s \in \frac{1}{2} \mathbb{Z}$, giving us a discrete set of elements.
-In addition, we know that winding numbers are additive~\cite{RN196}, such that adding together the effect of multiple defects is commutative and associative.
+In addition, we know that winding numbers are additive~\cite{RN196}, such that combining the effect of multiple defects is commutative and associative.
 The additivity can be seen in Figure~\ref{f:2-2DMeas}(C,D), where a contour surrounding two $s = +1/2$ defects in Figure~\ref{f:2-2DMeas}(D) has the same winding number in $\mathbb{R}\mathbb{P}_1$ as the contour encircling the single $s = +1$ defect in Figure~\ref{f:2-2DMeas}(C).
 Similarly, the additivity of defects also means that the inverse of a defect with winding number $+k$ is inverse of a defect with winding number $-k$.
 For example, combining and $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
 Finally, we note that the homogeneous state acts as the identity element for for the set of defects as $k + 0 = k$.
-Since we have satisfied the four axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the abelian group formed from the set of half-integers with addition.
+Since we have satisfied the four axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
 Thus, we can characterize the homotopy classes of defects in $\mathbb{R}\mathbb{P}_1$ with $\pi_1 (\mathbb{R}\mathbb{P}_1)$, the first \emph{fundamental group} of $\mathbb{R}\mathbb{P}_1$~\cite{RN196,RN153,RN236}.
 Hence, the quantity $s$ is a topological quantity, such that ``charge'' is often referred to as ``topological charge.'' \\
 
@@ -181,24 +182,29 @@ Hence, the quantity $s$ is a topological quantity, such that ``charge'' is often
 
 This approach is not limited to 2D.
 In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the fundamental group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$~\cite{RN236}.
-We note that for codimension $d=0$, there are no topological defects in nematic materials as any defect structure with $d=0$ is homotopic to a nonsingular distortion~\cite{RN196}. For example, consider the singular line defect in 2D depicted in Figures~\ref{f:2-GenDef},\fxnote{ smearing fig}(A).
-This structure can be continuously deformed to remove the singularity, yielding the nonsingular structure in Figure~\fxnote{smearing fig}(B).
+We note that for $d=0$, there are no topological defects in nematic materials as any defect structure with $d=0$ is homotopic to a nonsingular distortion~\cite{RN196}. For example, consider the singular line defect in 2D depicted in Figure~\ref{f:2-Smearing}(A).
+This structure can be continuously deformed to remove the singularity, yielding the nonsingular structure in Figure~\ref{f:2-Smearing}(B).
 Thus, since a singular line in 2D is homotopic to the undistorted state, it is not topologically stable.
 This does not mean that lines in 2D or walls in 3D cannot exist, merely that their existence is determined by energetics such that these structures are usually found only in situations with very strong spatial confinement or in the presence of an external field~\cite{RN33,RN175}.\\
-% In addition, we see that point defects in 2D and line defects in 3D not only look similar, but are both characterized by the first fundamental group of their respective order parameter spaces.
-% Thus, the apparent connection between defect structure in nematics of different dimension seen schematically in Figure~\ref{f:2-GenDef} comes from the order of the fundamental group used to characterize the defects.\\
+\begin{figure}[h]
+  \centering
+  \includegraphics{figures/C2/Ch2-Figs_Smearing.png}
+  \caption{Singular line defects are topologically unstable in 2D.
+  (A) a singular line defect in 2D, with the singular region denoted in red.
+  (B) A nonsingular structure resulting from a continuous deformation of (A).}\label{f:2-Smearing}
+\end{figure}
 
 Now, we consider a nematic in 3D.
 Immediately, we see that the order parameter space is no longer $\mathbb{R}\mathbb{P}_1$, but instead is $\mathbb{R}\mathbb{P}_2$, the unit 2-sphere $\mathbb{S}_2$ with antipodal points identified, as we now need 2 angles to characterize all the possible orientations of $\mathbf{n}$~\cite{RN196,RN153,RN236}.
 We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}_2)$.
 Again, we consider $\mathbf{n}$ along closed contours in real space and the associated contour in $\mathbb{R}\mathbb{P}_2$, with the topological charge given by the half-integer winding number of the contour in $\mathbb{S}_2$.
-However, we note that in $\mathbb{R}\mathbb{P}_2$, we can only have defects with $s \in \{0,1/2\}$ as any contour on $\mathbb{R}\mathbb{P}_2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}_2$ as ``you cannot lasso a sphere''~\cite{RN153}.
-More explicitly, any contour on  $\mathbb{R}\mathbb{P}_2$ with integer $s$ must start and end at the same point such that it can be ``slid'' to one side of the sphere and deformed to a point on $\mathbb{R}\mathbb{P}_2$.
+However, we note that in $\mathbb{R}\mathbb{P}_2$, we can only have defects with $s \in \{0,1/2\}$, as any contour on $\mathbb{R}\mathbb{P}_2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}_2$ since ``you cannot lasso a sphere''~\cite{RN153}.
+More explicitly, any contour on  $\mathbb{R}\mathbb{P}_2$ with integer $s$ must start and end at the same point, and thus it can be ``slid'' to one side of the sphere and deformed to a point on $\mathbb{R}\mathbb{P}_2$.
 Thus, the only stable contours in $\mathbb{R}\mathbb{P}_2$ are those that start and end at antipodal points.
-This also means that contours starting and ending at the same point on $\mathbb{R}\mathbb{P}_2$ can be freely added and subtracted from a contour starting and ending at antipodal points on $\mathbb{R}\mathbb{P}_2$ such that all contours starting and ending at antipodal points on $\mathbb{R}\mathbb{P}_2$ are homotopic.
-For example, contours with $s = -1/2$ are homotopic to contours with $s = 1/2$ such that $\mathbb{R}\mathbb{P}_2$ has only one nontrivial element, resulting in $s \in \{ 0,1/2\}$~\cite{RN153}.
+This also means that contours starting and ending at the same point on $\mathbb{R}\mathbb{P}_2$ can be freely added and subtracted from a contour starting and ending at antipodal points on $\mathbb{R}\mathbb{P}_2$; thus, all contours starting and ending at antipodal points on $\mathbb{R}\mathbb{P}_2$ are homotopic.
+Explicitly, this means that contours with $s = -1/2$ are homotopic to contours with $s = 1/2$ such that $\mathbb{R}\mathbb{P}_2$ has only one nontrivial element, resulting in $s \in \{ 0,1/2\}$~\cite{RN153}.
 As with walls in 3D and lines in 2D, this does not mean that $s = +1$ structures in 3D are impossible to create, it only means that they are not topologically stable structures and thus can only be stabilized by energetics.
-Similarly, since an $s = -1/2$ line and an $s = +1/2$ line are homotopic, preferentially generating one structure over the other is a matter of energetics.\\
+Similarly, since an $s = -1/2$ line and an $s = +1/2$ line are homotopic, preferentially generating one structure over the other is a matter of tuning the free-energy of each structure.\\
 
 We lastly consider point defects in 3D characterized by the second fundamental group $\pi_{2}(\mathbb{R}\mathbb{P}_2)$.
 Now instead of contours on $\mathbb{R}\mathbb{P}_2$, we consider coverings or wrappings of $\mathbb{R}\mathbb{P}_2$~\cite{RN196,RN153,RN236}.
@@ -420,11 +426,11 @@ However, we emphasize that while it is tempting to treat $F_{24}$ as a surface t
 \begin{equation}
   F_{24}[\mathbf{n}] = - \frac{1}{2}(K_{22}(\mathbf{R}) + K_{24}(\mathbf{R}))_{\mathbf{R} \rightarrow \partial V} \oint_{\partial V} \textup{d}^2  \mathbf{R} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},
 \end{equation}
-this is incorrect as Stokes's theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24Gauss}a is no longer a total differential.
+this is incorrect, as Stokes's theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24Gauss}a is no longer a total differential.
 In fact, measuring $K_{24}$ is in principle no different than measuring any of the $K_{ii}$ --- provided the volume of the bulk is much larger than the boundary layer, the influence of the position-dependence of $K_{ij}$ is negligible.
 To demonstrate this, we return to Eq.~\ref{e:2-F24Gauss}a and insert the position-dependence:
 \begin{equation}
-  F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3 \left \{\mathbf{R} (K_{22} (\mathbf{R}) + K_{24}(\mathbf{R})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \},\label{e:2-F24GaussPosition}
+  F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3 \left \{\mathbf{R} (K_{22} (\mathbf{R}) + K_{24}(\mathbf{R})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \}.\label{e:2-F24GaussPosition}
 \end{equation}
 Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{R}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$ and $K_*(\mathbf{R}) = K_{22} (\mathbf{R}) + K_{24}(\mathbf{R})$ yields:
 \begin{align}
@@ -433,7 +439,7 @@ Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{R})
   K_*(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{R} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} - \int_{V} \textup{d}^3\mathbf{R} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{R}) \right \}, \label{e:2-pos_stokes1}
 \end{align}
 where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary~\cite{RN55}.
-Now, if we separate $K_*(\mathbf{R}) = K_* + K_*^s(\mathbf{R})$ into the bulk material constant $K_*$ and the position-dependent contribution $K_*^s(\mathbf{R})$, where $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$.
+Now, we separate $K_*(\mathbf{R}) = K_* + K_*^s(\mathbf{R})$ into the bulk material constant $K_*$ and the position-dependent contribution $K_*^s(\mathbf{R})$, where $K_*^s(\mathbf{R})$ decays across a boundary layer of thickness $d_l$.
 Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
 \begin{align}
   \int_{V}\textup{d}^3\mathbf{R} \left \{ K_{*} (\mathbf{R}) \nabla \cdot \mathbf{A} \right \} &=
@@ -504,7 +510,7 @@ We emphasize that this curvature-coupling does not result from interactions betw
 
 \section{Landau-deGennes free energy}
 The Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion} is not the only phenomenological free energy expression.
-In fact, if we wish to understand the nematic-isotropic phase transition, we need to write a phenomenological free energy that depends on and order parameter such as $\mathbf{Q}$.
+In fact, if we wish to understand the nematic-isotropic phase transition, we need to write a phenomenological free energy that depends on an order parameter such as $\mathbf{Q}$.
 This tensor-based approach to a free-energy was developed by de Gennes in the spirit of a Landau-type theory~\cite{RN33}.
 However, the $\mathbf{Q}$-based phenomenological free energy can can also be used to calculate a distortion free-energy by expanding in invariants of $\nabla \mathbf{Q}$, similar to the derivation of the Frank-Oseen free energy~\cite{RN33,RN189,RN198}.
 
@@ -534,9 +540,9 @@ where $f_{phase}(S) > 0$ implies the isotropic phase is stable against the nemat
   \label{t:2-powersQ}
   \begin{tabular}{|l l|}
     \hline
-    $\textup{Tr} \big \{ \bm{\mathcal{Q}} \big \} = 0$ & \\
-    $\textup{Tr} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^p,$ & $p = 2,3, \dots$ \\
-    $\textup{Det} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^{3p}$, & $p = 1,2,3,\dots$ \\
+    $\textup{tr} \big \{ \bm{\mathcal{Q}} \big \} = 0$ & \\
+    $\textup{tr} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^p,$ & $p = 2,3, \dots$ \\
+    $\textup{det} \big \{ \bm{\mathcal{Q}}^p \big \} \propto S^{3p}$, & $p = 1,2,3,\dots$ \\
     \hline
   \end{tabular}
 \end{table}
@@ -636,14 +642,14 @@ such that we can write the modified relations between the $K_{ij}$ and the $L_i$
 \end{align}
 
 
-Similar to the approach of Nehring and Saupe with the Frank-Oseen free energy, we can also consider the role of terms linear in $2^{nd}$ derivatives of $\mathbf{Q}$.
-The $2^{nd}$ derivative terms predict that both $K_{13}$ and $K_{24}$ could depend linearly on $S$~\cite{RN58}.
-However, once $K_{13}$ is required to be zero, all the contributions from the $2^{nd}$ derivative terms vanish.\\
+Similar to the approach of Nehring and Saupe with the Frank-Oseen free energy, we can also consider the role of terms linear in $2^{\rm nd}$ derivatives of $\mathbf{Q}$.
+The $2^{\rm nd}$ derivative terms predict that both $K_{13}$ and $K_{24}$ could depend linearly on $S$~\cite{RN58}.
+However, once $K_{13}$ is required to be zero, all the contributions from the $2^{\rm nd}$ derivative terms vanish.\\
 
 
 We briefly note that decoupling $S$ from the elastic constants in the Landau-deGennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
 Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to apply exclude every defect using a cutoff length in order to keep the free-energy from diverging.
-In addition, it is not trivial to represent to represent a bivector field using rank-1 objects~\fxnote{see Shengnan's proposal for a ref}.
+In addition, it is not trivial to represent to represent a bivector field using vectors as differences in orientation are degenerate on $\pi$ for bivectors and degenerate on $2\pi$ for vectors.
 In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
 In addition, since $\mathbf{Q}$ contains S, it can go to 0 at a defect such that no part of the simulation volume needs to be excluded.
 This makes the Landau-deGennes distortion free energy the preferred method for numerical simulations of nematic materials~\cite{RN190}.
@@ -683,9 +689,9 @@ Homeotropic anchoring, degenerate planar anchoring, and planar anchoring are ill
   \includegraphics{figures/C2/Ch2-Figs_DropSchem.png}
   \caption{Nematic liquid crystal confined to a spherical volume.
   (A), The classic radial director configuration found under homeotropic boundary conditions.
-  The defect is highlighted by the red dot.
+  The defect is indicated by ${\color{red} \bullet}$.
   (B), The classic bipolar director configuration found under degenerate planar boundary conditions.
-  The 2 defects are highlighted by the blue dots.}\label{f:2-DropSchem}
+  The 2 defects are indicated by ${\color{blue} \bullet}$.}\label{f:2-DropSchem}
 \end{figure}
 
 \begin{figure}[h]
@@ -713,7 +719,7 @@ They are generally composed of a solid dispersed in a solvent such that the susp
 In this Thesis, we will primarily use 4-Cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
 5CB belongs to the cyanobiphenyl family of NLC.
 The cyanobiphynyls are thermotropic materials characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
-In the case of 5CB, we can write the chemical formula as: CN(C$_6$H$_4$)(C$_6$H$_4$)C$_5$H$_{11}$.
+In the case of 5CB, we can write the chemical formula as: (CN)(C$_6$H$_4$)(C$_6$H$_4$)(C$_5$H$_{11}$).
 Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
 Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any pCB. \\
 
@@ -762,10 +768,10 @@ Consider linearly polarized light incident upon a birefringent material with $n_
 If the incident light is polarized along $\hat{x}$ or $\hat{y}$, the light ray will see only either the extraordinary index of refraction of the ordinary index of refraction and will leave the sample with no change in its polarization state.
 However, now let the incident light be linearly polarized at $45^o$ such that the incident ray can be decomposed into one component along $\hat{x}$ and another along $\hat{y}$.
 Since each component will see a different index of refraction, they will propagate at different speeds, creating a phase difference between the two components of the incident ray.
-This phase difference is known as the retardation and is given in multiples of $2 \pi$ by $\Gamma = \frac{2 \pi \Delta n d}{\lambda}$, where $d$ is the thickness of the birefringent material, and $\lambda$ is the wavelength of the incident light~\cite{RN232}.
-For our example of incident light linearly polarized at $45^o$, let $\Delta n d = \lambda / 2$ such that $\Gamma =  pi$.
+This phase difference is known as the retardation and is given in multiples of $2 \pi$ by $\Gamma = \frac{2 \pi \Delta n \, d}{\lambda}$, where $d$ is the thickness of the birefringent material, and $\lambda$ is the wavelength of the incident light~\cite{RN232}.
+For our example of incident light linearly polarized at $45^o$, let $\Delta n \, d = \lambda / 2$ such that $\Gamma =  \pi$.
 The light after leaving the sample will now be polarized at $-45^o$, and the birefringent material has the properties of a half-waveplate~\cite{RN232}.
-Similarly, if $\Delta n d = \lambda$, $\Gamma =  2 pi$, the birefringent material is a full-waveplate and the output light will be unchanged~\cite{RN232}.\\
+Similarly, if $\Delta n \, d = \lambda$, $\Gamma =  2\ pi$, the birefringent material is a full-waveplate and the output light will be unchanged~\cite{RN232}.\\
 
 \begin{figure}[h]
   \centering
