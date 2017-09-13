@@ -4,10 +4,9 @@
 \section{Introduction}
 The research presented so far has focused on nematic materials confined by toroidal surfaces.
 Here we consider a NLC confined to a topologically spherical volume with homeotropic boundary conditions.
-As established in Chapter~\ref{c:1}, the volume must contain a total hedgehog charge $|d| = 1$.
+As established in Chapter~\ref{c:2}, the volume must contain a total hedgehog charge $|d| = 1$, with the hedgehog charge defined in Eq.~\ref{e:2-hedCharge}.
 Using a single defect, this condition can be is satisfied by $d=-1$ hyperbolic point defects or hyperbolic ring defects, shown schematically from the side and top in Figure~\ref{f:2-3DMeas}(B,D), and also by $d=+1$ radial point defects or radial ring defects, shown schematically from the side and top in Figure~\ref{f:2-3DMeas}(A,C).
-The myriad of possible defect configurations gives topologically-confined systems a richness that has been well-explored for the case of geometrically spherical boundaries, where the confinement can only be modified through changing the sphere radius.
-For example, topological confinement in spheres can yield self-assembled defect structures involving chains of hedgehog defects~\cite{RN150} or even knotted and entangled line-defect structures~\cite{RN277,RN278,RN275,RN276}.
+The myriad of possible defect configurations gives topologically-confined systems a richness that has been well-explored for the case of geometrically spherical boundaries, where the confinement can only be modified through changing the sphere radius~\cite{RN150,RN277,RN278,RN275,RN276}.
 However, the role of shape when confining NLC in geometries with more than one characteristic lengthscale is not completely understood.
 
 Consider the case of a cylindrical geometry of aspect ratio $\Gamma = 2 R/H$, where $R$ is the radius of the cylinder and $H$ is its height.
@@ -21,8 +20,9 @@ Prior theoretical work used computational modeling to explore the defect configu
 For 5CB, which has $K_{11}/K_{33} = 0.74$, they predicted, in contrast to the claims in Refs.~\cite{RN139,RN147}, that the bridge should transition between a radial ring defect and a hyperbolic point defect.
 
 In this Chapter, we address the conflict described in the previous paragraph and perform both experiments and computations pertaining to a confined NLC within a capillary bridge sandwiched between two parallel plates of adjustable separation and hence of varying $\Gamma$.
-By observing our experimental bridges from both the top and the side, and comparing our observations with results from our computations, we find that that shape of the free surface controls whether the defect is radial or hyperbolic: waist-like bridges contain hyperbolic defects, and barrel-like bridges contain radial defects.
-In addition, we find good agreement between experiment and theory for the critical aspect ratio $\Gamma_c$ at which the defect in the bridge undergoes a transition between a ring defect and a point defect.
+By observing our experimental bridges from both the top and the side and comparing our observations with results from our computations, we find that that shape of the free surface controls whether the defect is radial or hyperbolic: waist-like bridges contain hyperbolic defects, and barrel-like bridges contain radial defects.
+To accomplish this, we develop polarized epifluorescent microscopy (PFM), an imaging technique allowing us to distinguish radial and hyperbolic defect structures in scenarios where common OPM techniques fail.
+In addition, we find good agreement between experiment and theory for the critical aspect ratio, $\Gamma_c$, at which the defect in the bridge undergoes a transition between a ring defect and a point defect.
 Finally, we see that this transition is hysteretic, due to the metastability of the point defect.
 Our results clarify the prior discrepancies, and at the same illustrate how shape and elasticity dictate defect structure in confined homeotropic nematics.
 
@@ -31,12 +31,13 @@ Our results clarify the prior discrepancies, and at the same illustrate how shap
 
 \section{Making capillary bridges}
 To make a capillary bridge, we confine 5CB between two parallel glass microscope slides.
-Prior to use, the slides were dip-coated with $0.1\%$ w/w lecithin (granular, Acros) in hexane ($98.5\%$ purity, BDH) and left to dry to enforce homeotropic anchoring~\cite{RN140}.
+Prior to use, the slides were dip-coated with $0.1\%$ w/w lecithin in hexane and left to dry to enforce homeotropic anchoring~\cite{RN140}.
 We set up an experiment to view a bridge from the top by first placing both microscope slides stacked on top of each other on the microscope stage.
 We then epoxy the top plate to a rod affixed to a micromanipulator such that we can adjust the distance between the slides.
 Note that this simple protocol ensures that the two microscope slides are parallel to each other and to the microscope stage.
 After the epoxy hardens, we raise the top slide and use a glass capillary to place a $\sim$nl-volume drop of 5CB onto the bottom plate.
 We then bring the top plate down until it makes contact with the sessile droplet and forms a capillary bridge.
+The final experimental setup is depicted schematically and pictured in the image in Figure~\fxnote{F1}(A,C), respectively.
 
 To set up an experiment to view a bridge from the side, we place an uncoated glass slide on the microscope stage to act as a base, and then place a lecithin-coated glass slide vertically on the base and use a pair of blocks to hold it in place.
 We then epoxy the lecithin-coated slide to the base, applying epoxy to only one side of the joint between the base and the lecithin-coated slide.
@@ -45,7 +46,7 @@ We then use the rod attached to the micromanipulator to hold the two vertical sl
 This protocol ensures that the two lecithin-coated glass slides are parallel to each other and perpendicular to the base.
 After the epoxy hardens, we use the mircomanipulator to move the adjustable plate as far as possible from the fixed plate and place a $\sim$nl-volume drop of 5CB onto the fixed vertical plate as close to the base as we can.
 Finally, we bring the adjustable plate closer to the fixed plate until it makes contact with the sessile drop and forms a capillary bridge.
-The final experimental setup for both a top view and a side view is depicted schematically from the side in Figure~\fxnote{F1}(A,B) and in example images in Figure~\fxnote{F1}(C,D), respectively.
+The final experimental setup for a side view is depicted schematically from the side in Figure~\fxnote{F1}(B) and in example images in Figure~\fxnote{F1}(D).
 
 As described, this procedure will yield a capillary bridge where the free-surface is in contact with air.
 To make a capillary bridge with the free surface in contact with water, we first make a bridge as described above and then pipette a drop of water near the edge of the parallel plates and let capillary action fill the gap between the plates.
@@ -56,12 +57,13 @@ The water contains 8 mM SDS to enforce homeotropic anchoring.
 
 \section{Shape of capillary bridges}
 We begin by viewing the bridges from the side and characterizing their shapes.
-Bridges with air as an outer medium have a waist-like shape with negative Gaussian curvature everywhere on the free surface and bridges with water and SDS as the outer medium have a barrel-like shape.
+Bridges with air as an outer medium have a waist-like shape with negative Gaussian curvature everywhere on the free surface, as shown by the bright-field image of an example bridge in Figure~\fxnote{F2}(A).
+In contrast, as shown in the image of an example bridge in Figure~\fxnote{F2}(B), bridges with water and SDS as the outer medium have a barrel-like shape with positive Gaussian curvature everywhere on the free surface.
 
 
 \subsection{Measuring the shape}
-For some example bridges, we record the shape contours on both the left and the right of the bridge as a function of $\Gamma$, where we calculate an effective aspect ratio by taking $R$ as the radius of the circular cross-section of the bridge midway between the two confining plates and taking $H$ as the distance between the plates.
-We then plot the contours normalized by the bridge height, with the left contours reflected about the vertical axis, and all contours shifted so that their lowest point corresponds to the origin.
+As demonstrated on the example bridges in Figure~\fxnote{F2}(A,B), we record the shape contours on both the left and the right of the bridge as a function of $\Gamma$, where we calculate an effective aspect ratio by taking $R$ as the radius of the circular cross-section of the bridge midway between the two confining plates and taking $H$ as the distance between the plates [see Figure~\fxnote{F2}(A,B)].
+We then plot the contours normalized by the bridge height, with the left contours reflected about the vertical axis, and all contours shifted so that their lowest point corresponds to the origin, as shown in Figure~\fxnote{F2}(C,D) for a set of example bridges including those in Figure~\fxnote{F2}(A,B), respectively.
 For both the barrels and the waists, the contours all approximately have the same shape regardless of $\Gamma$ or experiment.
 
 
@@ -71,55 +73,55 @@ The surface tension, density, and Frank elastic constant of 5CB are equal, respe
 We compare these forces via two dimensionless groups: the Bond number $\rm{Bo} = \dfrac{|\mathbf{F}_g|}{|\mathbf{F}_{\gamma}|} = \dfrac{\rho g R^2}{\gamma} \sim  \mathcal{O}\left (10^{-2} \right)$, and the elasticity group,
  $\dfrac{|\mathbf{F}_{\gamma}|}{|\mathbf{F}_K|} =  \dfrac{\gamma H}{K} \sim \mathcal{O}\left (10^{5} \right )$, where we have taken $H = R = 100$ $\mu$m as representative values.
 As $|\mathbf{F}_{\gamma}|$ is the dominant force, the mean curvature of the free surface of the bridge must be constant~\cite{RN178}.
-Thus, the contours for a surface of revolution in cylindrical coordinates $\{r,\phi, z\}$ should conform to the expression:
+Thus, the contours for a surface of revolution in cylindrical coordinates $\{r,\varphi, z\}$ should conform to the expression:
 \begin{equation}
-  \Delta P = 2 \gamma \left ( \frac{\textrm{d}\Theta}{\textrm{d}s} + \frac{\sin \theta}{r} \right ) = \textrm{cons't},\label{e:5-ConsMeanCurv}
+  \Delta P = \frac{\gamma}{2} \left ( \frac{\textrm{d}\Theta}{\textrm{d}s} + \frac{\sin \theta}{r} \right ) = \textrm{cons't},\label{e:5-ConsMeanCurv}
 \end{equation}
-where $\Delta P$ is the Laplace Pressure from Eq.~\ref{e:3-LapPres}, $\gamma$ is the surface tension, and $\Theta$ and $s$ are the elevation angle and arclength parameter, respectively, as defined in Figure~\fxnote{Fig here}.
+where $\Delta P$ is the Laplace Pressure from Eq.~\ref{e:3-LapPres}, $\gamma$ is the surface tension, and $\theta$ and $s$ are the elevation angle and arclength parameter, respectively, as defined in Figure~\fxnote{F3}(A).
 This further implies that the contact angle $\theta_0$ between the lecithin-coated glass slide, the outer medium, and the 5CB should set the shape~\cite{RN178}.
 
-To confirm this, we consider each example bridge and numerically solve Eq.~\ref{e:5-ConsMeanCurv} to produce constant-mean curvature contours that capture the envelope of the observed contours for each bridge.
+To confirm this, we consider each bridge and numerically solve Eq.~\ref{e:5-ConsMeanCurv} to produce constant-mean curvature contours that capture the envelope of the observed contours for a bridge, as shown by the envelops in Figure~\fxnote{F3}(B,C), corresponding to the example bridges in Figure~\fxnote{F2}(A,B), respectively.
 Since the bridge height and $\Gamma$ are measured in each experiment, we only need to specify $\Delta P$ and choose the contact angle, $\theta_0 = \theta(0)$ as an initial condition for each solution.
 We average the contact angles from the numerically-solved contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$.
-We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta^{water} = 123^{\circ} \pm 5^{\circ}$, in agreement with our data from the bridges.
+We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta_0^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta_0^{water} = 123^{\circ} \pm 5^{\circ}$, in agreement with our data from the bridges.
 
 
 
 
 \section{Defect structure transitions}
-We view the bridge from the top to determine whether the defect is a ring or a point; examples of these situations are shown in the bright-field images of a waist-like bridge in Figure~\fxnote{Fig here} and the corresponding crossed-polar images in  Figure~\fxnote{Fig here}.
+We view the bridge from the top to determine whether the defect is a ring or a point; examples of these situations are shown in the bright-field images of a waist-like bridge in Figure~\fxnote{F4}(A,C) and the corresponding crossed-polar images in  Figure~\fxnote{F4}(B,D).
 
 
 \subsection{Defect transitions in a waist}
 We start at large $\Gamma$, where we observe a ring defect, and determine the radius of the ring, $R_{ring}$, as we decrease $\Gamma$ by increasing $H$ in discrete steps.
 At each $H$, we monitor the bridge over time to ensure that the defect state no longer changes and the system is in equilibrium.
 In addition, as we decrease $\Gamma$ in each bridge, we also determine the effective aspect ratio for the defect transition, $\Gamma_c$.
-Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\fxnote{Fig here}, where we have plotted each observation of a stable ring defect with open circles and of a stable point defect with ``x'' symbols.
-The ring radius, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\fxnote{Fig here}, where we have again plotted every measurement we have performed.
-At $\Gamma_c$, the  ring becomes unstable, and collapses to a point defect, yielding the discontinuity in $R_{ring}$ shown with a dashed line in Figure~\fxnote{Fig here}, where the point defect is represented as having a vanishing $R_{ring}$.
+Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\fxnote{F4}(E), where we have plotted each observation of a stable ring defect with open circles and of a stable point defect with ``x'' symbols.
+The ring radius, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\fxnote{F4}(F), where we have again plotted every measurement we have performed.
+At $\Gamma_c$, the  ring becomes unstable, and collapses to a point defect, yielding the discontinuity in $R_{ring}$ shown with a dashed line in Figure~\fxnote{F4}(F), where the point defect is represented as having a vanishing $R_{ring}$.
 
-However, when we start at $\Gamma < \Gamma_c$ in a point defect state and increase $\Gamma$, the point defect never transitions to a ring, as seen in the lower contour in Figure~\fxnote{Fig here}.
+However, when we start at $\Gamma < \Gamma_c$ in a point defect state and increase $\Gamma$, the point defect never transitions to a ring, as seen in the lower contour in Figure~\fxnote{F4}(F).
 Interestingly, if for $\Gamma > \Gamma_c$, we melt the nematic phase in a bridge containing a point defect, we always  recover a ring defect state when we let the bridge cool back to the nematic phase.
 This suggests that the point defect is metastable for $\Gamma > \Gamma_c$.
 
 
 \subsection{Defect transitions in a barrel}
 Since every barrel-shaped bridge we make initially starts as a waist, we need to make sure the defect state in the waist does not affect the final state in the barrel.
-Thus, we make our barrels both from waists with the 5CB in the nematic phase and from waists where the 5CB has been melted to the isotropic before changing the outer medium from air to the water and SDS mixture.
+Thus, we make our barrels both from waists with the 5CB in the nematic phase and from waists where the 5CB has been melted to the isotropic phase before adding the water and SDS mixture.
 For the barrels made with the 5CB in the isotropic phase, we also heat the water and SDS mixture before making the barrel so that the 5CB does not cool to the nematic phase before the barrel shape has been established.
-As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step.
+As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step, as shown in the bright field images of a barrel for three calue of $\Gamma$ in Figure~\fxnote{F5}(A,C,E), with the associated crossed-polar image in Figure~\fxnote{F5}(B,D,F).
 However, over time the SDS forms micelles in the 5CB that self-assemble onto the ring defect and produce filimentary structures in the NLC~\cite{RN279}.
-These structures are visible in the crossed-polar images before they are clearly visible in the bright-field images, indicating that they affect the NLC director.
-In addition, we see that the self-assembled micelles can even stabilize non-circular ring shapes in some of our measurements, indicating that the SDS is clearly affecting the defect state we measure~\cite{RN279,RN280}.
+These structures are visible in the crossed-polar images [see Figure~\fxnote{F5}(B,D,F)] before they are clearly visible in the bright-field images [Figure~\fxnote{F5}(A,C,E)], indicating that they affect the NLC director.
+In addition, we see that the self-assembled micelles can even stabilize non-circular ring shapes in some of our measurements [see Figure~\fxnote{F5}(E,H)], indicating that the SDS is clearly affecting the defect state we measure~\cite{RN279,RN280}.
 
 Thus, we restrict our measurements to ring defects that are circular and centered in the bridge.
 We also make sure that the region within the ring in the crossed-polar images is dark, indicating that the SDS has not yet affected the entire bridge.
-We then plot the ring radius scaled by the bridge height as a function of measurement number for each bridge, as seen in Figure~\fxnote{Fig here}, where the initial measurement for a bridge is in black, the second measurement for a bridge is in red, the third measurement in blue and the fourth in magenta.
-The few magenta and blue points compared to the number of black and red points in Figure~\fxnote{Fig here} indicate that the effect of the micelles grows in time, such that we rarely have good data to make a fourth measurement and we never have good enough data to make a fifth measurement for a given bridge.
+We then plot the ring radius scaled by the bridge height as a function of measurement number for each bridge, as seen in Figure~\fxnote{F6}(A), where the initial measurement for a bridge is in black, the second measurement for a bridge is in red, the third measurement in blue and the fourth in magenta.
+The few magenta and blue points compared to the number of black and red points in Figure~\fxnote{F6}(A) indicate that the effect of the micelles grows in time, such that we rarely have good data to make a fourth measurement and we never have good enough data to make a fifth measurement for a given bridge.
 Thus, even though for large $\Gamma$ we see that the scaled ring radius varies linearly with $\Gamma$, we cannot make a quantitative prediction about a ring-to-point defect transition in our barrel-shaped bridges.
-Even when we make barrels with the 5CB in the isotropic phase with low $\Gamma$, we don't see a clear collapse to a point defect; instead, we typically see see a small ring defect with a scaled ring radius less than $0.3$.
-In all our measurements, we see only three examples of a clear point defect in a barrel-shaped bridge.
-Finally, we note that we see no difference between barrels made with the 5CB in the nematic phase [filled squares, Figure~\fxnote{Fig here}] and barrels made with 5CB in the isotropic phase [open circles, Figure~\fxnote{Fig here}].
+Even when we make barrels with the 5CB in the isotropic phase with low $\Gamma$, we don't see a clear collapse to a point defect; instead, we typically see see a small ring defect with a scaled ring radius less than $0.3$, as pictured in Figure~\fxnote{F6}(B,C) for a barrel at two different $\Gamma$.
+In all our measurements, we see only three instances of a clear point defect in a barrel-shaped bridge, with one of the instances of a point defect shown in Figure~\fxnote{F6}(D).
+Finally, we note that we see no difference between barrels made with the 5CB in the nematic phase [filled squares, Figure~\fxnote{F6}(A)] and barrels made with 5CB in the isotropic phase [open squares, Figure~\fxnote{F6}(A)].
 
 
 
