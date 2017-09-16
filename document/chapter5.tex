@@ -230,7 +230,7 @@ Here, we take inspiration from PCFM and develop Polarized Epifluorescent Microsc
 As its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
 Introducing the fluorophores in a NLC at low concentrations, the long axis of the fluorophores will align along the nematic director without affecting the director configuration~\cite{RN148,RN174}.
 Thus, the fluorescent emission of the mixed fluorophore and NLC system will be linearly polarized along the director.
-If we excite the sample with unpolarized light and place an analyzer in the emitted light path, then the emitted intensity from each point in the sample will be $\propto \cos^2{(\Phi_A-\delta)}$, where $\Phi_A$ is the orientation of the analyzer and $\delta$ is the orientation of $\mathbf{n}$ in the plane of the output image~\cite{RN174}.
+If we excite the sample with unpolarized light and place an analyzer in the emitted light path, as depicted schematically in Figure~\ref{f:5-PFM_FlatCell}(A) then the emitted intensity from each point in the sample will be $\propto \cos^2{(\Phi_A-\delta)}$, where $\Phi_A$ is the orientation of the analyzer and $\delta$ is the orientation of $\mathbf{n}$ in the plane of the output image~\cite{RN174}.
 However, as we use wide-field fluorescent microscopy, the recorded intensity at each point in the output images reflects an averaging of the director along the light path.
 Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for the simplicity of PFM.
 \begin{figure}
@@ -238,7 +238,7 @@ Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for t
   \includegraphics{figures/C5/Ch5-Figs_PFM_FlatCell.png}
   \caption{Polarized epifluorescent microscopy on a planar NLC cell filled with a mixture of 5CB and Nile Red.
   (A), Schematic from the side of the setup for polarized epifluorescent microscopy (PFM).
-  (B-D), Optical-polarized microscopy (B,C) images and (D) transmitted intensity as a function of analyzer angle $\Phi_A$, with no sample, PA crossed, and the dichroic mirror with the optic axis along $\hat{y}$ in the light path.
+  (B-D), Optical-polarized microscopy (B,C) images and (D) transmitted intensity as a function of analyzer angle $\Phi_A$, with no sample, PA crossed, and the dichroic mirror with the optic axis along $\hat{y}$ or $\hat{x}$ in the light path.
   $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
   (E-G), PFM (E,F) images and (G) recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$.
   $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
@@ -251,29 +251,34 @@ Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for t
 
 \subsection{Experimental realization}
 We add $0.01$ wt\% Nile red to 5CB; at this concentration, Nile red does not affect the director configuration~\cite{RN173}.
-We image our sample using with a standard epifluorescent setup with an analyzer in the emitted light path, as shown schematically from the side in Figure~\fxnote{Fig Here}, with a short-arc lamp as our light source.
-We use filter set \#20 from Zeiss, with a 534~nm~--~558~nm bandpass excitation filter, a 560~nm longpass dichroic mirror, and a 575~--~640~nm emission filter ~\cite{RN288}.
-For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$, perform a spatial average using a Gaussian filter, and then fit the intensity as a function of $\Phi_A$ at every pixel to the form:
+We image our sample using with a standard epifluorescent setup with an analyzer in the emitted light path [Figure~\ref{f:5-PFM_FlatCell}(A)] and a short-arc lamp as our light source.
+We use filter set \#20 from Zeiss, with a 534~nm~--~558~nm bandpass excitation filter, a 560~nm longpass dichroic mirror, and a 575~--~640~nm emission filter~\cite{RN288}.
+For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$ and then fit the intensity at every pixel to the form:
 \begin{equation}
     I(x,y) = A + B \cos^2{(\Phi_A-\delta'(x,y))},\label{e:5-IntFit}
 \end{equation}
 where $A$, $B$ and $\delta'$ are fitting parameters; $A$ and $B$ set the minimum value and range of $I$, respectively, and $\delta'$ reflects an average of the director orientation along the light path.
 Using the extracted $\delta'$ values, we can then plot the associated director field for a sample.
-Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the series of transmitted light images with the polarizer and analyzer crossed and the mirror in the light path. We take the optic axis of the mirror to be $0^{\circ}$; this will set the origin for all our angle measurements.
+Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the transmitted light images with the polarizer and analyzer crossed and the mirror in the light path in Figure~\ref{f:5-PFM_FlatCell}(B,C), where the analyzer angle is indicated in each image.
+By plotting the average transmitted intensity under crossed polarizers with the mirror in the light path as a function of $\Phi_A$, as seen in Figuure~\ref{f:5-PFM_FlatCell}(D) with $\Phi_A$ measured CCW from $\hat{y}$, we see that the optic axis of the dichroic mirror must lie along either $\hat{x}$ or $\hat{y}$.
+Thus, we will take all our angle measurements CCW from $\hat{y}$ for the remainder of the Chapter.
 
-We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$; in fact our analysis is able to distinguish between the two alignments easily.
-However, when the rubbing direction is perfectly parallel to or perpendicular to the optic axis of the dichroic mirror, we see that the fit returns values that are biased towards $0^{\circ}$ or $90^{\circ}$.
-Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
-We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$.
+We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$, as seen for the example images of a planar cell with the rubbing direction along $90^{\circ}$ and different analyzer angles in Figure~\ref{f:5-PFM_FlatCell}(E,F).
+The transmitted intensity as a function of $\Phi_A$ [see Figure~\ref{f:5-PFM_FlatCell}(G)] is a minimum for $\Phi_A = 0^{\circ}$ [Figure~\ref{f:5-PFM_FlatCell}(E)] and a maximum for $\Phi_A = 90^{\circ}$ [~\ref{f:5-PFM_FlatCell}(F)], with the fit returning $\delta' = 89^{\circ}$, as expected.
+However, when the rubbing direction is not perfectly parallel to or perpendicular to the optic axis of the dichroic mirror, we see that the fit returns values that are biased towards $0^{\circ}$ or $90^{\circ}$, as seen in the transmitted intensities and associated fits in Figure~\ref{f:5-PFM_FlatCell}(H,I) for rubbing directions $25^{\circ}$ and $45^{\circ}$, respectively.
+Here, the fits [blue curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)] return $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively, in constrast to the expected values [black dashed curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)].
+% Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
+We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$, as shown in the transmitted intensity in Figure~\ref{f:5-PFM_FlatCell}(J).
 
 
 \subsection{Validation in spherical droplets and capillaries}
 We now turn to validating PFM using objects with a spatially varying director field.
-We start by considering spherical droplets of the Nile red-doped 5CB in water, with 8 mM SDS in the water to enforce homeotropic anchoring.
-By rotating the crossed polarizer and analyzer, we confirm that the droplets have the classic radial configuration~\cite{RN177}, with a single radial hedgehog at the center of each droplet.
+We start by considering spherical droplets of the Nile red-doped 5CB in water, with 8 mM SDS in the water to enforce homeotropic anchoring, shown in the bright-field image in Figure~\ref{f:5-PFM_Spheres}(A).
+We rotate the crossed polarizer and anlyzer (PA), as seen in Figure~\ref{f:5-PFM_Spheres}(B,C) for two diffent PA orientations, and confirm that the droplets have the classic radial configuration~\cite{RN177}, with a single radial hedgehog at the center of each droplet.
 Importantly, we also notice that when rotating the analyzer the entire image appears to translate along a circular trajectory.
 This translation comes from the analyzer; it has a wedge angle of $3^{\circ}$ to prevent specular reflections from affecting the final image quality.
 However, this also serves to displace the image along the orientation of the wedge angle such that rotating the analyzer by $360^{\circ}$ results in translating the image along a circular contour.
+We highlight this in Figure~\ref{f:5-PFM_Spheres}(D) by superimposing two PFM images of the droplets in Figure~\ref{f:5-PFM_Spheres}(A), where the PFM images have the same $0^{\circ}$ orientation of the analyzer pass-axis, but different analyzer wedge-angle orientations of $0^{\circ}$ and $180^{\circ}$, resulting in a displacement between the two images.
 Thus, in order to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, we have to correct this displacement so that $I(x,y)$ comes from the same $\delta'(x,y)$ for all $\Phi_A$.
 \begin{figure}
   \centering
@@ -296,21 +301,26 @@ Thus, in order to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, we
 \end{figure}\fxnote{indicate the proper pixel.}
 
 We accomplish this by translating all the images along a vector with a fixed magnitude and an orientation given by $\Phi_A$, removing the effect of the displacement due to the analyzer wedge angle for each image.
-For our 5x objective, the magnitude of the translation vector is 6 px.
+For our microscope setup, the magnitude of the translation vector is $-6$ px.
+Now superimposing the shifted versions of the images used in Figure~\ref{f:5-PFM_Spheres}(D), we see in Figure~\ref{f:5-PFM_Spheres}(E) that the displacement between the two images has disappeared.
 While in principle we could consider $\delta'(x,y)$ for every pixel, that is more information than we need and is susceptible to pixel-level noise.
-Instead, we blur each image with a Gaussian filter with standard deviation 5 px to remove noise and locally average the $\delta'$, and then downsample each image by a factor of 10\fxnote{check this} to reduce the number of fits we need to perform.
-We now fit the downsampled image with Eq~\ref{e:5-IntFit} and plot $\delta'(x,y)$ on top of our original intensity image\fxnote{check this}.
+Instead, we blur each image with a mean filter to both remove noise and locally average the $\delta'$, and then downsample each image to reduce the number of fits we need to perform.
+We illustrate this with the example PFM images in Figure~\ref{f:5-PFM_Spheres}(F-I), where the analyzer angle is indicated in each image.
+The original image is convolved with a mean filter of side length 7 px, yielding the blurred image in Figure~\ref{f:5-PFM_Spheres}(F) and then downsampled by a factor of 7, as displayed in Figure~\ref{f:5-PFM_Spheres}(G).
+Here, we focus on the highlighted pixel in the downsampled images in Figure~\ref{f:5-PFM_Spheres}(G-I) and plot the intensity in Figure~\ref{f:5-PFM_Spheres}(J).
+A fit of Eq~\ref{e:5-IntFit} to the data in Figure~\ref{f:5-PFM_Spheres}(J) yields $\delta' = 88^{\circ}$.
+We do this for every pixel in the downsampled images and plot $\delta'(x,y)$ on top of the epifluorescent image in Figure~\ref{f:5-PFM_Spheres}(K).
 Indeed, we see that we capture reasonably well the radial texture, with the birefringence of the dichroic mirror biasing the output $\delta'$ to be along $0^{\circ}$ and $90^{\circ}$.
 Note that we are unable to distinguish the actual point singularity due to the wide-field nature of our technique and the influence of the mirror; however, we clearly detect the presence of a radial defect in each droplet.
 
 We next consider a cylindrical capillary filled with Nile red-doped 5CB.\@
-The capillary has a 600 $\upmu$m inner diameter and is coated with lecithin to enforce homeotropic anchoring; it has a escaped-radial configuration with a point defect separating regions that escape in opposite directions~\cite{RN179}.
+The capillary has a 600 $\upmu$m inner diameter and is coated with lecithin to enforce homeotropic anchoring; it has a escaped-radial configuration with a point defect separating regions that escape in opposite directions~\cite{RN179}, as seen in the crossed-polar images in FigureFigure~\ref{f:5-PFM_Capillary}(A).
 We confirm that the defect is a radial point by rotating the crossed polarizer and analyzer and observing that the brushes follow the sense of rotation.
-We then image the capillary using PFM, where we have shifted, blurred, and downsampled the images as with the radial droplets.
-As with the droplets, we see that we capture reasonably well the expected escaped-radial texture, we capture the radial character of the defect between the two escaped domains, and we do not resolve the singularity itself in our output.
-Since the escaped-radial director field for 5CB has been analytically solved~\fxnote{find this... maybe Allender?}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\delta), 0, \cos(\delta)   \right \}$, where $\delta_{theory} = 2 \arctan(r/R) $ and $R$ the capillary radius in cylindrical coordiantes with $\hat{z}$ along the capillary axis, we can compare  $\delta_{theory}$ with our $\delta'_{measured}$.
+We then image the capillary using PFM, where we have shifted, blurred, and downsampled the images as with the radial droplets in Figure~\ref{f:5-PFM_Spheres}, and plot the output $\delta'$ on top of a bright-field image of the capillary in Figure~\ref{f:5-PFM_Capillary}(B).
+As with the droplets, we see that we capture reasonably well the expected escaped-radial texture; we capture the radial character of the defect between the two escaped domains; and we do not resolve the singularity itself in our output.
+Since the escaped-radial director field for 5CB has been analytically solved~\fxnote{find this... maybe Allender?}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega_{theory} = 2 \arctan(r/R) $, with $R$ the capillary radius in cylindrical coordiantes and $\hat{z}$ along the capillary axis, we can compare $\Omega_{theory}$ with our $\delta'_{measured}$, as plotted in Figure~\ref{f:5-PFM_Capillary}(C).
 Again, we see deviation, with our results biased towards $0^{\circ}$ and $90^{\circ}$.
-However, we can clearly see from both the plots of $\delta'$ vs $r/R$ and the plotted $\delta'$ fields that we capture the different escape directions, demonstrating that we can resolve the differences between a hyperbolic and a radial defect.
+However, we can clearly see from both the plot of $\delta'$ vs $x/R$ [Figure~\ref{f:5-PFM_Capillary}(B)] and the plotted $\delta'$ fields [Figure~\ref{f:5-PFM_Capillary}(C)] that we capture the different escape directions, demonstrating that we can resolve the differences between a hyperbolic and a radial defect.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_PFM_Capillary.png}
@@ -325,11 +335,10 @@ However, we can clearly see from both the plots of $\delta'$ vs $r/R$ and the pl
 
 \subsection{Defect conformation in a waists and barrels}
 We now use PFM on our waist-shaped bridges to determine if the defect is radial or hyperbolic.
-To illustrate this, we take an example Nile red-doped NLC bridge seen under bright-field illumination in Figure~\fxnote{fig ehre} and in PFM after shifting, blurring, and downsampling in Figure~\fxnote{fig ehre}, where the analyzer angle is depicted schematically in the lower-right corner of each image.
-For this example, we focus on the point $(x_0,y_0)$ highlighted by the white square in Figure~\fxnote{fig ehre}, plot the mean intensity as a function of $\Phi_A$, and fit to Eq.~\ref{e:5-IntFit}, as shown in Figure~\fxnote{fig ehre}, yielding $\delta'(x_0,y_0) = -45^o$.
-We do this throughout the whole image, and plot the director orientations on top of an epifluorescent image in Figure~\fxnote{fig ehre}.
-We find that the defect is clearly hyperbolic.
-We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, as shown in Figure~\fxnote{fig ehre}, and find that the defect is always hyperbolic, implying that our bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
+Since the output of PFM is biased due to the dichroic mirror, we orient the bridges with the plates along $45^{\circ}$, as seen in the bright-field image of a bridge in Figure~\ref{f:5-PFM_Bridge}(A), such that PFM will best distinguish the differences between a radial and a hyperbolic defect.
+We start with the waist-shaped briges; for each bridge we perform a PFM analysis and plot the $\delta'$ on top of an epifluorescent image, as shown for an example bridge with large $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(A,B) and an example bridge with small $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(C,D).
+For both examples, we see that the defect structure is hyperbolic.
+We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, and find that the defect is always hyperbolic, implying that our bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_PFM_Bridge.png}
@@ -341,7 +350,7 @@ We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \g
 \end{figure}\fxnote{fix scale bar in A}
 
 We now turn to barrel-shaped bridges, where we add the water and SDS mixture when the 5CB is in the isotropic phase, and we consider barrels made with both a large and a small initial $\Gamma$.
-As shown in the plots of $\delta'$ on top of epifluorescent images of barrels with different $\Gamma$ in Figure~\fxnote{fig ehre}, the barrel-shaped bridges at all measured $\Gamma$ have radial defects.
+As demonstrated in the plots of $\delta'$ on top of epifluorescent images of two example barrels with different $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(E-H), the barrel-shaped bridges at all measured $\Gamma$ have radial defects.
 Thus, we see that the shape of the bridge, driven by the contact angle, determines if the defect is radial or hyperbolic.
 This makes sense intuitively as the homeotropic boundary conditions cause the the boundary to act as a level surface for the director.
 Due to the ability of shape to bias the defect structure, the cylindrical bridge with $\Gamma \sim \mathcal{O}\left (1 \right )$ becomes an interestingly peculiar case, as the shape is neither a waist nor a barrel.
@@ -358,10 +367,10 @@ Although the free energy in the algorithm presented there depends on the cut-off
 We modify the algorithm to treat the small region containing the defect separately from the remainder of the computation volume, such that the calculated free energy converges as the mesh size grows~\cite{RN199,RN200,RN201}.
 
 We start by modeling a cylindrical bridge.
-For the 5CB values of $K_{11}/K_{33} = 0.74$, a bridge should undergo a defect transition between a radial ring and a hyperbolic point, as highlighted by the dashed line in the phase diagram in Figure~\fxnote{fig ehre}.
+For the 5CB values of $K_{11}/K_{33} = 0.74$, a bridge should undergo a defect transition between a radial ring and a hyperbolic point, as highlighted by the dashed line in the phase diagram in Figure~\ref{f:5-Calcs}(A).
 This result is consistent with prior computational modeling~\cite{RN144}, and highlights the peculiarity of the cylindrical case.
 However, we predict ring-to-point defect transitions at aspect ratios that are significantly smaller than previously reported~\cite{RN144}.
-In addition, in contrast to prior modeling, we find that there is no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [see Figure~\fxnote{fig ehre}].
+In addition, in contrast to prior modeling, we find that there is no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [Figure~\ref{f:5-Calcs}(A)].
 Instead, our numerical calculations predict that the radius of the radial ring should vary linearly with $\Gamma$, smoothly collapsing to a point defect for low enough $\Gamma$.
 Recent experimental results examining the structure of radial point defects in cylindrical capillaries where $\Gamma \rightarrow \infty$ validate this prediction, finding that radial point defects are instead radial rings with a ring radius $R \sim \mathcal{O}(10^{-8})$ m~\cite{RN280}.
 \begin{figure}
@@ -376,12 +385,12 @@ Recent experimental results examining the structure of radial point defects in c
 \end{figure}
 
 We then change the shape of the boundaries in the numerical calculations.
-Consistent with our experiments, we see that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ that we used, as shown in Figure~\fxnote{fig ehre}.
-Furthermore, we find that the ring defect radius predicted by our calculations [circles, Figure~\fxnote{fig ehre}] for a waist-like shape agrees well with our experimental data [squares, Figure~\fxnote{fig ehre}].
-In addition, we see that the hyperbolic-ring to hyperbolic-point transition happens at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$, in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
+Consistent with our experiments, we see that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ that we used, as shown in Figure~\ref{f:5-Calcs}(B).
+Furthermore, we find that the ring defect radius predicted by our calculations [(${\color{red} \bullet}$), Figure~\ref{f:5-ExpWaistTop}(F)] for a waist-like shape agrees well with our experimental data [($\blacksquare$), Figure~\ref{f:5-ExpWaistTop}(F)].
+In addition, we see that the hyperbolic-ring to hyperbolic-point transition happens at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$ [dashed line, Figure~\ref{f:5-Calcs}(B)], in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
 
 We also investigate the hysteresis in our experimental hyperbolic ring to hyperbolic point transition by calculating the energy landscape of a waist-shaped nematic bridge as a function of ring radius.
-Results for for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\fxnote{fig ehre}, where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
+Results for for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\ref{f:5-Calcs}(C), where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
 We indeed see that the point defect is metastable for $\Gamma > \Gamma_c$, consistent with our interpretation of the experimental results.
 In addition, given a representative bridge height of $H = 100$ $\upmu$m and $K_{33} \approx 10^{-11}$ N, we note that the height of the barrier is always $\mathcal{O} \left ( 10^{4} \right )$ k$_\textrm{B}$T, implying that a point defect will not spontaneously transform into a ring defect in the length of our experiments, also consistent with our experimental observations.
 For $\Gamma < \Gamma_c$, this metastability disappears, and the point defect is the only stable defect state.
@@ -389,7 +398,7 @@ For $\Gamma < \Gamma_c$, this metastability disappears, and the point defect is 
 Turning to barrel-shaped bridges, our calculations show that all hyperbolic defects disappear from the phase diagram, leaving the radial ring as the only equilibrium state for the range of $\Gamma$ and $K_{11/K_{33}}$ explored.
 Thus, we confirm that the shape of the free-surface determines if the enclosed defect is radial or hyperbolic.
 Barrel-like shapes with positive Gaussian curvature favor radial defects and waist-like shapes with negative Gaussian curvature favor hyperbolic defects.
-We also see that the ring radius predicted by our calculations in a barrel-shaped bridge qualitatively agrees with our experimental results, despite the unknown influence of the SDS micelles.
+We also see that the ring radius predicted by our calculations in a barrel-shaped bridge [(${\color{olive} \bullet}$), Figure~\ref{f:5-ExpBarrelRing}(A)] qualitatively agrees with our experimental results [squares, Figure~\ref{f:5-ExpBarrelRing}(A)], despite the unknown influence of the SDS micelles.
 
 
 
