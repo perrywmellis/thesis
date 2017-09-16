@@ -2,26 +2,421 @@
 \chapter{Homeotropic nematics confined in capillary bridges}
 
 \section{Introduction}
+The research presented so far has focused on nematic materials confined by toroidal surfaces.
+Here we consider a NLC confined to a topologically spherical volume with homeotropic boundary conditions.
+As established in Chapter~\ref{c:2}, the volume must contain a total hedgehog charge $|d| = 1$, with the hedgehog charge defined in Eq.~\ref{e:2-hedCharge}.
+Using a single defect, this condition can be is satisfied by $d=-1$ hyperbolic point defects or hyperbolic ring defects, shown schematically from the side and top in Figure~\ref{f:2-3DMeas}(B,D), and also by $d=+1$ radial point defects or radial ring defects, shown schematically from the side and top in Figure~\ref{f:2-3DMeas}(A,C).
+The myriad of possible defect configurations gives topologically-confined systems a richness that has been well-explored for the case of geometrically spherical boundaries, where the confinement can only be modified through changing the sphere radius~\cite{RN150,RN277,RN278,RN275,RN276}.
+However, the role of shape when confining NLC in geometries with more than one characteristic lengthscale is not completely understood.
+
+Consider the case of a cylindrical geometry of aspect ratio $\Gamma = 2 R/H$, where $R$ is the radius of the cylinder and $H$ is its height.
+With this notation, the classic case of a cylindrical capillary corresponds to $\Gamma \ll 1$. The $\Gamma \gg 1$ situation corresponds to confinement between narrowly separated plates.
+When $\Gamma \sim \mathcal{O}\left( 1 \right)$, the equilibrium defect configuration undergoes a transition from a ring defect, found when $\Gamma \gg 1$, to the point defect, seen when $\Gamma \ll 1$.
+Prior experimental work investigating this transition used liquid crystal capillary bridges made with 5CB, and reported a transition between a claimed hyperbolic ring defect [see Figure~\ref{f:2-3DMeas}(D)] and a claimed radial point defect [see Figure~\ref{f:2-3DMeas}(A)]~\cite{RN139,RN147}.
+% NLC pentylcyanobiphenyl (5CB)
+However, we note that Refs.~\cite{RN139,RN147} only observed the bridge structures from above, where the radial and hyperbolic defect structures look the same, as demonstrated schematically in Figure~\ref{f:2-3DMeas}(A,B) and Figure~\ref{f:2-3DMeas}(C,D) for ring defects and point defects, respectively.
+Prior theoretical work used computational modeling to explore the defect configuration within a cylindrical bridge as a function of $\Gamma$ and $K_{11}/K_{33}$~\cite{RN138,RN144}.
+% where $K_{11}$ and $K_{33}$ are the Frank elastic constants corresponding to splay and bend distortions, respectively
+For 5CB, which has $K_{11}/K_{33} = 0.74$, they predicted, in contrast to the claims in Refs.~\cite{RN139,RN147}, that the bridge should transition between a radial ring defect and a hyperbolic point defect.
+
+In this Chapter, we address the conflict described in the previous paragraph and perform both experiments and computations pertaining to a confined NLC within a capillary bridge sandwiched between two parallel plates of adjustable separation and hence of varying $\Gamma$.
+By observing our experimental bridges from both the top and the side and comparing our observations with results from our computations, we find that that shape of the free surface controls whether the defect is radial or hyperbolic: waist-like bridges contain hyperbolic defects, and barrel-like bridges contain radial defects.
+To accomplish this, we develop polarized epifluorescent microscopy (PFM), an imaging technique allowing us to distinguish radial and hyperbolic defect structures in scenarios where common OPM techniques fail.
+In addition, we find good agreement between experiment and theory for the critical aspect ratio, $\Gamma_c$, at which the defect in the bridge undergoes a transition between a ring defect and a point defect.
+Finally, we see that this transition is hysteretic, due to the metastability of the point defect.
+Our results clarify the prior discrepancies, and at the same illustrate how shape and elasticity dictate defect structure in confined homeotropic nematics.
+
+
+
 
 \section{Making capillary bridges}
+To make a capillary bridge, we confine 5CB between two parallel glass microscope slides.
+Prior to use, the slides were dip-coated with $0.1\%$ w/w lecithin in hexane and left to dry to enforce homeotropic anchoring~\cite{RN140}.
+We set up an experiment to view a bridge from the top by first placing both microscope slides stacked on top of each other on the microscope stage.
+We then epoxy the top plate to a rod affixed to a micromanipulator such that we can adjust the distance between the slides.
+Note that this simple protocol ensures that the two microscope slides are parallel to each other and to the microscope stage.
+After the epoxy hardens, we raise the top slide and use a glass capillary to place a $\sim$nl-volume drop of 5CB onto the bottom plate.
+We then bring the top plate down until it makes contact with the sessile droplet and forms a capillary bridge.
+The final experimental setup is depicted schematically in Figure~\ref{f:5-BuildSchemaic}(A).
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_BuildSchematic.png}
+  \caption{Experimental set-up.
+  (A,B) Schematic from the side of the setup to view a bridge from the (A) top and (B) side.
+  The zoomed-in portion of (A,B) highlights the setup to make and manipulate the bridge on the microscope stage.}\label{f:5-BuildSchemaic}
+\end{figure}
+
+To set up an experiment to view a bridge from the side, we place an uncoated glass slide on the microscope stage to act as a base, and then place a lecithin-coated glass slide vertically on the base and use a pair of blocks to hold it in place.
+We then epoxy the lecithin-coated slide to the base, applying epoxy to only one side of the joint between the base and the lecithin-coated slide.
+Once the epoxy has hardened, we remove the blocks and place the second lecithin-coated glass slide vertically on the base and flush against the previously-epoxied glass slide.
+We then use the rod attached to the micromanipulator to hold the two vertical slides flush while we epoxy the second lecithin-coated glass slide to the rod.
+This protocol ensures that the two lecithin-coated glass slides are parallel to each other and perpendicular to the base.
+After the epoxy hardens, we use the mircomanipulator to move the adjustable plate as far as possible from the fixed plate and place a $\sim$nl-volume drop of 5CB onto the fixed vertical plate as close to the base as we can.
+Finally, we bring the adjustable plate closer to the fixed plate until it makes contact with the sessile drop and forms a capillary bridge.
+The final experimental setup for a side view is depicted schematically in Figure~\ref{f:5-BuildSchemaic}(B).
+
+As described, this procedure will yield a capillary bridge where the free-surface is in contact with air.
+To make a capillary bridge with the free surface in contact with water, we first make a bridge as described above and then pipette a drop of water near the edge of the parallel plates and let capillary action fill the gap between the plates.
+The water contains 8 mM SDS to enforce homeotropic anchoring.
+
+
+
 
 \section{Shape of capillary bridges}
+We begin by viewing the bridges from the side and characterizing their shapes.
+Bridges with air as an outer medium have a waist-like shape with negative Gaussian curvature everywhere on the free surface, as shown by the bright-field image of an example bridge in Figure~\ref{f:5-ShapeContour}(A).
+In contrast, as shown in the image of an example bridge in Figure~\ref{f:5-ShapeContour}(C), bridges with water and SDS as the outer medium have a barrel-like shape with positive Gaussian curvature everywhere on the free surface.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_ShapeContour.png}
+  \caption{Measuring the shape of a bridge.
+  (A,C), Bright-field images from the side of a (A) waist-shaped and a (C) barrel-shaped bridge, with the effective radius $R$ and height $H$ of each bridge defined in the image.
+  The waist in (A) has $R = 180$ $\upmu$m and $H = 170$ $\upmu$m, and the barrel in (C) has $R = 280$ $\upmu$m and $H = 300$ $\upmu$m.
+  (B,D), Contours of the bridge shown in (A,C), respectively, at different $\Gamma = 2R/H$, where the positions have been scaled by $H$ and the (open symbols) lower contours have been reflected and shifted to line up with the (filled symbols) upper contours.
+  The contours in (B) have (${\blacksquare,\, \square}$) $\Gamma = 7.3$,
+   (${\color{red} \bullet,\, \circ}$) $\Gamma = 4.6$,
+   (${\color{blue} \blacktriangle,\, \vartriangle}$) $\Gamma = 2.0$,
+   (${\color{magenta} \blacktriangledown,\, \triangledown}$) $\Gamma = 1.0$,
+   (${\color{cyan} \blacklozenge,\, \lozenge}$) $\Gamma = 0.6$, and
+   (${\color{olive} \star,\, \star}$) $\Gamma = 0.4$.
+  The contours in (D) have (${\blacksquare,\, \square}$) $\Gamma = 4.5$,
+  ${\color{red} \bullet,\, \circ}$) $\Gamma = 3.9$,
+  (${\color{blue} \blacktriangle,\, \vartriangle}$) $\Gamma = 1.9$,
+  (${\color{magenta} \blacktriangledown,\, \triangledown}$) $\Gamma = 1.5$, and
+  (${\color{cyan} \blacklozenge,\, \lozenge}$) $\Gamma = 1.3$.}\label{f:5-ShapeContour}
+\end{figure}
+
 \subsection{Measuring the shape}
+As demonstrated on the example bridges in Figure~\ref{f:5-ShapeContour}(A,C), we record both the upper and lower contours giving the shape of the bridge as a function of $\Gamma$, where we calculate an effective aspect ratio by taking $R$ as the radius of the circular cross-section of the bridge midway between the two confining plates and taking $H$ as the distance between the plates [see Figure~\ref{f:5-ShapeContour}(A,C)].
+We then plot the contours normalized by the bridge height, with the left contours reflected about the vertical axis, and all contours shifted so that their lowest point corresponds to the origin, as shown in Figure~\ref{f:5-ShapeContour}(B,D) for the bridge in Figure~\ref{f:5-ShapeContour}(A,C), respectively.
+For both the barrels and the waists, the contours all approximately have the same shape regardless of $\Gamma$ or experiment.
+
+
 \subsection{Constant mean curvature surfaces}
-\subsection{Contact angle comparisons}
+To address the origin of the shape, we consider the relevant forces: the gravitational force $|\mathbf{F}_g| \sim \rho g R^2 H$; the surface tension force $|\mathbf{F}_{\gamma}| \sim \gamma H$; and the nematic elasticity force $|\mathbf{F}_K| \sim K$.
+The surface tension, density, and Frank elastic constant of 5CB are equal, respectively, to $\gamma \approx 30$ mN/m, $\rho \approx 1$ g/mL, and $K \approx 10^{-11}$ N.
+We compare these forces via two dimensionless groups: the Bond number $\rm{Bo} = \dfrac{|\mathbf{F}_g|}{|\mathbf{F}_{\gamma}|} = \dfrac{\rho g R^2}{\gamma} \sim  \mathcal{O}\left (10^{-2} \right)$, and the elasticity group,
+ $\dfrac{|\mathbf{F}_{\gamma}|}{|\mathbf{F}_K|} =  \dfrac{\gamma H}{K} \sim \mathcal{O}\left (10^{5} \right )$, where we have taken $H = R = 100$ $\mu$m as representative values.
+As $|\mathbf{F}_{\gamma}|$ is the dominant force, the mean curvature of the free surface of the bridge must be constant~\cite{RN178}.
+Thus, the contours for a surface of revolution in cylindrical coordinates $\{r,\varphi, z\}$ should conform to the expression:
+\begin{equation}
+  \Delta P = \frac{\gamma}{2} \left ( \frac{\textrm{d}\theta}{\textrm{d}s} + \frac{\sin \theta}{r} \right ) = \textrm{cons't},\label{e:5-ConsMeanCurv}
+\end{equation}
+where $\Delta P$ is the Laplace Pressure from Eq.~\ref{e:3-LapPres}, $\gamma$ is the surface tension, and $\theta$ and $s$ are the elevation angle and arclength parameter, respectively, as defined in Figure~\ref{f:5-ShapeEnvelope}(A).
+This further implies that the contact angle $\theta_0$ between the lecithin-coated glass slide, the outer medium, and the 5CB should set the shape~\cite{RN178}.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_ShapeEnvelope.png}
+  \caption{Constant mean curvature surfaces.
+  (A), The elevation angle $\theta$ and arclength parameter $s$ defined for a surface of revolution in cylindrical coordinates, $\{r,\varphi, z\}$.
+  (B,C), Numerically calculated contours for a constant mean curvature surface of revolution plotted on experimentally measured contours for a (B) waist and a (C) barrel.
+  The numerical solutions have contact angles (B) (black line) $\theta_0^{waist} = 37^{\circ}$, (cyan line) $\theta_0^{waist} = 35^{\circ}$ and (C) (black line) $\theta_0^{barrel} = 149^{\circ}$, (cyan line) $\theta_0^{barrel} = 120^{\circ}$.
+  The measured contours in (B,C) are reproduced from Figure~\ref{f:5-ShapeContour}(B,D), respectively, and form the envelope of the measured contours in Figure~\ref{f:5-ShapeContour}(B,D).}\label{f:5-ShapeEnvelope}
+\end{figure}
+
+To confirm this, we consider each bridge and numerically solve Eq.~\ref{e:5-ConsMeanCurv} to produce constant-mean curvature contours that capture the envelope of the observed contours for a bridge, as shown by the envelops in Figure~\ref{f:5-ShapeEnvelope}(B,C), corresponding to the example bridges in Figure~~\ref{f:5-ShapeEnvelope}(A,C), respectively.
+Since the bridge height and $\Gamma$ are measured in each experiment, we only need to specify $\Delta P$ and choose the contact angle, $\theta_0 = \theta(0)$ as an initial condition for each solution.
+We average the contact angles from the numerically-solved contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$.
+We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta_0^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta_0^{water} = 123^{\circ} \pm 5^{\circ}$, in agreement with our data from the bridges.
+
+
+
 
 \section{Defect structure transitions}
+We view the bridge from the top to determine whether the defect is a ring or a point; examples of these situations are shown in the bright-field images of a waist-like bridge in Figure~\ref{f:5-ExpWaistTop}(A,C) and the corresponding crossed-polar images in  Figure~\ref{f:5-ExpWaistTop}(B,D).
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_ExpWaistTop.png}
+  \caption{Data for bright-field and optical-polarized microscopy of waist-shaped NLC bridges viewed from the top.
+  (A) Example bright-field image of a waist-shaped bridge with a ring defect.
+  (B) Crossed-polar image of the bridge in (A).
+  (C) Example bright-field image of a waist-shaped bridge with a point defect. This is the same bridge as in (A), but with an increased distance between the plates.
+  (D) Crossed-polar image of the bridge in (C).
+  (E) Experimental phase diagram for the defect state, demonstrating hysteresis at the transition.
+  The arrows indicate the directions in which $\Gamma$ is changed in the experiments.
+  Starting at a large $\Gamma$ in the ring-defect state (${\color{red} \circ}$) and decreasing $\Gamma$ leads to a transition to a point defect (${\color{blue} \times}$) at a value of $\Gamma = 2.7 \pm 0.3$, which we obtain by averaging the result for all bridges.
+  In contrast, when starting at small $\Gamma$ in a point-defect state and increasing $\Gamma$, the point-defect state persists; this is represented with a line.
+  (F) The ring defect diameter in a waist-shaped bridge scaled by height of the bridge divided by 2, plotted as a function of the bridge aspect ratio. A vanishing ring radius corresponds to a point defect.
+  The ($\blacksquare$) are experimental measurements; the (${\color{red} \bullet}$) correspond to computations in a waist structure using the elastic constants for 5CB.\@
+  Scale bars in (B,D): 250 $\upmu$m.}\label{f:5-ExpWaistTop}
+\end{figure}
+
 \subsection{Defect transitions in a waist}
+We start at large $\Gamma$, where we observe a ring defect, and determine the radius of the ring, $R_{ring}$, as we decrease $\Gamma$ by increasing $H$ in discrete steps.
+At each $H$, we monitor the bridge over time to ensure that the defect state no longer changes and the system is in equilibrium.
+In addition, as we decrease $\Gamma$ in each bridge, we also determine the effective aspect ratio for the defect transition, $\Gamma_c$.
+Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\ref{f:5-ExpWaistTop}(E), where we have plotted each observation of a stable ring defect with open circles and of a stable point defect with ``x'' symbols.
+The ring radius, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\ref{f:5-ExpWaistTop}(F), where we have again plotted every measurement we have performed.
+At $\Gamma_c$, the  ring becomes unstable, and collapses to a point defect, yielding the discontinuity in $R_{ring}$ shown with a dashed line in Figure~\ref{f:5-ExpWaistTop}(F), where the point defect is represented as having a vanishing $R_{ring}$.
+
+However, when we start at $\Gamma < \Gamma_c$ in a point defect state and increase $\Gamma$, the point defect never transitions to a ring, as seen in the lower contour in Figure~\ref{f:5-ExpWaistTop}(F).
+Interestingly, if for $\Gamma > \Gamma_c$, we melt the nematic phase in a bridge containing a point defect, we always  recover a ring defect state when we let the bridge cool back to the nematic phase.
+This suggests that the point defect is metastable for $\Gamma > \Gamma_c$.
+
+
 \subsection{Defect transitions in a barrel}
+Since every barrel-shaped bridge we make initially starts as a waist, we need to make sure the defect state in the waist does not affect the final state in the barrel.
+Thus, we make our barrels both from waists with the 5CB in the nematic phase and from waists where the 5CB has been melted to the isotropic phase before adding the water and SDS mixture.
+For the barrels made with the 5CB in the isotropic phase, we also heat the water and SDS mixture before making the barrel so that the 5CB does not cool to the nematic phase before the barrel shape has been established.
+As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step, as shown in the bright field images of a barrel for four values of $\Gamma$ in Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G), with the associated crossed-polar image in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H).
+However, over time the SDS forms micelles in the 5CB that self-assemble onto the ring defect and produce filimentary structures in the NLC~\cite{RN279}.
+These structures are visible in the crossed-polar images [see Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H)] before they are clearly visible in the bright-field images [Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G)], indicating that they affect the NLC director.
+In addition, we see that the self-assembled micelles can even stabilize non-circular ring shapes in some of our measurements [see Figure~\ref{f:5-ExpBarrelTop}(G), Figure~\ref{f:5-ExpBarrelRing}(B)], indicating that the SDS is clearly affecting the defect state we measure~\cite{RN279,RN280}.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_ExpBarrelTop.png}
+  \caption{Bright-field and optical-polarized microscopy of barrel-shaped NLC bridges viewed from the top.
+  (A,C,E,G), Bright-field images of a barrel-shaped bridge viewed from top with (A) $\Gamma = 5.0$, (C) $\Gamma = 2.6$, (E) $\Gamma = 1.4$, and (G) $\Gamma = 0.9$.
+  Measurements were taken starting at (A) with $\Gamma = 5.0$ and decreasing $\Gamma$ in discrete steps.
+  (B,D,F,H), Corresponding crossed-polar images of the bridges in (A,C,E,G), respectively.
+  Note how the sodium dodecyl sulfate (SDS) used to enforce homeotropic anchoring in the barrels forms micelles and disrupts the director in the bridge over time, from the initial measurement in (A,B) to the final measurement pictured in (G,H).
+  The scale bar in (A) is $250$ $\upmu$m.}\label{f:5-ExpBarrelTop}
+\end{figure}
+
+Thus, we restrict our measurements to ring defects that are circular and centered in the bridge.
+We also make sure that the region within the ring in the crossed-polar images is dark, indicating that the SDS has not yet affected the entire bridge.
+For example, we exclude the data in Figure~\ref{f:5-ExpBarrelTop}(E-H).
+We then plot the ring radius scaled by the bridge height as a function of measurement number for each bridge, as seen in Figure~\ref{f:5-ExpBarrelRing}(A), where the initial measurement for a bridge is in black, the second measurement for a bridge is in red, the third measurement in blue and the fourth in magenta.
+The few magenta and blue points compared to the number of black and red points in Figure~\ref{f:5-ExpBarrelRing}(A) indicate that the effect of the micelles grows in time, such that we rarely have good data to make a fourth measurement and we never have good enough data to make a fifth measurement for a given bridge.
+Thus, even though for large $\Gamma$ we see that the scaled ring radius varies linearly with $\Gamma$, we cannot make a quantitative prediction about a ring-to-point defect transition in our barrel-shaped bridges.
+Even when we make barrels with the 5CB in the isotropic phase with low $\Gamma$, we don't see a clear collapse to a point defect; instead, we typically see see a small ring defect with a scaled ring radius less than $0.3$, as pictured in Figure~\ref{f:5-ExpBarrelRing}(B,C) for a barrel made with $\Gamma = 2.4$.
+In all our measurements, we see only three instances of a clear point defect in a barrel-shaped bridge, with one of the instances of a point defect shown in Figure~\ref{f:5-ExpBarrelRing}(D,E).
+Finally, we note that we see no difference between barrels made with the 5CB in the nematic phase [filled squares, Figure~\ref{f:5-ExpBarrelRing}(A)] and barrels made with 5CB in the isotropic phase [open squares, Figure~\ref{f:5-ExpBarrelRing}(A)].
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_ExpBarrelRing.png}
+  \caption{Ring and point defects in barrel-shaped NLC bridges viewed from the top.
+  (A), The ring defect diameter in a barrel-shaped bridge scaled by height of the bridge divided by 2, plotted as a function of the bridge aspect ratio, $\Gamma$.
+  A vanishing ring radius corresponds to a point defect.
+  The experimental points include barrels made with the 5CB in the [open squares] nematic phase and the 5CB in the [filled squares] isotropic phase.
+  We label the experimental points with their measurement number, with (${\blacksquare,\, \square}$) corresponding to the first measurement, (${\color{red} \blacksquare,\, \square}$) the second measurement, (${\color{blue} \blacksquare,\, \square}$) the third measurement, and (${\color{magenta} \blacksquare,\, \square}$) the fourth measurement, where we start at a large $\Gamma$ and decrease $\Gamma$ with each subsequent measurement in a single barrel.
+  The (${\color{olive} \bullet}$) correspond to computations in a barrel structure using the elastic constants for 5CB.\@
+  (B-C), First measurement of a barrel with $\Gamma = 2.4$ made with the 5CB in the isotropic phase and viewed from the top just after the (B) bright field and (C) corresponding crossed-polar image indicate the director field has stopped changing.
+  We exclude this bridge from the plot in (A) due to the presence of micelles; we cannot say if the micelles are preventing the ring from collapsing to a point defect of if the measured $2 R_{ring}/H = 0.2$ is the equilibrium state.
+  (D,E), First measurement of a barrel with $\Gamma = 2.8$ made with the 5CB in the isotropic phase and viewed from the top just after the (D) bright field and (E) corresponding crossed-polar image indicate the director field has stopped changing.
+  Here, the defect structure is a point and is plotted in (A) as such.
+  The scale bar in (B) is 250 $\upmu$m.}\label{f:5-ExpBarrelRing}
+\end{figure}
+
+
+
 
 \section{Measuring defect conformation using fluorescence microscopy}
-\subsection{Theoretical overview of fluorescence}
+We return to viewing bridges from the side to determine if the defects are radial or hyperbolic.
+We start by viewing the bridges with OPM and rotating the crossed polarizer and analyzer; the texture for a radial defect rotates in the same direction as the polarizer and analyzer, while the texture for a hyperbolic defect rotates with the opposite sense~\cite{RN177}.
+However, due to the large curvature of the waist and barrel shapes when $\Gamma$ is large, we cannot clearly distinguish the rotation of the texture.
+This is demonstrated in Figure~\ref{f:5-PA_Rot} for a bridge with small $\Gamma$ [see Figure~\ref{f:5-PA_Rot}(A-C)] and a bridge with large $\Gamma$ [see Figure~\ref{f:5-PA_Rot}(D-F)].
+Changing the polarizer and analyzer (PA) orientations by 45$^{\circ}$ for the bridge with small $\Gamma$ [Figure~\ref{f:5-PA_Rot}(B,C)] produces a noticeable change in the texture; in contrast, rotating PA by 45$^{\circ}$ for the bridge with large $\Gamma$ [Figure~\ref{f:5-PA_Rot}(E,F)] produces no discernible change in the texture.
+As an alternative approach, we develop and use polarized epifluorescent microscopy (PFM) to see whether the defect is radial or hyperbolic.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_PA_Rot.png}
+  \caption{Rotating the polarizer and analyzer for a waist-shaped bridge viewed with optical-polarized microscopy from the side.
+  (A-C), A waist-shaped bridge with $\Gamma = 1.2$ viewed from the side under (A) bright field and (B,C) with crossed polarizer and analyzer (PA), where the PA orientations are specified in each image.
+  (D-F), A waist-shaped bridge with $\Gamma = 6.6$ viewed from the side under (D) bright field and (E,F) with crossed PA, where the PA orientations are specified in each image.
+  The scale bars in (A,D) are 250 $\upmu$m.}\label{f:5-PA_Rot}
+\end{figure}
+
+\subsection{Theoretical overview of polarized epifluorescent microscopy}
+Fluorescence occurs when a material absorbs and then re-emits light, where the initial absorption excites a singlet state in the material which then decays via photon emission.
+The realization that this process consists of both absorption and emission of light as well as the name ``fluorescence'' itself is attributed to Stokes~\cite{RN286,RN287}.
+However, the understanding that fluorescent emission could be polarized came from work by Weigert with small fluorescent molecules, or fluorophores~\cite{RN285}.
+Individual fluorophores and absorb and emit light like dipoles, with the absorption/excitation dipole and the emission dipole not necessarily parallel to each other~\cite{RN282}.
+Consequently, while an isotropic distribution of fluorophores will absorb and emit light isotropically, individual fluorophores are sensitive to the polarization of the excitation light and emit light linearly polarized light along emission dipole~\cite{RN282}.
+
+Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community, from techniques like F\"oster Resonance Energy Transfer (FRET), to the myriad of assays designed to measure quantities such as protease content, kinase content, and even cellular or molecular mobility~\cite{RN282,RN284}.
+Recently, the liquid crystal community has developed a renewed interest in polarized fluorescence, with techniques like Polarized Epifluorescent Confocal Microscopy (PCFM), enabling 3D resolution of a liquid-crystalline director~\cite{RN148,RN174}.
+Here, we take inspiration from PCFM and develop Polarized Epifluorescent Microscopy (PFM), its wide-field cousin.
+As its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
+Introducing the fluorophores in a NLC at low concentrations, the long axis of the fluorophores will align along the nematic director without affecting the director configuration~\cite{RN148,RN174}.
+Thus, the fluorescent emission of the mixed fluorophore and NLC system will be linearly polarized along the director.
+If we excite the sample with unpolarized light and place an analyzer in the emitted light path, as depicted schematically in Figure~\ref{f:5-PFM_FlatCell}(A) then the emitted intensity from each point in the sample will be $\propto \cos^2{(\Phi_A-\delta)}$, where $\Phi_A$ is the orientation of the analyzer and $\delta$ is the orientation of $\mathbf{n}$ in the plane of the output image~\cite{RN174}.
+However, as we use wide-field fluorescent microscopy, the recorded intensity at each point in the output images reflects an averaging of the director along the light path.
+Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for the simplicity of PFM.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_PFM_FlatCell.png}
+  \caption{Polarized epifluorescent microscopy on a planar NLC cell filled with a mixture of 5CB and Nile Red.
+  (A), Schematic from the side of the setup for polarized epifluorescent microscopy (PFM).
+  (B-D), Optical-polarized microscopy (B,C) images and (D) transmitted intensity as a function of analyzer angle $\Phi_A$, with no sample, PA crossed, and the dichroic mirror with the optic axis along $\hat{y}$ or $\hat{x}$ in the light path.
+  $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
+  (E-G), PFM (E,F) images and (G) recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$.
+  $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
+  The blue curve is a fit of the data to Eq.~\ref{e:5-IntFit}, returning $\delta' = 89^{\circ}$.
+  (H,I) Recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction (H) 25$^{\circ}$ CCW from $\hat{y}$ and (I) 45$^{\circ}$ CCW from $\hat{y}$.
+  The blue curves are fits of the data to Eq.~\ref{e:5-IntFit} and have $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively.
+  The black dashed lines correspond to theoretical curves for $\delta' = 25^{\circ}$ and $\delta' = 45^{\circ}$, respectively.
+  (J), Recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$ and the 5CB melted to the isotropic.}\label{f:5-PFM_FlatCell}
+\end{figure}
+
 \subsection{Experimental realization}
-\subsection{Validation in planar nematic cells}
+We add $0.01$ wt\% Nile red to 5CB; at this concentration, Nile red does not affect the director configuration~\cite{RN173}.
+We image our sample using with a standard epifluorescent setup with an analyzer in the emitted light path [Figure~\ref{f:5-PFM_FlatCell}(A)] and a short-arc lamp as our light source.
+We use filter set \#20 from Zeiss, with a 534~nm~--~558~nm bandpass excitation filter, a 560~nm longpass dichroic mirror, and a 575~--~640~nm emission filter~\cite{RN288}.
+For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$ and then fit the intensity at every pixel to the form:
+\begin{equation}
+    I(x,y) = A + B \cos^2{(\Phi_A-\delta'(x,y))},\label{e:5-IntFit}
+\end{equation}
+where $A$, $B$ and $\delta'$ are fitting parameters; $A$ and $B$ set the minimum value and range of $I$, respectively, and $\delta'$ reflects an average of the director orientation along the light path.
+Using the extracted $\delta'$ values, we can then plot the associated director field for a sample.
+Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the transmitted light images with the polarizer and analyzer crossed and the mirror in the light path in Figure~\ref{f:5-PFM_FlatCell}(B,C), where the analyzer angle is indicated in each image.
+By plotting the average transmitted intensity under crossed polarizers with the mirror in the light path as a function of $\Phi_A$, as seen in Figuure~\ref{f:5-PFM_FlatCell}(D) with $\Phi_A$ measured CCW from $\hat{y}$, we see that the optic axis of the dichroic mirror must lie along either $\hat{x}$ or $\hat{y}$.
+Thus, we will take all our angle measurements CCW from $\hat{y}$ for the remainder of the Chapter.
+
+We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$, as seen for the example images of a planar cell with the rubbing direction along $90^{\circ}$ and different analyzer angles in Figure~\ref{f:5-PFM_FlatCell}(E,F).
+The transmitted intensity as a function of $\Phi_A$ [see Figure~\ref{f:5-PFM_FlatCell}(G)] is a minimum for $\Phi_A = 0^{\circ}$ [Figure~\ref{f:5-PFM_FlatCell}(E)] and a maximum for $\Phi_A = 90^{\circ}$ [~\ref{f:5-PFM_FlatCell}(F)], with the fit returning $\delta' = 89^{\circ}$, as expected.
+However, when the rubbing direction is not perfectly parallel to or perpendicular to the optic axis of the dichroic mirror, we see that the fit returns values that are biased towards $0^{\circ}$ or $90^{\circ}$, as seen in the transmitted intensities and associated fits in Figure~\ref{f:5-PFM_FlatCell}(H,I) for rubbing directions $25^{\circ}$ and $45^{\circ}$, respectively.
+Here, the fits [blue curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)] return $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively, in constrast to the expected values [black dashed curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)].
+% Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
+We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$, as shown in the transmitted intensity in Figure~\ref{f:5-PFM_FlatCell}(J).
+
+
 \subsection{Validation in spherical droplets and capillaries}
-\subsection{Defect conformation in a waist}
-\subsection{Defect conformation in a barrel}
+We now turn to validating PFM using objects with a spatially varying director field.
+We start by considering spherical droplets of the Nile red-doped 5CB in water, with 8 mM SDS in the water to enforce homeotropic anchoring, shown in the bright-field image in Figure~\ref{f:5-PFM_Spheres}(A).
+We rotate the crossed polarizer and anlyzer (PA), as seen in Figure~\ref{f:5-PFM_Spheres}(B,C) for two diffent PA orientations, and confirm that the droplets have the classic radial configuration~\cite{RN177}, with a single radial hedgehog at the center of each droplet.
+Importantly, we also notice that when rotating the analyzer the entire image appears to translate along a circular trajectory.
+This translation comes from the analyzer; it has a wedge angle of $3^{\circ}$ to prevent specular reflections from affecting the final image quality.
+However, this also serves to displace the image along the orientation of the wedge angle such that rotating the analyzer by $360^{\circ}$ results in translating the image along a circular contour.
+We highlight this in Figure~\ref{f:5-PFM_Spheres}(D) by superimposing two PFM images of the droplets in Figure~\ref{f:5-PFM_Spheres}(A), where the PFM images have the same $0^{\circ}$ orientation of the analyzer pass-axis, but different analyzer wedge-angle orientations of $0^{\circ}$ and $180^{\circ}$, resulting in a displacement between the two images.
+Thus, in order to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, we have to correct this displacement so that $I(x,y)$ comes from the same $\delta'(x,y)$ for all $\Phi_A$.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_PFM_Spheres.png}
+  \caption{PFM analysis for radial droplets.
+  (A), Bright field image of radial droplets made from a mixture of 5CB and Nile red dispersed in water and 8 mM SDS.
+  (B,C), Corresponding crossed-polar images of the droplets in (A) with the PA orientation indicted in each image.
+  The texture rotates with PA, indicating the hedgehog in each droplet is radial.
+  (D), Superposition of two PFM images of the droplets in (A), where the images have the same analyzer pass-axis orientation but opposite analyzer wedge-angle orientations, demonstrating the displacement due to the analyzer wedge-angle.
+  (E), Superposition of the same images in (D) after shifting each image to correct for the displacement due to the analyzer wedge-angle.
+  The analyzer angle in (D,E) is indicated schematically.
+  (F), Grayscale intensity of a PFM image of the droplets in (A) after blurring with a square Gaussian filter with side length 7 px.
+  The analyzer orientation is indicated schematically.
+  (G-I), Dowsampled PFM images after blurring, with the analyzer angle in each image indicated schematically.
+  (J), PFM intensity as a function of $\Phi_A$ from the highlighted pixel in (G-I).
+  The blue curve is a fit to Eq~\ref{e:5-IntFit}, returning $\delta' = 88^{\circ}$.
+  (K), The $\delta'$ from a PFM analysis of every pixel in (G-I) plotted on top of an epifluorescent image of the droplets.
+  The droplets are clearly radial, as expected from the PA rotation in (B,C).
+  The scale bar in (A) is 25 $\upmu$m.}\label{f:5-PFM_Spheres}
+\end{figure}
+
+We accomplish this by translating all the images along a vector with a fixed magnitude and an orientation given by $\Phi_A$, removing the effect of the displacement due to the analyzer wedge angle for each image.
+For our microscope setup, the magnitude of the translation vector is $-6$ px.
+Now superimposing the shifted versions of the images used in Figure~\ref{f:5-PFM_Spheres}(D), we see in Figure~\ref{f:5-PFM_Spheres}(E) that the displacement between the two images has disappeared.
+While in principle we could consider $\delta'(x,y)$ for every pixel, that is more information than we need and is susceptible to pixel-level noise.
+Instead, we blur each image with a mean filter to both remove noise and locally average the $\delta'$, and then downsample each image to reduce the number of fits we need to perform.
+We illustrate this with the example PFM images in Figure~\ref{f:5-PFM_Spheres}(F-I), where the analyzer angle is indicated in each image.
+The original image is convolved with a mean filter of side length 7 px, yielding the blurred image in Figure~\ref{f:5-PFM_Spheres}(F) and then downsampled by a factor of 7, as displayed in Figure~\ref{f:5-PFM_Spheres}(G).
+Here, we focus on the highlighted pixel in the downsampled images in Figure~\ref{f:5-PFM_Spheres}(G-I) and plot the intensity in Figure~\ref{f:5-PFM_Spheres}(J).
+A fit of Eq~\ref{e:5-IntFit} to the data in Figure~\ref{f:5-PFM_Spheres}(J) yields $\delta' = 88^{\circ}$.
+We do this for every pixel in the downsampled images and plot $\delta'(x,y)$ on top of the epifluorescent image in Figure~\ref{f:5-PFM_Spheres}(K).
+Indeed, we see that we capture reasonably well the radial texture, with the birefringence of the dichroic mirror biasing the output $\delta'$ to be along $0^{\circ}$ and $90^{\circ}$.
+Note that we are unable to distinguish the actual point singularity due to the wide-field nature of our technique and the influence of the mirror; however, we clearly detect the presence of a radial defect in each droplet.
+
+We next consider a cylindrical capillary filled with Nile red-doped 5CB.\@
+The capillary has a 600 $\upmu$m inner diameter and is coated with lecithin to enforce homeotropic anchoring; it has a escaped-radial configuration with a point defect separating regions that escape in opposite directions~\cite{RN179}, as seen in the crossed-polar images in FigureFigure~\ref{f:5-PFM_Capillary}(A).
+We confirm that the defect is a radial point by rotating the crossed polarizer and analyzer and observing that the brushes follow the sense of rotation.
+We then image the capillary using PFM, where we have shifted, blurred, and downsampled the images as with the radial droplets in Figure~\ref{f:5-PFM_Spheres}, and plot the output $\delta'$ on top of a bright-field image of the capillary in Figure~\ref{f:5-PFM_Capillary}(B).
+As with the droplets, we see that we capture reasonably well the expected escaped-radial texture; we capture the radial character of the defect between the two escaped domains; and we do not resolve the singularity itself in our output.
+Since the escaped-radial director field for 5CB has been analytically solved~\cite{RN289,RN290}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega_{theory} = 2 \arctan(r/R) $, with $R$ the capillary radius in cylindrical coordiantes and $\hat{z}$ along the capillary axis, we can compare $\Omega_{theory}$ with our $\delta'_{measured}$, as plotted in Figure~\ref{f:5-PFM_Capillary}(C).
+Again, we see deviation, with our results biased towards $0^{\circ}$ and $90^{\circ}$.
+However, we can clearly see from both the plot of $\delta'$ vs $x/R$ [Figure~\ref{f:5-PFM_Capillary}(B)] and the plotted $\delta'$ fields [Figure~\ref{f:5-PFM_Capillary}(C)] that we capture the different escape directions, demonstrating that we can resolve the differences between a hyperbolic and a radial defect.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_PFM_Capillary.png}
+  \caption{PFM in an escaped-radial capillary.
+  (A), Crossed-polar image of a capillary filled with the Nile Red-Doped 5CB under homeotropic anchoring.
+  (B), Bright-field image of the capillary in (C), with the director orientation from the PFM analysis plotted on top of the associated bright-field image.
+  (C), $\delta'$ plotted versus the position across the capillary for the column indicated by the red arrow in (B).
+  The blue curve is $2 \arctan (x/R)$, the theoretical director angles for an escaped-radial configuration in the one-constant approximation.
+  Using the 5CB value of $K_{11}/K_{33} = 0.74$ would only slightly change the blue curve.
+  The scale bar in (B) is 250 $\upmu$m.}\label{f:5-PFM_Capillary}
+\end{figure}
+
+\subsection{Defect conformation in a waists and barrels}
+We now use PFM on our waist-shaped bridges to determine if the defect is radial or hyperbolic.
+Since the output of PFM is biased due to the dichroic mirror, we orient the bridges with the plates along $45^{\circ}$, as seen in the bright-field image of a bridge in Figure~\ref{f:5-PFM_Bridge}(A), such that PFM will best distinguish the differences between a radial and a hyperbolic defect.
+We start with the waist-shaped briges; for each bridge we perform a PFM analysis and plot the $\delta'$ on top of an epifluorescent image, as shown for an example bridge with large $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(A,B) and an example bridge with small $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(C,D).
+For both examples, we see that the defect structure is hyperbolic.
+We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, and find that the defect is always hyperbolic, implying that our waist-shaped bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_PFM_Bridge.png}
+  \caption{(A-D), PFM analysis on waist-shaped bridges with (A,B) $\Gamma = 4.0$ and (C,D) $\Gamma = 0.8$.
+  The $\delta'$ are plotted on the epifluorescent images in (B,D) with the associated bright-field images in (A,C).
+  (E-H), PFM analysis on barrel-shaped bridges with (E,F) $\Gamma = 6.6$ and (G,H) $\Gamma = 1.5$.
+ The $\delta'$ are plotted on the epifluorescent images in (B,D) with the associated bright-field images in (A,C).
+ The scale bars in (A,B) are 250 $\upmu$m, with the scale for all the (A,C,E,G) bright field images and all the (B,D,F,H) PFM images the same.}\label{f:5-PFM_Bridge}
+\end{figure}
+
+We now turn to barrel-shaped bridges, where we add the water and SDS mixture when the 5CB is in the isotropic phase, and we consider barrels made with both a large and a small initial $\Gamma$.
+As demonstrated in the plots of $\delta'$ on top of epifluorescent images of two example barrels with different $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(E-H), the barrel-shaped bridges at all measured $\Gamma$ have radial defects.
+Thus, we see that the shape of the bridge, driven by the contact angle, determines if the defect is radial or hyperbolic.
+This makes sense intuitively as the homeotropic boundary conditions cause the the boundary to act as a level surface for the director.
+Due to the ability of shape to bias the defect structure, the cylindrical bridge with $\Gamma \sim \mathcal{O}\left (1 \right )$ becomes an interestingly peculiar case, as the shape is neither a waist nor a barrel.
+While accomplishing this experimentally in our system would be technically difficult due to the requirement of maintaining $\Theta_0 = 90^{\circ}$, we can turn to numerical calculations to explore this scenario.
+
+
+
 
 \section{Comparison with numerical calculations}
+We compare our results with numerical calculations performed by Shengnan Huang and Paul Goldbart.
+Briefly, we assume the problem is completely 2D; for a bridge parameterized in cylindrical coordinates, $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega = f(r,z)$ only.
+We then minimize the free-energy using a modified version of the finite difference method laid out in Ref.~\cite{RN144}.
+Although the free energy in the algorithm presented there depends on the cut-off length of the defect core, the equilibrium defect configuration is independent of this length scale provided it is reasonably small.
+We modify the algorithm to treat the small region containing the defect separately from the remainder of the computation volume, such that the calculated free energy converges as the mesh size grows~\cite{RN199,RN200,RN201}.
+
+We start by modeling a cylindrical bridge.
+For the 5CB values of $K_{11}/K_{33} = 0.74$, a bridge should undergo a defect transition between a radial ring and a hyperbolic point, as highlighted by the dashed line in the phase diagram in Figure~\ref{f:5-Calcs}(A).
+This result is consistent with prior computational modeling~\cite{RN144}, and highlights the peculiarity of the cylindrical case.
+However, we predict ring-to-point defect transitions at aspect ratios that are significantly smaller than previously reported~\cite{RN144}.
+In addition, in contrast to prior modeling, we find that there is no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [Figure~\ref{f:5-Calcs}(A)].
+Instead, our numerical calculations predict that the radius of the radial ring should vary linearly with $\Gamma$, smoothly collapsing to a point defect for low enough $\Gamma$.
+Recent experimental results examining the structure of radial point defects in cylindrical capillaries where $\Gamma \rightarrow \infty$ validate this prediction, finding that radial point defects are instead radial rings with a ring radius $R \sim \mathcal{O}(10^{-8})$ m~\cite{RN280}.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_Calcs.png}
+  \caption{Results from the computational modeling of a nematic in a capillary bridge.
+  (A), Phase diagram of the defect structure in a cylinder as a function of aspect ratio $\Gamma$ and the ratio, $K_{11}/K_{33}$, of the splay and bend elastic constants.
+  (B), Phase diagram of the defect structure in a waist-shaped bridge as a function of $\Gamma$ and $K_{11}/K_{33}$.
+  In (A,B), the minimum-energy state is indicated in each region, and the dashed line corresponds to $K_{11} / K_{33}$ for 5CB.\@
+  (C), Free energy of a director configuration in a waist-shaped bridge relative to the free energy in the presence of the point defect and normalized by $H K_{33}$, shown as a function of scaled ring radius $R_{ring}/R_{bridge}$.
+  The curves correspond to (${\blacksquare}$) $\Gamma = 3.5$, (${\color{red} \bullet}$) $\Gamma = 2.8$, (${\color{blue} \blacktriangle}$) $\Gamma = 2.5$, and (${\color{green} \blacktriangledown}$) $\Gamma = 2.0$.}\label{f:5-Calcs}
+\end{figure}
+
+We then change the shape of the boundaries in the numerical calculations.
+Consistent with our experiments, we see that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ that we used, as shown in Figure~\ref{f:5-Calcs}(B).
+Furthermore, we find that the ring defect radius predicted by our calculations [(${\color{red} \bullet}$), Figure~\ref{f:5-ExpWaistTop}(F)] for a waist-like shape agrees well with our experimental data [($\blacksquare$), Figure~\ref{f:5-ExpWaistTop}(F)].
+In addition, we see that the hyperbolic-ring to hyperbolic-point transition happens at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$ [dashed line, Figure~\ref{f:5-Calcs}(B)], in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
+
+We also investigate the hysteresis in our experimental hyperbolic ring to hyperbolic point transition by calculating the energy landscape of a waist-shaped nematic bridge as a function of ring radius.
+Results for for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\ref{f:5-Calcs}(C), where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
+We indeed see that the point defect is metastable for $\Gamma > \Gamma_c$, consistent with our interpretation of the experimental results.
+In addition, given a representative bridge height of $H = 100$ $\upmu$m and $K_{33} \approx 10^{-11}$ N, we note that the height of the barrier is always $\mathcal{O} \left ( 10^{4} \right )$ k$_\textrm{B}$T, implying that a point defect will not spontaneously transform into a ring defect in the length of our experiments, also consistent with our experimental observations.
+For $\Gamma < \Gamma_c$, this metastability disappears, and the point defect is the only stable defect state.
+
+Turning to barrel-shaped bridges, our calculations show that all hyperbolic defects disappear from the phase diagram, leaving the radial ring as the only equilibrium state for the range of $\Gamma$ and $K_{11/K_{33}}$ explored.
+Thus, we confirm that the shape of the free-surface determines if the enclosed defect is radial or hyperbolic.
+Barrel-like shapes with positive Gaussian curvature favor radial defects and waist-like shapes with negative Gaussian curvature favor hyperbolic defects.
+We also see that the ring radius predicted by our calculations in a barrel-shaped bridge [(${\color{olive} \bullet}$), Figure~\ref{f:5-ExpBarrelRing}(A)] qualitatively agrees with our experimental results [squares, Figure~\ref{f:5-ExpBarrelRing}(A)], despite the unknown influence of the SDS micelles.
+
+
+
 
 \section{Conclusions}
+In conclusion, the equilibrium defect structure in a nematic capillary bridge under homeotropic boundary conditions is found to depend on both the shape of the bounding surface as well as the aspect ratio of the bridge.
+The aspect ratio determines whether the defect is a ring defect or a point defect, and the boundary shape determines whether the defect is radial or hyperbolic, with waist-like shapes containing hyperbolic defects and barrel-like shapes containing radial defects.
+In addition, we find that in a waist structure the point defect can be metastable,  causing the transition between a ring defect and a point defect to exhibit hysteresis.
+Starting at $\Gamma > \Gamma_c$ and decreasing $\Gamma$ to below $\Gamma_c$ brings about the collapse of the ring defect to a point defect, with the collapse occurring at a nonzero value of the ring radius.
+However, starting with a point defect at $\Gamma < \Gamma_c$ and increasing $\Gamma$ never yields a transition from a point defect to a ring defect.
+
+Although prior computations with thin films~\cite{RN141} or perforated sheets~\cite{RN149} have been used to attribute the radial or hyperbolic character of defects to confinement shape, our work provides the first experimental evidence of this phenomenon.
+We accomplish this by developing PFM, a simpler technique than its confocal counterpart that enables us, despite refraction, to determine the director field when viewing the bridge from the side.
+Thus, our work confirms that shape can be used to influence and control the equilibrium defect states in confined NLC under homeotropic boundary conditions.
+
+As mentioned earlier, the cylindrical bridge with the predicted hyperbolic ring to radial point transition with is a peculiar case.
+Specifically, we note that even though the transition from a hyperbolic ring to a hyperbolic point is discontinuous in the ring radius, the transition is still accomplished with a smooth deformation; the radius of the ring simply shrinks until a point defect is formed, similar to the behavior for radial rings as $\Gamma$ decreases.
+However, the transition between a hyperbolic ring and a radial point will require the director field to reorient throughout the entire bridge at some point during the transition.
+The specific pathway for this transition is unclear and would be an interesting direction for future work.
+Further interesting results would also be expected if the shape of the bridge is not fixed by surface tension, but can instead change and contribute to the free energy minimization \cite{RN12}.
+Our work is thus one of many interesting studies that can be performed with nematic bridges to probe how shape and elasticity dictate the equilibrium defect structure of the liquid crystal.
