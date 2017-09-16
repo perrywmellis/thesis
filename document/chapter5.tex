@@ -298,7 +298,7 @@ Thus, in order to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, we
   (K), The $\delta'$ from a PFM analysis of every pixel in (G-I) plotted on top of an epifluorescent image of the droplets.
   The droplets are clearly radial, as expected from the PA rotation in (B,C).
   The scale bar in (A) is 25 $\upmu$m.}\label{f:5-PFM_Spheres}
-\end{figure}\fxnote{indicate the proper pixel.}
+\end{figure}
 
 We accomplish this by translating all the images along a vector with a fixed magnitude and an orientation given by $\Phi_A$, removing the effect of the displacement due to the analyzer wedge angle for each image.
 For our microscope setup, the magnitude of the translation vector is $-6$ px.
@@ -318,7 +318,7 @@ The capillary has a 600 $\upmu$m inner diameter and is coated with lecithin to e
 We confirm that the defect is a radial point by rotating the crossed polarizer and analyzer and observing that the brushes follow the sense of rotation.
 We then image the capillary using PFM, where we have shifted, blurred, and downsampled the images as with the radial droplets in Figure~\ref{f:5-PFM_Spheres}, and plot the output $\delta'$ on top of a bright-field image of the capillary in Figure~\ref{f:5-PFM_Capillary}(B).
 As with the droplets, we see that we capture reasonably well the expected escaped-radial texture; we capture the radial character of the defect between the two escaped domains; and we do not resolve the singularity itself in our output.
-Since the escaped-radial director field for 5CB has been analytically solved~\fxnote{find this... maybe Allender?}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega_{theory} = 2 \arctan(r/R) $, with $R$ the capillary radius in cylindrical coordiantes and $\hat{z}$ along the capillary axis, we can compare $\Omega_{theory}$ with our $\delta'_{measured}$, as plotted in Figure~\ref{f:5-PFM_Capillary}(C).
+Since the escaped-radial director field for 5CB has been analytically solved~\cite{RN289,RN290}, with $\mathbf{n}(r,\varphi,z) = \left \{ \sin(\Omega), 0, \cos(\Omega)   \right \}$, where $\Omega_{theory} = 2 \arctan(r/R) $, with $R$ the capillary radius in cylindrical coordiantes and $\hat{z}$ along the capillary axis, we can compare $\Omega_{theory}$ with our $\delta'_{measured}$, as plotted in Figure~\ref{f:5-PFM_Capillary}(C).
 Again, we see deviation, with our results biased towards $0^{\circ}$ and $90^{\circ}$.
 However, we can clearly see from both the plot of $\delta'$ vs $x/R$ [Figure~\ref{f:5-PFM_Capillary}(B)] and the plotted $\delta'$ fields [Figure~\ref{f:5-PFM_Capillary}(C)] that we capture the different escape directions, demonstrating that we can resolve the differences between a hyperbolic and a radial defect.
 \begin{figure}
@@ -328,17 +328,17 @@ However, we can clearly see from both the plot of $\delta'$ vs $x/R$ [Figure~\re
   (A), Crossed-polar image of a capillary filled with the Nile Red-Doped 5CB under homeotropic anchoring.
   (B), Bright-field image of the capillary in (C), with the director orientation from the PFM analysis plotted on top of the associated bright-field image.
   (C), $\delta'$ plotted versus the position across the capillary for the column indicated by the red arrow in (B).
-  The blue curve is $\delta' = 2 \arctan (x/R)$, the theoretical director angles for an escaped-radial configuration in the one-constant approximation.
+  The blue curve is $2 \arctan (x/R)$, the theoretical director angles for an escaped-radial configuration in the one-constant approximation.
   Using the 5CB value of $K_{11}/K_{33} = 0.74$ would only slightly change the blue curve.
   The scale bar in (B) is 250 $\upmu$m.}\label{f:5-PFM_Capillary}
-\end{figure}\fxnote{Add red arrow indicator}
+\end{figure}
 
 \subsection{Defect conformation in a waists and barrels}
 We now use PFM on our waist-shaped bridges to determine if the defect is radial or hyperbolic.
 Since the output of PFM is biased due to the dichroic mirror, we orient the bridges with the plates along $45^{\circ}$, as seen in the bright-field image of a bridge in Figure~\ref{f:5-PFM_Bridge}(A), such that PFM will best distinguish the differences between a radial and a hyperbolic defect.
 We start with the waist-shaped briges; for each bridge we perform a PFM analysis and plot the $\delta'$ on top of an epifluorescent image, as shown for an example bridge with large $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(A,B) and an example bridge with small $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(C,D).
 For both examples, we see that the defect structure is hyperbolic.
-We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, and find that the defect is always hyperbolic, implying that our bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
+We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \gg \Gamma_c$, and find that the defect is always hyperbolic, implying that our waist-shaped bridges undergo transitions from a hyperbolic ring to a hyperbolic point as $\Gamma$ decreases.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_PFM_Bridge.png}
@@ -347,7 +347,7 @@ We do this for waist-shaped bridges spanning $\Gamma \ll \Gamma_c$ to $\Gamma \g
   (E-H), PFM analysis on barrel-shaped bridges with (E,F) $\Gamma = 6.6$ and (G,H) $\Gamma = 1.5$.
  The $\delta'$ are plotted on the epifluorescent images in (B,D) with the associated bright-field images in (A,C).
  The scale bars in (A,B) are 250 $\upmu$m, with the scale for all the (A,C,E,G) bright field images and all the (B,D,F,H) PFM images the same.}\label{f:5-PFM_Bridge}
-\end{figure}\fxnote{fix scale bar in A}
+\end{figure}
 
 We now turn to barrel-shaped bridges, where we add the water and SDS mixture when the 5CB is in the isotropic phase, and we consider barrels made with both a large and a small initial $\Gamma$.
 As demonstrated in the plots of $\delta'$ on top of epifluorescent images of two example barrels with different $\Gamma$ in Figure~\ref{f:5-PFM_Bridge}(E-H), the barrel-shaped bridges at all measured $\Gamma$ have radial defects.
