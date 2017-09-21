@@ -82,8 +82,19 @@ Neutralizing the dispersion causes the polyacrylamide microgels to swell, increa
 
 
 \subsection{Measuring the intensity profile and aspect ratio}
-We view our toroidal droplets from the top under both bright-field and OPM.
- 
+We view our toroidal droplets from the top under both bright-field and with crossed polarizers.
+In the toroidal coordinate system $\{r,\theta,\varphi \}$, the azimuthal angle $\varphi$ corresponds to a polar angle in the plane of the image.
+Thus, with PA aligned along the vertical and horizontal in the image, $\varphi = 0,\pi/2,\pi,3\pi/2$ gives the locations in the torus where $\hat{phi}$ is aligned along PA.
+In these regions, the intensity pattern resembles that of an escaped radial texture with $\hat{z}$ aligned along PA, with the characterisitc dark-bright-dark-bright-dark pattern.
+To obtain the both intensity profile across the tube where $\hat{\varphi}$ is aligned along PA and the aspect ratio of the torus, we turn to a custom MATLAB script.
+
+From a top-view image, we start by selecting points along the inner and outer contours of the toroid in the image.
+We then fit the points on each contour to a circle, giving us the radii $R_{in}$, $R_{out}$ and centers $\mathbf{p}_{in}$, $\mathbf{p}_out$ of the inner and outer contours, respectively.
+For a given torus, we can then calculate the aspect ratio $\xi = R_0/a = (R_{out}+R_{in})/(R_{out}-R_{in})$, with the central ring radius $R_0=(R_{out}+R_{in})/2$ and the tube radius $a = (R_{out}-R_{in})/2$.
+From the center of the central ring $\mathbf{p}_0 = (\mathbf{p}_{in}+p_{out})/2$, we calculate $\varphi$ everywhere in the image, enabling us to measure the intensity profile across the tube for a given $\varphi$.
+We parameterize the intensity profile with $\rho$, where $\rho = 0$ at the inner contour and $\rho = 1$ at the outer contour.
+
+
 \subsection{Large aspect ratio toroids}
 \subsection{Small aspect ratio toroids}
 
