@@ -168,16 +168,16 @@ is the rotation matrix for an angle $\alpha$ measured with respect to the x-axis
 This approach simplifies calculations for a series of optical elements.
 
 Since we wish to simulate the OPM texture of a continuous volume with a given nematic director field, we first need to discretize the continuous nematic volume into cubic volume elements, or voxels, of side $\Delta$.
-If $\Delta$ is small enough such that the local director $\hat{n}_i$ for each voxel $ i \;\epsilon \, [1,N]$ can be treated as constant throughout the voxel, then each voxel can be treated as a phase retarder with the associated Jones Matrix and orientation given by its $\hat{n}_i$.
+If $\Delta$ is small enough such that the local director $\mathbf{n}_i$ for each voxel $ i \;\epsilon \, [1,N]$ can be treated as constant throughout the voxel, then each voxel can be treated as a phase retarder with the associated Jones Matrix and orientation given by its $\mathbf{n}_i$.
 In this way, we are able to treat a continuous nematic volume as a collection of independent optical elements.
 
-As the extraordinary index of refraction of a birefringent uniaxial material depends on the angle $\gamma$ between $\hat{n}$ and $\vec{k}_0$ according to $n_e(\gamma) = n_o n_E/\sqrt{n^2_o \sin^2\gamma+n_E^2 \cos^2 \gamma}$ with $n_o$ the ordinary index of refraction and $n_E$ the extraordinary index of refraction for $\gamma = \pi/2$, we can write the Jones Matrix for the $i^{th}$ voxel with the fast axis along $\hat{y}$ as:
+As the extraordinary index of refraction of a birefringent uniaxial material depends on the angle $\gamma$ between $\mathbf{n}$ and $\vec{k}_0$ according to $n_e(\gamma) = n_o n_E/\sqrt{n^2_o \sin^2\gamma+n_E^2 \cos^2 \gamma}$ with $n_o$ the ordinary index of refraction and $n_E$ the extraordinary index of refraction for $\gamma = \pi/2$, we can write the Jones Matrix for the $i^{th}$ voxel with the fast axis along $\hat{y}$ as:
 \begin{equation}
 \dbar{\Theta}_i  =  \begin{bmatrix}e^{i(n_o2 \pi \frac{\Delta}{\lambda})} & 0 \\ 0 & e^{i (n_e(\gamma_i)2 \pi \frac{\Delta}{\lambda})} \end{bmatrix},
 \end{equation}
 where $\lambda$ is the wavelength of the light and where we have set $\hat{k}_0=\hat{z}$ such that the plane of polarization is in the $x-y$ plane.
-To use the formalism underlying Eq.~\ref{e:4-jones_decouple}, we need the angle between $\vec{k}_0$ and $\hat{n}_i$, $\gamma_i$, and the angle between the projection of $\hat{n}_i$ onto the $x-y$ plane and the x-axis, $\alpha_i$.
-Note that the angle between the average director of the overall nematic configuration $\hat{n}_d$ and $\vec{k}_0$ is $\theta_0$, and the angle between the projection of $\hat{n}_d$ onto the x-y plane and the x-axis is the orientation $\alpha_0$.
+To use the formalism underlying Eq.~\ref{e:4-jones_decouple}, we need the angle between $\vec{k}_0$ and $\mathbf{n}_i$, $\gamma_i$, and the angle between the projection of $\mathbf{n}_i$ onto the $x-y$ plane and the x-axis, $\alpha_i$.
+Note that the angle between the average director of the overall nematic configuration $\mathbf{n}_d$ and $\vec{k}_0$ is $\theta_0$, and the angle between the projection of $\mathbf{n}_d$ onto the x-y plane and the x-axis is the orientation $\alpha_0$.
 We use these two angles to control the orientation of the nematic configuration with respect to $\vec{k}_0$ such that we can simulate OPM textures for different views of the nematic configuration.
 In addition, we change the polarizer orientation by changing the orientation of the incident polarization, given by $\vec{E}_p$.
 The angles used to describe the local director as well as the angles used to describe the orientation of the entire nematic configuration are shown in Figure~\fxnote{f:4-generalcoords}(A).
@@ -185,7 +185,7 @@ The angles used to describe the local director as well as the angles used to des
 \centering
 \includegraphics{figures/C5/Ch5-Figs_ShapeContour.png}
 \caption{Symbols and coordinates used in simulating OPM droplet textures.
-(A), Relevant angles used in all simulations, where $\hat{n}_d$ is the droplet director, $\hat{n}_i$ is the local director, $\vec{k}_0$ is the incident wave vector, and $\vec{E}_p$ gives the orientation of the polarizer.
+(A), Relevant angles used in all simulations, where $\mathbf{n}_d$ is the droplet director, $\mathbf{n}_i$ is the local director, $\vec{k}_0$ is the incident wave vector, and $\vec{E}_p$ gives the orientation of the polarizer.
 (B), Breakdown of OPM simulation parameters in a spherical geometry, where $\vec{\rho}$ is the position vector in the final image and $\Delta$ is the thickness of the voxels used in the simulation.}\label{f:4-generalcoords}
 \end{figure}
 
@@ -219,7 +219,7 @@ Images from Ref.~{ondris1991microscope} and Ref~\cite{RN193} reproduced with per
 
 \subsection{Validation using spherical droplets}
 To test this method, we simulated OPM textures for the well-studied radial, bipolar, and twisted-bipolar director fields in spherical geometries.
-For a radial director field we used $\hat{n}_r = (x,y,z)/\sqrt{x^2+y^2+z^2}$~\cite{RN232}.
+For a radial director field we used $\mathbf{n}_r = (x,y,z)/\sqrt{x^2+y^2+z^2}$~\cite{RN232}.
 A simulated texture of a 40 $\upmu$m diameter sphere calculated using $20$ evenly spaced wavelengths between $400$~nm and $700$~nm is shown in Figure~\ref{f:4-spherecomparison}(A).
 We compare our simulated image both with a grayscale experimental image of a 5CB droplet in water with 8 mM SDS and with another simulated texture of a $10$ $\upmu$m diameter sphere from~\fxnote{ondris1991microscope}.
 These are shown in Figure~\ref{f:4-spherecomparison}(B,C), respectively.
@@ -232,7 +232,7 @@ We attribute this difference to the defect not being in the focal plane in the e
 In addition, note how the bright portions of Figure~\ref{f:4-spherecomparison}(C) do not have an even intensity.
 This is due to the size of the droplet simulated.
 
-For a bipolar director we use $\hat{n}_b = \nabla \psi/|\nabla \psi|$, where
+For a bipolar director we use $\mathbf{n}_b = \nabla \psi/|\nabla \psi|$, where
 \begin{align}
 \psi =& \frac{1}{\sqrt{(x-p_x)^2+(y-p_y)^2+(z-p_z)^2}} \nonumber \\
       -& \frac{1}{\sqrt{(x+p_x)^2+(y+p_y)^2+(z+p_z)^2}}, \label{e:4-bipolar_pot}
@@ -245,12 +245,12 @@ Note how Figure~\ref{f:4-spherecomparison}(E--G) all have four bright portions a
 Note also how the central region is completely dark.
 When the droplet orientation changes by $\pi/12$ as seen in Figure \ref{f:4-spherecomparison}(H--J), the central region in all three textures ceases being completely dark and begins to connect the upper-left and lower-right bright regions.
 
-For a twisted bipolar director $\hat{n}_{tb}$, we follow Ref.~\cite{RN177} and use:
+For a twisted bipolar director $\mathbf{n}_{tb}$, we follow Ref.~\cite{RN177} and use:
 \begin{equation}
-\hat{n}_{tb} = \hat{n}_{b}\cos\tau +\hat{n}_{c}\sin\tau,
+\mathbf{n}_{tb} = \mathbf{n}_{b}\cos\tau +\mathbf{n}_{c}\sin\tau,
 \end{equation}
-where the concentric director is $\hat{n}_{c} = (\sin \phi,\cos \phi,0)$, with $\phi$ the polar angle measured off of the x-axis.
-$\hat{n}_b$ is the bipolar director derived from the normalized gradient of Eq.~\ref{e:4-bipolar_pot}, and $\tau = \tau_0\sqrt{x^2+y^2}/\sqrt{R^2-z^2}$ is a twist angle varying from $\tau=\tau_0$ at the surface of the sphere to $\tau=0$ at the bipole axis~\cite{RN177}.
+where the concentric director is $\mathbf{n}_{c} = (\sin \phi,\cos \phi,0)$, with $\phi$ the polar angle measured off of the x-axis.
+$\mathbf{n}_b$ is the bipolar director derived from the normalized gradient of Eq.~\ref{e:4-bipolar_pot}, and $\tau = \tau_0\sqrt{x^2+y^2}/\sqrt{R^2-z^2}$ is a twist angle varying from $\tau=\tau_0$ at the surface of the sphere to $\tau=0$ at the bipole axis~\cite{RN177}.
 Instead of generating OPM textures with different $\alpha_0$ and a fixed polarizer and analyzer orientation as with the bipolar OPM textures, here we keep $\alpha_0=0$ and vary the polarizer and the analyzer orientation to generate different views.
 This makes the computation easier to perform. Our simulated twisted bipolar OPM textures seen in Figure~\ref{f:4-spherecomparison}(K,N) were produced for a 50 $\upmu$m diameter sphere with a single wavelength at $\lambda = 650$~nm.
 The simulated twisted bipolar images from Ref.~\cite{RN193} were also produced for a similar sphere with $\lambda = 650$~nm, as seen in Figure~\ref{f:4-spherecomparison}(M,P).
@@ -291,22 +291,22 @@ Images in (A,D--F) reproduced with permission from {\bf GET PERMISSION}.}\label{
 We simulate OPM textures for nematic tori under tangential anchoring using the ansatz in Eq~\ref{e:4-planransatz} with values of $\omega$ and $g$ provided from the free energy minimization.
 We produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm.
 The normalized weights are provided by the spectrum of the lamp in the microscope used to take the experimental OPM textures.
-We simulate the side-view OPM texture by propagating the incident light perpendicular to $\hat{n}_d$, as seen in Figure~\ref{fig_tourscoords}(B), and we simulate the top-view OPM texture by propagating the light along $\hat{n}_d$, as seen in Figure~\ref{fig_tourscoords}(C).\\
+We simulate the side-view OPM texture by propagating the incident light perpendicular to $\mathbf{n}_d$, as seen in Figure~\ref{fig_tourscoords}(B), and we simulate the top-view OPM texture by propagating the light along $\mathbf{n}_d$, as seen in Figure~\ref{fig_tourscoords}(C).\\
 \begin{figure}
 \centering
 % \includegraphics{Figs/Figs3_Torus_Coords.png}
 \caption{Schematic diagram of toroidal coordinates displayed in the cross-section of a torus (a) and breakdown of simulation geometry for side-view (b) and top-view (c) OPM textures.
-In (b),(c), $\vec{k}_0$ is the wave vector of the incident light, $\vec{\rho}$ is the position in the final image, $\Delta$ is the thickness of the voxels along $\vec{k}_0$, $\hat{n}_d$ is the average director for the entire droplet, and $\hat{n}_i$ is local director in the i$^{th}$ voxel.}\label{fig_tourscoords}
+In (b),(c), $\vec{k}_0$ is the wave vector of the incident light, $\vec{\rho}$ is the position in the final image, $\Delta$ is the thickness of the voxels along $\vec{k}_0$, $\mathbf{n}_d$ is the average director for the entire droplet, and $\mathbf{n}_i$ is local director in the i$^{th}$ voxel.}\label{fig_tourscoords}
 \end{figure}
 
 Both the experimental top-view OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(A) and the simulated top-view OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(B) are predominantly bright with four brushes exhibiting partial extinction aligned along the polarizer and analyzer.
-This can also be seen in $4$ maxima and $4$ minima in the intensity along the central ring from $\phi=0^{\circ}$ to $\phi=360^{\circ}$ as plotted in Figure~\ref{f:4-spherecomparison}(C) for the experimental OPM texture ($\color{red}\blacksquare$) and the simulated OPM texture ($\color{blue}\blacktriangle$).
+This can also be seen in $4$ maxima and $4$ minima in the intensity along the central ring from $\varphi=0^{\circ}$ to $\varphi=360^{\circ}$ as plotted in Figure~\ref{f:4-spherecomparison}(C) for the experimental OPM texture ($\color{red}\blacksquare$) and the simulated OPM texture ($\color{blue}\blacktriangle$).
 The two curves agree with respect to both the position of the minima and maxima and the relative height of the minima and maxima.
 Note that the lack of complete extinction in the brushes is reflected in the height of the minima in the intensity plot; this high minimum intensity is due to the doubly-twisted structure of the director field.
 As with the bipolar and twisted bipolar spherical droplets, the presence of twist raises the minimum intensity in the simulated OPM texture of the toroidal droplets.
 
 The role of twist in preventing complete extinction is also present when looking at the brightness of the central region in both experimental side-view textures and the simulated side-view textures seen in Figure~\ref{f:4-PlanarTorusComparison}(E,F) and Figure~\ref{f:4-PlanarTorusComparison}(G,H), respectively.
-In addition, we see that the central region of both the experimental and simulated textures viewed with PA aligned at $0^{\circ}$ and $90^{\circ}$ with respect to $\hat{n}_d$ ($0^{\circ}$) is brighter than when PA are aligned at $45^{\circ}$ and $135^{\circ}$ with respect to $\hat{n}_d$ ($45^{\circ}$).
+In addition, we see that the central region of both the experimental and simulated textures viewed with PA aligned at $0^{\circ}$ and $90^{\circ}$ with respect to $\mathbf{n}_d$ ($0^{\circ}$) is brighter than when PA are aligned at $45^{\circ}$ and $135^{\circ}$ with respect to $\mathbf{n}_d$ ($45^{\circ}$).
 Now looking at the inner portion of the tubes, we see that again for both experiment and simulation with PA at $0^{\circ}$, the intensity is less than than when PA are at $45^{\circ}$.
 \begin{figure}
 \centering
@@ -340,8 +340,8 @@ The decrease in $I_0/I_{45}$ as $\xi$ increases can be explained with the decrea
 The total twist angle of the director through the central ring viewed from the top can be written as $\tau = 2 \arctan (\omega)$.
 As an example, for $\xi = 3.5$, $\omega = 0.2940$, corresponding to a theoretical $\tau = 33.21^{\circ}$.
 We can confirm this by measuring the twist angle using simulated textures for $\xi=3.5$ with various PA orientations.
-We ``rotate'' the polarizer until the intensity at the central ring at $\phi=0^{\circ}$ is a minimum, signifying that we have matched the polarizer orientation with the entry director.
-We then fit the intensity at $\phi=0^{\circ}$ at the central ring as a function of analyzer angle to the expected transmission for a twisted nematic cell~\cite{RN232}:
+We ``rotate'' the polarizer until the intensity at the central ring at $\varphi=0^{\circ}$ is a minimum, signifying that we have matched the polarizer orientation with the entry director.
+We then fit the intensity at $\varphi=0^{\circ}$ at the central ring as a function of analyzer angle to the expected transmission for a twisted nematic cell~\cite{RN232}:
 \begin{align}\label{e:4-tn}
 T = \cos ^2&(\Phi_{\textrm{exit}}-\tau)-\frac{\tau}{2 X}\sin(2X)\sin(2\Phi_{\textrm{exit}}-2\tau)\nonumber \\
 &-\tau ^2\frac{\sin ^2 (X)}{X^2}\cos(2\Phi_{\textrm{exit}}-2\tau),
@@ -442,6 +442,22 @@ All simulations performed averaging over 200 wavelengths.}\label{f:4-nostar}
 
 
 \subsection{Comparison with homeoetropic-anchored nematic toroids}
+We model a TER director field by coupling the doubly-twisted ansatz from our planar NLC toroids with the ER director field in the one-constant approximation:
+\begin{equation}
+  \mathbf{n} = \hat{r} \sin(\Omega)
+  + \hat{\theta}\cos(\Omega)\frac{\omega \frac{r}{a}}{1-\gamma \frac{r}{R_0} \cos \theta}
+  + \hat{\varphi}\cos(\Omega)\sqrt{1 - \left ( \frac{\omega \frac{r}{a}}{1-g \frac{r}{R_0} \cos \theta} \right )^2 },\label{e:4-TERansatz}
+\end{equation}
+where $\Omega = 2 \arctan(r/a)$.
+As with our simulated OPM textures of planar-anchored NLC toroids, we produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm, where the weights are provided by the spectrum of the lamp in our microscope.
+
+We also simulate TER capillaries, where we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the oriention of the capillary axis.
+From the top, we see that our simulated TER textures in a torus and simulated TER textures in a capillary have the same qualitative features.
+With PA along the horizontal and vertical, the intensity profiles in the simulated toroidal texture at $\varphi = 0^{\circ},90^{\circ},180^{\circ},270^{\circ}$ are the same as for the TER capillary with $\hat{z}$ along PA.
+Similarly, the intensity profiles in the simulated toroidal texture at $\varphi = 45^{\circ},135^{\circ},225^{\circ},315^{\circ}$ are the same as for the TER capillary with $\hat{z}$ aligned at $45^{\circ}$ with respect to PA.
+This confirms that ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
+
+Comparing the experimental ER/TER textures with the simulated TER textures, we see that they share the sam
 \subsection{Intensity ratio as a function of twist parameter}
 
 \section{Nematic liquid crystals in bent capillaries}
