@@ -452,18 +452,61 @@ where $\Omega = 2 \arctan(r/a)$.
 As with our simulated OPM textures of planar-anchored NLC toroids, we produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm, where the weights are provided by the spectrum of the lamp in our microscope.
 Comparing the experimental ER/TER textures with the simulated TER textures, we see that they share the same intensity features, giving credence to our hypothesis that the director field in a homeotropic nematic toroid is either escaped-radial or twisted escaped-radial.
 
-To futher confirm this, we simulate TER capillaries, where we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the oriention of the capillary axis.
+To further confirm this, we simulate TER capillaries, where we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the orientation of the capillary axis.
 From the top, we see that our simulated TER textures in a torus and simulated TER textures in a capillary have the same qualitative features.
 With PA along the horizontal and vertical, the intensity profiles in the simulated toroidal texture at $\varphi = 0^{\circ},90^{\circ},180^{\circ},270^{\circ}$ are the same as for the TER capillary with $\hat{z}$ along PA.
 Similarly, the intensity profiles in the simulated toroidal texture at $\varphi = 45^{\circ},135^{\circ},225^{\circ},315^{\circ}$ are the same as for the TER capillary with $\hat{z}$ aligned at $45^{\circ}$ with respect to PA.
 This confirms that ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
 
+In addition, we see that the intensity profiles of the simulated ER textures in the  cylinders and the tori have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33}\fxnote{P. Chatelin, Sur la diffusion, par les cristaux}.
+Thus, we cannot make a quantitative comparison between the intensity profiles in the experimental and simulated ER/TER toroidal textures, but we can use our simulated OPM textures to investigate how the twist affects a TER texture.
+
 
 \subsection{Intensity ratio as a function of twist parameter}
+We simulate TER cofigurations using Eq.~\ref{e:4-TERansatz} keeping $g = 0$ and varying $\omega$ in cylinders and tori.
+First, the intensity profiles are geometry independent; provided the $\hat{varphi}$ and $\hat{z}$ have the same orientation with respect to PA, the intensity profiles across the tube are identical.
+Second, we see that $I_{max}/I_{min}$ varies inversely and monotonically with $\omega$.
+This confirms our expectations that adding twist raises the intensity of the central minimum in an OPM texture of a TER director configuration.
+In addition, the monotonic relationship between the intensity ratio and $\omega$ implies that we can use $I_{max}/I_{min}$ as a proxy for twist.
+Thus, our observation that  $I_{max}/I_{min}$ is proportional to $\xi$ confirms that the amount of twist in a TER configuration in a toroid decreases with increasing $\xi$.
+In addition, the implies that geometry is the driving factor in generating a TER structure.
+Specifically, we speculate that the twist in the TER structure comes from bending the escape core.
+As in straight SSY capillaries, the twist relieves the bend.
+However, because $K_{11} \sim K_{22} \sim K_{33}$, we need to introduce extra bend distortion to make the twist distortion energetically favorable.
+To test this, we consider 5CB under homeotropic anchoring in bent glass capillaries.
+
+
+
 
 \section{Nematic liquid crystals in bent capillaries}
 \subsection{Making bent capillaries}
+We start with straight glass capillaries, heat the glass at a point with a blowtorch, and let gravity then bend the capillary such that the capillary axis now forms a planar curve.
+We apply the heat for as short of a duration as possible to minimize the change in the inner diameter of the capillary; applying the torch over a long duration melts the capillary.
+
 \subsection{Measuring planar curvature}
+We measure the curvature of the capillary axis using a modified version of the IRLS routine we used in Chapter~\ref{c:3} to measure surface curvature.
+Here, instead of fitting to the extended Weingarten Matrix, we fit to the Frennet-Serret formula, $\textrm{d}\mathbf{k}/\textrm{d}s = -\kapa \cdot \mathbf{T}$, via:
+\begin{equation}
+  \Delta \mathbf{k} \cdot \mathbf{T} = \kappa \, \Delta s,\label{e:4-FSfit}
+\end{equation}
+with $\Delta s$ the independent variable, $\Delta \mathbf{k} \cdot \mathbf{T}$ the dependent variable, $\kappa$ a fitting parameter, $s$ the arclength parameter, $\mathbf{T}$ the unit tangent vector, $\mathbf{k}$ the unit normal vector, and $\kapa$ the curvature.
+This approach is equivalent to fitting to the Weingarten Matrix for a surface with only one nonzero principle curvature everywhere, i.e. a surface with vanishing Gaussian curvature but nonzero mean curvature.
+
+For a planar curve, we choose points along the contour by hand and then estimate $\mathbf{T}$ and $\mathbf{k}$ by calculating finite differences as in Chapter~\ref{c:3}.
+We initially estimate $\kappa$ for a point of interest by fitting Eq.~\ref{e:4-FSfit} for all pairs of points within $s_1$ of the point of interest, where we take $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[j]} - \mathbf{k}_{[j]}$ and $\Delta s_{[i,j]} \approx \textrm{sign}\big ( (\mathbf{r}_{[i]} - \mathbf{r}_{[j]}) \cdot \mathbf{T}\big ) |\mathbf{r}_{[i]} - \mathbf{r}_{[j]}|$.
+We then use this initial estimate as the input for our IRLS routine and fit Eq.~\ref{e:4-FSfit} considering all pairs of points within $s_2$ of the point of interest.
+
+We validate our approach on ellipses with varying eccentricities.
+For an ellipse with semiminor and semimajor axes $a$ and $b$, we can parameterize the curve by:
+\refstepcounter{equation}\label{e:4-ellipseParam}
+\begin{align}
+  x(s) &= a \cos s\tag{\theequation a} \\
+  y(s) &= b \sin s\tag{\theequation b},
+\end{align}
+where the eccentricity is $e = \sqrt{a^2-b^2}/a$, the curvature is $\kappa(s) = a b \big (a^2 \sin^2 s + b^2 \cos^2 s  \big )^{-3/2}$, and the unit normal vector is $\mathbf{k}(s) = (\hat{x} b \cos s + \hat{y} a \sin s)/\sqrt{a^2 \sin^2 s + b^2 \cos^2 s}$.
+For the example ellipse in Figure~\fxnote{blah} with $e = XXX$, we select the points and plot the normals like Figure~\fxnote{blah}, leading to a final curvature fit of Figure~\fxnote{blah}.
+
+Now considering the example capillart
 \subsection{Measuring the intensity profile}
 \subsection{Comparison with toroids}
 
