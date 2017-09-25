@@ -485,11 +485,11 @@ We apply the heat for as short of a duration as possible to minimize the change 
 
 \subsection{Measuring planar curvature}
 We measure the curvature of the capillary axis using a modified version of the IRLS routine we used in Chapter~\ref{c:3} to measure surface curvature.
-Here, instead of fitting to the extended Weingarten Matrix, we fit to the Frennet-Serret formula, $\textrm{d}\mathbf{k}/\textrm{d}s = -\kapa \cdot \mathbf{T}$, via:
+Here, instead of fitting to the extended Weingarten Matrix, we fit to the Frennet-Serret formula, $\textrm{d}\mathbf{k}/\textrm{d}s = -\kappa \cdot \mathbf{T}$, via:
 \begin{equation}
   \Delta \mathbf{k} \cdot \mathbf{T} = \kappa \, \Delta s,\label{e:4-FSfit}
 \end{equation}
-with $\Delta s$ the independent variable, $\Delta \mathbf{k} \cdot \mathbf{T}$ the dependent variable, $\kappa$ a fitting parameter, $s$ the arclength parameter, $\mathbf{T}$ the unit tangent vector, $\mathbf{k}$ the unit normal vector, and $\kapa$ the curvature.
+with $\Delta s$ the independent variable, $\Delta \mathbf{k} \cdot \mathbf{T}$ the dependent variable, $\kappa$ a fitting parameter, $s$ the arclength parameter, $\mathbf{T}$ the unit tangent vector, $\mathbf{k}$ the unit normal vector, and $\kappa$ the curvature.
 This approach is equivalent to fitting to the Weingarten Matrix for a surface with only one nonzero principle curvature everywhere, i.e. a surface with vanishing Gaussian curvature but nonzero mean curvature.
 
 For a planar curve, we choose points along the contour by hand and then estimate $\mathbf{T}$ and $\mathbf{k}$ by calculating finite differences as in Chapter~\ref{c:3}.
@@ -506,8 +506,20 @@ For an ellipse with semiminor and semimajor axes $a$ and $b$, we can parameteriz
 where the eccentricity is $e = \sqrt{a^2-b^2}/a$, the curvature is $\kappa(s) = a b \big (a^2 \sin^2 s + b^2 \cos^2 s  \big )^{-3/2}$, and the unit normal vector is $\mathbf{k}(s) = (\hat{x} b \cos s + \hat{y} a \sin s)/\sqrt{a^2 \sin^2 s + b^2 \cos^2 s}$.
 For the example ellipse in Figure~\fxnote{blah} with $e = XXX$, we select the points and plot the normals like Figure~\fxnote{blah}, leading to a final curvature fit of Figure~\fxnote{blah}.
 
-Now considering the example capillart
+
 \subsection{Measuring the intensity profile}
+Now considering the example capillary in Figure~\fxnote{Fig}, the selected points and associated normal are plotted on the image, and the fitted curvature of the outer and inner contour are displayed in Figure~\fxnote{Fig}.
+However, in order to assign a local aspect ratio, we need the curvature along the central capillary axis.
+To find this, we start by selecting a point of interest in the capillary near the central axis.
+We then find the nearest point on the outer and inner contours, $\mathbf{p}_{out}$ and $\mathbf{p}_{in}$, and take the intensity profile along the line between $\mathbf{p}_{out}$ and $\mathbf{p}_{in}$.
+The central ring radius for the intensity profile is then given by $R^{cap}_0 = 2/(\kappa(\mathbf{p}_{in}) + \kappa(\mathbf{p}_{in}))$, and the tube radius $a^{cap} = |\mathbf{p}_{out} - \mathbf{p}_{in}|/2$, such that we can calculate the local aspect ratio $\xi^{cap} = R^{cap}_0/a^{cap}$.
+Thus, we see that in a single bent capillary we can explore a variety of $\xi$ simply by changing PA to the along different portions of the capillary.
+
+
 \subsection{Comparison with toroids}
+We see that the intensity profiles for the $\xi^{cap} \rightarrow \infty$ regions of the bent capillary resemble the intensity profiles for the ER capillaries, while the intensity profiles with a finite $\xi^{cap}$ again have the raised central minimum indicative of a TER configuration and similar to our TER toroids.
+Plotting $I_{max}/I_{min}$ for the capillaries as a function of the local aspect ratio on top of our data from the homeotropic toroids, we see that the data fall on top of each other, confirming that the amount of twist is determined solely by the local geometry.
+From this perspective, $\xi$ can be seen as a dimensionless group locally comparing the relevant curvatures; $a$ gives the radius of curvature in the bend distortion inherent to an escaped radial configuration, while $R_0$ is the radius of curvature of the additional bend distortion induced by bending the capillary.
+
 
 \section{Conclusions}
