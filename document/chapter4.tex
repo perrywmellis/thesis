@@ -6,21 +6,45 @@ A system with broken reflection symmetry, i.e. it cannot be superimposed onto it
 Chirality can have important consequences for a system.
 For example, as first shown by Pasteur, optical activity results from broken reflection symmetry, and the handedness of the system determines the direction of the rotation of the polarization of light\cite{RN291}.
 In addition, chiral systems can exhibit structural color~\cite{RN308,RN307}, and can even be doped to form microlasers~\cite{RN305,RN306}.
-Chiral systems can be formed from chiral building blocks, as in some photonic metamaterials~\cite{RN304}, or chirality can emerge via symmetry breaking in an achiral system\cite{RN294}.
+Chiral systems can be formed from chiral building blocks, as in some photonic metamaterials~\cite{RN304}, or chirality can emerge via spontaneous symmetry breaking in an achiral system\cite{RN294}.
 This latter scenario is often studied in nematic liquid crystals where the mesogens are achiral\cite{RN297,RN296,RN298,RN295,RN299,RN193,RN46,RN192,RN191,RN293,RN302}.
 Here, the symmetry-breaking is driven by elasticity; if the minimum energy state has a nontrivial twist distortion, then the system is chiral.
 
-This simplest way to break the reflection symmetry is to proscribe it with boundary conditions, as in a twisted nematic cell.
-In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate and the anchoring directions on each plate orthogonal to each other; consequently, the boundary conditions require $\mathbf{n}$ to twist by $\pi/2$ along a path between the plates.
-Thus, the system has a persistent twist distortion, breaking reflection symmetry.
-However, when the twist direction is not specifically set by the boundary, confined liquid crystals can exhibit spontaneous reflection symmetry breaking.
-For example, consider a standard bipolar drop with degenerate planar anchoing, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
-If the twist elastic constant $K_{22}$ and bend elastic constant $K_{33}$ are small enough compared to $K_{11}$, the splay elastic constant, the bipolar drop will twist, relieving some some of the splay with the less-costly twist and bend distortions~\cite{RN297,RN296,RN295}.
-The criterion governing this instability is called the Williams criterion, $K_{11} > K_{22}+ 0.431 K_{33}$~\cite{RN297}.
-Similarly, provided $K_{22}< K^c_{22}$, a NLC confined under homeotropic boundary conditions to a cylindrical capillary will exhibit a twisted escaped-radial (TER) configuration instead of the more common escaped-radial (ER) configuration~\cite{RN192}.
+This simplest way to break the reflection symmetry in a NLC is to proscribe twist with boundary conditions, as in a twisted nematic cell.
+In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate, specified by $\bm{sigma}_1$ and $\bm{sigma}_2$ on the bottom and top plate, respectively.
+For example, if the plates are in the $xy$-plane with the distance between the plates given by $H$, then $\mathbf{n}(z = 0) \times \hat{z} = \bm{\sigma}_1$ and $\mathbf{n}(z = H) \times \hat{z} = \bm{\sigma}_2$.
+When $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 0$, the boundary conditions require $\mathbf{n}$ to twist by $\pm \pi/2$ along a path between the plates.
+Briefly computing the free-energy density for such a cell using a linear twist ansatz $\mathbf{n} = \hat{x} \cos (\tau z/H) + \hat{y} \sin(\tau z/H)$, with $\tau$ the total twist in the director between the plates, we have:
+\begin{align}
+  f = K_{22}(\mathbf{n} \cdot \nabla \times \mathbf{n})^2 = K_{22}\tau^2/H^2,
+\end{align}
+where $K_{22}$ is the Frank elastic constant for a twist distortion.
+Thus, we see that when $|\tau| = \pi/2$, the system is free to twist in either direction, spontaneously breaking reflection symmetry with no preference for either handedness.
+We also see that the amount of twist is set by the anchoring, and is the same for an NLC provided the material obeys the boundary conditions.
+However, if we were to change $\bm{sigma}_1$ and $\bm{sigma}_2$ such that $|\tau| \neq \pi/2$, the choice of handedness becomes biased; for example, if $\bm{sigma}_1 \cdot \bm{sigma}_2 = 1/\sqrt{2}$, $\tau = \pi/4$ or $-3\pi/4$, leading to a difference in the free-energy between the two twist directions.
 
-Recent work in our group with NLC confined to capillaries and toroids with degenerate planar boundary conditions have shown that the saddle-splay distortion can also enable a confined NLC to develop chirality~\cite{RN46,RN59,RN293}.
-In this case, the saddle splay distortion drives the director at the interface to align along the smallest curvature of the interface according to Eq~\ref{e:2-K24SurfCouple}~\cite{RN59}; as a capillary can be thought of as a torus with an infinite aspect ratio, the criterion for a twisted ground state in both geometries is $K_{24} > K^c_{24}$~\cite{RN24,RN293}.
+If we want to explore scenarios where the NLC has equal probability to adopt either handedness, we need to consider scenarios where more than one distortion is at play.
+For example, consider a standard bipolar drop with degenerate planar anchoring, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
+Here, there is both a splay distortion and a bend distortion, governed by their respective Frank elastic constants, $K_{11}$ and $K_{33}$, and the structure is achiral.
+If $K_{22}$ and $K_{33}$ are small enough compared to $K_{11}$, the bipolar drop will twist, relieving some some of the splay distortions with the less costly twist and bend distortions~\cite{RN297,RN296,RN295}.
+The criterion governing this instability is called the Williams criterion, $K_{11} > K_{22}+ 0.431 K_{33}$~\cite{RN297}.
+As with the twisted NLC cell with $|\tau| = \pi/2$, the handedness of the twist is randomly chosen.
+Provided $K_{11}$, $K_{22}$, and $K_{33}$ satisfy the Williams criterion, the magnitude of the twist is determined by the elastic constants; in this scenario there is no ability to tune the twist apart from changing the material properties of the NLC.
+% Similarly, provided $K_{22}< K^c_{22}$, a NLC confined under homeotropic boundary conditions to a cylindrical capillary will exhibit a twisted escaped-radial (TER) configuration instead of the more common escaped-radial (ER) configuration~\cite{RN192}.
+
+Prior work in our group with NLC confined to toroids with degenerate planar boundary conditions demonstrated that the amount of twist resulting from spontaneous symmetry breaking is not always only determined by the elastic constants~\cite{RN46}.
+We found a doubly-twisted director configuration where the magnitude of the twist grew with decreasing $\xi$.
+Under degenerate planar anchoring, the saddle-splay distortion drives the director at the interface to align along the smallest principle curvature of the interface according to Eq~\ref{e:2-K24SurfCouple}~\cite{RN59}.
+Clearly then, increasing the difference between the principle curvatures of the interface will cause the system to twist more.
+In toroidal droplets, this corresponds to our observations of increasing twist with decreasing $\xi$.
+However, there is still an influence of the elastic constants.
+A large $K_{24}$ or a small $K_{22}$ will allow for more twist.
+For 5CB, where $K_{11}\sim K_{22} \sim K_{33} \sim K_{24}$, the $\xi \rightarrow \infty $ ``cylindrical limit'' of a torus, we predicted that $|\tau| = XX \pm xx^{\circ}$.
+
+Recent work by our group and others explored the 
+
+ the geometry of the confining surface can affect the magnitude of the twist resulting from spontaneous reflection symmetry breaking. the saddle-splay distortion can also enable a confined NLC to develop chirality~\cite{RN46,RN59,RN293}.
+In this case, the saddle splay distortion  as a capillary can be thought of as a torus with an infinite aspect ratio, the criterion for a twisted ground state in both geometries is $K_{24} > K^c_{24}$~\cite{RN24,RN293}.
 For a cylindrical capillary, a doubly-twisted state is the ground state if $K^c_{24}>K_{22}$.
 However, by increasing the difference between the principle curvatures on the inside of the handle by decreasing $\xi$ and bending the cylinder into a torus, $K^c_{24}$ decreases and the amount of twist in a chiral ground state increases.
 This is an example of how geometry can tune chirality.
