@@ -23,7 +23,7 @@ Thus, we see that when $|\tau| = \pi/2$, the system is free to twist in either d
 We also see that the amount of twist is set by the anchoring, and is the same for an NLC provided the material obeys the boundary conditions.
 However, if we were to change $\bm{sigma}_1$ and $\bm{sigma}_2$ such that $|\tau| \neq \pi/2$, the choice of handedness becomes biased; for example, if $\bm{sigma}_1 \cdot \bm{sigma}_2 = 1/\sqrt{2}$, $\tau = \pi/4$ or $-3\pi/4$, leading to a difference in the free-energy between the two twist directions.
 
-If we want to explore scenarios where the NLC has equal probability to adopt either handedness, we need to consider scenarios where more than one distortion is at play.
+If we want to explore scenarios where the NLC has equal probability to adopt either handedness with differing amounts of total twist, we need scenarios where more than one distortion is at play.
 For example, consider a standard bipolar drop with degenerate planar anchoring, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
 Here, there is both a splay distortion and a bend distortion, governed by their respective Frank elastic constants, $K_{11}$ and $K_{33}$, and the structure is achiral.
 If $K_{22}$ and $K_{33}$ are small enough compared to $K_{11}$, the bipolar drop will twist, relieving some some of the splay distortions with the less costly twist and bend distortions~\cite{RN297,RN296,RN295}.
@@ -38,24 +38,37 @@ Under degenerate planar anchoring, the saddle-splay distortion drives the direct
 Clearly then, increasing the difference between the principle curvatures of the interface will cause the system to twist more.
 In toroidal droplets, this corresponds to our observations of increasing twist with decreasing $\xi$.
 However, there is still an influence of the elastic constants.
-A large $K_{24}$ or a small $K_{22}$ will allow for more twist.
-For 5CB, where $K_{11}\sim K_{22} \sim K_{33} \sim K_{24}$, the $\xi \rightarrow \infty $ ``cylindrical limit'' of a torus, we predicted that $|\tau| = XX \pm xx^{\circ}$.
+This is easiest to see by considering the Frank-Oseen free-energy of a linear double-twist in the $\xi \rightarrow \infty $ ``cylindrical limit'' of a torus.
+Here, we use the ansatz in toroidal coordinates:
+\begin{equation}\label{e:4-planransatz}
+\mathbf{n} = \hat{\theta}\frac{\omega \frac{r}{a}}{1-\gamma \frac{r}{R_0} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega \frac{r}{a}}{1-g \frac{r}{R_0} \cos \theta} \right )^2 },
+\end{equation}
+where $\omega$ and $g$ are parameters that determine the amount of twist and splay in the director field, respectively.
+The free energy per unit length for $\xi \rightarrow \infty$ is then given by:
+\begin{equation}\label{e:4-FEPlanarTwist}
+  \frac{F}{2 \pi K_{33}} = \frac{K_{22}-K_{24}}{K_{33}}\omega^2 + \frac{\omega^4}{4} + \frac{K_{22}}{K_{33}}\sum\limits_{n=3}^{\infty} \frac{\omega^{2n}}{2n}.
+\end{equation}
+For $\omega \ll 1$, we can ignore the higher-order terms in the summation and write:
+\begin{equation}
+  \omega = \pm \sqrt{2\frac{K_{24}-K_{22}}{K_{33}}},
+\end{equation}
+where the total twist through the tube of the torus is $\tau = 2 \arcsin (\omega)$.
+Clearly then, the system will break reflection symmetry for $\xi \rightarrow \infty$ when $K_{24}> K_{22}$, and $|\tau|$ should increase with increasing $K_{24}$ and decreasing $K_{22}$.
 
-Recent work by our group and others explored the 
+We~\cite{RN293} and others~\cite{RN191} explored this directly by confining a LCLC to a capillary under degenerate planar anchoring conditions.
+Typically, LCLC have $K_{11} \sim K_{33} \sim 10 K_{22}$; under confinement, the small $K_{22}$ yielded measured values of $|\tau| \approx 170 ^{\circ}$.
+For comparison, using the value of $K_{22}/K_{33}=0.4$ for 5CB and $K_{24} = 1.02 K_{22}$ measured from our experiments wit 5CB confined to toroidal droplets under degenerate planar anchroring, we predict that $|\tau (\xi \rightarrow \infty)| \approx 15^{\circ}$.
+In fact, in our experiments even then $\xi \sim 1$, we never measured $|\tau| > 70^{\circ}$.
 
- the geometry of the confining surface can affect the magnitude of the twist resulting from spontaneous reflection symmetry breaking. the saddle-splay distortion can also enable a confined NLC to develop chirality~\cite{RN46,RN59,RN293}.
-In this case, the saddle splay distortion  as a capillary can be thought of as a torus with an infinite aspect ratio, the criterion for a twisted ground state in both geometries is $K_{24} > K^c_{24}$~\cite{RN24,RN293}.
-For a cylindrical capillary, a doubly-twisted state is the ground state if $K^c_{24}>K_{22}$.
-However, by increasing the difference between the principle curvatures on the inside of the handle by decreasing $\xi$ and bending the cylinder into a torus, $K^c_{24}$ decreases and the amount of twist in a chiral ground state increases.
-This is an example of how geometry can tune chirality.
-
-Inspired by these results in planar-anchored nematic toroids, in this Chapter we consider a 5CB confined to a toroidal droplets under hometropic anchoring.
+Inspired by these results in planar-anchored nematic toroids and capillaries, in this Chapter we consider a 5CB confined to a toroidal droplets under hometropic anchoring.
 Despite the fact that the saddle-splay distortion does not enter into the energy minimization for homeotropic nematics, we find spontaneous reflection symmetry breaking and geometrically-controlled chirality.
 As with homeotropically-anchored NLC capillaries when $K_{22} < K^c_{22}$~\cite{RN192}, we see that a TER configuration replaces the standard ER configuration.
-However, we find TER configurations for $K_{22} > K^c_{22}$; we attribute this to the additional bend distortion introduced when taking a capillary with $\xi \rightarrow \infty$ to a torus with $\xi ~\mathcal(1--10)$.
+However, we find TER configurations for $K_{22} > K^c_{22}$; we attribute this to the additional bend distortion introduced when taking a capillary with $\xi \rightarrow \infty$ to a torus with $\xi ~\mathcal(1-10)$.
 This additional bend-distortion is relieved by a twist-distortion with a spontaneously-chosen handedness.
 In addition, we see that the amount of twist varies inversely with $\xi$, similar to our previous findings in planar anchored toroids.
 
+
+We note that ER configurations have been observed in NLC confined under homeotropic anchoring to $\upmu$m-sized handlebody objects~\cite{RN274}.
 
 
 
@@ -291,9 +304,7 @@ We first used simulated OPM textures in our previous work with NLC toroids under
 We observed the toroidal droplets from the top, shown in the OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(A), and from the side, shown in the bright-field image in Figure~\ref{f:4-PlanarTorusComparison}(D) and the OPM textures in Figure~\ref{f:4-PlanarTorusComparison}(E,F).
 Note how the central region in the side-view OPM textures found in Figure\ref{f:4-PlanarTorusComparison}(F,G) is always bright regardless of the PA orientation.
 The fact that this central region cannot be fully extinguished under crossed polarizers can be explained with a doubly-twisted director field, with ansatz~\cite{RN46}:
-\begin{equation}\label{e:4-planransatz}
-\mathbf{n} = \hat{\theta}\frac{\omega \frac{r}{a}}{1-\gamma \frac{r}{R_0} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega \frac{r}{a}}{1-g \frac{r}{R_0} \cos \theta} \right )^2 }.
-\end{equation}
+
 
 The parameter $\omega$ determines the amount of twist in the director field and $g$ allows the director field to splay; $g=1$ corresponds to a splay-free configuration.
 From minimizing the Frank-Oseen free energy, including saddle splay, for different values of the toroidal aspect ratio, $\xi = R_0/a$, we obtained the values of $\omega$ and $g$~\cite{RN46}.
