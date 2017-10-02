@@ -11,7 +11,7 @@ This latter scenario is often studied in nematic liquid crystals where the mesog
 Here, the symmetry-breaking is driven by elasticity; if the minimum energy state has a nontrivial twist distortion, then the system is chiral.
 
 This simplest way to break the reflection symmetry in a NLC is to proscribe twist with boundary conditions, as in a twisted nematic cell.
-In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate, specified by $\bm{sigma}_1$ and $\bm{sigma}_2$ on the bottom and top plate, respectively.
+In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate, specified by $\bm{\sigma}_1$ and $\bm{\sigma}_2$ on the bottom and top plate, respectively.
 For example, if the plates are in the $xy$-plane with the distance between the plates given by $H$, then $\mathbf{n}(z = 0) \times \hat{z} = \bm{\sigma}_1$ and $\mathbf{n}(z = H) \times \hat{z} = \bm{\sigma}_2$.
 When $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 0$, the boundary conditions require $\mathbf{n}$ to twist by $\pm \pi/2$ along a path between the plates.
 Briefly computing the free-energy density for such a cell using a linear twist ansatz $\mathbf{n} = \hat{x} \cos (\tau z/H) + \hat{y} \sin(\tau z/H)$, with $\tau$ the total twist in the director between the plates, we have:
@@ -21,7 +21,7 @@ Briefly computing the free-energy density for such a cell using a linear twist a
 where $K_{22}$ is the Frank elastic constant for a twist distortion.
 Thus, we see that when $|\tau| = \pi/2$, the system is free to twist in either direction, spontaneously breaking reflection symmetry with no preference for either handedness.
 We also see that the amount of twist is set by the anchoring, and is the same for an NLC provided the material obeys the boundary conditions.
-However, if we were to change $\bm{sigma}_1$ and $\bm{sigma}_2$ such that $|\tau| \neq \pi/2$, the choice of handedness becomes biased; for example, if $\bm{sigma}_1 \cdot \bm{sigma}_2 = 1/\sqrt{2}$, $\tau = \pi/4$ or $-3\pi/4$, leading to a difference in the free-energy between the two twist directions.
+However, if we were to change $\bm{\sigma}_1$ and $\bm{\sigma}_2$ such that $|\tau| \neq \pi/2$, the choice of handedness becomes biased; for example, if $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 1/\sqrt{2}$, $\tau = \pi/4$ or $-3\pi/4$, leading to a difference in the free-energy between the two twist directions.
 
 If we want to explore scenarios where the NLC has equal probability to adopt either handedness with differing amounts of total twist, we need scenarios where more than one distortion is at play.
 For example, consider a standard bipolar drop with degenerate planar anchoring, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
@@ -41,7 +41,7 @@ However, there is still an influence of the elastic constants.
 This is easiest to see by considering the Frank-Oseen free-energy of a linear double-twist in the $\xi \rightarrow \infty $ ``cylindrical limit'' of a torus.
 Here, we use the ansatz in toroidal coordinates:
 \begin{equation}\label{e:4-planransatz}
-\mathbf{n} = \hat{\theta}\frac{\omega \frac{r}{a}}{1-\gamma \frac{r}{R_0} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega \frac{r}{a}}{1-g \frac{r}{R_0} \cos \theta} \right )^2 },
+\mathbf{n} = \hat{\theta}\frac{\omega r}{a-\gamma \frac{r}{\xi} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega r}{a-g \frac{r}{\xi} \cos \theta} \right )^2 },
 \end{equation}
 where $\omega$ and $g$ are parameters that determine the amount of twist and splay in the director field, respectively.
 The free energy per unit length for $\xi \rightarrow \infty$ is then given by:
@@ -62,13 +62,26 @@ In fact, in our experiments even then $\xi \sim 1$, we never measured $|\tau| > 
 
 Inspired by these results in planar-anchored nematic toroids and capillaries, in this Chapter we consider a 5CB confined to a toroidal droplets under hometropic anchoring.
 Despite the fact that the saddle-splay distortion does not enter into the energy minimization for homeotropic nematics, we find spontaneous reflection symmetry breaking and geometrically-controlled chirality.
-As with homeotropically-anchored NLC capillaries when $K_{22} < K^c_{22}$~\cite{RN192}, we see that a TER configuration replaces the standard ER configuration.
-However, we find TER configurations for $K_{22} > K^c_{22}$; we attribute this to the additional bend distortion introduced when taking a capillary with $\xi \rightarrow \infty$ to a torus with $\xi ~\mathcal(1-10)$.
-This additional bend-distortion is relieved by a twist-distortion with a spontaneously-chosen handedness.
-In addition, we see that the amount of twist varies inversely with $\xi$, similar to our previous findings in planar anchored toroids.
+For NLC with $K_{11}\sim K_{22} \sim K_{33}$ confined in capillaries and $\upmu$m-sized toroids~\cite{RN274} with homeotropic anchoring, the ground state is the escaped-radial (ER) configuration.
+However, when $K_{11}\sim K_{33} \gg K_{22}$, the system breaks reflection symmetry, becoming a twisted-escaped-radial configuration~\cite{RN192}.
+This was again observed using LCLC; as in the degenerate-planar case, the low $K_{22}$ results in a very large total twist.
+Here, we find that confining NLC to millimetric-sized toroidal droplets with homeotropic anchoring yields a TER configuration, where the total twist decreases with increasing $\xi$, similar to our previous findings in planar anchored toroids.
+We attribute the twist to the additional bend distortion introduced when taking a capillary with $\xi \rightarrow \infty$ to a torus with $\xi ~\mathcal(1-10)$.
+As the additional bend distortion grows with decreasing $\xi$, it becomes more favorable to relieve some of this bend distortion by a twist distortion with a spontaneously-chosen handedness, even when $K_{11}\sim K_{22} \sim K_{33}$.
+Our work demonstrates that geometry can tune chirality, even in the absence of an explicit curvature-coupling term in the free-energy.
 
+This Chapter is organized as follows.
+We begin with an overview of the ER and highly-twisted TER configurations in cylindrical capillaries, discussing qualitative differences between the structures and establishing an intensity ratio as a qualitative way to distinguish between the  two configurations.
+We then consider NLC confined with homeotropic anchoring to millimetric-sized toroidal droplets, and find that the intensity ratio varies with $\xi$, from the high-twist TER limit to the no-twist ER limit.
+In addition, we see a structural change in the toroids as $\xi$ decreases.
+Next, we use Jones Calculus to simulate OPM textures for a given director field, and validate our implementation on well-studied director configurations in spheres.
+We use a linear double-twist ansatz in a torus to demonstrate technical details of our implementation.
+Furthermore, we establish that the we can successfully simulate twisted textures by verifying that the measured the twist angle in our simulations is the same as the twist angle set in the given director field.
+We then turn to simulating of a TER texture in toroids and capillaries, finding that the twist scales inversely with the intensity ratio.
+Since this relationship is monotonic, the simulations indicate that the scaling of the intensity ratio with $\xi$ is indicative of decreasing twist with increasing $\xi$.
+Finally, we confirm that the twist is driven by the local geometry by confining NLC to bent capillaries under homeotropic anchoring.
+We measure a local aspect ratio and find that the intensity ratio in the bent capillaries has the same relationship as the intensity ratio in our homeotropic toroids.
 
-We note that ER configurations have been observed in NLC confined under homeotropic anchoring to $\upmu$m-sized handlebody objects~\cite{RN274}.
 
 
 
