@@ -499,11 +499,11 @@ All three curves fall on top of each other.
 This is because $I_0/I_{45}$ is taken using the average intensity over the central region.
 \begin{figure}
 \centering
-% \includegraphics[width=0.45\textwidth]{Figs/Figs3_Voxel_Dep.png}
+\includegraphics{figures/C4/Ch4-Figs_SimDeltaTest.png}
 \caption{Effect of voxel size on individual OPM textures and on $I_0/I_{45}$ for planar NLC tori.
-(A) Intensity ratio $I_0/I_{45}$ as a function of $\xi$ for simulated side-view OPM textures as seen schematically in Figure~\ref{f:4-PlanarIntRatio}(A) for $\Delta /a = 0.04$ ($\blacksquare$), $\Delta /a = 0.01$ (${\color{red}\bullet}$), and $\Delta /a = 0.001$ (${\color{blue}\blacktriangle}$).
-(B--G), The central region of a simulated side-view OPM texture with $\xi = 1.8$ with PA at $0^{\circ}$ (B--D) and PA at $45^{\circ}$ (E--G) for (B,E) $\Delta /a = 0.04$, (C,F) $\Delta /a = 0.01$, and (D,G) $\Delta /a = 0.001$.
+(A--F), The central region of a simulated side-view OPM texture with $\xi = 1.8$ with PA at $0^{\circ}$ (A--C) and PA at $45^{\circ}$ (D--F) for (A,D) $\Delta /a = 0.04$, (B,E) $\Delta /a = 0.01$, and (C,F) $\Delta /a = 0.001$.
 All textures use a $200$ wavelength average with $a = 100$ $\upmu$m.}\label{f:4-PlanarVoxel}
+(G) Intensity ratio $I_0/I_{45}$ as a function of $\xi$ for simulated side-view OPM textures as seen schematically in Figure~\ref{f:4-PlanarIntRatio}(A) for ($\blacksquare$) $\Delta /a = 0.04$, (${\color{red}\blacksquare}$) $\Delta /a = 0.01$ , and (${\color{blue}\blacksquare}$) $\Delta /a = 0.001$.
 \end{figure}
 
 \subsubsection{Effect of refraction on OPM textures}
@@ -522,11 +522,11 @@ As with the top view, these intensity trends are supported by simulated side-vie
 From these images, we find that we can only compare the central region and the inner portions of the tube between the experimental and simulated OPM textures of toroids viewed from the side.
 \begin{figure}
 \centering
-% \includegraphics[width=0.45\textwidth]{Figs/Figs3_Refraction.png}
+\includegraphics{figures/C4/Ch4-Figs_RefractionTest.png}
 \caption{Effect of refraction of top and side view images of toroids.
-(A--D), Experimental bright-field images of toroidal droplets of 5CB with (A,C), $n_{iso} \approx 1.6$, and (B,D) PDMS oil with $n \approx 1.4$ in a yield-stress outer medium with $n \approx 1.33$ viewed from the top (A,B) and from the side (C,D).
+(A,B,E,F), Experimental bright-field images of toroidal droplets of 5CB with (A,E) $n_{iso} \approx 1.6$, and (B,F) PDMS oil with $n \approx 1.4$ in a yield-stress outer medium with $n \approx 1.33$ viewed from the top (A,B) and from the side (E,F).
 Scale bar for experimental images is $200$ $\upmu$m.
-(E--H), Simulated bright-field images of isotropic tori with (E,G) $n =1.4$ and (F,H) $n=1.2$ with outer index of refraction $n = 1$ viewed from the top (E,F) and from the side (G,H).
+(C,D,G,H), Simulated bright-field images of isotropic tori with (C,G) $n =1.4$ and (D,H) $n=1.2$ with outer index of refraction $n = 1$ viewed from the top (C,G) and from the side (D,H).
 Images simulated using Autodesk Maya.}\label{f:4-refraction}
 \end{figure}
 
@@ -557,22 +557,29 @@ We model a TER director field by coupling the doubly-twisted ansatz from our pla
 \end{equation}
 where $\Omega = 2 \arctan(r/a)$.
 As with our simulated OPM textures of planar-anchored NLC toroids, we produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm, where the weights are provided by the spectrum of the lamp in our microscope.
-Comparing the experimental TER textures with the simulated TER textures, we see that they share the same intensity features, giving credence to our hypothesis that the director field in a homeotropic nematic toroid is either escaped-radial or twisted escaped-radial.
+Comparing the example experimental TER texture in Figure~\ref{f:4-HomeoToroidsExp}(B) with the example simulated ER texture in Figure~\ref{f:4-I0I45vsTwist}(A), and the example simulated TER texture in Figure~\ref{f:4-I0I45vsTwist}(B) we see that they share the same intensity features; all three textures exhibit the classic dark-bright-dark-bright-dark pattern, giving credence to our hypothesis that the director field in a homeotropic nematic toroid is either escaped-radial or twisted escaped-radial.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C4/Ch4-Figs_I0I45vsTwist.png}
+  \caption{Simulated OPM textures, intensity profiles, and intensity ratios of TER configurations in tori and cylinders.
+  (A--E), Simulated OPM textures of TER configurations in (A,B) tori and (C--E) cylinders.
+  The textures are generated with twist angles (A,C) $\tau = 0^{\circ}$, (D) $\tau = 34^\circ$, and (B,E) $\tau = 50^{\circ}$.
+  (F), Intensity ratio vs twist angle from the cylindrical and toroidal TER OPM textures.}\label{f:4-I0I45vsTwist}
+\end{figure}
 
-To further confirm this, we simulate TER capillaries, where we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the orientation of the capillary axis.
-From the top, we see that our simulated TER textures in a torus and simulated TER textures in a capillary have the same qualitative features.
-With PA along the horizontal and vertical, the intensity profiles in the simulated toroidal texture at $\varphi = 0^{\circ},90^{\circ},180^{\circ},270^{\circ}$ are the same as for the TER capillary with $\hat{z}$ along PA.
-Similarly, the intensity profiles in the simulated toroidal texture at $\varphi = 45^{\circ},135^{\circ},225^{\circ},315^{\circ}$ are the same as for the TER capillary with $\hat{z}$ aligned at $45^{\circ}$ with respect to PA.
-This confirms that ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
-
-In addition, we see that the intensity profiles of the simulated ER textures in the  cylinders and the tori have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33}\fxnote{P. Chatelin, Sur la diffusion, par les cristaux}.
+To further confirm this, we simulate ER and TER capillaries, as shown in Figure~\ref{f:4-I0I45vsTwist}(C) and Figure~\ref{f:4-I0I45vsTwist}(D,E), respectively.
+Here, we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the orientation of the capillary axis.
+From the top, we first see that our simulated ER and TER textures in a torus and simulated ER and TER textures in a capillary have the same alternating dark and bright intensity features.
+We plot the intensity profiles in the simulated OPM textures in the tori and the cylinders in Figure~\ref{f:4-I0I45vsTwist}(XXX)\fxnote{HERE}. showing that the geometry does not affect the intensity profile.
+Second, we see that the intensity profiles are geometry independent; provided the $\hat{\varphi}$ and $\hat{z}$ have the same orientation with respect to PA and $\tau$ is the same, the intensity profiles across the tube for the tori and the cylinders are identical.
+Thus, as expected, ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
+Third, we see that the intensity profiles of the simulated ER textures in the  cylinders and the tori have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33}\fxnote{P. Chatelin, Sur la diffusion, par les cristaux}.
 Thus, we cannot make a quantitative comparison between the intensity profiles in the experimental and simulated ER/TER toroidal textures, but we can use our simulated OPM textures to investigate how the twist affects a TER texture.
 
 
 \subsection{Intensity ratio as a function of twist parameter}
-We simulate TER cofigurations using Eq.~\ref{e:4-TERansatz} keeping $g = 0$ and varying $\omega$ in cylinders and tori.
-First, the intensity profiles are geometry independent; provided the $\hat{\varphi}$ and $\hat{z}$ have the same orientation with respect to PA, the intensity profiles across the tube for the tori and the cylinders are identical.
-Second, we see that $I_{max}/I_{min}$ varies inversely and monotonically with $\omega$.
+We simulate TER configurations in for varying $\omega$ in tori, measure the intensity profiles, and plot $I_{max}/I_{min}$ vs $\tau$ in Figure~\ref{f:4-I0I45vsTwist}(XXXX)\fxnote{HERE}.
+We find $I_{max}/I_{min}$ varies inversely and monotonically with $\tau$.
 This confirms our expectations that adding twist raises the intensity of the central minimum in an OPM texture of a TER director configuration.
 In addition, the monotonic relationship between the intensity ratio and $\omega$ implies that we can use $I_{max}/I_{min}$ as a proxy for twist.
 Thus, our observation that  $I_{max}/I_{min}$ is proportional to $\xi$ confirms that the amount of twist in a TER configuration in a toroid decreases with increasing $\xi$.
@@ -583,14 +590,19 @@ However, because $K_{11} \sim K_{22} \sim K_{33}$, we need to introduce extra be
 
 
 \subsection{Intensity ratio as a function of escape core size}
-We notice that changing $\omega$ does not change the size of the escape core at all.
-However, when we look closely at the escape core in the simnulated TER textures in tori, we see that the escape core appears to spiral, similar to the the experimental textures at for NLC confined to toroids with low $\xi$.
-To test if a spiral textures imilar to the experiments can be generated with a larger escape core, we modify the ER and TER ansatz by $\Omega = (r/a)^{\phi}$.
-Here, choosing $\phi = 1$ well approximates $2 \arctan(r/a)$, the one-constant solution, choosing $\phi < 1$ yields a slow escape while $\phi > 1$ yields a fast escape.
-Observing textures and the intensity profiles for three different values of $\phi$, we see $\phi > 1$ produces textures and intensity profiles that qualitatively resemble those from our experimental toroids with the spiral textures.
-However, note that changing $\phi$ has no effect on $I_{max}/I_{min}$.
+When we look closely at the escape core in the simnulated TER textures in tori, we see that the escape core appears to spiral, similar to the the experimental textures at for NLC confined to toroids with low $\xi$.
+To test if a spiral textures similar to the experiments can be generated with a larger escape core, we modify the ER and TER ansatz from Eq.~\ref{e:4-TERansatz} with $\Omega = (r/a)^{\phi}$.
+Here, as demonstrated by the red curves in Figure~\ref{f:4-EscapeSchem}, choosing $\phi = 1$ well approximates $2 \arctan(r/a)$, the one-constant solution, choosing $\phi < 1$ yields a slower escape, and $\phi > 1$ yields a faster escape.
+Observing textures and the intensity profiles for $\phi = 1,10,25$ in Figure~\ref{f:4-I0I45vsEscape}(A--C), respectively, we see $\phi > 1$ produces textures that qualitatively resemble those from our experimental toroids with the spiral textures.
+However, when we plot $I_{max}/I_{min}$ vs $\phi$ for $\tau = 34^{\circ}$~\fxnote{CHECK THIS}, we see that $\phi$ has no effect on the intensity ratio.
 Thus, we will assume that the intensity ratio in the spiral textures is still only determined by the twist in the texture.
-
+\begin{figure}
+  \centering
+  \includegraphics{figures/C4/Ch4-Figs_I0I45vsEscape.png}
+  \caption{Simulated OPM textures and intensity ratios of TER configurations in tori with varying escape rates.
+  (A--C), Simulated OPM textures of TER configurations with $\tau = 34^\circ$ and $\Omega = (\pi/2)(r/a)^{\phi}$, where (A) $\phi = 1$, (B) $\phi = 10$, and (C) $\phi = 25$.
+  (D), Intensity ratio vs $\phi$ for OPM textures with $\tau = 34^\circ$.}\label{f:4-I0I45vsEscape}
+\end{figure}
 
 \section{Nematic liquid crystals in bent capillaries}
 To test the role of geometry in generating TER structures, we consider 5CB under homeotropic anchoring in bent glass capillaries.
