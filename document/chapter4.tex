@@ -281,7 +281,7 @@ For a general phase retarder with the optic axis along $\hat{y}$, the transforma
 \begin{equation}\label{e:4-fastaxisy}
 \bm{\Theta} = \begin{pmatrix}e^{i \phi_x} & 0 \\ 0 & e^{i \phi_y} \end{pmatrix}.
 \end{equation}
-When the orientation of the optic axis is not along $\hat{y}$, we use a rotation matrix to rotate $\mathbf{E}^{init}$ along $\hat{y}$ so we can use equation \ref{e:4-fastaxisy}; we undo our initial rotation with a second rotation matrix afterwards~\fxnote{Microscope textures of nematic droplets}:
+When the orientation of the optic axis is not along $\hat{y}$, we use a rotation matrix to rotate $\mathbf{E}^{init}$ along $\hat{y}$ so we can use equation \ref{e:4-fastaxisy}; we undo our initial rotation with a second rotation matrix afterwards~\cite{RN310}:
 \begin{equation} \label{e:4-jones_decouple}
 \mathbf{E}^{trans} = \mathbf{R}(-\alpha)\bm{\Theta} \mathbf{R}(\alpha)\,\mathbf{E}^{init},
 \end{equation}
@@ -311,7 +311,7 @@ The angles used to describe the local director as well as the angles used to des
 $\mathbf{n}_d$ is specified by $\theta_0$ and $\alpha_0$, while $\mathbf{n}_{\nu}$ is specified by $\gamma_{\nu}$ and $\alpha_{\nu}$, where $\theta_0$ and $\gamma_{\nu}$ are measured from $\hat{z}$ and $\mathbf{k}_0$, respectively, and $\alpha$ is measured off of $\hat{x}$.
 (B), Breakdown of OPM simulation parameters in a spherical geometry, where $\bm{\rho}$ is the position vector in the final image and $\Delta$ is the thickness of the voxels used in the simulation.
 (C,D), Breakdown of OPM simulation parameters in a torus viewed from the (C) side and from the (D) top.}\label{f:4-generalcoords}
-\end{figure}\fxnote{Lower the indices}
+\end{figure}
 
 To find the intensity at a given point $I(\bm{\rho})$ in the final simulated OPM texture, $\mathbf{E}_P$ is propagated along the ray $\mathbf{k}_0$ passing through $\bm{\rho}$.
 To accomplish this, the Jones Matrix and rotation matrices for every voxel encountered by $\mathbf{k}_0$ are applied to the initial polarization state to produce the final polarization state of the light leaving the nematic volume.
@@ -345,7 +345,7 @@ Images from Ref.~{ondris1991microscope} and Ref~\cite{RN193} reproduced with per
 To test this method, we simulated OPM textures for the well-studied radial, bipolar, and twisted-bipolar director fields in spherical geometries.
 For a radial director field we used $\mathbf{n}^{rad} = (x,y,z)/\sqrt{x^2+y^2+z^2}$~\cite{RN232}.
 A simulated texture of a 40 $\upmu$m diameter sphere calculated using $20$ evenly spaced wavelengths between $400$~nm and $700$~nm is shown in Figure~\ref{f:4-spherecomparison}(A).
-We compare our simulated image both with a grayscale experimental image of a 5CB droplet in water with 8 mM SDS and with another simulated texture of a $10$ $\upmu$m diameter sphere from\fxnote{ondris1991microscope}.
+We compare our simulated image both with a grayscale experimental image of a 5CB droplet in water with 8 mM SDS and with another simulated texture of a $10$ $\upmu$m diameter sphere from Ref.~\cite{RN310}.
 These are shown in Figure~\ref{f:4-spherecomparison}(B,C), respectively.
 The image in Figure~\ref{f:4-spherecomparison}(B) was converted to grayscale from the RGB image in Figure~\ref{f:4-spherecomparison}(D) using MATLAB's \texttt{rgb2gray} algorithm: ${\rm gray} = 0.299 \textrm{R} + 0.587 \textrm{G} + 0.114 \textrm{B}$, where $R,G,B$ are the intensities in the red, green, and blue channels, respectively.
 The conversion was done to better compare the simulated and experimental textures.
@@ -363,7 +363,7 @@ For a bipolar director we use $\mathbf{n}^{bp} = \nabla \psi/|\nabla \psi|$, whe
 \end{align}
 $\mathbf{p} = R(\sin \theta_0\cos\alpha_0,\sin \theta_0\sin\alpha_0,\cos\theta_0) $, with $R$ the sphere radius.
 The simulated bipolar OPM texture of a 40 $\mu$m diameter sphere for this director field using 20 evenly spaced wavelengths between $400$ nm and $700$ nm for $\theta_0 = \pi/2$ and either $\alpha_0 = 0$ or $\alpha_0 = \pi/12$, as shown in Figure~\ref{f:4-spherecomparison}(E,H), respectively.
-Corresponding experimental images of a 5CB droplet in water with $1\%$ Polyvinyl alcohol, enforcing tangential anchoring, as well as simulated images of a 40 $\upmu$m diameter sphere from Ref.~\fxnote{ondris1991microscope} are shown in Figure~\ref{f:4-spherecomparison}(F,I) and Figure~\ref{f:4-spherecomparison}(G,J), respectively.
+Corresponding experimental images of a 5CB droplet in water with $1\%$ Polyvinyl alcohol, enforcing tangential anchoring, as well as simulated images of a 40 $\upmu$m diameter sphere from Ref.~\cite{RN310} are shown in Figure~\ref{f:4-spherecomparison}(F,I) and Figure~\ref{f:4-spherecomparison}(G,J), respectively.
 All six images exhibit remarkable agreement.
 Note how Figure~\ref{f:4-spherecomparison}(E--G) all have four bright portions at the edge of the droplet and how the bright regions show a greater horizontal separation than a vertical separation.
 Note also how the central region is completely dark.
@@ -582,7 +582,7 @@ From the top, we first see that our simulated ER and TER textures in a [Figure~\
 We plot the intensity profiles in the simulated OPM textures of the (${\color{blue} \square,\,\blacksquare}$) tori and the (${\color{red} \circ,\,\bullet}$) cylinders in Figure~\ref{f:4-I0I45vsTwist}(E).
 Second, from this plot we see that the intensity profiles are geometry independent; provided the $\hat{\varphi}$ and $\hat{z}$ have the same $\tau$ and same orientation with respect to PA, the intensity profiles across the tube for the tori and the cylinders are identical.
 Thus, as expected, ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
-Third, we see that the intensity profiles of the simulated ER textures [(${\color{blue} \square},{\color{red} \circ}$), Figure~\ref{f:4-I0I45vsTwist}(E)] in the tori and the cylinders have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33}\fxnote{P. Chatelin, Sur la diffusion, par les cristaux}.
+Third, we see that the intensity profiles of the simulated ER textures [(${\color{blue} \square},{\color{red} \circ}$), Figure~\ref{f:4-I0I45vsTwist}(E)] in the tori and the cylinders have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33,RN309}
 Thus, we cannot make a quantitative comparison between the intensity profiles in the experimental and simulated ER/TER toroidal textures, but we can use our simulated OPM textures to investigate how the twist affects a TER texture.
 
 
