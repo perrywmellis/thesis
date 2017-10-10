@@ -448,11 +448,12 @@ However, we emphasize that while it is tempting to treat $F_{24}$ as a surface t
 \end{equation}
 this is incorrect, as the divergence theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24GaussA} is no longer a total differential.
 In fact, measuring $K_{24}$ is in principle no different than measuring any of the $K_{ii}$ --- provided the volume of the bulk is much larger than the boundary layer, the influence of the position-dependence of $K_{ij}$ is negligible.
+
 To demonstrate this, we return to Eq.~\ref{e:2-F24GaussA} and insert the position-dependence:
 \begin{equation}
   F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3 \left \{\mathbf{r} (K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \}.\label{e:2-F24GaussPosition}
 \end{equation}
-Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{r}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$ and $K_*(\mathbf{r}) = K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})$ yields:
+Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{r}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$ and \newline $K_*(\mathbf{r}) = K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})$ yields:
 \begin{align}
   \int_{V}\textup{d}^3\mathbf{r} \left \{ K_{*} (\mathbf{r}) \nabla \cdot \mathbf{A} \right \} &=
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{ \mathbf{k} \cdot (K_{*} (\partial V) \mathbf{A}(\partial V) \right \} -  \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}  \\ &=
@@ -497,7 +498,7 @@ Now that we again have a total differential, we can use the divergence theorem a
   F_{24} \approx -\frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{\mathbf{k} \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \} + \mathcal{O}(d_l^2). \label{e:2-positionF24_surf}
 \end{equation}
-Thus, even through the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.\\
+Thus, even through the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.
 
 The saddle-splay distortion can also serve to couple the director to the curvature of the interface.
 Consider a nematic constrained to lie in the plane of the interface.
@@ -510,21 +511,28 @@ since $\mathbf{n} \cdot \mathbf{k} = 0$. Now rearranging the integrand, we can t
 \begin{equation}
   \mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) = -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}.\label{e:2-K24rearrange1}
 \end{equation}
-Since $\mathbf{k} \cdot \mathbf{n} = 0$, we can re-write the right-hand side (RHS) of Eq.~\ref{e:2-K24rearrange1} as:
-\begin{equation}
-  -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n} = \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} = -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
-\end{equation}
-where $\mathbf{L} = blah$\fxnote{HERE} is the Weingarten Matrix~\cite{RN23,RN35}.
 
-The Weingarten Matrix ... borrow from appendix and introduce ideas of curvature.
+Again taking advantage of the fact that $\mathbf{k} \cdot \mathbf{n} = 0$, we can re-write $\mathbf{n}$ in terms of an orthonormal basis defined on the surface like $\mathbf{n} = (\hat{e}_i \cdot \mathbf{n})\hat{e}_i$, where now $i = 1,2$.
+Note that our director is now in 2D as we have restricted $\mathbf{n}$ to be on the surface.
+Re-writing the right-hand side (RHS) of Eq.~\ref{e:2-K24rearrange1}, we have:
+\begin{align}
+  -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}
+  &= \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} \\
+  &= n_i \hat{e}_i \cdot (n_j \hat{e}_j \cdot \nabla) \mathbf{k} \\
+  &=- n_i n_j \big ( - \hat{e}_i \cdot ( \hat{e}_j \cdot \nabla) \mathbf{k} \big ) \\
+  &= - n_i L_{ij} n_j \\
+  &= -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
+\end{align}
+where $\mathbf{L}$ is the Weingarten Matrix with the components $L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}$~\cite{RN23,RN35}.
 
-Note that because $\mathbf{n} \cdot \mathbf{k}=0$, we can re-write $\mathbf{n}$ in terms of an orthonormal basis defined on the surface like $\mathbf{n} = (\hat{e}_i \cdot \mathbf{n})\hat{e}_i$, where now $i = 1,2$ as we have restricted $\mathbf{n}$ to be on the 2D surface.
-This lets us write the saddle-splay free energy in terms of the principal curvatures $\kappa_1$ and $\kappa_2$ as~\cite{RN59}:
+The Weingarten Matrix describes how a curved surface changes in space, and its invariants give the mean and Gaussian curvature of the surface: $H = \textrm{tr}\{\mathbf{L}\}/2$ and $K = \textrm{det} \{ \mathbf{L} \}$, respectively.
+As $K = \kappa_1 \kappa_2$, we see that finding $\kappa_1$ and $\kappa_2$, the principal curvatures, becomes an eigenvalue problem; the eigenvectors of $\mathbf{L}$ give the principal curvature directions, and the associated eigenvalues are the principal curvatures themselves.
+Now, choosing $\hat{e}_1$ and $\hat{e}_2$ as the principal curvature directions, then we can write the saddle-splay free energy in terms of $\kappa_1$ and $\kappa_2$ as~\cite{RN59}:
 \begin{equation}
   F_{24} = \frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{\kappa_1 n_1^2 + \kappa_2 n_2^2 \right \},\label{e:2-K24SurfCouple}
 \end{equation}
-where $n_1$ and $n_2$ are the components of the director along the $1^{\rm st}$ and $2^{\rm nd}$ principal curvatures, respectively.
+where $n_1$ and $n_2$ are the components of the director along the $1^{\rm st}$ and $2^{\rm nd}$ principal curvature directions, respectively.
 Thus, for $\mathbf{n}$ at an interface constrained to lie in the plane of  the interface, the free energy of the saddle-splay distortion is minimized when $\mathbf{n}$ at the interface is aligned along most negative curvature.
 We emphasize that this curvature-coupling does not result from interactions between the NLC mesogens at the interface and the material outside of the nematic volume --- it comes from the interactions in the nematic volume itself.
 
