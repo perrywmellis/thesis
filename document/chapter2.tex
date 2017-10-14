@@ -523,7 +523,10 @@ Re-writing the right-hand side (RHS) of Eq.~\ref{e:2-K24rearrange1}, we have:
   &= - n_i L_{ij} n_j \\
   &= -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
 \end{align}
-where $\mathbf{L}$ is the Weingarten Matrix with the components $L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}$~\cite{RN23,RN35}.
+where $\mathbf{L}$ is the Weingarten Matrix with the components~\cite{RN23,RN35}:
+\begin{equation}
+  L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}\label{e:2-WeingartenMatrix}
+\end{equation}
 
 The Weingarten Matrix describes how a curved surface changes in space, and its invariants give the mean and Gaussian curvature of the surface: $H = \textrm{tr}\{\mathbf{L}\}/2$ and $K = \textrm{det} \{ \mathbf{L} \}$, respectively.
 As $K = \kappa_1 \kappa_2$, we see that finding $\kappa_1$ and $\kappa_2$, the principal curvatures, becomes an eigenvalue problem; the eigenvectors of $\mathbf{L}$ give the principal curvature directions, and the associated eigenvalues are the principal curvatures themselves.
