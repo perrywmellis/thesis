@@ -319,7 +319,7 @@ Therefore, provided that $\tau_c$ is greater than the surface tension stress, th
 Since the surface tension stress is given by the Laplace pressure, we see that balancing the Laplace pressure and $\tau_c$ will give us a critical radius of curvature, $R_c$, determining the stability of a toroidal drop, $\gamma/\tau_c \sim R_c$.
 If the smallest radius of curvature on a toroidal drop is larger than $R_c$, the toroidal droplet will be stable --- usually, the smallest radius of curvature on a torus is the tube radius.
 However, for toroids with $\xi \lesssim 2$, the radius of the handle becomes the smallest radius of curvature in the droplet and thus will determine the stability of the toroidal droplet.
-Since the active nematic solution is aqueous, we use an oil-based yield stress material, DC-9041 (Dow Corning), a silicone elastomer.
+As the active nematic solution is aqueous, we use an oil-based yield stress material, DC-9041 (Dow Corning), a silicone elastomer.
 To tune the yield stress, we dilute pure DC-9041 with 10~cSt PDMS oil (Clearco).\
 We dilute to 74\%~--~77\% w/w DC-9041 to form stable active nematic toroids with tube radii from 150~$\upmu$m~--~300~$\upmu$m.
 
@@ -337,13 +337,11 @@ Instead, we fill the system primarily with paraffin oil (Lamplight) as a dummy f
 Thus, we need a length of tubing such that the volume of the fluid in the tubing is greater than 100~$\upmu$L.
 
 We start by pumping the dummy fluid to fill the entire tubing; this removes all the air from the system.
-We then insert the free end of the tubing into the vial containing the active solution and 
-
-To accommodate the low sample volume, we fill the syringe with mineral oil (xx cSt, XXX)\fxnote{GET MO source} as a dummy fluid and increase the length of the tubing between the syringe and the needle such that the volume of tubing is greater than $100$~$\upmu$L.
-We pump the dummy fluid until it fills the tubing, insert the filled tubing into the container holding the active nematic solution, and then withdraw the dummy fluid to pull the active nematic solution into the tubing.
-Once the active nematic solution is loaded into the tubing, we make toroids as if it were any other inner phase.
-We make sure that the tubing is entirely full of mineral oil such that there is no air at the interface between the dummy liquid and the active nematic solution.
-Air bubbles in the tubing will inhibit forming high-quality toroidal droplets as the air bubble acts as a ``spring'' in the fluid system. This introduces a significant time lag between the start and stop of the syringe pump and the beginning and end of the fluid flow from the needle, hampering our ability to control the flow precisely.
+We then submerge the free end of the tubing into the vial containing the active solution and withdraw the dummy fluid.
+As we withdraw the dummy fluid, the active solution is pulled into the tubing.
+We ensure that the interface between the dummy liquid and the active solution has no air bubbles.
+Air bubbles in the tubing will inhibit forming high-quality toroidal droplets as the air bubble acts as a ``spring'' in the fluid system.
+This introduces a significant time lag between the start and stop of the syringe pump and the beginning and end of the fluid flow from the needle, hampering our ability to control the flow precisely.
 In addition, it is important to withdraw the dummy fluid slowly ($\approx 1$~mL/s) when loading the active nematic solution to prevent an emulsion between the active fluid and the dummy fluid forming in the tube.
 
 
@@ -403,6 +401,7 @@ We used two different confocal microscopes to collect the data; we started with 
 Both instruments are scanning laser confocal microscopes.
 Procedurally, both microscopes scan the image plane with a focused laser beam while recording the output intensity, adjust the height of the stage to change the focal plane, and then repeat the process until the image stack is acquired.
 While the image stack can be thought of in terms of 3D voxels, the $z$-resolution between focal planes is less than the $xy$-resolution in the focal plane such that it is more convenient to think of the image acquisition as a stack of 2D images.
+
 We note that we are inherently restricted to only imaging the lower half of the toroidal droplet due to refraction effects.
 The light emitted from the upper half of the toroidal droplet travels through the aqueous active solution and then is refracted by the curved interface between the active solution and the yield stress material.
 In contrast, the light from the lower portion of the toroid is emitted directly into the yield stress material such that it's light path is unaffected by refraction.
@@ -461,20 +460,23 @@ We save this cropped version in single multi-page \texttt{.tiff} file including 
 This standardizes the data format between the different microscopes to make it easier to read in to the computer.
 
 
-\subsection{Passing confocal data into MATLAB}
+\subsection{Inputting confocal data into MATLAB}
 The core routine to load the image stack into MATLAB comes from the \texttt{bioformats} toolbox put out by the Open Microscopy Environment~\cite{RN265}.
 The Open Microscopy Environment maintains the open-source \texttt{OME-TIFF} image format for microscopy data.
-The \texttt{bioformats} toolbox allows us to call the imaging parameters such as pixel-to-length conversions, framerate, etc., as well as access the total times series of image stacks as a 3 dimensional array in MATLAB.
-The data are stored in image planes in the order they were taken such that the effect is concatenating the time-series of image stacks along the $z$ dimension in the order they were taken.
-Thus, to locate a specific image stack you have to know which stack in the time series you want as well as the number of planes in each image stack.
+The \texttt{bioformats} toolbox allows us to call the imaging parameters such as pixel-to-length conversions, framerate, etc., as well as access the total times series of image stacks as a 3D array in MATLAB.
+The data are stored as a stack of 2D arrays, where each array holds data from a measurement of a confocal plane at a moment in time.
+The 2D arrays are stored in the order that they were taken; this corresponds to concatenating the full 3D image stacks along the $z$ dimension in the order the individual stacks were taken.
+Thus, to locate a specific 3D image stack you have to know which stack in the time series you want as well as the number of planes in each image stack.
 Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the free memory needed to analyze the data.
 
 We first determine the surface of the toroidal droplet by averaging all the image stacks over time and then applying an intensity threshold.
 Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\ref{f:3-SurfaceHeight}(A,B).
-We next threshold the data to binarize the image stack and reduce the thickness of the surface in the binary stack.
-Since there are a large range of threshold values that do not change the output surface and it is easy to check the result of an applied threshold, we determine this threshold value by hand.
+We next threshold the data to binarize the image stack; this lets us make the distinction between the surface of the toroidal droplet and everything else.
+There are a large range of threshold values that do not change the shape of the surface or affect the final curvature values; thus, we can do this thresholding manually.
+
 From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
-We take this $z$ value to be the height $h$ of the toroidal surface record it in an array such that we have a Monge parameterization of our surface, $h = f(x,y)$~\cite{RN23}, as shown in Figure~\ref{f:3-SurfaceHeight}(C) for the example image in Figure~\ref{f:3-SurfaceHeight}(B).
+We take this $z$ value to be the height $h$ of the toroidal surface and record it in an array, giving us $h = f(x,y)$, as shown in Figure~\ref{f:3-SurfaceHeight}(C) for the example image in Figure~\ref{f:3-SurfaceHeight}(B).
+This is commonly known as a Monge parameterization of the surface~\cite{RN23}.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_SurfaceHeight.png}
@@ -485,18 +487,18 @@ We take this $z$ value to be the height $h$ of the toroidal surface record it in
   (C) The height of the surface $h(x,y)$, where $h$ is determined by thresholding (B) and then averaging the height of the bright pixels in the thresholded image stack for every $(x,y)$ position.}\label{f:3-SurfaceHeight}
 \end{figure}
 
-We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that the only consider pixels within $\pm 5$ planes of the height at each individual point.
-This process largely prevents transient bright filaments in the bulk from affecting our measurements.
+We next consider the intensity stack for each time point and perform a maximum intensity projection into the $xy$-plane with the caveat that we only consider pixels that are within $\pm 5$ z-stack planes of the height at each individual point.
+This process largely prevents transient bright filaments in the bulk of the toroidal droplet from affecting our measurements.
 Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
 An example projection at an instant in time for the image stack in Figure~\ref{f:3-SurfaceHeight}(A) is shown in Figure~\ref{f:3-CEDF2}(A).
-Finally, we clear the raw confocal data from memory and work to (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
+Once we have extracted the time-series of data on the surface, we work to: (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
 
 
 
 
 \section{Determining director and defects}
 In the intensity projection of a confocal stack at a time $t_0$, $\mathbf{n}$ is given by the direction of the microtubule bundles.
-This direction is obtained from the greyscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)\cite{RN30}.
+This direction is obtained from the grayscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)\cite{RN30}.
 We illustrate this technique with an example analysis of the intensity projection shown in Figure~\ref{f:3-CEDF2}(A).
 
 
@@ -516,14 +518,14 @@ Next, the gradient tensor for $I_{\sigma}$ is calculated for each pixel:
 Since the microtubule bundles have head-tail symmetry, we cannot use the gradient vector alone to define the bundle orientation as the vector has a defined head and tail.
 The rank-2 gradient tensor is symmetric and is the same whether it is constructed with the gradient vector or the negative gradient vector.
 Thus, we use the gradient tensor to ``remove the head'' from the gradient vector.
+
 We now define the coherence direction of a rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue.
 The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is periodic on the interval $[0^{\circ}, 180^{\circ})$.
-The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(C), where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$ .
+The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(C), where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ measured clockwise (CW) off of the horizontal axis has been mapped to the grayscale intensity values $[0,255)$, with 0 corresponding to black and 255 to white.
 We see that there are still too many fluctuations in the coherence directions shown in Figure~\ref{f:3-CEDF2}(C) to determine $\mathbf{n}$.
 
-The following step seeks to remove small-scale fluctuations in the coherence direction by averaging once more.
-Here, we perform a component-wise average of the gradient tensor for each pixel to find the structure tensor for each pixel.
-This operation can be written as:
+We remove the remaining small-scale fluctuations in this image by performing another average, this time a component-wise average of the gradient tensor for each pixel.
+This operation gives us the structure tensor for each pixel and can be written as:
 \begin{equation}
 K_{\rho} \ast (\nabla I_{\sigma})(\nabla I_{\sigma})^T =
 \begin{bmatrix}
@@ -533,24 +535,25 @@ K_{\rho} \ast (  \nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nab
 \end{equation}
 where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image, and $\ast$ is a convolution.
 If $\rho$ is too small, the coherence directions of the structure tensor will resemble those from the gradient tensor, while if $\rho$ is too large the desired coherence features will be washed out by the averaging.
+
 The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is shown in the main image and inset in Figure~\ref{f:3-CEDF2}(D), respectively.
-As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the greyscale values $[\textrm{black}, \textrm{white})$.
+As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the grayscale intensity values $[0,255)$.
  We take this output of the coherence direction of the structure tensor for each pixel as the local ``molecular director'' $\mathbf{u}$, representing the local orientation of the active nematic.
 \newpage
 \begin{figure}[H]
   \centering
   \includegraphics{figures/C3/Ch3-Figs_CEDF2.png}
   \caption{Step-by-step output to find the director and defects from an active nematic image.
-(A), Maximum-intensity projection of a confocal stack along $-\hat{z}$ at a single time.
+(A), Maximum-intensity projection of a confocal stack onto the $xy$ plane for a single frame.
 Inset: Close up of a defect pair.
-(B), Image from (A) after applying a $5 \textrm{ px} \times 5 \textrm{ px}$ Gaussian blur with standard deviation of 1 px.
+(B), Image from (A) after applying a 5~px~$\times$~5~px Gaussian blur with standard deviation 1~px.
 Inset: The same operation applied to the image in the inset of (A).
 (C), Coherence directions of the tensors formed from the gradient of the image in (B).
 Black represents $0^{\circ}$ and white represents $180^{\circ}$ measured CW from the horizontal.
 Inset: The same operation applied to the image in the inset of (B).
 (D), Coherence directions of the structure tensors formed by component-wise averaging the gradient tensors formed from image (B).
 Black represents $0^{\circ}$ and white represents $180^{\circ}$ measured CW from the horizontal.
-The averaging is done with a $29 \times 29$ Gaussian filter with standard deviation of 5 px.
+The averaging is done with a 29~px~$\times$~29~px Gaussian filter with standard deviation 5~px.
 Inset: The same operation applied to the image in the inset of (B).
 (E), The scalar order parameter $S$ obtained by diagonalizing the $\mathbf{Q}$ formed from the directions in image (D).
 $\mathbf{Q}$ is formed for each point by considering the directions of all points in a 5 pixel radius.
@@ -564,10 +567,11 @@ Inset: The same operation applied to the image in the inset of (D).}\label{f:3-C
 \newpage
 \subsection{Calculating the director}
 From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over the $\mathbf{u}$ of all points in a specified radius, $\beta$, of the point of interest.
-We perform this averaging using a disc filter of radius $\beta$.
-We then diagonalize the $\mathbf{Q}$ as shown in Eq.~\ref{e:2-2DOrderDiag}, providing $\mathbf{n}$ and $S$ for each pixel.
+We perform this averaging using a disc-shaped mean filter of radius $\beta$.
+We then diagonalize $\mathbf{Q}$ as shown in Eq.~\ref{e:2-2DOrderDiag}, providing $\mathbf{n}$ and $S$ for each pixel.
 For the orientations of $\mathbf{u}$ in displayed in Figure~\ref{f:3-CEDF2}(D), we choose $\beta = 5$~px to produce $S$ and $n$ as shown in Figure~\ref{f:3-CEDF2}(E,F), respectively.
-The greyscale intensity $[\textrm{black}, \textrm{gray})$ in Figure~\ref{f:3-CEDF2}(E) maps to the values $S = [0, 1]$ such that the dominant grey shade in Figure~\ref{f:3-CEDF2}(E) indicates uniform alignment within the 5 px radius.
+We map the values $S = [0, 1]$ in Figure~\ref{f:3-CEDF2}(E) to the grayscale intensity values $[0,127]$ such that black represents $S = 0$ and the lightest gray represents $S = 1$.
+Thus, the dominant gray shade in Figure~\ref{f:3-CEDF2}(E) indicates uniform alignment within the 5 px radius.
 In addition, note that only every $7^{\textrm{th}}$ value of $\mathbf{n}$ is plotted in Figure~\ref{f:3-CEDF2}(F) to ensure the $\mathbf{n}$-field is clear to the eye.
 In reality there is a value for $\mathbf{n}$ at every pixel.
 
@@ -576,14 +580,15 @@ We choose the parameters such that the director field calculated on a random sam
 We find best results keeping $\sigma = 0.5$~px and varying $\rho$ between 5~px and 8~px and varying $\beta$ between 5~px and 6~px.
 The variations in $\rho$ and $\beta$ are a result of different scales between pixels and $\upmu$m depending on the microscope used, the microscope zoom, and the output image size.
 However, since the initial blur is responsible for removing random noise at the pixel level, we find best results keeping $\sigma = 0.5$ px always.
-Once we determine $\mathbf{n}$ and $S$, we turn to finding the defects.
+Once we determine $\mathbf{n}$ and $S$, we are ready to find the defects.
 
 
 \subsection{Finding defect location and topological charge}
-We start by selecting pixels with $S < 0.1$ as potential defect candidates.
+We mentioned in Chapter~\ref{c:1} that for a defect, $\mathbf{n}$ is undefined; in addition, $S \ll 1$ at a defect.
+Therefore, we start by selecting pixels with $S < 0.1$ as potential defect candidates.
 For every candidate, we first consider all pixels in a 5~px~$\times$~5~px plaquette centered on the point of interest and ensure that there are no other candidates in the plaquette with a lower value of $S$.
 We then calculate the $\mathbf{n}$-rotation about the point of interest according to Eq.~\ref{eq:2-topCharge}.
-Explicitly, we numerically evaluate $s = (1 / 2 \pi)(\oint \partial\phi / \partial u)$ CCW along the edge of the plaquette, where $u$ is the arclength along the square contour and $\phi$ is the orientation of $\mathbf{n}$.
+Explicitly, we numerically evaluate $s = (1 / 2 \pi)(\oint \partial\phi / \partial u \, \textrm{d}u)$ counterclockwise (CCW) along the edge of the plaquette, where $u$ is the arclength along the square contour and $\phi$ is the orientation of $\mathbf{n}$.
 We take the point of interest to be a $s = \pm 1/2$ defect if $s \in \pm [0.49,0.51]$.
 The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of the $\mathbf{n}$-field in Figure~\ref{f:3-CEDF2}(F), with $s = +1/2$ defects indicated by ${\color{red} \blacktriangle } $  and $s = -1/2$ defects indicated by ${ \color{blue} \blacktriangledown } $.
 
@@ -595,14 +600,14 @@ For tracked defects, we store the defect identity in addition to the frame and p
 
 
 \subsection{Measuring defect charge in a specified region}
-Once we have identified all the defects in all the frames, we want to be able to look at a specific region on the torus and determine the topological charge in that region over time.
+Once we have identified all the defects in every frame, we want to be able to look at a specific region on the torus and determine the topological charge in that region over time.
 We start by placing the defect locations into a binary array.
 For each point in time, we create a pair of binary masks to hold the $s = \pm 1/2$ defect locations at that time point.
-We then concatenate the masks such that we have the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ holding the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
-Defect locations in $J$ are represented by a $1$ with all other pixels set to $0$.
+We then concatenate the masks such that the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ hold the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
+Defect locations in $J^{\pm}$ are represented by a $1$ with all other pixels set to $0$.
 Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
 We plot $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t) = N^{(+)}_{\Theta}(t) + N^{(-)}_{\Theta}(t)$ in the example region in Figure~\ref{f:3-NumberOverTime}(A) over time in Figure~\ref{f:3-NumberOverTime}(B), showing that both $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t)$ fluctuate, with the fluctuations in each quantitiy centered around a mean.
-Thus, with $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_t \, N^{(\pm)}_{\Theta}(t)$ we can also calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.
+Thus, given $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_{t = 0}^T \, N^{(\pm)}_{\Theta}(t)$, the time-averaged number of $s = \pm 1/2$ defects over a time period $T$, we can calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_NumberOverTime.png}
@@ -626,10 +631,16 @@ However, this does not exclude the presence of a systematic error such as consis
   (B,D,F) Plot of time-averaged topological charge vs averaging time for the region highlighted in (A,C,E), respectively.}\label{f:3-ChargeOverTime}
 \end{figure}
 
-We characterize the systematic error in the measured topological charge by considering a region of interrogation as its own entity.
-Even without knowing the curvature of the surface, any region on the toroidal surface is homeomorphic to a disc with a boundary and thus according to the Guass-Bonnet theorem in Eq.~\fxnote{INTRO} has $\chi = 1$.
-However, the Poincar\'e-Hopf theorem as written in Eq.~\fxnote{INTRO} only applies for surfaces with a boundary if the director at the boundary is either everywhere tangential or everywhere normal to the boundary.
+We characterize the systematic error in the measured topological charge by considering a region of interrogation as its own entity, i.e. a compact surface with a boundary.
+For a compact surface with a boundary, we can write the Gauss-Bonnet theorem as:
+\begin{equation}
+  \chi = 2(1-g)-h,\label{e:3-GB3}
+\end{equation}
+where $\chi$ is the Euler characteristic, $g$ is the genus, and $h$ is the number of boundaries.
+Thus according to Eq.~\ref{e:3-GB3}, our regions of interrogation have $\chi = 1$.
+However, the Poincar\'e-Hopf theorem as written in Eq.~\ref{e:1-PH} only applies for surfaces with a boundary if the director at the boundary is either everywhere tangential or everywhere normal to the boundary.
 In our case, the director is free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
+
 Instead, we use an extended version of the Poincar\'e-Hopf theorem~\cite{RN267} that allows the director to vary on the boundary:
 \begin{equation}
   \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
@@ -639,8 +650,9 @@ where $s_i$ is the charge of a defect in the bulk of the region calculated via E
 
 \subsection{Edge charge}
 Recall that the topological charge is the winding number of the director along a closed contour in $\mathbb{R}\mathbb{P}_1$, where the director is specified with respect to a fixed frame.
-To find the edge charge we consider $\mathbf{n}$ along the edge and calculate the associated winding number in $\mathbb{R}\mathbb{P}_1$, but here we measure the director orientation with respect to the Frenet-Serret frame along the edge.
-If we let $\phi$ describe the director orientation with respect to fixed coordinate system and $\psi$ describe the orientation of the unit tangent vector with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame~\cite{RN35,RN23}.
+To find the edge charge we consider $\mathbf{n}$ along the edge and calculate the associated winding number in $\mathbb{R}\mathbb{P}_1$, but here we measure the director orientation with respect to a moving frame on the boundary.
+This moving frame is called the Frenet-Serret frame and is defined by the unit tangent and unit normal vectors the along the boundary.
+If we let $\phi$ describe the director orientation with respect to the fixed coordinate system and $\psi$ describe the orientation of the unit tangent vector with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame~\cite{RN35,RN23}.
 Thus, we calculate the edge charge like:
 \begin{equation}
   s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\phi'\label{e:3-boundCharge}.
@@ -650,7 +662,9 @@ Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundChar
   s_{boundary} = \frac{1}{2\pi} \oint \bigg \{ \textup{d}\psi - \textup{d}\phi \bigg \} = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}\label{e:3-boundChargeExpand},
 \end{equation}
 where here $s_{bulk}$ is calculated directly due to the additivity of defects.
-If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem~\cite{RN35} lets us write $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
+
+If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem says that $ \oint \textup{d}\psi = 2\pi$~\cite{RN35}.
+Thus, $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
 This is illustrated schematically for a circular region containing a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect in Figure~\ref{f:3-EdgeChargeEx}(A-C), respectively.
 Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
 \begin{figure}
@@ -658,14 +672,14 @@ Thus, we can determine if we have systematic error in our defect detection routi
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeEx.png}
   \caption{Schematic illustration of boundary and bulk charge.
   (A,B,C) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frennet-Serret frame.
-  The director orientation $\phi$ in the fixed frame is taken CCW from the horizontal and the director orientation $\phi'$ in the Frennet-Serret frame is taken CW from the horizontal.
+  The director orientation $\phi$ in the fixed frame is taken counterclockwise from the horizontal and the director orientation $\phi'$ in the Frennet-Serret frame is taken clockwise from the horizontal.
   For the defect-free director field in (A), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
   Performing the same calculations for the director field containing the (B) $s = +1$ defect and (C) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
 \end{figure}
 
-For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$ of the binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
+For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$, of the binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
 An example mask and its boundary are shown in Figure~\ref{f:3-EdgeChargeErr}(A,B), respectively.
-Along the boundary, the normalized displacement vector between two pixels indexed with $i$ and $j$ is defined as:
+Along the boundary, the normalized displacement vector between the $i^{\rm th}$ and the $j^{\rm th}$ pixel is defined as:
 \begin{align}
   \Delta \mathbf{R}_{[i,j]} =  \frac{\mathbf{R}_{[j]}-\mathbf{R}_{[i]}}{|\mathbf{R}_{[j]}-\mathbf{R}_{[i]}|}.
 \end{align}
@@ -684,7 +698,7 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
   (A-D) Validation of the Frennet-Serret frame.
   For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frennet-Serret frame.
   We check the Frennet-Serret frame by (C) integrating the change in the unit normal vector along the boundary, $\textrm{d}(\psi - \pi/2) = \textrm{d}\psi = (\partial \psi/\partial \theta) \textrm{d}\theta$, and see that the integral goes to $2 \pi$, as desired.
-  (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by ${\color{magenta} \times}$,${\color{yellow} \circ}$, respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
+  (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
   (F) An integral of $\textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$.
   (G) $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
   There are 76 frames with $s_{bulk} + s_{boundary} \neq 1$ and 186 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.29$ and mean$(error) = 0.026$.}\label{f:3-EdgeChargeErr}
@@ -692,12 +706,12 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
 
 We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\ref{f:3-EdgeChargeErr}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
 We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\ref{f:3-EdgeChargeErr}(E).
-From the defects found by our algorithm, with $s = +1/2$ defects indicated by ${\color{magenta} \times}$ and $s = -1/2$ defects indicated by ${\color{yellow} \circ}$ in the example image in Figure~\ref{f:3-EdgeChargeErr}(E), we calculate $s_{bulk}= \sum\limits_i s_i=-1/2$ and compare with $s_{boundary}$, where $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\ref{f:3-EdgeChargeErr}(E) is shown in Figure~\ref{f:3-EdgeChargeErr}(F).
+From the defects found by our algorithm, with $s = +1/2$ defects indicated by (${\color{magenta} \times}$) and $s = -1/2$ defects indicated by (${\color{yellow} \circ}$) in the example image in Figure~\ref{f:3-EdgeChargeErr}(E), we calculate $s_{bulk}= \sum\limits_i s_i=-1/2$ and compare with $s_{boundary}$, where a plot of $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\ref{f:3-EdgeChargeErr}(E) is shown in Figure~\ref{f:3-EdgeChargeErr}(F).
 We see that $s_{bulk}+s_{boundary} = 1$, as desired.
 
 We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
 For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(F).
-We see in this example that there are 76 frames out of 262 frames have an error, but the error in the charge is never more than 2, and the average error vanishes when we consider all the frames.
+We see in this example that 76 frames out of 262 frames have an error, but the error in the charge is never more than 2, and the average error vanishes when we consider all the frames.
 When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
 
 
