@@ -18,9 +18,10 @@ Here, we consider how activity affects the interplay between nematic order, geom
   \caption{Interactions in extensile and contractile nematics.
   (A,C), Two-particle interaction for extensile (A) and contractile (C) mesogens.
   The arrows represent time.
-  (B,D), The homogeneous state is unstable to distortions, with (B) extensile nematics unstable to bend and (D) contractile nematics unstable to splay.
+  (B,D), The interactions in (A,C) applied to a collection of particles in (B,D), respectively.
+  The homogeneous state is unstable to distortions, with (B) extensile nematics unstable to bend and (D) contractile nematics unstable to splay.
   The instability leads to the formation of an $s = + 1/2$ and $s = -1/2$ defect pair, indicated by ${\color{red} \bullet}$,${\color{blue} \bullet}$, respectively.}\label{f:3-ActiveInteraction}
-\end{figure}\fxnote{Clarify panel D}
+\end{figure}
 
 Much like equilibrium nematics, the individual mesogens of active nematic materials are anisotropic and thus the material possesses a nematic phase; however, the addition of activity to nematic order modifies the interaction between the mesogens.
 With the exception of bacteria introduced into lyotropic liquid crystals~\cite{RN86}, to date the majority of experimental and theoretical work on active nematics has taken place in 2D.
@@ -671,8 +672,8 @@ Thus, we can determine if we have systematic error in our defect detection routi
   \centering
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeEx.png}
   \caption{Schematic illustration of boundary and bulk charge.
-  (A,B,C) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frennet-Serret frame.
-  The director orientation $\phi$ in the fixed frame is taken counterclockwise from the horizontal and the director orientation $\phi'$ in the Frennet-Serret frame is taken clockwise from the horizontal.
+  (A,B,C) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frenet-Serret frame.
+  The director orientation $\phi$ in the fixed frame is taken counterclockwise from the horizontal and the director orientation $\phi'$ in the Frenet-Serret frame is taken clockwise from the horizontal.
   For the defect-free director field in (A), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
   Performing the same calculations for the director field containing the (B) $s = +1$ defect and (C) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
 \end{figure}
@@ -695,14 +696,14 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
   \centering
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeErr.png}
   \caption{Boundary charge and defect detection error on active nematic toroids.
-  (A-D) Validation of the Frennet-Serret frame.
-  For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frennet-Serret frame.
-  We check the Frennet-Serret frame by (C) integrating the change in the unit normal vector along the boundary, $\textrm{d}(\psi - \pi/2) = \textrm{d}\psi = (\partial \psi/\partial \theta) \textrm{d}\theta$, and see that the integral goes to $2 \pi$, as desired.
+  (A-D) Validation of the Frenet-Serret frame.
+  For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frenet-Serret frame.
+  We check the Frenet-Serret frame by (C) integrating the change in the unit normal vector along the boundary, $\int\limits_{0}^{\theta} \textrm{d}(\psi - \pi/2) = \int\limits_{0}^{\theta} \textrm{d}\psi = \int\limits_{0}^{\theta} (\partial \psi/\partial \theta') \textrm{d}\theta'$, and see that the integral goes to $2 \pi$ as $\theta$ goes to $2\pi$, as desired.
   (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
-  (F) An integral of $\textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$.
+  (F) $\int\limits_{\theta = 0}^{2\pi} \textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$ as $\theta \rightarrow 2 \pi$.
   (G) $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
   There are 76 frames with $s_{bulk} + s_{boundary} \neq 1$ and 186 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.29$ and mean$(error) = 0.026$.}\label{f:3-EdgeChargeErr}
-\end{figure}\fxnote{zoom in for panel C, change integrand to over phi' in D,E}
+\end{figure}
 
 We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\ref{f:3-EdgeChargeErr}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
 We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\ref{f:3-EdgeChargeErr}(E).
@@ -832,7 +833,7 @@ The effect of adjusting the tuning constant for the various M-estimators is easi
   (A) The cost and weight function for a least-squares fit.
   (B-D) The cost and weight functions for a (B) Cauchy M-estimator, a (C) Fair M-estimator, and a (D) GMC M-Estimator, with the tuning parameter for the red curves set to yield 95\% efficiency on a standard normal, and the tuning parameter for the blue curve set to twice the value in the red curve.
   The least-squares estimator in (A) and the Fair estimator in (C) have everywhere convex cost functions, in contrast to the Cauchy and the GMC M-estimators in (B,D), respectively.}\label{f:3-CostFxn}
-\end{figure}\fxnote{italicize cost}
+\end{figure}
 \newpage
 \subsection{Fitting the Weingarten matrix on a surface}
 From a Monge parameterization $h(x,y)$ of a surface~\cite{RN35,RN23}, we start by computing the Delauney triangulation~\cite{RN34} such that every point or pixel in $h(x,y)$ is a vertex in the triangulation.
@@ -879,7 +880,7 @@ This additional information will eventually allow us to re-estimate $\mathbf{k}$
   $\mathbf{R}_{[0]}$ is the point of interest.
   $\mathbf{R}_{[1]}$ and $\mathbf{R}_{[2]}$ are an example pair of points close to the point of interest with $\Delta \mathbf{R}_{[1,2]} = \mathbf{R}_{[2]}-\mathbf{R}_{[1]}$ the displacement vector in the tangent plane of $\mathbf{R}_{[0]}$.
   $\mathbf{k}_{[1]}$ and $\mathbf{k}_{[2]}$ are the unit surface normal vectors associated to $\mathbf{R}_{[1]}$ and $\mathbf{R}_{[2]}$.}\label{f:3-CurvFitSchem}
-\end{figure}\fxnote{bracket the subscripts}
+\end{figure}
 
 We now have a system of three equations to fit with 5 parameters, as $\tensor{L}{_{12}} = \tensor{L}{_{21}}$.
 If we naively expand Eq.~\ref{e:3-Kfit2} directly into three equations,
@@ -950,7 +951,7 @@ Finally, we calculate the Gaussian curvature of at $\mathbf{R}_{[0]}$ taking $K 
   \caption{Example IRLS fit of the curvature at a point on a surface.
   (A,B) Residuals, weights, $\bm{\Lambda}$, $K$, and cost for the (A) Fair M-estimator and (B) GMC M-estimator over multiple iterations, with the iteration number to the left of the residuals.
   The 0$^{\rm th}$ iteration corresponds to the output from the initial least-squares fit.}\label{f:3-IRLSexample}
-\end{figure}\fxnote{change the font on cost}
+\end{figure}
 
 \subsection{Correcting the surface normal vectors}
 We use the fitting weights from the final iteration $(p)$ and the final values in $\bm{\Lambda}$ to correct our initial estimate of $\mathbf{k}_{[0]}$ using a weighted average~\cite{RN31}:
@@ -1099,7 +1100,7 @@ We then plot the relative root-mean-squared (RMS) fluctuations, $\displaystyle{\
 
 We see that like the time-averaged topological charge, all the data collapse onto a line, regardless of the $\xi$ and $a$ variation between the toroids.
 We take the weighted average of a linear fit on a log-log scale to the data from each individual toroid and find a final slope $-0.53 \pm 0.04$ and final intercept $0.02 \pm 0.04$.
-This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, the expected result for an equilibrium system subject to number fluctuations~\fxnote{ref Pathria}, again suggesting that activity can play a role akin to temperature in equilibrium systems.
+This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, the expected result for an equilibrium system subject to number fluctuations~\cite{RN311}, again suggesting that activity can play a role akin to temperature in equilibrium systems.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ExpDistribution.png}
@@ -1196,7 +1197,7 @@ In addition, we perform a weighted average on the intercepts directly to get the
   $({\color{teal} \star})$ $\lambda' = 0.28$,
   with the horizontal line corresponding to the experimental value of (B) $C' = 4.3$ for the 144 $\upmu$M ATP toroids and (C) $C' = 6.3$ for the 36 $\upmu$M ATP toroids.
   In both plots, the vertical dashed line marks the crossing of the horizontal line and the $\lambda' = 0.31$ simulation curve, with the gray background giving the error due to the uncertainty in the $\lambda'$ for the respective experimental measurements.}\label{f:3-MatchParam}
-\end{figure}\fxnote{vertical line in panel A}
+\end{figure}
 
 We now return to the plot of $C'$ vs $v'_0$ and indicate our experimentally measured $C'$ values with a horizontal line, as seen in Figure~\ref{f:3-MatchParam}(B,C) for 144 $\upmu$M and 36 $\upmu$M ATP, respectively.
 We then consider our experimental values of $\lambda'$  and highlight the crossing point between the experimentally measured $C'$ values and the relevant simulation curve with a vertical dashed line.
