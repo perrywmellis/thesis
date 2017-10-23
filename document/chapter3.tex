@@ -698,7 +698,8 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
   \caption{Boundary charge and defect detection error on active nematic toroids.
   (A-D) Validation of the Frenet-Serret frame.
   For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frenet-Serret frame.
-  We check the Frenet-Serret frame by (C) integrating the change in the unit normal vector along the boundary, $\int\limits_{0}^{\theta} \textrm{d}(\psi - \pi/2) = \int\limits_{0}^{\theta} \textrm{d}\psi = \int\limits_{0}^{\theta} (\partial \psi/\partial \theta') \textrm{d}\theta'$, and see that the integral goes to $2 \pi$ as $\theta$ goes to $2\pi$, as desired.
+  The image in (C) is zoomed in on the highlighted portion of (B) to better show the arrows.
+  (D) We check the Frenet-Serret frame in (C) by integrating the change in the unit normal vector along the boundary, $\int\limits_{0}^{\theta} \textrm{d}(\psi - \pi/2) = \int\limits_{0}^{\theta} \textrm{d}\psi = \int\limits_{0}^{\theta} (\partial \psi/\partial \theta') \textrm{d}\theta'$, and see that the integral goes to $2 \pi$ as $\theta$ goes to $2\pi$, as desired.
   (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
   (F) $\int\limits_{\theta = 0}^{2\pi} \textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$ as $\theta \rightarrow 2 \pi$.
   (G) $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
@@ -722,10 +723,6 @@ When we do this for multiple toroids, we find that in general there is $\approx 
 From $h(x,y)$, we wish the calculate the Gaussian curvature of the surface.
 Recall from Chapter~\ref{c:2} that $K = \textup{det} \big \{ \mathbf{L} \big \}$.
 Thus, we need to calculate the Weingarten matrix.
-
-
- defined as $\tensor{L}{_j^i} = -(\nabla_j \mathbf{k}) \cdot \mathbf{g}^i$~\cite{RN35}, where $\mathbf{k}$ is the unit surface normal and $\mathbf{g}^i = g^{ij}(d \mathbf{R}/dx^j)$ is the basis covector in the $i^{\textrm{th}}$ direction.
-
 
 
 \subsection{The Weingarten matrix}
