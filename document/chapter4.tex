@@ -204,7 +204,7 @@ To quantify these patterns, we measure the intensity profile across the tube of 
   (C,F), OPM Intensity profiles across the tube of the toroid in (B,E), respectively.
   These profiles are taken at $\varphi = 0$, with $\phi \in [-1,1]$ parameterizing the contour from the inner circle to the outer circle for the given $\varphi$.
   Both profiles show two maxima surrounging a central minimum.
-  The average of the intensity values of the maxima is $I_{max}$ and the intensity at the central minimum is $I_{min}$.
+  We take $I_{max}$ to be the averag eof the intensity values of the maxima and $I_{min}$ to be the intensity at the central minimum.
   (G), $I_{max}/I_{min}$ vs $\xi(\varphi) = R_0/a(\varphi)$ for a series of (${\color{blue} \circ}$) homeotropic 5CB toroidal droplets, (${\blacktriangle}$) homeotropic 5CB bent and straight capillaries, and (${\color{red} \blacksquare},\,{\color{red} \square}$) homeotropic SSY straight capillaries.
      (${\color{red} \blacksquare}$) corresponds to the transient ER state, while (${\color{red} \square}$) corresponds to the equilibrium TER state.
      Scale bars in (A,D) are 250 $\upmu$m.}\label{f:4-HomeoToroidsExp}
@@ -214,14 +214,15 @@ To quantify these patterns, we measure the intensity profile across the tube of 
 From the top view, the azimuthal angle $\varphi$ in toroidal coordinates, $\{r,\theta,\varphi \}$ [see Figure~\ref{f:3-EqDefs}(B)], corresponds to the polar angle in a set of polar coordinates, $\{p,\varphi \}$, in the image itself.
 As $\varphi$ is measured along the central ring of the torus, $\mathbf{p}_0 = (0,\varphi)$ corresponds to the center of the central ring of the torus in the image, as displayed on the bright-field image in Figure~\ref{f:4-HomeoToroidsExp}(A).
 We take our intensity profiles in the OPM textures across the tube of the torus for a constant $\varphi$ from $p = R_0 - a(\varphi)$ to $p = R_0+ a(\varphi)$, where $R_0$ is the radius of the central ring of the torus and $a$ is the tube radius.
-We parameterize each intensity profile with $\rho \in [-1,1]$ corresponding to $p = \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
-While for a perfect torus $a = {\rm const}$, our toroidal droplets are not perfectly axisymmetric and thus there is some $\varphi$ dependence.
+We parameterize each intensity profile with a variable $\rho \in [-1,1]$ corresponding to $p = \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
+While for a perfect torus $a$ is constant, our toroidal droplets are not perfectly axisymmetric and thus $a$ has some $\varphi$-dependence.
 
-We find the central ring, $a(\varphi)$, and the intensity profiles with a custom MATLAB script.
-From a top-view image, we start by selecting points along the inner and outer contours of the toroid in the image.
+We find the central ring, find $a(\varphi)$, and determine the intensity profiles with a custom MATLAB script.
+From our top-view image, we start by selecting points along the inner and outer contours of the toroid in the image.
 We then fit the points on each contour to a circle, giving us the radii $R_{in}$, $R_{out}$ and centers $\mathbf{p}_{in}$, $\mathbf{p}_{out}$ of the inner and outer contours, respectively.
 Examples of these contours are drawn on the OPM texture in Figure~\ref{f:4-HomeoToroidsExp}(B).
-For a given torus, we can then calculate the aspect ratio $\xi = R_0/a_{av} = (R_{out}+R_{in})/(R_{out}-R_{in})$, with the central ring radius $R_0=(R_{out}+R_{in})/2$ and the average tube radius $a_{av} = (R_{out}-R_{in})/2$.
+
+For a given torus, we then take the average aspect ratio $\xi = R_0/a_{av} = (R_{out}+R_{in})/(R_{out}-R_{in})$, with the central ring radius $R_0=(R_{out}+R_{in})/2$ and the average tube radius $a_{av} = (R_{out}-R_{in})/2$.
 We also calculate the origin of our polar coordinate system in the image, $\mathbf{p}_0 = (\mathbf{p}_{in}+\mathbf{p}_{out})/2$.
 For a given $\varphi_0$, we take the intensity contour starting at the inner contour $(\mathbf{p}-\mathbf{p}_{in})^2 = R^2_{in}$ and increasing $p$ until we reach the outer contour $(\mathbf{p}-\mathbf{p}_{out})^2 = R^2_{out}$.
 The length of this contour is $2 a(\varphi_0)$, allowing us to calculate a local aspect ratio $\xi(\varphi_0) = R_0/a(\varphi)$.
@@ -229,8 +230,8 @@ We then parameterize each intensity profile in terms of $\rho$; example profiles
 
 
 \subsection{Large aspect ratio toroids}
-We first look at our larger aspect ratio toroids [see Figure~\ref{f:4-HomeoToroidsExp}(A,B)]; the OPM texture resembles an ER texture and the intensity profiles [Figure~\ref{f:4-HomeoToroidsExp}(C)] show a central minimum flanked by two maxima.
-However, we find that $I_{max}/I_{min} < 4$, the value for our ER capillaries.
+We first look at our larger $\xi$ toroids [see Figure~\ref{f:4-HomeoToroidsExp}(A,B)]; the OPM texture resembles an ER texture and the intensity profiles [Figure~\ref{f:4-HomeoToroidsExp}(C)] show a central minimum flanked by two maxima.
+However, we find that $I_{max}/I_{min} < 4$, the value we observed in our ER capillaries.
 In the example profile in Figure~\ref{f:4-HomeoToroidsExp}(C), $I_{max}/I_{min} = 1.45$ for $\xi(\varphi) = 4.8$.
 Thus, we hypothesize that our larger aspect ratio toroids have a TER configuration.
 
@@ -242,23 +243,25 @@ For the example profile in Figure~\ref{f:4-HomeoToroidsExp}(F), $I_{max}/I_{min}
 
 For a series of toroids with different $\xi$ and $a$, we plot $I_{max}/I_{min}$ vs $\xi(\varphi)$ [(${\color{blue} \circ}$), Figure~\ref{f:4-HomeoToroidsExp}(G)] and find that $I_{max}/I_{min}$ increases with increasing $\xi(\varphi)$, approaching $I_{max}/I_{min} = 4$ as $\xi(\varphi) \gg 1$.
 From this trend, we hypothesize that the twist in our TER toroids decreases as $\xi$ increases.
-We turn to simulated OPM textures to investigate the role of twist on the intensity ratio as well as test director configurations that could yield this spiral texture.
+In order to both qualitatively investigate the role of twist in the intensity ratio as well as to test director configurations that could yield this spiral texture, we simulate OPM textures.
+
+
 
 
 \section{Simulating polarized optical microscopy textures for twisted escaped radial director configurations}
 \subsection{Jones Calculus and simulation details}
 Jones Calculus is a method to describe and propagate polarized light through a birefringent material~\cite{RN232}.
 The state of the polarized light is characterized by decomposing the electric field in the plane of polarization using a 2-dimensional Jones vector while neglecting the time dependence of the electric field.
-We can neglect the time dependence because while the electric field oscillates with time, the polarization state does not.
+We can neglect the time-dependence because while the electric field oscillates with time, the polarization state does not.
 For example, allowing $\hat{x}$ to be horizontal, $\hat{y}$ to be vertical, and $\mathbf{k}_0 = \hat{z}$ the direction of the wavevector of the polarized incident light, we can write the normalized electric field as:
 \begin{align}
 \mathbf{E} &=  \hat{x}E_x e^{i \phi _x} + \hat{y} E_y e^{i \phi _y}\\  &= e^{i \phi _x} \left( \begin{array}{c} E_x \\E_y e^{i(\phi _y - \phi _x)}      \end{array} \right). \label{e:4-jonesdecomp}
 \end{align}
-Thus, the Jones vector for a horizontal polarization state, a $+45$ degree polarization state, and a right-hand circular polarization state can be written as $(1,0)$, $(1,1)/\sqrt(2)$, and $(1,i)/\sqrt(2)$, respectively.
+Thus, the Jones vector for a horizontal polarization state, a $+45^{\circ}$ polarization state, and a right-hand circular polarization state can be written as $(1,0)$, $(1,1)/\sqrt{2}$, and $(1,i)/\sqrt{2}$, respectively.
 We have normalized the Jones vectors, removing the absolute phase prefactor $e^{i \phi _x}$ from equation \ref{e:4-jonesdecomp} as the polarization state is dependent on neither the absolute phase nor the magnitude of the vector.
-Note, in particular, that the the Jones vector for the right-hand circularly polarized light gives the normalized field $\mathbf{E} = \hat{x}E_x e^{i \phi _x} + \hat{y} E_y e^{i( \phi _x+\pi)}$, as we would expect.
+Note, in particular, that the Jones vector for the right-hand circularly polarized light gives the normalized field $\mathbf{E} = \hat{x}E_x e^{i \phi _x} + \hat{y} E_y e^{i( \phi _x+\pi/2)}$, as we would expect.
 
-In order to propagate a polarization state through an optical element (e.g. half-wave plate, phase retarder), we write each component of the Jones vector representing the transformed state $\mathbf{E}^{trans}$ as a linear combination of the components of the Jones vector representing the initial state $\mathbf{E}^{init} = E^{init}_{x}\hat{x}+E^{init}_{y}\hat{y}$:
+In order to propagate a polarization state through an optical element, e.g. half-wave plate, phase retarder, we write each component of the Jones vector representing the transformed state $\mathbf{E}^{trans}$ as a linear combination of the components of the Jones vector representing the initial state $\mathbf{E}^{init} = E^{init}_{x}\hat{x}+E^{init}_{y}\hat{y}$:
 \begin{align}
 \mathbf{E}^{trans} = \left ( \begin{array}{c} E^{trans}_{x} \\ E^{trans}_{y} \end{array} \right ) &= \left ( \begin{array}{c} A E^{init}_{x} + B E^{init}_{y} \\ C E^{init}_{x}+ D E^{init}_{y} \end{array} \right ) \nonumber \\
 &= \left ( \begin{array}{cc} A & B \\C & D \end{array} \right )\left ( \begin{array}{c} E^{init}_{x} \\ E^{init}_{y} \end{array} \right ) = \bm{\Theta} \mathbf{E}^{init},
@@ -270,16 +273,16 @@ For a series of $N$ elements:
 \mathbf{E}^{trans} = \bm{\Theta}_N \bm{\Theta}_{N-1} \cdots \bm{\Theta}_2 \bm{\Theta}_1\, \mathbf{E}^{init} = \prod\limits^N_{\nu=1} \bm{\Theta}_{\nu} \mathbf{E}^{init} = \bm{\vartheta} \mathbf{E}^{init},
 \end{equation}
 where $\bm{\vartheta}$ is the operator representing the Jones matrix for the entire system.
-A list of some common optical elements represented as Jones Matrices in the $xy$ basis can are found in Table~\ref{t:4-jmats}.
+A list of some common optical elements represented as Jones matrices in the $xy$ basis are found in Table~\ref{t:4-jmats}.
 \begin{table}
 \caption{Jones calculus operators for common optical elements}
 \begin{tabular}{|c|c|}
 \hline
-{\bf Optical Element} & {\bf Jones Matrix} \\ \hline \hline
+{\bf Optical Element} & {\bf Jones matrix} \\ \hline \hline
 Linear polarizer with axis of transmission horizontal & $\begin{pmatrix}1 & 0 \\ 0 & 0 \end{pmatrix}$ \\ \hline
 Linear polarizer with axis of transmission vertical &$\begin{pmatrix}0 & 0 \\ 0 & 1 \end{pmatrix}$ \\ \hline
 Linear polarizer with axis of transmission at $\pm 45^o$ with the horizontal &$\frac{1}{2} \begin{pmatrix}1 & \pm 1 \\ \pm 1 & 1\end{pmatrix}$ \\ \hline
-Right/Left circular polarizer & $\frac{1}{2} \begin{pmatrix}
+Right/left circular polarizer & $\frac{1}{2} \begin{pmatrix}
 1 & \pm i \\ \mp i & 1
 \end{pmatrix}$ \\
 \hline
@@ -298,16 +301,16 @@ where $\mathbf{R}(\alpha) = \begin{pmatrix} \cos \alpha & -\sin \alpha \\ \sin \
 is the rotation matrix for an angle $\alpha$ measured with respect to the x-axis.
 This approach simplifies calculations for a series of optical elements.
 
-Since we wish to simulate the OPM texture of a continuous volume with a given nematic director field, we first need to discretize the continuous nematic volume into cubic volume elements, or voxels, of side $\Delta$.
-If $\Delta$ is small enough such that the local director $\mathbf{n}_{\nu}$ for each voxel $ \nu \;\epsilon \, [1,N]$ can be treated as constant throughout the voxel, then each voxel can be treated as a phase retarder with the associated Jones Matrix and orientation given by its $\mathbf{n}_{\nu}$.
+Since we wish to simulate the OPM texture of a continuous volume with a given nematic director field, we first need to discretize the continuous nematic volume into $N$ cubic volume elements, or voxels, of side $\Delta$.
+If $\Delta$ is small enough such that the local director $\mathbf{n}_{\nu}$ for each voxel $ \nu \;\epsilon \, [1,N]$ can be treated as constant throughout the voxel, then each voxel can be treated as a phase retarder with the associated Jones matrix and orientation given by its $\mathbf{n}_{\nu}$.
 In this way, we are able to treat a continuous nematic volume as a collection of independent optical elements.
 
-As the extraordinary index of refraction of a birefringent uniaxial material depends on the angle $\gamma$ between $\mathbf{n}$ and $\mathbf{k}_0$ according to $n_e(\gamma) = n_o n_E/\sqrt{n^2_o \sin^2\gamma+n_E^2 \cos^2 \gamma}$ with $n_o$ the ordinary index of refraction and $n_E$ the extraordinary index of refraction for $\gamma = \pi/2$, we can write the Jones Matrix for the $\nu^{th}$ voxel with the optic axis along $\hat{y}$ as:
+As the extraordinary index of refraction of a birefringent uniaxial material depends on the angle $\gamma$ between $\mathbf{n}$ and $\mathbf{k}_0$ according to $n_e(\gamma) = n_o n_E/\sqrt{n^2_o \sin^2\gamma+n_E^2 \cos^2 \gamma}$ with $n_o$ the ordinary index of refraction and $n_E$ the extraordinary index of refraction for $\gamma = \pi/2$, we can write the Jones matrix for the $\nu^{th}$ voxel with the optic axis along $\hat{y}$ as:
 \begin{equation}
-\bm{\Theta}_{\nu}  =  \begin{pmatrix}e^{i(n_o2 \pi \frac{\Delta}{\lambda})} & 0 \\ 0 & e^{i (n_e(\gamma_{\nu})2 \pi \frac{\Delta}{\lambda})} \end{pmatrix},
+\bm{\Theta}_{\nu}  =  \begin{pmatrix}e^{i\left( n_o2 \pi \frac{\Delta}{\lambda}\right )} & 0 \\ 0 & e^{i \left (n_e (\gamma_{\nu})2 \pi \frac{\Delta}{\lambda}\right )} \end{pmatrix},
 \end{equation}
-where $\lambda$ is the wavelength of the light and where we have set $\mathbf{k}_0=\hat{z}$ such that the plane of polarization is in the $xy$ plane.
-To use the formalism underlying Eq.~\ref{e:4-jones_decouple}, we need the angle between $\mathbf{k}_0$ and $\mathbf{n}_{\nu}$, $\gamma_{\nu}$, and the angle between the projection of $\mathbf{n}_{\nu}$ onto the $xy$ plane and the x-axis, $\alpha_{\nu}$.
+where $\lambda$ is the wavelength of the light, $\gamma_{\nu}$ is the angle $\gamma$ associated to the $\nu^{\rm th}$ voxel, and where we have set $\mathbf{k}_0=\hat{z}$ such that the plane of polarization is in the $xy$ plane.
+To use the formalism underlying Eq.~\ref{e:4-jones_decouple}, we need $\gamma_{\nu}$, the angle between $\mathbf{k}_0$ and  the director at the $\nu^{\rm th}$ voxel, $\mathbf{n}_{\nu}$, and we need $\alpha_{\nu}$, the angle between the projection of $\mathbf{n}_{\nu}$ onto the $xy$ plane and the x-axis.
 Note that the angle between the average director of the overall nematic configuration $\mathbf{n}_d$ and $\mathbf{k}_0$ is $\theta_0$, and the angle between the projection of $\mathbf{n}_d$ onto the x-y plane and the x-axis is the orientation $\alpha_0$.
 We use these two angles to control the orientation of the nematic configuration with respect to $\mathbf{k}_0$ such that we can simulate OPM textures for different views of the nematic configuration.
 In addition, we change the polarizer orientation by changing the orientation of the incident polarization, given by $\mathbf{E}_P$.
@@ -323,30 +326,37 @@ $\mathbf{n}_d$ is specified by $\theta_0$ and $\alpha_0$, while $\mathbf{n}_{\nu
 \end{figure}
 
 To find the intensity at a given point $I(\bm{\rho})$ in the final simulated OPM texture, $\mathbf{E}_P$ is propagated along the ray $\mathbf{k}_0$ passing through $\bm{\rho}$.
-To accomplish this, the Jones Matrix and rotation matrices for every voxel encountered by $\mathbf{k}_0$ are applied to the initial polarization state to produce the final polarization state of the light leaving the nematic volume.
-A schematic of this process for a spherical nematic volume can be seen in Figure \ref{f:4-generalcoords}(B), where $I(\bm{\rho})$ is the magnitude squared of the final polarization state after it has passed through the analyzer.
+To accomplish this, the Jones matrix and rotation matrices for every voxel encountered by $\mathbf{k}_0$ are applied to the initial polarization state to produce the final polarization state of the light leaving the nematic volume.
+A schematic of this process for a spherical nematic volume can be seen in Figure \ref{f:4-generalcoords}(B).
+Once we have propagated the polarization state through the nematic volume, we calculate $I(\bm{\rho})$ by passing the final polarization state through the analyzer and taking the magnitude squared of the result.
 Writing $I(\bm{\rho})$ in terms of $\bm{\Theta}$ and $\mathbf{R}(\alpha)$:
 \begin{align}
-I(\bm{\rho}) &= |\bm{\Theta}_A \mathbf{R}(\bm{\rho})_A\, \bm{\vartheta}(\bm{\rho}) \, \mathbf{E}_P|^2, \, \label{e:4-Intensity} \\
- & \quad\quad\textrm{where}\\
-        & \bm{\vartheta}(\bm{\rho}) =  \prod\limits_{\nu = 1}^{N(\bm{\rho})}\!\mathbf{R}(-\alpha(\bm{\rho})_{\nu}) \bm{\Theta}(\bm{\rho})_{\nu} \mathbf{R}(\alpha(\bm{\rho})_{\nu})\,, \label{e:4-general_operator_one}
+I(\bm{\rho}) &= |\bm{\Theta}_A \mathbf{R}(\bm{\rho})_A\, \bm{\vartheta}(\bm{\rho}) \, \mathbf{E}_P|^2, \, \label{e:4-Intensity}
+\end{align}
+where
+\begin{align}
+        \bm{\vartheta}(\bm{\rho}) &=  \prod\limits_{\nu = 1}^{N(\bm{\rho})}
+        \!\mathbf{R}(-\alpha(\bm{\rho})_{\nu}) \bm{\Theta}(\bm{\rho})_{\nu} \mathbf{R}(\alpha(\bm{\rho})_{\nu})\,, \label{e:4-general_operator_one}
 \end{align}
 and $\bm{\Theta}_A \mathbf{R}(\bm{\rho})_A$ is the operator and associated rotation representing the analyzer.
 Taking advantage of the associative property of matrix multiplication and the fact that the product of two rotation matrices is the rotation matrix of the sum of the angles, we can re-write Eq.~\ref{e:4-general_operator_one} as:
 \begin{equation}
-\bm{\vartheta}(\bm{\rho}) =  \prod\limits_{\nu = 1}^{N(\bm{\rho})}\!\bm{\Theta}(\bm{\rho})_{\nu} \mathbf{R}(\alpha(\bm{\rho})_{\nu}-\alpha(\bm{\rho})_{\nu-1})\,
+\bm{\vartheta}(\bm{\rho}) =  \mathbf{R}(-\alpha(\bm{\rho})_{N}
+ \prod\limits_{\nu = 2}^{N(\bm{\rho})}
+ \!\Big \{ \bm{\Theta}(\bm{\rho})_{\nu} \mathbf{R}(\alpha(\bm{\rho})_{\nu}-\alpha(\bm{\rho})_{\nu-1}) \Big \}
+ \bm{\Theta}(\bm{\rho})_{1} \mathbf{R}(\alpha(\bm{\rho})_{1})\,
 \end{equation}
 
-Therefore, the overall process to simulate a OPM texture from a given director field is: (i) discretize the volume into voxels such that the local director for each voxel can be considered constant, (ii) use the local director to calculate the angles $\gamma$ and $\alpha$ for each voxel, (iii) use $\gamma$ and $\alpha$ to determine the Jones Matrix and rotation matrix associated with each voxel, (iv) propagate the inital polarization state through the series of rotation matrices and Jones Matrices, and (v) pass the final polarization state through the analyzer and square the magnitude of the output to obtain the final intensity map.
+Therefore, the overall process to simulate a OPM texture from a given director field is: (i) discretize the volume into voxels such that the local director for each voxel can be considered constant, (ii) use the local director to calculate the angles $\gamma$ and $\alpha$ for each voxel, (iii) use $\gamma$ and $\alpha$ to determine the Jones matrix and rotation matrix associated with each voxel, (iv) propagate the inital polarization state through the series of rotation matrices and Jones matrices, and (v) run the final polarization state through the analyzer and square the magnitude of the output to obtain the final intensity map.
 \begin{figure}
 \centering
 \includegraphics{figures/C4/Ch4-Figs_JonesSphere.png}
 \caption{Simulated and experimental OPM textures for (A--D) radial droplets, (E--J) bipolar droplets, and (K--P) twisted bipolar droplets.
 For the radial droplets, (A) is a our simulation, (B,D) are a grayscale and color experimental image, respectively, and (C) is a simulation image from Ref.~{ondris1991microscope}.
 For the bipolar and twisted bipolar  droplets, (E--F) and (K--M) are oriented with the bipole aligned parallel to the analyzer direction while (H--J) and (N--P) have the bipole rotated 15 degrees CCW from the analyzer direction. (E,H,K,N) are our simulated images, (F,I,L,O) are experimental images, and (G,J,M,P) are simulated textures from the literature.
-(G,J) are from Ref.~{ondris1991microscope}, (L,M,O,P) are from Ref.~\cite{RN193}.
+(G,J) are from Ref.~\cite{RN310}, (L,M,O,P) are from Ref.~\cite{RN193}.
 Scale bar is 20 $\upmu$m in all images.
-Images from Ref.~{ondris1991microscope} and Ref~\cite{RN193} reproduced with permission from {\bf GET PERMISSION}
+Images from Ref.~\cite{RN310} and Ref~\cite{RN193} reproduced with permission from {\bf GET PERMISSION}
 }\label{f:4-spherecomparison}
 \end{figure}
 
