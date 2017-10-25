@@ -50,10 +50,9 @@ Schematics of an achiral and a doubly-twisted director field are shown in Figure
 Under degenerate planar anchoring, the saddle-splay distortion drives the director at the interface to align along the smallest principle curvature of the interface according to Eq~\ref{e:2-K24SurfCouple}~\cite{RN59}.
 Clearly then, increasing the difference between the principle curvatures of the interface will cause the system to twist more.
 In the $\{r, \theta, \varphi\}$ toroidal coordinates defined schematically in Figure~\ref{f:3-EqDefs}(B), we can write the two principle curvatures:
-\refstepcounter{equation}\label{e:4-toursPrincipleCurv}
 \begin{align}
-  \kappa_1 &= -\frac{1}{a}\tag{\theequation a} \\
-  \kappa_2 &= \frac{\cos(\theta)}{a(\xi-\cos(\theta))},\tag{\theequation b}
+  \kappa_1 &= -\frac{1}{a} \\
+  \kappa_2 &= \frac{\cos(\theta)}{a(\xi-\cos(\theta))},
 \end{align}
 where $a$ and $\xi$ are the tube radius and aspect ratio of the torus, respectively.
 Thus, decreasing $\xi$ in our toroidal droplets causes $|\kappa_1-\kappa_2|$ to increase, leading to our observations of increasing twist with decreasing $\xi$, as demonstrated by the (${\color{red} \bullet}$) in Figure~\ref{f:4-PlanarToroidsTwist}(E).
@@ -363,27 +362,28 @@ Images from Ref.~\cite{RN310} and Ref~\cite{RN193} reproduced with permission fr
 \subsection{Validation using spherical droplets}
 To test this method, we simulated OPM textures for the well-studied radial, bipolar, and twisted-bipolar director fields in spherical geometries.
 For a radial director field we used $\mathbf{n}^{rad} = (x,y,z)/\sqrt{x^2+y^2+z^2}$~\cite{RN232}.
-A simulated texture of a 40 $\upmu$m diameter sphere calculated using $20$ evenly spaced wavelengths between $400$~nm and $700$~nm is shown in Figure~\ref{f:4-spherecomparison}(A).
-We compare our simulated image both with a grayscale experimental image of a 5CB droplet in water with 8 mM SDS and with another simulated texture of a $10$ $\upmu$m diameter sphere from Ref.~\cite{RN310}.
+A simulated texture of a 40~$\upmu$m~diameter sphere calculated using $20$ evenly-spaced wavelengths between $400$~nm and $700$~nm is shown in Figure~\ref{f:4-spherecomparison}(A).
+We compare our simulated image both with a grayscale experimental image of a 5CB droplet in water with 8 mM SDS and with another simulated texture of a $10$~$\upmu$m~diameter sphere from Ref.~\cite{RN310}.
 These are shown in Figure~\ref{f:4-spherecomparison}(B,C), respectively.
-The image in Figure~\ref{f:4-spherecomparison}(B) was converted to grayscale from the RGB image in Figure~\ref{f:4-spherecomparison}(D) using MATLAB's \texttt{rgb2gray} algorithm: ${\rm gray} = 0.299 \textrm{R} + 0.587 \textrm{G} + 0.114 \textrm{B}$, where $R,G,B$ are the intensities in the red, green, and blue channels, respectively.
+The image in Figure~\ref{f:4-spherecomparison}(B) was converted to grayscale from the RGB image in Figure~\ref{f:4-spherecomparison}(D) using MATLAB's \texttt{rgb2gray} algorithm: $\mathit{gray} = 0.299 R + 0.587 G + 0.114 B$, where $R,G,B$ are the intensities in the red, green, and blue channels, respectively.
 The conversion was done to better compare the simulated and experimental textures.
-Note the agreement between our simulated image and the grayscale experimental texture; both show four dark wedge-shaped brushes that begin in the center of the droplet and extend to the edges.
+
+Note the agreement between our simulated image and the grayscale experimental texture; both show four dark, wedge-shaped brushes that begin in the center of the droplet and extend to the edges.
 The bright portions also have roughly homogeneous intensity.
 However, the experimental image is brighter in the center than our simulated image.
 We attribute this difference to the defect not being in the focal plane in the experimental image; our simulated image does not take into account focus effects.
 In addition, note how the bright portions of Figure~\ref{f:4-spherecomparison}(C) do not have an even intensity.
-This is due to the size of the droplet simulated.
+This combination of the droplet size simulated and the single wavelength used results in a dark ring where the retardation is a multiple of $2 \pi$ even when $\mathbf{n}$ is oriented $45^{\circ}$ with respect to the polarizer and analyzer orientation.
 
 For a bipolar director we use $\mathbf{n}^{bp} = \nabla \psi/|\nabla \psi|$, where
 \begin{align}
 \psi =& \frac{1}{\sqrt{(x-p_x)^2+(y-p_y)^2+(z-p_z)^2}} \nonumber \\
       -& \frac{1}{\sqrt{(x+p_x)^2+(y+p_y)^2+(z+p_z)^2}}, \label{e:4-bipolar_pot}
 \end{align}
-$\mathbf{p} = R(\sin \theta_0\cos\alpha_0,\sin \theta_0\sin\alpha_0,\cos\theta_0) $, with $R$ the sphere radius.
-The simulated bipolar OPM texture of a 40 $\mu$m diameter sphere for this director field using 20 evenly spaced wavelengths between $400$ nm and $700$ nm for $\theta_0 = \pi/2$ and either $\alpha_0 = 0$ or $\alpha_0 = \pi/12$, as shown in Figure~\ref{f:4-spherecomparison}(E,H), respectively.
-Corresponding experimental images of a 5CB droplet in water with $1\%$ Polyvinyl alcohol, enforcing tangential anchoring, as well as simulated images of a 40 $\upmu$m diameter sphere from Ref.~\cite{RN310} are shown in Figure~\ref{f:4-spherecomparison}(F,I) and Figure~\ref{f:4-spherecomparison}(G,J), respectively.
-All six images exhibit remarkable agreement.
+with $\mathbf{p} = R(\sin \theta_0\cos\alpha_0,\sin \theta_0\sin\alpha_0,\cos\theta_0) $, and $R$ the sphere radius.
+The simulated bipolar OPM texture of a 40 $\mu$m diameter sphere for this director field using 20 evenly-spaced wavelengths between $400$ nm and $700$ nm for $\theta_0 = \pi/2$ and either $\alpha_0 = 0$ or $\alpha_0 = \pi/12$, as shown in Figure~\ref{f:4-spherecomparison}(E,H), respectively.
+Corresponding experimental images of a 5CB droplet in water with $1\%$ polyvinyl alcohol to enforce tangential anchoring, as well as simulated images of a 40 $\upmu$m diameter sphere from Ref.~\cite{RN310} are shown in Figure~\ref{f:4-spherecomparison}(F,I) and Figure~\ref{f:4-spherecomparison}(G,J), respectively.
+All six images exhibit excellent agreement.
 Note how Figure~\ref{f:4-spherecomparison}(E--G) all have four bright portions at the edge of the droplet and how the bright regions show a greater horizontal separation than a vertical separation.
 Note also how the central region is completely dark.
 When the droplet orientation changes by $\pi/12$ as seen in Figure \ref{f:4-spherecomparison}(H--J), the central region in all three textures ceases being completely dark and begins to connect the upper-left and lower-right bright regions.
@@ -394,10 +394,11 @@ For a twisted bipolar director $\mathbf{n}^{tb}$, we follow Ref.~\cite{RN177} an
 \end{equation}
 where the concentric director is $\mathbf{n}^{conc} = (\sin \varphi,\cos \varphi,0)$, with $\varphi$ the polar angle measured off of the x-axis.
 $\mathbf{n}^{bp}$ is the bipolar director derived from the normalized gradient of Eq.~\ref{e:4-bipolar_pot}, and $\tau = \tau_0\sqrt{x^2+y^2}/\sqrt{R^2-z^2}$ is a twist angle varying from $\tau=\tau_0$ at the surface of the sphere to $\tau=0$ at the bipole axis~\cite{RN177}.
-Instead of generating OPM textures with different $\alpha_0$ and a fixed polarizer and analyzer orientation as with the bipolar OPM textures, here we keep $\alpha_0=0$ and vary the polarizer and the analyzer orientation to generate different views.
-This makes the computation easier to perform. Our simulated twisted bipolar OPM textures seen in Figure~\ref{f:4-spherecomparison}(K,N) were produced for a 50 $\upmu$m diameter sphere with a single wavelength at $\lambda = 650$~nm.
+Instead of generating OPM textures with different $\alpha_0$ and a fixed polarizer and analyzer orientation as with the bipolar OPM textures, here we keep $\alpha_0=0$ and vary the polarizer and the analyzer orientations to generate different views.
+This makes the computation easier to perform.
+The simulated twisted bipolar OPM textures shown in Figure~\ref{f:4-spherecomparison}(K,N) were produced for a 50~$\upmu$m~diameter sphere with a single wavelength at $\lambda = 650$~nm.
 The simulated twisted bipolar images from Ref.~\cite{RN193} were also produced for a similar sphere with $\lambda = 650$~nm, as seen in Figure~\ref{f:4-spherecomparison}(M,P).
-The experimental images of $\approx 40$ $\upmu$m diameter droplets imaged using $\lambda \approx 650$~nm from Ref.~\cite{RN193}are shown in Figure~\ref{f:4-spherecomparison}(L,O).
+The experimental images of $\approx 40$ $\upmu$m diameter droplets imaged using $\lambda \approx 650$~nm from Ref.~\cite{RN193} are shown in Figure~\ref{f:4-spherecomparison}(L,O).
 As with the bipolar droplets, the six twisted bipolar textures also show remarkable agreement.
 Note how the number and position of the alternating bright and dark regions in Figure~\ref{f:4-spherecomparison}(K--M) and Figure~\ref{f:4-spherecomparison}(N--P) are the same.
 In addition, note that while the central region in the bipolar drops in Figure~\ref{f:4-spherecomparison}(E--G) is dark, the addition of a twist in the director field about the horizontal axis causes the central region in the twisted bipolar textures in Figure~\ref{f:4-spherecomparison}(K--M) to be bright.
@@ -408,10 +409,10 @@ Using more or fewer wavelengths for the bipolar texture would not brighten the c
 \subsection{Planar-anchored nematic toroids}
 We first used simulated OPM textures in our previous work with NLC toroids under degenerate planar boundary conditions~\cite{RN46}.
 We observed the toroidal droplets from the top, shown in the OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(A), and from the side, shown in the bright-field image in Figure~\ref{f:4-PlanarTorusComparison}(D) and the OPM textures in Figure~\ref{f:4-PlanarTorusComparison}(E,F).
-Note how the central region in the side-view OPM textures found in Figure\ref{f:4-PlanarTorusComparison}(F,G) is always bright regardless of the PA orientation.
+Note how the central region in the side-view OPM textures found in Figure~\ref{f:4-PlanarTorusComparison}(F,G) is always bright regardless of the PA orientation.
 The fact that this central region cannot be fully extinguished under crossed polarizers can be explained with the doubly-twisted director field ansatz in Eq.~\ref{e:4-planransatz}~\cite{RN46}.
 Recall that the parameter $\omega$ determines the amount of twist in the director field and $g$ allows the director field to splay; $g=1$ corresponds to a splay-free configuration.
-From minimizing the Frank-Oseen free energy, including saddle splay, for different values of the toroidal aspect ratio, $\xi = R_0/a$, we obtained the values of $\omega$ and $g$~\cite{RN46}.
+From minimizing the Frank-Oseen free energy, including saddle splay, for different values of the toroidal aspect ratio, $\xi = R_0/a$, we obtained values of $\omega$ and $g$~\cite{RN46}.
 As $\xi$ decreases, $\omega$ increases and $g$ decreases corresponding to an increase in the twist and splay deformations, respectively.
 \begin{figure}
 \centering
@@ -428,19 +429,19 @@ Images in (A,D--F) reproduced with permission from {\bf GET PERMISSION}.}\label{
 
 \subsubsection{Simulated textures}
 We simulate OPM textures for nematic tori under tangential anchoring using the ansatz in Eq~\ref{e:4-planransatz} with values of $\omega$ and $g$ provided from the free energy minimization.
-We produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm.
+We produce textures using a weighted average over 200 wavelengths evenly-spaced between $400$ nm and $700$ nm.
 The normalized weights are provided by the spectrum of the lamp in the microscope used to take the experimental OPM textures.
 We simulate the side-view OPM texture by propagating the incident light perpendicular to $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(C), and we simulate the top-view OPM texture by propagating the light along $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(D).\\
 
 Both the experimental top-view OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(A) and the simulated top-view OPM texture in Figure~\ref{f:4-PlanarTorusComparison}(B) are predominantly bright with four brushes exhibiting partial extinction aligned along the polarizer and analyzer.
-This can also be seen in $4$ maxima and $4$ minima in the intensity along the central ring from $\varphi=0^{\circ}$ to $\varphi=360^{\circ}$ as plotted in Figure~\ref{f:4-spherecomparison}(C) for the experimental OPM texture ($\color{red}\blacksquare$) and the simulated OPM texture ($\color{blue}\blacktriangle$).
+This can also be seen in $4$ maxima and $4$ minima in the intensity along the central ring from $\varphi=0^{\circ}$ to $\varphi=360^{\circ}$ as plotted in Figure~\ref{f:4-PlanarTorusComparison}(C) for the experimental OPM texture ($\color{red}\blacksquare$) and the simulated OPM texture ($\color{blue}\blacktriangle$).
 The two curves agree with respect to both the position of the minima and maxima and the relative height of the minima and maxima.
 Note that the lack of complete extinction in the brushes is reflected in the height of the minima in the intensity plot; this high minimum intensity is due to the doubly-twisted structure of the director field.
 As with the bipolar and twisted bipolar spherical droplets, the presence of twist raises the minimum intensity in the simulated OPM texture of the toroidal droplets.
 
 The role of twist in preventing complete extinction is also present when looking at the brightness of the central region in both experimental side-view textures and the simulated side-view textures seen in Figure~\ref{f:4-PlanarTorusComparison}(E,F) and Figure~\ref{f:4-PlanarTorusComparison}(G,H), respectively.
-In addition, we see that the central region of both the experimental and simulated textures viewed with PA aligned at $0^{\circ}$ and $90^{\circ}$ with respect to $\mathbf{n}^d$ ($0^{\circ}$) is brighter than when PA are aligned at $45^{\circ}$ and $135^{\circ}$ with respect to $\mathbf{n}^d$ ($45^{\circ}$).
-Now looking at the inner portion of the tubes, we see that again for both experiment and simulation with PA at $0^{\circ}$, the intensity is less than than when PA are at $45^{\circ}$.
+In addition, we see that the central region of both the experimental and simulated textures viewed with PA aligned at $0^{\circ}$ and $90^{\circ}$ with respect to $\mathbf{n}^d$ is brighter than when PA are aligned at $45^{\circ}$ and $135^{\circ}$ with respect to $\mathbf{n}^d$.
+Now looking at the inner portion of the tubes, we see that again for both experiment and simulation with PA at $0^{\circ}$, the intensity is less than when PA are at $45^{\circ}$.
 \begin{figure}
 \centering
 \includegraphics{figures/C4/Ch4-Figs_PlanarSimIntRat.png}
@@ -451,14 +452,14 @@ Now looking at the inner portion of the tubes, we see that again for both experi
 (E,F), $I_0/I_{45}$ versus $\xi$ for (E) simulated and (F) experimental OPM textures from the top-view. }\label{f:4-PlanarIntRatio}
 \end{figure}
 
-We quantify the difference between the brightness of the central region of a side-view OPM texture when PA are aligned at $0^{\circ}$ ($I_0$) versus when PA are aligned at $45^{\circ}$ ($I_{45}$), as seen in Figure~\ref{f:4-PlanarIntRatio}(A), by taking the ratio of the the two measurements $I_0/I_{45}$ as a function of $\xi$.
+We quantify the difference between the brightness of the central region of a side-view OPM texture when PA are aligned at $0^{\circ}$ or $90^{\circ}$ ($I_0$) versus when PA are aligned at $45^{\circ}$ or $135^{\circ}$ ($I_{45}$), as seen in Figure~\ref{f:4-PlanarIntRatio}(A), by taking the ratio of the the two measurements $I_0/I_{45}$ as a function of $\xi$.
 We find that for both the experimental and simulated OPM textures the intensity ratio decreases as $\xi$ increases. In addition, $I_0/I_{45}$ also passes through 1 around $\xi = 5$ for both the simulated and experimental textures, as seen in Figure~\ref{f:4-PlanarIntRatio}(B,C).
 Physically, this corresponds to the aspect ratio where the entry director is oriented at approximately $22.5^o$ with respect to the plane of the torus.
-Thus the incident light at $0^{\circ}$ for the $I_0$ measurement and the incident light at $45^{\circ}$ for the $I_{45}$ measurement have the same angular difference from the entry director, yielding similar output polarization states that are reflected in $I_0/I_{45} \approx 1$.
+Thus the incident light at $0^{\circ}$ for the $I_0$ measurement and the incident light at $45^{\circ}$ for the $I_{45}$ measurement have the same angular difference from the entry director, yielding similar output polarization states, reflected by the fact that $I_0/I_{45} \approx 1$.
 
 For $I_0/I_{45}$ from the top-view OPM textures, we take the intensity in a region  $0^{\circ}$ measured from the polarizer axis for $I_0$ and the intensity in a region $45^{\circ}$ measured from the polarizer axis for $I_{45}$, as seen in Figure~\ref{f:4-PlanarIntRatio}(D).
 As with the intensity ratio for the side view, $I_0/I_{45}$ for the top view also decreases with increasing $\xi$. However, $I_0/I_{45}<1$ always for the top view.
-This is due to the fact that there is no aspect ratio where the entry director at $0^{\circ}$ and $45^{\circ}$ posses the same angular difference from the incident direction of polarization.
+This is due to the fact that there is no aspect ratio where the entry director at $0^{\circ}$ and at $45^{\circ}$ posses the same angular difference from the incident direction of polarization.
 For both the top view and the side view, the $I_0/I_{45}$ from the experimental textures shows good qualitative agreement with the $I_0/I_{45}$ from the simulated textures.
 \begin{figure}
 \centering
@@ -482,6 +483,7 @@ T = \cos ^2&(\Phi_{\textrm{exit}}-\tau)-\frac{\tau}{2 X}\sin(2X)\sin(2\Phi_{\tex
 where $X = \sqrt{\tau^2+(\pi(n_E-n_o)d/\lambda)^2}$, $d$ is the sample thickness and $\Phi_\textrm{exit}$ is the angle of the analyzer measured with respect to the polarizer.
 This fit for the example torus in Figure~\ref{f:4-PlanarTwist}(A) is shown in Figure~\ref{f:4-PlanarTwist}(B) and results in $\tau=33.61 \pm 0.01^{\circ}$.
 This is consistent with our expectations and supports our simulation procedure.
+
 Experimentally, we measured $\tau \approx 50^{\circ}$ for a toroid with $\xi \approx 3.5$~\cite{RN24}. Eq.~\ref{e:4-tn} assumes that the Mauguin parameter $u =  \pi (n_E-n_o) d /(\lambda \tau) \gg 1$~\cite{RN232}.
  Physically, this corresponds to a regime where the phase difference introduced by the birefringence is much greater than $\tau$ such that the nematic acts as a waveguide.
 For our tori using 5CB with tube radius $\approx 100$ $\upmu$m, $u\sim 10^{2}$, satisfying this limit.
@@ -494,11 +496,12 @@ This can be seen in the simulated OPM texture in Figure~\ref{f:4-PlanarTwist}(A)
 Since the simulation algorithm only works for a single wavelength, an average of multiple single-wavelength OPM textures is needed to approximate a true white light source.
 To illustrate this effect, we will use the central section of a side view simulated OPM texture of a torus with $\xi = 1.8$, as seen highlighted in the red square in Figure~\ref{fig_lambda}(A).
 For the single-wavelength images shown in Figure~\ref{fig_lambda}(B--E), the alternating light and dark bands are due to an output polarization state whose component along the analyzer varies periodically, translating to periodic intensity variations over the image.
-The symmetry of the ansatz found in equation~\ref{e:4-planransatz} in a perfect torus results in the light and dark bands encroaching symmetrically to produce the star-like feature seen in the middle of each individual single-wavelength image.
+The symmetry of the ansatz found in Eq.~\ref{e:4-planransatz} in a perfect torus results in the light and dark bands encroaching symmetrically to produce the star-like feature seen in the middle of each individual single-wavelength image.
 Note how the light and dark bands are smallest in the simulated texture for $\lambda = 400 $~nm displayed in Figure~\ref{fig_lambda}(B) and largest in the simulated texture for $\lambda = 700$~nm displayed in Figure~\ref{fig_lambda}(E).
 This is because the retardation $\Gamma \sim 1/\lambda$~\cite{RN232}.
 Thus, as the light and dark bands are of different sizes and occur with different frequencies, averaging over multiple single-wavelength textures can wash out their appearance.
-Averaging over more wavelengths in the same range corresponds to a greater washing out of the light and dark bands, as seen in Figure~\ref{fig_lambda}(F--I), averaging over 4, 8, 20, and 200 evenly spaced wavelengths between $400$~nm and $700$~nm, respectively.
+Averaging over more wavelengths in the same range corresponds to a greater washing out of the light and dark bands.
+This is shown in Figure~\ref{fig_lambda}(F--I), averaging over 4, 8, 20, and 200 evenly-spaced wavelengths between $400$~nm and $700$~nm, respectively.
 Also note how the star-like feature does not average out as it is present in all the simulated single-wavelength images.
 \begin{figure}
 \centering
@@ -515,7 +518,7 @@ The red square highlights the central region shown in (B--I).
 The voxel size is important, as a voxel size too large will fail to capture the director variation in the volume, while a voxel size too small will take unnecessary time and computation power to simulate.
 To capture the true effect of the given director field, the voxel must be small enough such that the director can be taken as a constant over the voxel volume.
 Practically, this limit is found when simulating a OPM texture with a smaller voxel size produces no change in the output texture.
-To illustrate this, the central portion of a side-view simulated OPM texture averaging over $200$ wavelengths are shown for PA at $0^{\circ}$ and $45^{\circ}$ in Figure~\ref{f:4-PlanarVoxel}(A--C) and Figure~\ref{f:4-PlanarVoxel}(D--F), respectively.
+To illustrate this, the central portion of a side-view simulated OPM texture of a torus averaging over $200$ wavelengths are shown for PA at $0^{\circ}$ and $45^{\circ}$ in Figure~\ref{f:4-PlanarVoxel}(A--C) and Figure~\ref{f:4-PlanarVoxel}(D--F), respectively.
 Comparing $\Delta /a = 0.04$ in Figure~\ref{f:4-PlanarVoxel}(A,D) with $\Delta /a = 0.01$ in Figure~\ref{f:4-PlanarVoxel}(B,E), the difference in quality can be easily seen as the star feature as well as the light and dark variations for $\Delta /a = 0.01$ are reduced to just a pixelated cross for $\Delta /a = 0.04$.
 In contrast, the difference between $\Delta /a = 0.01$ and the textures simulated for $\Delta /a = 0.001$, as seen in Figure~\ref{f:4-PlanarVoxel}(C,F) is only the size of the star feature and the light and dark fringes for PA at $0^{\circ}$.
 Continuing to reduce the voxel size below $\Delta /a = 0.001$ produces no noticeable difference in the resulting textures.
@@ -531,16 +534,16 @@ This is because $I_0/I_{45}$ is taken using the average intensity over the centr
 All textures use a $200$ wavelength average with $a = 100$ $\upmu$m.
 (G) Intensity ratio $I_0/I_{45}$ as a function of $\xi$ for simulated side-view OPM textures as seen schematically in Figure~\ref{f:4-PlanarIntRatio}(A) for ($\blacksquare$) $\Delta /a = 0.04$, (${\color{red}\blacksquare}$) $\Delta /a = 0.01$ , and (${\color{blue}\blacksquare}$) $\Delta /a = 0.001$.
 }\label{f:4-PlanarVoxel}
-\end{figure}
+\end{figure}\fxnote{make sure the blue shows up. opacity?}
 
 \subsubsection{Effect of refraction on OPM textures}
 Even though the simulated OPM textures do not take into account refraction, refraction effects are present in the experimental textures and they affect how the experimental and simulated OPM textures can be compared.
 First considering the experimental bright-field top view of an isotropic 5CB toroid with $n_{iso} \approx 1.6 $ in a yield-stress fluid with $n \approx 1.33$ in Figure~\ref{f:4-refraction}(A), the inner and outer edges of the torus are darker than the rest of the droplet.
 In contrast, the inner and outer edges of the bright-field top view of a toroid made with Polydimethylsiloxane (PDMS) oil with $n \approx 1.4$ in Figure~\ref{f:4-refraction}(B) are less prominent.
 These effects of refraction are supported by the simulated images of isotropic tori with $n = 1.4$ and $n = 1.2$ in an outer medium with $n=1$ seen in Figure~\ref{f:4-refraction}(C,D), respectively.
-These images were generated using Autodesk Maya.
+These images were generated using the computer modeling software Autodesk Maya.
 As with the experimental images, the simulated image with the higher index contrast is darker overall with more prominent edges than the image simulated with a smaller index contrast.
-From this, we know that we should only consider the region around the central ring when comparing simulated and experimental OPM textures for toroidal droplets viewed from the top.
+Thus, to minimize the effect of refraction on our data, we should only consider the region around the central ring when comparing simulated and experimental OPM textures for toroidal droplets viewed from the top.
 
 We can also look at bright-field images of toroids viewed from the side made with either 5CB or PDMS oil immersed in a yield-stress medium, as seen in Figure~\ref{f:4-refraction}(E,F), respectively.
 Viewed from the side, the central region and the inner portion of the tube of the 5CB toroid are bright, while the rest of the toroid is darker.
@@ -575,7 +578,7 @@ All simulations performed averaging over 200 wavelengths.}\label{f:4-nostar}
 \end{figure}
 
 
-\subsection{Comparison with homeoetropic-anchored nematic toroids}
+\subsection{Comparison with homeotropically-anchored nematic toroids}
 We model a TER director field by coupling the doubly-twisted ansatz from our planar NLC toroids with the ER director field in the one-constant approximation:
 \begin{equation}
   \mathbf{n} = \hat{r} \sin(\Omega)
@@ -583,7 +586,7 @@ We model a TER director field by coupling the doubly-twisted ansatz from our pla
   + \hat{\varphi}\cos(\Omega)\sqrt{1 - \left ( \frac{\omega r}{a-g \frac{r}{\xi} \cos \theta} \right )^2 },\label{e:4-TERansatz}
 \end{equation}
 where $\Omega = 2 \arctan(r/a)$.
-As with our simulated OPM textures of planar-anchored NLC toroids, we produce textures using a weighted average over 200 wavelengths evenly spaced between $400$ nm and $700$ nm, where the weights are provided by the spectrum of the lamp in our microscope.
+As with our simulated OPM textures of planar-anchored NLC toroids, we produce textures using a weighted average over 200 wavelengths evenly-spaced between $400$ nm and $700$ nm, where the weights are provided by the spectrum of the lamp in our microscope.
 Comparing the example experimental TER texture in Figure~\ref{f:4-HomeoToroidsExp}(B) with the example simulated ER texture in Figure~\ref{f:4-I0I45vsTwist}(A), and the example simulated TER texture in Figure~\ref{f:4-I0I45vsTwist}(B) we see that they share the same intensity features; all three textures exhibit the classic dark-bright-dark-bright-dark pattern, giving credence to our hypothesis that the director field in a homeotropic nematic toroid is either escaped-radial or twisted escaped-radial.
 \begin{figure}
   \centering
@@ -596,12 +599,13 @@ Comparing the example experimental TER texture in Figure~\ref{f:4-HomeoToroidsEx
 \end{figure}
 
 To further confirm this, we simulate ER and TER capillaries, as shown in Figure~\ref{f:4-I0I45vsTwist}(C,D), respectively.
-Here, we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, the orientation of the capillary axis.
+Here, we replace $\hat{\varphi}$ in Eq.~\ref{e:4-TERansatz} with $\hat{z}$, which we choose parallel to the capillary axis.
 From the top, we first see that our simulated ER and TER textures in a [Figure~\ref{f:4-I0I45vsTwist}(A,B)] torus and simulated ER and TER textures in a [Figure~\ref{f:4-I0I45vsTwist}(C,D)] capillary have the same alternating dark and bright intensity features.
-We plot the intensity profiles in the simulated OPM textures of the (${\color{blue} \square,\,\blacksquare}$) tori and the (${\color{red} \circ,\,\bullet}$) cylinders in Figure~\ref{f:4-I0I45vsTwist}(E).
+We plot the intensity profiles in the simulated OPM textures of the tori (${\color{blue} \square,\,\blacksquare}$) and the cylinders (${\color{red} \circ,\,\bullet}$) in Figure~\ref{f:4-I0I45vsTwist}(E).
+
 Second, from this plot we see that the intensity profiles are geometry independent; provided the $\hat{\varphi}$ and $\hat{z}$ have the same $\tau$ and same orientation with respect to PA, the intensity profiles across the tube for the tori and the cylinders are identical.
 Thus, as expected, ER/TER configurations in a torus can be recognized by the classic alternating light and dark pattern associated with ER capillaries.
-Third, we see that the intensity profiles of the simulated ER textures [(${\color{blue} \square},{\color{red} \circ}$), Figure~\ref{f:4-I0I45vsTwist}(E)] in the tori and the cylinders have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thernal fluctuations in the director orientations~\cite{RN33,RN309}
+Third, we see that the intensity profiles of the simulated ER textures [(${\color{blue} \square},{\color{red} \circ}$), Figure~\ref{f:4-I0I45vsTwist}(E)] in the tori and the cylinders have $I_{min} = 0$, in contrast to the experimental ER textures in the capillaries; this is due to scattering from thermal fluctuations in the director orientations~\cite{RN33,RN309}
 Thus, we cannot make a quantitative comparison between the intensity profiles in the experimental and simulated ER/TER toroidal textures, but we can use our simulated OPM textures to investigate how the twist affects a TER texture.
 
 
@@ -612,18 +616,21 @@ This confirms our expectations that adding twist raises the intensity of the cen
 In addition, the monotonic relationship between the intensity ratio and $\omega$ implies that we can use $I_{max}/I_{min}$ as a proxy for twist.
 Thus, our observation that  $I_{max}/I_{min}$ is proportional to $\xi$ confirms that the amount of twist in a TER configuration in a toroid decreases with increasing $\xi$.
 Furthermore, this implies that geometry is the driving factor in generating a TER structure.
-Specifically, we speculate that the twist in the TER structure comes from bending the escape core, the central portion of the escape where $\mathbf{n}~\hat{\varphi}$.
-As in straight SSY capillaries, the twist relieves the bend.
-However, because $K_{11} \sim K_{22} \sim K_{33}$, we need to introduce extra bend distortion to make the twist distortion energetically favorable.
+Specifically, we speculate that the twist in the TER structure results from bending the escape core, the central portion of the escape where $\mathbf{n} \sim \hat{\varphi}$.
+This is similar to straight capillaries filled with SSY, where the twist distortion also relieves a bend distortion.
+However, in SSY, $K_{11} \sim K_{33} \sim K_{22}$, such that it is energetically favorable to twist, even when the escape core is straight.
+In our case, we use 5CB with $K_{11} \sim K_{22} \sim K_{33}$.
+As a result, we need to introduce an extra bend distortion by bending the escape core to make the twist distortion energetically favorable in 5CB.
 
 
 \subsection{Intensity ratio as a function of escape rate}
 When we look closely at the escape core in the simulated TER textures in tori, we see that the escape core appears to spiral, similar to the the experimental textures at for NLC confined to toroids with low $\xi$.
-To test if a spiral textures similar to the experiments can by changing the escape rate, we modify the ER and TER ansatz from Eq.~\ref{e:4-TERansatz} with $\Omega = (r/a)^{\phi}$.
-Here, as demonstrated by the red curves in Figure~\ref{f:4-EscapeSchem}, choosing $\phi = 1$ well approximates $2 \arctan(r/a)$, the one-constant solution, choosing $\phi < 1$ yields a slower escape, and $\phi > 1$ yields a faster escape.
+To test if a spiral textures similar to the experiments can by changing the escape rate, we modify the ER and TER ansatzes from Eq.~\ref{e:4-TERansatz} by making the change $\Omega = (\pi/2)(r/a)^{\phi}$.
+Here, as demonstrated by the red curves in Figure~\ref{f:4-EscapeSchem}, choosing $\phi = 1$ well approximates $2 \arctan(r/a)$, the one-constant solution.
+Choosing $\phi < 1$ yields a slower escape, and $\phi > 1$ yields a faster escape.
 Observing textures and the intensity profiles for $\phi = 1,10,25$ in Figure~\ref{f:4-I0I45vsEscape}(A--C), respectively, we see $\phi > 1$ produces textures that qualitatively resemble those from our experimental toroids with the spiral textures.
 However, when we plot $I_{max}/I_{min}$ vs $\phi$ for $\tau = 34.9^{\circ}$, we see that $\phi$ has no effect on the intensity ratio.
-Thus, we will assume that the intensity ratio in the spiral textures is still only determined by the twist in the texture.
+Thus, we can assume that the intensity ratio in the spiral textures is still only determined by the twist in the texture.
 \begin{figure}
   \centering
   \includegraphics{figures/C4/Ch4-Figs_I0I45vsEscape.png}
@@ -635,7 +642,7 @@ Thus, we will assume that the intensity ratio in the spiral textures is still on
 \section{Nematic liquid crystals in bent capillaries}
 To test the role of geometry in generating TER structures, we consider 5CB under homeotropic anchoring in bent glass capillaries.
 \subsection{Making bent capillaries}
-We start with straight glass capillaries, heat the glass at a point with a blowtorch, and let gravity then bend the capillary such that the capillary axis now forms a planar curve, as seen in the bright-field image of a example capillary in Figure~\ref{f:4-BentCaps}(A).
+We start with straight glass capillaries, heat the glass at a point with a blowtorch, and let gravity bend the capillary such that the capillary axis now forms a planar curve, as seen in the bright-field image of a example capillary in Figure~\ref{f:4-BentCaps}(A).
 We apply the heat for as short of a duration as possible to minimize the change in the inner diameter of the capillary; applying the torch over a long duration melts the capillary.
 \begin{figure}
   \centering
@@ -651,7 +658,7 @@ We apply the heat for as short of a duration as possible to minimize the change 
 
 \subsection{Measuring planar curvature}
 We measure the curvature of the capillary axis using a modified version of the IRLS routine we used in Chapter~\ref{c:3} to measure surface curvature.
-Here, instead of fitting to the extended Weingarten Matrix, we fit to the Frennet-Serret formula, $\textrm{d}\mathbf{k}/\textrm{d}s = -\kappa \cdot \mathbf{T}$, via:
+Here, instead of fitting to the extended Weingarten Matrix, we fit to the Frenet-Serret formula, $\textrm{d}\mathbf{k}/\textrm{d}s = -\kappa \cdot \mathbf{T}$, via~\cite{RN23}:
 \begin{equation}
   \Delta \mathbf{k} \cdot \mathbf{T} = \kappa \, \Delta s,\label{e:4-FSfit}
 \end{equation}
@@ -659,7 +666,7 @@ with $\Delta s$ the independent variable, $\Delta \mathbf{k} \cdot \mathbf{T}$ t
 This approach is equivalent to fitting to the Weingarten Matrix for a surface with only one nonzero principle curvature everywhere, i.e. a surface with vanishing Gaussian curvature but nonzero mean curvature.
 
 For a planar curve, we choose points along the contour by hand and then estimate $\mathbf{T}$ and $\mathbf{k}$ by calculating finite differences as in Chapter~\ref{c:3}; these points and initial $\mathbf{k}$ are plotted for the left and right contour on the image in Figure~\ref{f:4-BentCaps}(A).
-We initially estimate $\kappa$ for a point of interest by fitting Eq.~\ref{e:4-FSfit} for all pairs of points within $s_1$ of the point of interest, where we take $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[j]} - \mathbf{k}_{[j]}$ and $\Delta s_{[i,j]} \approx
+We initially estimate $\kappa$ for a point of interest by fitting Eq.~\ref{e:4-FSfit} for all pairs of points within $s_1$ of the point of interest, where we take $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[i]} - \mathbf{k}_{[j]}$ and $\Delta s_{[i,j]} \approx
 \textrm{sign}\big \{ (\mathbf{r}_{[i]} - \mathbf{r}_{[j]}) \cdot \mathbf{T}\big \} |\mathbf{r}_{[i]} - \mathbf{r}_{[j]}|$.
 We then use this initial estimate as the input for our IRLS routine and fit Eq.~\ref{e:4-FSfit} considering all pairs of points within $s_2$ of the point of interest.
 
@@ -668,7 +675,7 @@ For the example image in Figure~\ref{f:4-BentCaps}(A), we fit the left contour w
 \subsection{Measuring the intensity profile}
 To assign a local aspect ratio, we need the curvature along the central capillary axis.
 To find this, we start by selecting a point of interest in the capillary near the central axis.
-We then find the nearest point on the left and right contours, $\mathbf{p}_{left}$ and $\mathbf{p}_{right}$, and take the intensity profile along the line between $\mathbf{p}_{left}$ and $\mathbf{p}_{right}$.
+We then find the nearest point on the left and right contours, $\mathbf{p}_{left}$ and $\mathbf{p}_{right}$, and take the intensity profile along the line connecting $\mathbf{p}_{left}$ and $\mathbf{p}_{right}$.
 The central ring radius for the intensity profile is then given by $R^{cap}_0 = (1/2)(\kappa(\mathbf{p}_{left}) + \kappa(\mathbf{p}_{right}))^{-1}$, and the tube radius $a^{cap} = |\mathbf{p}_{left} - \mathbf{p}_{right}|/2$, such that we can calculate the local aspect ratio $\xi^{cap} = R^{cap}_0/a^{cap}$.
 Thus, we see that in a single bent capillary we can explore a variety of $\xi$ simply by changing PA to align along different portions of the capillary.
 For the example OPM texture in Figure~\ref{f:4-BentCaps}(C), we plot the intensity profile in Figure~\ref{f:4-BentCaps}(D), where $\xi^{cap} = 6.8$, and find $I_{max}/I_{min} = 1.8$.
@@ -679,8 +686,9 @@ We find that the intensity profiles for the $\xi^{cap} \rightarrow \infty$ regio
 Plotting $I_{max}/I_{min}$ for the capillaries as a function of the local aspect ratio [($\blacktriangle$), Figure~\ref{f:4-HomeoToroidsExp}(G)] on top of our data from the homeotropic toroids [(${\color{blue} \circ}$), Figure~\ref{f:4-HomeoToroidsExp}(G)], we see that the data fall on top of each other, confirming that the amount of twist is determined solely by the local geometry.
 From this perspective, $\xi$ can be seen as a dimensionless group locally comparing the relevant curvatures; $a$ gives the radius of curvature in the bend distortion inherent to an escaped radial configuration, while $R_0$ is the radius of curvature of the additional bend distortion induced by bending the capillary.
 Bending the capillary breaks the symmetry of the bend distortion in the escape.
-When $\theta = 0$, the two bend distortions are additive, when $\theta = \pi$, the two bend distortions are subtractive, and the $\theta = \pi/2,3\pi/2$ the two distortions are orthogonal.
-The aspect ratio details the competition between the distortions; as $\xi$ decreases the competition between the distortions grows, and it becomes favorable to twist instead.
+These two bend distortions do not compete in the same manner everywhere in the torus.
+In particular, when $\theta = 0$, the two bend distortions are additive; when $\theta = \pi$, the two bend distortions are subtractive; and when $\theta = \pi/2,3\pi/2$ the two distortions are orthogonal.
+The aspect ratio details the competition between the distortions: as $\xi$ decreases the competition between the distortions grows, and it becomes favorable to twist instead.
 
 
 \section{Conclusions}
@@ -694,5 +702,5 @@ For NLC confined to a toroidal geometry with either homeotropic or degenerate pl
 Under degenerate-planar anchoring, $\xi$ is a measure of the difference between the principle curvatures, giving the strength of the saddle-splay distortion that drives the magnitude of the twist.
 When the anchoring is homeotropic, $\xi$ instead gives the relative magnitudes of the bend distortions induced by the confinement; $a$ sets the scale of the bend distortion inherent in an ER configuration, $R_0$ sets the scale of the additional bend distortion induced by curving the capillary axis.
 These distortions can compete; as the competition grows it becomes favorable to break reflection symmetry and twist, with the twist growing as to competition grows.
-Since the aspect ratio can be defined locally in both anchoring scenarios, the twist in both scenarios can be adjusted by locally tuning the aspect ratio, opening
+Since the aspect ratio can be defined locally, the twist in both anchoring scenarios can be adjusted by locally tuning the aspect ratio.
 This demonstrates that confining NLC to toroidal-like geometries is a general strategy to tune chirality and investigate spontaneous symmetry breaking in an achiral material.
