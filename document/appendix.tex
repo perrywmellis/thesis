@@ -7,206 +7,209 @@
 
 %Begin individual appendices, separated as chapters
 
-\chapter{A brief introduction to Differential Geometry}\label{a:A}
-This appendix briefly introduces some useful ideas and definitions in differential geometry.
-I have follow Refs.~\cite{RN35,RN266} and limit the discussion to the concepts needed to follow the main text of this thesis.
-While much of what follows can be generalized to $n$-dimensions, I will primarily discuss concepts in 3 or fewer dimensions.
+% \chapter{A brief introduction to Differential Geometry}\label{a:A}
+% This appendix briefly introduces some useful ideas and definitions in differential geometry.
+% I follow Refs.~\cite{RN35,RN266} and limit the discussion to the concepts needed to follow the main text of this thesis.
+% While much of what follows can be generalized to $n$-dimensions, I will primarily discuss concepts in 3 or fewer dimensions.
+%
+%
+%
+% \section{Manifolds and (hyper)surfaces}
+% A \emph{manifold} is a space that locally looks like Euclidean space.
+% Trivially, this implies that Euclidean space is a manifold.
+% If the manifold is differentiable, then we can also do calculus on the manifold.
+% Euclidean space is differentiable; in fact, most of us learned to do calculus in 3D Euclidean space, $\mathbb{R}^3$, with the global coordinate system, $(x^1,x^2,x^3)$.
+% This easily generalizes to $n$-dimensional Euclidean space, $\mathbb{R}^n$, with its global coordinate system, $(x^1,x^2, \ldots , x^n)$.
+% Now, we define a 2D surface embedded in $\mathbb{R}^3$ as some subset of $\mathbb{R}^3$ that locally looks like $\mathbb{R}^2$.
+%
+% Since our 2D surface locally resembles 2D Euclidean space, we see that the surface itself qualifies as a manifold.
+% In fact, generalizing this definition gives us \emph{submanifolds}, a subset of a manifold which itself is a manifold.
+% More formally, let the subset $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ be the $n$-dimensional submanifold of $\mathbb{R}^{n+p}$ if $\mathbb{X}$ can locally be described by writing $p$ of the coordinates differentially in terms of the $n$ remaining coordinates.
+% Explicitly, for $r \in \mathbb{X}$, a neighborhood of $r$ on $\mathbb{X}$ can be described by the local coordinates $(\mathbf{u},\mathbf{v}) = (u^1,\ldots,u^n,v^1,\ldots,v^p)$ in $\mathbb{R}^{n+p}$ where $v^j = f^j(u^1,\ldots,u^n)$, with $j = 1,\ldots,p$, and $f$ a smooth function.
+%
+% Thus, we define a surface as a 2D submanifold of $\mathbb{R}^3$ such that $v = f(u^1,u^2)$, where $u^1$ and $u^2$ are coordinates that parameterize the surface and $v$ is the third coordinate in $\mathbb{R}^3$.
+% Similarly, a curve is a 1D submanifold of $\mathbb{R}^3$ where $v = g^1(u^1) = g^2(u^2)$ and a planar curve is a 1D submanifold of $\mathbb{R}^2$ where $v = f(u)$.
+% Note that this definition implies that a curve in general can be considered part of a surface, with a planar curve restricted a globally flat surface.
+% If we define the codimension of a submanifold $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ as $p$, we can generalize the concept of a surface: let a hypersurface be a submanifold with codimension $1$.
+%
+%
+%
+%
+% \section{Tangent space, cotangent space, and the 1$^{\rm st}$ fundamental form }
+% The tangent space of an $n$-dimensional differentiable manifold $\mathbb{X}^n$ at $r\in \mathbb{X}^n$, denoted as $T_r\mathbb{X}^n$, is the real vector space holding all of the vectors tangent to $\mathbb{X}^n$ at $r$.
+% Note that the tangent space has the same dimensionality as the manifold it is associated with.
+% Thus, the tangent space to any surface is a plane and the tangent space to a curve is a line.
+% This makes intuitive sense as we experince the curved surface of the Earth as locally flat.
+%
+% To define a basis in the tangent space, we start by exteding our concept of parameterizing a surface in of a pair of local coordinates $(u^1,u^2)$.
+% Let $U \subset \mathbb{R}^2$ describe a local coordinate patch with $u^1,u^2 \in U$ local coordinates. Then, $\mathbf{R}:U \rightarrow \mathbb{R}^3$ maps the patch to the embedding manifold.
+% As $(u^1,u^2)$ vary along the surface, $\mathbf{R}(u^1,u^2) \in \mathbb{R}^3$ is a vector that traces out the surface in $\mathbb{R}^3$.
+% Restricting ourselves to $T_r\mathbb{X}^2$, the tangent space at $r$ of a surface $\mathbb{X}^2$, we can define a basis in the $T_r\mathbb{X}^2$ given by the vectors $\mathbf{e}_i = \partial \mathbf{R} / \partial u^i = \partial_i \mathbf{R}$, where $i = 1,2$.
+% Note that these vectors are generally \emph{not} of unit length.
+%
+% From $T_r\mathbb{X}^2$, we define the \emph{cotangent space}, $T^*_r\mathbb{X}^2$, as the dual space of the tangent space.
+% The cotangent space $T^*_r\mathbb{X}^2$ consists of linear functionals $\bm{\varphi}^*$ that map $\mathbf{v} \in T_r\mathbb{X}^2$ to scalars, e.g. $\bm{\varphi}(\mathbf{v}) \in \mathbb{R}$.
+% Furthemore, note that an isomorphism exists between $T_r\mathbb{X}^2$ and $T^*_r\mathbb{X}^2$, which maps vectors $\mathbf{v}$ to covectors $\mathbf{v}^* \in T^*_r\mathbb{X}^2$.
+% Consequently, $(\mathbf{v}^*)^* = \mathbf{v} \in T_r\mathbb{X}^2$.
+% Thus, we can define an inner product $\langle \cdot, \cdot \rangle$ between vectors $\mathbf{v},\bm{\varphi} \in T_r\mathbb{X}^2$ as a bilinear map
+%  $\langle \cdot, \cdot \rangle : T_r\mathbb{X}^2 \times T_r\mathbb{X}^2 \rightarrow \mathbb{R}$
+%  via $\langle \mathbf{v}, \bm{\varphi} \rangle = \mathbf{v} \cdot \bm{\varphi} = \mathbf{v}^*(\bm{\varphi}) = \bm{\varphi}^*(\mathbf{v}) $.
+%
+% In matrix representation, vectors are often denoted as column vectors as covectors as row vectors, such that the dot product is given by the matrix product with the row vector placed to the left of the column vector.
+% Since we typically turn a row vector into a column vector by taking the transpose, there must be a general way to transform between the tangent space and the cotangent space, this represents a concrete form of the dual operation.
+% This general transformation between the tangent and cotangent spaces is given by $\mathbf{g}$, the 1$^{\rm st}$ fundamental form, or metric, constructed from the basis in the tangent space as:
+% \begin{equation}
+%   g_{ij} = \mathbf{e}_i \cdot \mathbf{e}_j\, ,\label{e:A-metric}
+% \end{equation}
+% where $g_{ij}$ are the scalar components of $\mathbf{g}$.
+% If we let $\mathbf{e}^i$ be the basis for $T^*_r\mathbb{X}^{2}$, then we can define the components of a similar object $g^{ij} = \mathbf{e}^i \cdot \mathbf{e}^j$. \\
+%
+% We emphasize that the choice of upper and lower indices is not arbitrary.
+% By convention, a general vector can be described by $\mathbf{v} = v^{i}\mathbf{e}_i$, and a general covector can be described by $\bm{\varphi}^* = \varphi_{i}\mathbf{e}^i$, where the Einstein summation convention still applies.
+% Note then, that the components of a vector have upper indices while their corresponding basis have lower indices, and the components of a covector have lower indices while their corresponding basis have upper indices.
+% In general, arbitrary objects as well as the basis in the tangent or cotangent plane will be bold, with objects that are not a basis in the cotangent plane denoted with an asterisk.
+% Now that we have a basis in both the tangent and cotangent plane, we define their inner product via $\mathbf{e}^i \cdot \mathbf{e}_j = \tensor{\delta}{^i_j}$, where
+% \begin{equation}
+%   \delta_{ij} = \delta^{ij} = \tensor{\delta}{^i_j} = \begin{cases}
+%     1, & \textrm{if } i = j \\
+%     0, & \textrm{otherwise}
+%   \end{cases},
+% \end{equation}
+% is the Kronecker delta.
+% Thus, we now see that $(\mathbf{e}_i \cdot \mathbf{e}_j) \, (\mathbf{e}^j \cdot \mathbf{e}^k) = g_{ij}g^{jk} = \tensor{\delta}{_i^k}$, giving $(g_{ij})^{-1} = g^{ij}$.
+% As, $\mathbf{e}_i \, g^{ij} = \mathbf{e}^j$ and $\mathbf{e}^i \, g_{ij} = \mathbf{e_j}$, we now see how the metric gives the transformation between the bases in the tangent and cotangent plane.
+% Similarly, with $v_i = \mathbf{v}\cdot \mathbf{e}_i  = v^j(\mathbf{e}_i \cdot \mathbf{e}_j) = v^j g_{ij}$, we see that components also transform with the metric.\fxnote{why the changed notation here?}
+%
+% The metric defines notions of length on the surface.
+% For example, we know that the inner product of a vector with itself gives the square of the length of the vector.
+% Evaluating this for $\mathbf{v}$, we see that $\mathbf{v} \cdot \mathbf{v} = (v^i \mathbf{e}_i) \cdot (v^j \mathbf{e}_j) = v^i \, g_{ij} \, v^j = v_j v^j = |\mathbf{v}|^2$.
+% In this example, the metric lowers the indices and turns the components of a vector into the components of the covector such that the final result is a scalar.
+% Similarly, we see that this result is equivalent to directly evaluating the scalar product between a vector and its covector, $\mathbf{v}^* (\mathbf{v}) = v_i v^j \mathbf{e}^i (\mathbf{e}_j) = v_i v^j \, \tensor{\delta}{^i_j} = v_j v^j = |\mathbf{v}|^2$.
+% Since the metric is needed to define lengths on a surface, it must also enter into measures of area.
+% An infinitesimal area is given by $\textrm{dA} = \sqrt{g}\,\textrm{d}u^1 \, \textrm{d}u^2$, where $g = \textrm{det}\{ g_{ij} \}$, and $u^1$ and $u^2$ are local coordinates on the surface.
+% On a Euclidean surface, which is everywhere flat, $g_{ij} = \delta_{ij}$ everywhere such that there is no distinction between vectors and covectors and the area element on a surface takes the familiar form $\textrm{dA} = \textrm{d}x^1 \, \textrm{d}x^2$.
+%
+% % Another way to describe the role of the metric would be to say that it defines a relationship between vectors.
+% % In addition, we see that since there are rules governing the transformations between $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j}$, the metric is independent of the basis.
+% % These properties mean that the metric is a member of a more general class of objects called tensors.
+%
+%
+%
+% \section{Tensors}
+% Tensors are generalizations of scalars and vectors, defined broadly as multilinear functions from $T_r\mathbb{X}^n$ and $T^*_r\mathbb{X}^n$ to $\mathbb{R}$ or $\mathbb{C}$.
+% Tensors are basis-independent and thus must follow certain transformation laws such that there is a proscribed way to take a tensor in one basis to another basis.
+% Tensors are characterized by the ordered pair $(p,q)$ giving the rank $p + q$, with $p$ lower indices representing $p$ copies of the cotangent space and $q$ upper indices representing $q$ copies of the tangent space.
+% Thus, a vector is a $(0,1)$ rank-1 tensor, a covector is a $(1,0)$ rank-1 tensor, and a scalar is a rank-0 tensor.
+% Similarly, we now see that the metric is a rank-2 tensor, with $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j} = \tensor{g}{_j^i} = \tensor{\delta}{^i_j}$ the $(2,0)$, $(0,2)$, and $(1,1)$ form, respectively.
+% In addition, the metric tensor is used to raise and lower indices for any general $(p + q)$-rank tensor. \\
+%
+% It is common to represent tensors using arrays, as we alluded to earlier when we mentioned the common convention of an object in the tangent plane written as a column vector and an object of the cotangent plane written as a row vector.
+% In this case describing a surface, both the row and the column vector have 2 elements, reflecting the 2D nature of our surface.
+% As a consequence, in physics it is common to write a (0,1) tensor $\mathbf{v}$ using only its components $r^i$, taking the basis $\mathbf{e}_i$ to be implied.
+% This is much like how the elements of a column vector contain the components of some implicit basis.
+% Note, however, that a general rank-2 tensor is not a matrix as commonly defined in linear algebra.
+% Only the (1,1) form of a rank-2 tensor can be written and used as a matrix with standard linear algebra rules.
+% For example, let a rank-2 tensor $\tensor{G}{^i_j}$ provide a transformation between $v^i$ and $\varphi^i$ like: $\varphi^i = \tensor{G}{^i_j}v^j$.
+% In linear algebra notation assuming a 2D space we can write,\fxnote{why is this trivial?}
+% \begin{equation}
+%   \begin{pmatrix}
+%     \varphi^1 \\
+%     \varphi^2
+%   \end{pmatrix} =
+%   \begin{pmatrix}
+%     \tensor{G}{^1_1} & \tensor{G}{^1_2} \\
+%     \tensor{G}{^2_1} & \tensor{G}{^2_2}
+%   \end{pmatrix}
+%   \begin{pmatrix}
+%     v^1 \\
+%     v^2
+%   \end{pmatrix}.
+% \end{equation}
+% Thus, the 2 ``dimensions'' in a matrix really represent 1 copy of the tangent space and 1 copy of the cotangent space. \\
+%
+% The distinction that the (1,1) form of a rank-2 tensor corresponds to a matrix in linear algebra extends to the scalar invariants as well.
+% Since the scalar invariants of a tensor are independent of the basis, if we wish to calculate the trace of a rank-2 tensor as the sum of its diagonal components, then we must use the (1,1) form.
+% This extends to n-dimensional tensors, with $\textrm{Tr}\{ \mathbf{G} \} = \tensor{G}{^i_i}$.
+% Similarly, if we wish to calculate the determinant of a rank-2 tensor as we would in linear algebra, we must start with the (1,1) form.
+% We emphasize again that in a Cartesian basis, there is no distinction between the various forms of a tensor, thus we can freely treat tensors as arrays ans use standard linear algebra manipulations without worry. \\
+%
+% In moving a rank-2 tensor between its (0,2) and (2,0) form, or even a vector between its (1,0) and (0,1) form, we are performing a basis change, where the metric gives the transformation.
+% Note however, that we are not limited to moving between the tangent and cotangent spaces.
+% While the particulars of general bases transforms are beyond the scope of this Appendix, it is important to mention that objects in the tangent plane transform like inverses of objects in the cotangent plane.
+% For example, if $\varphi^i = \tensor{G}{^i_j}r^j$ takes $r^j$ from one tangent space to $\varphi^i$ in another tangent space, and $\varphi_i = \tensor{G}{^*_i^j}r_j$ is the equivalent covector transformation, then $(\tensor{G}{^i_j}) = \tensor{G}{^*_i^j}$, such that ${(\tensor{G}{^i_j})}^{-1}\,\tensor{G}{^*_j^k} = \tensor{\delta}{^i_k}$.
+%
+%
+%
+% \section{Covariant differentiation}
+% Briefly, we also address differentiation on a manifold.
+% Since the bases vectors are not constant on a curved surface, we need to take their change into account when doing derivatives on the surface.
+% Thus, for a general vector $\mathbf{r} \in T_r\mathbb{X}^2$, we define the covariant derivative as:
+% \begin{align}
+%   \frac{\partial}{\partial u^i} \mathbf{r} = \partial_i \mathbf{r} = \partial_i (r^j \mathbf{e}_j) &= (\partial_i r^j)\mathbf{e}_j + r^j(\partial_i \mathbf{e}_j) \nonumber \\
+%   &= (\partial_i r^j)\mathbf{e}_j + r^j \tensor{\Gamma}{^k_{ij}} \mathbf{e}_k \nonumber \\
+%   &= (\partial_i r^j + r^K \tensor{\Gamma}{^j_{ik}}) \mathbf{e}_j \nonumber \\
+%   &= (\nabla_i\,r^j)\mathbf{e}_j,
+% \end{align}
+% where $\tensor{\Gamma}{^k_{ij}}$ is the Christoffel symbol of the second kind and is \emph{not} a tensor.
+% Similarly, the derivative of just the components, $(\partial_i r^j)\mathbf{e}_j$ is also not a tensor.
+% However, the full covariant derivative $(\nabla_i\,r^j)\mathbf{e}_j$ is a tensor.
+% Note that in our physicists convention of neglecting the basis, we write the covariant derivative as $\nabla_i\,r^j$.
+% In addition, we see that in the case that $|(\partial_i r^j)\mathbf{e}_j| \gg |r^j(\partial_i \mathbf{e}_j)|$, the covariant derivative is approximated by the standard derivative, $\nabla_i\,r^j \approx \partial_i \, r^j$.
+% For example, if we consider a vector $\mathbf{R} \in  \mathbb{R}^3$ where we employ a Cartesian basis such that the basis vectors are of unit length and orthogonal everywhere, $g_{ij} = \delta_{ij}$ everywhere as well.
+% Thus, $|R^j(\partial_i \hat{e}_j)| = 0$ everywhere, where the basis vector is written with a hat to signify its unit length.
+% We see that the covariant derivative is a special case of taking derivatives in curved space, with the Christoffel symbols describing how the tangent space changes along the manifold.
+%
+%
+%
+%
+% \section{Normal space and the 2$^{\rm nd}$ fundamental form}
+% Now that we've established the tangent and cotanget of a (hyper)surface, we turn to another real vector space, the normal space.
+% The normal space of an $n$-dimensional hypersurface $\mathbb{X}^n$ at $r\in \mathbb{X}^n$, denoted as $N_r\mathbb{X}^n$, is the complement to the tangent space $T_r\mathbb{X}^n$ such that $T_r\mathbb{X}^n \cup N_r\mathbb{X}^n$ is locally isomorphic to $\mathbb{R}^{n+1}$.
+% If we accept that we have an inner product in the embedding space, then we can say that the normal space is a real vector space spanned by all the vectors orthogonal to $T_r\mathbb{X}^n$.
+% Note that the normal space is always a line, regardless of the dimension of the hypersurface.
+% Again considering the familiar example of a surface, the normal space is the line orthogonal to the tangent plane.
+% Unsurprisingly, the normal space holds the unit normal vector to the surface, $\mathbf{k} = (\mathbf{e}_i \times \mathbf{e}_2)/|\mathbf{e}_i \times \mathbf{e}_2|$, where the cross product is defined in $\mathbb{R}^3$, the embedding space.
+% Thus, we now have a frame $\{\mathbf{e}_1, \mathbf{e}_2, \mathbf{k}\}$ that connects a surface to $\mathbb{R}^3$. \\
+%
+% This leads to the second important quantity to characterize a surface, the 2$^{\rm nd}$ fundamental form or Weingarten map,\fxnote{I don't undetand why this is wrong or why Mike's way is better}
+% \begin{equation}
+%   L_{ij} = (\nabla_j \mathbf{e}_i) \cdot \mathbf{k} = -\mathbf{e}_i \cdot (\nabla_j \mathbf{k}).\label{e:A-WeingartenMap}
+% \end{equation}
+% Multiplying Eq.~\ref{e:A-WeingartenMap} with $\mathbf{e}_m$ gives:
+% \begin{align}
+%   L_{ij}\mathbf{e}_m &= -(\mathbf{e}_i \cdot (\nabla_j \mathbf{k}))\mathbf{e}_m \nonumber \\
+%   &= -(\mathbf{e}_i \cdot \mathbf{e}_m)(\nabla_j \mathbf{k})\nonumber \\
+%   &= -g_{im}(\nabla_j \mathbf{k})\textrm{, such that} \nonumber \\
+%   -g^{im}L_{ij}\mathbf{e}_m &= \nabla_j \mathbf{k}\textrm{, yielding} \nonumber \\
+%   -\tensor{L}{_j^m}\mathbf{e}_m &= \nabla_j \mathbf{k},\label{e:A-WeingartenFormula}
+% \end{align}
+% an expression known as Weingarten's formula.
+% We see then that the 2$^{\rm nd}$ fundamental form describes changes in the surface normal along infinitesimal displacements in the tangent plane.
+% Thus, while the 1$^{\rm st}$ fundamental form tells us how length is measured within the surface, the 2$^{\rm nd}$ fundamental form tells us how the surface itself changes in the embedding space. \\
+%
+% Intuitively, since the 2$^{\rm nd}$ fundamental form describes how a surface changes, it must also be connected to the curvature of the surface.
+% Indeed, the mean curvature is $H = \textrm{Tr}\{ \tensor{L}{^i_j} \}/2 = \tensor{L}{^i_i}/2$ and the Gaussian curvature is $K = \det \{ \tensor{L}{^i_j} \}$, where we perform the calculations in the mixed form so that we can use linear algebra rules.
+% We refer to the mixed form  $\tensor{L}{^i_j} = \tensor{L}{_i^j}$ as the Weingarten Matrix, also commonly described as the shape operator.\fxnote{I want to note that it can be represented by a symmetric matrix\ldots did I do it right?}
+% Since $K = \det \{ \tensor{L}{^i_j} \} = \kappa_1 \kappa_2$, where $\kappa_1$ and $\kappa_2$ are the principal curvatures, we see that finding the principal curvatures is now an eigenvalue problem.
+% The eigenvectors of $\tensor{L}{^j_i}$ give the directions of the principal curvatures, with their associated eigenvalues giving $\kappa_1$ and $\kappa_2$. \\
+%
+% Finally, we note that via Gauss's famous Theorema Egregium, the Gaussian curvature can be expressed entirely in terms of the 1$^{\rm st}$ fundamental form and thus is an intrinsic property of the surface itself.
+% However, finding mean curvature requires the 2$^{\rm nd}$ fundamental form, making mean curvature a property of the surface and its embedding space.
+% Thus, the Gaussian curvature is often referred to as intrinsic curvature while the mean curvature is called extrinsic curvature.
+%
+%
+%
+% \section{Homeo- and diffeomorphisms}
+% A homeomorphism is a continuous function with a continuous inverse that transforms the elements of one topological space into another. This transformation is bijective, such that each element in one space maps to exactly one element in the other space (one-to-one), and that every element in both spaces participates in the mapping (onto).
+% We will not define topological spaces here, but we will mention that manifolds are a class of topological space such that everything we discuss about homeo and diffeomorphisms apply to our discussion of surfaces.
+% In addition, two spaces that have a homeomorphism between them are homeomorphic, and are considered topologically equivalent. \\
+%
+% Intuitively, if we think about surfaces or, more generally, manifolds, a homeomorphism corresponds to bending and stretching one manifold to form another.
+% In this vein, we see that the 2-torus and the surface of a coffee cup are homeomorphic, but the 2-sphere and the 2-torus are not homeomorphic.
+% Thus, the 2-torus is a topologically different surface than the 2-sphere, where the handle is the defining difference.
+% If a homeomorphism and its inverse are also smooth, then the homeomorphism is also a diffeomorphism.
+% While this is a stronger condition, in physics, many small shape changes are diffeomorphisms, with singular shape changes often ill-understood but of much current interest.
 
-
-
-\section{Manifolds and (hyper)surfaces}
-A \emph{manifold} is the most general space where one can do differential and integral calculus.
-The most common manifold we deal with is Euclidean space.
-In fact, most of us learned to do calculus in 3D Euclidean space, $\mathbb{R}^3$, with the global coordinate system, $(x^1,x^2,x^3)$.
-This easily generalizes to $n$-dimensional Euclidean space, $\mathbb{R}^n$, with its global coordinate system, $(x^1,x^2, \ldots , x^n)$.
-Just like a 2D surface embedded in $\mathbb{R}^3$ is some subset of $\mathbb{R}^3$ that locally looks like $\mathbb{R}^2$, a manifold is a space that locally looks Euclidean. \\
-
-Since our 2D surface locally resembles 2D Euclidean space, we see that the surface itself qualifies as a manifold.
-In fact, generalizing this definition gives us \emph{submanifolds}, a subset of a manifold which itself is a manifold.
-More formally, let the subset $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ be the $n$-dimensional submanifold of $\mathbb{R}^{n+p}$ if $\mathbb{X}$ can locally be described by writing $p$ of the coordinates differentially in terms of the $n$ remaining coordinates.
-Explicitly, for $r \in \mathbb{X}$, a neighborhood of $r$ on $\mathbb{X}$ can be described by the local coordinates $(u,v) = (u^1,\ldots,u^n,v^1,\ldots,v^p)$ in $\mathbb{R}^{n+p}$ where $v^j = f^j(u^1,\ldots,u^n)$, with $j = 1,\ldots,p$, and $f$ a smooth function. \\
-
-Thus, we define a surface as a 2D submanifold of $\mathbb{R}^3$ such that $v = f(u^1,u^2)$, where $u^1$ and $u^2$ are coordinates that parameterize the surface and $v$ is the third coordinate in $\mathbb{R}^3$.
-Similarly, a curve is a 1D submanifold of $\mathbb{R}^3$ where $v = g^1(u^1) = g^2(u^2)$ and a planar curve is a 1D submanifold of $\mathbb{R}^2$ where $v = f(u)$.
-Note that this definition implies that a curve in general can be considered part of a surface, with a planar curve restricted a globally flat surface.
-If we define the codimension of a submanifold $\mathbb{X} = \mathbb{X}^n \subset \mathbb{R}^{n + p}$ as $p$, we can generalize the concept of a surface: let a hypersurface be a submanifold with codimension $1$.
-
-
-
-
-\section{Tangent space, cotangent space, and the 1$^{\rm st}$ fundamental form }
-The tangent space of an $n$-dimensional manifold $\mathbb{X}^n$ at $r\in \mathbb{X}^n$, denoted as $\mathbb{T}^n_r$, is the real vector space holding all of the vectors tangent to $\mathbb{X}^n$ at $r$.
-Note that the tangent space has the same dimensionality as the manifold it is associated with.
-This makes intuitive sense if we consider that the tangent space to any surface is a plane and the tangent space to a curve is a line. \\
-
-Earlier we used a function to define a surface; however, typically we decribe a surface using $\mathbf{R} \in \mathbb{R}^3$, a vector.
-Since vectors are functions, these approaches are equivalent.
-Thus, formally, if $U \subset \mathbb{R}^2$ describes the local coordinate space with $u^1,u^2 \in U$ local coordinates, then formally, $\mathbf{R}:U \rightarrow \mathbb{R}^3$,such that $\mathbf{R}(u^1,u^2) \in \mathbb{R}^3$.
-Restricting ourselves to the tangent space at $r$ of a surface, we can define a basis in the $\mathbb{T}^2_r$ given by the vectors $\mathbf{e}_i = \partial \mathbf{R} / \partial u^i = \partial_i \mathbf{R}$, where $i = 1,2$.
-Note that these vectors are generally not of unit length. \\
-
-From the tangent space, we define the cotangent space at the duel space of the tangent space.
-Thus, the cotangent space contains linear functionals called covectors on the tangent space that return a scalar.
-For $\mathbb{T}^2_r$, we denote the cotangent plane at $r$ with $\mathbb{T}^{*2}_r$.
-Let $\bm{\varphi}^* \in \mathbb{T}^{*2}_r$ be a general covector and $\mathbf{r} \in \mathbb{T}^{2}_r$ be a general vector.
-Then, $\bm{\varphi}^*: \mathbb{T}^2_r \rightarrow \mathbb{R}$ such that $\bm{\varphi}^*(\mathbf{r}) \in \mathbb{R}$.
-For our discussion of the tangent and cotangent plane, the action of a covector on a vector is given by the Euclidean inner product in $\mathbb{R}^3$, or dot product, $\bm{\varphi}^*(\mathbf{r}) = \bm{\varphi}^* \cdot \mathbf{r} = \mathbf{r} \cdot \bm{\varphi}^*$. \\
-
-In the common matrix representation, vectors are often denoted as column vectors as covectors as row vectors, such that the dot product is given by the matrix product with the row vector placed to the left of the column vector.
-Since we typically turn a row vector into a column vector by taking the transpose, there must be a general way to transform between the tangent space and the cotangent space.
-This general transformation between the tangent and cotangent spaces is given by the 1$^{\rm st}$ fundamental form, or metric, constructed from the basis in the tangent space like:
-\begin{equation}
-  g_{ij} = \mathbf{e}_i \cdot \mathbf{e}_j.\label{e:A-metric}
-\end{equation}
-Note that since $\mathbf{e}_i$ and $\mathbf{e}_j$ are both vectors, the resulting object is not a scalar.
-If we let $\mathbf{e}^i$ be the basis for $\mathbb{T}^{*2}_r$, then we can define a similar object $g^{ij} = \mathbf{e}^i \cdot \mathbf{e}^j$. \\
-
-We emphasize that the choice of upper and lower indices is not arbitrary.
-By convention, a general vector can be described by $\mathbf{r} = r^{i}\mathbf{e}_i$, and a general covector can be described by $\bm{\varphi}^* = \varphi_{i}\mathbf{e}^i$, where the Einstein summation convention still applies.
-Note then, that the components of a vector have upper indices while their corresponding basis have lower indices, and the components of a covector have lower indices while their corresponding basis have upper indices.
-In general, arbitrary objects as well as the basis in the tangent or cotangent plane will be bold, with objects that are not a basis in the cotangent plane denoted with an asterisk.
-Now that we have a basis in both the tangent and cotangent plane, we define their inner product like $\mathbf{e}^i \cdot \mathbf{e}_j = \tensor{\delta}{^i_j}$, where
-\begin{equation}
-  \delta_{ij} = \delta^{ij} = \tensor{\delta}{^i_j} = \begin{cases}
-    1, & \textrm{if } i = j \\
-    0, & \textrm{otherwise}
-  \end{cases},
-\end{equation}
-is the Kronecker delta.
-Thus, we now see that $(\mathbf{e}_i cdot \mathbf{e}_j) \, (\mathbf{e}^j \cdot \mathbf{e}^k) = g_{ij}g^{jk} = \tensor{\delta}{_i^k}$, giving $(g_{ij})^{-1} = g^{ij}$. \\
-
-As, $\mathbf{e}_i \, g^{ij} = \mathbf{e}^j$ and $\mathbf{e}^i \, g_{ij} = \mathbf{e_j}$, we now see how the metric gives the transformation between the bases in the tangent and cotangent plane.
-Similarly, for $\mathbf{r} = r^i\mathbf{e}_i$, the components transform like $r_i = r^j \, g_{ij}$.
-Finally, we can combine the above to show the general transformation between a vector and its associated covector, $\mathbf{r}^* =\mathbf{r}\,\tensor{g}{_i^i} = r^j\mathbf{e}_j \, (\mathbf{e}_i \cdot \mathbf{e^i}) = r^j (\mathbf{e}_j \cdot \mathbf{e}_i) \mathbf{e^i} = r^j \, g_{ji} \, \mathbf{e}^i = r_i\mathbf{e}^i$. \\
-
-Since a vector and a covector give a scalar, the metric defines notions of length on the surface.
-For example, we know that the inner product of a vector with itself gives the square of the length of the vector.
-Evaluating this for $\mathbf{r}$, we see that $\mathbf{r} \cdot \mathbf{r} = (r^i \mathbf{e}_i) \cdot (r^j \mathbf{e}_j) = r^i \, g_{ij} \, r^j = r_j r^j = |\mathbf{r}|^2$.
-In this example, the metric lowers the indices and turns the components of a vector into the components of the covector such that the final result is a scalar.
-Similarly, we see that this result is equivalent to directly evaluating the scalar product between a vector and its covector, $\mathbf{r}^* \cdot \mathbf{r} = (r_i \mathbf{e}^i) \cdot (r^j \mathbf{e}_j) = r_i \, \tensor{\delta}{^i_j} \, r^j = r_j r^j = |\mathbf{r}|^2$.
-Since the metric is needed to define lengths on a surface, it must also enter into measures of area.
-In fact, an infinitesimal area is given by $\textrm{dA} = \sqrt{g}\,\textrm{d}u^1 \, \textrm{d}u^2$, with $u^1$ and $u^2$ local coordinates on the surface.
-On a Euclidean surface, which is everywhere flat, $g_{ij} = \delta_{ij}$ everywhere such that there is no distinction between vectors and covectors and the area element on a surface takes the familiar form $\textrm{dA} = \textrm{d}x^1 \, \textrm{d}x^2$.
-Thus, any time $g_{ij} \neq \delta_{ij}$ everywhere, our surface is curved; thus, the metric also gives a measure of the curvature of the surface. \\
-
-Another way to describe the role of the metric would be to say that is defines a relationship between vectors.
-In addition, we see that since there are rules governing the transformations between $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j}$, the metric is independent of the basis.
-These properties mean that the metric is a member of a more general class of objects called tensors.
-
-
-
-
-\section{Tensors}
-Tensors are generalizations of scalars and vectors, defined broadly as objects that give linear relationships between other tensors (i.e. between scalars, vectors, etc.).
-Tensors are basis-independent and thus must follow certain transformation laws such that there is a proscribed way to take a tensor in one basis to another basis.
-Tensors are characterized by the ordered pair $(p,q)$ giving the rank $p + q$, with $p$ upper indices representing $p$ copies of the cotangent space and $q$ lower indices representing $q$ copies of the tangent space.
-Thus, a vector is a $(0,1)$ rank-1 tensor, a covector is a $(1,0)$ rank-1 tensor, and a scalar is a rank-0 tensor.
-Similarly, we now see that the metric is a rank-2 tensor, with $g_{ij}$, $g^{ij}$, and $\tensor{g}{_i^j} = \tensor{g}{_j^i}$ the $(0,2)$, $(2,0)$, and $(1,1)$ form, respectively.
-In addition, the metric tensor is used to raise and lower indices for any general $(p + q)$-rank tensor. \\
-
-It is common to represent tensors using arrays, as we alluded to earlier when we mentioned the common convention of an object in the tangent plane written as a column vector and an object of the cotangent plane written as a row vector.
-In this case describing a surface, both the row and the column vector have 2 elements, reflecting the 2D nature of our surface.
-As a consequence, in physics it is common to write a (0,1) tensor $\mathbf{r}$ using only its components $r^i$, taking the basis $\mathbf{e}_i$ to be implicit.
-This is much like how the elements of a column vector contain the components of some implicit basis.
-Note, however, that a general rank-2 tensor is not a matrix as commonly defined in linear algebra.
-Only the (1,1) form of a rank-2 tensor can be written and used as a matrix with standard linear algebra rules.
-For example, let a rank-2 tensor $\tensor{G}{^i_j}$ provide a transformation between $r^i$ and $\varphi^i$ like: $\varphi^i = \tensor{G}{^i_j}r^j$.
-In linear algebra notation assuming a 2D space we can write,
-\begin{equation}
-  \begin{pmatrix}
-    \varphi^1 \\
-    \varphi^2
-  \end{pmatrix} =
-  \begin{pmatrix}
-    \tensor{G}{^1_1} & \tensor{G}{^1_2} \\
-    \tensor{G}{^2_1} & \tensor{G}{^2_2}
-  \end{pmatrix}
-  \begin{pmatrix}
-    r^1 \\
-    r^2
-  \end{pmatrix}.
-\end{equation}
-Thus, the 2 ``dimensions'' in a matrix really represent 1 copy of the tangent space and 1 copy of the cotangent space. \\
-
-The distinction that the (1,1) form of a rank-2 tensor corresponds to a matrix in linear algebra extends to the scalar invariants as well.
-Since the scalar invariants of a tensor are independent of the basis, if we wish to calculate the trace of a rank-2 tensor as the sum of its diagonal components, then we must use the (1,1) form.
-This extends to n-dimensional tensors, with $\textrm{Tr}\{ \mathbf{G} \} = \tensor{G}{^i_i}$.
-Similarly, if we wish to calculate the determinant of a rank-2 tensor as we would in linear algebra, we must start with the (1,1) form.
-We emphasize again that in Euclidean space, there is no distinction between the various forms of a tensor, thus we can freely treat tensors as arrays ans use standard linear algebra manipulations without worry. \\
-
-In moving a rank-2 tensor between its (0,2) and (2,0) form, or even a vector between its (1,0) and (0,1) form, we are performing a basis change, where the metric gives the transformation.
-Note however, that we are not limited to moving between the tangent and cotangent spaces.
-While the particulars of general bases transforms are beyond the scope of this Appendix, it is important to mention that objects in the tangent plane transform like inverses of objects in the cotangent plane.
-For example, if $\varphi^i = \tensor{G}{^i_j}r^j$ takes $r^j$ from one tangent space to $\varphi^i$ in another tangent space, and $\varphi_i = \tensor{G}{^*_i^j}r_j$ is the equivalent covector transformation, then $(\tensor{G}{^i_j}) = \tensor{G}{^*_i^j}$, such that ${(\tensor{G}{^i_j})}^{-1}\,\tensor{G}{^*_j^k} = \tensor{\delta}{^i_k}$.
-
-
-
-\section{Covariant differentiation}
-Briefly, we also address differentiation on a manifold.
-Since the bases vectors are not constant on a curved surface, we need to take their change into account when doing derivatives on the surface.
-Thus, for a general vector $\mathbf{r} \in \mathbb{T}^2_r$, we define the covariant derivative as:
-\begin{align}
-  \frac{\partial \mathbf{r}}{\partial u^i} = \partial_i \mathbf{r} = \partial_i (r^j \mathbf{e}_j) &= (\partial_i r^j)\mathbf{e}_j + r^j(\partial_i \mathbf{e}_j) \nonumber \\
-  &= (\partial_i r^j)\mathbf{e}_j + r^j \tensor{\Gamma}{^k_{ij}} \mathbf{e}_k \nonumber \\
-  &= \nabla_i\,r^j,
-\end{align}
-where $\tensor{\Gamma}{^k_{ij}}$ is the Christoffel symbol of the second kind and is \emph{not} a tensor.
-Note that in our physicists convention of neglecting the basis, we write the covariant derivative as $\nabla_i\,r^j$.
-In addition, we see that in the case that $|(\partial_i r^j)\mathbf{e}_j| \gg |r^j(\partial_i \mathbf{e}_j)|$, the covariant derivative becomes the standard derivative, $\nabla_i\,r^j \approx \partial_i \, r^j$.
-In fact, we already saw this when we initially derived the basis in the tangent plane.
-Since $\mathbf{R} \in \mathbb{R}^3$, the basis vectors are unit length and orthogonal everywhere so  $g_{ij} = \delta_{ij}$ everywhere, where the metric is now describing $\mathbb{R}^3$.
-Thus, $|R^j(\partial_i \hat{e}_j)| = 0$ everywhere, where the basis vector is written with a hat to signify its unit length.
-We see that the covariant derivative is a special case of taking derivatives in curved space, with the Christoffel symbols encoding the derivatives of the space itself.
-
-
-
-
-\section{Normal space and the 2$^{\rm nd}$ fundamental form}
-Now that we've established the tangent and cotanget of a (hyper)surface, we turn to another real vector space, the normal space.
-The normal space of an $n$-dimensional hypersurface $\mathbb{X}^n$ at $r\in \mathbb{X}^n$, denoted as $\mathbb{K}^1_r$, is the real vector space holding all of the vectors orthogonal to $\mathbb{T}^n_r$.
-Note that the normal space is always a line, regardless of the dimension of the hypersurface.
-Again considering the familiar example of a surface, the normal space is the line orthogonal to the tangent plane.
-Unsurprisingly, the normal space holds the unit normal vector to the surface, $\mathbf{k} = (\mathbf{e}_i \times \mathbf{e}_2)/|\mathbf{e}_i \times \mathbf{e}_2|$.
-Thus, we now have a frame $\{\mathbf{e}_1, \mathbf{e}_2, \mathbf{k}\}$ that connects a surface to its embedding space, $\mathbb{R}^3$. \\
-
-This leads to the second important quantity to characterize a surface, the 2$^{\rm nd}$ fundamental form or Weingarten map,
-\begin{equation}
-  L_{ij} = (\nabla_j \mathbf{e}_i) \cdot \mathbf{k} = -\mathbf{e}_i \cdot (\nabla_j \mathbf{k}).\label{e:A-WeingartenMap}
-\end{equation}
-Multiplying Eq.~\ref{e:A-WeingartenMap} with $\mathbf{e}_m$ gives:
-\begin{align}
-  L_{ij}\mathbf{e}_m &= -(\mathbf{e}_i \cdot (\nabla_j \mathbf{k}))\mathbf{e}_m \nonumber \\
-  &= -(\mathbf{e}_i \cdot \mathbf{e}_m)(\nabla_j \mathbf{k})\nonumber \\
-  &= -g_{im}(\nabla_j \mathbf{k})\textrm{, such that} \nonumber \\
-  -g^{im}L_{ij}\mathbf{e}_m &= \nabla_j \mathbf{k}\textrm{, yielding} \nonumber \\
-  -\tensor{L}{_j^m}\mathbf{e}_m &= \nabla_j \mathbf{k},\label{e:A-WeingartenFormula}
-\end{align}
-an expression known as Weingarten's formula.
-We see then that the 2$^{\rm nd}$ fundamental form describes changes in the surface normal along infinitesimal displacements in the tangent plane.
-Thus, while the 1$^{\rm st}$ fundamental form tells us how length is measured within the surface, the 2$^{\rm nd}$ fundamental form tells us how the surface itself changes in the embedding space. \\
-
-Intuitively, since the 2$^{\rm nd}$ fundamental form describes how a surface changes, it must also be connected to the curvature of the surface.
-Indeed, the mean curvature is $H = \textrm{Tr}\{ \tensor{L}{^i_j} \}/2 = \tensor{L}{^i_i}/2$ and the Gaussian curvature is $K = \textrm{det}\{ \tensor{L}{^i_j} \}$, where we perform the calculations in the mixed form so that we can use linear algebra rules.
-We refer to the mixed form  $\tensor{L}{^i_j} = \tensor{L}{^j_i}$ as the Weingarten Matrix, also commonly described as the Shape operator.
-Since $K = \textrm{det}\{ \tensor{L}{^i_j} \} = \kappa_1 \kappa_2$, where $\kappa_1$ and $\kappa_2$ are the principal curvatures, we see that finding the principal curvatures is now an eigenvalue problem.
-The eigenvectors of $\tensor{L}{^j_i}$ give the directions of the principal curvatures, with their associated eigenvalues giving $\kappa_1$ and $\kappa_2$. \\
-
-Finally, we note that via Gauss's famous Theorema Egregium, the Gaussian curvature can be expressed entirely in terms of the 1$^{\rm st}$ fundamental form and thus is an intrinsic property of the surface itself.
-However, finding mean curvature requires the 2$^{\rm nd}$ fundamental form, making mean curvature a property of the surface and its embedding space.
-Thus, the Gaussian curvature is often referred to as intrinsic curvature while the mean curvature is called extrinsic curvature.
-
-
-
-\section{Homeo and diffeomorphisms}
-A homeomorphism is a continuous function with a continuous inverse that transforms the elements of one topological space into another. This transformation is bijective, such that each element in one space maps to exactly one element in the other space (one-to-one), and that every element in both spaces participates in the mapping (onto).
-We will not define topological spaces here, but we will mention that manifolds are a class of topological space such that everything we discuss about homeo and diffeomorphisms apply to our discussion of surfaces.
-In addition, two spaces that have a homeomorphism between them are homeomorphic, and are considered topologically equivalent. \\
-
-Intuitively, if we think about surfaces or more generally manifolds, a homeomorphism corresponds to bending and stretching one manifold to form another.
-In this vein, we see that the 2-torus and the surface of a coffee cup are homeomorphic, but the 2-sphere and the 2-torus are not homeomorphic.
-Thus, the 2-torus is a topologically different surface than the 2-sphere, where the handle is the defining difference.
-If a homeomorphism and its inverse are also differentiable, then the homeomorphism is also a diffeomorphism.
-While this is a stronger condition, in practice most manifolds that are homeomorphic are also diffeomorphic.
 
 
 
