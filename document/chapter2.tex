@@ -114,7 +114,7 @@ As in two dimensions, we take the eigenvector associated with the largest eigenv
 Thus, for a collection of rods, we can determine the phase and, if applicable, $\mathbf{n}$ by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
 
 
-\subsection{Defects in a nematic}
+\subsection{Defects in a nematic}\label{c:2-defects}
 While we briefly mentioned the dimensionality of defects and their associated classifications schemes in Section~\ref{c:1}, here we take a deeper look and use homotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
 As mentioned in Chapter~\ref{c:1}, defects in ordered media are defined generally as regions where, locally, the characteristic order of the phase is not satisfied.
 In a nematic phase, defects are locations where $\mathbf{n}$ is undefined.
@@ -523,7 +523,10 @@ Re-writing the right-hand side (RHS) of Eq.~\ref{e:2-K24rearrange1}, we have:
   &= - n_i L_{ij} n_j \\
   &= -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
 \end{align}
-where $\mathbf{L}$ is the Weingarten Matrix with the components $L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}$~\cite{RN23,RN35}.
+where $\mathbf{L}$ is the Weingarten Matrix with the components~\cite{RN23,RN35}:
+\begin{equation}
+  L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}\label{e:2-WeingartenMatrix}
+\end{equation}
 
 The Weingarten Matrix describes how a curved surface changes in space, and its invariants give the mean and Gaussian curvature of the surface: $H = \textrm{tr}\{\mathbf{L}\}/2$ and $K = \textrm{det} \{ \mathbf{L} \}$, respectively.
 As $K = \kappa_1 \kappa_2$, we see that finding $\kappa_1$ and $\kappa_2$, the principal curvatures, becomes an eigenvalue problem; the eigenvectors of $\mathbf{L}$ give the principal curvature directions, and the associated eigenvalues are the principal curvatures themselves.
