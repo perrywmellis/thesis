@@ -169,8 +169,9 @@ This director arrangement is the classic bipolar configuration, with the directo
 Note that even if Eq.~\ref{e:2-XY} favors a homogeneous orientation field, corresponding to the zero energy configuration, sometimes distortions are unavoidable due to the topological constraints imposed by the surface.
 However, ordered materials are also sensitive to the local geometry.\fxnote{HERE}
 For example, consider once more rods packed on a plane with a homogeneous director field, as shown schematically in Figure~\ref{f:1-ParallelTransport}(A).
-If we change the geometry and introduce a hemispherical ``bump'' into the plane, as illustrated in Figure~\ref{f:1-ParallelTransport}(B), the director is no longer homogeneous on the bump and we no longer have a homogeneous director everywhere on the surface.
-This inability to maintain the preferred local order due to the geometry of the surface is called ``geometrical frustration''.
+If we change the geometry and introduce a hemispherical ``bump'' in the plane, as illustrated in Figure~\ref{f:1-ParallelTransport}(B), evenly-spaced director lines on the plane do not maintain their spacing on the bump.
+Thus, we no longer have a homogeneous director everywhere on the surface.
+This inability to maintain the preferred local order due to the geometry of the surface is called ``geometrical frustration''.\fxnote{modify and introduce the antiferromagnetic tirangular alttice with a schematic}
 \begin{figure}
   \centering
   \includegraphics{figures/C1/Ch1-Figs_ParallelTransport.png}
@@ -178,20 +179,24 @@ This inability to maintain the preferred local order due to the geometry of the 
   (A), A flat plane can support a homogeneous director field, indicated by the black lines.
   (B), Adding a hemisphere to the plane disrupts the homogeneous state, the Gaussian curvature of the hemisphere makes a distortion-free state impossible.
   (C), Modulating the surface with a sine wave adds mean curvature but not Gaussian curvature to the surface; the homogeneous state on the surface is still possible.}\label{f:1-ParallelTransport}
-\end{figure}
+\end{figure}\fxnote{discontinuous lines}
 
-We characterize the local geometry of a surface with its curvature; consider a curve constrained to lie in $\mathbb{R}^2$, $\mathbf{r}(s)$, with $s$ the arclength parameter.
+An important aspect of the local geometry of a surface is its curvature; consider a curve constrained to lie in $\mathbb{R}^2$, $\mathbf{r}(s)$, with $s$ the arclength parameter.
 Such an example of a planar curve is drawn schematically in Figure~\ref{f:1-Curvature}(A).
-The unit tangent to the curve at $s$ is given by $\mathbf{T}(s) = \mathbf{r}'(s)$, and the local curvature $\kappa(s)$ by $\mathbf{k}(s)\kappa(s) = \textrm{d} \mathbf{T}(s)/\textrm{d}s = \textrm{d}^2\mathbf{r}/\textrm{d}s^2 $, with $\mathbf{k}(s)$ the unit normal vector to the curve [see Figure~\ref{f:1-Curvature}(A)].
-Physically, $\kappa(s) = 1/R(s)$, where $R(s)$ is the radius of the osculating circle, or circle that best approximates $\mathbf{r}(s)$ at $s$.
+The unit tangent to the curve at $s$ is given by $\mathbf{T}(s) = \textrm{d} \mathbf{r}(s)/\textrm{d}s = \mathbf{r}'(s)$, and the local curvature $\kappa(s)$ by $\mathbf{k}(s)\kappa(s) = \mathbf{T}'(s) = \mathbf{r}''(s) $, with $\mathbf{k}(s)$ the unit normal vector to the curve [see Figure~\ref{f:1-Curvature}(A)].\fxnote{prove it?}
+$\kappa(s) = 1/R(s)$, where $R(s)$ is the radius of the osculating circle, or circle that best approximates $\mathbf{r}(s)$ at $s$.
 This radius is commonly known as the ``radius of curvature'' at $s$.
+The sign of the curvature relates to the direction $\mathbf{k}$ rotates as $s$ increases: if $\mathbf{k}$ rotates counterclockwise, then $\kappa > 0$, while if $\mathbf{k}$ rotates clockwise, $\kappa < 0$.
 The osculating circles and associated radii of curvature are drawn in blue and red in Figure~\ref{f:1-Curvature}(A) for a point with negative curvature and a point with positive curvature.
 
-If we now consider a 2D surface, defining a single curvature at any given point is not possible. For an orientable surface defined by $\mathbf{R}(u^1,u^2) \in \mathbb{R}^3$, with $(u^1,u^2) \in U \subset \mathbb{R}^2$ local coordinates on the surface, we define a normal section at a point $\mathbf{r} \in U$ on the surface as the planar curve generated from intersecting $\mathbf{R}$ with a plane containing $\mathbf{k}(\mathbf{r})$, the unit normal to the surface at $\mathbf{r}$.
-However, the orientation of the plane is not unique; there are infinitely many planes that can contain $\mathbf{k}(\mathbf{r})$, and therefore infinitely many normal section at a given point $\mathbf{r}$.
-The curvature of a given normal section at $\mathbf{r}$ is thus called the normal curvature, as drawn schematically for an example surface in Figure~\ref{f:1-Curvature}(B).
-Taking all possible normal sections at $\mathbf{r}$, the principle curvatures $\kappa_1 (\mathbf{r})$ and $\kappa_2(\mathbf{r})$ are defined as the maximum and minimum normal curvatures at $\mathbf{r}$, and their associated tangent vectors are called the principal normal directions; these directions and curvatures are drawn schematically for an example surface in Figure~\ref{f:1-Curvature}(C).
-We can now define the Gaussian curvature $K  = \kappa_1 \kappa_2$ and the mean curvature $H = (1/2) (\kappa_1+\kappa_2)$.
+Now consider a 2D orientable surface given by $\mathbf{R}(u^1,u^2) \in \mathbb{R}^3$, with $(u^1,u^2) \in U \subset \mathbb{R}^2$ local coordinates on the surface, with $U$ a local coordinate patch.
+We define a normal section at a point $\mathbf{r} \in U$ on the surface as the planar curve resulting from the intersection between the surface and a plane containing.
+Since the orientation of the plane is not unique, there are infinitely many planes that can contain $\mathbf{k}(\mathbf{r})$, and therefore infinitely many normal sections at a given point $\mathbf{r}$.
+The curvature of a given normal section at $\mathbf{r}$ is called the normal curvature.
+A normal section, the plane containing $\mathbf{k}$, and the osculating circle whose $R$ determines the normal curvature $\kappa(s)$ are drawn schematically for an example surface in Figure~\ref{f:1-Curvature}(B).
+Among all possible normal curvatures at $\mathbf{r}$, there is always a maximum and minimum normal curvature, with the planes containing the associated normal sections orthogonal to each other~\cite{RN35}.
+These two curvatures are the principle curvatures at $\mathbf{r}$, $\kappa_1 (\mathbf{r})$ and $\kappa_2(\mathbf{r})$, and their associated tangent vectors at $\mathbf{r}$ are the principal directions; these directions and curvatures are drawn schematically for an example surface in Figure~\ref{f:1-Curvature}(C).
+For $\kappa_1$ and $\kappa_2$, we define two important quantities: the Gaussian curvature $K  = \kappa_1 \kappa_2$ and the mean curvature $H = (1/2) (\kappa_1+\kappa_2)$.
 
 Returning our example, we see that adding the hemisphere to the plane takes our previously flat surface with $K = H = 0$ everywhere and changes the geometry by adding both non-zero mean and Gaussian curvature.
 However, it is the Gaussian curvature and not the mean curvature that is responsible for geometrical frustration.
