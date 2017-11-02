@@ -198,17 +198,22 @@ Among all possible normal curvatures at $\mathbf{r}$, there is always a maximum 
 These two curvatures are the principle curvatures at $\mathbf{r}$, $\kappa_1 (\mathbf{r})$ and $\kappa_2(\mathbf{r})$, and their associated tangent vectors at $\mathbf{r}$ are the principal directions; these directions and curvatures are drawn schematically for an example surface in Figure~\ref{f:1-Curvature}(C).
 For $\kappa_1$ and $\kappa_2$, we define two important quantities: the Gaussian curvature $K  = \kappa_1 \kappa_2$ and the mean curvature $H = (1/2) (\kappa_1+\kappa_2)$.
 
-Returning our example, we see that adding the hemisphere to the plane takes our previously flat surface with $K = H = 0$ everywhere and changes the geometry by adding both non-zero mean and Gaussian curvature.
+We now see that adding the hemispherical bump to the plane, which has $K = H = 0$ everywhere, changes the geometry by adding both non-zero mean and Gaussian curvature.
 However, it is the Gaussian curvature and not the mean curvature that is responsible for geometrical frustration.
-This is evidenced by taking a flat plane and modulating it with a sine wave in one direction, as in Figure~\ref{f:1-ParallelTransport}(C), keeping $K=0$ everywhere but changing $H$.
-We see that we can still maintain a homogeneous director field on the surface, in contrast to our example surface in Figure~\ref{f:1-ParallelTransport}(B), where $K \neq 0$ everywhere.
-This reflects the fact that Gaussian curvature, also known as intrinsic curvature, is a property of the surface alone --- we can determine the Gaussian curvature of a surface without knowing anything about the space the surface is embedded in.
-However, determining the mean, or extrinsic, curvature of a surface requires us to know what space the surface is embedded in.
+This can be sen after modulating the flat plane with a sine wave in one direction, as shown in Figure~\ref{f:1-ParallelTransport}(C).
+In this case, $K=0$ everywhere while $H$ changes throughout the surface.
+Despite the fact that $H \neq 0$ everywhere, we can still maintain a homogeneous director field, in contrast to our example surface with $K \neq 0$ at the bump [Figure~\ref{f:1-ParallelTransport}(B)].
+This reflects the fact that Gaussian curvature is a property of the surface alone, that is, it is an intrinsic curvature.
+We can determine the Gaussian curvature of a surface without knowing anything about the space the surface is embedded in.
+In contrast, determining the mean, or extrinsic, curvature of a surface requires knowledge of the space the surface is embedded in.
+
 Revisiting the Euler characteristic, we can rewrite the Gauss-Bonnet theorem for a differentiable closed surface as,
 \begin{equation}
   \chi = \frac{1}{2 \pi} \int \, K \textrm{d}^2\mathbf{r} = 2(1-g)\label{e:1-GB2}.
 \end{equation}
 It is evident from Eq.~\ref{e:1-GB2} that the Gaussian curvature provides the connection between the local geometry and the topology of a closed surface.
+This is a very important fact.
+Even though $K$ is a property of the local geometry, integrating $K$ over a closed surface yields a topological invariant.
 \begin{figure}
   \centering
   \includegraphics{figures/C1/Ch1-Figs_Curvature.png}
@@ -217,71 +222,76 @@ It is evident from Eq.~\ref{e:1-GB2} that the Gaussian curvature provides the co
   (B), A normal section of a saddle-surface surface at a point corresponds to a planar curve, with the curve drawn in dark gray and the plane indicated in transparent gray.
   The osculating circle and radius of curvature at the point of interest are drawn in blue.
   (C), The principal curvatures $\kappa_1$ and $\kappa_2$ at the point of interest on the surface from (B) are the maximum and minimum normal curvatures and are always in orthogonal directions. Here they are highlighted with the red and blue osculating circles and radii of curvature.}\label{f:1-Curvature}
-\end{figure}
+\end{figure}\fxnote{No arrows, (B,C) lighten up the green, (C), only show the principal directions}
 
-In addition, as demonstrated through our example of geometrical frustration, Gaussian curvature must also couple to the free energy of an orientationally ordered phase confined to a surface.
-In fact, for a topological charge density
+The connection between $K$ and the geometrical frustration is explicitly stated through the coupling of $K$ to the free energy of an orientationally ordered phase confined to a surface.
+Considering the topological charge density,
 \begin{equation}
   \rho(\mathbf{r}) = 2 \pi \sum\limits_i s_{i}\delta(\mathbf{r} - \mathbf{r}_{i}),\label{e:1-ChargeDens}
 \end{equation}
-with disclinations indexed by $i$ possessing charge $s_{i}$ and position $\mathbf{r}_{i}$, and $\delta(\mathbf{r} - \mathbf{r}_{i})$ the Kronecker delta function, we can express Eq~\ref{e:2-XY} as~\cite{RN42,RN175,RN17}:
+due to disclinations indexed by $i$ possessing charge $s_{i}$ and position $\mathbf{r}_{i}$, where $\delta(\mathbf{r} - \mathbf{r}_{i})$ is the Dirac delta, we can express Eq~\ref{e:2-XY} as~\cite{RN42,RN175,RN17}:
 \begin{equation}
   F_d = -\frac{1}{2} k_f \int \textrm{d}^2\mathbf{r} \, \textrm{d}^2\mathbf{r}' \, G_L(\mathbf{r},\mathbf{r}') [\rho(\mathbf{r})-K(\mathbf{r})] [\rho(\mathbf{r}')-K(\mathbf{r}')],\label{e:1-TopTheoryofDefects}
 \end{equation}
 where $G_L$ is the Green's function of the Laplace-Beltrami operator, the standard Laplacian operator generalized to curved space~\cite{RN17}.
-It is worth mentioning that Eq.~\ref{e:1-TopTheoryofDefects} is identical to the Coulomb energy of a multicomponent plasma with charge density $\rho$ in a background of charge density $-K$~\cite{RN17}.
-Thus, from the continuum theory, we see topological defects emerge as particle-like objects that possess topological charge and couple to the Gaussian curvature of the underlying substrate.
+It is worth mentioning that Eq.~\ref{e:1-TopTheoryofDefects} is identical to the Coulomb energy of a plasma with both positively and negatively charged ion species having charge density $\rho$ in a background of charge density $-K$~\cite{RN17}.
+Thus, we see that topological defects can be treated as charged particles that couple to the surface via a background charge provided by the Gaussian curvature of the surface.
 
-Importantly, this implies that even though there have been new discoveries as a result of examining defect structures on spheres~\cite{RN106,RN26,RN110,RN76,RN101,RN165}, including our prior work with spherical nematic shells highlighted earlier~\cite{RN45,RN105}, the Gaussian curvature and therefore the background topological charge density of a sphere is constant such that the impact of curvature can only enter through the sphere radius.
-This is borne out in both the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110}, and in the fact that the positions of the four $s = +1/2$ defects in nematic shells are due entirely to the defect-defect interactions alone~\cite{RN45}.
-If we want to investigate the role of curvature on ordered materials, we need to consider a space with varying Gaussian curvature and ideally, Gaussian curvature of different sign.
+To investigate the role of curvature on ordered materials, we need to consider a space with varying Gaussian curvature and ideally, including Gaussian curvature of different sign.
+While there have been new discoveries as a result of examining defect structures on spheres~\cite{RN106,RN26,RN110,RN76,RN101,RN165}, including prior work with spherical nematic shells~\cite{RN45,RN105}, the Gaussian curvature and therefore the background topological charge density is constant in this case.
+As a result, the impact of curvature only enters through the sphere radius.
+This is borne out in both the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110}, and in the fact that the positions of the four $s = +1/2$ defects in nematic shells are entirely determined by the defect-defect interactions, with the underlying geometry playing no role~\cite{RN45}.
 
-The simplest closed surface that satisfies these criteria is the torus [Figure~\ref{f:1-ChiObjects}(C)], with $g = 1$ and thus $\chi = 0$.
-In addition, we see that not only does a torus have sphere-like positive Gaussian curvature on the outer portion of the handle and saddle-like negative Gaussian curvature on the inner portion of the handle, but according to Eq~\ref{e:1-GB2}, the integrated Gaussian curvature over an entire torus must vanish.
+The simplest closed surface with regions of both $K>0$ and $K<0$ is the torus [Figure~\ref{f:1-ChiObjects}(C)], which has $g = 1$ and thus $\chi = 0$.
+In addition, we see that not only does a torus have sphere-like positive Gaussian curvature on its outer region and saddle-like negative Gaussian curvature on its inner region, but according to Eq~\ref{e:1-GB2}, the integrated Gaussian curvature over an entire torus must vanish.
 Similarly, by Eq.~\ref{e:1-PH}, an orientationally ordered material on the surface of a torus must have vanishing topological charge and thus can support a defect-free configuration.
 
-Prior work in our group investigated nematic order on the surface of a torus using toroidal droplets made from a NLC, with the NLC constrained to lie parallel to the interface between the toroidal droplet and the outer continuous medium~\cite{RN24,RN47}.
-Like the thick spherical shells or a bipolar droplet, here we have a 3D nematic that must minimize its free energy in the presence of a constraint on the topological charge on the 2D confining surface.
-While we found that toroidal droplets have a defect-free ground state, the varying curvature still led to new insights about the role of a distortion called saddle-splay.
-Specifically, we found that saddle-splay drives the director in the plane of the surface to align along the smallest principle curvature~\cite{RN59}, yielding a doubly-twisted ground state in our toroidal droplets~\cite{RN24}, as drawn for both a left-handed twist and a right-handed twist in Figure~\ref{f:1-Torus}(A,B), respectively.
-We found that the amount of twist in the ground state can be controlled by the aspect ratio, or slenderness of the torus $\xi = R_0/a$, with $R_0$ the radius of the central circle of the torus and $a$ the tube radius of the torus, as defined in Figure~\ref{f:1-Torus}(C).
-In addition, as seen by the possibility of having either a left-handed or right-handed twist [Figure~\ref{f:1-Torus}(A,B)], this doubly-twisted state manifests itself through a spontaneous reflection symmetry breaking, where the free energy resembles that of the Landau theory of magnetism.
-In fact, in the cylindrical limit where $\xi \rightarrow \infty$, the free energy of our doubly-twisted director ansatz has exactly the functional form of the Landau theory of magnetism~\cite{RN293}.
-This is an example of how confinement can affect a system, even in the absence of defects.
+Prior work in our group investigated nematic order inside a torus using toroidal droplets made from a NLC, with the nematic director constrained to lie parallel to the interface between the toroidal droplet and the outer continuous medium~\cite{RN24,RN47}.
+The varying curvature of the torus yielded doubly-twisted ground state with no defects~\cite{RN24}, as drawn for both a left-handed twist and a right-handed twist in Figure~\ref{f:1-Torus}(A,B), respectively.
+The double-twist is directly related to a director distortion called saddle-splay, which favors the director in the plane of the surface aligning along the smallest principal curvature~\cite{RN59}.
+We found that the amount of twist in the ground state can be controlled by the aspect ratio, or slenderness of the torus $\xi = R_0/a$, with $R_0$ the radius of the central circle of the torus and $a$ the tube radius of the torus, as defined in the top view schematic in Figure~\ref{f:1-Torus}(C).
+In addition, as seen by the possibility of having either a left-handed or a right-handed twist, this doubly-twisted state manifests itself through a spontaneous reflection symmetry breaking, where the form of the free energy resembles that of the Landau theory of magnetism.
+This analogy is exact for a linear twist in the cylindrical limit, where $\xi \rightarrow \infty$~\cite{RN293}.
+These results clearly illustrate how confinement within surfaces of non-constant $K$ can affect the ground state of a system, even in the absence of defects.
 \begin{figure}
   \centering
   \includegraphics{figures/C1/Ch1-Figs_Torus.png}
   \caption{Doubly-twisted tori.
   (A,B), Schematics showing a (A) left-handed and (B) right-handed double-twist.
   (C), Schematic defining the central ring radius $R_0$ and tube radius $a$ in a torus.}\label{f:1-Torus}
-\end{figure}
+\end{figure}\fxnote{arrows}
 
-Up to this point we have considered how constraints imposed on order at a surface affect ordered materials that lie on the surface or are confined by the surface.
-However, we can also use confinement to impose constraints on the bulk.
-For example, consider the bipolar configuration where the director at the surface of a spherical droplet is forced to lie tangential to the surface.
-If we instead require the director at the surface of the droplet to be perpendicular to the interface, known as homeotropic anchoring, we see that there must be an irreducible singularity in the bulk.
-These bulk singularities are known as hedgehogs and are characterized by their hedgehog charge,
+There are, however, 3D nematic fields with defects in their bulk.
+For example, consider a nematic inside a volume with the director at the surface of the volume of the perpendicular to the surface.
+We call this homeotropic anchoring.
+If the volume is a sphere, we then see that irrespective of how we arrange the director in the bulk, there must be an irreducible singularity.
+Bulk singularities that are points are known as hedgehogs and are characterized by their hedgehog charge,
 \begin{equation}
-  q = \frac{1}{4 \pi} \int_{\mathbb{S}^2} d\theta \: d\phi \: \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:1-HedgehogCharge}
+  q = \frac{1}{4 \pi} \int_{\mathbb{S}^2} \textrm{d}\theta \: \textrm{d}\phi \: \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:1-HedgehogCharge}
 \end{equation}
 where the integral is taken over a topologically spherical surface enclosing the defect, and $\theta$ and $\phi$ are, respectively, the polar and azimuthal angles on that surface~\cite{RN153}.
-Instead of counting the number of times the director wraps around $\mathbb{S}^1$, as we do for the topological charge, here we consider the orientation of $\mathbf{n}$ on the spherical surface enclosing the defect mapped to $\mathbb{S}^2$, the unit sphere.
+In this case, instead of counting the number of times the director wraps around $\mathbb{S}^1$, as we did for the topological charge, we consider the orientation of $\mathbf{n}$ on the spherical surface enclosing the defect mapped to $\mathbb{S}^2$, the unit sphere.\fxnote{connect to the integrand}.
 The hedgehog charge is then the number of times the orientations of $\mathbf{n}$ cover $\mathbb{S}^2$~\cite{RN153}.
-Thus, we see that confining a NLC to a volume that is topologically spherical with homeotropic boundary conditions must yield a total ``hedgehog charge'' $|d|=1$.
+Thus, we see that confining a NLC to a volume that is topologically spherical with homeotropic boundary conditions must yield a total ``hedgehog charge'' $|q|=1$.
 
-In this Thesis, we investigate the role of geometry on the interplay between order and confinement.
+In this Thesis, we investigate the role of geometry in the interplay between order and confinement.
 In Chapter 2, we begin with an introduction to the theory of nematic liquid crystals.
 Then, in Chapter 3, we consider nematic order on the surface of a torus.
+This is different from previos studies where the NLC filled the torus~\cite{RN24,RN274,RN44}.
 Due to the difficulty of creating a thin, stable, toroidal shell of a NLC, we use a polymeric nematic that self-assembles at the interface between two immiscible liquids.
-Importantly, this lets us make stable toroidal droplets as in our previous work, yet still investigate 2D nematic order on a toroidal surface.
+Importantly, with this system we can generate stable toroidal droplets as in our previous work, and investigate 2D nematic order on a toroidal surface.
 In addition, the nematic is active, meaning that the individual constituent particles have their own source of internal energy.
-The activity then drives the nematic out of equilibrium at the individual particle level, generally filling the nematic with pairs of $s = \pm 1/2$ defects that are constantly in motion and constantly being created and annihilated.
+The activity then drives the nematic out of equilibrium at the individual particle level, generally causing the generation of pairs of $s = \pm 1/2$ defects that are constantly in motion and constantly being created and annihilated.
 Even though we have an inherently nonequilibrium material, we find that predictions built upon Eq.~\ref{e:1-TopTheoryofDefects} hold and that adding activity to order qualitatively resembles bringing an equilibrium system to the high temperature limit.
+However, there are significant differences with equilibrium nematics, which we will highlight.
 
-In Chapter 4, we consider NLC confined to toroidal droplets under homeotropic boundary conditions.
+In Chapter 4, we consider a NLC confined to toroidal droplets with homeotropic anchoring.
 With the director constrained to lie perpendicular to the surface, the saddle-splay distortion does not affect the free energy minimization.
 However, we still find a twisted ground-state configuration, where the amount of twist depends on $\xi$, eventually disappearing as $\xi \rightarrow \infty$.
 Experiments with NLC confined to straight and bent cylindrical capillaries under homeotropic boundary conditions reveal that the twist is a response to the additional curvature induced when deforming a cylinder of homeotropic nematic into a torus.
-In Chapter 5, we return to a spherical topology, confining NLC to a capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.
-% Finally, in Chapter 6, we use toroids and spherical droplets to uncover the role of surface curvature of the anchoring of NLC.
-In Chapter 6, we summarize our results and indicate potential future work that builds on this Thesis.
+This is new; prior experiments in cylinders found a twisted ground state only when NLC that favor twist distortions were used.
+In our case, the confining geometry induces twist even in NLC that do not preferentially favor twist distortions.
+
+In Chapter 5, we return to a spherical topology, confining NLC to a capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.\fxnote{more.}
+
+In Chapter 6, we summarize, conclude, and present results that open the door to future work that builds on this Thesis.
