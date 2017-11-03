@@ -9,30 +9,38 @@ Here, the system breaks the continuous symmetry of the isotropic phase in order 
 Hence, the ordered phase has lower symmetry than the isotropic phase.
 
 The advent of order as a result of continuous symmetry breaking is general and is a hallmark of transitions between a multitude of different phases.
-In addition, the phases do not have to be formed by collections of molecules; they can be built from a variety of constituent units, from angstrom-scale atoms, to micron-scale colloids, or even larger building blocks.
-Regardless of the constituent particles, the isotropic-to-crystalline phase transition in three-dimensions (3D) breaks continuous translational and rotational symmetry in all directions.
+In addition, the phases do not have to be formed by collections of molecules; they can be built from a variety of constituent units, from angstrom-scale atoms to micron-scale colloids or even larger building blocks.
+Regardless of the nature of the constituent particles, the isotropic-to-crystalline phase transition in three-dimensions (3D) breaks continuous translational and rotational symmetry in all directions.
 However, a system can also transition from an isotropic phase to a phase where the continuous translational and rotational symmetry in not broken in all directions.
 For example, an isotropic-to-smectic phase transition in 3D breaks continuous translation symmetry in only one direction and continuous rotational symmetry in two directions, while the isotropic-to-uniaxial nematic and isotropic-to-ferromagnetic transitions break no translational symmetries and only break rotational symmetry in two directions~\cite{RN175}.
 Breaking continuous translational symmetry results in positional order while breaking continuous rotational symmetry results in orientational order.
+\begin{figure}
+  \includegraphics{figures/C1/Ch1-Figs_SmecticNematic.png}
+  \caption{Smectic and nematic order.
+  (A), A smectic phase breaks translational symmetry along one direction, leading to a layer-like structure.
+  For the drawn Smectic-A phase, this direction is indicated by $\bm{\nu}$.
+  (B), A uniaxial nematic phase has continuous translational symmetry in all directions and continuous rotational symmetry in one direction. This direction is indicated by the director, $\mathbf{n}$.}\label{f:1-SmecticNematic}
+\end{figure}
 
 With the development of order comes the rigidity needed to maintain that order.
 For example, crystalline and smectic materials do not flow easily due to their broken translational symmetries.
 However, nematics with their continuous translational symmetries flow far easier; the constituent particles only need to maintain their orientation and not their position.
 In addition, systems with anisotropic order must have a correspondingly anisotropic rigidity.
-Consider a smectic phase with its broken translational symmetry in one direction, given by the unit vector $\bm{\sigma}$\fxnote{Schematic to define nematic and smectic stuff.}.
-Along $\bm{\sigma}$, the material will resist flow like a crystal, but will flow easily like a fluid in the plane orthogonal to $\bm{\sigma}$.
-Similarly, even though a uniaxial nematic has continuous translation symmetry in all directions, it still has rigidity as the nematic must maintain its two-fold orientational order.
+Consider a smectic phase with its broken translational symmetry in one direction, given by the unit vector $\bm{\nu}$, as drawn schematically in Figure~\ref{f:1-SmecticNematic}(A).
+Along $\bm{\nu}$, the material will resist flow like a crystal, but will flow easily like a fluid along directions orthogonal to $\bm{\nu}$.
+Similarly, even though a uniaxial nematic has continuous translation symmetry in all directions, it still has rigidity as the nematic must maintain its two-fold orientational order, as illustrated schematically in Figure~\ref{f:1-SmecticNematic}(B).
 This rigidity is thus anisotropic, reflecting the nematic's anisotropic rotational symmetry.
 This phenomenon is not limited to the rigidity; in general, the properties of a phase will reflect its symmetries.
 For example, ordered materials often exhibit birefringence, where the index of refraction is anisotropic.
 A light wave incident on a birefringent material will thus encounter an index of refraction that depends on the direction and polarization of the light wave~\cite{RN175}.
 
 Ordered materials can also have defects, defined generally as locations in the material where the preferred local arrangement is not satisfied.
-Belying their name, defects are not necessarily undesirable; in fact, they can have important consequences for the physics of the phase, which could be exploited to achieve specific properties.
+Belying their name, defects are not necessarily undesirable; in fact, they can have important consequences for the physics of the phase, and thus can be exploited to achieve specific properties.
 For example, joining two crystalline domains of incompatible orientations results in defects forming a border, or grain boundary, between the two domains.
 In a crystalline material, these grain boundaries affect the moduli of the material, and are even responsible for the phenomenon of ``work hardening,'' where plastically deforming the material increases the magnitude of the shear modulus.
 This is commonly done to create durable objects and sculptures from copper and other ductile metals.
-The plastic deformations cause isolated defects and grain boundaries to proliferate within the material; however, as the defect density rises, so does the energy required to generate each new defect, resulting in an increased resistance to deformation that further reflects in the increase of the shear modulus.
+The plastic deformations cause isolated defects and grain boundaries to proliferate within the material; however, as the defect density rises, so does the energy required to generate each new defect.
+This results in an increased resistance to deformation that further reflects in the increase of the shear modulus.
 
 In addition, defects can also directly mediate phase transitions, as in the celebrated Kosterlitz-Thouless-Halperin-Nelson-Young (KTHNY) theory of melting in 2D~\cite{RN161,RN162,RN163}.
 Here, the increase in symmetry when a 2D crystalline phase melts to the isotropic phase is a two-step process.
@@ -40,7 +48,7 @@ First, pairs of rotational defects, or disclinations~\cite{RN61,RN203}, prolifer
 Second, these disclination pairs unbind, transforming the hexatic phase into the isotropic phase.
 Furthermore, defects in soft matter have been used as tools to investigate a wide range of phenomena from knot theory~\cite{RN156,RN277} to controlled self-assembly~\cite{RN43,RN50,RN150,RN157}, to hierarchical materials~\cite{RN164,RN159,RN27}.
 
-Apart from their effect on physical systems or their use as tools, defects are fascinating objects in their own right as they are extremely sensitive to the intrinsic geometry of the space they inhabit.
+Apart from both their effect on physical systems and their use as tools, defects are fascinating objects in their own right as they are extremely sensitive to the intrinsic geometry of the space they inhabit.
 Consider, for example, densely packing rods on a plane.
 In order to maximize the entropy of the system, the rods need to align along the same direction, breaking continuous rotational symmetry and yielding the the two-fold order of the uniaxial nematic phase~\cite{RN204}.
 We can characterize this preferred local alignment with a director, $\mathbf{n}$, where $\mathbf{n} = \mathbf{-n}$, reflecting the inversion symmetry of the 2-fold order.
@@ -64,7 +72,7 @@ Here, the term ``bounded'' means the surface has some finite size and is distinc
 The boundary of a surface is defined as the set of points that can be approached from both the interior and the exterior of the surface.
 Finally, orientable surfaces have a defined normal vector everywhere.
 For example, 2D Euclidean space, denoted as $\mathbb{R}^2$, is a surface but it is not bounded and thus it is not compact.
-With $\mathbf{r}$ a vector in $\mathbb{R}^2$, the 2D open unit disc $|\mathbf{r}| < d$ is not compact since it does not contain the circle with radius $d$.
+Given $\mathbf{r} \in \mathbb{R}^2$, the 2D open unit disc $|\mathbf{r}| < d$ is not compact since it does not contain the circle with radius $d$.
 However, the 2D unit disc $|\mathbf{r}| \leq d$ satisfies both conditions and thus is compact.
 In addition, we see that $|\mathbf{r}| \leq d$ has a boundary $\partial \mathbf{r}$ at $|\mathbf{r}| = d$, as $\partial \mathbf{r}$ can be approached by points in both the interior and the exterior of the disc.
 We call compact surfaces without a boundary closed surfaces.
@@ -77,14 +85,14 @@ Finally, all of these examples are also orientable; it is trivial to define the 
   However, the surfaces in (A,B) cannot be continuously deformed in the surfaces in (C,D) as the process of adding a handle breaks the surface.}\label{f:1-ChiObjects}
 \end{figure}
 
-We can characterize the topological properties of a surface with its Euler characteristic, $\chi$, which we can calculate using the Gauss-Bonnet theorem.
-For a closed surface the theorem states that~\cite{RN23}:
+We characterize the topological properties of a surface with its Euler characteristic, $\chi$, which we can calculate using the Gauss-Bonnet theorem.
+For a closed surface, the theorem states that~\cite{RN23}:
 \begin{equation}
   \chi = 2(1-g),\label{e:1-GB1}
 \end{equation}
 where $g$ is the genus, or number of handles, of the surface.
 The Euler characteristic is a topological invariant --- continuously deforming a surface, i.e.\ under a homeomorphism, does not change its Euler characteristic.
-A homeomorphism is continuous function with a continuous inverse that maps one topological space to another.
+A homeomorphism is continuous function with a continuous inverse that maps between topological spaces while preserving topological properties.
 For example, a sphere has no handles, thus $g = 0$ and $\chi=2$.
 Since a homeomorphism preserves the topological properties, any surface with $g=0$ is topologically equivalent, or homeomorphic, to the sphere, and therefore also has $\chi=2$.
 For example, as pictured in Figure~\ref{f:1-ChiObjects}(A,B), a sphere is homeomorphic to a cup, as neither have handles.
@@ -100,6 +108,7 @@ For a contour $\partial A$ and the angle $\phi(\mathbf{r})$ parameterizing the d
   s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{r} \cdot \nabla\phi(\mathbf{r}) = \frac{1}{2\pi} \oint_{\partial A} \textrm{d} \phi,\label{eq:1-topCharge}
 \end{equation}
 where $\textrm{d}\phi$ is an exact differential.
+However, since $\phi$ is not a single-valued function, $\phi$ is not conservative and $s$ is not path independent.
 If we map $\phi$ on $\partial A$ onto points on $\mathbb{S}^1$, the unit circle, we see that $s$ is the number of times the director field wraps the unit circle.
 Since we cannot eliminate the enclosed disclination with continuous deformations of the director, disclinations are topological and $s$ is known as the winding number, or ``topological charge.''
 Regardless of aligning rods along the latitudes or the longitudes on the Earth's globe, the director along a contour encircling either pole rotates by $2 \pi$, as depicted in Figure~\ref{f:1-TopCharge}(A).
@@ -110,12 +119,10 @@ The formal statement connecting a vector or director field on a closed surface w
 \end{equation}
 where $N$ is the number of disclinations, each of topological charge $s_i$.
 
-Thus, $s \in n/2$, where $n \in \mathbb{Z}$, the integers, for nematic order, while $s = n$ for polar order.
+Thus, for nematic order, $s \in n/2$, where $n \in \mathbb{Z}$, the integers; however, for polar order, $s = n$.
 For example, the defect structure in Figure~\ref{f:1-TopCharge}(B) has $s = +1/2$ and can exist in a nematic director field, where $\mathbf{n} = \mathbf{-n}$.
 Attempting to construct such a disclination with a vector field, as illustrated by following the vectors as they go from blue to cyan along the red contour in Figure~\ref{f:1-TopCharge}(C), we see that we get a $\pi$-flip and the vector field is not continuous.
-Not also that the Poincar\'e-Hopf Theorem only requires the total charge on the surface to be equal to $\chi$; we can construct a director or a vector field on a closed surface with any combination of defects so long as the total topological charge is equal to $\chi$.
-
-Physical ordered systems constrained to a closed surface must then minimize their free energy while complying with the constraint imposed by the Poincar\'e-Hopf theorem.
+Note also that the Poincar\'e-Hopf Theorem only requires the total charge on the surface to be equal to $\chi$; we can construct a director or a vector field on a closed surface with any combination of defects so long as the total topological charge is equal to $\chi$.
 \begin{figure}
   \centering
   \includegraphics{figures/C1/Ch1-Figs_TopCharge.png}
@@ -126,7 +133,8 @@ Physical ordered systems constrained to a closed surface must then minimize thei
   This is seen by following the red contour as the vectors go from blue to cyan.}\label{f:1-TopCharge}
 \end{figure}
 
-For an orientationally ordered phase where the particles prefer to align parallel to each other, we can write the free energy in terms of the cost of distorting the material from the homogeneously-aligned state.
+Physical ordered systems constrained to a closed surface must then minimize their free energy while complying with the constraint imposed by the Poincar\'e-Hopf theorem.
+For an orientationally ordered phase where the particles prefer to align parallel to each other, we can write the free energy as the cost of distorting the material from the homogeneously-aligned state.
 In the continuum limit, this distortion free energy is a functional of the orientation field,
 \begin{equation}
   F_d = \frac{1}{2} k_F \int \textrm{d}^2\mathbf{r} \, |\nabla \phi(\mathbf{r})|^2,\label{e:2-XY}
@@ -136,7 +144,8 @@ If we have polar order described by a vector field, then Eq.~\ref{e:2-XY} is the
 
 Nematics on a sphere were predicted~\cite{RN42,RN104,RN43} to minimize the free energy not with two $s=+1$ defects [Figure~\ref{f:1-RodsPlane}(B)] but with four $s=+1/2$ defects arranged on the vertices of a tetrahedron [Figure~\ref{f:1-RodsPlane}(C)].
 Prior work in our group addressed this situation experimentally using glass-based microfluidic devices to fabricate double emulsions~\cite{RN272}, with a shell of nematic liquid crystal (NLC) between an inner water droplet and an outer water continuous phase~\cite{RN105,RN45}.
-By decreasing the osmotic pressure in the outer continuous phase of the nematic shells, swelling of the inner droplet was induced, decreasing the thickness of the NLC shell to create an experimental realization of a 2D nematic on the surface of a sphere~\cite{RN45}.
+By decreasing the osmotic pressure in the outer continuous phase of the nematic shells, swelling of the inner droplet was induced.
+This swelling decreased the thickness of the NLC shell to create an experimental realization of a 2D nematic on the surface of a sphere~\cite{RN45}.
 In this thin shell limit, the four $s = +1/2$ defects arranged on the vertices of a tetrahedron was observed; see Figure~\ref{f:1-Shells}(A,B).
 \begin{figure}
   \centering
@@ -149,25 +158,26 @@ In this thin shell limit, the four $s = +1/2$ defects arranged on the vertices o
   (E,F) As $R^{in}\rightarrow 0$, the thick shell becomes a bipolar droplet, with a cross-section of the director field in (E) and a corresponding crossed-polar image in (F).}\label{f:1-Shells}
 \end{figure}
 
-However, this arrangement of $s = +1/2$ defects only exists in thin enough shells, as characterized by the relative shell thickness $h' = (R^{out}-R^{in})/R^{out}$, with $R^{in}$ and $R^{out}$ the inner and outer radius of the nematic shell, as defined schematically in Figure~\ref{f:1-Shells}(C).
+However, this tetrahedral arrangement of $s = +1/2$ defects only exists in thin enough shells, as characterized by the relative shell thickness $h' = (R^{out}-R^{in})/R^{out}$, with $R^{in}$ and $R^{out}$ the inner and outer radius of the nematic shell, as defined schematically in Figure~\ref{f:1-Shells}(C).
 As $h'$ increases, the shell also becomes inhomogeneous due to density differences between the inner droplet and the NLC shell.
-This thickness heterogeneity drives defects to the thinnest portion of the shell; this means that the $s = +1/2$ are no longer in a tetrahedron.
+This thickness heterogeneity drives defects to the thinnest portion of the shell; this means that the $s = +1/2$ defects are no longer arranged in a tetrahedron.
 In addition, as $h'$ increases, the shell can no longer be considered 2D.
 
-The situation is now 3D and there are two spherical interfaces where the topological charge on the interface is constrained by the Poincar\'e-Hopf theorem with a bulk region between the two surfaces filled with NLC.
-Each $s = +1/2$ defects on the outer surface is connected to their corresponding $s = +1/2$ disclination on the inner surface via a singular line that propagates through the bulk, as depicted schematically in Figure~\ref{f:1-Shells}(C) for a great circle containing two $s = +1/2$ disclinations on each surface.
+The situation is now 3D and there are two spherical interfaces where the topological charge on the interface is constrained by the Poincar\'e-Hopf theorem, with a bulk region between the two surfaces filled with NLC.
+Each $s = +1/2$ defect on the outer surface is connected to a corresponding $s = +1/2$ disclination on the inner surface via a singular line that propagates through the bulk.
+This is depicted schematically in Figure~\ref{f:1-Shells}(C) for a great circle containing two $s = +1/2$ disclinations on each surface.
 As $h'$ increases, so does the cost of each singular line.
-Eventually, as $h'\gtrsim 1/2$, the cost of propagating the singular lines through the bulk is too great and the pairs of $s = +1/2$ disclinations on each surface transition to one $s = +1$ disclination~\cite{RN105}, known as a boojum~\cite{RN273}.
+Eventually, as $h'\gtrsim 1/2$, the cost of propagating the singular lines through the bulk is too great and pairs of $s = +1/2$ disclinations on each surface transition to one $s = +1$ disclination~\cite{RN105}, known as a boojum~\cite{RN273}.
 
-Unlike the $s = +1/2$ defects, the boojums are not connected by a singular line; instead, the director in the shell region ``escapes in the third dimension'' and acquires a component along the radius of the droplet, removing all the singularities in the bulk.
-The increased energetic cost of a single boojum as compared to two $s = +1/2$ defect is compensated by the energetic decrease of removing the singular regions in the bulk of the shell.
+Unlike the $s = +1/2$ defects, the corresponding boojums on the inner and outer surface are not connected by a singular line; instead, the director in the shell region ``escapes in the third dimension'' and acquires a component along the radius of the droplet, removing all the singularities in the bulk.
+The increased energetic cost of a single boojum as compared to two $s = +1/2$ defects is compensated by the energetic decrease of removing the singular regions in the bulk of the shell.
 This is depicted schematically for a two boojums on each surface for the special case of a homogeneous shell in Figure~\ref{f:1-Shells}(D).
 For a heterogeneous thickness, the boojums will migrate towards the thinnest portion of the shell.
-In addition, the shells are not restricted to either 4 $s = +1/2$ disclinations of two $s = +1$ boojums; our group also observed hybrid shells with two $s = +1/2$ disclinations and a single boojum.
+In addition, the shells are not restricted to either four $s = +1/2$ disclinations or two $s = +1$ boojums; our group also observed hybrid shells with two $s = +1/2$ disclinations and a single boojum.
 For $h' = 1$, there is no inner water droplet and we have a single droplet of NLC in a continuous water phase, with the boojums on opposite poles.
 This director arrangement is the classic bipolar configuration, with the director field and associated crossed polar image shown in Figure~\ref{f:1-Shells}(E,F), respectively.
 
-Note that even if Eq.~\ref{e:2-XY} favors a homogeneous orientation field, corresponding to the zero energy configuration, sometimes distortions are unavoidable due to the topological constraints imposed by the surface.
+This example shows that even if Eq.~\ref{e:2-XY} favors a homogeneous orientation field, corresponding to the zero energy configuration, sometimes distortions are unavoidable due to the topological constraints imposed by the surface.
 However, ordered materials are also sensitive to the local geometry.
 For example, consider once more rods packed on a plane with a homogeneous director field, as shown schematically in Figure~\ref{f:1-ParallelTransport}(A).
 If we change the geometry and introduce a hemispherical ``bump'' in the plane, as illustrated in Figure~\ref{f:1-ParallelTransport}(B), evenly-spaced director lines on the plane do not maintain their spacing on the bump.
@@ -204,10 +214,10 @@ For $\kappa_1$ and $\kappa_2$, we define two important quantities: the Gaussian 
 
 We now see that adding the hemispherical bump to the plane, which has $K = H = 0$ everywhere, changes the geometry by adding both non-zero mean and Gaussian curvature.
 However, it is the Gaussian curvature and not the mean curvature that is responsible for geometrical frustration.
-This can be sen after modulating the flat plane with a sine wave in one direction, as shown in Figure~\ref{f:1-ParallelTransport}(C).
+This can be seen after modulating the flat plane with a sine wave in one direction, as shown in Figure~\ref{f:1-ParallelTransport}(C).
 In this case, $K=0$ everywhere while $H$ changes throughout the surface.
 Despite the fact that $H \neq 0$ everywhere, we can still maintain a homogeneous director field, in contrast to our example surface with $K \neq 0$ at the bump [Figure~\ref{f:1-ParallelTransport}(B)].
-This reflects the fact that Gaussian curvature is a property of the surface alone, that is, it is an intrinsic curvature.
+This is a reflection of the fact that Gaussian curvature is a property of the surface alone, that is, it is an intrinsic curvature.
 We can determine the Gaussian curvature of a surface without knowing anything about the space the surface is embedded in.
 In contrast, determining the mean, or extrinsic, curvature of a surface requires knowledge of the space the surface is embedded in.
 
@@ -241,8 +251,8 @@ where $G_L$ is the Green's function of the Laplace-Beltrami operator, the standa
 It is worth mentioning that Eq.~\ref{e:1-TopTheoryofDefects} is identical to the Coulomb energy of a plasma with both positively and negatively charged ion species having charge density $\rho$ in a background of charge density $-K$~\cite{RN17}.
 Thus, we see that topological defects can be treated as charged particles that couple to the surface via a background charge provided by the Gaussian curvature of the surface.
 
-To investigate the role of curvature on ordered materials, we need to consider a space with varying Gaussian curvature and ideally, including Gaussian curvature of different sign.
-While there have been new discoveries as a result of examining defect structures on spheres~\cite{RN106,RN26,RN110,RN76,RN101,RN165}, including prior work with spherical nematic shells~\cite{RN45,RN105}, the Gaussian curvature and therefore the background topological charge density is constant in this case.
+To investigate the role of curvature on ordered materials, we need to consider a space with varying Gaussian curvature and ideally, a space including Gaussian curvature of different sign.
+While there have been new discoveries as a result of examining defect structures on spheres~\cite{RN106,RN26,RN110,RN76,RN101,RN165}, including prior work with spherical nematic shells~\cite{RN45,RN105}, the Gaussian curvature and therefore the background topological charge density is constant in these cases.
 As a result, the impact of curvature only enters through the sphere radius.
 This is borne out in both the size-dependent onset of grain-boundary scars in colloidal crystals on the surface of emulsion drops~\cite{RN26,RN110}, and in the fact that the positions of the four $s = +1/2$ defects in nematic shells are entirely determined by the defect-defect interactions, with the underlying geometry playing no role~\cite{RN45}.
 
@@ -282,7 +292,7 @@ Therefore, confining a NLC to a volume that is topologically spherical with home
 In this Thesis, we investigate the role of geometry in the interplay between order and confinement.
 In Chapter 2, we begin with an introduction to the theory of nematic liquid crystals.
 Then, in Chapter 3, we consider nematic order on the surface of a torus.
-This is different from previos studies where the NLC filled the torus~\cite{RN24,RN274,RN44}.
+This is different from previous studies where the NLC filled the torus~\cite{RN24,RN274,RN44}.
 Due to the difficulty of creating a thin, stable, toroidal shell of a NLC, we use a polymeric nematic that self-assembles at the interface between two immiscible liquids.
 Importantly, with this system we can generate stable toroidal droplets as in our previous work, and investigate 2D nematic order on a toroidal surface.
 In addition, the nematic is active, meaning that the individual constituent particles have their own source of internal energy.
