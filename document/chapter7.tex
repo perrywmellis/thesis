@@ -6,7 +6,7 @@ Confining ordered materials can lead to interesting phenomonology due to the int
 For the nematic materials used in this Thesis, it is often the curvature of the confining volume or surface that affects the nematic order.
 This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $(\nabla \mathbf{n})^2$, indicating that curvature in the director field costs energy.
 The influence of curvature on a nematic material is even more explicit when considering a 2D nematic constrained to lie on a surface.
-In this situation, the free energy can be written to resemble that of a multicomponent plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
+In this situation, the free energy can be written to resemble that of a plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
 Thus, if the surface has both positive and negative Guassian curvature and the nematic has both positive and negative defects, the defects are predicted to segregate, with the positive defects migrating to the regions of positive Gaussian curvature and vice versa.
 
 We explore this situation experimentally using an active polymeric nematic depleted to the surface of a toroidal droplet.
@@ -14,7 +14,7 @@ Due to the activity, the nematic is filled with pairs of constantly creating and
 We measure the time-averaged topological charge in regions on the toroidal droplet and find that the average charge varies linearly with the integrated Gaussian curvature in the region.
 The slope of this relationship is positive, indicating that our system exhibits defect unbinding.
 In contrast to predictions for a system at equilibrium, we find that the active unbinding depends only on the local geometry and is insensitive to the size and aspect ratio of our toroidal droplets.
-Comparing our experimental results to a numerical integration of the equations of motion of active nematic defects further illustrates that the defect unbinding also depends on the defect number density and that the unbinding can even be suppressed in the limit of high activity.
+Comparing our experimental results to a numerical integration of the equations of motion of active nematic defects further illustrates that the defect unbinding also depends on the defect number density, and that the unbinding can even be suppressed in the limit of high activity.
 Finally, by using topological defects as micro-rheological tracers and quantitatively comparing our experimental and theoretical results, we are able to estimate the Frank elastic constant, the active stress, and the defect mobility of a microtubule-kinesin active NLC.
 
 Overall, our results not only confirm the theory of topological defects on curved surfaces, but also demonstrate how adding activity to an ordered material changes and enriches equilibrium expectations.
@@ -48,8 +48,55 @@ Further interesting results would also be expected if the shape of the bridge is
 Our work is thus one of many interesting studies that can be performed with nematic bridges to probe how shape and elasticity dictate the equilibrium defect structure of the liquid crystal.
 
 \section{Defect orientation on curved surfaces: current status}
+Prior work with a microtubule-kinesin active nematic on a flat surface demonstrated that the $s = +1/2$ defects self-organize into a higher-order nematic phase~\cite{RN27}.
+The orientation of each $s = +1/2$ defect is given by its velocity; calculating $\mathbf{Q}$ for a collection of defects uncovers long-range nematic order~\cite{RN27}.
+The strength of the order increases with increasing defect density and the higher-order nematic is typically defect-free, with a homogeneous director over the entire sample~\cite{RN27}.
+We are currently investigating how the $s = \pm 1/2$ defect orientations couple to the curvature of our toroidal droplets.
+
+
 \subsection{Theory}
+The velocity of the $s = +1/2$ defects is not the only way to assign an orientation to each defect.
+Recent work showed that the polar structure of the $s = +1/2$ defect can be characterized by a vector, and that the distortion free energy of a pair of $s = +1/2$ defects is minimized when the orientation vectors are antiparallel~\cite{RN6}.
+Thus, a dense collection of $s = +1/2$ defects would minimize its free energy by aligning antiparallel to each other, forming a higher-order nematic phase.
+For a single $s = +1/2$ defect, this orientation $\mathbf{p}$ is calculated by:
+\begin{equation}
+  p_i = \left \langle \partial_j Q_{ij}^{(\alpha)} \right \rangle_{\alpha},\label{e:7-LGpositive}
+\end{equation}
+where $Q_{ij}$ is the tensor order parameter and the average is taken along a closed contour encircling the defect.
+Reference~\cite{RN6} also proposed a method to characterize the orientation of $s = -1/2$ disclinations; however, their method requires a coordinate basis to be chosen.
+
+Alternately, Jonathan Selinger has a method to calculate disclination orientation by constructing tensors of the appropriate rank.
+For example, the orientations of $s = +1/2$ and $s = -1/2$ disclinations are calculated via:
+\begin{align}
+    b_i &= \left \langle \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSpositive} \\
+    T_{ijk} &= \left \langle \partial_i (n_{j}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_j (n_{i}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_k (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSnegative}
+\end{align}
+respectively, where the average is again taken over a path encircling the disclination.
+Importantly, the orientation of a disclination as calculated via Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} does not depend on the choice of coordinate basis.
+
+Comparing the two methods to calculate the orientation of an $s = +1/2$ disclination, we have:
+\begin{align}
+ p_i &= \left \langle \partial_j Q_{ij}^{(\alpha)} \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle \partial_j \bigg(S^{(\alpha)}\bigg(n_{i}^{(\alpha)}n_{j}^{(\alpha)} - \frac{1}{2}\delta_{ij}\bigg)\bigg) \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle (\partial_j S^{(\alpha)}) \bigg(n_{i}^{(\alpha)}n_{j}^{(\alpha)} - \frac{1}{2}\delta_{ij}\bigg) \right \rangle_{\alpha}
+      + \left \langle S^{(\alpha)} \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle \frac{\partial_j S^{(\alpha)}}{S^{(\alpha)}} Q_{ij}^{(\alpha)}\right \rangle_{\alpha}
+      + \left \langle S^{(\alpha)} \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha}\label{e:7-comparison}.
+\end{align}
+If we choose a contour where $S$ is constant, we can rewrite Eq.~\ref{e:7-comparison} as:
+\begin{equation}
+  p_i = \left \langle \frac{\partial_j S^{(\alpha)}}{S} Q_{ij}^{(\alpha)}\right \rangle_{\alpha}
+      +  S \, b_i.
+\end{equation}
+Thus, we see that Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
+We will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.
+
+
 \subsection{Experiment}
+
+
+
+
 \subsection{Future Work}
 
 \section{Determining the saddle-splay elastic constant}
