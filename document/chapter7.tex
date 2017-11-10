@@ -93,10 +93,48 @@ We will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our 
 
 
 \subsection{Experiment}
+Our goal is to examine the defect orientations on the curved surface of our toroidal droplets.
+However, we project our data from the surface of the toroid onto a plane, forming a 2D image from which we determine the director and the defects.
+Thus, we will find the defect orientations in the 2D image and then project the defect orientations back onto our toroidal surface.
+In the plane of the image, we have the Cartesian coordinate system $\{ \hat{x},\hat{y},\hat{z} \}$ with unit vectors $(1,0,0)$, $(0,1,0)$, and $(0,0,1)$, respectively.
+For an arbitrary unit surface normal $\mathbf{k} = (a, b, \sqrt{1-a^2-b^2})$, we define $\hat{v} = \hat{k} \times \hat{x}/|\hat{k} \times \hat{x}|$ and $\hat{u} = \hat{v} \times \hat{k}$, giving us an orthonormal coordinate frame on the surface $\{\hat{u},\hat{v},\hat{k} \}$.
 
+Transforming between $\mathbf{r} \in \mathbb{R}^2$ to $\mathbf{r}'$ on the surface of our toroid,
+\begin{equation}
+  \mathbf{r}' =
+  \begin{pmatrix}
+  \frac{1}{\sqrt{1-a^2}} & 0 \\
+  \frac{ab}{\sqrt{(1-a^2)(1-a^2-b^2)}} & \sqrt{\frac{1-a^2}{1-a^2-b^2}}
+  \end{pmatrix}
+  \mathbf{r} = \bm{H}\mathbf{r}.
+\end{equation}
+However, since $\{ \hat{u},\hat{v}\}$ depend on $\hat{k}$, $\{ \hat{u},\hat{v}\}$ will change over the surface of our droplet, making it difficult to compare defect orientations between different points on the surface.
+Instead, we will record our defect orientations on the surface of the torus in terms of a pair of curvilinear coordinate systems.
+The first coordinate system is the standard toroidal coordinate system, $\{\hat{\theta}, \hat{\varphi}, \hat{r}  \}$, where $\hat{r} = \mathbf{k}$, the surface normal.
+The second coordinate system is $\{\hat{\theta}', \hat{\varphi}',\mathbf{k}$, with $\hat{\theta}' = (\nabla K)/|\nabla K|$ $\hat{\varphi}' = \mathbf{k} \times \hat{\theta}'$.
+For a perfect toroid, the two coordinate systems are equivalent; however, in our case, the surface can be rough and our droplets are not perfectly axisymmetric.
+Thus, our two coordinate systems should allow us to distinguish between global effects driven by the toroidal geometry and local effects driven by $K$.
 
+To calculate $\hat{\theta}$ and $\hat{\varphi}$, we start by finding the central circle from our data in $\mathbb{R}^2$.
+We fit circles to the outer and inner contours in the 2D image of the toroidal droplet and average these contours to get an estimate of the central circle of our toroidal droplet.
+From the central circle, we can define a set of polar coordinates in the image $\{\hat{\rho}, \hat{\phi}\}$.
+We project $\hat{\phi}$ onto the surface of the torus to yield $\bm{\varphi} = \bm{H}\hat{\phi}$, and then normalize to get $\hat{\varphi} = \bm{\varphi}/|\bm{\varphi}|$.
+Finally, we calculate $\hat{\theta} = \mathbf{k} \times \hat{\varphi}$ to obtain the standard toroidal coordinate system on our toroidal droplet.
 
+To calculate $\hat{\theta}'$ and $\hat{\varphi}'$, we start by computing $\nabla K$ in the 2D image and projecting it to the surface of the toroid to get:
+\begin{equation}
+  \bm{\theta}' =
+  \begin{pmatrix}
+    \sqrt{1-a^2} & -\frac{ab}{\sqrt{1-a^2}} \\
+    0 & \sqrt{\frac{1-a^2-b^2}{1-a^2}}
+  \end{pmatrix}
+  \nabla K = \bm{H}^{-1} \nabla K.
+\end{equation}
+Normalizing, we get $\hat{\theta}' = \bm{\theta}'/|\bm{\theta}'|$, and then calculate $\hat{\phi}' = \mathbf{k} \times \hat{\theta}'$.
+Note that we project $\nabla K$ from the image to the surface of the toroid using $\bm{H}^{-1}$; $\nabla K$ is a covector and thus the transformation matrix is the inverse of that for a vector.
 
+As a first attempt, we will bin the surface by $K$ and compute the order parameters in each bin.
+We will use overlapping bins of constant area in the 2D image. 
 \subsection{Future Work}
 
 \section{Determining the saddle-splay elastic constant}
