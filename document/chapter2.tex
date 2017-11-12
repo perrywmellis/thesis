@@ -2,26 +2,26 @@
 \chapter{Fundamentals of nematic liquid crystals}\label{c:2}
 
 \section{Local order and defects}
-Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotational symmetry of a collection of either rod-like or plate-like particles~\cite{RN33}.
-In both cases, the shape is anisotropic and characterized by one lengthscale that is different from the other two.
-As either the concentration of the particles is increased~\cite{RN204} or the temperature of the system is decreased~\cite{RN202}, the system breaks two continuous rotational symmetries and develops order.
-The order is characterized by a spontaneously chosen preferred direction or axis, where rod-like particles prefer to have their long axis aligned along this direction and plate-like particles prefer to have their short axis along this direction~\cite{RN33,RN175}.
+Uniaxial nematic liquid crystals are an ordered phase resulting from breaking the continuous rotational symmetry of a collection of anisotropic, typically rod-like or plate-like, particles~\cite{RN33}.
+As either the concentration of the particles is increased~\cite{RN204} or the temperature of the system is decreased~\cite{RN202}, there is a point where a phase transition happens and the system breaks continuous rotational symmetry and develops order.
+The order is characterized by a spontaneously chosen preferred direction or axis; rod-like particles prefer to have their long axis aligned along this direction and plate-like particles prefer to have their short axis along this direction~\cite{RN33,RN175}.
 
-Thus, the system still possesses continuous rotational symmetry about the preferred alignment direction as well as continuous translational symmetry in  all directions.
-This can be seen in the collection of rod-like particles drawn schematically in Figure~\ref{f:2-NematicSym}.
-In Figure~\ref{f:2-NematicSym}(A) the rods have no preferred alignment direction and thus possess complete continuous rotational and translational symmetry; however, in Figure~\ref{f:2-NematicSym}(B) and Figure~\ref{f:2-NematicSym}(C) the rods now align along a preferred direction denoted by $\mathbf{n}$, known as the director.
+Note that the system still possesses continuous rotational symmetry about the preferred alignment direction as well as continuous translational symmetry in  all directions.
+This is illustrated with rod-like particles in Figure~\ref{f:2-NematicSym}.
+In panel (A), the system is isotropic and there is no preferred alignment direction.
+In contrast, in panels (B) and (C), the rods now align along a preferred direction denoted by $\mathbf{n}$ and called the director.
 As a result, in Figure~\ref{f:2-NematicSym}(B) and Figure~\ref{f:2-NematicSym}(C), the system has broken continuous rotational symmetry about the two axes orthogonal to $\mathbf{n}$.
-Note that even though in Figure~\ref{f:2-NematicSym}(C) the rods align more strongly along $\mathbf{n}$ than the rods in Figure~\ref{f:2-NematicSym}(B), the system possesses the same symmetry in both panels.
+Note that even though in Figure~\ref{f:2-NematicSym}(C) the rods align more strongly along $\mathbf{n}$ than the rods in Figure~\ref{f:2-NematicSym}(B), the system possesses the same symmetry in both situations.
 
 Regardless of the rotational symmetry of the system, the system never breaks translational symmetry.
 This can be seen in Figure~\ref{f:2-NematicSym}(D), where we show the centers of mass of the rods for all the cases in Figure~\ref{f:2-NematicSym}(A--C), illustrating that there is no positional order and the system still possesses continuous translational symmetry.
-If the concentration of the particles were further increased or the temperature were further decreased, the particles would break translational symmetry and the nematic phase would transition to a crystalline phase, with three broken continuous translational symmetries~\cite{RN33}.
+If the concentration of the particles were further increased or the temperature were further decreased, the system would eventually break translational symmetry and the nematic phase would transition to a crystalline phase, with three broken continuous translational symmetries~\cite{RN33}.
 Hence, the liquid-crystalline nematic phase is an intermediate ``mesophase'' that possesses the continuous translational symmetries of the isotropic ``liquid phase'' as well as some of the broken rotational symmetries of the ``crystalline'' phase.
 
 We briefly mention that nematics can be biaxial instead of uniaxial.
-Here, the constituent particles are bar-like such that there is no longer a single axis of symmetry that can characterize the material~\cite{RN33,RN175}.
+Here, the constituent particles are bar-like such that there is no longer a single axis of symmetry that can characterize the particle geometry~\cite{RN33,RN175}.
 Instead, we would need to define two axes, hence the name biaxial.
-However, in the remainder of this chapter and in the rest of the Thesis, we will focus on uniaxial NLC whose constituent particles are rod-like.
+However, in this Thesis, we will focus only on uniaxial NLC whose constituent particles are rod-like.
 
 \begin{figure}[h]
   \centering
@@ -32,101 +32,102 @@ However, in the remainder of this chapter and in the rest of the Thesis, we will
   The rods are preferentially but weakly aligned along the director $\mathbf{n}$, denoted in the panel.
   (C), The rods from (A,B) in the nematic phase. Here, the rods are strongly aligned along $\mathbf{n}$, denoted in the panel.
   (D), The positions of the center of mass of the rods in (A--C), highlighting the continuous translational symmetry of the rods.}\label{f:2-NematicSym}
-\end{figure}
+\end{figure}\fxnote{tilt the particle we measure off of, define the axes e1, e2}
 
 \subsection{The director and the order parameter}
 Given a group of rods, we want to determine if the system is in the isotropic or the nematic phase, in addition to finding the director, $\mathbf{n}$, provided that the rods are in the nematic phase.
 Since we have a collection of rods with no specified head nor tail, the director has inversion symmetry such that $\mathbf{n} = -\mathbf{n}$ and $\mathbf{n}\cdot\mathbf{n} = 1$.
 Thus, to indicate nematic order, we need an order parameter that goes to $0$ in the isotropic phase, is nonzero in the nematic phase, and describes the broken symmetry~\cite{RN33,RN175}.
 We will first derive this quantity for a collection of rods laying in a 2D plane and then generalize to rods in 3D.
-Let a 2D collection of rods laying in a plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{(\alpha)} = u^{(\alpha)}_i\hat{e}_i$, as seen in Figure~\ref{f:2-NematicSym}(A), where we use the Einstein summation convention to sum over repeated indices.
+Let a 2D collection of rods laying in a plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{(\alpha)} = u^{(\alpha)}_i\hat{e}_i$, as seen in Figure~\ref{f:2-NematicSym}(A), where we use the Einstein summation convention to sum over repeated indices and $\{\hat{e}_1,\hat{e}_2  \}$ is the standard basis in $\mathbb{R}^2$.
 Note that due to the inversion symmetry of the nematic phase $\langle \mathbf{u}^{(\alpha)}\rangle_{\alpha} = 0$, where $\langle \cdot \rangle_{\alpha}$ represents an ensemble average over all $\alpha$.
 Thus, to accommodate the $\mathbf{u}^{(\alpha)} = -\mathbf{u}^{(\alpha)}$ inversion symmetry of a nematic, we will construct a symmetric rank-2 tensor from $\mathbf{u}^{(\alpha)}$.
 Let:
 \begin{equation}
   \mathbf{Q} = \left \langle \mathbf{u}^{(\alpha)} \otimes \mathbf{u}^{(\alpha)} - \frac{1}{2} \mathbb{1} \right \rangle_{\alpha},\label{e:2-2DOrderRaw}
 \end{equation}
-such that $\textrm{tr}\big \{ \mathbf{Q} \big \} = \langle u^{(\alpha)}_i u^{(\alpha)}_i - 1 \rangle_{\alpha} = 0$, making $\mathbf{Q}$ traceless and symmetric~\cite{RN33,RN175}.
-We need $\mathbf{Q}$ to be traceless if we wish to use $\mathbf{Q}$ as an order parameter with $Q_{ij} = 0$ in the isotropic phase.
+with $\otimes$ the outer product.
+Now, $\textrm{tr}\big \{ \mathbf{Q} \big \} = \langle \mathbf{u}^{(\alpha)} \cdot \mathbf{u}^{(\alpha)} - 1 \rangle_{\alpha} = 0$, making $\mathbf{Q}$ traceless~\cite{RN33,RN175}.
+We need $\mathbf{Q}$ to be traceless if we wish to use $\mathbf{Q}$ as an order parameter with $Q_{ij} = 0$ in the isotropic phase.\fxnote{more concerning an order parameter and the need to go to 0}
 
 To determine the director, we need to diagonalize $\mathbf{Q}$.
-Without loss of generality, we can define another arbitrary orthonormal basis in the plane given by $\hat{e}_i'$ such that the transformation from the primed coordinates to the unprimed coordinates is given by $V_{ij} = \hat{e}'_i \cdot \hat{e}_j$.
-Note that $\mathbf{V}^T \mathbf{V} = V_{ij}V_{jk} =  \mathbb{1}$, implying that $\mathbf{V} = \mathbf{V}^{-1}$, and $\mathbf{V}$ is an orthogonal matrix.
-Applying $\mathbf{V}$ to $\mathbf{Q}$, we have:
+Without loss of generality, we choose a new orthonormal basis in the plane, $\{ \hat{e}_1', \hat{e}_2' \}$.
+The transformation from the unprimed to the primed basis is given by the matrix $V_{ij} = \hat{e}'_i \cdot \hat{e}_j$.
+Note that $\mathbf{V}^T \mathbf{V} = V_{ij}V_{jk} =  \mathbb{1}$, implying that $\mathbf{V}^T = \mathbf{V}^{-1}$, and $\mathbf{V}$ is orthogonal.
+We then have:
 \begin{align}
-  \mathbf{V}^T \mathbf{Q} \mathbf{V} &=
-  \bigg \langle \big ( \mathbf{V}^T \mathbf{u}^{(\alpha)} \big ) \otimes \big ( \mathbf{V}^T \mathbf{u}^{(\alpha)} \big )\bigg \rangle_{\alpha}  - \frac{1}{2} \mathbb{1} \nonumber \\ & =
+  \mathbf{Q}' = \mathbf{V} \mathbf{Q} \mathbf{V}^T &=
+  \bigg \langle \big ( \mathbf{V} \mathbf{u}^{(\alpha)} \big ) \otimes \big ( \mathbf{V} \mathbf{u}^{(\alpha)} \big )\bigg \rangle_{\alpha}  - \frac{1}{2} \mathbb{1} \nonumber \\ & =
   \begin{pmatrix}
-    \langle \cos^2 \theta^{(\alpha)}\rangle_{\alpha} - 1/2 & \langle \sin \theta^{(\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} \\
-    \langle \sin \theta^{(\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} & \langle \sin^2 \theta^{(\alpha)} \rangle_{\alpha} - 1/2
+    \langle \cos^2 \theta'^{(\alpha)}\rangle_{\alpha} - 1/2 & \langle \sin \theta'^{(\alpha)} \cos \theta'^{(\alpha)} \rangle_{\alpha} \\
+    \langle \sin \theta'^{(\alpha)} \cos \theta'^{(\alpha)} \rangle_{\alpha} & \langle \sin^2 \theta'^{(\alpha)} \rangle_{\alpha} - 1/2
   \end{pmatrix},\label{e:2-2DOrderRot}
 \end{align}
-where $\cos \theta^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_1'$ and $\sin \theta^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_2'$.
+where $\cos \theta'^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_1'$ and $\sin \theta'^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_2'$.
 
-Let us now choose the $\hat{e}'_i$ to be the eigenvectors of $\mathbf{Q}$.
-Then $ \mathbf{V}^T \mathbf{Q} \mathbf{V}$ must be diagonal such that $\langle \sin \theta^{(\alpha)} \cos \theta^{(\alpha)} \rangle_{\alpha} = \langle \sin (2 \theta^{(\alpha)}) \rangle_{\alpha} = 0$.
-This occurs in two ways.
-First, if we choose the collection of rods to be randomly oriented as in the isotropic phase, $\langle \sin (2 \theta^{(\alpha)}) \rangle_{\alpha} = 0$ as sine is an odd function.
-However, for a randomly oriented set of rods, $\langle \cos^2 \theta^{(\alpha)}\rangle_{\alpha} - 1/2 = \langle \sin^2 \theta^{(\alpha)}\rangle_{\alpha} - 1/2 = 0$, such that $\mathbf{Q} = 0$.
-Hence, this first method hasn't really diagonalized $\mathbf{Q}$ but instead has shown that $\mathbf{Q}$ has the correct behavior in the isotropic phase.
-The second way for $\langle \sin (2 \theta^{(\alpha)}) \rangle_{\alpha} = 0$ is if the collection of rods, on average, points along $\hat{e}'_i$.
-In this scenario, $\theta^{(\alpha)} \approx 0 \textrm{ or } \pi/2$ such that $\langle \sin (2 \theta^{(\alpha)}) \rangle_{\alpha} = 0$.
-Thus, we see that by diagonalizing Eq.~\ref{e:2-2DOrderRot}, we have determined that $\mathbf{n}$ is either along $\hat{e}_1'$ or along $\hat{e}_2'$, the eigenvectors of $\mathbf{Q}$.
+Since $\mathbf{Q}$ is symmetric, we can find a basis of eigenvectors where $\mathbf{Q}'$ is diagonal.
+Choose the $\hat{e}'_i$ to be the eigenvectors of $\mathbf{Q}$.
+This implies $ \mathbf{V} \mathbf{Q} \mathbf{V}^T$ must be diagonal such that $\langle \sin \theta'^{(\alpha)} \cos \theta'^{(\alpha)} \rangle_{\alpha} = \langle \sin (2 \theta'^{(\alpha)}) \rangle_{\alpha} = 0$.
+This can occur in two instances.
+First, if we choose the collection of rods to be randomly oriented as in the isotropic phase, $\langle \sin (2 \theta'^{(\alpha)}) \rangle_{\alpha} = 0$ as sine is an odd function.
+However, in this case we also have $\langle \cos^2 \theta'^{(\alpha)}\rangle_{\alpha} - 1/2 = \langle \sin^2 \theta'^{(\alpha)}\rangle_{\alpha} - 1/2 = 0$, and thus $\mathbf{Q} = 0$.
+This first situation simply shows the correct behavior in the isotropic phase.
+The second situation is the one we are seeking.
+For $\langle \sin (2 \theta'^{(\alpha)}) \rangle_{\alpha}$ to be $0$, the collection of rods must on average point along $\hat{e}'_i$, implying that $\theta'^{(\alpha)} \approx 0 \textrm{ or } \pi/2$.
+This further indicates that $\mathbf{n}$ is either along $\hat{e}_1'$ or along $\hat{e}_2'$, the eigenvectors of $\mathbf{Q}$.
 
 We now take Eq.~\ref{e:2-2DOrderRot} and write it assuming the collection of rods on average points along $\hat{e}'_1$, hence $\mathbf{n} = \hat{e}_1'$.
 This yields:
 \begin{equation}
-  \mathbf{V}^T \mathbf{Q} \mathbf{V} =
+  \mathbf{V} \mathbf{Q} \mathbf{V}^T =
   \begin{pmatrix}
-    \langle \cos^2 \theta^{(\alpha)}\rangle_{\alpha} - 1/2 & 0 \\
-    0 & \langle \sin^2 \theta^{(\alpha)} \rangle_{\alpha} - 1/2
+    \langle \cos^2 \theta'^{(\alpha)}\rangle_{\alpha} - 1/2 & 0 \\
+    0 & \langle \sin^2 \theta'^{(\alpha)} \rangle_{\alpha} - 1/2
   \end{pmatrix} =
   \begin{pmatrix}
     S/2 & 0 \\
     0 & -S/2
   \end{pmatrix},\label{e:2-2DOrderDiagBig}
 \end{equation}
-where $S = 2 \langle \cos^2 \theta^{(\alpha)} \rangle_{\alpha} - 1$.
+where $S = 2 \langle \cos^2 \theta'^{(\alpha)} \rangle_{\alpha} - 1$.
 From Eq.~\ref{e:2-2DOrderDiagBig}, we find that the eigenvalue associated to the eigenvector $\hat{e}_1'$ is $S/2$, while for the eigenvector $\hat{e}_2'$ the eigenvalue is $-S/2$.
 Since we specified that the rods prefer to align along $\hat{e}_1'$, we see that $\mathbf{n}$ is the eigenvector that corresponds to the largest eigenvalue of $\mathbf{Q}$.
 S is often called the scalar order parameter and denotes how well-aligned the system is~\cite{RN33}.
 For example, if every rod was aligned along $\hat{e}_1'$ such that $\mathbf{u}^{(\alpha)} = \hat{e}'_1$, $S = 1$.
 Similarly, if we again check the isotropic limit of a random collection of rods, we see that $S = 0$, as desired.
-Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in Figure~\ref{f:2-NematicSym}(A), and $0 < S\big($Figure~\ref{f:2-NematicSym}(B)$\big) < S\big($Figure~\ref{f:2-NematicSym}(C)$\big) < 1$.
-Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the director corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that the eigenvalue itself gives $S$, the scalar order parameter~\cite{RN33,RN175}.
+Returning to Figure~\ref{f:2-NematicSym}, we see that $S=0$ in Figure~\ref{f:2-NematicSym}(A), and that $0 < S\big[$Figure~\ref{f:2-NematicSym}(B)$\big] < S\big[$Figure~\ref{f:2-NematicSym}(C)$\big] < 1$.
+Thus, $\mathbf{Q}$ serves as the tensor order parameter for a collection of rods, where the director corresponds to the eigenvector associated with the largest eigenvalue of $\mathbf{Q}$, and that eigenvalue gives $S$, the scalar order parameter~\cite{RN33,RN175}.
 
-In terms of the director, we can now write the diagonalized $\mathbf{Q}$ in 2D as:
+In terms of the director, we can now write $\mathbf{Q}$ in 2D as:
 \begin{equation}
-  \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{2}\mathbb{1} \right ),\label{e:2-2DOrderDiag}
+  \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{2}\mathbb{1} \right ).\label{e:2-2DOrderDiag}
 \end{equation}
-where $\theta^{(\alpha)} = \arccos (\mathbf{u}^{(\alpha)} \cdot \mathbf{n})$.
 Generalizing to 3D, we have a similar expression for a collection of rods~\cite{RN33}:
 \begin{equation}
   \mathbf{Q} =  \left \langle \mathbf{u}^{(\alpha)} \otimes \mathbf{u}^{(\alpha)} - \frac{1}{3} \mathbb{1} \right \rangle_{\alpha},\label{e:2-3DOrderRaw}
 \end{equation}
-that when diagonalized becomes:
+that can be written in terms of the director as:
 \begin{equation}
   \mathbf{Q} = S \left ( \mathbf{n} \otimes \mathbf{n} - \frac{1}{3}\mathbb{1} \right ),\label{e:2-3DOrderDiag}
 \end{equation}
-where in 3D $S = \frac{1}{2} \big \langle 3 \cos^2 \theta^{(\alpha)}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta^{(\alpha)}) \big \rangle_{\alpha} $,
-where again $\theta^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the Legendre Polynomial of order 2~\cite{RN33,RN175}.
+with $S = \frac{1}{2} \big \langle 3 \cos^2 \theta'^{(\alpha)}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta'^{(\alpha)}) \big \rangle_{\alpha} $,
+where again $\theta'^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the Legendre Polynomial of order 2~\cite{RN33,RN175}.
 As in two dimensions, we take the eigenvector associated with the largest eigenvalue to be $\mathbf{n}$.
 Thus, for a collection of rods, we can determine the phase and, if applicable, $\mathbf{n}$ by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
 
 
 \subsection{Defects in a nematic}\label{c:2-defects}
-While we briefly mentioned the dimensionality of defects and their associated classifications schemes in Section~\ref{c:1}, here we take a deeper look and use homotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
-As mentioned in Chapter~\ref{c:1}, defects in ordered media are defined generally as regions where, locally, the characteristic order of the phase is not satisfied.
+While we briefly mentioned the dimensionality of defects and their associated classification schemes in Section~\ref{c:1}, here we take a deeper look and use homotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
+As mentioned in Chapter~\ref{c:1}, defects in ordered media are defined generally as regions where the characteristic order of the phase is not satisfied.
 In a nematic phase, defects are locations where $\mathbf{n}$ is undefined.
-For a nematic in 3D, these locations can be $0$-dimensional ($0$D) point defects, $1$-dimensional ($1$D) line defects, or $2$D wall defects, while for a nematic in 2D, these locations can only be 0D point defects or 1D line defects.
-General examples of defects with different dimensionality  in 3D and 2D are drawn schematically in Figure~\ref{f:2-GenDef}.
-Note that when a 3D defects structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall defects and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D.
-For example, a wall in 3D is similar to line in 2D and a line in 3D is similar to a point in 2D, as highlighted by the arrows in Figure~\ref{f:2-GenDef}.
+For a nematic in 3D, these locations can be $0$-dimensional ($0$D) (point defects), $1$-dimensional ($1$D) (line defects), or $2$D (wall defects).
+General examples of defects with different dimensionality in 3D and 2D are drawn schematically in Figure~\ref{f:2-GenDef}.
+Note that when a 3D defects structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D.
+For example, a wall in 3D is similar to a line in 2D and a line in 3D is similar to a point in 2D, as highlighted by the arrows in Figure~\ref{f:2-GenDef}.
 
 However, while it is appealing to equate similar-looking structures in 2D and 3D, the additional possible director orientations in a 3D nematic mean that a 3D nematic is fundamentally different than a 2D nematic.
 To characterize these differences as well as classify the defects themselves we turn to the homotopy theory of defects.
 For clarity, we refer to Table~\ref{t:2-GroupTheory} for definitions of some useful concepts from group theory.\\
-
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_GenDef.png}
@@ -142,18 +143,19 @@ For clarity, we refer to Table~\ref{t:2-GroupTheory} for definitions of some use
 
 Consider a 2D set of vectors such that their orientations can be described by a single angle.
 We can map these vector orientations onto an \emph{order parameter space} given by the 1-sphere, $\mathbb{S}^1$, the unit circle in the plane, such that $\mathbb{S}^1$ describes all the possible orientations of the vectors.
-If instead we consider a nematic where $\mathbf{n} = -\mathbf{n}$, $\mathbb{S}^1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not the interval $[0,2 \pi)$.
+If instead we consider a nematic where $\mathbf{n} = -\mathbf{n}$, $\mathbb{S}^1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not on the interval $[0,2 \pi)$.
 Instead, for 2D nematics the order parameter space is $\mathbb{R}\mathbb{P}^1$, the real projective plane in 1D, which corresponds to $\mathbb{S}^1$ with antipodal points identified~\cite{RN196,RN153,RN236}.
-This means that specifying the director along a contour in real space will determine a mapping of the contour in real space to a contour in order parameter space.
-More importantly, specifying the director along a closed contour in real space will result in a closed contour in order parameter space, provided the contour doesn't pass through any points where $\mathbf{n}$ is undefined.
+This means that specifying the director along a contour in real space will determine a mapping to the order parameter space.
 
 For example, consider both the purple contour and the red contour in the real space director schematic in Figure~\ref{f:2-2DMeas}(A) and their associated mappings to $\mathbb{R}\mathbb{P}^1$ in the schematic in Figure~\ref{f:2-2DMeas}(B).
-Both contours are closed, regardless of the space we consider.
+Both contours are closed.
 However, we see in Figure~\ref{f:2-2DMeas}(A) that the red contour encloses a singularity while the purple contour does not.
-Similarly, we see that in the order parameter space in Figure~\ref{f:2-2DMeas}(B), the purple contour can be continuously deformed to a point in $\mathbb{R}\mathbb{P}^1$ while the red contour cannot, as the red contour wraps the entirety of $\mathbb{R}\mathbb{P}^1$.
-Thus, the presence of a singularity in the area bounded by the red contour in real space results in a nonzero winding number in the red contour in the order parameter space.
+Similarly, we see that in the order parameter space in Figure~\ref{f:2-2DMeas}(B), the purple contour does not span $\mathbb{RP}^1$ and thus can be continuously deformed to a point in $\mathbb{R}\mathbb{P}^1$.
+In contrast, the red contour spans $\mathbb{RP}^1$ and cannot be shrunken continuously to a point.
+Thus, the presence of a singularity in the area bounded by the red contour in real space results in a nonzero winding number in the associated contour in the order parameter space.
 
-In fact, it is easy to see that a mapping of the director along the blue contour in Figure~\ref{f:2-2DMeas}(C) will result in a contour in $\mathbb{R}\mathbb{P}^1$ that goes in opposite direction of the red contour in  Figure~\ref{f:2-2DMeas}(B), and that a mapping of the director to $\mathbb{R}\mathbb{P}^1$ along the green contour in Figure~\ref{f:2-2DMeas}(D) will result in a contour that wraps $\mathbb{R}\mathbb{P}^1$ twice in the same direction as the red contour.
+In fact, it is easy to see that a mapping of the director along the blue contour in Figure~\ref{f:2-2DMeas}(C) will result in a contour in $\mathbb{R}\mathbb{P}^1$ that spans $\mathbb{RP}^1$ and goes in opposite direction to the red contour in  Figure~\ref{f:2-2DMeas}(B).
+A mapping of the director to $\mathbb{R}\mathbb{P}^1$ along the green contour in Figure~\ref{f:2-2DMeas}(D) will result in a contour that wraps $\mathbb{R}\mathbb{P}^1$ twice in the same direction as the red contour.
 Explicitly, we see that the defect structures in Figure~\ref{f:2-2DMeas}(A,C,D) all have different winding numbers in $\mathbb{R}\mathbb{P}^1$, and thus cannot be mapped onto each other with continuous deformations.
 In the language of homotopy theory, we say that any two contours that can be continuously deformed into each other (i.e., via a homeomorphism) are homotopic~\cite{RN196}.
 More generally, any contour in $\mathbb{R}\mathbb{P}^1$ with winding number $k$ is homotopic to any other contour in $\mathbb{R}\mathbb{P}^1$ with winding number $k$, and only to contours with winding number $k$~\cite{RN196,RN153,RN236}.
@@ -161,21 +163,20 @@ For example, note that as a single point in $\mathbb{R}\mathbb{P}^1$ corresponds
 Thus, contours with the same winding number form a homotopy class, where we can now start to think about categorizing the different homotopy classes of defects using a group structure.
 
 While we could form the group using the winding numbers in $\mathbb{R}\mathbb{P}^1$ themselves, it is more common to use the winding number about $\mathbb{S}^1$ such that the winding number is equivalent to measuring the amount of director rotation around a contour in real space~\cite{RN23,RN153,RN203}.
-Reproducing Eq.~\ref{eq:1-topCharge} from Chapter~\ref{c:1} for a director field parametrized by the angle $\phi(\mathbf{r})$, we characterize the defects with their ``charge'', $s$~\cite{RN153,RN236}:
+Reproducing Eq.~\ref{eq:1-topCharge} from Chapter~\ref{c:1} for a director field parametrized by the angle $\phi(\mathbf{r})$, we characterize the defects with their winding number, $s$~\cite{RN153,RN236}:
 \begin{equation}
   s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{r} \cdot \nabla\phi(\mathbf{r}),\label{eq:2-topCharge}
 \end{equation}
-where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.
-Since we have already established that the defects in a 2D nematic have integer winding numbers in $\mathbb{R}\mathbb{P}^1$, we see that $s \in \frac{1}{2} \mathbb{Z}$, giving us a discrete set of elements.
+where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.\fxnote{ask alberto about his note "wrt the area to the left!"}
+Since we have already established that the defects in a 2D nematic have integer winding numbers in $\mathbb{R}\mathbb{P}^1$, we see that $s = n/2$, with $n \in \mathbb{Z}$, giving us a discrete set of elements.
 In addition, we know that winding numbers are additive~\cite{RN196}, such that combining the effect of multiple defects is commutative and associative.
-The additivity can be seen in Figure~\ref{f:2-2DMeas}(C,D), where a contour surrounding two $s = +1/2$ defects in Figure~\ref{f:2-2DMeas}(D) has the same winding number in $\mathbb{R}\mathbb{P}^1$ as the contour encircling the single $s = +1$ defect in Figure~\ref{f:2-2DMeas}(C).
-Similarly, the additivity of defects also means that the inverse of a defect with winding number $+k$ is a defect with winding number $-k$.
-For example, combining and $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
+The additivity can be seen in Figure~\ref{f:2-2DMeas}(E), where a contour surrounding two $s = +1/2$ defects has the same winding number in $\mathbb{R}\mathbb{P}^1$ as the contour encircling the single $s = +1$ defect in Figure~\ref{f:2-2DMeas}(D).
+Similarly, the additivity of defects also means that the (additive) inverse of a defect with winding number $+k$ is a defect with winding number $-k$.
+For example, combining an $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
 Finally, we note that the homogeneous state acts as the identity element for for the set of defects as $k + 0 = k$.
-Since we have satisfied the four axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
-Thus, we can characterize the homotopy classes of defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1)$, the first \emph{fundamental group} of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
-Hence, the quantity $s$ is a topological quantity, such that ``charge'' is often referred to as ``topological charge.'' \\
-
+Since we have satisfied the axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
+Thus, we can characterize the homotopy classes of point defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1) = \mathbb{Z}/2$, the first \emph{fundamental group} of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
+Hence, the quantity $s$ is a topological quantity often referred to as ``topological charge.''
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_2DMeas.png}
@@ -191,7 +192,7 @@ Hence, the quantity $s$ is a topological quantity, such that ``charge'' is often
   In $\mathbb{R}\mathbb{P}^1$, the contour would have the same direction as the red contour in (B), but would cover $\mathbb{R}\mathbb{P}^1$ twice and $\mathbb{S}^1$ once.
   (E), two $s = +1/2$ defects (red dots) placed near to each other such that the green contour encircling both defects sees the same winding in order parameter space as the green contour in (D)
   Thus, far from the defects, we cannot distinguish between structures resulting from a single $s = +1$ defect and two $s = +1/2$ defects, reflecting the additivity of topological charge in 2D.}\label{f:2-2DMeas}
-\end{figure}
+\end{figure}\fxnote{split (B) into 2 diagrams. draw the contours ON the space}
 
 This approach is not limited to 2D.
 In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the fundamental group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$~\cite{RN236}.
@@ -213,17 +214,17 @@ Immediately, we see that the order parameter space is no longer $\mathbb{R}\math
 Another way to visualize $\mathbb{R}\mathbb{P}^2$ is as a hemisphere where only the base has antipodal points identified.
 We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}^2)$, the first fundamental group of $\mathbb{R}\mathbb{P}^2$.
 
-Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the half-integer winding number of the associated contour in $\mathbb{S}^1$.
-However, we note that in $\mathbb{R}\mathbb{P}^2$, we can only have defects with $s \in \{0,1/2\}$, as any contour on $\mathbb{R}\mathbb{P}^2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}^2$ since ``you cannot lasso a sphere''~\cite{RN153}.
+Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the half-integer winding number of the associated contour in $\mathbb{S}^2$.\fxnote{check this and be careful.  come back to the paragraph after thinking about it and rereading}
+However, we note that in $\mathbb{R}\mathbb{P}^2$, we can only have defects with $s =0,1/2$, as any contour on $\mathbb{R}\mathbb{P}^2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}^2$ since ``you cannot lasso a sphere''~\cite{RN153}.
 More explicitly, any contour on  $\mathbb{R}\mathbb{P}^2$ with integer $s$ must start and end at the same point, and thus it can be ``slid'' to one side of the sphere and deformed to a point on $\mathbb{R}\mathbb{P}^2$.
-Thus, the only stable contours in $\mathbb{R}\mathbb{P}^2$ are those that start and end at antipodal points.
+Thus, the only stable contours in $\mathbb{R}\mathbb{P}^2$ are those that start and end at antipodal points, wrapping $\mathbb{R}\mathbb{P}^2$ exactly once.\fxnote{need a figure. BALLS}
 This also means that contours starting and ending at the same point on $\mathbb{R}\mathbb{P}^2$ can be freely added and subtracted from a contour starting and ending at antipodal points on $\mathbb{R}\mathbb{P}^2$; thus, all contours starting and ending at antipodal points on $\mathbb{R}\mathbb{P}^2$ are homotopic.
-Explicitly, this means that contours with $s = -1/2$ are homotopic to contours with $s = 1/2$ such that $\mathbb{R}\mathbb{P}^2$ has only one nontrivial element, resulting in $s \in \{ 0,1/2\}$~\cite{RN153}.
+Explicitly, this means that contours with $s = -1/2$ are homotopic to contours with $s = 1/2$ such that $\pi_1(\mathbb{R}\mathbb{P}^2)$ has only one nontrivial element, resulting in $s \in \{ 0,1/2\}$~\cite{RN153}.
 As with walls in 3D and lines in 2D, this does not mean that $s = +1$ structures in 3D are impossible to create, it only means that they are not topologically stable structures and thus can only be stabilized by energetics.
 Similarly, since an $s = -1/2$ line and an $s = +1/2$ line are homotopic, preferentially generating one structure over the other is a matter of tuning the free energy of each structure.\\
 
 We lastly consider point defects in 3D characterized by the second fundamental group of $\mathbb{R}\mathbb{P}^2$, $\pi_{2}(\mathbb{R}\mathbb{P}^2)$.
-Now, instead of mapping 1D contours on $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^1$ as we did with the first fundamental group, we consider 2D coverings of $\mathbb{R}\mathbb{P}^2$ mapped onto $\mathbb{S}^2$~\cite{RN196,RN153,RN236}.
+Now, instead of mapping 1D contours on $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^1$ as we did with the first fundamental group, we consider 2D coverings of $\mathbb{R}\mathbb{P}^2$ mapped onto $\mathbb{S}^2$~\cite{RN196,RN153,RN236}.\fxnote{check this again.}
 In real space, we restate Eq.~\ref{e:1-HedgehogCharge} and calculate the topological ``hedgehog charge'' of a defect as~\cite{RN153}:
 \begin{equation}
   q = \frac{1}{4 \pi} \oint_{\partial V} \textrm{d} \theta \, \textrm{d} \phi \, \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:2-hedCharge}
@@ -236,14 +237,13 @@ Hedgehog charge is additive such that calculating $q$ for a volume containing on
 Thus, $\pi_{2}(\mathbb{R}\mathbb{P}^2) = (\mathbb{Z}, +)$, the Abelian group consisting of the integers under addition.
 
 It is important to note that there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit 2-sphere.
-For example, consider projecting a hemisphere onto the Earth's globe.
+For example, consider projecting a hemisphere onto the Earth's globe.\fxnote{this is a bad example.}
 One way to accomplish this projection would be to assign the vectors to point from the south pole to the north pole; however, we could just as easily assign the vectors to point in the opposite direction from the north pole to the south pole.
 This ambiguity means that any structure in isolation can only be determined up to $|q|$ as the chosen projection direction will determine the sign~\cite{RN153}.
 Thus, while topological character is determined by homotopy theory, the sign of charge can only be determined relative to a \emph{basepoint} defining the projection from $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^2$~\cite{RN153}.
 For example, the defect structures drawn schematically in Figure~\ref{f:2-3DMeas}(A,B) cannot be distinguished \emph{a priori} in order parameter space.
 However, if we choose a basepoint such that the structure in Figure~\ref{f:2-3DMeas}(A) has $q = +1$, evaluating the structure in Figure~\ref{f:2-3DMeas}(B) under the same basepoint will yield $q = -1$.
-We will keep this basepoint for the remainder of the Thesis.\\
-
+We will keep this basepoint for the remainder of the Thesis.
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_3DMeas.png}
@@ -258,30 +258,30 @@ We will keep this basepoint for the remainder of the Thesis.\\
 
 Similar to how additivity means that a volume enclosing a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$, the point defect structures in Figure~\ref{f:2-3DMeas}(A,B) are not the only structures with $|q| = 1$.
 In fact, ring defects, as depicted schematically in Figure~\ref{f:2-3DMeas}(C,D) are homotopic to their respective point defect counterparts in Figure~\ref{f:2-3DMeas}(A,B).
-Shrinking the ring radius of the radial ring in Figure~\ref{f:2-3DMeas}(C) yields the radial hedgehog like the one shown in Figure~\ref{f:2-3DMeas}(A) and shrinking the ring radius in the hyperbolic ring in Figure~\ref{f:2-3DMeas}(D) yields a hyperbolic hedgehog like the one shown in Figure~\ref{f:2-3DMeas}(B).
+Shrinking the ring radius of the radial ring in Figure~\ref{f:2-3DMeas}(C) yields the radial hedgehog shown in Figure~\ref{f:2-3DMeas}(A) and shrinking the ring radius in the hyperbolic ring in Figure~\ref{f:2-3DMeas}(D) yields a hyperbolic hedgehog like the one shown in Figure~\ref{f:2-3DMeas}(B).
 A ring defect can be thought of as a line defect in 3D [see Figure~\ref{f:2-GenDef}] that is bent into a circle.
 Hence, if we were to draw a closed 1D contour that passed through the ring and ``linked'' with the ring defect, we would find that radial rings with $q = +1$ are formed with $s = +1/2$ lines and hyperbolic rings with $q = -1$ are formed with $s = -1/2$ lines.
 
 Finally, we briefly want to touch on the use of the term ``charge'' to characterize defects in NLC.\@
 The choice of this term is no accident and reflects an analogy with electric charges.
 This analogy is born out not only in the additivity of both defect charges and electric charges, but also in their pairwise interactions~\cite{RN33,RN175,RN207}.
-Recall from Eq.~\ref{e:1-TopTheoryofDefects} that the free energy of a nematic configuration with defects on a surface has the exact form of the free energy of a multicomponent plasma, where the defects act like the charges in the plasma.
+Recall from Eq.~\ref{e:1-TopTheoryofDefects} that the free energy of a nematic configuration with defects on a surface has the exact form of the free energy of a plasma, where the defects act like the charges in the plasma.
 Defects in 2D and 3D with like-signed charge repel and defects with opposite-signed charge attract and even annihilate.
 
 
 
 
 \section{Frank-Oseen free energy}
-Since the constituent particles, or mesogens, in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned domain with $\mathbf{n}$ a constant everywhere.
+Since the constituent particles, or mesogens, in a nematic material prefer to align along the $\mathbf{n}$, the ideal state for a nematic phase is a homogeneously-aligned state with $\mathbf{n}$ a constant everywhere.
 Distortions from this uniform state cost energy.
-Since in most experiments the director distortions occur over much larger length scales than the length of the mesogens --- $|\nabla \mathbf{n}| a \ll 1$, where $a$ is the mesogen length --- we can forget about the behavior of the individual mesogens and instead use a continuum model for the free energy density that depends on $\mathbf{n}$ only.
-Here, we follow the work of F.C. Frank~\cite{RN61} and expand about the undistorted director state in powers of $\nabla \mathbf{n}$.
+Since in most experiments the director distortions occur over much larger length scales than the length of the mesogens --- $|\nabla \mathbf{n}| a \ll 1$, where $a$ is the mesogen length --- we can bypass the behavior of individual mesogens and instead use a continuum model for the free energy density that depends on $\mathbf{n}$ only.
+Here, we follow the work of F.C. Frank~\cite{RN61} and expand about the undistorted director state in powers of $|\nabla \mathbf{n}|$.
 This is a phenomenological approach similar to Hooke's elasticity theory of a solid~\cite{RN175,RN178}; however, instead of focusing on restoring stresses that oppose strains, we look for restoring torques that oppose curvature-strains in the director field.
-This is again a reflection that there is no restriction to the center-of-mass positions of the mesogens, the nematic elasticity only opposes deformations in the orientations of the mesogens.
+This is again a reflection that there is no restriction to the center-of-mass positions of the mesogens; the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
-Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$.
-If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point and $x_i \ll 1$, we can locally expand $n_i$ as:
+Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
+If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point and consider situations where $x_i \ll 1$, we can locally expand $n_i$ as:
 \begin{align}
   n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
       &= a_1 x_1 + a_2 x_2 + a_3 x_3 + + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordA}  \\
@@ -294,8 +294,8 @@ Now expanding about the undistorted state, we can write the free energy density 
   f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j,\label{e:2-FrankGeneralExpansion}
 \end{equation}
 where $i,j = \{ 1,2 \dots, 6 \}$, giving us 42 possible terms.
-However, any free energy must respect the symmetry of the nematic, hence it must be invariant under exchange of $i$ and $j$, invariant under inversion of $\mathbf{n} \rightarrow -\mathbf{n}$, invariant under arbitrary rotations about $\mathbf{n}$, and invariant with respect to the handedness of the coordinate system~\cite{RN61}.
-Under these conditions, all of the 6 $K_i$ vanish and of the 36 $K_{ij}$, 26 vanish and only 4 are independent, giving the coefficient matrix:
+However, any free energy must respect the symmetry of the nematic phase and be invariant under exchange of $i$ and $j$, invariant under inversion of $\mathbf{n} \rightarrow -\mathbf{n}$, invariant under arbitrary rotations about $\mathbf{n}$, and invariant with respect to the handedness of the coordinate system~\cite{RN61}.
+Under these conditions, all of the 6 $K_i$ terms vanish and of the 36 terms in $K_{ij}$, 26 vanish and only 4 are independent, giving the coefficient matrix:
 \begin{equation}
   K_{ij} =
   \begin{pmatrix}
@@ -305,9 +305,9 @@ Under these conditions, all of the 6 $K_i$ vanish and of the 36 $K_{ij}$, 26 van
     0 & K_{24} & 0 & K_{22} & 0 & 0 \\
     (K_{11}-K_{22}-K_{24}) & 0 & 0 & 0 & K_{11} & 0 \\
     0 & 0 & 0 & 0 & 0 & K_{33} \\
-  \end{pmatrix}.
+  \end{pmatrix}.\label{e:2-Kijreduced}
 \end{equation}
-Collecting terms, we are left with the expression:
+Substituting Eq.~\ref{e:2-Kijreduced} into Eq.~\ref{e:2-FrankGeneralExpansion} and collecting terms, we are left with the expression:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (a_1 + a_5)^2 + \frac{1}{2}&K_{22} (a_2 - a_4)^2 + \frac{1}{2}K_{33} (a_3^2 + a_6^2) \nonumber \\
     &- (K_{22} + K_{24}) (a_1 a_5 - a_2 a_4).\label{e:2-FrankLocalExpansion}
@@ -319,7 +319,7 @@ If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoord
   b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3},\label{e:2-PhysicalDistortionsC}
 \end{align}
 where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion.
-These distortions in the local frame are easily visualized, as seen for the splay, twist, and bend distortions depicted schematically in Figure~\ref{f:2-FrankDist}(A--C), respectively.
+These distortions in the local frame are easily visualized, as seen in Figure~\ref{f:2-FrankDist}(A--C), respectively.
 Now if we use Eqs.~\ref{e:2-PhysicalDistortionsA}--\ref{e:2-PhysicalDistortionsC} to re-write Eq.~\ref{e:2-FrankLocalExpansion}, we have:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (s_1 + s_2)^2 + \frac{1}{2}&K_{22} (t_1 + t_2)^2 + \frac{1}{2}K_{33} (b_1^2 + b_2^2) \nonumber \\
@@ -335,8 +335,11 @@ Now if we use Eqs.~\ref{e:2-PhysicalDistortionsA}--\ref{e:2-PhysicalDistortionsC
 \end{figure}
 Hence, we see that each term in the free energy density comes from a different distortion, such that the elastic constants $K_{ij}$ hold the relative importance of each distortion for a given material.
 For example, consider a NLC with $K_{11} \gg K_{33} = K_{22} = K_{24}$; under confinement or strain, this material will prefer to bend and twist instead of splay.
-This gives the Frank-Oseen free energy incredible intuitive power as it is easy to visualize each distortion's contribution to the director field.
-Finally, we can move from the local frame and recast the $a_i$ in Eq.~\ref{e:2-FrankLocalExpansion} in terms of a single global coordinate system, arriving at the well-known expression for the Frank-Oseen Free Energy~\cite{RN61}:
+The elastic constants are named after their associated distortion, with $K_{11}$ known as the splay elastic constant, $K_{22}$ the twist elastic constant, $K_{33}$ the bend elastic constant, and $K_{24}$ the saddle-splay elastic constant.
+Note that the saddle-splay distortion is unique as it is associated with both the twist elastic constant and the saddle-splay elastic constant.
+
+The ability to associate individual distortions with their elastic constant gives the Frank-Oseen free energy incredible intuitive power; it is easy to visualize each distortion's contribution to the director field.
+Finally, we can recast the distortions in Eq.~\ref{e:2-FrankLocalExpansion} in terms of standard vector calculus operations, arriving at the well-known expression for the Frank-Oseen Free Energy~\cite{RN61}:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}K_{11} (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}&K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}K_{33} (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
     & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}).\label{e:2-FrankFinalExpansion}
