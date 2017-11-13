@@ -352,7 +352,7 @@ While Oseen's final expression for a nematic misses some of the terms in Eq.~\re
 
 \subsection{Nehring, Saupe, and second derivatives}
 We arrived at Eq.~\ref{e:2-FrankFinalExpansion} by expanding about the undistorted state to quadratic order in powers of the 1$^\textup{\rm st}$ derivatives of $\mathbf{n}$.
-Due to the symmetry of the nematic, all of the terms linear in $\nabla \mathbf{n}$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
+Due to the symmetry of the nematic, all of the terms linear in $|\nabla \mathbf{n}|$ vanished, making the quadratic terms the lowest order surviving terms in the expansion.
 However, as Nehring and Saupe pointed out, a full expansion to the lowest order should also include 2$^\textup{\rm nd}$ derivatives of $\mathbf{n}$ as they can contribute to the Frank-Oseen free energy at order $\mathcal{O}(x^2)$ as well~\cite{RN60}.
 In fact, Oseen's original free energy expression also included terms depending on 2$^\textup{\rm nd}$ derivatives of $\mathbf{n}$ that Frank neglected~\cite{RN205}.
 Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
@@ -360,17 +360,17 @@ Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
   f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
 \end{equation}
 where $a_{i,j}$ represents $\dfrac{\partial a_i}{\partial x_j}$, giving us 18 terms in the $K'_{ij}$ coefficient matrix.
-Again using the symmetries of a nematic, collecting terms, and transforming into a global coordinate system, we arrive at a new expression for the free energy:
+Again using the symmetries of a nematic, collecting terms, and rewriting the expression in terms of vector calculus manipulations, we arrive at a new expression for the free energy:
 \begin{align}
   f(\mathbf{n}) = \frac{1}{2}&(K_{11} - 2K'_{13}) (\nabla \cdot \mathbf{n})^2 + \frac{1}{2}K_{22} (\mathbf{n} \cdot \nabla \times \mathbf{n})^2 + \frac{1}{2}(K_{33} + 2K'_{13}) (\mathbf{n} \times \nabla \times \mathbf{n})^2 \nonumber \\
     & - \frac{1}{2}(K_{22} + K_{24}) \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})
       + K'_{13} \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n}),\label{e:2-NSFinalExpansion}
 \end{align}
-where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared~\cite{RN60}. \\
+where we see that the elastic constants associated with splay and bend are renormalized by $K'_{13}$, and that a new term called ``splay-bend'' associated with the distortion $\nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n})$ has appeared~\cite{RN60}. \\
 
 Since Eqs~\ref{e:2-FrankFinalExpansion} and~\ref{e:2-NSFinalExpansion} are phenomenological expressions, renormalizing the splay and bend elastic constants doesn't affect underlying physics.
-This leaves the addition of the splay-bend term as the most significant effect of considering 2$^\textup{\rm nd}$ derivatives of $\mathbf{n}$.
-The splay-bend term itself is subject to controversy as its inclusion to the free energy makes the free energy impossible to minimize~\cite{RN214,RN215,RN216}.
+This leaves the addition of the splay-bend term as the most significant effect of considering 2$^\textup{\rm nd}$ order derivatives of $\mathbf{n}$.
+The splay-bend term itself is subject to controversy as its inclusion to the free energy makes the free energy impossible to minimize~\cite{RN214,RN215,RN216}.\fxnote{go back and do this better, see notes}
 This is called the Oldano-Barbero paradox, and stems from the fact that the splay-bend terms introduces boundary conditions on the normal derivative of $\mathbf{n}$~\cite{RN216,RN220,RN219,RN221}.
 These excess boundary conditions mean that the 2$^\textup{\rm nd}$-order Euler-Lagrange equations used to minimize Eq.~\ref{e:2-NSFinalExpansion} are in general subject to more than 2 boundary conditions, leading to a free energy that is unbounded from below.
 Since the free energy diverges to minus infinity as the size of the normal derivative of $\mathbf{n}$ increases at the boundary, the Oldano-Barbero paradox leads to a discontinuity in a theory based on small deformations on $\mathbf{n}$~\cite{RN219}.
@@ -379,32 +379,32 @@ While there have been attempts to solve the paradox by introducing higher-order 
 \subsection{Insights from microscopic calculations}
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
-At the most basic level, a free energy density is constructed from the individual mesogens by integrating a pairwise potential over all possible pairs of mesogens, where the potential depends on both relative position and orientation.
-Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.
+At the most basic level, an energy density is constructed from the individual mesogens by integrating the interaction energy over all possible pairs of mesogens, where the interaction depends on both relative position and orientation.
+Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.\fxnote{why do people talk about K24<0, see lavrentovich}
 
-However, a free energy constructed upon the physical mesogens themselves is a many-body problem requiring us to know the position and orientation of each individual mesogen.
+However, an energy constructed upon the physical mesogens themselves requires us to know the position and orientation of each individual mesogen.
 Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible pairs of points in the volume~\cite{RN222}.
-This is a density functional theoretic approach~\cite{RN223} and thus yields a nonlocal free energy similar to the general expression~\cite{RN56,RN55}:
+This is a density functional theoretic approach~\cite{RN223} and thus yields an energy similar to the general expression~\cite{RN56,RN55}:
 \begin{equation}
   F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}'),
 \end{equation}
-where $\mathbf{R}$ and $\mathbf{R}'$ are positions, and $G(\mathbf{R},\mathbf{R}')$ is an interaction energy density satisfying $G(\mathbf{R},\mathbf{R}') = 0$ for $|\mathbf{R}-\mathbf{R}'| \gg 0$, reflecting the finite interaction range of the mesogens.
-However, since we are looking to derive a local expression for the free energy as a functional of director field, we must satisfy
+where $\mathbf{R}$ and $\mathbf{R}'$ are positions, and $G(\mathbf{R},\mathbf{R}')$ is an interaction energy density satisfying $G(\mathbf{R},\mathbf{R}') = 0$ for $|\mathbf{R}-\mathbf{R}'| \gg 0$, reflecting the finite interaction range between the mesogens.
+However, since we are looking to derive an expression for the free energy as a functional of director field, we must satisfy
 \begin{equation}
-  F = \int \textrm{d}\mathbf{r} \textrm{d}\mathbf{r}' \, G(\mathbf{r},\mathbf{r}')
-  = \int \textrm{d} \mathbf{r} \, g(\mathbf{r}),\label{e:2-NonlocalLocal}
+  F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
+  = \int \textrm{d} \mathbf{r} \, f(\mathbf{r}),\label{e:2-NonlocalLocal}
 \end{equation}
-where $g(\mathbf{r})$ is a local function of position, $\mathbf{r}$.
-Since there are an infinite number of possibilities to perform the nonlocal-to-local mapping $(\mathbf{R},\mathbf{R}') \rightarrow \mathbf{r}$, any elastic constants in $f(\mathbf{r})$ cannot depend on the choice of mapping~\cite{RN55}.
+where $f(\mathbf{r})$ is a function of position, $\mathbf{r}$.
+Since there are an infinite number of possibilities to perform the nonlocal-to-local mapping $(\mathbf{R},\mathbf{R}') \rightarrow \mathbf{r}$, any elastic constants in $f(\mathbf{r})$ cannot depend on the choice of mapping~\cite{RN55}.\fxnote{illustrate this better, see notes.}
 In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
 
 Thus, we must also satisfy:
 \begin{equation}
-  F[\mathbf{n}] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{r} \, g \big ( \rho(\mathbf{r},\mathbf{\omega}) \big),\label{e:2-LessInfo}
+  F[\mathbf{n}] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{r} \, f \big ( \rho(\mathbf{r},\mathbf{\omega}) \big),\label{e:2-LessInfo}
 \end{equation}
 where $\mathbf{n}$ is a function of $\mathbf{r}$.
-Since the director contains less information than the complete density function, in general there is not a unique mapping from  $\rho(\mathbf{r},\mathbf{\omega})$ to $\mathbf{n}(\mathbf{r})$~\cite{RN55}.
-To get a unique mapping, we have to restrict the possible distortions to the weakest possible modes in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
+Since the director contains less information than the complete density function, in general there is not a unique way to determine $\mathbf{n}(\mathbf{r})$ from $\rho(\mathbf{r},\mathbf{\omega})$~\cite{RN55}.
+For a distortion of wavelength $\xi$ and amplitude $\epsilon$, we can only uniquely determine $\mathbf{n}(\mathbf{r})$ if we restrict ourselves to the lowest energy distortions in the the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime. \fxnote{see notes do this better}
 These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175,RN226,RN227,RN228}.
 These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$~\cite{RN55}. \\
 
@@ -412,65 +412,66 @@ Given these conditions, microscopic calculations show that $K_{11}$, $K_{22}$, $
 However, $K'_{13} = 0$ as it cannot contribute a mapping-independent distortion that vanishes as $\xi^{-2}$~\cite{RN55,RN225}.
 The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
 Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
-Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations~\cite{RN224,RN217,RN222} have specified a $(\mathbf{r},\mathbf{r}') \rightarrow \mathbf{r}$ mapping, rendering their $K'_{13}$ values invalid.
+Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations~\cite{RN224,RN217,RN222} have specified a $(\mathbf{R},\mathbf{R}') \rightarrow \mathbf{r}$ mapping, rendering their $K'_{13}$ values invalid.
 Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
 
 With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 Microscopic calculations also show that close to a boundary, $K_{ij}$ in general become position dependent as the molecules near to the boundary now interact with whatever material is outside of the nematic volume~\cite{RN56,RN57,RN55}.
-However, this interaction limited by the range of the intermolecular potential, such that the position dependence of the $K_{ij}$ vanishes over a small boundary layer --- beyond this layer the $K_{ij}$ return to their bulk values that depend only on the specific nematic material.\\
+However, this interaction is limited by the range of the intermolecular potential, such that the position dependence of the $K_{ij}$ vanishes over a small boundary layer --- beyond this layer the $K_{ij}$ return to their bulk values, which depend only on the specific nematic material.\\
 
 
-In summary, microscopic calulations show that the free energy of a NLC is composed of terms quadratic in $\nabla \mathbf{n}$.
-Even though terms linear in $\nabla ^2 \mathbf{n}$ could in principle contribute to the free energy to the same order as terms quadratic in the 1$^\textup{\rm st}$ derivatives, microscopic calculations show that the coefficients associated with 2$^\textup{\rm nd}$-derivative distortions vanish, thus removing the problems that the 2$^\textup{\rm nd}$-derivative distortions bring.
-In addition, since the free energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free energy expressions must be greater than or equal to 0.
+In summary, microscopic calulations show that the free energy of a NLC is composed of terms quadratic in $|\nabla \mathbf{n}|$.
+Even though terms linear in $|\nabla ^2 \mathbf{n}|$ could in principle contribute to the free energy to the same order as terms quadratic in the 1$^\textup{\rm st}$ derivatives, microscopic calculations show that the coefficients associated with 2$^\textup{\rm nd}$-derivative distortions vanish, thus removing the problems that the 2$^\textup{\rm nd}$-derivative distortions bring.
+In addition, since the free energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free energy expressions must be greater than or equal to 0.\fxnote{see Lavrentovich ... moving on}
 
 
 \subsection{Saddle-splay and curvature-coupling}
 If we take a look at the terms in the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}, we can see a difference between the saddle-splay term and the splay, twist, and bend terms.
 Notice that since all the $K_{ij} \geq 0$, the energetic cost of splay, bend, and twist distortions are positive semi-definite.
 In contrast, the saddle-splay distortion can be either positive or negative.
-In addition, the saddle-splay distortion is a total differential, giving us the option of re-writing the distortion in terms of a surface integral using the divergence theorem~\cite{RN230}:
+In addition, the saddle-splay distortion is the divergence of a vector, giving us the option of re-writing the distortion in terms of a surface integral using the divergence theorem~\cite{RN230}:
 \begin{align}
   F_{24}[\mathbf{n}] &= - \frac{1}{2}\int_{V} \textup{d}^3  \mathbf{r} \bigg \{ (K_{22} + K_{24})  \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \}\label{e:2-F24GaussA}  \\ &=
   - \frac{1}{2}(K_{22} + K_{24}) \oint_{\partial V} \textup{d}^2  \mathbf{r} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},\label{e:2-F24GaussB}
 \end{align}
 where $V$ is a volume, $\partial V$ is a piecewise-smooth manifold bounding $V$, and $\mathbf{k}$ is the unit surface normal.
 
-Note that the $\mathbf{n}$ needs to be defined everywhere on $\partial V$, meaning that the manifold needs to be defect-free.
+Note that the $\mathbf{n}$ needs to be continuous and differentiable everywhere on $\partial V$, meaning that the manifold needs to be defect-free.
 However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
 Therefore, the divergence theorem can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
 In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
-In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transitions~\cite{RN212,RN213,RN33,RN188,RN182,RN183}.
+In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transition, for example~\cite{RN212,RN213,RN33,RN188,RN182,RN183}.
 In these measurements, the bulk volume is always large enough such that any contribution from the position-dependence of $K_{ij}$ near the boundaries is negligible.
 
 Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term~\cite{RN206,RN33,RN194,RN58,RN57,RN151}.
 Since any measurement of $K_{24}$ requires $\mathbf{n}$ to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
-However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like:
+However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like,
 \begin{equation}
   F_{24}[\mathbf{n}] = - \frac{1}{2}(K_{22}(\mathbf{r}) + K_{24}(\mathbf{r}))_{\mathbf{r} \rightarrow \partial V} \oint_{\partial V} \textup{d}^2  \mathbf{r} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},
 \end{equation}
-this is incorrect, as the divergence theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24GaussA} is no longer a total differential.
+this is incorrect.
+The divergence theorem cannot be used if $K_{ij}$ is position-dependent since the integrand in Eq.~\ref{e:2-F24GaussA} is no longer the divergence of a vector.
 In fact, measuring $K_{24}$ is in principle no different than measuring any of the $K_{ii}$ --- provided the volume of the bulk is much larger than the boundary layer, the influence of the position-dependence of $K_{ij}$ is negligible.
 
 To demonstrate this, we return to Eq.~\ref{e:2-F24GaussA} and insert the position-dependence:
 \begin{equation}
-  F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3 \left \{\mathbf{r} (K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \}.\label{e:2-F24GaussPosition}
+  F_{24} = -\frac{1}{2}\int_{V}\textup{d}^3\mathbf{r} \left \{ (K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})) \nabla \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \}.\label{e:2-F24GaussPosition}
 \end{equation}
-Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{r}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$ and \newline $K_*(\mathbf{r}) = K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})$ yields:
+Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{r}) = \mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}$, \newline $K_*(\mathbf{r}) = -(K_{22} (\mathbf{r}) + K_{24}(\mathbf{r})/2)$, and $\bm{\alpha}$ describing the boundary yields:
 \begin{align}
   \int_{V}\textup{d}^3\mathbf{r} \left \{ K_{*} (\mathbf{r}) \nabla \cdot \mathbf{A} \right \} &=
-  \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{ \mathbf{k} \cdot (K_{*} (\partial V) \mathbf{A}(\partial V) \right \} -  \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}  \\ &=
-  K_*(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} - \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}, \label{e:2-pos_stokes1}
+  \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{ \mathbf{k} \cdot (K_{*} (\bm{\alpha}) \mathbf{A}(\bm{\alpha}) \right \} -  \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}  \\ &=
+  K_*(\bm{\alpha}) \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\bm{\alpha})\right \} - \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}, \label{e:2-pos_stokes1}
 \end{align}
 where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary~\cite{RN55}.
 Now, we separate $K_*(\mathbf{r}) = K_* + K_*^s(\mathbf{r})$ into the bulk material constant $K_*$ and the position-dependent contribution $K_*^s(\mathbf{r})$, where $K_*^s(\mathbf{r})$ decays across a boundary layer of thickness $d_l$.
 Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
 \begin{align}
   \int_{V}\textup{d}^3\mathbf{r} \left \{ K_{*} (\mathbf{r}) \nabla \cdot \mathbf{A} \right \} &=
-  (K_*+K_*^s(\partial V)) \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} \nonumber \\&
+  (K_*+K_*^s(\bm{\alpha})) \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\bm{\alpha})\right \} \nonumber \\&
   \quad \quad - \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{r}) \right \}. \label{e:2-pos_stokes2}
 \end{align}
-If we now expand $\mathbf{A}(\mathbf{r})$ and $\nabla K_*^s(\mathbf{r})$ over the boundary layer with $\mathbf{r} = \bm{\alpha} - \zeta \mathbf{k}$, where $\bm{\alpha}$ describes the boundary and $\zeta$ the distance from the boundary, we have:
+If we now expand $\mathbf{A}(\mathbf{r})$ and $\nabla K_*^s(\mathbf{r})$ over the boundary layer with $\mathbf{r} = \bm{\alpha} - \zeta \mathbf{k}$, where $\zeta$ is the distance from the boundary, we have:
 \begin{align}
   \mathbf{A}(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{A}(\bm{\alpha}) - \zeta (\mathbf{k} \cdot \nabla \mathbf{A}(\bm{\alpha}))_{\zeta = 0} \label{e:2-expandA} \\
   \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}))_{\zeta = 0} - \zeta\, \mathbf{k}(\mathbf{k} \cdot \nabla (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k})))_{\zeta = 0}
@@ -486,22 +487,22 @@ As $K_*^s(\mathbf{r})$ decays across a boundary layer of thickness $d_l$, we can
 Thus, to leading order we can write the 2$^\textrm{\rm nd}$ term in Eq.~\ref{e:2-pos_stokes2} as
 \begin{align}
   \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{r}) \right \} & \approx
-  \int_{V} \textup{d}^3\mathbf{r} \left \{\mathbf{A}(\partial V) \cdot \mathbf{k}(\mathbf{k} \cdot \nabla K_*^s(\partial V))  + \mathcal{O}(\zeta) \right \} \\ & \approx
-  \mathbf{k} \cdot \nabla K_*^s(\partial V) \int_{V} \textup{d}^3\mathbf{r}\left \{\mathbf{A}(\partial V) \cdot \mathbf{k} + \mathcal{O}(\zeta) \right \} \\ & \approx
-  \frac{K_*^s(\partial V)}{d_l} \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{\mathbf{A}(\partial V) \cdot \mathbf{k} \int\limits_{0}^{d_l} \textup{d}\zeta \left \{ 1 + \mathcal{O}(\zeta) \right \}\right \} \\ & \approx
-  K_*^s(\partial V) \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{ \mathbf{k}  \cdot \mathbf{A}(\partial V) \right \} + \mathcal{O}(d_l^2).
+  \int_{V} \textup{d}^3\mathbf{r} \left \{\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k}(\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}))  + \mathcal{O}(\zeta) \right \} \\ & \approx
+  \mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}) \int_{V} \textup{d}^3\mathbf{r}\left \{\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k} + \mathcal{O}(\zeta) \right \} \\ & \approx
+  \frac{K_*^s(\bm{\alpha})}{d_l} \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{d_l\,\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k} \right \} \\ & \approx
+  K_*^s(\bm{\alpha}) \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{ \mathbf{k}  \cdot \mathbf{A}(\bm{\alpha}) \right \} + \mathcal{O}(d_l^2).
 \end{align}
 Substituting back into Eq.~\ref{e:2-pos_stokes2}, we have:
 \begin{equation}
   \int_{V}\textup{d}^3\mathbf{r} \left \{ K_{*} (\mathbf{r}) \nabla \cdot \mathbf{A} \right \} \approx
-  K_* \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\partial V)\right \} + \mathcal{O}(d_l^2).\label{e:2-positionF24}
+  K_* \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\bm{\alpha})\right \},\label{e:2-positionF24}
 \end{equation}
-Now that we again have a total differential, we can use the divergence theorem and write saddle-splay free energy in Eq.~\ref{e:2-positionF24} as:
+giving us the saddle-splay contribution to the free energy,
 \begin{equation}
   F_{24} \approx -\frac{1}{2}(K_{22} + K_{24})
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{\mathbf{k} \cdot (\mathbf{n} \nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \right \} + \mathcal{O}(d_l^2). \label{e:2-positionF24_surf}
 \end{equation}
-Thus, even through the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.
+Thus, even though the saddle-splay distortion must be measured in the presence of an interface, where $K_{ij}$ are position-dependent, the free energy of the saddle-splay distortion is primarily driven by the bulk value of $K_{24}$ and $K_{22}$ with corrections on the order of the square of the boundary layer thickness.
 
 The saddle-splay distortion can also serve to couple the director to the curvature of the interface.
 Consider a nematic constrained to lie in the plane of the interface.
@@ -511,22 +512,24 @@ Then, ignoring the corrections in Eq.~\ref{e:2-positionF24_surf} for simplicity,
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{\mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) \right \},\label{e:2-K24PlanDegen}
 \end{equation}
 since $\mathbf{n} \cdot \mathbf{k} = 0$. Now rearranging the integrand, we can take advantage of the fact that $\mathbf{n} \cdot \mathbf{n}=1$ and write:
-\begin{equation}
-  \mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) = -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}.\label{e:2-K24rearrange1}
-\end{equation}
+\begin{align}
+  \mathbf{k} \cdot ( \mathbf{n} \times \nabla \times \mathbf{n}) &=\mathbf{k} \cdot \mathbf{n} \cdot (\nabla \mathbf{n}) -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}  \\
+   &= -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}.\label{e:2-K24rearrange1}
+\end{align}
 
 Again taking advantage of the fact that $\mathbf{k} \cdot \mathbf{n} = 0$, we can re-write $\mathbf{n}$ in terms of an orthonormal basis defined on the surface like $\mathbf{n} = (\hat{e}_i \cdot \mathbf{n})\hat{e}_i$, where now $i = 1,2$.
 Note that our director is now in 2D as we have restricted $\mathbf{n}$ to be on the surface.
 Re-writing the right-hand side (RHS) of Eq.~\ref{e:2-K24rearrange1}, we have:
 \begin{align}
   -\mathbf{k} \cdot (\mathbf{n} \cdot \nabla)\mathbf{n}
+  &= \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} - (\mathbf{n} \cdot \nabla)(\mathbf{k} \cdot \mathbf{n}) \\
   &= \mathbf{n} \cdot (\mathbf{n} \cdot \nabla)\mathbf{k} \\
   &= n_i \hat{e}_i \cdot (n_j \hat{e}_j \cdot \nabla) \mathbf{k} \\
   &=- n_i n_j \big ( - \hat{e}_i \cdot ( \hat{e}_j \cdot \nabla) \mathbf{k} \big ) \\
   &= - n_i L_{ij} n_j \\
   &= -\mathbf{n} \cdot \mathbf{L} \cdot \mathbf{n},\label{e:2-K24rearrange2}
 \end{align}
-where $\mathbf{L}$ is the Weingarten Matrix with the components~\cite{RN23,RN35}:
+where $\mathbf{L}$ is the Weingarten Matrix whose components are~\cite{RN23,RN35}:
 \begin{equation}
   L_{ij} = - \hat{e}_i \cdot (\hat{e}_j \cdot \nabla) \mathbf{k}\label{e:2-WeingartenMatrix}
 \end{equation}
@@ -539,7 +542,7 @@ Now, choosing $\hat{e}_1$ and $\hat{e}_2$ as the principal curvature directions,
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{\kappa_1 n_1^2 + \kappa_2 n_2^2 \right \},\label{e:2-K24SurfCouple}
 \end{equation}
 where $n_1$ and $n_2$ are the components of the director along the $1^{\rm st}$ and $2^{\rm nd}$ principal curvature directions, respectively.
-Thus, for $\mathbf{n}$ at an interface constrained to lie in the plane of  the interface, the free energy of the saddle-splay distortion is minimized when $\mathbf{n}$ at the interface is aligned along most negative curvature.
+Thus, for $\mathbf{n}$ at an interface constrained to lie in the plane of the interface, the free energy of the saddle-splay distortion is minimized when $\mathbf{n}$ at the interface is aligned along the smallest curvature.
 We emphasize that this curvature-coupling does not result from interactions between the NLC mesogens at the interface and the material outside of the nematic volume --- it comes from the interactions in the nematic volume itself.
 
 
@@ -547,16 +550,16 @@ We emphasize that this curvature-coupling does not result from interactions betw
 
 \section{Landau-de Gennes free energy}
 The Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion} is not the only phenomenological free energy expression.
-In fact, if we wish to understand the nematic-isotropic phase transition, we need to write a phenomenological free energy that depends on an order parameter such as $\mathbf{Q}$.
+In fact, to understand the nematic-isotropic phase transition, we need to write a phenomenological free energy that depends on an order parameter such as $\mathbf{Q}$.
 This tensor-based approach to a free energy was developed by de Gennes in the spirit of a Landau-type theory~\cite{RN33}.
-However, the $\mathbf{Q}$-based phenomenological free energy can also be used to calculate a distortion free energy by expanding in invariants of $\nabla \mathbf{Q}$, similar to the derivation of the Frank-Oseen free energy~\cite{RN33,RN189,RN198}.
+However, this $\mathbf{Q}$-based phenomenological free energy can also be used to calculate a distortion free energy by expanding in invariants of $\nabla \mathbf{Q}$, as we did to obtain the Frank-Oseen free energy~\cite{RN33,RN189,RN198}.
 
 
 \subsection{The isotropic-nematic phase transition}
 We consider a free energy density built on an expansion in powers of $\mathbf{Q}(\mathbf{r})$.
-Crucially, the symmetry of a Landau-type free energy describing a phase transition needs to be the same as the higher-symmetry phase~\cite{RN33,RN175}.
-Thus, to describe the isotropic-nematic phase transition we need the free energy to be rotation and translation invariant --- the expansion is not just in powers of $\mathbf{Q}$, but in terms of scalar invariants of powers of $\mathbf{Q}$.
-Given that we wish to predict the phase transition, the positional dependence of $\mathbf{Q}(\mathbf{r})$ is unnecessary, so we will instead consider a mean field approximation $\langle \mathbf{Q}(\mathbf{r}) \rangle = \bm{\mathcal{Q}}$, such that we can write $\bm{\mathcal{Q}}$ in 3D without loss of generality as:
+Crucially, the symmetry of a Landau-type free energy describing a phase transition needs to be the same as the lower-symmetry phase~\cite{RN33,RN175}.
+To describe the isotropic-nematic phase transition we need the free energy to be rotation and translation invariant; we expand not just in powers of $\mathbf{Q}$, but in terms of scalar invariants of powers of $\mathbf{Q}$.
+Given that we wish to predict the phase transition, the positional dependence of $\mathbf{Q}(\mathbf{r})$ is unnecessary, so we will instead consider a mean approximation $\langle \mathbf{Q}(\mathbf{r}) \rangle = \bm{\mathcal{Q}}$, such that we can write $\bm{\mathcal{Q}}$ in 3D without loss of generality as:
 \begin{equation}
   \bm{\mathcal{Q}} =
     \begin{pmatrix}
@@ -566,11 +569,12 @@ Given that we wish to predict the phase transition, the positional dependence of
     \end{pmatrix}.
 \end{equation}
 If we consider the trace and determinant of $\bm{\mathcal{Q}}^p$, where $p \in \mathbb{N}$, we see from Table~\ref{t:2-powersQ} that invariants of powers of $\bm{\mathcal{Q}}$ can be written in terms of powers of $S$.
+Note that because $\mathbf{Q}$ is traceless, $\bm{\mathcal{Q}}$ is also traceless.
 Therefore, we can write the Landau-de Gennes free energy for the phase transition in 3D in the form~\cite{RN33,RN175}:
 \begin{equation}
   f_{phase}(\bm{\mathcal{Q}}) = f(S) = f_0 + \frac{1}{2}A S^2 + \frac{1}{3}B S^3 + \frac{1}{4}C S^4 + \mathcal{O} \left (S^5 \right ),\label{e:2-LdGTransGeneral}
 \end{equation}
-where $f_{phase}(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f_{phase}(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f_{phase}(S) = 0$.
+where $f_{phase}(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f_{phase}(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f_{phase}(S) = 0$. Since $\bm{\mathcal{Q}}$ is traceless, there is not linear dependence on $S$ in Eq.~\ref{e:2-LdGTransGeneral}.
 \begin{table}[t]
   \centering
   \caption{Scalar invariants of powers of $\bm{\mathcal{Q}}$ in 3D}
@@ -590,10 +594,10 @@ Thus, with $T$ the temperature and $T_{NI}$ the nematic-isotropic phase transiti
 \begin{equation}
   f_{phase}(S) = f_0 + \frac{1}{2}A_0(T-T_{NI}) S^2 + \frac{1}{3}B_0 S^3 + \frac{1}{4}C_0 S^4.\label{e:2-LdGTransFinal}
 \end{equation}
-We see that Eq.~\ref{e:2-LdGTransFinal} predicts a first-order phase transition provided $B_0 \neq  0$, as a nonvanishing $B_0$ means that at $T = T_{NI}$, the minima in $f_{phase}(S)$ occur at $S = 0$ and $S = -B/C$, giving a discontinuity in $S$ across the transition.
+We see that Eq.~\ref{e:2-LdGTransFinal} predicts a first-order phase transition provided $B_0 \neq  0$, as a nonvanishing $B_0$ means that at $T = T_{NI}$, the minima in $f_{phase}(S)$ occur at $S = 0$ and $S = -B_0/C_0$, giving a discontinuity in $S$ across the transition.
 Indeed, observations that state functions such as the density and $S$ are discontinuous through the nematic-isotropic transition confirm that the nematic-isotropic phase transition in 3D is first-order~\cite{RN33}. \\
 
-Briefly, if we follow the same procedure for the nematic-isotropic phase transition in 2D, we can write $\bm{\mathcal{Q}}$ as:
+If we follow the same procedure for the nematic-isotropic phase transition in 2D, we can write $\bm{\mathcal{Q}}$ as:
 \begin{equation}
   \bm{\mathcal{Q}} =
   \begin{pmatrix}
@@ -608,14 +612,16 @@ This implies that a Landau-type free energy in 2D will look like:
 \end{equation}
 Now with the absence of a term proportional to $S^3$, the phase transition is predicted to be continuous, as $S$ can vary continuously from $S=0$ in the isotropic phase to $S \neq 0$ in the nematic phase as $T$ passes through $T_{NI}$~\cite{RN33}.
 This can be seen by setting $T = T_{NI}$ and noticing that there is only one minimum in $f_{phase}(S)$, and it occurs at $S=0$.
-Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in a truly 2D geometry~\cite{RN231}.
+Note that experiments of thin films of NLC have yet to show a continuous nematic-isotropic transition; however, the films always have a macroscopic thickness such that no experiment has yet probed the nematic-isotropic phase transition in strictly 2D~\cite{RN231}.
 However, the nematic-isotropic phase transition in 2D has been explored heavily in simulations, and while the literature agree that the transition should be continuous, there is no clear consensus on the specific order of the transition~\cite{RN172}.
 
 
 \subsection{The distortion free energy}
-If we consider $\mathbf{Q}(\mathbf{r})$ instead of the mean-field approximation $\bm{\mathcal{Q}}$, we can write a distortion free energy similar to the Frank-Oseen free energy.
-Since a Landau-type free energy is an expansion of the order parameter near the phase transition, in general is is only valid near the phase transition.
-However, in NLC $S(T_{NI}) \approx 0.3 \textup{ to } 0.4$, and $S(T > T_{NI}) \approx 0.6 \textup{ to } 0.8$, making the Landau-de Gennes free energy valid ``deep'' into the nematic phase~\cite{RN198}.
+If we consider $\mathbf{Q}(\mathbf{r})$ instead of the mean approximation $\bm{\mathcal{Q}}$, we can write a distortion free energy similar to the Frank-Oseen free energy.
+Since a Landau-type free energy is an expansion in the scalar order parameter near the phase transition, in general is is only valid near the phase transition.
+However, in NLC, $S(T_{NI}) \approx 0.3 \textup{ to } 0.4$, and $S(T \ll T_{NI}) \approx 0.6 \textup{ to } 0.8$.
+Hence, we see that $S$ near $T_{NI}$ is not so different than $S$ well below $T_{NI}$, indicating that we may still use a Landau-de Gennes free energy inside the nematic phase~\cite{RN198}.
+
 There are 3 independent scalar invariants quadratic in $\nabla\mathbf{Q}$, allowing us to write the distortion free energy density as~\cite{RN189,RN198}:
 \begin{equation}
   f_d(\mathbf{Q}) = \frac{1}{2} L_1 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k}
@@ -639,35 +645,35 @@ To do this, we start by substituting the definition of $\mathbf{Q}$ from Eq.~\re
   \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{kj}}{\partial x_i} &=
     S^2 (A_1 + A_3 - A_{24}).\label{e:2-LdGRelationsQuadOrderC}
 \end{align}
-Now we can re-write Eqs.~\ref{e:2-LdGDistGeneralQuadOrder} using Eqs.~\ref{e:2-LdGRelationsQuadOrderA}--\ref{e:2-LdGRelationsQuadOrderC} and collect terms like:
+Now we can re-write Eqs.~\ref{e:2-LdGDistGeneralQuadOrder} using Eqs.~\ref{e:2-LdGRelationsQuadOrderA}--\ref{e:2-LdGRelationsQuadOrderC} and collect common terms in the $A_i$'s:
 \begin{align}
   f_d &= L_1 S^2 (A_1 + A_2 + A_3 -A_{24}) + \frac{1}{2}L_2 S^2 (A_1 + A_3) \nonumber \\
   & \quad \quad + \frac{1}{2}L_3 S^2 (A_1 + A_3 - A_{24})\label{e:2-LdGRelationsSaddleSplayDegen} \\
       &= \frac{1}{2}A_1(2 L_1 S^2 + L_2 S^2 +L_3 S^2) + \frac{1}{2}A_2(2 L_1 S^2) \nonumber \\
       & \quad \quad + \frac{1}{2}A_3(2 L_1 S^2 + L_2 S^2 +L_3 S^2) \nonumber \\
-      & \quad \quad - \frac{1}{2}A_{24}(2 L_1 S^2 + L_3 S^2),
+      & \quad \quad - \frac{1}{2}A_{24}(2 L_1 S^2 + L_3 S^2).\label{e:2-LdGCompare}
 \end{align}
-allowing us to write the relations:
+Comparing Eq.~\ref{e:2-LdGCompare} to Eq.~\ref{e:2-FrankFinalExpansion}, we find:
 \begin{align}
   K_{11} &= K_{33} = 2 L_1 S^2 + L_2 S^2 +L_3 S^2,\\
   K_{22} &= 2 L_1 S^2,\\
   K_{24} &= 2 L_1 S^2 + L_3 S^2.
 \end{align}
 Unfortunately, note that the Landau-de Gennes distortion free energy to quadratic order requires $K_{11}$ and $K_{33}$ to be equal.
-As $K_{11} \neq K_{33}$ generally, it is common to add a single higher-order invariant that contains both $\mathbf{Q}$ and $\nabla \mathbf{Q}$~\cite{RN189,RN198,RN190}.
+As $K_{11} \neq K_{33}$ generally, one way to capture this behavior is to add a single higher-order invariant that contains both $\mathbf{Q}$ and $\nabla \mathbf{Q}$~\cite{RN189,RN198,RN190}.
 While there are 6 possible invariants that could be added, the invariant
 \begin{equation}
-  Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j} = S^3 \left [\frac{2}{3}A_3 - \frac{1}{3}(A_1+A_2+A_3-A_{24}) \right ],
+  Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j} = S^3 \left [\frac{2}{3}A_3 - \frac{1}{3}(A_1+A_2+A_3-A_{24}) \right ],\label{e:2-LdGHigherOrderInvariant}
 \end{equation}
 yields the best agreement with experimental data and is thus the most commonly chosen invariant~\cite{RN189,RN198,RN190}.
-We add this invariant to Eq.~\ref{e:2-LdGDistGeneralQuadOrder} to get:
+By adding this invariant to Eq.~\ref{e:2-LdGDistGeneralQuadOrder}, we get:
 \begin{equation}
   f_d(\mathbf{Q}) = \frac{1}{2} L_1 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{ij}}{\partial x_k}
     + \frac{1}{2} L_2 \frac{\partial Q_{ij}}{\partial x_j} \frac{\partial Q_{ik}}{\partial x_k}
     + \frac{1}{2} L_3 \frac{\partial Q_{ij}}{\partial x_k} \frac{\partial Q_{kj}}{\partial x_i}
     + \frac{1}{2} L_4 Q_{ij}\frac{\partial Q_{kl}}{\partial x_i} \frac{\partial Q_{kl}}{\partial x_j},\label{e:2-LdGDistGeneralHighOrder}
 \end{equation}
-such that we can write the modified relations between the $K_{ij}$ and the $L_i$:
+such that we obtain the modified relations between the $K_{ij}$ and the $L_i$:
 \begin{align}
   K_{11} &= 2 L_1 S^2 + L_2 S^2 +L_3 S^2 - \frac{2}{3}L_4 S^3,\label{e:2-LdGFrankRelationsA} \\
   K_{22} &= 2 L_1 S^2 - \frac{2}{3}L_4 S^3, \\
@@ -681,25 +687,25 @@ The $2^{\rm nd}$ derivative terms predict that both $K_{13}$ and $K_{24}$ could 
 However, once $K_{13}$ is required to be zero, all the contributions from the $2^{\rm nd}$ derivative terms vanish.\\
 
 
-We briefly note that decoupling $S$ from the elastic constants in the Landau-de Gennes distortion free energy has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
+We briefly note that the fact the elastic constants in the Landau-de Gennes distortion free energy do not depend on $S$ has practical applications beyond making predictions about the temperature dependence of the Frank-Oseen elastic constants.
 Since $\mathbf{n}$ is undefined at a defect, simulating a director field that contains defects requires one to exclude every defect using a cutoff length in order to keep the free energy from diverging.
 In addition, it is not trivial to represent a director field using vectors as differences in orientation are degenerate on $\pi$ for a director field and degenerate on $2\pi$ for vectors.
-In contrast, $\mathbf{Q}$ is a rank-2 tensor such that there is no ambiguity in representing the state of the nematic orientation at any given point.
+In contrast, $\mathbf{Q}$ does not depend on whether it is constructed with $\mathbf{n}$ or $-\mathbf{n}$; there is no ambiguity in representing the state of the nematic orientation at any given point.
 In addition, since $\mathbf{Q}$ contains $S$, $\mathbf{Q}$ can go to 0 at a defect such that no part of the simulation volume needs to be excluded.
 This makes the Landau-de Gennes distortion free energy the preferred method for numerical simulations of nematic materials~\cite{RN190}.
-It is worth noting that a majority of the simulation works ignore the role of $K_{24}$ when making a mapping of $L_i$ to the Frank-Oseen elastic constants.
+It is worth noting that the majority of the simulation works ignore the role of $K_{24}$ when making a mapping of $L_i$ to the Frank-Oseen elastic constants.
 Thus, since $L_2$ and $L_3$ differ only by the saddle-splay distortion [see Eq.~\ref{e:2-LdGRelationsSaddleSplayDegen}], $L_3$ is typically folded into $L_2$ and the Landau-de Gennes free energy is written only in terms of $L_1$, $L_2$, and $L_4$~\cite{RN198,RN190}.
 However, due to its simplicity and the fact that the $K_{ij}$ are associated with distinct distortions that are easily visualized, the Frank-Oseen free energy is typically used in analytic theory.\\
 
 
 \subsection{The scaling of the Frank elastic constants}
-From the relations in Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, we see that to leading order the Frank-Oseen elastic constants scale with $S^2$; the $S^3$ scaling comes entirely from the single higher-order term.
+From the relations in Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, we see that to leading order the Frank-Oseen elastic constants scale with $S^2$; the $S^3$ scaling comes entirely from the single higher-order term [see Eq.~\ref{e:2-LdGHigherOrderInvariant}].
 Since $S$ is a monotomic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
-However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S(T > T_{NI}) \approx S(T_{NI})$, the temperature scaling predicted by the Landau-de Gennes free energy can still be used throughout the nematic phase~\cite{RN198}.
+However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S(T < T_{NI}) \approx S(T_{NI})$, the temperature scaling predicted by the Landau-de Gennes free energy can still be used throughout the nematic phase~\cite{RN198}.
 
 In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsC} to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range~\cite{RN198}.
-Since all the $K_{ii}$ generally have the same scaling with $S$, it is common to treat their ratio as temperature-independent.
-Practically this means that the equilibrium director configuration in a sample is also temperature-independent, even if the actual magnitude of the Frank-Oseen free energy does vary with temperature.
+Since all the $K_{ii}$ generally have, to leading order, the same scaling with $S$, their ratio is temperature-independent.
+This implies that the equilibrium director configuration is also temperature-independent, even if both the actual magnitude of the Frank-Oseen free energy and the director fluctuations about the mean vary with temperature.
 
 
 
@@ -709,14 +715,14 @@ Practically this means that the equilibrium director configuration in a sample i
 Successfully confining nematic materials is more than simply forcing the nematic into an arbitrary volume, we also have to specify the boundary conditions.
 For example, confining a NLC to a spherical volume where the material is free to take any orientation on the boundary is uninteresting as the director field can remain homogeneous, as if the sphere did not exist.
 However, if we enforce homeotropic boundary conditions such that the director must be everywhere perpendicular to the surface, then we see that there must be a defect in the volume, as seen schematically by the red dot in the radial configuration~\cite{RN177} depicted in Figure~\ref{f:2-DropSchem}(A).
-In addition, according to Eq.~\ref{e:2-hedCharge}, we see that the sum of all the defects in a spherical volume must have $|q_{net}| = 1$.
+Since in this situation the director at the boundary of the sphere will cover $\mathbb{S}^2$ exactly once, from Eq.~\ref{e:2-hedCharge}, we see that the sum of all the defects in such a spherical volume must have $|q_{net}| = 1$.
 Similarly, if we instead enforce degenerate planar boundary conditions such that the director must everywhere lie parallel to the surface, the Poincar\'e-Hopf Theorem requires a total topological charge of $s = +2$ on the surface.
-One way to satisfy this condition is with a bipolar configuration where 2 $s = +1$ defects place themselves at opposite poles of the sphere~\cite{RN177}, as seen schematically by the blue dots in Figure~\ref{f:2-DropSchem}(B).
+One way to satisfy this condition is with a bipolar configuration where two $s = +1$ defects place themselves at opposite poles of the sphere~\cite{RN177}, as seen schematically by the blue dots in Figure~\ref{f:2-DropSchem}(B).
 
 Formally, if $\mathbf{k}$ is the boundary normal, homeotropic anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 1$ and degenerate planar anchoring has $|\mathbf{k} \cdot \mathbf{n}| = 0$, where $\mathbf{n}$ is the director at the boundary.
 These are not the only two options; we can also have degenerate tilt boundary conditions, where $0< |\mathbf{k} \cdot \mathbf{n}| < 1$, with a tilt angle given by $\theta = \arccos |\mathbf{k} \cdot \mathbf{n}| $.
 Note that planar anchoring does not have to be degenerate.
-The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{k} \times \mathbf{n} = \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector.
+The direction in the plane of the boundary can be specified as well, breaking the degeneracy such that $\mathbf{n} \parallel \bm{\sigma}$, where $\bm{\sigma}$ is a unit vector and $\mathbf{k} \cdot \bm{\sigma} = 0$.
 Homeotropic anchoring, degenerate planar anchoring, and planar anchoring are illustrated schematically for a flat substrate in Figure~\ref{f:2-Anchor}(A-C), respectively.
 
 \begin{figure}
@@ -741,32 +747,30 @@ Homeotropic anchoring, degenerate planar anchoring, and planar anchoring are ill
 
 In an experiment, confinement takes place with either solid boundaries, such as glass cells and capillaries, or fluid boundaries such as in emulsions of a nematic material dispersed in an outer immiscible liquid phase.
 It is also possible to confine a nematic using both solid boundaries and fluid boundaries, as with a droplet of NLC sitting on a solid base.
-In such a sessile drop, the solid boundary provides a flat base for the NLC;\@ however, the remainder of the confinement is provided by the free surface, where the NLC is contact with air.
+In such a sessile drop, the solid boundary provides a flat base for the NLC;\@ however, the remainder of the confinement is provided by the free surface, where the NLC is in contact with air.
 In general, a NLC in contact with an arbitrary boundary will be subject to degenerate tilt boundary conditions.
 Thus, for experiments that require a specific boundary condition we must treat the interface.\\
 
-In order to discuss specific strategies for enforcing anchoring, we must first narrow down the compounds we are dealing with.
+In order to discuss specific strategies for enforcing anchoring, we must first narrow down the compounds that might be used.
 NLC can be divided into two broad categories, thermotropics and lyotropics~\cite{RN33}.
-Thermotropic phases are determined only by their temperature.
-If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will crystallize.
-Lyotropic phases are sensitive to concentration as well as temperature.
-They are generally composed of a solid dispersed in a solvent such that the suspended solid is free to flow and orient as it chooses.
+In thermotropic LC's, temperature is an important control parameter.
+If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will phase transition to a less symmetric LC phase or to a crystalline phase.
+Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as to temperature.\fxnote{unreadable Alberto comment}
 
 In this Thesis, we will primarily use 4-cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
-5CB belongs to the cyanobiphenyl family of NLC.
-The cyanobiphynyls are thermotropic materials characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
-In the case of 5CB, we can write the chemical formula as: (CN)(C$_6$H$_4$)(C$_6$H$_4$)(C$_5$H$_{11}$).
+5CB belongs to the cyanobiphenyl family of NLC, which are characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
+In the case of 5CB, the chemical formula is: (CN)(C$_6$H$_4$)(C$_6$H$_4$)(C$_5$H$_{11}$).
 Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
-Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply for any $p$CB, with $p$ the number of Carbon atoms in the alkyl group.
+Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply to any $p$CB.
 
 To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, it is common to either deposit surfactant molecules or bond silanes to the surface.
 In both cases, the smooth surface becomes decorated with long chains that stick up normal to the surface.
-These nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface~\cite{RN33}, as seen schematically in Figure~\ref{f:2-Anchor}(A).
+The nematic mesogens at the surface are aligned by the chains, enforcing homeotropic anchoring at the surface~\cite{RN33}, as seen schematically in Figure~\ref{f:2-Anchor}(A).
 For example, to enforce homeotropic anchoring for 5CB on glass, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
 When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass~\cite{RN140}.
 
 Similarly, it is common to enforce homeotropic anchoring in solution again using surfactants.
-Here, for an oily NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface~\cite{RN150,RN235}.
+Here, for an organic NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface~\cite{RN150,RN235}.
 For example, we use sodium dodecyl sulfate (SDS) in water to enforce homeotropic anchoring in 5CB emulsions and liquid bridges.
 While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring~\cite{RN235}.
 At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength~\cite{RN234}.
@@ -776,38 +780,39 @@ While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring
 Thus, surface is often coated with a polymer such that the polymer orientations on the surface are random.
 Since the polymers have no preferred alignment in the plane of the surface, the mesogens are free to choose their own director in the plane, as seen schematically in Figure~\ref{f:2-Anchor}(B).
 
-For example, spin-coating poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB.
-If a preferred anchoring direction in the plane is desired, the polymer coating can be rubbed in the desired direction, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
+For example, electrospinning poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB~\fxnote{reference}.
+If a preferred anchoring direction in the plane, $\bm{\sigma}$, is desired, the polymer coating can be rubbed along $\bm{\sigma}$, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
 The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring~\cite{RN33,}.
 Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle~\cite{RN232}.
 Thus, when designing planar-aligned liquid crystalline cells, where the NLC is confined between two parallel plates with planar anchoring, the rubbing direction on the plates will be anti-parallel.
 The anti-parallel rubbing aligns the tilt angles at the plates such that the NLC can still form a homogeneously-aligned domain between the plates~\cite{RN232}. \\
 
-For dispersions of oily NLC such as 5CB in a continuous aqueous phase, we add a polymer like PEO or PVA to the aqueous phase~\cite{RN105,RN93}.
+For dispersions of organic NLC droplets such as 5CB in a continuous aqueous phase, we add a polymer like PEO or PVA to the aqueous phase~\cite{RN105,RN93}.
 The polymer adsorbs to the interface between the NLC and the continuous phase, giving degenerate planar anchoring.
 We know of no easy way to break the planar degeneracy in the anchoring when dealing with a liquid-liquid interface.
-In addition, we note that even though 5CB exhibits degenerate planar anchoring at the interface with pure water, the addition of a polymer strengthens the anchoring as well as acting to stabilize the emulsion when 5CB is dispersed in H$_2$O~\cite{RN105,RN93}.\\
+In addition, we note that even though 5CB exhibits degenerate planar anchoring at the interface with pure water, the addition of a polymer strengthens the anchoring as well as acting to stabilize the emulsion when 5CB droplets are dispersed in H$_2$O~\cite{RN105,RN93}.\\
 
 
 
 
 \subsection{Birefringence and optically polarized microscopy}
 Once the nematic is confined in the desired volume with the desired boundary conditions, the most common way to study the sample is with optical polarized microscopy.
-This technique takes advantage of the birefringence of the NLC to determine the director in the sample.
+This technique takes advantage of the birefringence of the NLC to determine\fxnote{why is this circled?} the director in the sample.
 For a uniaxial nematic, the index of refraction along $\mathbf{n}$ is known as the ``extraordinary index of refraction'', denoted $n_E$, and the index of refraction perpendicular to $\mathbf{n}$ is called the ``ordinary index of refraction'', denoted as $n_o$.
-Since the index of refraction along $\mathbf{n}$ is $n_E$, the director also serves as the optic axis of uniaxial nematic~\cite{RN232}.
-The birefringence is characterized by $\Delta n = n_E-n_o$, the difference in the indices of refraction in the material~\cite{RN232}.
+Since the index of refraction along $\mathbf{n}$ is $n_E$, the director also serves as the optic axis of uniaxial nematics~\cite{RN232}.
+The birefringence is defined as $\Delta n = n_E-n_o$~\cite{RN232}.
 If $n_E > n_o$, $\Delta n > 0$ and the material has positive birefringence.
 Conversely, if $\Delta n < 0$, the material has negative birefringence.
-Thus, the index of refraction affecting a light ray incident upon a birefringent material will depend on the polarization of the light ray relative to $\mathbf{n}$~\cite{RN232}.
+Thus, the index of refraction affecting the incident light on a birefringent material will depend on the polarization of the light relative to $\mathbf{n}$~\cite{RN232}.
 
-While unpolarized light will be unaffected by the birefringent material, in general any ray of polarized light will have its polarization state affected by the light ray.
+While unpolarized light will be unaffected by the birefringent material, in general polarized light will have its polarization state affected.
 Consider linearly polarized light incident upon a birefringent material with $n_E$ along $\hat{x}$ and $n_o$ along $\hat{y}$.
-If the incident light is polarized along $\hat{x}$ or $\hat{y}$, the light ray will encounter only either the extraordinary index of refraction of the ordinary index of refraction and will leave the birefringent volume with no change in its polarization state.
-However, now let the incident light be linearly polarized at $45^o$ such that the incident ray can be decomposed into one component along $\hat{x}$ and another along $\hat{y}$.
-Since each component will see a different index of refraction, they will propagate at different speeds, creating a phase difference between the two components of the incident ray.
+If the incident light is polarized along $\hat{x}$ or $\hat{y}$, it will encounter only either the extraordinary index of refraction or the ordinary index of refraction and will leave the birefringent volume with no change in its polarization state.
+However, now let the incident light be linearly polarized at $45^o$.
+In this case, the incident light can be decomposed into one component along $\hat{x}$ and another component along $\hat{y}$.
+Since each component will see a different index of refraction, they will propagate at different speeds, creating a phase difference between the two components of the incident light.
 
-This phase difference is known as the retardation and is given in multiples of $2 \pi$ by $\Gamma = 2 \pi \Delta n \, d / \lambda$, where $d$ is the thickness of the birefringent material, and $\lambda$ is the wavelength of the incident light~\cite{RN232}.
+This phase difference is known as the retardation and is given in multiples of $2 \pi$ by $\Gamma = 2 \pi \Delta n \, d / \lambda$, where $d$ is the thickness of the birefringent material, and $\lambda$ is the wavelength of the incident light in vacuum~\cite{RN232}.
 For our example of incident light linearly polarized at $45^o$, let $\Delta n \, d = \lambda / 2$ such that $\Gamma =  \pi$.
 The light after leaving the sample will now be polarized at $-45^o$, and the birefringent material has the properties of a half-waveplate~\cite{RN232}.
 Similarly, if $\Delta n \, d = \lambda$, $\Gamma =  2 \pi$, the birefringent material is a full-waveplate and the output light will be unchanged~\cite{RN232}.\\
@@ -828,25 +833,26 @@ Similarly, if $\Delta n \, d = \lambda$, $\Gamma =  2 \pi$, the birefringent mat
   (D--F), schematic and texture for a radial drop.
   The textures in (E,F) have the polarizer and analyzer directions specified on the images, with the drops oriented as depicted in (D).
   Note how the texture only change orientations with the polarizer and analyzer orientation but does not change character.}\label{f:2-OPMDrops}
-\end{figure}
+\end{figure}\fxnote{fix the ordering}
 
 Optical polarized microscopy (OPM) takes advantage of birefringence and turns the change in polarization into changes in transmitted intensity.
-The typical setup adds a pair of linear polarizers into the light path of a standard wide-field optical microscope.
+The typical setup uses a pair of linear polarizers into the light path of a standard wide-field optical microscope.
 A linear polarizer is an optical element that only passes light polarized along a specific axis known as the ``pass axis''~\cite{RN232}.
 Thus, unpolarized light incident upon a linear polarizer will have its intensity reduced by half and the output light will be linearly polarized along the pass axis of the polarizer.
 Illustrating the light path for optical polarized microscopy, the incident light passes through the first linear polarizer, known as the ``polarizer'', through the sample, through the objective, and through the second linear polarizer, known as the ``analyzer'', before it is incident on the eyepiece or the camera used to capture the microscope image~\cite{RN232}.
 The light path is illustrated schematically in Figure~\ref{f:2-OPMSchem}.
 If the polarizer and analyzer are ``crossed,'' or oriented with their pass axes orthogonal to each other, any isotropic sample will be entirely dark.
-This is because the sample does not affect the polarization of the light such that the linearly polarized light from the polarizer cannot pass through the analyzer.
-However, if the sample is birefringent, the polarization state of the incident light is changed and some of the light will pass through the analyzer and be transmitted onto the eyepiece or camera.
+This is because the sample does not affect the polarization state of the incident light such that the linearly polarized light from the polarizer is blocked by the analyzer.
+However, if the sample is birefringent, the polarization state of the incident light will change and some of the light will pass through the analyzer and be transmitted onto the eyepiece or camera.
 This is illustrated in the schematic in Figure~\ref{f:2-OPMSchem}.
 
 The intensity pattern in the image output from an OPM setup can then be used to deduce information about the sample.
 While for our purposes we typically care about the spatial variation of the optic axis, and thus the spatial variation in $\mathbf{n}$, OPM can also be used to determine the birefringence of the sample~\cite{RN232}.
 For example, we consider 5CB confined to spherical nematic droplets.
 Under homeotropic anchoring the droplet will have the classic ``radial'' director field [see Figure~\ref{f:2-OPMDrops}(A)] while under degenerate planar anchoring the droplet will have the classic ``bipolar'' configuration [see Figure~\ref{f:2-OPMDrops}(D)]~\cite{RN177}.
-These configurations can be distinguished by their OPM textures, as seen in Figure~\ref{f:2-OPMDrops}(B,C) for a bipolar drop and Figure~\ref{f:2-OPMDrops}(E,F) for a radial drop.
-Note how the light and dark portions of the bipolar texture change from Figure~\ref{f:2-OPMDrops}(B) to Figure~\ref{f:2-OPMDrops}(C) as the polarizer and analyzer change orientation, while the radial texture only rotates with the polarizer and analyzer but does not change in the frame of the polarizer and analyzer, as seen in Figure~\ref{f:2-OPMDrops}(E,F).
+These configurations can be distinguished by their OPM textures, as seen in Figure~\ref{f:2-OPMDrops}(B,C) for a radial drop and Figure~\ref{f:2-OPMDrops}(E,F) for a bipolar drop.
+Note how the light and dark portions of the bipolar texture change from Figure~\ref{f:2-OPMDrops}(E) to Figure~\ref{f:2-OPMDrops}(F) as the polarizer and analyzer change orientation, while still crossed.
+The radial texture only rotates with the polarizer and analyzer but does not change in the frame of the polarizer and analyzer; see Figure~\ref{f:2-OPMDrops}(B,C).
 
 \begin{table}[t]
   \centering
@@ -855,12 +861,11 @@ Note how the light and dark portions of the bipolar texture change from Figure~\
 \hline
 {\bf set}:& A collection of objects.\\ \\
 {\bf group}:& \begin{minipage}[t]{0.65\textwidth}
-A set, $\Sigma$, and a rule, $\cdot$, that combines two elements in the set $a$, $b$ to form a third element $c$ like $a \cdot b=c$. A group, $G = (\Sigma, \cdot)$, must satisfy the following four axioms:
+A set, $\Sigma$, and a group operation, $\cdot$, that combines two elements in the set to form a third element in the set satisfying:
     \begin{itemize}
-      \item[]{\bf closure}: $\forall \; a, b \in G$, $a \cdot b \in G$.
-      \item[]{\bf associativity}: $\forall \; a,b,c \in G$, $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
-      \item[]{\bf identity}: $\exists \; e \in G$ such that $a\cdot e=a \; \forall \; a \in G$.
-      \item[]{\bf invertability}: $\forall \; a \in G$, $\exists \; a^{-1} \in G$ such that $a a^{-1} = a^{-1} a = e$, with $e$ the identity.
+      \item[]{\bf associativity}: $\forall \; a,b,c \in \Sigma$, $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+      \item[]{\bf identity}: $\exists \; e \in \Sigma$ such that $a\cdot e=e \cdot a = a \; \forall \; a \in G$.
+      \item[]{\bf invertability}: $\forall \; a \in \Sigma$, $\exists \; a^{-1} \in \Sigma$ such that $a a^{-1} = a^{-1} a = e$, with $e$ the identity.
     \end{itemize}
     Note that if $a \cdot b = b \cdot a \; \forall \; a,b \in G$, the group is Abelian.
 \end{minipage}\\ \\
@@ -876,4 +881,4 @@ A mapping between the discrete groups $G$ and $H$. This mapping is carried out b
 \hline
 \end{tabular}
 \label{t:2-GroupTheory}
-\end{table}
+\end{table}\fxnote{not at all done}
