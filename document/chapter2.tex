@@ -167,7 +167,7 @@ Reproducing Eq.~\ref{eq:1-topCharge} from Chapter~\ref{c:1} for a director field
 \begin{equation}
   s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{r} \cdot \nabla\phi(\mathbf{r}),\label{eq:2-topCharge}
 \end{equation}
-where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary.\fxnote{ask alberto about his note "wrt the area to the left!"}
+where $\partial A$ is the boundary of some area $A$ containing the defect and the integral is performed along the boundary keeping A to the left.
 Since we have already established that the defects in a 2D nematic have integer winding numbers in $\mathbb{R}\mathbb{P}^1$, we see that $s = n/2$, with $n \in \mathbb{Z}$, giving us a discrete set of elements.
 In addition, we know that winding numbers are additive~\cite{RN196}, such that combining the effect of multiple defects is commutative and associative.
 The additivity can be seen in Figure~\ref{f:2-2DMeas}(E), where a contour surrounding two $s = +1/2$ defects has the same winding number in $\mathbb{R}\mathbb{P}^1$ as the contour encircling the single $s = +1$ defect in Figure~\ref{f:2-2DMeas}(D).
@@ -175,7 +175,7 @@ Similarly, the additivity of defects also means that the (additive) inverse of a
 For example, combining an $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
 Finally, we note that the homogeneous state acts as the identity element for for the set of defects as $k + 0 = k$.
 Since we have satisfied the axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
-Thus, we can characterize the homotopy classes of point defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1) = \mathbb{Z}/2$, the first \emph{fundamental group} of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
+Thus, we can characterize the homotopy classes of point defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1) = \mathbb{Z}/2$, the first \emph{homotopy group}, also known as the \emph{fundamental group}, of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
 Hence, the quantity $s$ is a topological quantity often referred to as ``topological charge.''
 \begin{figure}[h]
   \centering
@@ -195,7 +195,7 @@ Hence, the quantity $s$ is a topological quantity often referred to as ``topolog
 \end{figure}\fxnote{split (B) into 2 diagrams. draw the contours ON the space}
 
 This approach is not limited to 2D.
-In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the fundamental group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$~\cite{RN236}.
+In fact, for a general order parameter space $\mathbb{P}$ with dimension $t'$ and a defect with dimension $t$, the codimension $d = t'-t$ defines the order of the homotopy group needed to characterize the defects in $\mathbb{P}$, $\pi_{d}(\mathbb{P})$~\cite{RN236}.
 We note that for $d=0$, there are no topological defects in nematic materials as any defect structure with $d=0$ is homotopic to a nonsingular distortion~\cite{RN196}. For example, consider the singular line defect in 2D depicted in Figure~\ref{f:2-Smearing}(A).
 Here, the order parameter space is $\mathbb{R}\mathbb{P}^1$, giving $t' = 1$, and the defect is a line with $t = 1$, such that $d = 0$.
 This structure can be continuously deformed to remove the singularity, yielding the nonsingular structure in Figure~\ref{f:2-Smearing}(B).
@@ -212,9 +212,9 @@ This does not mean that lines in 2D or walls in 3D cannot exist, merely that the
 Now, we consider a nematic in 3D.
 Immediately, we see that the order parameter space is no longer $\mathbb{R}\mathbb{P}^1$, but instead is $\mathbb{R}\mathbb{P}^2$, the unit 2-sphere $\mathbb{S}^2$ with antipodal points identified, as we now need 2 angles to characterize all the possible orientations of $\mathbf{n}$~\cite{RN196,RN153,RN236}.
 Another way to visualize $\mathbb{R}\mathbb{P}^2$ is as a hemisphere where only the base has antipodal points identified.
-We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}^2)$, the first fundamental group of $\mathbb{R}\mathbb{P}^2$.
+We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}^2)$, the fundamental group of $\mathbb{R}\mathbb{P}^2$.
 
-Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the half-integer winding number of the associated contour in $\mathbb{S}^2$.\fxnote{check this and be careful.  come back to the paragraph after thinking about it and rereading}
+Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the winding number.
 However, we note that in $\mathbb{R}\mathbb{P}^2$, we can only have defects with $s =0,1/2$, as any contour on $\mathbb{R}\mathbb{P}^2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}^2$ since ``you cannot lasso a sphere''~\cite{RN153}.
 More explicitly, any contour on  $\mathbb{R}\mathbb{P}^2$ with integer $s$ must start and end at the same point, and thus it can be ``slid'' to one side of the sphere and deformed to a point on $\mathbb{R}\mathbb{P}^2$.
 Thus, the only stable contours in $\mathbb{R}\mathbb{P}^2$ are those that start and end at antipodal points, wrapping $\mathbb{R}\mathbb{P}^2$ exactly once.\fxnote{need a figure. BALLS}
@@ -223,8 +223,8 @@ Explicitly, this means that contours with $s = -1/2$ are homotopic to contours w
 As with walls in 3D and lines in 2D, this does not mean that $s = +1$ structures in 3D are impossible to create, it only means that they are not topologically stable structures and thus can only be stabilized by energetics.
 Similarly, since an $s = -1/2$ line and an $s = +1/2$ line are homotopic, preferentially generating one structure over the other is a matter of tuning the free energy of each structure.\\
 
-We lastly consider point defects in 3D characterized by the second fundamental group of $\mathbb{R}\mathbb{P}^2$, $\pi_{2}(\mathbb{R}\mathbb{P}^2)$.
-Now, instead of mapping 1D contours on $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^1$ as we did with the first fundamental group, we consider 2D coverings of $\mathbb{R}\mathbb{P}^2$ mapped onto $\mathbb{S}^2$~\cite{RN196,RN153,RN236}.\fxnote{check this again.}
+We lastly consider point defects in 3D characterized by the second homotopy group of $\mathbb{R}\mathbb{P}^2$, $\pi_{2}(\mathbb{R}\mathbb{P}^2)$.
+Now, instead of mapping 1D closed contours in real space to $\mathbb{R}\mathbb{P}^1$ and $\mathbb{R}\mathbb{P}^2$ as we did with the fundamental group, we map a topologically spherical surface enclosing the defect to $\mathbb{R}\mathbb{P}^2$~\cite{RN196,RN153,RN236}.
 In real space, we restate Eq.~\ref{e:1-HedgehogCharge} and calculate the topological ``hedgehog charge'' of a defect as~\cite{RN153}:
 \begin{equation}
   q = \frac{1}{4 \pi} \oint_{\partial V} \textrm{d} \theta \, \textrm{d} \phi \, \mathbf{n} \cdot \left [ \partial_{\theta} \mathbf{n} \times \partial_{\phi} \mathbf{n} \right ],\label{e:2-hedCharge}
@@ -236,10 +236,8 @@ Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a topologicall
 Hedgehog charge is additive such that calculating $q$ for a volume containing only a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$.
 Thus, $\pi_{2}(\mathbb{R}\mathbb{P}^2) = (\mathbb{Z}, +)$, the Abelian group consisting of the integers under addition.
 
-It is important to note that there are 2 possible ways to project the apolar nematic orientation to the polar orientations on the unit 2-sphere.
-For example, consider projecting a hemisphere onto the Earth's globe.\fxnote{this is a bad example.}
-One way to accomplish this projection would be to assign the vectors to point from the south pole to the north pole; however, we could just as easily assign the vectors to point in the opposite direction from the north pole to the south pole.
-This ambiguity means that any structure in isolation can only be determined up to $|q|$ as the chosen projection direction will determine the sign~\cite{RN153}.
+It is important to note that there are 2 possible ways to turn a given director field into a vector field; either we take the vectors as $\mathbf{n}$ or as -$\mathbf{n}$.
+Since we measure the hedgehog charge by considering how $\mathbf{n}$ on a surface homeomorphic to $\mathbb{S}^2$ covers $\mathbf{RP}^2$, this ambiguity means that any defect in isolation can only be determined up to $|q|$~\cite{RN153}.
 Thus, while topological character is determined by homotopy theory, the sign of charge can only be determined relative to a \emph{basepoint} defining the projection from $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^2$~\cite{RN153}.
 For example, the defect structures drawn schematically in Figure~\ref{f:2-3DMeas}(A,B) cannot be distinguished \emph{a priori} in order parameter space.
 However, if we choose a basepoint such that the structure in Figure~\ref{f:2-3DMeas}(A) has $q = +1$, evaluating the structure in Figure~\ref{f:2-3DMeas}(B) under the same basepoint will yield $q = -1$.
