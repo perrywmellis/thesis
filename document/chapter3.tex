@@ -1,16 +1,22 @@
 %!TEX root = thesis.tex
 \chapter{Active nematics on the surface of a torus}\label{c:3}
 \section{Introduction}
-Active materials are composed of constituent particles that each can convert stored internal energy or ambient energy to kinetic energy, thus driving the material out of equilibrium~\cite{RN237,RN238,RN40}.
-Since energy is constantly entering the system from the motion of the individual particles, the energy of the system is generally no longer a state function.
-Thus, the system is athermal and cannot be understood within the framework of equilibrium statistical mechanics.
-However, the constituent particles in active materials are still in motion.
-This is in contrast to passive athermal materials like jammed or granular systems, where the individual particles are static.
-As a consequence of this motion, active materials exhibit emergent phenomena such as flocking transitions in groups of starlings~\cite{RN239,RN240}, elasticity in colonies of fire-ants~\cite{RN242}, superfluid-like behavior of bacterial suspensions~\cite{RN270,RN271}, and crystallization in self-propelled colloidal particles~\cite{RN168,RN38}.
-Within the current theoretical framework of ``active matter,'' this motion and thus the emergent phenomenology is typically governed by a single control parameter, the strength of the activity~\cite{RN237,RN238,RN40}.
-This means that active materials can be composed of individual units of any size, provided the activity is strong enough.
-In fact, the previous examples span 6 orders of magnitude in size, from the starlings at $\mathcal{O}(10^{-1})$ m to the colloidal particles at $\mathcal{O}(10^{-7})$ m, with their respective behavior all understood within the same framework of ``active matter.''
-However, despite the fact that the strength of the activity typically governs the system-wide behavior, there is still no general \emph{a priori} understanding of how activity will couple to a given system.
+Active materials are composed of constituent particles that each can convert stored internal energy, or ambient energy, into work.
+As a result, they are intrinsically out of equilibrium~\cite{RN237,RN238,RN40}.
+Due to being out of equilibrium, the system is athermal and cannot be understood within the framework of equilibrium statistical mechanics.
+However, the constituent particles in active materials are still in motion, similar to the particles in thermal systems.
+This is in contrast to passive athermal materials like jammed or granular systems, where individual particles are static.
+As a consequence, active materials can exhibit a wide range of emergent phenomena.
+Examples include flocking transitions, observed in groups of starlings~\cite{RN239,RN240}; elastic behavior, observed in colonies of fire-ants~\cite{RN242}; and ``superfluid-like'' behavior, observed in bacterial suspensions~\cite{RN270,RN271}.
+% ; and crystallization at low volume fraction, observed in self-propelled colloidal particles~\cite{RN168,RN38}.
+Within the current theoretical framework of ``active matter,'' the emergent phenomenology is typically governed by a single control parameter called the ``activity''~\cite{RN237,RN238,RN40}.
+For example, in the starlings and bacterial suspensions, the activity is described by the speed of an individual particle; the flocking and superfluid-like behavior only exists for nonzero speed and thus activity.
+When this speed is zero, both the starlings and the bacteria become passive athermal materials.
+Activity is in general defined differently for different systems, with the only requirement being that the passive state corresponds to zero activity.
+
+Note that active materials can be composed of individual units of any size, provided the activity is strong enough.
+In fact, the previous examples span 4 orders of magnitude in size, from the starlings at $\mathcal{O}(10^{-1})$ m to the bacteria at $\mathcal{O}(10^{-5})$ m, with their respective behavior all understood within the same framework of ``active matter.''
+However, despite the fact that the strength of the activity typically governs the system-wide behavior, there is still no general \emph{a priori} understanding of how adding activity to a passive system will affect the properties and behavior of the system.
 Here, we consider how activity affects the interplay between nematic order, geometry, and topology.
 \begin{figure}
   \centering
@@ -18,18 +24,25 @@ Here, we consider how activity affects the interplay between nematic order, geom
   \caption{Interactions in extensile and contractile nematics.
   (A,C), Two-particle interaction for extensile (A) and contractile (C) mesogens.
   The arrows represent time.
-  (B,D), The interactions in (A,C) applied to a collection of particles in (B,D), respectively.
+  (B,D), Active stress exerted on a small area by the surroundings ($\bm{\sigma}$) and on the surroundings by the small area ($\bm{\sigma}'$) for (B) extensile and (D) contractile interactions.
   The homogeneous state is unstable to distortions, with (B) extensile nematics unstable to bend and (D) contractile nematics unstable to splay.
   The instability leads to the formation of an $s = + 1/2$ and $s = -1/2$ defect pair, indicated by ${\color{red} \bullet}$,${\color{blue} \bullet}$, respectively.}\label{f:3-ActiveInteraction}
 \end{figure}
 
-Much like equilibrium nematics, the individual mesogens of active nematic materials are anisotropic and thus the material possesses a nematic phase; however, the addition of activity to nematic order modifies the interaction between the mesogens.
+Much like equilibrium nematics, the individual mesogens of active nematic materials are anisotropic and thus form a nematic phase; however, the addition of activity to nematic order modifies the interaction between the mesogens.
 With the exception of bacteria introduced into lyotropic liquid crystals~\cite{RN86}, to date the majority of experimental and theoretical work on active nematics has taken place in 2D.
 Thus, we will highlight the effect of activity on a nematic in 2D.
 Consider a pair of active rod-like particles in 2D.
-If the active nematic is ``extensile,'' the rods slide past each other, as illustrated in Figure~\ref{f:3-ActiveInteraction}(A); however, if the active nematic is ``contractile,'' the activity drives the rods to slide towards each other, as illustrated in Figure~\ref{f:3-ActiveInteraction}(C).
+If the active nematic is ``extensile,'' when the two rods touch they will slide past each other and then separate, as illustrated in Figure~\ref{f:3-ActiveInteraction}(A); however, if the active nematic is ``contractile,'' when two rods touch they will slide towards each other and then separate, as illustrated in Figure~\ref{f:3-ActiveInteraction}(C).
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_ActiveDefectGen.png}
+  \caption{Activity generates defect pairs.
+  An (A) extensile and (B) contractile active nematic evolving over time.
+  In both cases a $s = \pm 1/2$ defect pair is generated, with the defects indicated by (${\color{red} \bullet}$), and (${\color{blue} \bullet}$), respectively.}\label{f:3-ActiveDefectGen}
+\end{figure}
 
-We can also think about the effect of these interactions at the continuum level; considering the forces acting on a small area of the nematic and enforcing conservation of momentum, we arrive at the Cauchy momentum equation:
+We can also think about the effect of these interactions at the continuum level; considering the forces from the surrounding material acting on a small area of the nematic and enforcing conservation of momentum, we arrive at the Cauchy momentum equation:
 \begin{equation}
   \rho \frac{\textrm{D} v_i}{\textrm{D}t } = \nabla \cdot \bm{\tau},\label{e:3-Cauchy}
 \end{equation}
@@ -39,26 +52,45 @@ We can rewrite $\nabla \cdot \bm{\tau}$ in Eq.~\ref{e:3-Cauchy} for incompressib
   \rho \frac{\textrm{D} \mathbf{v}}{\textrm{D}t } = \eta \nabla^2 \mathbf{v} - \nabla p + \nabla \cdot \bm{\sigma}^{elastic} + \nabla \cdot \bm{\sigma}^{active}.\label{e:3-NavierStokes}
 \end{equation}
 
-Since the active forces act along the director, we can write $\bm{\sigma}^{active} = \alpha \mathbf{Q}$, describing contractile ($\alpha > 0$) and extensile ($\alpha < 0$) stresses along the director~\cite{RN11}, where $\mathbf{Q}$ is the 2D nematic tensor order parameter defined in Eq.~\ref{e:2-2DOrderDiag}.
-Evaluating $\nabla \cdot \bm{\sigma}^{active}$,
+Since the active forces act along the director, we can write $\bm{\sigma}^{active} = \alpha \mathbf{Q}$, where $\mathbf{Q}$ is the 2D nematic tensor order parameter defined in Eq.~\ref{e:2-2DOrderDiag}.
+If $\mathbf{n} \parallel \hat{e}_1$, with $\{\hat{e}_1,\hat{e}_2 \}$ the standard orthonormal basis, then the active stress becomes
+\begin{equation}
+  \bm{\sigma}^{active} = \alpha S
+  \begin{pmatrix}
+    -1/2 & 0 \\ 0 & 1/2
+  \end{pmatrix}.
+\end{equation}
+Then, if $\alpha < 0$, $\sigma_{11}^{active} = - |\alpha|S/2 < |\alpha|S/2 = \sigma_{22}^{active}$, as illustrated by the black arrows in Figure~\ref{f:3-ActiveInteraction}(B).
+Similarly, if  $\alpha > 0$, $\sigma_{22}^{active} = - |\alpha|S/2 < |\alpha|S/2 = \sigma_{11}^{active}$ [black arrows, Figure~\ref{f:3-ActiveInteraction}(D)].
+However, these stresses represent the active stresses of the surrounding material on the area of interest; the active stress due to the area of interest, $\bm{\sigma}'^{active}$, will have the opposite sign.
+This is illustrated by the red arrows in Figure~\ref{f:3-ActiveInteraction}(B,D), and thus we see that extensile interactions have $\alpha < 0$ while contractile interactions have $\alpha > 0$~\cite{RN11}.
+
+To see the rammificaitons of the activity, we evaluate $\nabla \cdot \bm{\sigma}^{active}$,
 \begin{align}
   \partial_j \sigma^{active}_{ij} &= \alpha \partial_j \big(S(n_in_j - \delta{ij}/2)\big)\label{e:3-ActiveInstabilityA} \\
   &= \alpha(\partial_j S)(n_in_j - \delta{ij}/2) + \alpha S \big((\partial_j n_i)n_j + n_i(\partial_j n_j) \big) \\
-  &= \alpha (\nabla S)(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big((\mathbf{n} \cdot \nabla)\mathbf{n} + \mathbf{n}(\nabla \cdot \mathbf{n}) \big) \\
-  &=  \alpha (\nabla S)(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big(\mathbf{n}(\nabla \cdot \mathbf{n}) - (\mathbf{n} \times \nabla \times \mathbf{n}  \big),\label{e:3-ActiveInstabilityD}
+  \nabla \cdot \bm{\sigma}^{active} &= \alpha (\nabla S)^T(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big((\mathbf{n} \cdot \nabla)\mathbf{n} + \mathbf{n}(\nabla \cdot \mathbf{n}) \big) \\
+  &=  \alpha (\nabla S)^T(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big(\mathbf{n}(\nabla \cdot \mathbf{n}) - \mathbf{n} \times \nabla \times \mathbf{n}  \big).\label{e:3-ActiveInstabilityD}
 \end{align}
-we see that the active stress is coupled to the splay and bend distortions.
-Contractile activity with $\alpha > 0$ reinforces splay distortions and suppresses bend distortions, while extensile activity with $\alpha < 0$ reinforces bend distortions and suppresses splay distortions.
-Thus, extensile active nematics are unstable to bend distortions while contractile active nematics are unstable to splay distortions~\cite{RN171,RN170,RN11}.
-This instability is illustrated in for an extensile and contractile active nematic in Figure~\ref{f:3-ActiveInteraction}(B,D), respectively, where the instability in both cases eventually results in the nucleation of an $s=\pm 1/2$ defect pair.
+The second term in Eq.~\ref{e:3-ActiveInstabilityD} relates the force denisty due to the activity to splay and bend distortions in the nematic.
+First, consider $\alpha S \mathbf{n}(\nabla \cdot \mathbf{n})$.
+The force is always along the director, with the magnitude of the force proportional to the divergence.
+Note that the term is symmetric, so regardless of computing the term with $\mathbf{n}$ or $-\mathbf{n}$, the direction of the force is the same; for $\alpha > 0$, the diverging structure will act like a ``source'' and the force will amplify the splay, while for $\alpha < 0$ the diverging structure will act like a ``sink'' and active force will reduce the splay.
+Second, consider $- \alpha S \mathbf{n} \times \nabla \times \mathbf{n}$. Here, the force will be perpendicular to $\mathbf{n}$ and thus work to either amplify or suppress bend distortions.
+In addition, the magnitude of the force is proportional to the magnitude of the bend distortion.
+Since the term is symmetric, $\alpha < 0$ will always cause the force to amplify a bend distortion, while $\alpha > 0$ will cause the active force to suppress a bend distortion.
 
-While low activity or strong spatial confinement can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN9,RN247,RN7}, the steady-state of an active nematic is often turbulent~\cite{RN7} and full of pairs of $s = \pm 1/2$ defects that are continuously created and annihilated~\cite{RN11,RN8,RN3,RN27,RN135,RN86}.
-Since the active stress acts along the director, the polar structure of the $s = +1/2$ defects will cause the $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}.
-For example, consider the director structure of a $s = +1/2$ defect shown by the white lines in Figure~\ref{f:3-DefectFlow}(A); an extensile stress along the director will cause the defect to propagate along the red arrow.
-However, a contractile stress along the director will cause the defect to propagate opposite to the red arrow.
-In contrast, due to the three-fold symmetry of $s = -1/2$ defects, as shown by the white lines in Figure~\ref{f:3-DefectFlow}(B), any stress along the director will have no effect on the defect position.
-Thus, $s = -1/2$ defects are not driven by activity and instead are only advected by interactions between the defects as well as by interactions with the surface.
-As a consequence, the turbulent dynamics in an active nematic are driven only by the motion of $s = +1/2$ defects~\cite{RN7}.
+Thus, contractile activity with $\alpha > 0$ amplifies splay distortions and suppresses bend distortions, while extensile activity with $\alpha < 0$ amplifies bend distortions and suppresses splay distortions.
+Consequently, if the active stress is greater than the elastic stress,  extensile active nematics are unstable to bend distortions while contractile active nematics are unstable to splay distortions~\cite{RN171,RN170,RN11}.
+This instability is illustrated in for an extensile and contractile active nematic in Figure~\ref{f:3-ActiveDefectGen}(A,B), respectively, where the instability in both cases eventually results in the creation of an $s=\pm 1/2$ defect pair.
+
+While low activity can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN247,RN7}, the steady-state of an active nematic is often full of pairs of $s = \pm 1/2$ defects that are continuously created and annihilated~\cite{RN11,RN8,RN3,RN27,RN135,RN86}.
+Since the active stress acts along the director, the polar structure of the $s = +1/2$ defects will cause these $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}.
+For example, consider the director structure of a $s = +1/2$ defect shown by the white lines in Figure~\ref{f:3-DefectFlow}(A); an extensile stress along the director will cause the bend distortion to grow and the splay distortion to decrease, causing defect to propagate along the red arrow.
+In contrast, the interactions in a contractile nematic will cause the defect to propagate opposite to the red arrow.
+However, due to the three-fold symmetry of $s = -1/2$ defects, as shown by the white lines in Figure~\ref{f:3-DefectFlow}(B), any stress along the director will have no effect on the defect position.
+Thus, $s = -1/2$ defects are not driven by the activity and instead are only advected by interactions between the defects.
+As a consequence, the dynamics in an active nematic are driven only by the motion of $s = +1/2$ defects~\cite{RN7}.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_DefectFlow.png}
@@ -70,12 +102,12 @@ As a consequence, the turbulent dynamics in an active nematic are driven only by
 
 Recent experimental studies with active nematics yielding self-regulated behaviors such as self-sustained oscillations~\cite{RN9}, spontaneous formation of morphological features such as kinks and protrusions~\cite{RN9,RN3}, and undirected motility~\cite{RN9,RN3} have acted as as stimulus to investigate how biological functionality emerges from the interplay between activity, the geometry of the system, and the structure of the internal phase~\cite{RN160,RN51,RN10}.
 In this context, defects in active nematics could be harnessed to achieve life-like functionality, as defects are extremely sensitive to the intrinsic curvature of the space they inhabit.
-This is illustrated in Eq.~\ref{e:1-TopTheoryofDefects}, where topological defects on a surface are treated like point charges interacting in a background charge density provided by the Gaussian curvature of the surface.
+This is illustrated in Eq.~\ref{e:1-TopTheoryofDefects}, where topological defects on a surface are treated like point charges interacting among themselves and with a background charge density provided by the Gaussian curvature of the surface.
 
 However, despite theoretical interest in the interplay between varying Gaussian curvature and topological defects, with few exceptions~\cite{RN84,RN25,RN73,RN81}, there has been little experimental work with defects on surfaces where the Gaussian curvature is non-constant.
 More notably, there has been no experimental work where the defects have the option to explore regions with both positive and negative Gaussian curvature.
-In this scenario with nematic order, the topological charge is expected to unbind; starting with an $s = \pm 1/2$ defect pair, the $s = +1/2$ defect will migrate to a region of positive Gaussian curvature, while the $s=  -1/2$ defect will instead migrate to a region of negative Gaussian curvature~\cite{RN17,RN19,RN22}.
 
+In this latter scenario with nematic order, the topological charge is expected to unbind; starting with an $s = \pm 1/2$ defect pair, the $s = +1/2$ defect will migrate to a region of positive Gaussian curvature, while the $s=  -1/2$ defect will instead migrate to a region of negative Gaussian curvature~\cite{RN17,RN19,RN22}.
 For example, consider the schematic of a torus in Figure~\ref{f:3-EqDefs}(A) with the $K>0$ region in red and the $K<0$ region in blue.
 For a torus specified by a central ring radius, $R_0$, and a tube radius, $a$, we use the toroidal coordinates $\{r,\theta,\varphi\}$, with $r$ the distance from the central ring and $\theta$ and $\varphi$ the polar and azimuthal angles in the torus, respectively.
 This coordinate system is defined schematically in Figure~\ref{f:3-EqDefs}(B); note that we can combine the central ring radius and the tube radius to form an aspect ratio for a torus, $\xi = R_0/a$.
