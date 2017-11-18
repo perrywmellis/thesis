@@ -57,7 +57,7 @@ If $\mathbf{n} \parallel \hat{e}_1$, with $\{\hat{e}_1,\hat{e}_2 \}$ the standar
 \begin{equation}
   \bm{\sigma}^{active} = \alpha S
   \begin{pmatrix}
-    -1/2 & 0 \\ 0 & 1/2
+    1/2 & 0 \\ 0 & -1/2
   \end{pmatrix}.
 \end{equation}
 Then, if $\alpha < 0$, $\sigma_{11}^{active} = - |\alpha|S/2 < |\alpha|S/2 = \sigma_{22}^{active}$, as illustrated by the black arrows in Figure~\ref{f:3-ActiveInteraction}(B).
@@ -65,14 +65,14 @@ Similarly, if  $\alpha > 0$, $\sigma_{22}^{active} = - |\alpha|S/2 < |\alpha|S/2
 However, these stresses represent the active stresses of the surrounding material on the area of interest; the active stress due to the area of interest, $\bm{\sigma}'^{active}$, will have the opposite sign.
 This is illustrated by the red arrows in Figure~\ref{f:3-ActiveInteraction}(B,D), and thus we see that extensile interactions have $\alpha < 0$ while contractile interactions have $\alpha > 0$~\cite{RN11}.
 
-To see the rammificaitons of the activity, we evaluate $\nabla \cdot \bm{\sigma}^{active}$,
+To further see the ramifications of the activity, we evaluate $\nabla \cdot \bm{\sigma}^{active}$,
 \begin{align}
   \partial_j \sigma^{active}_{ij} &= \alpha \partial_j \big(S(n_in_j - \delta{ij}/2)\big)\label{e:3-ActiveInstabilityA} \\
   &= \alpha(\partial_j S)(n_in_j - \delta{ij}/2) + \alpha S \big((\partial_j n_i)n_j + n_i(\partial_j n_j) \big) \\
   \nabla \cdot \bm{\sigma}^{active} &= \alpha (\nabla S)^T(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big((\mathbf{n} \cdot \nabla)\mathbf{n} + \mathbf{n}(\nabla \cdot \mathbf{n}) \big) \\
   &=  \alpha (\nabla S)^T(\mathbf{n} \otimes \mathbf{n}-\mathbb{1}/2) + \alpha S \big(\mathbf{n}(\nabla \cdot \mathbf{n}) - \mathbf{n} \times \nabla \times \mathbf{n}  \big).\label{e:3-ActiveInstabilityD}
 \end{align}
-The second term in Eq.~\ref{e:3-ActiveInstabilityD} relates the force denisty due to the activity to splay and bend distortions in the nematic.
+The second term in Eq.~\ref{e:3-ActiveInstabilityD} relates the force density due to the activity to splay and bend distortions in the nematic.
 First, consider $\alpha S \mathbf{n}(\nabla \cdot \mathbf{n})$.
 The force is always along the director, with the magnitude of the force proportional to the divergence.
 Note that the term is symmetric, so regardless of computing the term with $\mathbf{n}$ or $-\mathbf{n}$, the direction of the force is the same; for $\alpha > 0$, the diverging structure will act like a ``source'' and the force will amplify the splay, while for $\alpha < 0$ the diverging structure will act like a ``sink'' and active force will reduce the splay.
@@ -86,7 +86,7 @@ This instability is illustrated in for an extensile and contractile active nemat
 
 While low activity can suppress the spontaneous formation of defect pairs in an active nematic~\cite{RN247,RN7}, the steady-state of an active nematic is often full of pairs of $s = \pm 1/2$ defects that are continuously created and annihilated~\cite{RN11,RN8,RN3,RN27,RN135,RN86}.
 Since the active stress acts along the director, the polar structure of the $s = +1/2$ defects will cause these $s = +1/2$ defects to act like self-propelled particles, with the propulsion direction depending on the type of activity~\cite{RN11,RN8}.
-For example, consider the director structure of a $s = +1/2$ defect shown by the white lines in Figure~\ref{f:3-DefectFlow}(A); an extensile stress along the director will cause the bend distortion to grow and the splay distortion to decrease, causing defect to propagate along the red arrow.
+For example, consider the director structure of a n$s = +1/2$ defect shown by the white lines in Figure~\ref{f:3-DefectFlow}(A); an extensile stress along the director will cause the bend distortion to grow and the splay distortion to decrease, causing defect to propagate along the red arrow.
 In contrast, the interactions in a contractile nematic will cause the defect to propagate opposite to the red arrow.
 However, due to the three-fold symmetry of $s = -1/2$ defects, as shown by the white lines in Figure~\ref{f:3-DefectFlow}(B), any stress along the director will have no effect on the defect position.
 Thus, $s = -1/2$ defects are not driven by the activity and instead are only advected by interactions between the defects.
@@ -109,17 +109,21 @@ More notably, there has been no experimental work where the defects have the opt
 
 In this latter scenario with nematic order, the topological charge is expected to unbind; starting with an $s = \pm 1/2$ defect pair, the $s = +1/2$ defect will migrate to a region of positive Gaussian curvature, while the $s=  -1/2$ defect will instead migrate to a region of negative Gaussian curvature~\cite{RN17,RN19,RN22}.
 For example, consider the schematic of a torus in Figure~\ref{f:3-EqDefs}(A) with the $K>0$ region in red and the $K<0$ region in blue.
-For a torus specified by a central ring radius, $R_0$, and a tube radius, $a$, we use the toroidal coordinates $\{r,\theta,\varphi\}$, with $r$ the distance from the central ring and $\theta$ and $\varphi$ the polar and azimuthal angles in the torus, respectively.
-This coordinate system is defined schematically in Figure~\ref{f:3-EqDefs}(B); note that we can combine the central ring radius and the tube radius to form an aspect ratio for a torus, $\xi = R_0/a$.
-Introducing 4 pairs of $s = \pm 1/2$ defects onto the surface, as depicted in Figure~\ref{f:3-EqDefs}(A), the $s = +1/2$ defects are predicted to minimize their energy by moving to the outside of the handle, thereby screening the positive Gaussian curvature, and the $s = -1/2$ defects are predicted to move to the inside of the handle to screen the negative Gaussian curvature.
-Now if we integrate over the red $K>0$ region with $\theta \in [\pi/2,3 \pi/2]$ and $\varphi \in [0,\varphi']$, we can compare the integral as a function of $\varphi'$ with the included topological charge.
-Since both of these quantities depend on $\varphi'$, we get the parametric curve depicted in red in Figure~\ref{f:3-EqDefs}(C).
-Similarly, integrating over the blue $K<0$ region defined by $\theta \in [-\pi/2,\pi/2]$ as a function of $\varphi'$ and comparing with the included topological charge yields the parametric curve depicted in blue in Figure~\ref{f:3-EqDefs}(C).
+For a torus specified by a central ring radius, $R_0$, and a tube radius, $a$, we use the toroidal coordinates $\{r,\theta,\varphi\}$, with $\{r,\theta \}$ the usual polar coordinates in the circular cross section and $\varphi$ the azimuthal angle [see Figure~\ref{f:3-EqDefs}(B)].
+We define the aspect ratio of the torus as $\xi = R_0/a$.
+For low $\xi$, the ground state of a nematic on a torus is predicted to have defects due the ability of the defects to ``screen'' the Gaussian curvature of the surface.
+Specifically, introducing 4 pairs of $s = \pm 1/2$ defects onto the surface, as depicted in Figure~\ref{f:3-EqDefs}(A), completely screens the Gaussian curvature of the surface.
+We see that the $s = +1/2$ defects are predicted to minimize their energy when they are located on the outside of the ``hole,'' thereby screening the positive Gaussian curvature, and the $s = -1/2$ defects are predicted to sit on the inside of the ``hole'' to screen the negative Gaussian curvature.
+The repulsion between the like-signed defects cause the defects to be spaced in intervals of $\varphi = \pi/2$; increasing the repulsion can lead to fewer than 4 pairs of defects as the ground state.
+In addition, the ground state is only predicted to be defective when the curvature is large enough to overcome the attraction between opposite-signed defects.
 
-We see that the curves in Figure~\ref{f:3-EqDefs}(C) have positive slopes, indicating the defect unbinding, and the curves are stepped, reflecting the discrete nature of topological charge.
+For the schematic in Figure~\ref{f:3-EqDefs}(A), if we integrate over the red $K>0$ region where $\theta \in [\pi/2,3 \pi/2]$, and consider $\varphi \in [0,\varphi']$, we can compare the integral as a function of $\varphi'$ with the net topological charge in the region.
+Since both of these quantities depend on $\varphi'$, we get the parametric curve depicted in red in Figure~\ref{f:3-EqDefs}(C).
+Similarly, integrating over the blue $K<0$ region defined by $\theta \in [-\pi/2,\pi/2]$ as a function of $\varphi'$ and comparing with the net topological charge in the region yields the parametric curve depicted in blue in Figure~\ref{f:3-EqDefs}(C).
+We see that the curves in Figure~\ref{f:3-EqDefs}(C) have positive slopes, indicating the curvature-induced defect unbinding, and the curves are stepped, reflecting the discrete nature of the topological charge.
+Recall for nematics in 2D, the topological charge occurs in quanta of $1/2$.
 In addition, note that the total integrated Gaussian curvature in the $K>0$ region and the $K<0$ region is $+4 \pi$ and $-4\pi$, respectively.
-Returning to the topological charge density in Eq.~\ref{e:1-ChargeDens}, we see that each $s = \pm 1/2$ defect on the surface will screen $\pm \pi$ Gaussian curvature.
-Thus, placing the four pairs of defects on the torus exactly screens the regions with positive and negative integrated Gaussian curvature on the torus.
+Since each $s = \pm 1/2$ defect corresponds to a $\pi$ rotation of $\mathbf{n}$, the four pairs of defects on the torus exactly screens the total integrated $K$ of the $K > 0$ and $K<0$ regions.
 \begin{figure}
   \includegraphics{figures/C3/Ch3-Figs_EqDefs.png}
   \caption{Curvature-induced defect unbinding for a nematic on a torus. (A) A schematic of a torus with 4 pairs of unbound pairs of $s = \pm 1/2$ defects. The 3 visible $s=+1/2$ defects are indicated by $\blacktriangle$ and the 3 visible $s = -1/2$ defects are indicated by ${\color{yellow} \bullet}$.
@@ -132,20 +136,21 @@ Thus, placing the four pairs of defects on the torus exactly screens the regions
 
 In this chapter, we address this situation experimentally using a 2D extensile active nematic on the surface of a toroidal droplet.
 The active nematic is composed of microtubules driven by kinesin motors and fueled by adenosine triphosphate (ATP); the strength of the activity in this material is tuned by the ATP concentration, with higher ATP concentrations causing the kinesin motors to introduce more kinetic energy into the system.
-Since the torus has a handle, it has a genus of one and thus according to the Poincar\'e-Hopf Theorem written in Eq.~\ref{e:1-PH} must have zero net topological charge.
-We note that a nematic on a torus can satisfy this condition by either being defect-free or by having the total amount of positive and negative charge on the surface sum to zero.
-However, the active nematic in our experiments is in a turbulent state such that the torus is always populated with a sea of constantly moving $s = \pm 1/2$ defects that are dynamically created and annihilated.
+Since the torus has a handle, it has a genus of one and thus according to the Poincar\'e-Hopf Theorem written in Eq.~\ref{e:1-PH}, the nematic field must have zero net topological charge.
+In our experiments, the activity is large enough such that the torus is always populated with a sea of constantly moving $s = \pm 1/2$ defects that are dynamically created and annihilated.
+The topological constraints, nevertheless, force the number of $s = +1/2$ defects to be equal to the number of $s = -1.2$ defects.
 
-Despite such chaotic and highly nonequilibrium dynamics, we find that on average, pairs of $s = \pm 1/2$ topological defects unbind with the individual defects migrating to regions with like-signed Gaussian curvature.
-Notably, due to the chaotic dynamics and the averaging process, the average topological charge in a region on the surface ceases to be a discrete variable and instead approaches a continuous distribution.
-In addition, contrary to expectations from equilibrium predictions~\cite{RN36,RN19,RN22,RN20,RN78}, we find that this active unbinding depends only on the local geometry and is independent of the system size and aspect ratio.
+Interestingly, despite the nonequilibrium dynamics of the defects, we find that on average, pairs of $s = \pm 1/2$ topological defects unbind, with the individual defects migrating to regions with like-signed Gaussian curvature.
+However, as a result of the averaging process in our analysis, the average topological charge in a region on the surface ceases to take on discrete values and instead becomes a continuous variable.
+In addition, contrary to expectations from equilibrium predictions~\cite{RN36,RN19,RN22,RN20,RN78}, we find that this active unbinding depends only on the local geometry and that it is independent of the system size and aspect ratio.
 
-We perform our studies with two different ATP concentrations and thus two different levels of activity and find that the defect unbinding depends on activity.
-In addition, we characterize the defect number fluctuations and find that the relative root-mean-squared (RMS) defect number fluctuations in a region scale inversely with the square root of the number of defects in the regions.
+Our studies are performed with two different ATP concentrations and thus two different levels of activity.
+We find that the unbinding depends on activity.
+In addition, we characterize the defect number fluctuations in a region on the surface and find that the relative root-mean-squared (RMS) defect number fluctuations is inversely proportional to the square root of the average number of defects in the region.
 Interestingly this is the expected result for an equilibrium system of particles subject to number fluctuations.
-A numerical integration of the equation of motion of active nematic defects~\cite{RN11,RN8,RN9} performed by Luca Giomi and Dan Pearce at the University of Leiden confirms our experimental results and further indicates that the defect unbinding also depends on the defect number density and that the unbinding can even be suppressed in the limit of high activity.
-Furthermore, by using topological defects as micro-rheological tracers and quantitatively comparing our experimental and theoretical results, we are able to estimate the Frank elastic constant, the active stress $\alpha$, and the defect mobility of a microtubule-kinesin active nematic liquid crystal.
-Overall, out results not only confirm the theory of topological defects on curved surfaces, but also demonstrate the surprising phenomenology that arises from adding activity to the interplay between geometry, topology, and order.
+A numerical integration of the equation of motion of active nematic defects~\cite{RN11,RN8,RN9} performed by Luca Giomi and Dan Pearce at the University of Leiden confirms our experimental results and indicates that the defect unbinding depends on the defect number density and that the unbinding can be suppressed in the limit of high activity.
+Furthermore, by using topological defects as micro-rheological tracers and quantitatively comparing our experimental and theoretical results, we are able to estimate the Frank elastic constant, the active stress $\alpha$, and the defect mobility of a microtubule-kinesin active nematic liquid crystal for the first time.
+Overall, out results not only confirm the theory of topological defects on curved surfaces, but also demonstrate the interesting phenomenology that arises from adding activity to the interplay between geometry, topology, and order.
 Our work thus provides insights into the physics of partially ordered active matter and introduces a new avenue for the quantitative mechanical characterization of active fluids.
 
 
@@ -153,13 +158,14 @@ Our work thus provides insights into the physics of partially ordered active mat
 \subsection{Active nematic formulation}
 We use the mictotubule-kinesin active nematic system pioneered by the Dogic Group at Brandeis University as published in references~\cite{RN3,RN27,RN9,RN135,RN134}.
 Microtubules are long, hollow rods that self-assemble from dimers of the $\alpha$-- and $\beta$--tubulin proteins~\cite{RN248}.
-The $\alpha$/$\beta$--tubulin dimers polymerize end-to-end to form long chains that then polymerize laterally to create cylindrical structures with a helical wrapping of $\alpha$-- and $\beta$--tubulin chains~\cite{RN248,RN249}, as depicted schematically in Figure~\ref{f:3-ActiveBuild}.
-This structure gives microtubules a polarity with the (+) end associated with the exposed $\beta$--tubulin subunits and the (-) end associated with the exposed $\alpha$--tubulin subunits~\cite{RN248,RN249}.
+The $\alpha$/$\beta$--tubulin dimers polymerize end-to-end to form long chains that then assemble laterally to create cylindrical structures with a helical wrapping of $\alpha$-- and $\beta$--tubulin chains~\cite{RN248,RN249}, as depicted schematically in Figure~\ref{f:3-ActiveBuild}.
+This structure gives microtubules a polarity with the (+) end associated with the unpolymerized $\beta$--tubulin subunits and the (-) end associated with the unpolymerized $\alpha$--tubulin subunits~\cite{RN248,RN249}.
 
 While the microtubules serve as the mesogens of the active nematic, the activity comes from kinesin motor proteins bound in clusters to a streptavidin protein.
 When in contact with a microtubule, kinesin ``walks'' along the microtubule in discrete steps from the (-) end towards the (+) end, hydrolyzing one ATP molecule into an adenosinediphosphate (ADP) molecule for every 8-nm step~\cite{RN250}.
-Thus, a kinesin cluster in contact with two antiparallel microtubules will produce a sliding motion between the two microtubules as the motion of the kinesin motors on the microtubules will displace the two microtubules in opposite directions~\cite{RN4,RN3}.
-Conversely, a kinesin cluster in contact with two parallel microtubules will simply walk along both microtubules in the same direction and thus produce no relative motion between the microtubules~\cite{RN4,RN3}. These two scenarios are illustrated schematically in Figure~\ref{f:3-ActiveBuild}(B).
+Thus, a kinesin cluster in contact with two antiparallel microtubules will induce a sliding motion due to the motion of the kinesin motors that will displace the two microtubules in opposite directions~\cite{RN4,RN3}.
+Conversely, a kinesin cluster in contact with two parallel microtubules will simply walk along both microtubules in the same direction and thus induce no relative motion between the microtubules~\cite{RN4,RN3}.
+These two scenarios are illustrated schematically in Figure~\ref{f:3-ActiveBuild}(B).
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ActiveBuild.png}
@@ -169,37 +175,37 @@ Conversely, a kinesin cluster in contact with two parallel microtubules will sim
   (B) Kinesin $({\color{yellow} \bullet})$ walks along microtubules from the (-) end to the (+) end.
   When kinesin are bound to streptavidin $({\color{gray} \bullet})$ to form clusters, these clusters can generate relative motion between two antiparallel microtubules.
   In contrast, parallel microtubules exhibit no relative motion, with the kinesin-streptavadin cluster simply translating itself in the shared (+) direction.
-  (C) Microtubules and kinesin-streptavidin clusters bundles together by depletion form fibers that grow.
-  When the concentration of fibers is high enough to form a viscoelastic network, individual fibers cannot grow freely and instead will buckle and fracture.
+  (C) Microtubules and kinesin-streptavidin clusters bundles together by depletion form fibers that slide past each other.
+  When the concentration of fibers is high enough to form a viscoelastic network, individual fibers cannot slide freely and instead will buckle and fracture.
   (D) In the presence of a liquid-liquid interface, the fibers will deplete to the interface and undergo an isotropic-nematic transition, with the fiber direction giving the nematic director.
   Pictured is a fluorescence microscopy snapshot of an active nematic, where the microtubules are fluorescently labeled such that the fiber direction is apparent.
   The director surrounding an $s = + 1/2$ and $s = -1/2$ defect pair is highlighted by the dashed red and blue lines, respectively, with the fracture line connecting the pair highlighted with a yellow dashed line.}\label{f:3-ActiveBuild}
 \end{figure}
 
-Apart from the activity provided by the kinesin motors, the dominant interaction between the microtubules in an active nematic solution is the depletion interaction~\cite{RN251}, introduced via the presence of poly(ethylene glycol) (PEG, 20 kDa) as a depletant.
-The depletion interaction ``bundles'' the microtubules together to form filaments that continuously grow due to the extensile interaction between microtubules provided by the kinesin motors~\cite{RN244,RN4,RN3}.
-When the concentration of filaments in the active nematic solution is large enough, the filaments form a viscoelastic network~\cite{RN253,RN3}.
-This network inhibits the growth of the filaments such that the filaments buckle at a critical length scale~\cite{RN253,RN3} and fracture into smaller fragments that recombine with other filaments, starting the growth-and-buckling process anew, as illustrated in Figure~\ref{f:3-ActiveBuild}(C).
+Apart from the activity provided by the kinesin motors, the microtubules in solution interact via the depletion interaction~\cite{RN251}, which is introduced by the presence of poly(ethylene glycol) (PEG, 20 kDa) as a depletant.
+The depletion interaction ``bundles'' the microtubules together to form filaments that continuously slide past each other due to the extensile interaction exerted by the kinesin motors~\cite{RN244,RN4,RN3}.
+In 3D, when the concentration of filaments in the solution is large enough, the filaments form a viscoelastic network~\cite{RN253,RN3}.
+This network inhibits the sliding motion of the filaments such that they eventually buckle at a critical length scale~\cite{RN253,RN3} and fracture into smaller fragments that subsequently recombine with other filaments, starting the sliding-and-buckling process anew, as illustrated in Figure~\ref{f:3-ActiveBuild}(C).
 
-In the presence of a liquid-liquid interface, the depletion interaction drives the filaments to the interface between the active nematic solution and outer phase.
+In the presence of a liquid-liquid interface, the depletion interaction drives the filaments to the interface between the microtubule solution and the outer phase.
 As the concentration at the interface increases, the filaments locally align and undergo a transition to the nematic phase~\cite{RN3,RN135,RN134}, as seen in the example fluorescence microscopy image in Figure~\ref{f:3-ActiveBuild}(D), where the microtubules are fluorescently labeled such that the fiber direction is readily apparent.
-Thus, the filament direction serves as the director for the 2D active nematic localized to the interface.
+Thus, the filament direction provides the director for the 2D active nematic at the interface.
 
-We note that the growth-and-buckling phenomenology of the active filaments is the physical mechanism behind the extensile active stress in the nematic phase and thus is directly responsible for the bend instability and associated defect formation in the microtubule-kinesin active nematics.
-In the nematic phase, as the filaments buckle and fracture, an $s = +1/2$ and $s = -1/2$ defect pair is produced, with the defects nucleating at opposite ends of the fracture line~\cite{RN3,RN11}, as highlighted by the yellow dashed line in the example image in Figure~\ref{f:3-ActiveBuild}(D).
-Hence, with microtubules, kinesin-streptavidin complexes (K/SA), ATP, a depletant, and a liquid outer phase, we have the essential ingredients for an active nematic.
+We note that the sliding-and-buckling phenomenology of the active filaments is the physical mechanism behind the extensile active stress in the nematic phase; it is directly responsible for the bend instability and associated defect formation in the microtubule-kinesin active nematics.
+In the nematic phase, when the filaments buckle and fracture, an $s =  \pm 1/2$ defect pair is produced, with the defects nucleating at opposite ends of the fracture line~\cite{RN3,RN11}, as highlighted by the yellow dashed line in the example image in Figure~\ref{f:3-ActiveBuild}(D).
 
-However, there are many more compounds in this active nematic solution that serve to enable measurements~\cite{RN3,RN135}, prolong activity~\cite{RN3,RN135}, and allow for a silicone-based outer phase~\cite{RN135}.
+Microtubules, kinesin-streptavidin complexes (K/SA), ATP, a depletant, and an outer liquid phase constitute the essential ingredients for an active nematic.
+However, there are many more compounds in this active nematic solution that serve to enable measurements~\cite{RN3,RN135}, prolong activity~\cite{RN3,RN135}, and allow for the silicone-based outer phase that we use to make our toroidal droplets~\cite{RN135}.
 As mentioned earlier and shown in Figure~\ref{f:3-ActiveBuild}(D), the microtubules are fluorescently labeled such that the active nematic can be imaged with fluorescence or fluorescence confocal microscopy.
-To prevent photobleaching and phototoxicity during imaging, the active solution contains trolox (Sigma, 238813) and two anti-oxidant solutions.
+To prevent the excitation source from damaging the fluorophores (photobleaching) or killing the kinesin motors (phototoxicity), the active solution contains trolox (Sigma, 238813) and two anti-oxidant solutions.
 Anti-oxidant solution 1 (AO1) is composed of glucose and dithiothreitol (DTT) and Anti-oxidant solution 2 (AO2) is composed of glucose oxidase (Sigma, 238813) and catalase (Sigma, C40).
 The active solution also includes an ATP regeneration system to keep the ATP concentration in an active nematic solution constant.
 This system is driven by the enzyme mixture pyruvate kinase/lactate dehydrogenase (PK/LDH, Sigma, P-0294) which consumes phoshoenol pyruvate (PEP) to convert ADP to ATP at a rate faster than the K/SA hydrolyzes ATP to ADP~\cite{RN246}.
 
 We note that when driven to the liquid-liquid interface, the active filaments do not ever contact the outer phase.
 Instead, the interface is packed with a suitable surfactant such that the active nematic filaments deplete to the polar portion of the surfactant molecule.
-The surfactant is then moved along the interface by the motion of the active filaments such that the viscosity of the outer oil phase significantly affects the dynamics of an active nematic~\cite{RN135}.
-For a silicone-based outer fluid, we include the triblock copolymer Pluronic F127 (F127) composed of 2 hydrophilic PEG block attached to a central hydrophobic poly(propylene oxide) (PPO) block like PEG-PPO-PEG~\cite{RN252} to the active solution.
+The surfactant is then moved along the interface by the motion of the active filaments such that the viscosity of the outer oil phase significantly affects the dynamics of the active nematic~\cite{RN135}.
+For a silicone-based outer fluid, we include the triblock copolymer Pluronic F127 (F127) composed of 2 hydrophilic PEG blocks attached to a central hydrophobic poly(propylene oxide) (PPO) block like PEG-PPO-PEG~\cite{RN252}.
 Finally, the solution is buffered using a specially designed microtubule buffer (M2B) to keep the enzymes and the motors in their preferred environments~\cite{RN3}.
 \begin{table}
   \centering
@@ -226,17 +232,17 @@ Finally, the solution is buffered using a specially designed microtubule buffer 
 \end{table}
 
 For an experiment, we build the active nematic solution from stock solutions per the recipe in Table~\ref{t:3-ActiveStock}.
-The stock solutions in their given compositions are {\bf bolded} such that PEP refers to the general compound while {\bf PEP} refers to the stock concentration/formulation as defined in Table~\ref{t:3-ActiveStock} and were prepared by the Dogic Group at Brandeis and then shipped to Georgia Tech.
-We pipetted the stock solutions as received into aliquots suitable to make 100 $\upmu$L of active nematic solution.
+The stock solutions in their given compositions are {\bf bolded} such that PEP refers to the general compound while {\bf PEP} refers to the stock concentration/formulation as defined in Table~\ref{t:3-ActiveStock} and originally prepared by the Dogic Group at Brandeis.
+The stock solutions were  shipped to Georgia Tech, and we pipetted the stock solutions as received into aliquots suitable to make 100 $\upmu$L of active nematic solution.
 The aliquots are stored in a freezer at $-80^o$ C to prevent degradation of the active compounds.
 Prior to each experiment, we remove a set of aliquots from the freezer, quickly thaw the aliquots to room temperature by holding them in our closed hands, and then place all the aliquots on ice except for the {\bf MT} aliquot.
 We leave the {\bf MT} aliquot out at room temperature so that the tubulin can self-assemble into microtubules.
 The polymerization of microtubules is temperature-dependent, with tubulin polymerizing to form microtubules at room temperature and microtubules depolymerizing into tubulin at low temperature~\cite{RN3}.
 
 We then make the initial mixtures and the pre-solution according to the recipe in Table~\ref{t:3-recipe}, leaving the pre-solution on ice.
-We wait at least 90 minutes after bringing the {\bf MT} aliquot to room temperature before mixing the {\bf MT} with the pre-solution to form the final active nematic solution as specified in Table~\ref{t:3-recipe}.
+We wait at least 90 minutes after bringing the {\bf MT} aliquot to room temperature before mixing it with the pre-solution to form the final active nematic solution as specified in Table~\ref{t:3-recipe}.
 Note that we bring the pre-solution to room temperature before adding in the microtubules such that the microtubules do not depolymerize when they are added to the pre-solution.
-Once we mix the final solution together, we perform our experiments and observe the active nematic until the activity ceases.
+Once we mix the final solution together, we perform our experiments and observe the active nematic until activity ceases.
 \begin{table}[ht]
   \centering
   \caption{Recipe for 100 $\upmu$L active nematic solution}
@@ -276,7 +282,7 @@ Once we mix the final solution together, we perform our experiments and observe 
 
 \subsection{Flat sample confirmation}
 Upon receiving the stock solutions, we first made a bulk active gel according to the procedures published in Ref.~\cite{RN3} to confirm the integrity of the solutions through the shipping process.
-To make a gel, we have to construct a sample chamber where the depletion interaction cannot drive the bundles to aggregate on the walls of the chamber.
+To make an active gel, we have to construct a sample chamber where the depletion interaction cannot drive the bundles to aggregate on the walls of the chamber.
 We build the sample chamber from a glass coverslip attached via two-sided tape to a microscope slide to form a rectangular channel, as previously published~\cite{RN3}.
 Prior to construction, we coat the coverslip and microscope slide with polyacrylamide brushes according to the published protocol~\cite{RN3}, reproduced in Appendix~\ref{a:B}, such that the PEG can penetrate between the brushes, keeping the depletion interaction from driving the active filaments to the glass surface, where they would adsorb~\cite{RN3}.
 
@@ -292,7 +298,7 @@ The samples are now ready to be imaged using fluorescence or fluorescence confoc
   \label{f:3-SampleChamber}
 \end{figure}
 
-We confirmed that the stock solutions received produced an active gel with fluorescent active filaments that grew and fractured.
+We confirmed that the stock solutions received produced an active gel with fluorescent active filaments that underwent the sliding/buckling/fracture/recombination cycles.
 The activity in the gel sample appeared constant for the entirety of its  $\approx 24$ hr lifespan.
 The observed behavior qualitatively agreed with previously published behavior by the Dogic group~\cite{RN3}.
 
@@ -300,7 +306,7 @@ The observed behavior qualitatively agreed with previously published behavior by
 \subsection{Making toroidal droplets}
 With the integrity of the active solution confirmed, we turn to making stable toroidal droplets with our active solution.
 We generate our toroidal droplets following the procedure detailed in Refs.~\cite{RN29,RN47,RN257}.
-Briefly, the setup consists of a rotating stage holding a cuvette containing the continuous, or outer phase, and a syringe holding the dispersed, or inner phase connected to a needle inserted into the cuvette.
+The setup consists of a rotating stage holding a cuvette containing the continuous, or outer phase, and a syringe holding the dispersed, or inner phase connected to a needle inserted into the cuvette.
 We control the angular velocity of the rotation, $\omega$, by driving the rotating the stage with a motor powered by a constant voltage source.
 We control the position of the needle in the cuvette with a micromanipulator, and the flow rate and volume of the inner phase with a syringe pump.
 In addition, we place a camera below the rotation stage such that we can image the droplet generation process.
