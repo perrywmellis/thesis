@@ -315,13 +315,13 @@ This setup is depicted schematically in Figure~\ref{f:3-MakeTorus}(A).
 We insert the needle into the cuvette offset from the center of rotation such that pumping the inner phase into the cuvette while the cuvette is rotating will generate a curved jet, as shown in the example image in Figure~\ref{f:3-MakeTorus}(B).
 Provided that we rotate fast enough such that the curved jet closes upon itself before it undergoes breakup, we form a toroidal droplet, as shown in the example image in Figure~\ref{f:3-MakeTorus}(C).
 This condition is a balance of two timescales: (i) the timescale required to undergo breakup, $t_b \approx \mu_o a_{jet} f(\mu_i/\mu_o)/\gamma$, where $\mu_o$ is the viscosity of the outer phase, $\mu_i$ is the viscosity of the inner phase, $a_{jet}$ is the radius of the jet, $f(\mu_i/\mu_o)$ a function that depends on the viscosity contrast, and $\gamma$ is the interfacial tension between the inner and outer phases;
-  and (ii), the timescale required to close the curved jet onto itself, $T = 2\pi/\omega = 2 \pi R_{tip}/U$, where $R_{tip}$ is distance from the center of rotation the the needle, as depicted in Figure~\ref{f:3-MakeTorus}(C) and $U$ is the linear velocity of the continuous phase at the needle.
+  and (ii), the timescale required to close the curved jet onto itself, $T = 2\pi/\omega = 2 \pi R_{tip}/U$, where $R_{tip}$ is distance from the center of rotation to the needle, as depicted in Figure~\ref{f:3-MakeTorus}(C), and $U$ is the linear velocity of the continuous phase at the needle.
 
-Equating the two timescales and rearranging terms allows us to express this condition in terms of the Capillary number of the outer phase like $\textup{Ca}_o > (2 \pi / f(\mu_i/\mu_o))R_{tip}/a_{jet}$ ,where $\textup{Ca}_o = \mu_c U/\gamma$ a dimensionless group comparing the viscous stresses to the surface tension stresses.
+Equating the two timescales and rearranging terms allows us to express this condition as: $\textup{Ca}_o > (2 \pi / f(\mu_i/\mu_o))R_{tip}/a_{jet}$, where $\textup{Ca}_o = \mu_o U/\gamma$ is a dimensionless group called the Capillary number quantifying the relative importance of the viscous and surface tension stresses.
 We note that $a_{jet} \approx a_{tip}$, the radius of the needle.
-Experimentally, it has been found that $\textup{Ca}_o > 2.2 R_{tip}/a_{tip}$ for $\mu_o = 5000$~mPa$\cdot$s and $\mu_i = 1$~mPa$\cdot$s in order to form a torus~\cite{RN29}.
-In practice, we simply look at the video of the process to verify that our chosen parameters generates a jet that closes in upon itself before breaking.
-To control the size and aspect ratio of the toroidal droplet, we tune $R_0$ by changing $R_{tip}$ and $a$ through the total injected volume.
+A jet will thus form at sufficiently high $U$ for given inner and outer materials.
+% Experimentally, it has been found that $\textup{Ca}_o > 2.2 R_{tip}/a_{tip}$ for $\mu_o = 5000$~mPa$\cdot$s and $\mu_i = 1$~mPa$\cdot$s in order to form a torus~\cite{RN29}.
+To control the size and aspect ratio of the toroidal droplet, we tune $R_0$ by changing $R_{tip}$ while tuning $a$ through the total injected volume.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_MakeTorus.png}
@@ -334,9 +334,9 @@ To control the size and aspect ratio of the toroidal droplet, we tune $R_0$ by c
   $R_{tip}$ is the distance from the needle to the center of rotation.}\label{f:3-MakeTorus}
 \end{figure}
 
-Toroidal droplets generated in a simple fluid are unstable due to the influence of surface tension.
-Surface tension acts to minimize the interfacial area between two immisicble fluid phases, hence the ubiquity and stability of spherical droplets in nature; the sphere minimizes the surface area for a given volume~\cite{RN178}.
-The physics behind the surface tension stress at an interface comes through the Laplace pressure $\Delta P$, describing the pressure drop across a fluid-fluid interface~\cite{RN178}:
+Toroidal droplets generated in this way are unstable due to surface tension, which acts to minimize the interfacial area between two immiscible fluid phases; since the sphere minimizes the surface area for a given volume, spherical droplets are stable~\cite{RN178}.
+The surface tension causes a pressure jump, $\Delta P$, across a fluid-fluid interface.
+This pressure jump is known as the Laplace pressure~\cite{RN178}:
 \begin{equation}\label{e:3-LapPres}
   \Delta P = P_i - P_o = 2 \gamma (- H),
 \end{equation}
@@ -344,36 +344,43 @@ where $P_i$ is the pressure in the inner fluid phase, $P_o$ is the pressure in t
 Recall that $H = \textup{tr}\big \{ \mathbf{L} \big \}/2$, where $\mathbf{L}$ is the Weingarten Matrix from Eq.~\ref{e:2-WeingartenMatrix} defined such that the mean curvature of a sphere with radius $r$ choosing an outward-facing normal is $H = -1/r$ everywhere on the surface of the sphere.
 
 The Laplace pressure tells us that not only does a spherical droplet have greater pressure on the inside than on the outside, but also that due to its constant mean curvature, the pressure inside the droplet is constant.
-Thus, there is no flow inside a spherical droplet and it is stable.
-However, we know that $H$ for a torus varies along the surface, forcing the pressure inside the torus to also vary.
-The inhomogeneous pressure inside a liquid torus creates the fluid flow responsible for the shrinking instability in toroidal droplets, where the handle shrinks continuously until it closes and the toroidal droplet transforms into a single spherical droplet~\cite{RN29,RN255}.
-In addition, the Laplace pressure can also cause the tube of a toroidal droplet to break up in a manner reminiscent of the Rayleigh-Plateau instability, such that the toroidal droplet breaks into one or more spherical droplets~\cite{RN29,RN256}.
-While the study of the fluid modes in nontrivial topologies is interesting in its own right and has led to insights into fluid phenomena such as charged jets~\cite{RN256} and viscous fingering~\cite{RN254}, we are more concerned with creating a stable toroidal droplet.
+Thus, there is no flow inside a spherical droplet.
+This is similar to a cylindrical thread with radius $r$, where $H = -1/(2r)$ everywhere on the surface such that there is no flow inside a cylindrical structure.
+However, the interface is always fluctuating, creating pressure fluctuations that induce flow.
+A spherical surface is stable with respect to the fluctuations; in contrast, a cylindrical thread is unstable, and the induced flow drives the cylindrical thread to break up into spherical droplets.
+This instability is known as the Rayleigh-Plateau instability.
+Toroidal droplets also break up via a similar instability, with the tube of the toroidal droplet breaking into spherical droplets~\cite{RN29,RN256}.
 
-As the surface tension stress is responsible for destabilizing the toroidal droplet, we need to counter the surface tension stress to have a stable toroidal droplet.
-Thus, we make our toroidal droplets using a yield stress material as the outer phase instead of a pure viscous liquid~\cite{RN47,RN258}.
-Briefly, a yield stress material has a threshold stress, $\tau_c$, such that the material responds like an elastic solid to imposed stresses less than $\tau_c$ and flows like a viscous liquid to imposed stresses greater than $\tau_c$.
-Therefore, provided that $\tau_c$ is greater than the surface tension stress, the toroidal droplet will be unable to transform to a spherical droplet and will be stable indefinitely.
+However, toroidal droplets can also transform to a spherical droplet via another instability.
+For a torus, $H$ varies along the surface, causing the pressure inside the torus to also vary.
+This inhomogeneous pressure induces flow that causes the ``hole'' to shrink continuously until it closes onto itself, resulting in the formation of a single spherical droplet~\cite{RN29,RN255}.
+This instability is thus known as the shrinking instability, and is unique to handled droplets.
+While the study of the fluid modes in nontrivial topologies is interesting in its own right and has led to insights into fluid phenomena such as charged jets~\cite{RN256} and viscous fingering~\cite{RN254}, here we are interested in preventing the growth of these instabilities and generating stable toroidal droplets.
+
+To achieve this, we need to counter the surface tension stress responsible for destabilizing a toroidal droplet.
+We do this by using a yield stress material as the outer phase instead of a pure viscous liquid~\cite{RN47,RN258}.
+Yield stress materials have a threshold stress, $\tau_c$, such that they respond like elastic solids to imposed stresses $\tau < \tau_c$, and flow like viscous liquids for $\tau > \tau_c$.
+Provided that $\tau_c$ is greater than the surface tension stress, the toroidal droplet will be unable to transform into one or more spherical droplets and will be indefinitely stable.
 
 Since the surface tension stress is given by the Laplace pressure, we see that balancing the Laplace pressure and $\tau_c$ will give us a critical radius of curvature, $R_c$, determining the stability of a toroidal drop, $\gamma/\tau_c \sim R_c$.
 If the smallest radius of curvature on a toroidal drop is larger than $R_c$, the toroidal droplet will be stable --- usually, the smallest radius of curvature on a torus is the tube radius.
-However, for toroids with $\xi \lesssim 2$, the radius of the handle becomes the smallest radius of curvature in the droplet and thus will determine the stability of the toroidal droplet.
+However, for toroids with $\xi \lesssim 2$, the radius of the ``hole'' becomes the smallest radius of curvature in the droplet and thus will determine the stability of the toroidal droplet.
 As the active nematic solution is aqueous, we use an oil-based yield stress material, DC-9041 (Dow Corning), a silicone elastomer.
 To tune the yield stress, we dilute pure DC-9041 with 10~cSt PDMS oil (Clearco).\
-We dilute to 74\%~--~77\% w/w DC-9041 to form stable active nematic toroids with tube radii from 150~$\upmu$m~--~300~$\upmu$m.
+We dilute to 74\%~--~77\% w/w DC-9041 to form stable active nematic toroids with tube radii between 150~$\upmu$m~and~300~$\upmu$m, and ``hole'' radii between 150~$\upmu$m~and~1~mm.
 
 Making a toroidal droplet in a yield stress material has some key differences to making a toroidal droplet in a viscous fluid.
 Notably, the yield stress material is only fluid-like in regions where the stress is greater than $\tau_c$.
 Thus, for best results, we need to pre-shear the yield stress medium such that the greatest possible volume of yield stress material is fluidized.
 We do this by letting the cuvette rotate with the needle inserted for up to 30~s before we begin pumping the inner liquid into the cuvette.
-While a pre-shear is not strictly necessary to form a toroidal droplet, the cross-sections of the tubes of toroidal droplets made with a pre-shear are generally more circular than toroidal droplets made with minimal pre-shear.
+While a pre-shear is not strictly necessary to form a toroidal droplet, the cross-section of the tube of a toroidal droplet made with a pre-shear is generally more circular than that of a toroidal droplet made with minimal pre-shear.
 This is because the wider the volume of fluidized yield stress material, the less the pumped volume ``climbs'' up the needle.
-We also find that making toroidal droplets close to the free-surface of the yield stress material helps to reduce climbing, but the physical reason for this is unclear.
+We also find that making toroidal droplets close to the free-surface of the yield stress material helps to mitigate climbing, as the free surface provides a natural limit to the hight of the droplet.
 
 For most experiments with toroidal droplet, there is a large amount of the inner phase available and we simply fill a syringe with the inner phase.
 However, for the active experiments, we have only 100~$\upmu$L of active solution per experiment, which is not enough to even fill the Luer-lock syringe tips we use to connect a syringe to the tubing.
 Instead, we fill the system primarily with paraffin oil (Lamplight) as a dummy fluid and load the active solution only into the tubing connecting the syringe tip and the needle.
-Thus, we need a length of tubing such that the volume of the fluid in the tubing is greater than 100~$\upmu$L.
+Thus, we use a length of tubing such that the volume of the fluid in the tubing is greater than 100~$\upmu$L.
 
 We start by pumping the dummy fluid to fill the entire tubing; this removes all the air from the system.
 We then submerge the free end of the tubing into the vial containing the active solution and withdraw the dummy fluid.
@@ -381,7 +388,7 @@ As we withdraw the dummy fluid, the active solution is pulled into the tubing.
 We ensure that the interface between the dummy liquid and the active solution has no air bubbles.
 Air bubbles in the tubing will inhibit forming high-quality toroidal droplets as the air bubble acts as a ``spring'' in the fluid system.
 This introduces a significant time lag between the start and stop of the syringe pump and the beginning and end of the fluid flow from the needle, hampering our ability to control the flow precisely.
-In addition, it is important to withdraw the dummy fluid slowly ($\approx 1$~mL/s) when loading the active nematic solution to prevent an emulsion between the active fluid and the dummy fluid forming in the tube.
+In addition, it is important to withdraw the dummy fluid slowly ($\approx 1$~mL/s) when loading the active nematic solution to prevent forming an emulsion between the active fluid and the dummy fluid in the tube.
 
 
 
@@ -394,22 +401,52 @@ This typically occurs between 6~--~10~hours after making the toroidal droplet.
 
 
 \subsection{Confocal fluorescence microscopy}
-Fluorescence occurs when a material absorbs and then re-emits light, where the initial absorption excites a singlet state in the material which then decays via photon emission.
-The absorption and emission are characterized by their respective spectra, with the peak in the emission spectrum usually occurring at a longer wavelength than the peak in the absorption spectrum.
+Fluorescence is an inelastic process where a material absorbs and then re-emits light; the initial absorption excites a singlet state in the material which then decays via photon emission.
+The absorption and emission are characterized by their respective spectra, with the peak in the emission spectrum occurring at a longer wavelength than the peak in the absorption spectrum.
 
 Unlike traditional wide-field microscopy, confocal microscopy allows us to image individual planes in the image such that we can construct a 3D representation of the sample~\cite{RN260}.
 In confocal microscopy, a screen with an aperture is placed in front of the detector at an optically conjugate plane to the focal plane in the sample.
 Since light from the focal plane is in focus at optically conjugate planes, we say that the plane is confocal; this is depicted in Figure~\ref{f:3-Confocal}(A)~\cite{RN259}.
-Thus, placing the aperture at a confocal plane means that the majority of the light passing through the aperture must come from the focal plane; the majority of the out of focus light in incident on the screen.
+However, since the majority of the confocal plane is blocked by a screen, only light from the confocal point to the aperture will pass through the aperture.
+This is depicted in Figure~\ref{f:3-Confocal}(A), where only the red light from the confocal point passes completely through the aperture; the majority of the light from the nonconjugate blue and green points is blocked by the screen.
+The location of the focal plane in the sample is changed by translating the microscope stage up and down.
+The location of the confocal point in the sample is changed by either translating the sample (scanning confocal microscopy) or by using mirrors to raster the confocal point across the confocal plane (scanning laser confocal microscopy)~\cite{RN261,RN262,RN260}.
+Either of these methods allows the experimenter to build up a full 3D representation of the sample.
 
-This is shown by the blue and green out-of-focus rays in Figure~\ref{f:3-Confocal}(A); all of the red in-focus light passes through the aperture but the blue and green rays cannot pass through.
-Typically, the location of the focal plane in the sample is changed by translating the microscope stage up and down.
-Since the introduction of scanning confocal microscopy, and especially scanning laser confocal fluorescence microscopy, confocal microscopy has seen widespread adoption and is now a standard technique in multiple fields~\cite{RN261,RN262,RN260}.
+Both of the microscopes we use are scanning laser confocal microscopes.
+In scanning laser confocal microscopy, the illumination source is a laser and the illumination is epifluorescent.
+This means that the a laser beam illuminates the sample through the objective, with the objective then focusing the laser onto the confocal point in the sample.
+The illuminated confocal point in the sample then fluoresces and the output intensity is recorded.
+This process is enabled with a dichroic mirror that reflects light with a wavelength $\lambda < \lambda_c$ and transmits light with $\lambda > \lambda_c$.
+The mirror allows the excitation and emission light to share the same path to and from the confocal point.
+As depicted in Figure~~\ref{f:3-Confocal}(B), the excitation light passes through a confocal aperture, is reflected by the mirror, passes through the objective, and is focused onto the confocal point in the sample.
+The emitted light then travels the same path back through the objective, passes through the mirror, passes through a confocal aperture, and is incident on the detector.
+In addition, there is often a second filter placed between the dichroic mirror and the detector to further prevent the excitation light from reaching the detector.
+Since the excitation and emitted light share the same path, a single set of mirrors placed between the mirror and the objective scans the confocal point for both the emitted and excited light across the sample~\cite{RN260}.
 
-In scanning laser confocal microscopy, the illumination mode is epifluorescent, such that a laser beam is emitted through the objective and focused on a portion of the sample.
-The illuminated portion of the sample then fluoresces and the output intensity from that location in the focal plane is recorded.
-This process is enhanced with a dichroic mirror and a pair of filters such that both the illumination source and the emitted light pass through the objective, but only the emitted light is passed to the detector, as depicted schematically in Figure~\ref{f:3-Confocal}(B).
-With a well-focused laser beam and a system to scan the laser beam over the sample, the emitted intensity in the focal plane can be highly localized such that the spatial resolution in the focal plane is set by the size of the laser spot~\cite{RN260}.
+Like any form of optical microscopy, the resolution in the focal plane is set by the diffraction limit; the light from the objective is not focused to a point but instead forms a circular diffraction pattern.
+The the first minimum of this pattern has a diameter~\fxnote{REF}:
+\begin{equation}
+d \approx 1.22 \lambda /{\rm NA},\label{e:3-Airy}
+\end{equation}
+where $\rm {NA} = n \sin \theta$ is the numerical aperture of the objective, with $n$ the index of refraction of the ambient medium and $\theta$ the half-angle of the cone of light focused by the objective.
+$d$ is also known as the diameter of the Airy disc.
+Generally, two point sources can be distinguished if the maximum of the diffraction pattern from one point falls on the first minimum of the pattern from the second point.
+This is known as the Rayleigh criterion; Eq.~\ref{e:3-Airy} thus also gives the resolution for an objective with a given NA~\fxnote{REF}.
+This criterion also then imposes a lower limit on the size of the confocal aperture, as an aperture smaller than $d$ doesn't increase the resolution, it just decreases the amount of light incident on the detector.
+
+In a confocal microscope, we also have to consider the axial resolution, or the ability to distinguish between points on the focal plane and points above and below the focal planes.
+Alternately, this can be thought of as the thickness of an optical section.
+In our experiments we never set the smaller than the Airy disc.
+In this regime, the resolution is determined by the full-width half-maximum (FWHM) of the intensity distribution in the axial direction~\fxnote{cite Zeiss microscopy prinicples}:
+\begin{equation}
+  {\rm FWHM}_{axial} \approx \frac{\sqrt{2} n b}{{\rm NA}},
+\end{equation}
+where $b$ is the diameter of the aperture.
+If we take the diameter of the aperture to be the diameter of the Airy disc, we see that ${\rm FWHM}_{axial} \sim {\rm NA}^{-2}$; the axial resolution is more sensitive to the numerical aperture than the resolution in the focal plane.
+
+
+
 This reduces the impact of photobleaching, but more importantly allows the user to ``zoom'' into the sample without changing the objective magnification simply by changing the distance between the detector and final pinhole such that a smaller area in the sample illuminates the entire detector.
 
 We note that the $z$-resolution between focal planes is still set by the diffraction limit of the emitted light, such that the only way to meaningfully improve the $z$-resolution is to change the objective.
