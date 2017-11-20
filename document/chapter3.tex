@@ -63,7 +63,9 @@ If $\mathbf{n} \parallel \hat{e}_1$, with $\{\hat{e}_1,\hat{e}_2 \}$ the standar
 Then, if $\alpha < 0$, $\sigma_{11}^{active} = - |\alpha|S/2 < |\alpha|S/2 = \sigma_{22}^{active}$, as illustrated by the black arrows in Figure~\ref{f:3-ActiveInteraction}(B).
 Similarly, if  $\alpha > 0$, $\sigma_{22}^{active} = - |\alpha|S/2 < |\alpha|S/2 = \sigma_{11}^{active}$ [black arrows, Figure~\ref{f:3-ActiveInteraction}(D)].
 However, these stresses represent the active stresses of the surrounding material on the area of interest; the active stress due to the area of interest, $\bm{\sigma}'^{active}$, will have the opposite sign.
-This is illustrated by the red arrows in Figure~\ref{f:3-ActiveInteraction}(B,D), and thus we see that extensile interactions have $\alpha < 0$ while contractile interactions have $\alpha > 0$~\cite{RN11}.
+This is illustrated by the red arrows in Figure~\ref{f:3-ActiveInteraction}(B,D).
+When $\alpha < 0$, [Figure~\ref{f:3-ActiveInteraction}(B)] the activity works to extend the nematic along the director, while when $\alpha > 0$ [Figure~\ref{f:3-ActiveInteraction}(C)], the activity works to contract the nematic along the director.
+Hence, extensile interactions have $\alpha < 0$ while contractile interactions have $\alpha > 0$~\cite{RN11}.
 
 To further see the ramifications of the activity, we evaluate $\nabla \cdot \bm{\sigma}^{active}$,
 \begin{align}
@@ -425,56 +427,62 @@ In addition, there is often a second filter placed between the dichroic mirror a
 Since the excitation and emitted light share the same path, a single set of mirrors placed between the mirror and the objective scans the confocal point for both the emitted and excited light across the sample~\cite{RN260}.
 
 Like any form of optical microscopy, the limiting resolution in the focal plane is set by the diffraction limit; the light from the objective is not focused to a point but instead forms a circular diffraction pattern.
-The first minimum of this pattern has a diameter~\fxnote{REF}:
+The first minimum of this pattern has a diameter~\cite{RN314}:
 \begin{equation}
 d \approx 1.22 \lambda /{\rm NA},\label{e:3-Airy}
 \end{equation}
 where ${\rm NA} = n \sin \theta$ is the numerical aperture of the objective, with $n$ the index of refraction of the ambient medium and $\theta$ the half-angle of the cone of light focused by the objective.
 $d$ is also known as the diameter of the Airy disc.
 Generally, two point sources can be distinguished if the maximum of the diffraction pattern from one point falls on the first minimum of the pattern from the second point.
-This is known as the Rayleigh criterion; Eq.~\ref{e:3-Airy} thus also gives the resolution for an objective with a given NA~\fxnote{REF}.
+This is known as the Rayleigh criterion; Eq.~\ref{e:3-Airy} thus also gives the resolution as $d/2$ for an objective with a given NA~\cite{RN314}.
 This criterion also then imposes a lower limit on the size of the confocal aperture, as an aperture smaller than $d$ doesn't increase the resolution, it just decreases the amount of light incident on the detector.
 
 In practice, the resolution in an experiment is instead generally set by the pixel size on the detector.
 The distance between the detector and the confocal aperture can be varied to ``zoom'' in and out without changing the objective magnification; zooming in corresponds to a smaller area in the sample illuminating the full detector, whole zooming out does the opposite.
-The best resolution occurs when the pixel length is $d/2$; however, this means that the total sample area imaged is small.
-Typically, we choose a pixel length larger than $d$, to sacrificing resolution but increasing the area of the sample we image.
+The system reaches the fundamental resolution limit when the pixel length is $d/4$, corresponding to the Nyquist criterion; however, this means that the total sample area imaged is small.
+Typically, we choose a pixel length around $d$, sacrificing resolution but increasing the area of the sample we image.
+For example, on the Nikon microscope, we use a 10x objective with ${\rm NA} = 0.3$ and thus $d \approx 2.8$ $\upmu$m for the emission light with wavelength $\lambda = 700$ $\upmu$m.
+The majority of our data are taken with a pixel length $2.5$ $\upmu$m/px; for our typical image size of 512 px $\times$ 512 px, this corresponds to a scan area of $1.28\textrm{ mm } \times 1.28\textrm{ mm } = 1.64\textrm{ mm}^2$.
+In this case, the resolution is set by the pixel length and not the diffraction limit of the imaging system.
+
 
 In a confocal microscope, we also have to consider the axial resolution, or the ability to distinguish between points on the focal plane and points above and below the focal planes.
 Alternately, this can be thought of as the thickness of an optical section.
 In our experiments we never set the smaller than the Airy disc.
-In this regime, the resolution is determined by the full-width half-maximum (FWHM) of the intensity distribution in the axial direction~\fxnote{cite Zeiss microscopy prinicples}:
+In this regime, the resolution is determined by the full-width half-maximum (FWHM) of the intensity distribution in the axial direction~\cite{RN315}:
 \begin{equation}
   {\rm FWHM}_{axial} \approx \frac{\sqrt{2} n b}{{\rm NA}},
 \end{equation}
 where $b$ is the diameter of the aperture.
 If we take the diameter of the aperture to be the diameter of the Airy disc, we see that ${\rm FWHM}_{axial} \sim {\rm NA}^{-2}$; the axial resolution is more sensitive to the numerical aperture than the resolution in the focal plane.
+For example, in our experiments with ${\rm NA} = 0.3$ and a typical pinhole diameter of $2.5$ $\upmu$m, ${\rm FWHM}_{axial} \approx 11.8$ $\upmu$m.
+To fully realize this resolution, we take data at heights separated by ${\rm FWHM}_{axial}/2$, satisfying the Nyquist criterion.
 
 In fluorescence microscopy, we have to worry about the excitation light damaging fluorophores and rendering them unable to fluoresce, also known as photobleaching.
 Photobleaching of a single fluorophore can be modeled by a statistical process, with a constant probability of photobleaching for absorption-emission cycle.
 Thus, since the laser only illuminates the portion of the sample that is being imaged, photobleaching is less of a concern in scanning laser fluorescence microscopy than it is in widefield fluorescence microscopy, where the entire sample is always illuminated.
-However, even in scanning laser confocal microcopy, a high enough laser intensity or a long enough imaging time will always result in significant photobleaching in the sample.
+However, even in scanning laser confocal microscopy, a high enough laser intensity or a long enough imaging time will always result in significant photobleaching in the sample.
 
 In our experiments, only the microtubules are labeled with fluorophores, such that we only image the active filaments.
-Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C), where the height is denoted by false color, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.\fxnote{still need example NA for our objective and typical resolutions in xyz}
+Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C), where the height is denoted by false color, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_Confocal.png}
   \caption{Confocal microscopy.
   (A) Schematic showing the effect of the confocal aperture in front of the detector.
-  The red light from the focal plane is in focus in the confocal plane and thus can pass entirely through the aperture.
-  In contrast, the blue light is emitted above the focal plane; the example ray is out of focus at the confocal plane and does not pass through the aperture.
-  Similarly, since the green light is emitted below the focal plane, the example ray is also out of focus at the confocal plane and does not pass through the aperture.
+  Light from the red point is in focus at the aperture in the confocal plane, and thus can pass entirely through the aperture.
+  In contrast, the blue light is emitted above the focal plane; the light is out of focus at the confocal plane and does not pass through the aperture.
+  Similarly, the green light is in focus at the confocal plane, but it is not emitted from a conjugate point to the aperture and thus does not pass through the aperture.
   (B), Schematic of laser confocal fluorescence microscopy.
   There is a confocal aperture in front of the laser such that the laser is focused by the objective onto the focal plane in the sample.
-  Thus, the maximum excitation will be at the point of interest in the focal plane.
-  As in (A), only the emitted light from the focal plane is incident on the detector.
-  However, the emitted light is also spatially localized by the focused laser spot.
-  Scanning mirrors (not drawn) raster the laser spot over the focal plane to construct a full image of the focal plane.
+  Thus, the maximum excitation will be at the conjugate point in the focal plane.
+  As in (A), only the emitted light from the conjugate point in the focal plane is incident on the detector.
   A dichroic mirror allows the excited and emitted light to share the same path to and from the sample, but passes only the emitted light to the detector.
+  Scanning mirrors (not drawn) between the dichroic mirror and the objective raster the conjugate point over the focal plane to construct a full image of the focal plane.
   (C) An example image stack of an active nematic torus, where the image stack has been reoriented to provide perspective and the data have been false-colored by height.
+  This image stack was taken with a typical set of parameters: total size, 1.28~mm $\times$ 1.28~mm $\times$ 0.21~mm, pixel size, 2.5~$\upmu$m/px $\times$ 2.5~$\upmu$m/px $\times$ 7~$\upmu$m/px.
   The scale bar is 250 $\upmu$m.}\label{f:3-Confocal}
-\end{figure}\fxnote{need typical scan areas and numbers}
+\end{figure}
 
 \subsection{Confocal setup and parameters}
 We used two different confocal microscopes to collect the data; we started with a Zeiss LSM 700 and then switched to a newer Nikon A1R when the latter was purchased by Professor Peter Yunker in the School of Physics.
@@ -503,7 +511,7 @@ The excitation filter is necessary in wide-field fluorescence microscopy when il
   Spectra from Ref.~\cite{RN264}.
   (B), Quantum effieciency as a function of wavelength for a (green line) standard PMT and a (red line) GaAsP PMT as a function of wavelength.
   Plot from Ref.~\cite{RN263}.}\label{f:3-Spectra}
-\end{figure}\fxnote{switch panels}
+\end{figure}
 
 While the two confocal microscopes we used operate in the same manner, there are key differences that affect the quality of the data and thus affect the measurement protocol.
 The Zeiss microscope uses standard photomultiplier tubes (PMT) as the detector.
@@ -522,32 +530,38 @@ First, we place the sample on the microscope stage and find the toroidal droplet
 We then select the 633~nm laser and Cy5 filter set from the available options on the microscope.
 Next, we set the microscopes to scan the focal plane and display the output in real time.
 We lower the stage to find the bottom of the sample, set this height to be the bottom of the image stack, and then raise the stage to determine the highest plane that we will measure.
-As a rule of thumb we aim for 15~--~25 image planes, depending on the microscope used to acquire the data.
+As a rule of thumb we aim for 15~--~30 image planes, depending on the microscope used to acquire the data.
 If we image too few planes, we don't image the highly curved areas of the droplet.
 If we image too many planes, we don't acquire enough frames over the life of the active nematic.
-Each 512 px $\times$ 512 px image plane typically takes blah s to acquire, and it takes about blah to move between planes.
-Overall, this means that we aim to acquire a full image stack every blah s~\fxnote{specifics please}.
+Each 512 px $\times$ 512 px image plane typically takes 0.8~s to acquire, and it takes about 1~s to move between planes.
+Overall, this means that a full image stack takes between 30~s and 1~min to acquire.
 
-Now that we have set up the size of the image stack, we turn to tuning the laser intensity and gain to produce the highest quality images.
-The lasers are a blah that is adjusted via blah.
-The gain on the detector is a blah, also controlled in the blah\fxnote{what actually tunes the laser intensity and the gain}
-We first find the image plane with the brightest intensity, and manipulate the intensity and gain such that at most $\approx 5$\%  of the pixels are saturated.
+Now that we have set up the size of the image stack, we turn to adjusting the laser intensity and gain to produce the highest quality images.
+The laser intensity incident on the sample is tuned by an acousto-optical tunable filter (AOTF) placed at the output of the laser, and before the laser enters the confocal microscope.
+An AOTF is a tunable diffraction grating, where the grating is formed by standing acoustic waves that create a periodic index of refraction.
+By changing the frequency of the acoustic waves, the AOTF will diffract more or less light into the confocal microscope~\cite{RN317}.
+The gain in the detector corresponds to the voltage applied across the dynodes in the photomultiplier tubes~\cite{RN316}.
+This is controlled in the imaging software by a slider from 1 to 255, with 1 corresponding to the minimum operating voltage and 255 the maximum operating voltage.
+We first find the image plane with the brightest intensity, and manipulate the intensity and gain such that at most $\approx 5$\% of the pixels are saturated.
 While a higher laser power and lower gain will produce better quality images, setting the laser power too high can lead to excessive photobleaching for long time measurements.
-Thus, we generally keep the gain roughly halfway between the minimum and maximum values and then adjust the laser power accordingly.
+We typically set the laser power to approximately 3\% of the maximum 15 mW output.
+With this laser power, we need a gain roughly halfway between the minimum and maximum values.
 If we are on the Zeiss microscope, we set the microscope to scan each image plane twice and average the measurements such that we can reduce the overall laser power and minimize photobleaching.
 
 For both microscopes, we then go to the bottom plane where the emitted intensity is weakest and set an offset corresponding to an intensity floor for the measurement.
 Pixels with an intensity below the offset are set to 0.
 This helps to remove some of the thermal noise in the image; in practice, we have enough signal that this parameter does not really matter.
 
-Once these parameters have been set, we turn on a focusing system to eliminate the effect of thermal and mechanical drift in the measuring system.\fxnote{how does perfect focus work}
+Once these parameters have been set, we turn on a focusing system to eliminate the effect of thermal and mechanical drift in the measuring system.
 Ambient temperature changes and mechanical slop in the measuring system cause the measured distance between the objective and a given reference plane in the sample to change over time.
 This will result in the physical sample volume imaged by the confocal changing over time.
-The focusing system corrects this by maintaining the distance between a specified reference plane and the objective with high accuracy.
-The microscope then resets its zero to the reference plane before every scan through the image stack and thus will never accumulate error due to drift.
+The focusing system uses a lens and an LED to form an image of the interface between the coverslip or microscope slide and the sample.
+Turning on the focusing system corresponds to the software adjusting the lens to form the image of this interface without changing the current height of the microscope stage.
+The software then maintains this image of the interface by adjusting the height of the microscope stage, naturally compensating for thermal drift and mechanical slop.
+By maintaining this image of the interface, the focusing system naturally maintains the focal plane of the confocal microscope in the sample.
+
 Finally, we set the microscope to image continuously for 12 hours, starting the next image stack as soon as it finishes the previous stack until the 12 hours have expired.
 We note that files imaged for longer than 12 hours can be difficult to work with due to their large size.
-
 Once the image acquisition is finished, we crop the raw confocal time series to only include the portion where the toroidal droplet is active.
 We save this cropped version in single multi-page \texttt{.tiff} file including the metadata containing acquisition parameters.
 This standardizes the data format between the different microscopes to make it easier to read in to the computer.
@@ -565,7 +579,7 @@ Since the entire image series from the confocal can be up to 8~Gb, we first extr
 We first determine the surface of the toroidal droplet by averaging each the image planes at a given height over time to and then applying an intensity threshold.
 Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging over time creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\ref{f:3-SurfaceHeight}(A,B).
 We next threshold the data to binarize the image stack; this lets us make the distinction between the surface of the toroidal droplet and everything else.
-There are a large range of threshold values that do not change the shape of the surface or affect the final curvature values; we choose the smallest threshold value that produces a smooth-looking surface with no extraneous bright points in remainder of the image stack.
+There are a large range of threshold values that do not change the shape of the surface or affect the final curvature values; we choose the smallest threshold value that produces a smooth surface with no extraneous bright pixels that are not on the surface.
 
 From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
 We take this $z$ value to be the height $h$ of the toroidal surface and record it in an array, giving us $h = f(x,y)$, as shown in Figure~\ref{f:3-SurfaceHeight}(C) for the example image in Figure~\ref{f:3-SurfaceHeight}(B).
@@ -697,7 +711,7 @@ For tracked defects, we store the defect identity in addition to the frame and p
 
 \subsection{Measuring defect charge in a specified region}
 Once we have identified all the defects in every frame, we want to be able to look at a specific region on the torus and determine the topological charge in that region over time.
-We do this by placing the defect locations at each time frame into a binary array, or mask, where a ``1'' indicates a defect and the rest of the array set to ``0'.'
+We do this by placing the defect locations at each time frame into a binary array, or mask, where a ``1'' indicates a defect and the rest of the array is set to ``0'.'
 We create separate arrays for the $s = + 1/2$ and $s = - 1/2$ defects.
 We then concatenate the masks such that the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ hold the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
 Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{x,y}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
@@ -748,8 +762,9 @@ where $s_i$ is the charge of a defect in the bulk of the region calculated via E
 \subsection{Edge charge}
 Recall that the topological charge is the winding number of the director along a closed contour in real space, where the director is specified with respect to a fixed frame.
 To find the edge charge we consider $\mathbf{n}$ along the edge and calculate the associated winding number in $\mathbb{R}\mathbb{P}_1$, but here we measure the director orientation with respect to a moving frame on the boundary.
-This moving frame is called the Frenet-Serret frame and is defined by the unit tangent and unit normal vectors along the boundary.\fxnote{need to define the Frenet-Serret frame in a figure, do EdgeChargeEx better.}
-If we let $\phi$ describe the director orientation with respect to the fixed coordinate system and $\psi$ describe the orientation of the unit tangent vector with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame~\cite{RN35,RN23}.
+This moving frame is called the Frenet-Serret frame and is defined by the unit tangent vector, $\mathbf{T}$, and unit normal vector, $\mathbf{k}$, along the boundary.
+If we let $\phi$ describe the director orientation with respect to the fixed coordinate system and $\psi$ describe the orientation of $\mathbf{T}$ with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame~\cite{RN35,RN23}.
+These two frames and the associated angles are illustrated in Figure~\ref{f:3-EdgeChargeEx}(A).
 Thus, we calculate the edge charge like:
 \begin{equation}
   s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\phi'\label{e:3-boundCharge}.
@@ -760,7 +775,11 @@ As a check, we can substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundC
 \end{equation}
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem says that $ \oint \textup{d}\psi = 2\pi$~\cite{RN35}.
 Thus, $s_{boundary} = 1 - s_{bulk}$ such that we recover $\chi = s_{bulk} + s_{boundary} = 1$, as required for our surface with a single boundary.
-This is illustrated with examples using a circular region containing a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect in Figure~\ref{f:3-EdgeChargeEx}(A-C), respectively.
+
+For example, consider a uniform director filed in a circular region, as drawn in the upper part of Figure~\ref{f:3-EdgeChargeEx}(B).
+There is no defect in the bulk, so $s_{bulk} = 0$.
+Now considering the director variation along the boundary in the Frenet-Serret frame, as drawn in the lower part of Figure~\ref{f:3-EdgeChargeEx}(B), we see that the director rotates by $2 \pi$, corresponding to $s_{boundary} = 1$ and thus $s_{bulk} + s_{boundary} = 1$.
+This is illustrated in Figure~\ref{f:3-EdgeChargeEx}(C,D) with further examples where the circular region contains a director field with a single $s = +1$ defect, and where the director field has a single $s=-1/2$ defect, respectively.
 
 We can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
 We do this by independently determining $s_{boundary}$ using Eq.~\ref{e:3-boundCharge} and $s_{bulk}$ using our defect-finding algorithm.
@@ -768,11 +787,14 @@ We do this by independently determining $s_{boundary}$ using Eq.~\ref{e:3-boundC
   \centering
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeEx.png}
   \caption{Schematic illustration of boundary and bulk charge.
-  (A,B,C) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frenet-Serret frame.
-  The director orientation $\phi$ in the fixed frame is taken counterclockwise from the horizontal and the director orientation $\phi'$ in the Frenet-Serret frame is taken clockwise from the horizontal.
-  For the defect-free director field in (A), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
-  Performing the same calculations for the director field containing the (B) $s = +1$ defect and (C) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
-\end{figure}\fxnote{this figure is not clear. do better and illustrate FS frame}
+  (A), The fixed frame is defined by the orthonormal basis $\{\hat{e}_1, \hat{e}_2 \}$.
+  The Frenet-Serret frame is a moving orthonormal frame defined by the unit tangent vector and unit normal vector, $\{\mathbf{T}, \mathbf{k}\}$.
+  In the fixed frame, the director orientation and tangent vector orientation are given by $\phi$ and $\psi$, respectively.
+  In the Frenet-Serret frame, the director orientation is $\phi'$.
+  (B--D) An example director field in a circular region drawn in a fixed frame and the director field at the boundary drawn in the Frenet-Serret frame.
+  For the defect-free director field in (B), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
+  Performing the same calculations for the director field containing the (C) $s = +1$ defect and (D) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
+\end{figure}
 
 For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$, of the binary mask to be the pixels with value $1$ connected to at least one $0$-valued pixel.
 We consider two pixels connected if they share an edge; pixels that share a corner are not connected.
@@ -813,27 +835,26 @@ For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s
 We see in this example that 76 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$.
 Importantly, we see that ${\rm mean}(error) = 0.026$ when we consider all the frames.
 Since each missed defect introduces an error of $\pm 0.5$, the negligible average error indicates that there is no systematic error in our analysis.
-When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.\fxnote{explain the calculation a bit better in terms of the number of defects in a region}
+% When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.\fxnote{explain the calculation a bit better in terms of the number of defects in a region}
 
 
 
 
 \section{Measuring surface curvature}
-From $h(x,y)$, we wish the calculate the Gaussian curvature of the surface.
+From $h(x,y)$, we wish to calculate the Gaussian curvature of the surface.
 Recall from Chapter~\ref{c:2} that $K = \textup{det} \big \{ \mathbf{L} \big \}$.
 Thus, we need to calculate the Weingarten matrix.
 
 
 \subsection{The Weingarten matrix}
-For our surface $\mathbf{R} = \{x, y, h(x,y)\}$, it is straightforward to use differential geometry and directly calculate the Weingarten matrix.
-However, this involves taking discrete first and second derivatives on a noise surface.
+For a smooth surface $\mathbf{R} = \{x, y, h(x,y)\}$, it is straightforward to use differential geometry and directly calculate the Weingarten matrix.
+Note, however, that our surfaces are discrete and noisy and thus taking first and second derivatives is not obvious.
 To avoid this, we rearrange Eq.~\ref{e:2-WeingartenMatrix} and notice that the Weingarten matrix relates a displacement in the tangent plane of a surface with the corresponding change in the unit normal vector along the displacement via,
 \begin{equation}
 (\hat{e}_j \cdot \nabla) \mathbf{k} \cdot \Delta \mathbf{r} = -\tensor{L}{_{ij}} \hat{e}_i \cdot \Delta \mathbf{r},\label{e:3-Kfit1}
 \end{equation}
 where $\hat{e}_i$ with $i = 1,2$ is an orthonormal basis in the tangent plane, $\mathbf{k}$ is the unit normal vector, and  $\mathbf{\Delta r} = \Delta r_j \hat{e}_j$ is an arbitrary displacement in the tangent plane.
-As an aside, since we have chosen an orthonormal basis in the tangent plane, we can keep the notation simple and use lower indices only.
-Note that the relation, $(\hat{e}_j \cdot \nabla) \mathbf{k} = -\tensor{L}{_{ij}} \hat{e}_i$, Weingarten's formula, comes from the fact that the change in the surface normal due to infinitesimal displacements in the tangent plane exists solely in the tangent plane~\cite{RN35}.
+Note that the relation, $(\hat{e}_j \cdot \nabla) \mathbf{k} = -\tensor{L}{_{ij}} \hat{e}_i$, Weingarten's formula, comes from the fact that the change in the surface normal due to infinitesimal displacements in the tangent plane is also in the tangent plane~\cite{RN35}.
 
 Thus, for a point of interest on the surface, we can consider local displacement vectors and the corresponding change in the unit surface normal and then fit $\tensor{L}{_{ij}}$ according to Eq.~\ref{e:3-Kfit1} using an iteratively-reweighted least squares (IRLS) routine~\cite{RN32,RN31}.
 This technique allows us to characterize a noisy surface without taking a discrete derivative and without any prior knowledge about the surface features.
@@ -845,7 +866,7 @@ Consider a set of observations of a random variable where each observation is de
 Given a model $y'_{(i)} = g(x_{(i)},\bm{\alpha})$, where $\bm{\alpha}$ is the parameter vector for the model, we can define the error of the model for each observation by the residual, $\gamma_{(i)} = y_{(i)} - y'_{(i)} = y_{(i)} - g(x_{(i)},\bm{\alpha})$.
 A least-squares fit works to find the $\bm{\alpha}$ that minimizes the sum of the squared residuals:
 \begin{equation}
-  \argmin_{\bm{\alpha}} \sum\limits_i\, \big \{ \gamma_{(i)}^2\big \}.\label{e:3-LeastSquare}
+  \argmin_{\bm{\alpha}} \sum\limits_i\,  \gamma_{(i)}^2.\label{e:3-LeastSquare}
 \end{equation}
 If the model is linear, the fit has an analytic solution~\cite{RN269}.
 In addition, for normally-distributed data, the result of least-squares fit gives the maximum-likelihood values of $\bm{\alpha}$~\cite{RN269}.
@@ -856,7 +877,7 @@ In fact, extreme outliers are often referred to as lever points for this exact r
 One way to treat noisy or uncertain data is to assign a weight to each data point such that data points with larger error are weighted less.
 The fit then becomes:
 \begin{equation}
-  \argmin_{\bm{\alpha}} \sum\limits_{(i)}\,\big \{ (w_i \gamma_{(i)})^2 \big \},
+  \argmin_{\bm{\alpha}} \sum\limits_{(i)}\, (w_i \gamma_{(i)})^2,
 \end{equation}
 where $w_{(i)}$ is the weight associated to the observation $y_{(i)}$.
 A weighted linear least-squares fit of this type is still analytically solvable~\cite{RN269}.
@@ -870,38 +891,41 @@ such that the fit can deprioritize or even reject entirely large sources of erro
 These cost functions are known as maximum-likelihood-type estimators, or M-estimators~\cite{RN269}.
 Note that choosing the cost function $\mathit{cost}(\gamma_{(i)}) = \gamma_{(i)}^2$ gives a regular least-squares fit.
 Unfortunately, a general cost function is not often analytically solvable or easy to minimize.
-However, provided the cost function is differentiable, we can solve Eq.~\ref{e:3-GeneralCostFit} with an IRLS process.
+However, provided the cost function is differentiable, we can solve Eq.~\ref{e:3-GeneralCostFit} with an iteratively-reweighted least-squares (IRLS) process.
 
-We begin by expressing Eq.~\ref{e:3-GeneralCostFit} in terms of a weighted least-squares fit.
-Taking the derivative of Eq.~\ref{e:3-GeneralCostFit} with respect to $\bm{\alpha}$ gives:
+To do this, we need to recast Eq.~\ref{e:3-GeneralCostFit} in terms of a weighted least-squares fit.
+We start by taking the derivative of Eq.~\ref{e:3-GeneralCostFit} with respect to $\alpha_j$:
 \begin{equation}
-  \sum\limits_i\,\frac{\partial \, \mathit{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}} \frac{\partial \gamma_{(i)}}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv1}
+  \sum\limits_i\,\frac{\partial \, \mathit{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}} \frac{\partial \gamma_{(i)}}{\partial \alpha_j} = 0.\label{e:3-IRLSderiv1}
 \end{equation}
-If we define a weight function like $w(\gamma_{(i)}) = \dfrac{1}{\gamma_{(i)}}\dfrac{\partial \, \mathit{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}}$, we can now re-write Eq.~\ref{e:3-IRLSderiv1} as:
+Notice that if we define a weight function like $w(\gamma_{(i)}) = \dfrac{1}{\gamma_{(i)}}\dfrac{\partial \, \mathit{cost}(\gamma_{(i)})}{\partial \gamma_{(i)}}$, we can re-write Eq.~\ref{e:3-IRLSderiv1} as:
 \begin{equation}
-  \sum\limits_{(i)}\,w(\gamma_{(i)}) \gamma_{(i)} \frac{\partial \gamma_{(i)}}{\partial \bm{\alpha}} = 0.\label{e:3-IRLSderiv2}
+  \sum\limits_{(i)}\,w(\gamma_{(i)}) \gamma_{(i)} \frac{\partial \gamma_{(i)}}{\partial \alpha_j} = 0.\label{e:3-IRLSderiv2}
 \end{equation}
  Solving Eq.~\ref{e:3-IRLSderiv2} for $\bm{\alpha}$ is equivalent to minimizing:
  \begin{equation}
    \argmin_{\bm{\alpha}} \sum\limits_i\,\big \{ (w_{(i)}(\gamma_{(i)}) \gamma_{(i)}(\bm{\alpha}))^2 \big \},\label{e:3-WeightLS}
  \end{equation}
-a weighted least-squares fit, where we have expressed $\gamma_{(i)}$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
-However, since our weights are dependent on the residuals, we solve Eq.~\ref{e:3-WeightLS} iteratively, where the weights for an iteration $(p)$ are determined by the residuals from the previous iteration, giving:
+ a weighted least-squares fit, as desired.
+Hence, solving Eq.~\ref{e:3-GeneralCostFit} is equivalent to solving a weighted least-squares fit, where we have expressed $\gamma_{(i)}$ inside the minimization as an explicit function of $\bm{\alpha}$ for clarity.
+Since our weights are dependent on the residuals, we solve Eq.~\ref{e:3-WeightLS} iteratively, where the weights for an iteration $(p)$ are determined by the residuals from the previous iteration, giving:
 \begin{equation}
-  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \}.
+  \bm{\alpha}^{(p+1)} = \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma^{(p+1)}_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \}.
 \end{equation}
 With enough iterations, the $\gamma_{(i)}$ converge and we have the $\bm{\alpha}$ values that solve Eq.~\ref{e:3-WeightLS}.
-The entire process can described by the recursion relation:
+The entire process can be described by the recursion relation:
 \begin{align}
   \gamma_{(i)}^{(p+1)}
   &= y_{(i)} - g\big (x_{(i)},\bm{\alpha}^{(p+1)}\big ) \nonumber \\
-  &= y_{(i)} - g\Bigg (x_{(i)}, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
+  &= y_{(i)} - g\Bigg (x_{(i)}, \argmin_{\bm{\alpha}} \sum\limits_i\,\bigg \{ \bigg [w_{(i)} \big(\gamma_{(i)}^{(p)}\big ) \gamma^{(p+1)}_{(i)}(\bm{\alpha}) \bigg ]^2 \bigg \} \Bigg).
 \end{align}
 
 Since these cost functions do not need to be everywhere convex, they may not necessarily have a global minimum, or even a guaranteed convergence.
 However, those that are not globally convex often deal with large error more severely than convex functions.
-Thus, to get the best of both worlds, we will first fit our surface using the convex ``Fair'' M-estimator until the fit converges, then fit the output of the Fair fit with the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}, where the functional forms of the cost function and weight functions are provided in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn} .
-Both the GMC and the Fair M-estimator have a tuning constant, $c$, that adjusts how severely the M-estimator deals with errors, with $c = 1.4826$ and $c = 1.3998$ corresponding respectively to 95\% efficiency on a standard normal distribution.
+Thus, to get the best of both worlds, we will first fit our surface using a convex M-estimator until the fit converges and then fit the output of the convex M-estimator with a non-convex M-estimator.
+Following Ref.~\cite{RN31}, we use the convex ``Fair'' M-estimator and the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}, where the functional forms of the cost function and weight functions are provided in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
+Both the GMC and the Fair M-estimator have a tuning constant, $c$, that adjusts the influence of errors on the fitting weights for the next iteration; decreasing $c$ reduces the influence of large residuals. 
+Note that the values $c = 1.4826$ and $c = 1.3998$ correspond respectively to 95\% efficiency on a standard normal distribution.
 Efficiency refers to how much data an M-estimator needs to converge to the maximum likelihood solution.
 A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the model parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
 The effect of adjusting the tuning constant for the various M-estimators is easily seen in the curves in Figure~\ref{f:3-CostFxn}, where the red curves correspond to a tuning constant set to the 95\% efficiency value and the blue curves correspond to setting the tuning constants to twice the 95\% efficiency value.
