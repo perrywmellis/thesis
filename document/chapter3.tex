@@ -424,16 +424,21 @@ The emitted light then travels the same path back through the objective, passes 
 In addition, there is often a second filter placed between the dichroic mirror and the detector to further prevent the excitation light from reaching the detector.
 Since the excitation and emitted light share the same path, a single set of mirrors placed between the mirror and the objective scans the confocal point for both the emitted and excited light across the sample~\cite{RN260}.
 
-Like any form of optical microscopy, the resolution in the focal plane is set by the diffraction limit; the light from the objective is not focused to a point but instead forms a circular diffraction pattern.
-The the first minimum of this pattern has a diameter~\fxnote{REF}:
+Like any form of optical microscopy, the limiting resolution in the focal plane is set by the diffraction limit; the light from the objective is not focused to a point but instead forms a circular diffraction pattern.
+The first minimum of this pattern has a diameter~\fxnote{REF}:
 \begin{equation}
 d \approx 1.22 \lambda /{\rm NA},\label{e:3-Airy}
 \end{equation}
-where $\rm {NA} = n \sin \theta$ is the numerical aperture of the objective, with $n$ the index of refraction of the ambient medium and $\theta$ the half-angle of the cone of light focused by the objective.
+where ${\rm NA} = n \sin \theta$ is the numerical aperture of the objective, with $n$ the index of refraction of the ambient medium and $\theta$ the half-angle of the cone of light focused by the objective.
 $d$ is also known as the diameter of the Airy disc.
 Generally, two point sources can be distinguished if the maximum of the diffraction pattern from one point falls on the first minimum of the pattern from the second point.
 This is known as the Rayleigh criterion; Eq.~\ref{e:3-Airy} thus also gives the resolution for an objective with a given NA~\fxnote{REF}.
 This criterion also then imposes a lower limit on the size of the confocal aperture, as an aperture smaller than $d$ doesn't increase the resolution, it just decreases the amount of light incident on the detector.
+
+In practice, the resolution in an experiment is instead generally set by the pixel size on the detector.
+The distance between the detector and the confocal aperture can be varied to ``zoom'' in and out without changing the objective magnification; zooming in corresponds to a smaller area in the sample illuminating the full detector, whole zooming out does the opposite.
+The best resolution occurs when the pixel length is $d/2$; however, this means that the total sample area imaged is small.
+Typically, we choose a pixel length larger than $d$, to sacrificing resolution but increasing the area of the sample we image.
 
 In a confocal microscope, we also have to consider the axial resolution, or the ability to distinguish between points on the focal plane and points above and below the focal planes.
 Alternately, this can be thought of as the thickness of an optical section.
@@ -445,14 +450,13 @@ In this regime, the resolution is determined by the full-width half-maximum (FWH
 where $b$ is the diameter of the aperture.
 If we take the diameter of the aperture to be the diameter of the Airy disc, we see that ${\rm FWHM}_{axial} \sim {\rm NA}^{-2}$; the axial resolution is more sensitive to the numerical aperture than the resolution in the focal plane.
 
+In fluorescence microscopy, we have to worry about the excitation light damaging fluorophores and rendering them unable to fluoresce, also known as photobleaching.
+Photobleaching of a single fluorophore can be modeled by a statistical process, with a constant probability of photobleaching for absorption-emission cycle.
+Thus, since the laser only illuminates the portion of the sample that is being imaged, photobleaching is less of a concern in scanning laser fluorescence microscopy than it is in widefield fluorescence microscopy, where the entire sample is always illuminated.
+However, even in scanning laser confocal microcopy, a high enough laser intensity or a long enough imaging time will always result in significant photobleaching in the sample.
 
-
-This reduces the impact of photobleaching, but more importantly allows the user to ``zoom'' into the sample without changing the objective magnification simply by changing the distance between the detector and final pinhole such that a smaller area in the sample illuminates the entire detector.
-
-We note that the $z$-resolution between focal planes is still set by the diffraction limit of the emitted light, such that the only way to meaningfully improve the $z$-resolution is to change the objective.
-Coupling confocal microscopy to fluorescence microscopy not only improves signal-to-noise ratio, but also allows us to selectively image only the dyed portion of the sample.
-In our case, only the microtubules are labeled such that we image only the active filaments.
-Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C), where the height is denoted by false color, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.
+In our experiments, only the microtubules are labeled with fluorophores, such that we only image the active filaments.
+Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C), where the height is denoted by false color, we can acquire a 3D image stack showing only the active nematic depleted to the toroidal surface.\fxnote{still need example NA for our objective and typical resolutions in xyz}
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_Confocal.png}
@@ -470,10 +474,10 @@ Thus, as shown in the example image in Figure~\ref{f:3-Confocal}(C), where the h
   A dichroic mirror allows the excited and emitted light to share the same path to and from the sample, but passes only the emitted light to the detector.
   (C) An example image stack of an active nematic torus, where the image stack has been reoriented to provide perspective and the data have been false-colored by height.
   The scale bar is 250 $\upmu$m.}\label{f:3-Confocal}
-\end{figure}
+\end{figure}\fxnote{need typical scan areas and numbers}
 
 \subsection{Confocal setup and parameters}
-We used two different confocal microscopes to collect the data; we started with a Zeiss LSM 700 and then switched to a newer Nikon A1R when the latter was purchased.
+We used two different confocal microscopes to collect the data; we started with a Zeiss LSM 700 and then switched to a newer Nikon A1R when the latter was purchased by Professor Peter Yunker in the School of Physics.
 Both instruments are scanning laser confocal microscopes.
 Procedurally, both microscopes scan the image plane with a focused laser beam while recording the output intensity, adjust the height of the stage to change the focal plane, and then repeat the process until the image stack is acquired.
 While the image stack can be thought of in terms of 3D voxels, the $z$-resolution between focal planes is less than the $xy$-resolution in the focal plane such that it is more convenient to think of the image acquisition as a stack of 2D images.
@@ -485,22 +489,31 @@ However, even though we can in principle image up to the midpoint of the torus, 
 This is because the time required to adjust the stage height is the slowest portion of the imaging process for both of the confocal microscopes we use.
 Since we wish to acquire as many frames as possible for each toroid, we must balance the time required to take an image stack versus the size of the image stack.
 
-The microtubules are dyed with AlexaFluor 647, which has an excitation peak at 651~nm and an emission peak at 667~nm~\cite{RN264}.
+The microtubules are dyed with AlexaFluor 647, which has an excitation peak at 651~nm and an emission peak at 667~nm~\cite{RN264}, as displayed in Figure~\ref{f:3-Spectra}(A).
 Thus, we use a 633~nm laser as our illumination source and a Cy5 filter set such that only the emitted light reaches the detector.
 The Cy5 filter set includes a 590~--~650~nm bandpass excitation filter, a 660~nm longpass dichroic mirror, and a 663~--~738~nm emission filter~\cite{RN263}.
 The filters and mirror are designed with steep passband transitions such that the quoted ranges are good representations of the passband.
 Note that for illumination with a laser, the excitation filter is unnecessary, but is standard when purchasing the filterset.
 The excitation filter is necessary in wide-field fluorescence microscopy when illuminating with a white-light source.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_Spectra.png}
+  \caption{Fluorophore spectra and detector quantum efficiencies for our experimental system.
+  (A), AlexaFluor 647 (red dashed line) excitation and (shaded red area) emission spectra.
+  Spectra from Ref.~\cite{RN264}.
+  (B), Quantum effieciency as a function of wavelength for a (green line) standard PMT and a (red line) GaAsP PMT as a function of wavelength.
+  Plot from Ref.~\cite{RN263}.}\label{f:3-Spectra}
+\end{figure}\fxnote{switch panels}
 
 While the two confocal microscopes we used operate in the same manner, there are key differences that affect the quality of the data and thus affect the measurement protocol.
 The Zeiss microscope uses standard photomultiplier tubes (PMT) as the detector.
-Unfortunately, standard PMTs do not detect wavelengths above 600~nm well, as the quantum efficiency of the detector decreases with increasing wavelength and is typically below 10\% in that wavelength range~\cite{RN263}.
+Unfortunately, standard PMTs do not detect wavelengths above 600~nm well, as the quantum efficiency of the detector decreases with increasing wavelength and is typically below 10\% above that wavelength [green line, Figure~\ref{f:3-Spectra}(B)]~\cite{RN263}.
 This means that we have to increase the intensity of the laser, increase the gain on the detector, and even average two scans of each image plane in order to increase the signal-to-noise ratio to an acceptable level.
 As a result, data from the Zeiss microscope take longer to collect and the active nematic exhibits mild photobleaching for long acquisitions.
 However, we note that the photobleaching is mild and does not decrease the signal-to-noise ratio enough to affect our data analysis.
 
 In contrast, the Nikon microscope uses a Gallium Arsenide Phosphide (GaAsP) PMT in conjunction with standard PMTs to increase the quantum efficiency of the detector suite for larger wavelengths.
-GaAsP PMTs maintain a roughly constant quantum efficiency of $\approx 50$\% up to 700~nm~\cite{RN263}.
+GaAsP PMTs maintain a roughly constant quantum efficiency of $\approx 50$\% up to 700~nm [red line, Figure~\ref{f:3-Spectra}(B)]~\cite{RN263}.
 Thus, we can keep both the laser power and detector gain low while still only needing a single scan of the image plane to acquire a higher quality image stack than we get from the Zeiss microscope.
 We therefore can acquire image stacks with a higher time resolution, a higher image quality, and with no noticeable photobleaching when using the Nikon microscope.
 
@@ -512,8 +525,12 @@ We lower the stage to find the bottom of the sample, set this height to be the b
 As a rule of thumb we aim for 15~--~25 image planes, depending on the microscope used to acquire the data.
 If we image too few planes, we don't image the highly curved areas of the droplet.
 If we image too many planes, we don't acquire enough frames over the life of the active nematic.
+Each 512 px $\times$ 512 px image plane typically takes blah s to acquire, and it takes about blah to move between planes.
+Overall, this means that we aim to acquire a full image stack every blah s~\fxnote{specifics please}.
 
 Now that we have set up the size of the image stack, we turn to tuning the laser intensity and gain to produce the highest quality images.
+The lasers are a blah that is adjusted via blah.
+The gain on the detector is a blah, also controlled in the blah\fxnote{what actually tunes the laser intensity and the gain}
 We first find the image plane with the brightest intensity, and manipulate the intensity and gain such that at most $\approx 5$\%  of the pixels are saturated.
 While a higher laser power and lower gain will produce better quality images, setting the laser power too high can lead to excessive photobleaching for long time measurements.
 Thus, we generally keep the gain roughly halfway between the minimum and maximum values and then adjust the laser power accordingly.
@@ -523,7 +540,7 @@ For both microscopes, we then go to the bottom plane where the emitted intensity
 Pixels with an intensity below the offset are set to 0.
 This helps to remove some of the thermal noise in the image; in practice, we have enough signal that this parameter does not really matter.
 
-Once these parameters have been set, we turn on a focusing system to eliminate the effect of thermal and mechanical drift in the measuring system.
+Once these parameters have been set, we turn on a focusing system to eliminate the effect of thermal and mechanical drift in the measuring system.\fxnote{how does perfect focus work}
 Ambient temperature changes and mechanical slop in the measuring system cause the measured distance between the objective and a given reference plane in the sample to change over time.
 This will result in the physical sample volume imaged by the confocal changing over time.
 The focusing system corrects this by maintaining the distance between a specified reference plane and the objective with high accuracy.
@@ -541,14 +558,14 @@ The core routine to load the image stack into MATLAB comes from the \texttt{biof
 The Open Microscopy Environment maintains the open-source \texttt{OME-TIFF} image format for microscopy data.
 The \texttt{bioformats} toolbox allows us to call the imaging parameters such as pixel-to-length conversions, framerate, etc., as well as access the total times series of image stacks as a 3D array in MATLAB.
 The data are stored as a stack of 2D arrays, where each array holds data from a measurement of a confocal plane at a moment in time.
-The 2D arrays are stored in the order that they were taken; this corresponds to concatenating the full 3D image stacks along the $z$ dimension in the order the individual stacks were taken.
+The 2D arrays are stored in the order that they were taken; this corresponds to concatenating the full 3D image stacks along the $z$ direction in the order the individual stacks were taken.
 Thus, to locate a specific 3D image stack you have to know which stack in the time series you want as well as the number of planes in each image stack.
 Since the entire image series from the confocal can be up to 8~Gb, we first extract the relevant data and then remove the image series from memory so that we have the free memory needed to analyze the data.
 
-We first determine the surface of the toroidal droplet by averaging all the image stacks over time and then applying an intensity threshold.
-Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging all of the image stacks together creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\ref{f:3-SurfaceHeight}(A,B).
+We first determine the surface of the toroidal droplet by averaging each the image planes at a given height over time to and then applying an intensity threshold.
+Since we have fluorescence confocal data where the fluorescent media has depleted to the surface of the torus, averaging over time creates a clear intensity image of the toroidal surface as both transient structures in the bulk as well as the filamentary structure of the active nematic is washed out in the averaging process, as seen in the example images in Figure~\ref{f:3-SurfaceHeight}(A,B).
 We next threshold the data to binarize the image stack; this lets us make the distinction between the surface of the toroidal droplet and everything else.
-There are a large range of threshold values that do not change the shape of the surface or affect the final curvature values; thus, we can do this thresholding manually.
+There are a large range of threshold values that do not change the shape of the surface or affect the final curvature values; we choose the smallest threshold value that produces a smooth-looking surface with no extraneous bright points in remainder of the image stack.
 
 From the binarized 3D array, we look at every $xy$ position and determine the lowest $z$ value that contains a nonzero value.
 We take this $z$ value to be the height $h$ of the toroidal surface and record it in an array, giving us $h = f(x,y)$, as shown in Figure~\ref{f:3-SurfaceHeight}(C) for the example image in Figure~\ref{f:3-SurfaceHeight}(B).
@@ -567,14 +584,15 @@ We next consider the intensity stack for each time point and perform a maximum i
 This process largely prevents transient bright filaments in the bulk of the toroidal droplet from affecting our measurements.
 Thus, we now have recorded our surface and reduced our data from a time-series of 3D image stacks to a time-series of 2D images such that we have the intensity $I = f(x,y,t)$.
 An example projection at an instant in time for the image stack in Figure~\ref{f:3-SurfaceHeight}(A) is shown in Figure~\ref{f:3-CEDF2}(A).
-Once we have extracted the time-series of data on the surface, we work to: (i), determine the director and defects from the intensity projections, and (ii), calculate the surface curvature and surface normals using $h(x,y$).
+Once we have extracted the time-series of data on the surface, we work to: (i) determine the director and defects from the intensity projections, and (ii) calculate the surface curvature and surface normals using $h(x,y$).
 
 
 
 
 \section{Determining director and defects}
 In the intensity projection of a confocal stack at a time $t_0$, $\mathbf{n}$ is given by the direction of the microtubule bundles.
-This direction is obtained from the grayscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)\cite{RN30}.
+This direction is obtained from the grayscale image by finding the direction along which the intensity fluctuates the least for each pixel using a technique called coherence-enhanced diffusion filtering (CEDF)~\cite{RN30}.
+CEDF is used extensively in computer vision and in cell segmentation in biology, but it has not yet been used in the Physics literature~\cite{RN137}.
 We illustrate this technique with an example analysis of the intensity projection shown in Figure~\ref{f:3-CEDF2}(A).
 
 
@@ -595,8 +613,9 @@ Since the microtubule bundles have head-tail symmetry, we cannot use the gradien
 The rank-2 gradient tensor is symmetric and is the same whether it is constructed with the gradient vector or the negative gradient vector.
 Thus, we use the gradient tensor to ``remove the head'' from the gradient vector.
 
-We now define the coherence direction of a rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue.
-The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is periodic on the interval $[0^{\circ}, 180^{\circ})$.
+We now define the coherence direction of a symmetric rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue.
+Recall that according to the Spectral theorem, any symmetric real matrix is diagonalizible, with the diagonal elements the eigenvalues of the matrix and the associated orthonormal basis formed by the eigenvectors.
+The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is defined on the interval $[0^{\circ}, 180^{\circ})$.
 The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(C), where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ measured clockwise (CW) off of the horizontal axis has been mapped to the grayscale intensity values $[0,255)$, with 0 corresponding to black and 255 to white.
 We see that there are still too many fluctuations in the coherence directions shown in Figure~\ref{f:3-CEDF2}(C) to determine $\mathbf{n}$.
 
@@ -612,9 +631,9 @@ K_{\rho} \ast (  \nabla_y I_{\sigma})(\nabla_x I_{\sigma}) & K_{\rho} \ast (\nab
 where $K_{\rho}$ is a Gaussian filter with standard deviation $\rho$, where $\rho$ should be about the size of the relevant coherence feature in the image, and $\ast$ is a convolution.
 If $\rho$ is too small, the coherence directions of the structure tensor will resemble those from the gradient tensor, while if $\rho$ is too large the desired coherence features will be washed out by the averaging.
 
-The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is shown in the main image and inset in Figure~\ref{f:3-CEDF2}(D), respectively.
+The coherence direction of the structure tensor calculated with $\rho = 5$ px and filter size $29\textrm{ px } \times 29$ px for each pixel of $I_{\sigma}$ seen in the main image and inset of Figure~\ref{f:3-CEDF2}(B), is shown in the main image and inset in Figure~\ref{f:3-CEDF2}(D), respectively.
 As before, the orientation on the interval $[0^{\circ}, 180^{\circ})$ measured CW off of the horizontal axis has been mapped to the grayscale intensity values $[0,255)$.
- We take this output of the coherence direction of the structure tensor for each pixel as the local ``molecular director'' $\mathbf{u}$, representing the local orientation of the active nematic.
+ We note that the coherence direction of the structure tensor for each pixel represents the local director, referred to as the ``molecular director,'' $\mathbf{u}$.
 \newpage
 \begin{figure}[H]
   \centering
@@ -642,12 +661,13 @@ Inset: The same operation applied to the image in the inset of (D).}\label{f:3-C
 \end{figure}
 \newpage
 \subsection{Calculating the director}
-From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over the $\mathbf{u}$ of all points in a specified radius, $\beta$, of the point of interest.
-We perform this averaging using a disc-shaped mean filter of radius $\beta$.
+From $\mathbf{u}$, we compute the 2D tensor nematic order parameter defined in Eq.~\ref{e:2-2DOrderRaw}, taking the average over the $\mathbf{u}$ of all points within a specified radius $\beta$ of the point of interest.
+We perform this averaging using a mean filter of radius $\beta$.
 We then diagonalize $\mathbf{Q}$ as shown in Eq.~\ref{e:2-2DOrderDiag}, providing $\mathbf{n}$ and $S$ for each pixel.
-For the orientations of $\mathbf{u}$ in displayed in Figure~\ref{f:3-CEDF2}(D), we choose $\beta = 5$~px to produce $S$ and $n$ as shown in Figure~\ref{f:3-CEDF2}(E,F), respectively.
+For the orientations of $\mathbf{u}$ that are displayed in Figure~\ref{f:3-CEDF2}(D), we choose $\beta = 5$~px to produce $S$ and $n$ as shown in Figure~\ref{f:3-CEDF2}(E,F), respectively.
 We map the values $S = [0, 1]$ in Figure~\ref{f:3-CEDF2}(E) to the grayscale intensity values $[0,127]$ such that black represents $S = 0$ and the lightest gray represents $S = 1$.
 Thus, the dominant gray shade in Figure~\ref{f:3-CEDF2}(E) indicates uniform alignment within the 5 px radius.
+We chose this map so that we can display $S$ on top of either a white background or a black background.
 In addition, note that only every $7^{\textrm{th}}$ value of $\mathbf{n}$ is plotted in Figure~\ref{f:3-CEDF2}(F) to ensure the $\mathbf{n}$-field is clear to the eye.
 In reality there is a value for $\mathbf{n}$ at every pixel.
 
@@ -660,7 +680,7 @@ Once we determine $\mathbf{n}$ and $S$, we are ready to find the defects.
 
 
 \subsection{Finding defect location and topological charge}
-We mentioned in Chapter~\ref{c:1} that for a defect, $\mathbf{n}$ is undefined; in addition, $S \ll 1$ at a defect.
+We mentioned in Chapter~\ref{c:1} that a defects are singularities in the director field; in addition, $S \ll 1$ at a defect.
 Therefore, we start by selecting pixels with $S < 0.1$ as potential defect candidates.
 For every candidate, we first consider all pixels in a 5~px~$\times$~5~px plaquette centered on the point of interest and ensure that there are no other candidates in the plaquette with a lower value of $S$.
 We then calculate the $\mathbf{n}$-rotation about the point of interest according to Eq.~\ref{eq:2-topCharge}.
@@ -671,18 +691,17 @@ The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of
 We store the defect locations in a list recording the frame and position of each defect.
 The $s = +1/2$ and $s = -1/2$ defects are stored separately.
 For toroids made with 36 $\upmu$M ATP, our time resolution is high enough to track the defects.
-We track each defect species independently using a combinatorics-based particle tracking algorithm~\cite{RN54}.
+We track $s = +1/2$ and $s = -1/2$ defects independently using a combinatorics-based particle tracking algorithm~\cite{RN54}.\fxnote{reference note on the algorithm}
 For tracked defects, we store the defect identity in addition to the frame and position so that we can reconstruct individual defect trajectories.
 
 
 \subsection{Measuring defect charge in a specified region}
 Once we have identified all the defects in every frame, we want to be able to look at a specific region on the torus and determine the topological charge in that region over time.
-We start by placing the defect locations into a binary array.
-For each point in time, we create a pair of binary masks to hold the $s = \pm 1/2$ defect locations at that time point.
+We do this by placing the defect locations at each time frame into a binary array, or mask, where a ``1'' indicates a defect and the rest of the array set to ``0'.'
+We create separate arrays for the $s = + 1/2$ and $s = - 1/2$ defects.
 We then concatenate the masks such that the final binary arrays $J^{(+)}(x,y,t)$ and $J^{(-)}(x,y,t)$ hold the $s = +1/2$ and $s = -1/2$ defects over time, respectively.
-Defect locations in $J^{\pm}$ are represented by a $1$ with all other pixels set to $0$.
-Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{xy}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
-We plot $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t) = N^{(+)}_{\Theta}(t) + N^{(-)}_{\Theta}(t)$ in the example region in Figure~\ref{f:3-NumberOverTime}(A) over time in Figure~\ref{f:3-NumberOverTime}(B), showing that both $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t)$ fluctuate, with the fluctuations in each quantitiy centered around a mean.
+Now, if we have a binary mask defining a region $\Theta(x,y)$, where pixels in the region have a value of 1 and pixels outside of the region have a value of $0$, determining the number of $s = +1/2$ and $s = -1/2$ defects in a region over time, $N^{(\pm)}_{\Theta}(t)$, is a matter of calculating the sum $N^{(\pm)}_{\Theta}(t) = \sum\limits_{x,y}\,J^{(\pm)}(x,y,t)\Theta(x,y)$.
+We plot $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t) = N^{(+)}_{\Theta}(t) + N^{(-)}_{\Theta}(t)$ in the example region in Figure~\ref{f:3-NumberOverTime}(A) over time in Figure~\ref{f:3-NumberOverTime}(B), showing that both $N^{(\pm)}_{\Theta}(t)$ and $N_{\Theta}(t)$ fluctuate, with the fluctuations in each quantity centered around a mean.
 Thus, given $\overbar{N}^{(\pm)}_{\Theta} = (1/T)\sum\limits_{t = 0}^T \, N^{(\pm)}_{\Theta}(t)$, the time-averaged number of $s = \pm 1/2$ defects over a time period $T$, we can calculate the time-averaged topological charge in a region as $\overbar{s}_{\Theta} = (\overbar{N}^{(+)}_{\Theta} - \overbar{N}^{(-)}_{\Theta})/2$.
 \begin{figure}
   \centering
@@ -698,7 +717,8 @@ Since topological charge is discrete, every missed defect in a region causes the
 This gives us a way to characterize the error in our defect-finding routine.
 We monitor $\overbar{s}_{\Theta}$ as a function of averaging time, as shown for three regions in Figure~\ref{f:3-ChargeOverTime}.
 We find that the time-averaged topological charge in a region converges if we average over enough time frames, implying that at least some portion of the error is random.
-However, this does not exclude the presence of a systematic error such as consistently missing a single $s = \pm 1/2$ defect --- the time-averaged charge would still converge with enough frames, but the measured time-averaged topological charge would converge to a different value than the actual value of the time-averaged topological charge.
+However, this does not exclude the possibility of a systematic error such as consistently missing a single $s = \pm 1/2$ defect --- the time-averaged charge would still converge with enough frames, but the measured time-averaged topological charge would converge to a different value than the actual value of the time-averaged topological charge.
+Fortunately, we can use topology to quantify the error in every measurement and rule out a systematic error present in our analysis.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ChargeOverTime.png}
@@ -707,42 +727,43 @@ However, this does not exclude the presence of a systematic error such as consis
   (B,D,F) Plot of time-averaged topological charge vs averaging time for the region highlighted in (A,C,E), respectively.}\label{f:3-ChargeOverTime}
 \end{figure}
 
-We characterize the systematic error in the measured topological charge by considering a region of interrogation as its own entity, i.e. a compact surface with a boundary.
+We characterize the error in the measured topological charge by considering a region of interrogation as its own entity, i.e. a compact surface with a boundary.
+Not that a compact surface with a boundary is topologically like a disc.
 For a compact surface with a boundary, we can write the Gauss-Bonnet theorem as:
 \begin{equation}
   \chi = 2(1-g)-h,\label{e:3-GB3}
 \end{equation}
 where $\chi$ is the Euler characteristic, $g$ is the genus, and $h$ is the number of boundaries.
 Thus according to Eq.~\ref{e:3-GB3}, our regions of interrogation have $\chi = 1$.
-However, the Poincar\'e-Hopf theorem as written in Eq.~\ref{e:1-PH} only applies for surfaces with a boundary if the director at the boundary is either everywhere tangential or everywhere normal to the boundary.
-In our case, the director is free to take any value on the boundary and thus can act as a source or sink of charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
+Importantly, the Poincar\'e-Hopf theorem as written in Eq.~\ref{e:1-PH} only applies for surfaces with a boundary if the director at the boundary is either everywhere tangential or everywhere normal to the boundary.
+In our case, the director is free to take any value on the boundary and thus can act as a source or sink of topological charge such that we can't write a relation between only the topological charge on the surface and the Euler characteristic of the surface.
 
-Instead, we use an extended version of the Poincar\'e-Hopf theorem~\cite{RN267} that allows the director to vary on the boundary:
+Instead, we must use an extended version of the Poincar\'e-Hopf theorem~\cite{RN267} that accounts for variations of the director on the boundary:
 \begin{equation}
   \chi = s_{bulk} + s_{boundary} = \sum\limits_i s_i + s_{boundary},\label{e:3-extendedPH}
 \end{equation}
-where $s_i$ is the charge of a defect in the bulk of the region calculated via Eq.~\ref{eq:2-topCharge}, and $s_{boundary}$ is the edge charge.
+where $s_i$ is the charge of a defect in the bulk of the region calculated via Eq.~\ref{eq:2-topCharge}, and $s_{boundary}$ is called the edge or boundary charge.
 
 
 \subsection{Edge charge}
-Recall that the topological charge is the winding number of the director along a closed contour in $\mathbb{R}\mathbb{P}_1$, where the director is specified with respect to a fixed frame.
+Recall that the topological charge is the winding number of the director along a closed contour in real space, where the director is specified with respect to a fixed frame.
 To find the edge charge we consider $\mathbf{n}$ along the edge and calculate the associated winding number in $\mathbb{R}\mathbb{P}_1$, but here we measure the director orientation with respect to a moving frame on the boundary.
-This moving frame is called the Frenet-Serret frame and is defined by the unit tangent and unit normal vectors the along the boundary.
+This moving frame is called the Frenet-Serret frame and is defined by the unit tangent and unit normal vectors along the boundary.\fxnote{need to define the Frenet-Serret frame in a figure, do EdgeChargeEx better.}
 If we let $\phi$ describe the director orientation with respect to the fixed coordinate system and $\psi$ describe the orientation of the unit tangent vector with respect to the fixed coordinate system, then $\phi' = \psi-\phi$ gives the director orientation with respect to the Frenet-Serret frame~\cite{RN35,RN23}.
 Thus, we calculate the edge charge like:
 \begin{equation}
   s_{boundary} = \frac{1}{2\pi} \oint \textup{d}\phi'\label{e:3-boundCharge}.
 \end{equation}
-Note that if we substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundCharge}, we can re-write the edge charge as:
+As a check, we can substitute the definition of $\phi'$ into Eq.~\ref{e:3-boundCharge} and re-write the edge charge as:
 \begin{equation}
-  s_{boundary} = \frac{1}{2\pi} \oint \bigg \{ \textup{d}\psi - \textup{d}\phi \bigg \} = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}\label{e:3-boundChargeExpand},
+  s_{boundary} = \frac{1}{2\pi} \oint \bigg \{ \textup{d}\psi - \textup{d}\phi \bigg \} = \frac{1}{2\pi} \oint \textup{d}\psi - s_{bulk}.\label{e:3-boundChargeExpand}
 \end{equation}
-where here $s_{bulk}$ is calculated directly due to the additivity of defects.
-
 If we perform the integral in Eq.~\ref{e:3-boundChargeExpand} in the direction of the unit tangent vector, the Turning of Tangents theorem says that $ \oint \textup{d}\psi = 2\pi$~\cite{RN35}.
-Thus, $s_{boundary} = 1 - s_{bulk}$ such that for a surface with a single boundary we have $\chi = s_{bulk} + s_{boundary} = 1$.
-This is illustrated schematically for a circular region containing a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect in Figure~\ref{f:3-EdgeChargeEx}(A-C), respectively.
-Thus, we can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
+Thus, $s_{boundary} = 1 - s_{bulk}$ such that we recover $\chi = s_{bulk} + s_{boundary} = 1$, as required for our surface with a single boundary.
+This is illustrated with examples using a circular region containing a defect-free director field, a director field with a single $s = +1$ defect, and a director field with a single $s=-1/2$ defect in Figure~\ref{f:3-EdgeChargeEx}(A-C), respectively.
+
+We can determine if we have systematic error in our defect detection routine with Eq.~\ref{e:3-extendedPH}, as the sum of the edge charge and the topological charge from all the defects in the bulk should be equal to 1.
+We do this by independently determining $s_{boundary}$ using Eq.~\ref{e:3-boundCharge} and $s_{bulk}$ using our defect-finding algorithm.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeEx.png}
@@ -751,9 +772,10 @@ Thus, we can determine if we have systematic error in our defect detection routi
   The director orientation $\phi$ in the fixed frame is taken counterclockwise from the horizontal and the director orientation $\phi'$ in the Frenet-Serret frame is taken clockwise from the horizontal.
   For the defect-free director field in (A), integrating $\textrm{d}\phi$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{bulk} = 0$, while integrating $\textrm{d}\phi'$ from $\Theta = 0$ to $\Theta = 2\pi$ yields a $s_{boundary} = 1$, such that $s_{bulk} + s_{boundary}=1$.
   Performing the same calculations for the director field containing the (B) $s = +1$ defect and (C) $s = -1/2$ defect yields $s_{bulk} + s_{boundary}= 1 + 0= 1$, and $s_{bulk} + s_{boundary}= -1/2 + 3/2 = 1$, respectively.}\label{f:3-EdgeChargeEx}
-\end{figure}
+\end{figure}\fxnote{this figure is not clear. do better and illustrate FS frame}
 
-For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$, of the binary mask to be the pixels with value $1$ connected by an edge to at least one $0$-valued pixel.
+For some binary mask $\Theta(x,y)$ defining a region, we take the boundary, $\partial \Theta$, of the binary mask to be the pixels with value $1$ connected to at least one $0$-valued pixel.
+We consider two pixels connected if they share an edge; pixels that share a corner are not connected.
 An example mask and its boundary are shown in Figure~\ref{f:3-EdgeChargeErr}(A,B), respectively.
 Along the boundary, the normalized displacement vector between the $i^{\rm th}$ and the $j^{\rm th}$ pixel is defined as:
 \begin{align}
@@ -771,25 +793,27 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
   \centering
   \includegraphics{figures/C3/Ch3-Figs_EdgeChargeErr.png}
   \caption{Boundary charge and defect detection error on active nematic toroids.
-  (A-D) Validation of the Frenet-Serret frame.
+  (A-D), Validation of the Frenet-Serret frame.
   For the example mask in (A), we find the (B) boundary, estimate the unit tangent vectors, and then rotate the tangent vectors by $-\pi/2$ to get the (C) unit normal vectors and complete the Frenet-Serret frame.
   The image in (C) is zoomed in on the highlighted portion of (B) to better show the arrows.
-  (D) We check the Frenet-Serret frame in (C) by integrating the change in the unit normal vector along the boundary, $\int\limits_{0}^{\theta} \textrm{d}(\psi - \pi/2) = \int\limits_{0}^{\theta} \textrm{d}\psi = \int\limits_{0}^{\theta} (\partial \psi/\partial \theta') \textrm{d}\theta'$, and see that the integral goes to $2 \pi$ as $\theta$ goes to $2\pi$, as desired.
-  (E) Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
-  (F) $\int\limits_{\theta = 0}^{2\pi} \textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$ as $\theta \rightarrow 2 \pi$.
-  (G) $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
+  (D), We check the Frenet-Serret frame in (C) by integrating the change in the unit normal vector along the boundary, $\int\limits_{0}^{\theta} \textrm{d}(\psi - \pi/2) = \int\limits_{0}^{\theta} \textrm{d}\psi = \int\limits_{0}^{\theta} (\partial \psi/\partial \theta') \textrm{d}\theta'$, and see that the integral goes to $2 \pi$, as desired.
+  (E), Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
+  (F), $\int\limits_{\theta = 0}^{2\pi} \textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$ as $\theta \rightarrow 2 \pi$.
+  (G), $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
   There are 76 frames with $s_{bulk} + s_{boundary} \neq 1$ and 186 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.29$ and mean$(error) = 0.026$.}\label{f:3-EdgeChargeErr}
 \end{figure}
 
 We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\ref{f:3-EdgeChargeErr}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
 We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\ref{f:3-EdgeChargeErr}(E).
-From the defects found by our algorithm, with $s = +1/2$ defects indicated by (${\color{magenta} \times}$) and $s = -1/2$ defects indicated by (${\color{yellow} \circ}$) in the example image in Figure~\ref{f:3-EdgeChargeErr}(E), we calculate $s_{bulk}= \sum\limits_i s_i=-1/2$ and compare with $s_{boundary}$, where a plot of $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\ref{f:3-EdgeChargeErr}(E) is shown in Figure~\ref{f:3-EdgeChargeErr}(F).
-We see that $s_{bulk}+s_{boundary} = 1$, as desired.
+From the defects found by our algorithm, with $s = +1/2$ defects indicated by (${\color{magenta} \times}$) and $s = -1/2$ defects indicated by (${\color{yellow} \circ}$) in the example image in Figure~\ref{f:3-EdgeChargeErr}(E), we calculate $s_{bulk}= \sum\limits_i s_i=-1/2$.
+Plotting $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\ref{f:3-EdgeChargeErr}(E) in Figure~\ref{f:3-EdgeChargeErr}(F), we see that $s_{boundary} = 3/2$, resulting in $s_{bulk}+s_{boundary} = 1$, as required.
 
 We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
-For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(F).
-We see in this example that 76 frames out of 262 frames have an error, but the error in the charge is never more than 2, and the average error vanishes when we consider all the frames.
-When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.
+For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(G).
+We see in this example that 76 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$.
+Importantly, we see that ${\rm mean}(error) = 0.026$ when we consider all the frames.
+Since each missed defect introduces an error of $\pm 0.5$, the negligible average error indicates that there is no systematic error in our analysis.
+When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.\fxnote{explain the calculation a bit better in terms of the number of defects in a region}
 
 
 
