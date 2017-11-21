@@ -705,7 +705,7 @@ The $s=\pm1/2$ defects calculated for our example analysis are plotted on top of
 We store the defect locations in a list recording the frame and position of each defect.
 The $s = +1/2$ and $s = -1/2$ defects are stored separately.
 For toroids made with 36 $\upmu$M ATP, our time resolution is high enough to track the defects.
-We track $s = +1/2$ and $s = -1/2$ defects independently using a combinatorics-based particle tracking algorithm~\cite{RN54}.\fxnote{reference note on the algorithm}
+We track $s = +1/2$ and $s = -1/2$ defects independently using a combinatorics-based particle tracking algorithm~\cite{RN54,crockerGrierNotes}.
 For tracked defects, we store the defect identity in addition to the frame and position so that we can reconstruct individual defect trajectories.
 
 
@@ -924,11 +924,27 @@ Since these cost functions do not need to be everywhere convex, they may not nec
 However, those that are not globally convex often deal with large error more severely than convex functions.
 Thus, to get the best of both worlds, we will first fit our surface using a convex M-estimator until the fit converges and then fit the output of the convex M-estimator with a non-convex M-estimator.
 Following Ref.~\cite{RN31}, we use the convex ``Fair'' M-estimator and the non-convex ``Geman-McClure'' (GMC) M-estimator~\cite{RN52}, where the functional forms of the cost function and weight functions are provided in Table~\ref{t:3-CostFxn} and plotted in Figure~\ref{f:3-CostFxn}.
-Both the GMC and the Fair M-estimator have a tuning constant, $c$, that adjusts the influence of errors on the fitting weights for the next iteration; decreasing $c$ reduces the influence of large residuals. 
-Note that the values $c = 1.4826$ and $c = 1.3998$ correspond respectively to 95\% efficiency on a standard normal distribution.
-Efficiency refers to how much data an M-estimator needs to converge to the maximum likelihood solution.
-A true least-squares fit has 100\% efficiency --- as more data are included in the fit, a least-squares fit approaches the true values of the model parameters the ``fastest,'' hence the fact that a least squares fit is 100\% efficient~\cite{RN269}.
-The effect of adjusting the tuning constant for the various M-estimators is easily seen in the curves in Figure~\ref{f:3-CostFxn}, where the red curves correspond to a tuning constant set to the 95\% efficiency value and the blue curves correspond to setting the tuning constants to twice the 95\% efficiency value.
+Both the GMC and the Fair M-estimator have a tuning constant, $c$, that adjusts the influence of errors on the fitting weights for the next iteration; decreasing $c$ reduces the influence of large residuals.
+This can be seen by considering the blue and red curves in Figure~\ref{f:3-CostFxn}(B--D), where $c_{blue} = 2c_{red}$.
+Notice how increasing $c$ causes the weights for large residuals to increase; data with a large residual have more influence in the blue curves than in the red curves.
+
+This raises the question of how to compare different M-estimators and how to choose a value for the tuning parameters.
+One way to do this is to test an M-estimator with some tuning parameter using data drawn from the a Gaussian with zero mean and unit variance, the standard normal distribution.
+For example, let the model $g(x_{(i)},\bm{\alpha})$, where $\bm{\alpha}$ is the parameter vector for the model, estimate the mean of the distribution given the input $x$.
+The residuals are $\gamma_{(i)} = 0 - g(x_{(i)},\bm{\alpha})$, such that the sample variance is $(1/N)\sum_i^N \gamma_{(i)}^2$ and the variance of the mean is $(1/N^2)\sum_i^N \gamma_{(i)}^2 = (1/N)\sum_i^N \gamma_{(i)}^2/N$.
+Notice that if our model just returns the value of the observation, $g(x_{(i)},\bm{\alpha}) = x_{(i)}$, then we recover the well-known formulas for both the sample variance $(1/N)\sum_i^N x_{(i)}^2$, and sample variance of the mean $(1/N)\sum_i^N x_{(i)}^2/N$.
+We compare the sample variance of the mean from the model $g(x_{(i)},\bm{\alpha})$ versus that from the observation itself $x_{(i)}$ in the limit that $N \to infty$ via the asymptotic relative efficiency (ARE):
+\begin{align}
+  ARE &= \lim_{N \to \infty} \frac{(1/N)\sum\limits_i^N x_{(i)}^2/N}{(1/N)\sum\limits_i^N \gamma_{(i)}^2/N}\\
+  &= \frac{\lim_{N \to \infty} \sum\limits_i^N x_{(i)}^2}{\lim_{N \to \infty} \sum\limits_i^N \gamma_{(i)}^2}\\
+  &= \frac{N}{\lim_{N \to \infty} \sum\limits_i^N \gamma_{(i)}^2},
+\end{align}
+where we have taken advantage of the fact that $\lim_{N \to \infty} (1/N)\sum_i^N x_{(i)}^2 = 1$, the true variance for the standard normal distribution.
+
+We see that if $g(x_{(i)},\bm{\alpha})$ produces a variance of the mean of $1/N$, the ARE will be unity, or 100\%.
+Similarly, if $g(x_{(i)},\bm{\alpha})$ produces a smaller variance of the mean, the efficiency will be greater than 100\%.
+The ARE thus can be used to give context to an estimator with a set of input parameters.
+We note that the literature generally quotes parameters for their M-estimators that have 95\% ARE; the red curves in Figure~\ref{f:3-CostFxn}(B--D) were computed with these values~\cite{RN318,RN32,RN52}.
 \newpage
 \begin{table}[ht]
   \centering
