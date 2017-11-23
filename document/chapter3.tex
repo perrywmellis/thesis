@@ -979,10 +979,11 @@ Once we have a triangulation and the $\mathbf{k}$ estimates, we proceed to fit t
 Let $\mathbf{R}_{[0]}$ be an example point of interest with normal $\mathbf{k}_{[0]}$.
 We first make an initial fit using regular least-squares to serve as an input into the IRLS routine.
 We consider all points within a distance $d_1$ of $\mathbf{R}_{[0]}$ to be within the region of interest and then use $\mathbf{k}_{[0]}$ to transform the region of interest into the tangent plane at $\mathbf{R}_{[0]}$.
-This step allows us to characterize the surface locally in terms of an orthonormal basis in the tangent plane $\hat{e})i$, with $i = 1,2$.
-We then calculate $\Delta \mathbf{R}_{[i,j]} = \mathbf{R}_{[j]}-\mathbf{R}_{[i]}$ and $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[j]}-\mathbf{k}_{[i]}$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
-Importantly, as depicted in Figure~\ref{f:3-CurvFitSchem}, the pairs of points do note need to include $\mathbf{R}_{[0]}$; this reduces the influence of error in $\mathbf{R}_{[0]}$ and $\mathbf{k}_{[0]}$.
-Since the Weingarten matrix only considers variations in $\mathbf{k}$ in the tangent plane, we will fit instead to an extended Weingarten matrix $\bm{\Lambda}$~\cite{RN31,RN32}:
+This step allows us to characterize the surface locally in terms of an orthonormal basis $\{\hat{e}_1,\hat{e}_2,\mathbf{k}\}$, where $\hat{e}_1$ and $\hat{e}_2$ are in the tangent plane.
+We then calculate the displacement vectors in the tangent plane $\Delta \mathbf{R}_{[i,j]} = \mathbf{R}_{[j]}-\mathbf{R}_{[i]}$ and the change in the unit normal $\Delta \mathbf{k}_{[i,j]} = \mathbf{k}_{[j]}-\mathbf{k}_{[i]}$ for every possible pair of points in the region of interest, with individual points indexed with $i$ and $j$.
+Importantly, as depicted in Figure~\ref{f:3-CurvFitSchem}, the pairs of points do not need to include $\mathbf{R}_{[0]}$; this reduces the influence of error in $\mathbf{R}_{[0]}$ and $\mathbf{k}_{[0]}$.
+Since we are considering how $\mathbf{k}$ changes along $\Delta \mathbf{R}$, a discrete displacement vector, $\Delta \mathbf{k}$ is not generally in the tangent plane.
+Thus, we need to extend the Weingarten Matrix to condsider the component of $\Delta \mathbf{k}$ along $\mathbf{k}$~\cite{RN31,RN32}:
 \begin{equation}
 \begin{pmatrix}
 \Delta \mathbf{k} \cdot \hat{e}_1 \\
@@ -1007,7 +1008,7 @@ M_{1} & M_{2}
 \end{pmatrix},
 \label{e:3-Kfit2}
 \end{equation}
-where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$.
+where we have added $M_1$ and $M_2$ to $\mathbf{L}$ to form $\bm{\Lambda}$, the extended Weingarten Matrix.
 This additional information will eventually allow us to re-estimate $\mathbf{k}$~\cite{RN31}.
 \begin{figure}
   \centering
@@ -1025,7 +1026,7 @@ If we naively expand Eq.~\ref{e:3-Kfit2} directly into three equations,
   \Delta k_2 &= \tensor{L}{_{21}} \Delta R_1 + \tensor{L}{_{22}} \Delta R_2\label{e:3-KfitNaiveB} \\
   \Delta k_k &= M_1 \Delta R_1 + M_2 \Delta R_2,\label{e:3-KfitNaiveC}
 \end{align}
-where we have expanded the vectors like $\mathbf{v}\cdot \hat{e}_i = v_i$ and $\Delta k_k$ refers to the component of $\Delta \mathbf{k}$ along the surface normal, we see that $\tensor{L}{_{12}}$ will be determined entirely by the variation along $\hat{e}_2$.
+where we have expanded the vectors like $\mathbf{v}\cdot \hat{e}_i = v_i$ and $\Delta k_k$ refers to the component of $\Delta \mathbf{k}$ along the surface normal, we see that $\tensor{L}{_{12}}$ will be determined entirely by the variation along $\hat{e}_2$, and $\tensor{L}{_{11}}$ by the variation along $\hat{e}_1$.
 The result of $\tensor{L}{_{12}}$ from fitting Eq.~\ref{e:3-KfitNaiveA} will then set the value of $\tensor{L}{_{21}}$ in the fit of Eq.~\ref{e:3-KfitNaiveB} so that only $\tensor{L}{_{22}}$ is free to vary during the fit.
 This means that in principle, the choice of $\hat{e}_i$ could affect the output curvature.
 To account for this, we manipulate Eqs.~\ref{e:3-KfitNaiveA}--\ref{e:3-KfitNaiveC} to be:
@@ -1035,7 +1036,7 @@ To account for this, we manipulate Eqs.~\ref{e:3-KfitNaiveA}--\ref{e:3-KfitNaive
   \Delta k_k &= M_1 \Delta R_1 + M_2 \Delta R_2.\label{e:3-KfitConstrainedC}
 \end{align}
 If we do the fits in Eqs.~\ref{e:3-KfitConstrainedA}--\ref{e:3-KfitConstrainedC} in order, the values of $\tensor{L}{_{11}}$ and $\tensor{L}{_{22}}$ from fitting Eq.~\ref{e:3-KfitConstrainedA} are inserted as fixed parameters into the fit of Eq.~\ref{e:3-KfitConstrainedB}.
-However, now the value of $\tensor{L}{_{12}}$ is determined by the variation in both directions in the tangent plane.
+However, now the values of $\tensor{L}{_{ij}}$ are determined by the variation in both directions in the tangent plane.
 Once we have estimates of the elements of $\bm{\Lambda}$ from the initial least-squares fit, we move on to fitting the curvature with the IRLS routine.
 
 We now choose all points within a distance $d_2$ of $\mathbf{R}_{[0]}$, where $d_2 > d_1$, and as before, transform into the tangent plane and calculate the associated $\mathbf{\Delta k}_{[i,j]}$ and $\mathbf{\Delta R}_{[i,j]}$ between all pairs of points.
@@ -1052,8 +1053,9 @@ Our routine starts by calculating the residuals using $\bm{\Lambda}$ from the pr
 \end{equation}
 where $p$ is the iteration number and the $0^{\textrm{th}}$ iteration refers to the initial least-squares fit.
 The routine then calculates the weights for the Fair M-estimator seen in Table~\ref{t:3-CostFxn}, multiplies the Fair weights for each pair of points with the associated $m_{(ij)}$ to get the final fitting weight, performs a weighted least-squares fit of Eqs.~\ref{e:3-KfitConstrainedA}--\ref{e:3-KfitConstrainedC}, and then repeats the process from the beginning until the fit converges.
-For the fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
+For the Fair fit we take the tuning constant $c_F^{(p+1)} = c_F^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$, where $p$ is the iteration number, $\bm{\gamma}^{(p)}$ is a vector of the residuals, and $c_F^{initial}$ is an input parameter.
 We include the median of the residuals in our tuning constant so that the tuning parameter in the fit doesn't need to be adjusted as much between datasets with different levels of noise.
+In this case, we use the median of the residuals, as the mean can be distorted by large errors.
 The Fair fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
 While we set an upper limit of 50 iterations for the Fair fit, the fit typically converges in fewer than 20 iterations taking the convergence tolerance to be 0.001.
 
@@ -1070,23 +1072,30 @@ Here, it is possible to reject outliers by calculating the fitting weights as,
 \end{equation}
 where $c_{GMC}^{(p)} = c_{GMC}^{initial} \, \textrm{median}\{ \bm{\gamma}^{(p)} \}$ is the tuning constant for the GMC fit, and $c_{GMC}^{initial}$ and $b$ are input parameters.
 We have modified the standard GMC weight function to exclude data with a residual that is too large.
-The outlier rejection works by comparing each residual against the median residual.
+The outlier rejection works by comparing each residual against the median of the residuals.
 The parameter $b$ then determines how much variance with respect to the median residual is allowed.
 In addition, since the GMC fit is not guaranteed to converge, we ensure that the $c_{GMC}^{(p)} \leq c_{GMC}^{(0)}$ by setting iterations with $c_{GMC}^{(p)} > c_{GMC}^{(0)}$ to have $c_{GMC}^{(p)} = c_{GMC}^{(0)}$.
 
 The GMC fit converges when the cost function changes by less than the specified convergence tolerance between subsequent iterations.
 We set an upper limit of 20 iterations for the GMC fit, but the fit typically converges in fewer than 10 iterations when taking the convergence tolerance to be 0.001.
 We display this entire IRLS fitting process for an example point, with the residuals, the weights, $\bm{\Lambda}$, and $K$ displayed for the Fair fit and the GMC fit in Figure~\ref{f:3-IRLSexample}(A,B), respectively.
+The initial output of the least squares fit is passed to the Fair function and displayed as the 0$^{\rm th}$ iteration [Figure~\ref{f:3-IRLSexample}(A)].
+Note how the {\it cost} changes largely between the 0$^{\rm th}$ and 2$^{\rm nd}$, but changes very little between the 2$^{\rm nd}$ and 4$^{\rm th}$ iterations [Figure~\ref{f:3-IRLSexample}(A)].
+The Fair fit converges on the 4$^{\rm th}$ iteration; the values are then passed the the GMC fit [Figure~\ref{f:3-IRLSexample}(B)].
+
+In the subsequnt GMC fit displayed in Figure~\ref{f:3-IRLSexample}(B), the dashed line indicates the outlier rejection criterion; residuals above the dashed line have their weight set to 0.
 Note how the ability to reject outliers lets the GMC fit in Figure~\ref{f:3-IRLSexample}(B) find a solution where a majority of the residuals are small.
-In the example in Figure~\ref{f:3-IRLSexample}, both fits converge quickly in a combined 10 iterations.
+Similar to the Fair fit, the cost in the GMC fit drops rapidly; by the 8$^{\rm th}$ iteration both the cost and the Gaussian curvature are very close to their final values [Figure~\ref{f:3-IRLSexample}(B)].
+The GMC fit converges on the 10$^{th}$ iteration.
 The routine outputs the GMC weights from the final fitting iteration and the final values of $\bm{\Lambda}$.
 Finally, we calculate the Gaussian curvature of at $\mathbf{R}_{[0]}$ taking $K = \textup{det}\{ \mathbf{L} \}$ and move on to correcting $\mathbf{k}_{[0]}$.
+
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.95]{figures/C3/Ch3-Figs_IRLSexample.png}
   \caption{Example IRLS fit of the curvature at a point on a surface.
   (A,B) Residuals, weights, $\bm{\Lambda}$, $K$, and cost for the (A) Fair M-estimator and (B) GMC M-estimator over multiple iterations, with the iteration number to the left of the residuals.
-  The 0$^{\rm th}$ iteration corresponds to the output from the initial least-squares fit.}\label{f:3-IRLSexample}
+  The 0$^{\rm th}$ iteration corresponds to the output from the initial least-squares fit. The dashed line in (A) is the outlier rejection criterion; residuals above the line have their weight set to 0.}\label{f:3-IRLSexample}
 \end{figure}
 
 \subsection{Correcting the surface normal vectors}
@@ -1097,11 +1106,11 @@ We use the fitting weights from the final iteration $(p)$ and the final values i
 where $\mathbf{k}_{[0]}^{(p)}$ corresponds to the re-estimated unit normal.
 Note that here we have only used pairs of points that include $\mathbf{R}_{[0]}$.
 This re-estimation uses the fitted curvature to determine what the surface normal should be.
-We now transform $\mathbf{k}_{[0]}^{(p)}$ back into the original coordinate system, and then repeat the entire fitting process for another point on the surface.
+We then repeat the entire fitting process for another point on the surface.
 
 
 \subsection{Finding the area element}
-Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric~\cite{RN35},
+Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric~\cite{RN35},\fxnote{prove it?}
 \begin{equation}
 g = \frac{1}{(\mathbf{k}^{(p)} \cdot \mathbf{\hat{z}})^2}.
 \end{equation}
@@ -1114,14 +1123,16 @@ We validate our routine on hemispheres and saddle-like surfaces with varying lev
 We specify the noise as a percentage of the radii of curvature used to generate the test surface.
 A surface without noise is insensitive to $d_1$, $d_2$, and the tuning constants in the fit.
 This is shown for the noiseless hemisphere in Figure~\ref{f:3-CurvFitSphere}(A) with $K = 1.1 \times 10^{-3}$ px$^{-2}$, where the initial least-squares fit and the output of the IRLS fit are shown in Figure~\ref{f:3-CurvFitSphere}(B,C), respectively, and the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
-We test surfaces with up to 3\% noise and find that setting $b=2$ and $c_{F}^{initial}$ and $c_{GMC}^{initial}$ to their respective 95\% efficiency values works well.
+We test surfaces with up to 3\% noise; this is greater than the noise in our toroidal droplets.
+We find that setting $b=2$ and $c_{F}^{initial} = 1.3998$ and $c_{GMC}^{initial}=1.4826$, their respective 95\% efficiency values~\cite{RN52,RN318}, works well.
 In addition, we see that $d_2$ matters far more than $d_1$; increasing $d_2$ improves the noise tolerance of the fit.
 
 For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
 This process is illustrated for the example hemisphere with 1\% noise and an initial $K =1.1 \times 10^{-3}$ px$^{-2}$ displayed in Figure~\ref{f:3-CurvFitSphere}(D).
 The output from the initial least-squares fit is shown in Figure~\ref{f:3-CurvFitSphere}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\ref{f:3-CurvFitSphere}(F-H), where the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
-Note that $K$ does not change appreciable between $d_2 = 8$ in Figure~\ref{f:3-CurvFitSphere}(G) and $d_2 = 10$ in ~\ref{f:3-CurvFitSphere}(H), signifying that we do not need to increase $d_2$ any further.
-While we could in principle set $d_2$ to the size of the surface to eliminate this step, our fit scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
+Note that $K$ does not change appreciably between $d_2 = 8$ in Figure~\ref{f:3-CurvFitSphere}(G) and $d_2 = 10$ in ~\ref{f:3-CurvFitSphere}(H).
+In addition, the majority of the pixels have $K$ within blah percent of the initial $K =1.1 \times 10^{-3}$ px$^{-2}$, signifying that we do not need to increase $d_2$ any further\fxnote{go to the distributions}.
+While we could in principle set $d_2$ to the size of the surface to eliminate this step, our fit runtime scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_CurvFitSphere.png}
@@ -1130,7 +1141,7 @@ While we could in principle set $d_2$ to the size of the surface to eliminate th
   The original triangulation is displayed in (A), the output of the initial least-squared fit with $d_1=2$ in (B), and the output of the IRLS fit with $d_2=4$ in (C), with the color scale for the curvature in (I).
   (D-H) The hemisphere in (A) with random noise from a distribution with mean 0 px and width 0.3 px added to the height at every point in the triangulation.
   The triangulation is displayed in (D), the output of the initial least-squared fit with $d_1=4$ in (E), and the output of the IRLS fit with $d_2=6,8,10$ in (F-H), respectively, with the color scale for the curvature in (I).}\label{f:3-CurvFitSphere}
-\end{figure}
+\end{figure}\fxnote{add a saddle figure, briefly discuss outcomes without procedures}
 
 Overall, our curvature fitting routine works well far from the boundaries.
 Near the boundaries, the curvature fit does not always work very well, as seen in the curvature near the corners in Figure~\ref{f:3-CurvFitSphere}(C,F-H), as there is less long-range information available when a point is within $d_2$ of a boundary.
@@ -1139,12 +1150,13 @@ As a consequence, we typically neglect curvature values within $d_2/2$ of the bo
 
 \subsection{Measuring the curvature of toroidal droplets}
 Before we measure the curvature of the $h(x,y)$ output from time-averaging the intensity of a confocal image stack, we first have to remove measurement artifacts.
-Since $h(x,y)$ is discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
-Fitting the curvature on such a surface with reasonable $d_2$ values would yield large areas with vanishing $K$ between steps interspersed with areas near each step that have large $|K|$.
-We remove these steps by downsampling the initial $h(x,y)$ until the output triangulation appears smooth.
+Since $h(x,y)$ is a discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.\fxnote{add schematic of the steps}
+The steps on the surface affect thare artifacts and affect the curvature measurement; the steps create flat areas with no curvature, while the jumps in height have large curvature.
+We remove these steps by downsampling the initial $h(x,y)$ until the output triangulation show no steps [see Figure~\fxnote{schematic}].
 If we downsample too much, we risk eliminating real curvature features in our data.
-In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px and then triangulate, as shown in Figure~\ref{f:3-CurvFitTorus}(A).
-We fit the curvature on the downsampled triangulation with $d_1 = 4$ and $d_2 = 12$, as shown in Figure~\ref{f:3-CurvFitTorus}(B,D), and then use linear interpolation to upsample the final $K(x,y)$ and $\sqrt{g}(x,y)$ back to the original size, as seen in Figure~\ref{f:3-CurvFitTorus}(E,F), respectively.
+In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px.
+We triangulate the downsampled surface, as shown in Figure~\ref{f:3-CurvFitTorus}(A).
+We fit the curvature on the triangulation with $d_1 = 4$ and $d_2 = 12$, as shown in Figure~\ref{f:3-CurvFitTorus}(B,D), and then use linear interpolation to upsample the final $K(x,y)$ and $\sqrt{g}(x,y)$ back to the original size, as seen in Figure~\ref{f:3-CurvFitTorus}(E,F), respectively.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_CurvFitTorus.png}
@@ -1171,11 +1183,10 @@ From some $\Theta(x,y)$, we calculate the integrated Gaussian curvature in that 
   \oint_{\Theta}\,K\textrm{dA} \approx \sum\limits_{x,y} \Theta(x,y) K(x,y) \sqrt{g}(x,y)
 \end{equation}
 Since the area is positive-definite, the maximum integrated Gaussian curvature and the minimum integrated Gaussian curvature masks are easy to generate simply by starting with the base $\Theta_0(x,y)$ and setting the pixels with $K < 0$ or $K > 0$ to $0$.
-These two masks define the range of integrated Gaussian curvature that we can probe for a single toroid.
+These two masks define the range of integrated Gaussian curvature that we can probe for the imaged section of a single toroid.
 We can also easily divide the base $\Theta_0(x,y)$ into halves or thirds to consider regions of different integrated Gaussian curvature.
-However, in all of these cases, $\Theta(x,y)$ is determined before the integrated Gaussian curvature is calculated, leading to gaps in the integrated Gaussian curvature data.
 
-We remedy this with a routine to find masks corresponding to specific values of integrated Gaussian curvature.
+We can also find regions with specific values of integrated Gaussian curvature.
 From some starting $\Theta(x,y)$ we calculate the starting integrated Gaussian curvature and determine whether it is greater or less than the desired value.
 The routine then finds the boundary, $\partial \Theta$, and sets all the pixels on $\partial \Theta$ with the appropriately signed $K$ to $0$.
 For example, if the current integrated Gaussian curvature is greater than the target integrated Gaussian curvature, all the boundary pixels with $K > 0$ are set to $0$.
@@ -1183,15 +1194,15 @@ This process is repeated until the difference between the current integrated Gau
 The routine then takes the most recently removed boundary pixels and adds them back to the modified $\Theta(x,y)$ one-by-one until the difference between the current integrated Gaussian curvature and the target integrated Gaussian curvature has the same sign as the difference between the initial integrated Gaussian curvature and the target integrated Gaussian curvature.
 
 
-\subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: defect unbinding}
+\subsection{Time-averaged defect charge as a function of integrated Gaussian curvature: curvature-induced defect unbinding}
 We correlate the time-averaged topological charge in a region with the integrated Gaussian curvature of that region for both 36~mM ATP and 144~mM ATP.
 We find that for both ATP concentrations, $\overbar{s}_{\Theta}$ is linear with $\int_{\Theta}\,K\textrm{dA}$, a shown in Figure~\ref{f:3-DefectUnbinding}, where we plot data from toroids with a range of $\xi$ and $a$.
 The slope of each curve, $C'$, is positive, consistent with the curvature-induced defect unbinding predicted theoretically.
-Recall that for an equilibrium nematic, we expect that the charge is discrete and increases as step function [see Figure~\ref{f:3-EqDefs}(A)].
-However, due to the large number of defects and their constant motion, the time-averaged topological charge approaches a continuous distribution.
+Recall that for an equilibrium nematic, we expect the charge to be a discrete multiple of $1/2$ and increases as a step function as we integrate $K$ along the azimuthal direction [see Figure~\ref{f:3-EqDefs}(A)].
+However, due to the large number of defects and their constant motion, the time-averaged topological charge becomes a real number.
 Furthermore, $\overbar{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
-This implies that the unbinding only depends only on the local geometry and is insensitive to the  global size and shape of the system.
-Note that this is direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$~\cite{RN36,RN19,RN22,RN20,RN78}.
+This implies that the unbinding only depends on the local geometry and is insensitive to the  global size and shape of the system.
+Note that this is in direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$~\cite{RN36,RN19,RN22,RN20,RN78}
 
 We also note that the lines in Figure~\ref{f:3-DefectUnbinding}(A,B) both go through $(0,0)$, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
 In our case, however, we see that this is true irrespective of the region we consider, provided the region has vanishing integrated Gaussian curvature.
