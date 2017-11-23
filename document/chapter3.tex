@@ -1202,14 +1202,17 @@ Recall that for an equilibrium nematic, we expect the charge to be a discrete mu
 However, due to the large number of defects and their constant motion, the time-averaged topological charge becomes a real number.
 Furthermore, $\overbar{s}_{\Theta}$ only depends on the integrated Gaussian curvature and is independent of $\xi$ and $a$.
 This implies that the unbinding only depends on the local geometry and is insensitive to the  global size and shape of the system.
-Note that this is in direct contrast to equilibrium simulations and theory, which all predict dependence on $\xi$ and $a$~\cite{RN36,RN19,RN22,RN20,RN78}
+
+This in direct contrast to equilibrium simulations and theory, where defect unbinding only appears in toroids with curvatures large enough to overcome the attraction between opposite signed defects~\cite{RN36,RN22}.
+In addition, in equilibrium systems, the repulsions between like-signed defects and the defect core energies affect the number of defects in a defective ground state~\cite{RN36}.
+This implies that in equilibrium, $\xi$ and $a$ are predicted to not only affect whether or not defects exist in the ground state, but also the number of defects in the ground state~\cite{RN36,RN19,RN22,RN20,RN78}.
 
 We also note that the lines in Figure~\ref{f:3-DefectUnbinding}(A,B) both go through $(0,0)$, indicating that regions with $\oint_{\Theta}\,K\textrm{dA} = 0$ have $\overbar{s}_{\Theta} = 0$, a topological requirement for the entire toroid.
 In our case, however, we see that this is true irrespective of the region we consider, provided the region has vanishing integrated Gaussian curvature.
 This is shown explicitly in Figure~\ref{f:3-ChargeOverTime}, where all the regions under consideration, Figure~\ref{f:3-ChargeOverTime}(A,C,E), have $\int_{\Theta}\,K\textrm{dA} = 0$ and vanishing time-averaged topological charge [Figure~\ref{f:3-ChargeOverTime}(B,D,F)].
 This implies that a region with $\oint_{\Theta}\,K\textrm{dA} = 0$ is representative of an entire toroid.
 Again, this is in contrast to equilibrium nematics, where the small defect number and lack of significant defect motion result in different regions with the same net integrated Gaussian curvature generally enclosing a different topological charge.
-Finally, we see that changing the ATP concentration yields a different amount of unbinding, with $C' = 4.3 \pm 0.7$ for the 144 $\upmu$M ATP concentation and $C' = 6.3 \pm 0.5$ for the 36 $\upmu$M ATP concentration, indicating that increasing activity leads to less unbinding.
+Finally, we see that changing the ATP concentration yields a different amount of unbinding, with $C' = 4.3 \pm 0.7$ for the 144 $\upmu$M ATP concentation and $C' = 6.3 \pm 0.5$ for the 36 $\upmu$M ATP concentration, indicating that increasing activity leads to less curvature-induced unbinding.
 This is seen explicitly in Figure~\ref{f:3-DefectUnbinding}(C), where we plot the data for both ATP concentrations to emphasize that ATP and thus activity is the dominant factor in the amount of unbinding.
 \begin{figure}
   \centering
@@ -1231,28 +1234,31 @@ This is seen explicitly in Figure~\ref{f:3-DefectUnbinding}(C), where we plot th
   $({\color{blue} \blacktriangledown})$ $\xi = 6.0$ and $a = 547$ $\upmu$m.}\label{f:3-DefectUnbinding}
 \end{figure}
 
-Thus, our results suggest that activity is playing a role akin to temperature in equilibrium systems.
+Thus, our results suggest that activity is playing a role that reminds us of temperature in equilibrium systems.
 In 2D, the  nematic-isotropic phase transition is predicted to be continuous~\cite{RN172}, such that the nematic elasticity should vanish smoothly on the approach to the phase transition.
-As an equilibrium nematic gets sufficiently close to the nematic-isotropic phase transition, thermal fluctuations dominate the vanishing elasticity, mobilizing the defects and producing results qualitatively similar to adding activity to the nematic.
+As an equilibrium nematic gets sufficiently close to the nematic-isotropic phase transition, thermal fluctuations will begin to play an increasingly dominant role.
+The fluctuations will eventually mobilize the defects and produce results that could resemble in some ways what we see in our active nematic.
 
 
 
 
 \section{Defect number distributions}
 Because of the continuous creation, annihilation, and motion of the defects, the defect number in a region fluctuates over time, as shown in Figure~\ref{f:3-NumberOverTime}(B).
-For the 144~$\upmu$M ATP toroids, we have enough timeframes to construct a defect number distribution for regions containing different $\overbar{N}_{\Theta}$.
-The defect number distributions are Gaussian, as shown in Figure~\ref{f:3-ExpDistribution}(B,D,F) for the regions with different areas in Figure~\ref{f:3-ExpDistribution}(A,C,E) on a toroid with $\xi = 1.6$ and $a = 275$ $\upmu$m.
-We fit a Gaussian to each defect number distribution [see Figure~\ref{f:3-ExpDistribution}(B,D,F)] to obtain the width, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}}$, and the mean of each distribution.
-We then plot the relative root-mean-squared (RMS) fluctuations, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, vs $\overbar{N}_{\Theta}$ for every region on all of our toroids on a log-log plot, as shown in Figure~\ref{f:3-ExpDistribution}(G).
+For the 144~$\upmu$M ATP toroids, we have enough timeframes to obtain the defect number distribution for regions containing different $\overbar{N}_{\Theta}$.
+The defect number distributions are Gaussian, as shown in Figure~\ref{f:3-ExpDistribution}(B,D,F) for three distributions obtained on the same toroid with $\xi = 1.6$ and $a = 275$ $\upmu$m; each distribution is obtained from the region bounded with the white border in the associated image in Figure~\ref{f:3-ExpDistribution}(A,C,E), respectively.
+In each image, the region is not necessarily contiguous and has vanishing integrated Gaussian curvature; however, each region has a different total area [see Figure~\ref{f:3-ExpDistribution}(A,C,E)].
+
+Since the data are described by a Gaussian, we fit each defect number distribution to a Gausian [see Figure~\ref{f:3-ExpDistribution}(B,D,F)] to obtain the width, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}}$, and the mean of each distribution.
+We then plot the relative root-mean-squared (RMS) fluctuations, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, vs $\overbar{N}_{\Theta}$ for every region on all of our toroids on a log-log plot, as shown in Figure~\ref{f:3-ExpDistribution}(G).\fxnote{make sure I understand why you can do this}
 
 We see that like the time-averaged topological charge, all the data collapse onto a line, regardless of the $\xi$ and $a$ variation between the toroids.
 We take the weighted average of a linear fit on a log-log scale to the data from each individual toroid and find a final slope $-0.53 \pm 0.04$ and final intercept $0.02 \pm 0.04$.
-This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, the expected result for an equilibrium system subject to number fluctuations~\cite{RN311}, again suggesting that activity can play a role akin to temperature in equilibrium systems.
+This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, which is the expected result for an equilibrium system subject to number fluctuations~\cite{RN311}\fxnote{i don't understand this Alberto note}; again, this suggests that the role of activity is somewhat reminiscnet to the role of temperature in equilibrium systems.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ExpDistribution.png}
   \caption{Defect number distributions.
-  (A,C,E) For an experiment with $\xi = 1.6$ and $a = 275$ $\upmu$m, the regions outlined in white have areas (A) $A_{\Theta} = 0.75$ mm$^{-2}$, (B) $A_{\Theta} = 0.34$ mm$^{-2}$, and (C) $A_{\Theta} = 0.15$ mm$^{-2}$.
+  (A,C,E) For an experiment with $\xi = 1.6$ and $a = 275$ $\upmu$m, the regions outlined in white have vanishing integrated Gaussian curvature and total area (A) $A_{\Theta} = 0.75$ mm$^{-2}$, (B) $A_{\Theta} = 0.34$ mm$^{-2}$, and (C) $A_{\Theta} = 0.15$ mm$^{-2}$.
   (B,D,F) The probability of finding a number of defects in the regions in (A,C,E), respectively.
   (G) The relative RMS defect number fluctuations in a region vs the time-averaged defect number in the region for experiments with
   $({\blacksquare})$ $\xi = 1.6 $ and $a = 275$ $\upmu$m,
@@ -1266,19 +1272,19 @@ This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle
 
 
 \section{Comparison with numerical simulations}
-To gain further insight about our experimental findings, we compare with computer simulations performed by Luca Giomi and Dan Pearce at the University of Leidin.
+To gain further insight about our experimental findings, we compare with numerical simulations performed by Luca Giomi and Dan Pearce at the University of Leiden.
 The simulations treat the defects as point particles with the system energy given by Eq.~\ref{e:1-TopTheoryofDefects}.
 For a torus with $N$ defects, the simulation has $N/2$ $s = +1/2$ defects and $N/2$ $s = -1/2$ defects in order to satisfy the Poincar\'e-Hopf Theorem.
 
 
 \subsection{Simulation details}
-Defects are modeled as massless particles on the torus [see Figure~\ref{f:3-SimDefectUnbinding}(A)], with the $i^{\rm th}$ defect having charge $s_{(i)}$, position $\mathbf{r}_{(i)}$, and orientation $\mathbf{p}_{(i)} = -\cos \psi \, \hat{\theta} + \sin \psi \, \hat{\varphi}$, with $\hat{\theta}$ and $\hat{\varphi}$ unit vectors on the surface of the torus [Figure~\ref{f:3-EqDefs}].
+Defects are modeled as massless particles on the torus [see Figure~\ref{f:3-SimDefectUnbinding}(A)], with the $i^{\rm th}$ defect having charge $s_{(i)}$, position $\mathbf{r}_{(i)}$, and orientation $\mathbf{p}_{(i)} = -\cos \psi \, \hat{\theta} + \sin \psi \, \hat{\varphi}$, with $\hat{\theta}$ and $\hat{\varphi}$ unit vectors on the surface of the torus [Figure~\ref{f:3-EqDefs}], and $\psi$ an angle in the tangent plane measured off of $\hat{\Theta}$.
 The defects are governed by the following equations of motion,
 \begin{align}
   \frac{\textrm{d}\mathbf{r}_{(i)}}{\textrm{d}t} &= v_0 \mathbf{p}_{(i)} + \mu \Big [\sum\limits_{j\neq i=1}^N \mathbf{F}_{(ij)} - \nabla_{(i)} V \Big ] + \bm{\zeta}^{trans}_{(i)} \\
     \frac{\textrm{d}\psi_{(i)}}{\textrm{d}t} &= \zeta^{rot}_{(i)},
 \end{align}
-where $v_0$ is the speed associated to the self-propulsion of the $s = +1/2$ defects, $\mu$ is a mobility coefficient, and $\bm{\zeta}^{trans}_{(i)}$ and $\zeta^{rot}_{(i)}$ are uncorrelated translational and rotational noises, reproducing the chaotic motion of the defects.
+where $v_0$ is the speed associated to the self-propulsion of the $s = +1/2$ defects, $\mu$ is a mobility coefficient, and $\bm{\zeta}^{trans}_{(i)}$ and $\zeta^{rot}_{(i)}$ are uncorrelated translational and rotational noises, reproducing the directional fluctuations of the defects\fxnote{think about this better... remove directional?  reference note to uncorrelated noise}.
 Both $\mathbf{F}_{(ij)}$ and $V_{(i)}$ are calculated from Eq.~\ref{e:1-TopTheoryofDefects},
 \begin{align}
   \mathbf{F}_{(ij)} &= 4\pi^2 k_F s_{(i)}s_{(j)} \nabla_{(j)} G(\mathbf{r}_{(i)},\mathbf{r}_{(j)})\label{e:defectdefectforce} \\
