@@ -834,7 +834,7 @@ We now consider a region in the intensity projection for a torus and monitor  $s
 For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(G).
 We see in this example that 76 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$.
 Importantly, we see that ${\rm mean}(error) = 0.026$ when we consider all the frames.
-Since each missed defect introduces an error of $\pm 0.5$, the negligible average error indicates that there is no systematic error in our analysis.
+Since each missed defect introduces an error of $\pm 0.5$, we see that the error in our analysis is random and we can trust the time-averaged topological charge.
 % When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.\fxnote{explain the calculation a bit better in terms of the number of defects in a region}
 
 
@@ -1284,7 +1284,7 @@ The defects are governed by the following equations of motion,
   \frac{\textrm{d}\mathbf{r}_{(i)}}{\textrm{d}t} &= v_0 \mathbf{p}_{(i)} + \mu \Big [\sum\limits_{j\neq i=1}^N \mathbf{F}_{(ij)} - \nabla_{(i)} V \Big ] + \bm{\zeta}^{trans}_{(i)} \\
     \frac{\textrm{d}\psi_{(i)}}{\textrm{d}t} &= \zeta^{rot}_{(i)},
 \end{align}
-where $v_0$ is the speed associated to the self-propulsion of the $s = +1/2$ defects, $\mu$ is a mobility coefficient, and $\bm{\zeta}^{trans}_{(i)}$ and $\zeta^{rot}_{(i)}$ are uncorrelated translational and rotational noises, reproducing the directional fluctuations of the defects\fxnote{think about this better... remove directional?  reference note to uncorrelated noise}.
+where $v_0$ is the speed associated to the self-propulsion of the $s = +1/2$ defects, $\mu$ is a mobility coefficient, and $\bm{\zeta}^{trans}_{(i)}$ and $\zeta^{rot}_{(i)}$ are uncorrelated translational and rotational noises, reproducing the fluctuations of the defects\cite{uncorrelatedNoise}.
 Both $\mathbf{F}_{(ij)}$ and $V_{(i)}$ are calculated from Eq.~\ref{e:1-TopTheoryofDefects},
 \begin{align}
   \mathbf{F}_{(ij)} &= 4\pi^2 k_F s_{(i)}s_{(j)} \nabla_{(j)} G(\mathbf{r}_{(i)},\mathbf{r}_{(j)})\label{e:defectdefectforce} \\
@@ -1292,16 +1292,21 @@ Both $\mathbf{F}_{(ij)}$ and $V_{(i)}$ are calculated from Eq.~\ref{e:1-TopTheor
 \end{align}
 where $G(\mathbf{r}_{(i)},\mathbf{r}_{(j)})$ is the Laplacian Green function on the torus and $k_F$ is the Frank constant in 2D.
 $\mathbf{F}_{(ij)}$ and $V_{(i)}$ are, respectively, the force resulting from defect-defect interactions and the potential energy associated to the interaction between the defect and the local Gaussian curvature.
-Note how $k_F$, a material constant in a continuum description of nematic elasticity, affects the defect-defect and defect-surface interactions in Eqs.~\ref{e:defectdefectforce}--\ref{e:defectsurfaceenergy}.
-Similarly, the strength of the activity, $\alpha$, and the shear viscosty, $\eta$, [see Eq.~\ref{e:3-NavierStokes}], also affect the defect dynamics when treating the defects like point particles.
 
-Thus, we have three material parameters, $\alpha$, $\eta$, and $k_F$ from a continuum description of active nematics that determine how a collection of active defects behave.
-We can compare $k_F$ and $\alpha$ to form the active length scale $\ell_a = \sqrt{k_F / |\alpha|}$, that represents the length at which the active stresses and passive elastic stresses balance.
-When $\ell_a \sim L$, the system size, the passive elasticity dominates, few defects are created, and the flow is laminar~\cite{RN7}.
-However, when $\ell_a \ll L$, the active stresses now dominate, pairs of $s = \pm 1/2$ spontaneously create and annihilate, and the flow becomes turbulent~\cite{RN7}.
-As a consequence, the active length scale is proportional to and the same order of magnitude as the distance between defects, $\lambda = \sqrt{A_{torus}/N} = 2 \pi a \sqrt{\xi/N}$, with $A_{torus} = 4 \pi^2 R_0 a = 4 \pi^2 \xi a^2$, the surface area of a torus.
-In the turbulent regime, we can write the characteristic velocity of the $s = +1/2$ defects as $v_0 \approx \alpha \ell_a/ \eta = \textrm{sign}(\alpha) \sqrt{|\alpha| k_F}/\eta$.
-Thus, the dimensionless distance between defects $\lambda' = \lambda/a$ and the dimensionless speed $v_0' = v_0 a /(\mu k_F)$ specify all the relevant material properties of the active nematic in the simulations.
+There are three main material parameters in an active nematic that affect its dynamics, $\alpha$, $k_F$, and the shear viscosity, $\eta$.
+From Eq.~\ref{e:3-NavierStokes} we know that $\alpha$ causes the nematic to deform.
+Since these deformations are resisted by the passive nematic elasticity, we can combine $\alpha$ and $k_F$ to form the active length scale $\ell_a = \sqrt{k_F / |\alpha|}$, that represents the length at which the active stresses and passive elastic stresses balance.
+The active stress can deform the material when the wavelength of the distortion is longer than $\ell_a$, but the passive elasticity prevents deformations with a shorter wavelength.
+In this sense, $\ell_a$ can be thought of the buckling length of the active nematic, giving the size of the distortion surrounding a $s = \pm 1/2$ defect.
+Thus, when $\ell_a \lesssim L$, with $L$ the system size, the passive elasticity dominates and few defects are created~\cite{RN7}.
+In this regime, the flow is laminar~\cite{RN7}.
+However, when $\ell_a \ll L$, the active stresses dominate and pairs of $s = \pm 1/2$ spontaneously create and annihilate.
+The passive elasticity prevents like-signed defects from having a separation distance smaller than $\ell_a$; similarly, the active stresses create a $s = \pm 1/2$ defect pair whenever there is a region of undistorted nematic larger than $\ell_a$~\cite{RN7}.
+As a consequence, the active length scale is proportional to and of the same order of magnitude as the distance between defects, $\lambda = \sqrt{A_{torus}/N} = 2 \pi a \sqrt{\xi/N}$, with $A_{torus} = 4 \pi^2 R_0 a = 4 \pi^2 \xi a^2$, the surface area of a torus.
+
+Due to the large number of defects and their constant motion, the nematic dynamics become turbulent, with \fxnote{blah blah blah}~\cite{RN7}.
+In this turbulent regime, we can write the characteristic velocity of the $s = +1/2$ defects as $v_0 \approx \alpha \ell_a/ \eta = \textrm{sign}(\alpha) \sqrt{|\alpha| k_F}/\eta$.\fxnote{introduce some balance for the velocities in the various regimes.}
+Thus, the dimensionless distance between defects $\lambda' = \lambda/a$ and the dimensionless speed $v_0' = v_0 a /(\mu k_F)$ specify all the relevant material properties of the active nematic in the numerical simulations.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_SimDefectUnbinding.png}
@@ -1322,20 +1327,26 @@ Thus, the dimensionless distance between defects $\lambda' = \lambda/a$ and the 
   $({\color{teal} \star})$ $\lambda' = 0.28$.}\label{f:3-SimDefectUnbinding}
 \end{figure}
 
-For fixed $\lambda'$, we find that $\overbar{s}_{\Theta}$ is a linear function of the integrated Gaussian curvature, consistent with the experimental results.
-We also find that $C'$ depends on $v'_0$; it decreases as $v'_0$ increases, as shown in Figure~\ref{f:3-SimDefectUnbinding}(B), eventually approaching zero for sufficiently high $v'_0$.
-At this point, activity dominates over the elastic forces associated to inter-defect and defect-curvature interactions, confirming that, from this perspective, the role of activity is reminiscent of the expected role of thermal fluctuations close to the nematic-isotropic phase transition in passive nematics.
+For fixed $\lambda'$, we find that $\overbar{s}_{\Theta}$ is a linear function of the integrated Gaussian curvature, and the line passes through $(0,0)$.
+This implies that, as in the experiments, regions with vanishing integrated Gaussian curvature are representative of the full torus.
+However, in the simulation, we can easily tune $v'_0$.
+For increasing $v'_0$, we find that $C'$ decreases [see Figure~\ref{f:3-SimDefectUnbinding}(B)], eventually approaching zero.
+At this point, activity dominates over the elastic forces associated to defect-curvature interactions, confirming that, from this perspective, the role of activity is reminiscent of the expected role of thermal fluctuations close to the nematic-isotropic phase transition in passive nematics.
 However, we emphasize that in equilibrium, both the $s = +1/2$ and the $s = -1/2$ defects would randomly explore the toroid as a result of thermal motion.
-This is in contrast to our active system, where only the $s = +1/2$ defects act as persistent random walkers while the $s = -1/2$ defects are advected only by the defect-defect and defect-curvature interactions.
+This is in contrast to our active system, where only the $s = +1/2$ defects are driven by activity.
+In addition, the direction of the velocity of an $s = +1/2$ defect is determined by the defect's structure, while in passive nematics thermal fluctuations will cause the defect to diffuse isotropically.\fxnote{persistant random walkers?}
 Finally, we see that the observed behavior of $C'$ with $v'_0$ is maintained irrespective of $\lambda'$, as shown in Figure~\ref{f:3-SimDefectUnbinding}(C).
 
 
 \subsection{Matching simulation parameters to experiment}
 To quantitatively compare the experimental and simulated results, we need $\lambda'$ and thus the total defect density on our experimental toroids.
-As regions with vanishing integrated Gaussian curvature are representative of the full torus, we hypothesize and then confirm with the simulations, that $\overbar{N}/A_{torus} = \overbar{N}_{\Theta}/A_{\Theta}$, where  $\int_{\Theta} K\, \textrm{d}A = 0$.
-We note that $\overbar{N}_{\Theta}/A_{\Theta}$ varies linearly with $\langle K \rangle_{\Theta} = (\int_{\Theta}K\,\textrm{d}A)/A_{\Theta}$ such that we can fit a line to this relation take the value of the intercept at $\langle K \rangle_{\Theta} = 0$ to be $\overbar{N}/A_{torus}$, as demonstrated in Figure~\ref{f:3-MatchParam}.
-We calculate $\lambda'$ for each toroid and then take a weighted average to obtain $\lambda' = 0.31 \pm 0.04$ and $\lambda' = 0.3 \pm 0.1$ for the 144 $\upmu$M and 36 $\upmu$M ATP concentrations, respectively.
-In addition, we perform a weighted average on the intercepts directly to get the defect density for each ATP concentration, with $\overbar{N}/A_{torus} = 157 \pm 19$ defects/mm$^{2}$ for the for the 144 $\upmu$M ATP concentration and the $\overbar{N}/A_{torus} = 90 \pm 14$ defects/mm$^{2}$ for the 36 $\upmu$M ATP concentration.
+Since both our simulations and our experiments indicate that regions with vanishing integrated Gaussian curvature are representative of the full torus, that is, that $\overbar{N}/A_{torus} = \overbar{N}_{\Theta}/A_{\Theta}$, where  $\int_{\Theta} K\, \textrm{d}A = 0$, we use these regions to compare between the experiment and the simulation.
+We note that $\overbar{N}_{\Theta}/A_{\Theta}$ varies linearly with $\langle K \rangle_{\Theta} = (\int_{\Theta}K\,\textrm{d}A)/A_{\Theta}$ such that we can fit a line to this relation and take the value of $\overbar{N}_{\Theta}/A_{\Theta}$ at $\langle K \rangle_{\Theta} = 0$ to be $\overbar{N}/A_{torus}$ [see Figure~\ref{f:3-MatchParam}].
+We calculate $\lambda'$ for each toroid.
+Since the values for each ATP concentration are similar, we take a weighted average to obtain $\lambda' = 0.31 \pm 0.04$ and $\lambda' = 0.3 \pm 0.1$ for the 144 $\upmu$M and 36 $\upmu$M ATP concentrations, respectively.
+In addition, we perform a weighted average on the value of $\overbar{N}_{\Theta}/A_{\Theta}$ for $\langle K \rangle_{\Theta} = 0$ to get the defect density for each ATP concentration, with $\overbar{N}/A_{torus} = (157 \pm 19)$ defects/mm$^{2}$ for the for the 144 $\upmu$M ATP concentration and $\overbar{N}/A_{torus} = (90 \pm 14)$ defects/mm$^{2}$ for the 36 $\upmu$M ATP concentration.
+We see that in our experiments, increasing $|\alpha|$ leads to increasing values of $\overbar{N}/A_{torus}$, consistent with the idea that $\ell_a = \sqrt{k_F / |\alpha|} \sim \lambda = \overbar{N}/A_{torus}$.
+However, $\lambda'$ doesn't change between the ATP concentrations in our experiments because the toroids we used for the 36 $\upmu$M ATP concentration had a larger tube radius than the toroids used for the experiments with 144 $\upmu$M ATP.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_MatchParam.png}
@@ -1354,15 +1365,17 @@ In addition, we perform a weighted average on the intercepts directly to get the
 
 We now return to the plot of $C'$ vs $v'_0$ and indicate our experimentally measured $C'$ values with a horizontal line, as seen in Figure~\ref{f:3-MatchParam}(B,C) for 144 $\upmu$M and 36 $\upmu$M ATP, respectively.
 We then consider our experimental values of $\lambda'$  and highlight the crossing point between the experimentally measured $C'$ values and the relevant simulation curve with a vertical dashed line.
-This crossing point gives the values $v'_0 = 81 \pm 2$ and $v'_0 = 80 \pm 10$, for the 144 $\upmu$M and 36 $\upmu$M ATP concentration, with the large uncertainty in the 36 $\upmu$M ATP toroids coming from the large uncertainty in $\lambda'$.
+This crossing point gives the values $v'_0 = 81 \pm 2$ and $v'_0 = 80 \pm 10$, for the 144 $\upmu$M and 36 $\upmu$M ATP concentration.
+Rewriting the expression for $v'_0$ in terms of $\lambda'$, we have $v'_0 = (|\alpha|a^2 \lambda')/(\mu k_F \eta)$, implying that the large uncertainty in $v'_0$ for the 36 $\upmu$M ATP toroids comes from the large uncertainty in the associated $\lambda'$.
+However, since we see that $v'_0$ doesn't change appreciably when we change $\alpha$ in our experiments, this implies that one or more of $\mu$, $k_F$, and $\eta$ must also depend on $\alpha$.
 
 We confirm our estimate of $v'_0$ for the 144 $\upmu$M ATP concentration by calculating the defect number distributions in the simulations.
 Similar to the experiment, we see that the probability of finding a number of defects in a region is Gaussian [see Figure~\ref{f:3-MatchDist}(A)].
-In the simulation, however, we have the ability to vary $v'_0$.
-We plot $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$ vs $\overbar{N}_{\Theta}^{-1/2}$ and see that the slope, $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}}$, depends on $v'_0$, as shown for 3 values of $v'_0$ in Figure~\ref{f:3-MatchDist}(B).
-We correlate $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}}$ with $v'_0$ and plot the relationship in Figure~\ref{f:3-MatchDist}(C), where the vertical line corresponds to our result of $v'_0 = 81 \pm 2$.
-We find $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}} \approx 0.99$, shown with a dashed line in Figure~\ref{f:3-MatchDist}(C).
-Experimentally, we take $e^x$, with $x$ the intercept of the line plotted in Figure~\ref{f:3-ExpDistribution}(G) to yield $1.02 \pm 0.04$, consistent with the numerical results.
+In the simulation, however, we have the ability to easily vary $v'_0$.
+We plot $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$ vs $\overbar{N}_{\Theta}^{-1/2}$ and see they are linearly related, as shown for 3 values of $v'_0$ in Figure~\ref{f:3-MatchDist}(B).
+We then correlate $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}}$ with $v'_0$ and plot the relationship in Figure~\ref{f:3-MatchDist}(C), where the vertical line corresponds to the experimental result of $v'_0 = 81 \pm 2$.
+Comparing with the simulation, we find $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}} \approx 0.99$, shown with a dashed line in Figure~\ref{f:3-MatchDist}(C).
+From the intercept of the line plotted in Figure~\ref{f:3-ExpDistribution}(G), we obtain $\displaystyle \sqrt{\Delta N_{\Theta}^2 \big / \overbar{N}_{\Theta}} = 1.02 \pm 0.04$, consistent with the numerical results.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_MatchDist.png}
@@ -1377,13 +1390,13 @@ Experimentally, we take $e^x$, with $x$ the intercept of the line plotted in Fig
 
 The agreement between the experiments and the theory reveals that the interaction between curvature and topological charge depends only on two parameters: (i) the dimensionless mean distance between defects, $\lambda'$, and (ii) the dimensionless speed of the defects, $v_0'$, which relates to the intrinsic activity of the system.
 We emphasize that both of these parameters reflect local interactions that do not depend on the global size or geometry of the system.
-We find that because of the large number of defects and their constant motion, the topological charge approaches a continuous distribution.
+We find that because of the large number of defects and their constant motion, the average topological charge becomes a continuous variable.
 In addition, our results confirm that that in the turbulent regime and free of any influence by a boundary, the mean distance between defects acts as a
-proxy for $\ell_a$.
-The agreement between the experiment and the theory prompts us to use the topological defects as micro-rheological tracers and perform “topological micro-rheology” to estimate the material parameters of our active material.
+proxy for $\ell_a$.\fxnote{talk more about waht we see}
 
 
 \subsection{Estimates of material parameters}
+The agreement between the experiment and the theory prompts us to use the topological defects as micro-rheological tracers and perform “topological micro-rheology” to estimate the material parameters of our active material.
 From our confocal data, we measure the typical value of the defect speed for both ATP concentrations, $v_0 \approx 1.5$ $\upmu$m/s and $v_0 \approx 0.25$ $\upmu$m/s for toroids with 144 $\upmu$M ATP and 36 $\upmu$M ATP, respectively.
 We use an estimate of the viscosity, $\eta \approx 13$ Pa s from Ref.~\cite{RN135}, and take $\lambda = \ell_a$ in the expressions for $v_0$ and $\ell_a$ to estimate $\alpha \approx  250$ mPa and $k_{F,\, 3D} \approx 1.6 \times 10^{-9}$ N for 144 $\upmu$M ATP and $\alpha \approx  30$ mPa and $k_{F,\, 3D} \approx 3.4 \times 10^{-10}$ N for 36 $\upmu$M ATP.
 These values are the first estimates of their kind.
