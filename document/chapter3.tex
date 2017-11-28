@@ -1248,12 +1248,13 @@ For the 144~$\upmu$M ATP toroids, we have enough timeframes to obtain the defect
 The defect number distributions are Gaussian, as shown in Figure~\ref{f:3-ExpDistribution}(B,D,F) for three distributions obtained on the same toroid with $\xi = 1.6$ and $a = 275$ $\upmu$m; each distribution is obtained from the region bounded with the white border in the associated image in Figure~\ref{f:3-ExpDistribution}(A,C,E), respectively.
 In each image, the region is not necessarily contiguous and has vanishing integrated Gaussian curvature; however, each region has a different total area [see Figure~\ref{f:3-ExpDistribution}(A,C,E)].
 
-Since the data are described by a Gaussian, we fit each defect number distribution to a Gausian [see Figure~\ref{f:3-ExpDistribution}(B,D,F)] to obtain the width, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}}$, and the mean of each distribution.
-We then plot the relative root-mean-squared (RMS) fluctuations, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, vs $\overbar{N}_{\Theta}$ for every region on all of our toroids on a log-log plot, as shown in Figure~\ref{f:3-ExpDistribution}(G).\fxnote{make sure I understand why you can do this}
+Since the data are described by a Gaussian, we obtain both the fluctuations in the defect number, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}}$, and the mean number of defects, $\overbar{N_{\Theta}}$, by fitting each distribution to $A \exp (-\overbar{N_{\Theta}}^2/(2 \Delta N_{\Theta}^2))$, with $A$ a free parameter [see Figure~\ref{f:3-ExpDistribution}(B,D,F)].
+We then plot the relative root-mean-squared (RMS) fluctuations, $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}}$, vs $\overbar{N}_{\Theta}$ for every region on all of our toroids on a log-log plot, as shown in Figure~\ref{f:3-ExpDistribution}(G).
 
 We see that like the time-averaged topological charge, all the data collapse onto a line, regardless of the $\xi$ and $a$ variation between the toroids.
 We take the weighted average of a linear fit on a log-log scale to the data from each individual toroid and find a final slope $-0.53 \pm 0.04$ and final intercept $0.02 \pm 0.04$.
-This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, which is the expected result for an equilibrium system subject to number fluctuations~\cite{RN311}\fxnote{reintroduce a bit better to highlight the fact that what we do is general}; again, this suggests that the role of activity is somewhat reminiscent to the role of temperature in equilibrium systems.
+This means that $\displaystyle{\sqrt{\Delta N_{\Theta}^2}} \bigg / \displaystyle {\overbar{N}_{\Theta}} \sim \overbar{N}_{\Theta}^{-1/2}$, which is the expected result for an equilibrium system subject to number fluctuations~\cite{RN311, gaussianApprox}.
+Again, this suggests that the role of activity is somewhat reminiscent to the role of temperature in equilibrium systems.
 \begin{figure}
   \centering
   \includegraphics{figures/C3/Ch3-Figs_ExpDistribution.png}
@@ -1305,8 +1306,7 @@ However, when $\ell_a \ll L$, the active stresses dominate and pairs of $s = \pm
 The passive elasticity prevents like-signed defects from having a separation distance smaller than $\ell_a$; similarly, the active stresses create a $s = \pm 1/2$ defect pair whenever there is a region of undistorted nematic larger than $\ell_a$~\cite{RN7}.
 As a consequence, the active length scale is proportional to and of the same order of magnitude as the distance between defects, $\lambda = \sqrt{A_{torus}/N} = 2 \pi a \sqrt{\xi/N}$, with $A_{torus} = 4 \pi^2 R_0 a = 4 \pi^2 \xi a^2$, the surface area of a torus.
 
-Due to the large number of defects and their constant motion, the nematic dynamics become turbulent, with \fxnote{blah blah blah}~\cite{RN7}.
-In this turbulent regime, we can write the characteristic velocity of the $s = +1/2$ defects as $v_0 \approx \alpha \ell_a/ \eta = \textrm{sign}(\alpha) \sqrt{|\alpha| k_F}/\eta$.\fxnote{introduce some balance for the velocities in the various regimes.}
+Due to the large number of defects and their constant motion, the nematic dynamics become turbulent, with the characteristic velocity of the $s = +1/2$ defects as $v_0 \approx \alpha \ell_a/ \eta = \textrm{sign}(\alpha) \sqrt{|\alpha| k_F}/\eta$.~\cite{RN7, turbulentNematic}.
 Thus, the dimensionless distance between defects $\lambda' = \lambda/a$ and the dimensionless speed $v_0' = v_0 a /(\mu k_F)$ specify all the relevant material properties of the active nematic in the numerical simulations.
 \begin{figure}
   \centering
