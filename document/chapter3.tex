@@ -1126,6 +1126,15 @@ This is shown for the noiseless hemisphere in Figure~\ref{f:3-CurvFitSphere}(A) 
 We test surfaces with up to 3\% noise; this is greater than the noise in our toroidal droplets.
 We find that setting $b=2$ and $c_{F}^{initial} = 1.3998$ and $c_{GMC}^{initial}=1.4826$, their respective 95\% efficiency values~\cite{RN52,RN318}, works well.
 In addition, we see that $d_2$ matters far more than $d_1$; increasing $d_2$ improves the noise tolerance of the fit.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitSphere.png}
+  \caption{Fitting the curvature of hemispheres with varying noise.
+  (A-C) A hemisphere with $r = 30$ px and $K = 1.1 \times 10^{-3}$ px$^{-2}$ everywhere.
+  The original triangulation is displayed in (A), the output of the initial least-squared fit with $d_1=2$ in (B), and the output of the IRLS fit with $d_2=4$ in (C), with the color scale for the curvature in (I).
+  (D-H) The hemisphere in (A) with random noise from a distribution with mean 0 px and width 0.3 px added to the height at every point in the triangulation.
+  The triangulation is displayed in (D), the output of the initial least-squared fit with $d_1=4$ in (E), and the output of the IRLS fit with $d_2=6,8,10$ in (F-H), respectively, with the color scale for the curvature in (I).}\label{f:3-CurvFitSphere}
+\end{figure}
 
 For a given amount of noise, we fit a test surface multiple times while increasing $d_2$ until the change in the curvature with increasing $d_2$ is small enough.
 This process is illustrated for the example hemisphere with 1\% noise and an initial $K =1.1 \times 10^{-3}$ px$^{-2}$ displayed in Figure~\ref{f:3-CurvFitSphere}(D).
@@ -1135,13 +1144,17 @@ In addition, the majority of the pixels have $K$ within blah percent of the init
 While we could in principle set $d_2$ to the size of the surface to eliminate this step, our fit runtime scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 \begin{figure}
   \centering
-  \includegraphics{figures/C3/Ch3-Figs_CurvFitSphere.png}
-  \caption{Fitting the curvature of hemispheres with varying noise.
-  (A-C) A hemisphere with $r = 30$ px and $K = 1.1 \times 10^{-3}$ px$^{-2}$ everywhere.
+  \includegraphics{figures/C3/Ch3-Figs_CurvFitSaddle.png}
+  \caption{Fitting the curvature on a saddle surface with varying noise.
+  (A-C) A saddle surface with $K = -0.4 \times 10^{-3}$ px$^{-2}$ in the center of the surface.
   The original triangulation is displayed in (A), the output of the initial least-squared fit with $d_1=2$ in (B), and the output of the IRLS fit with $d_2=4$ in (C), with the color scale for the curvature in (I).
-  (D-H) The hemisphere in (A) with random noise from a distribution with mean 0 px and width 0.3 px added to the height at every point in the triangulation.
-  The triangulation is displayed in (D), the output of the initial least-squared fit with $d_1=4$ in (E), and the output of the IRLS fit with $d_2=6,8,10$ in (F-H), respectively, with the color scale for the curvature in (I).}\label{f:3-CurvFitSphere}
-\end{figure}\fxnote{add a saddle figure, briefly discuss outcomes without procedures}
+  (D-H) The surface in (A) with random noise from a distribution with mean 0 px and width 0.3 px added to the height at every point in the triangulation.
+  The triangulation is displayed in (D), the output of the initial least-squared fit with $d_1=4$ in (E), and the output of the IRLS fit with $d_2=6,8,10$ in (F-H), respectively, with the color scale for the curvature in (I).}\label{f:3-CurvFitSaddle}
+\end{figure}
+
+We also test a saddle surface with negative Gaussian curvature everywhere on the surface and $K = - 0.4 \times 10^{-3}$ px$^{-2}$ in the middle of the surface.
+Similar to the hemisphere, the surface without noise [see Figure~\ref{f:3-CurvFitSaddle}(A)] is insensitive to $d_1$ and $d_2$ [Figure~\ref{f:3-CurvFitSaddle}(B,C), respectively].
+In addition, when we fit to a noisy surface [see Figure~\ref{f:3-CurvFitSaddle}(D)], we again see that increasing $d_2$ allows the fit to deal with noise and return Gaussian curvature similar to that of the noiseless surface [Figure~\ref{f:3-CurvFitSaddle}(F--H)].
 
 Overall, our curvature fitting routine works well far from the boundaries.
 Near the boundaries, the curvature fit does not always work very well, as seen in the curvature near the corners in Figure~\ref{f:3-CurvFitSphere}(C,F-H), as there is less long-range information available when a point is within $d_2$ of a boundary.
@@ -1149,10 +1162,21 @@ As a consequence, we typically neglect curvature values within $d_2/2$ of the bo
 
 
 \subsection{Measuring the curvature of toroidal droplets}
+\begin{figure}
+  \centering
+  \includegraphics{figures/C3/Ch3-Figs_Sampling.png}
+  \caption{Downsampling a surface.
+  (A), Imaging the curved contour in gray leads to ``step'' artifacts in the black points.
+  (B), We downsample the black points to get the red points.
+  (C), The red points still represent the gray contour without so many step artifacts.}\label{f:3-Sampling}
+\end{figure}
+
 Before we measure the curvature of the $h(x,y)$ output from time-averaging the intensity of a confocal image stack, we first have to remove measurement artifacts.
-Since $h(x,y)$ is a discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.\fxnote{add schematic of the steps}
-The steps on the surface affect thare artifacts and affect the curvature measurement; the steps create flat areas with no curvature, while the jumps in height have large curvature.
-We remove these steps by downsampling the initial $h(x,y)$ until the output triangulation show no steps [see Figure~\fxnote{schematic}].
+Since $h(x,y)$ is a discrete quantity set by the height resolution of the confocal, the triangulated surface appears to have ``steps'' where the measured surface jumps from the height of one image plane to another.
+This is illustrated in the schematic in Figure~\ref{f:3-Sampling}(A), where imaging the gray contour leads to steps in the (${\bullet}$) data points.
+The steps on the surface are artifacts and affect the curvature measurement; the steps create flat areas with no curvature, while the jumps in height have large curvature.
+We remove these steps by downsampling the initial $h(x,y)$ until the output triangulation show no steps.
+For our example with the gray contour [Figure~\ref{f:3-Sampling}(A)], we downsample the (${\bullet}$) points, yielding the (${\color{red} \bullet}$) points [Figure~\ref{f:3-Sampling}(B)]; the (${\color{red} \bullet}$) points still represent the gray contour well [Figure~\ref{f:3-Sampling}(C)].
 If we downsample too much, we risk eliminating real curvature features in our data.
 In practice, we typically downsample $h(x,y)$ with an initial size 512~px~$\times$~512~px to a final size 75~px~$\times$~75~px.
 We triangulate the downsampled surface, as shown in Figure~\ref{f:3-CurvFitTorus}(A).
