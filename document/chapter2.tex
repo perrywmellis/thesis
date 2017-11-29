@@ -48,7 +48,7 @@ Let:
 \end{equation}
 with $\otimes$ the outer product.
 Now, $\textrm{tr}\big \{ \mathbf{Q} \big \} = \langle \mathbf{u}^{(\alpha)} \cdot \mathbf{u}^{(\alpha)} - 1 \rangle_{\alpha} = 0$, making $\mathbf{Q}$ traceless~\cite{RN33,RN175}.
-We need $\mathbf{Q}$ to be traceless if we wish to use $\mathbf{Q}$ as an order parameter with $Q_{ij} = 0$ in the isotropic phase.\fxnote{more concerning an order parameter and the need to go to 0}
+We need $\mathbf{Q}$ to be traceless if we wish to use $\mathbf{Q}$ as an order parameter with $Q_{ij} = 0$ in the isotropic phase.
 
 To determine the director, we need to diagonalize $\mathbf{Q}$.
 Without loss of generality, we choose a new orthonormal basis in the plane, $\{ \hat{e}_1', \hat{e}_2' \}$.
@@ -415,7 +415,7 @@ Consequently, the most common approach is to neglect the splay-bend term altoget
 \subsection{Insights from microscopic calculations}
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
-At the most basic level, an energy density is constructed from the individual mesogens by integrating the interaction energy over all possible pairs of mesogens, where the interaction depends on both relative position and orientation.\fxnote{ask alberto why he doesn't like this}
+At the most basic level, the total interaction energy for a system is the sum over the pairwise interaction energy for all pairs of mesogens in the system.
 % Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.
 
 However, an energy constructed upon the physical mesogens themselves requires us to know the position and orientation of each individual mesogen.
@@ -426,7 +426,7 @@ This is a density functional theoretic approach~\cite{RN223} and thus yields an 
 \end{equation}
 where $\mathbf{R}$ and $\mathbf{R}'$ are positions, and $G(\mathbf{R},\mathbf{R}')$ is an interaction energy density satisfying $G(\mathbf{R},\mathbf{R}') = 0$ for $|\mathbf{R}-\mathbf{R}'| \gg 0$, reflecting the finite interaction range between the mesogens.
 However, we are looking for a free energy and not just the interaction energy of the system.
-Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy similar to how we derived the Frank-Oseen free energy earlier.
+Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy; this is similar to how we derived the Frank-Oseen free energy earlier.
 Since we are looking to derive an expression for the free energy as a functional of director field, we must satisfy
 \begin{equation}
   F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
@@ -795,7 +795,7 @@ In order to discuss specific strategies for enforcing anchoring, we must first n
 NLC can be divided into two broad categories, thermotropics and lyotropics~\cite{RN33}.
 In thermotropic LC's, temperature is an important control parameter.
 If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will phase transition to a less symmetric LC phase or to a crystalline phase.
-Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as to temperature.\fxnote{unreadable Alberto comment}
+Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as to temperature.
 
 In this Thesis, we will primarily use 4-cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
 5CB belongs to the cyanobiphenyl family of NLC, which are characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
@@ -897,30 +897,30 @@ The radial texture only rotates with the polarizer and analyzer but does not cha
 
 \begin{table}[t]
   \centering
-\caption{Basic group theory definitions}
+\caption{Basic group theory definitions~\cite{RN320,RN319}}
 \begin{tabular}{|r l|}
 \hline
-{\bf set}:& A collection of objects.\\ \\
+{\bf set}:& A collection of objects\\ \\
 {\bf group}:& \begin{minipage}[t]{0.65\textwidth}
-A set, $\Sigma$, and a group operation, $\cdot$, that combines two elements in the set to form a third element in the set satisfying:
+A set, $\Sigma$, and a binary operation, or group multiplication, $\cdot$, that combines two elements in the set to form a third element in the set, satisfying:
     \begin{itemize}
       \item[]{\bf associativity}: $\forall \; a,b,c \in \Sigma$, $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
-      \item[]{\bf identity}: $\exists \; e \in \Sigma$ such that $a\cdot e=e \cdot a = a \; \forall \; a \in G$.
-      \item[]{\bf invertability}: $\forall \; a \in \Sigma$, $\exists \; a^{-1} \in \Sigma$ such that $a a^{-1} = a^{-1} a = e$, with $e$ the identity.
+      \item[]{\bf identity}: $\exists! \; e \in \Sigma$ s.t. $\forall \; a \in G, \, a\cdot e=e \cdot a = a$.
+      \item[]{\bf invertability}: $\forall \; a \in \Sigma$, $\exists! \; a^{-1} \in \Sigma$ s.t. $a a^{-1} = a^{-1} a = e$, with $e$ the identity.
     \end{itemize}
-    If $\forall \; a,b \in \Sigma, \; a \cdot b = b \cdot a$, the group is Abelian.
-    Note that the requirement $\forall \; a,b \in \Sigma, \; a \cdot b \in \Sigma$ is known as {\bf closure}. 
+    If $\forall \; a,b \in \Sigma, \, a \cdot b = b \cdot a$, the group is said to be Abelian.
+    Note that the requirement $\forall \; a,b \in \Sigma, \; a \cdot b \in \Sigma$ is known as {\bf closure}.
 \end{minipage}\\ \\
 {\bf Lie group}:& \begin{minipage}[t]{0.65\textwidth}
 A group that is also a differentiable manifold, whose group operation is also differentiable. Lie groups are associated with continuous symmetries, for example, SO(3), the set of all rotations in 3D Euclidean space under multiplication. Other common Lie groups include $n$-dimensional Euclidean space $\mathbb{R}^n$ under vector addition, and GL(2), the group of $2 \times 2$ invertible matrices, also under multiplication.
 \end{minipage}\\ \\
 {\bf discrete group}:& \begin{minipage}[t]{0.65\textwidth}
-A group whose elements form a discontinuous sequence. The order of the group is given by the number of elements in the group. Discrete groups can be both finite or infinite.
+A group whose elements must be countable. This is instantly satisfied if there are a finite number of elements in the group. In this case the order of the group is given by the number of elements in the group. If there are an infinite number of elements, there must be a one-to-one mapping from the elements to the integers.
 \end{minipage}\\ \\
 {\bf homomorphism}:& \begin{minipage}[t]{0.65\textwidth}
-A mapping between the discrete groups $G$ and $H$. This mapping is carried out by $\varphi$, mapping the elements of $G$ onto the elements of $H$. Formally, $\forall \; h \in \; H, \; \exists \; \Gamma \subset G$ such that $h = \varphi(\gamma) \; \forall \; \gamma \in \Gamma$. Thus, a homomorphism is not necessarily a one-to-one mapping. If the homomorphism is one-to-one, then the homeomorphism is an {\bf isomorphism}.
+A structure-preserving map, $\varphi$, between the groups $G$ and $H$, $\varphi : G \to H$. A homomorphism must satisfy, $\forall \; a, b \in G$, $\varphi(a \cdot b) = \varphi(a) \cdot \varphi(b)$. Since $\forall \; a \in G, \; \varphi(a) \in H$, we see that a homomorphism preserves the group multiplication. A homomorphism is not necessarily a one-to-one mapping. If the homomorphism is one-to-one, then the homeomorphism is an {\bf isomorphism}.
 \end{minipage}\\
 \hline
 \end{tabular}
 \label{t:2-GroupTheory}
-\end{table}\fxnote{not at all done}
+\end{table}
