@@ -1140,7 +1140,8 @@ For a given amount of noise, we fit a test surface multiple times while increasi
 This process is illustrated for the example hemisphere with 1\% noise and an initial $K =1.1 \times 10^{-3}$ px$^{-2}$ displayed in Figure~\ref{f:3-CurvFitSphere}(D).
 The output from the initial least-squares fit is shown in Figure~\ref{f:3-CurvFitSphere}(E) and the outputs from increasing values of $d_2$ are shown in Figure~\ref{f:3-CurvFitSphere}(F-H), where the color scale is displayed in Figure~\ref{f:3-CurvFitSphere}(I).
 Note that $K$ does not change appreciably between $d_2 = 8$ in Figure~\ref{f:3-CurvFitSphere}(G) and $d_2 = 10$ in ~\ref{f:3-CurvFitSphere}(H).
-In addition, the majority of the pixels have $K$ within blah percent of the initial $K =1.1 \times 10^{-3}$ px$^{-2}$, signifying that we do not need to increase $d_2$ any further\fxnote{go to the distributions}.
+For the final fitting parameters $d_1 = 4$ and $d_2 = 10$, we take the mean and standard deviation of $K$ everywhere on the surface, $\overbar{K} = 1.0 \times 10^{-3}$ px$^{2}$ and $\sqrt{\Delta K^2} = 0.1 \times 10^{-3}$ px$^{2}$.
+This shows that the fit deals well with noise on the surface provided $d_2$ is large enough.
 While we could in principle set $d_2$ to the size of the surface to eliminate this step, our fit runtime scales factorially with increasing $d_2$ such that we must balance runtime against improvements in the output curvature.
 \begin{figure}
   \centering
