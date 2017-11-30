@@ -2,29 +2,31 @@
 \chapter{Homeotropic nematics confined in toroids and bent capillaries}
 
 \section{Introduction}
-A system with broken reflection symmetry, i.e. it cannot be superimposed onto its reflection using only translations and rotations, has a handedness and thus is chiral~\cite{RN175}.
+A system with broken reflection symmetry cannot be superimposed onto its reflection using only translations and rotations; it has a handedness and thus is chiral~\cite{RN175}.
 Chirality can have important consequences for a system.
-For example, as first shown by Pasteur, a material's ability to rotate the polarization state of linearly polarized light results from broken reflection symmetry.
-This phenomenon is called optical activity and the handedness of the system determines the direction of the rotation of the polarization of light\cite{RN291}.
-In addition, chiral systems can exhibit structural color~\cite{RN308,RN307}.
+For example, as first shown by Pasteur~\cite{RN291}, a material's ability to rotate the polarization state of linearly polarized light results from broken reflection symmetry.
+This phenomenon is called optical activity and the handedness of the system determines the the rotation sense of the light polarization~\cite{RN291}.
+Chiral systems can also exhibit ``structural color,'' where light interacting with a microscopic pattern produces color; for example, jeweled beetles appear iridescent due to light interacting with the chiral patterns on a beetle's exoskeleton~\cite{RN308,RN307}.
  % and can even be doped to form microlasers~\cite{RN305,RN306}.
-Chiral systems can be formed from chiral building blocks, as in some photonic metamaterials~\cite{RN304}, or chirality can emerge via spontaneous symmetry breaking in an achiral system\cite{RN294}.
+
+Chiral systems can be formed from chiral building blocks, as in some photonic metamaterials~\cite{RN304,metameterial}, or chirality can emerge via spontaneous symmetry breaking in an achiral system~\cite{RN294}.
 This latter scenario is often studied in nematic liquid crystals where the mesogens are achiral~\cite{RN297,RN296,RN298,RN295,RN299,RN193,RN24,RN192,RN191,RN293,RN302}.
-Here, the symmetry-breaking is driven by elasticity; if the minimum energy state has a nontrivial twist distortion, then the system is chiral.
+Here, the symmetry-breaking is driven by the material elasticity; if the minimum energy state is chiral, then there must be a nontrivial twist distortion in the system.
 
 This simplest way to break the reflection symmetry in a NLC is to prescribe twist with boundary conditions, as in the twisted nematic cell shown in Figure~\ref{f:4-SSB}(A).
-In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate, specified by $\bm{\sigma}_1$ and $\bm{\sigma}_2$ on the bottom and top plate, respectively.
-For example, if the plates are in the $xy$-plane with the distance between the plates given by $H$, then $\mathbf{n}(z = 0) = \bm{\sigma}_1$ and $\mathbf{n}(z = H) = \bm{\sigma}_2$.
-When $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 0$, the boundary conditions require $\mathbf{n}$ to twist by $\pm \pi/2$ along a path between the plates.
-Briefly computing the free energy density for such a cell using a linear twist ansatz $\mathbf{n} = \hat{x} \cos (\tau z/H) + \hat{y} \sin(\tau z/H)$, with $\tau$ the total twist in the director between the plates, we have:
+In this scenario, the NLC is confined between two parallel plates with strong planar anchoring on each plate, specified by $\bm{\sigma}_1$ and $\bm{\sigma}_2$, respectively.
+If the plates are in the $xy$-plane and the distance between them is $H$, then $\mathbf{n}(z = 0) = \bm{\sigma}_1$ and $\mathbf{n}(z = H) = \bm{\sigma}_2$.
+When $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 0$, the boundary conditions require $\mathbf{n}$ to twist by $\pm \pi/2$ along a verical path.
+Computing the free energy density for such a cell using a linear twist ansatz $\mathbf{n} = \hat{x} \cos (\tau z/H) + \hat{y} \sin(\tau z/H)$, with $\tau$ the twist angle of the director between the plates, we have:
 \begin{align}
   f = K_{22}(\mathbf{n} \cdot \nabla \times \mathbf{n})^2 = K_{22}\tau^2/H^2,
 \end{align}
-where $K_{22}$ is the Frank elastic constant for a twist distortion.
-In the cell shown in Figure~\ref{f:4-SSB}(A), $|\tau| = \pi/2$ and the system has a left-handed (LH) twist.
-However, the system could just as easily have a right-handed (RH) twist as the spontaneous reflection symmetry breaking has no preference for either handedness in this case.
-We also see that the amount of twist is set by the anchoring, and is the same for an NLC provided the material obeys the boundary conditions.
+In the cell shown in Figure~\ref{f:4-SSB}(A), $|\tau| = \pi/2$.
+Following the director along $\hat{z}$, we see that the twist is counterclockwise and thus is called a left-handed (LH) twist.
+However, the system could just as easily have a right-handed (RH) twist, as the spontaneous reflection symmetry breaking has no preference for either handedness in this case.
+We also see that the amount of twist is set by the anchoring conditions, and is the same for any NLC provided the material obeys the boundary conditions.
 However, if we were to change $\bm{\sigma}_1$ and $\bm{\sigma}_2$ such that $|\tau| \neq \pi/2$, the choice of handedness becomes biased; for example, if $\bm{\sigma}_1 \cdot \bm{\sigma}_2 = 1/\sqrt{2}$, $\tau = \pi/4$ or $-3\pi/4$, leading to a difference in the free energy between the two twist directions.
+Consequently, the system will have a greater probability to have $\tau = \pi/4$, since this twist corresponds to the minimum energy state.
 \begin{figure}
   \centering
   \includegraphics{figures/C4/Ch4-Figs_SSB.png}
@@ -34,45 +36,57 @@ However, if we were to change $\bm{\sigma}_1$ and $\bm{\sigma}_2$ such that $|\t
   (B), Schematic of a cross-section of the director in a twisted bipolar droplet.
   The nails represent the director coming out of the page.
   As with (A), the system could twist with the opposite handedness.}\label{f:4-SSB}
-\end{figure}
+\end{figure}\fxnote{add an axis to A}.
 
 If we want to explore scenarios where the NLC has equal probability to adopt either handedness with $|\tau| \neq \pi/2$, we need scenarios where more than one distortion is at play.
 For example, consider a standard bipolar drop with degenerate planar anchoring, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
-Here, there is both a splay distortion and a bend distortion, governed by their respective Frank elastic constants, $K_{11}$ and $K_{33}$, and the structure is achiral.
+Here, there are both splay bend distortions, and the structure is achiral.
 If $K_{22}$ and $K_{33}$ are small enough compared to $K_{11}$, the bipolar drop will twist, [see Figure~\ref{f:4-SSB}(B)] relieving some some of the splay distortions with the less costly twist and bend distortions~\cite{RN297,RN296,RN295}.
 The criterion governing this instability is called the Williams criterion, $K_{11} > K_{22}+ 0.431 K_{33}$~\cite{RN297}.
 As with the twisted NLC cell with $|\tau| = \pi/2$, the handedness of the twist is randomly chosen.
 Provided $K_{11}$, $K_{22}$, and $K_{33}$ satisfy the Williams criterion, the magnitude of the twist is determined by the elastic constants; in this scenario there is no way to tune the twist apart from changing the material properties of the NLC.
 
 Prior work in our group with NLC confined to toroids with degenerate planar boundary conditions demonstrated that the amount of twist resulting from spontaneous symmetry breaking is not always only determined by the elastic constants~\cite{RN24}.
-We found a doubly-twisted director configuration in the toroidal droplets, where the magnitude of the twist grew with decreasing $\xi$.
+We found a doubly-twisted director configuration in toroidal droplets, where the magnitude of the twist grew with decreasing $\xi$.
 Schematics of an achiral and a doubly-twisted director field are shown in Figure~\ref{f:4-PlanarToroidsTwist}(A,B) and Figure~\ref{f:4-PlanarToroidsTwist}(C,D), respectively.
 Under degenerate planar anchoring, the saddle-splay distortion drives the director at the interface to align along the smallest principle curvature of the interface according to Eq~\ref{e:2-K24SurfCouple}~\cite{RN59}.
-Clearly then, increasing the difference between the principle curvatures of the interface will cause the system to twist more.
-In the $\{r, \theta, \varphi\}$ toroidal coordinates defined schematically in Figure~\ref{f:3-EqDefs}(B), we can write the two principle curvatures:
+For example, consider a cylinder with radius $a$ in the standard cylindrical coordinates $\{r, \theta, z \}$.
+The principle curvatures are $\kappa_1 = -1/a$ along $\hat{\theta}$ and $\kappa_2 = 0$ along $\hat{z}$.
+Thus, saddle-splay distortion will try to align the director along $\hat{theta}$.
+
+Increasing the difference between the principle curvatures of the interface will cause the system to twist more.
+For our cylindrical example, this corresponds to decreasing $a$.
+For a torus, in the $\{r, \theta, \varphi\}$ toroidal coordinates defined schematically in Figure~\ref{f:3-EqDefs}(B), we can write the two principle curvatures:
 \begin{align}
   \kappa_1 &= -\frac{1}{a} \\
-  \kappa_2 &= \frac{\cos(\theta)}{a(\xi-\cos(\theta))},
+  \kappa_2(\theta) &= \frac{\cos(\theta)}{a(\xi-\cos(\theta))},
 \end{align}
-where $a$ and $\xi$ are the tube radius and aspect ratio of the torus, respectively.
-Thus, decreasing $\xi$ in our toroidal droplets causes $|\kappa_1-\kappa_2|$ to increase, leading to our observations of increasing twist with decreasing $\xi$, as demonstrated by the (${\color{red} \bullet}$) in Figure~\ref{f:4-PlanarToroidsTwist}(E).
-However, there is still an influence of the elastic constants.
+Thus, decreasing $\xi$ in our toroidal droplets causes $|\kappa_1-\kappa_2(0)| = \xi/(a(\xi-1))$ to increase, leading to our observations of increasing twist with decreasing $\xi$, as shown by the (${\color{red} \bullet}$) symbols in Figure~\ref{f:4-PlanarToroidsTwist}(E).
+
+However, the twist still depends on the elastic constants.
 This is easiest to see by considering the Frank-Oseen free energy of a linear double-twist in the $\xi \rightarrow \infty $ ``cylindrical limit'' of a torus.
 Here, we use the ansatz in toroidal coordinates:
 \begin{equation}\label{e:4-planransatz}
-\mathbf{n} = \hat{\theta}\frac{\omega r}{a-\gamma \frac{r}{\xi} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega r}{a-g \frac{r}{\xi} \cos \theta} \right )^2 },
+\mathbf{n} = \hat{\theta}\frac{\omega r}{a-g \frac{r}{\xi} \cos \theta} + \hat{\varphi}\sqrt{1 - \left ( \frac{\omega r}{a-g \frac{r}{\xi} \cos \theta} \right )^2 },
 \end{equation}
 where $\omega$ and $g$ are parameters that determine the amount of twist and splay in the director field, respectively; $g=1$ corresponds to a splay-free configuration.
-The free energy per unit length for $\xi \rightarrow \infty$ is then given by:
+The free energy per unit length in this limit is given by:
 \begin{equation}\label{e:4-FEPlanarTwist}
   \frac{F}{2 \pi K_{33}} = \frac{K_{22}-K_{24}}{K_{33}}\omega^2 + \frac{\omega^4}{4} + \frac{K_{22}}{K_{33}}\sum\limits_{n=3}^{\infty} \frac{\omega^{2n}}{2n}.
 \end{equation}
-For $\omega \ll 1$, we can ignore the higher-order terms in the summation and write:
+For $\omega \ll 1$, we can ignore the higher-order terms in the summation and minimize F to obtain:
 \begin{equation}
-  \omega = \pm \sqrt{2\frac{K_{24}-K_{22}}{K_{33}}},
+  \omega = 0 ; \quad \omega = \pm \sqrt{2\frac{K_{24}-K_{22}}{K_{33}}}.
 \end{equation}
-where the total twist through the tube of the torus is $\tau = 2 \arcsin (\omega)$.
-Clearly then, the system will break reflection symmetry for $\xi \rightarrow \infty$ when $K_{24}> K_{22}$, and $|\tau|$ should increase with increasing $K_{24}$ and decreasing $K_{22}$.
+In this case $\omega = 0$ corresponds to a maximum in $F$.
+The twist angle is obtained by considering the angular difference between $\mathbf{n}(r=a, \theta = \pi/2)$ and $\mathbf{n}(r = a,\theta = 3\pi/2)$:
+\begin{align}
+  \tau &= \arccos(\mathbf{n}(r=a, \theta = \pi/2) \cdot \mathbf{n}(r = a,\theta = 3\pi/2)) \\
+       &= \arccos(1-2\omega^2) \\
+       &= \arcsin(2 \omega \sqrt{1 + \omega^2}) \\
+       &= 2\arcsin(\omega).
+\end{align}
+Clearly then, the system will break reflection symmetry when $K_{24}> K_{22}$, and $|\tau|$ increases with increasing $K_{24}$ and decreasing $K_{22}$.
 \begin{figure}
   \centering
   \includegraphics{figures/C4/Ch4-Figs_PlanarTwist.png}
@@ -84,98 +98,105 @@ Clearly then, the system will break reflection symmetry for $\xi \rightarrow \in
   $\xi = \infty$ corresponds to measurements in a cylindrical geometry, and $\xi < \infty$ are previously published data in toroidal droplets from Ref.~\cite{RN24}.}\label{f:4-PlanarToroidsTwist}
 \end{figure}
 
-We~\cite{RN293} and others~\cite{RN191} explored this directly by confining a Lyotropic Chromonic Liquid Crystal (LCLC) to a capillary under degenerate planar anchoring conditions.
+We~\cite{RN293} and others~\cite{RN191} explored this directly by confining a Lyotropic Chromonic Liquid Crystal (LCLC) to a cylindrical capillary under degenerate planar anchoring conditions.
+LCLC are an aqueous dispersion of plank-like molecules that self-assemble into columnar aggregates; these aggregates then form a nematic at appropriate temperature and concentration~\cite{RN303}.
 In the nematic phase, LCLC typically have $K_{11} \sim K_{33} \sim 10 K_{22}$; in the capillary, the small $K_{22}$ yielded measured values of $|\tau| \approx 170 ^{\circ}$ for the LCLC Sunset Yellow (SSY).
-For comparison, using the value of $K_{22}/K_{33}=0.4$ for 5CB and $K_{24} = 1.02 K_{22}$ measured from our experiments with 5CB confined to toroidal droplets under degenerate planar anchroring, we predict that $|\tau (\xi \rightarrow \infty)| \approx 15^{\circ} \pm 15^{\circ}$.
-We measure this directly using 5CB confined to a cylindrical geometry and find $|\tau (\xi = \infty)| = 9^{\circ} \pm 1^{\circ}$.
+For comparison, using the value of $K_{22}/K_{33}=0.4$ for 5CB and $K_{24} = (1.02 \pm 0.02) K_{22}$ measured from our experiments with 5CB confined to toroidal droplets under degenerate planar anchoring, $|\tau (\xi \rightarrow \infty)| = 15^{\circ} \pm 15^{\circ}$.
+We verify the twist in this limit directly using 5CB confined to a cylindrical geometry and find $|\tau (\xi = \infty)| = 9^{\circ} \pm 1^{\circ}$.
 In fact, in our experiments even when $\xi \sim 1$, we never measured $|\tau| > 80^{\circ}$.
 We place these measurements of (${\color{blue} \blacksquare}$) SSY and (${\color{red} \bullet}$) 5CB in cylindrical geometries on the twist-angle plot in Figure~\ref{f:4-PlanarToroidsTwist}(E).
 Thus, even though saddle-splay lets us tune chirality via geometry, there is still a large influence from the material constants.
 
-Inspired by these results in planar-anchored nematic toroids and capillaries, in this Chapter we consider a 5CB confined to a toroidal droplets under homeotropic anchoring.
-Despite the fact that the saddle-splay distortion does not enter into the energy minimization for homeotropic nematics, we find spontaneous reflection symmetry breaking and geometrically-controlled chirality.
-For NLC with $K_{11}\sim K_{22} \sim K_{33}$ confined in capillaries and $\upmu$m-scale toroids with homeotropic anchoring, the ground state is the escaped-radial (ER) configuration~\cite{RN274}.
-However, when $K_{11}\sim K_{33} \gg K_{22}$, the system breaks reflection symmetry, becoming a twisted-escaped-radial (TER) configuration~\cite{RN192}.
+Inspired by these results in planar-anchored nematic toroids and capillaries, in this Chapter we consider a 5CB confined to a toroidal droplet under homeotropic anchoring.
+For homeotropic anchoring, the saddle-splay contribution to the free energy is always a constant.
+Despite the fact that the saddle-splay distortion does not enter into the energy minimization problem for homeotropic nematics, we find spontaneous reflection symmetry breaking and geometrically-controlled chirality.
+Prior results for NLC with $K_{11}\sim K_{22} \sim K_{33}$ confined under homeotropic anchoring to capillaries~\cite{RN179} and to toroids with $a \sim \mathcal{O}(1)$ $\up$mu~\cite{RN274} found an escaped-radial (ER) configuration as the ground state.
+In contrast, when $K_{11}\sim K_{33} \gg K_{22}$, the system breaks reflection symmetry, and adopts a twisted-escaped-radial (TER) configuration~\cite{RN192}.
 This was again observed using LCLC; as in the degenerate-planar case, the low $K_{22}$ results in a very large total twist.
 
-Here, we find that confining NLC to mm-scale toroidal droplets with homeotropic anchoring yields a TER configuration, where the total twist decreases with increasing $\xi$, similar to our previous findings in planar anchored toroids.
-We attribute the twist to the additional bend distortion introduced when taking a capillary with $\xi \rightarrow \infty$ to a torus with $\xi \in [1,15]$.
-As the additional bend distortion grows with decreasing $\xi$, it becomes more favorable to relieve some of this additional bend distortion by a twist distortion with a spontaneously-chosen handedness.
+What we find here is that confining a NLC with $K_{11}\sim K_{22} \sim K_{33}$ under homeotropic anchoring to toroidal droplets with $a \sim \mathcal{O}(100)$ $\upmu$m yields a TER configuration, where the total twist decreases with increasing $\xi$, similar to our previous findings in planar anchored toroids.
+We attribute the twist to the additional bend distortion introduced as $\xi$ decreases.
+This additional bend distortion is relieved by a twist distortion with a spontaneously-chosen handedness.
 Our work demonstrates that geometry can tune chirality, even in the absence of an explicit curvature-coupling term in the free energy.
 
-This Chapter is organized as follows.
-We begin with an overview of the ER and highly-twisted TER configurations in cylindrical capillaries, discussing qualitative differences between the structures and establishing an intensity ratio as a qualitative way to distinguish between the  two configurations.
-We then consider NLC confined with homeotropic anchoring to mm-scale toroidal droplets.
+The rest of this Chapter is organized as follows.
+We begin with an overview of the ER and highly-twisted TER configurations in cylindrical capillaries, discussing qualitative differences between the structures and establishing an intensity ratio as a qualitative way to distinguish between the two configurations.
+We then consider NLC confined with homeotropic anchoring to toroidal droplets with $a \sim \mathcal{O}(100)$ $\upmu$m.
 At low $\xi$ we see an intensity ratio similar to the intensity ratio from the high-twist TER capillaries while at high $\xi$ we see an intensity ratio comparable to that from the achiral ER capillaries.
-% In addition, we see a structural change in the toroids as $\xi$ decreases.
-
 Next, we use Jones Calculus to simulate OPM textures for a given director field, and validate our implementation on well-studied director configurations in spheres.
 We use a linear double-twist ansatz in a torus to demonstrate technical details of our implementation.
 Furthermore, we establish that we can successfully simulate OPM textures from twisted director fields by comparing the measured twist angle in our simulations with the twist angle imposed by the given director field.
 We also simulate TER textures in toroids and capillaries, finding that the intensity ratio scales inversely with the twist.
 Since this relationship is monotonic, the simulations indicate that comparing the intensity ratio in different toroids serves as a proxy for comparing the amount of twist in the toroids.
-
 Finally, we confirm that the twist is driven by the local geometry by confining NLC to bent capillaries under homeotropic anchoring.
 We measure a local aspect ratio and find that the intensity ratio in the bent capillaries has the same behavior as the intensity ratio in our homeotropic toroids.
-This implies that we can tune the chirality with the confining geometry, even in the absence of the saddle-splay distortion directly coupling the director at the surface with the curvature of the surface.
+This implies that we can tune chirality with confining geometry, even in the absence of the saddle-splay distortion that directly couples the director at the surface with the curvature of the surface.
 
 
 
 
 \section{Escaped radial and twisted escaped radial configurations in capillaries}
 Consider NLC confined to a cylindrical capillary under homeotropic boundary conditions; in cylindrical coordinates $\{r,\theta,z\}$, we specify the boundary conditions with $\mathbf{n} = \hat{r}$ at the boundary.
-Restricting ourselves to a radial director field, $\mathbf{n} = \hat{r}$ everywhere throughout the capillary will yield an $s = +1$ line defect running along $\hat{z}$ at the center of the capillary, as shown in Figure~\ref{f:4-EscapeSchem}(A).
+Restricting ourselves to a radial director field, $\mathbf{n} = \hat{r}$ everywhere, there is an $s = +1$ line defect running along $\hat{z}$ at the center of the capillary, as shown in Figure~\ref{f:4-EscapeSchem}(A).
 However, recall from Chapter~\ref{c:2-defects} that integer-strength disclination lines are not topologically stable in a 3D NLC.
-Similar to line defects in 2D nematics or wall defects in 3D nematics, the singular $s = +1$ distortion can be continuously deformed to form a nonsingular distortion, as shown in Figure~\ref{f:2-Smearing}]~\cite{RN179,RN290,RN289}.
+Similar to line defects in 2D nematics or wall defects in 3D nematics, the singular $s = +1$ distortion can be continuously deformed to form a nonsingular distortion, as shown in Figure~\ref{f:2-Smearing}~\cite{RN179,RN290,RN289}.
 As illustrated in Figure~\ref{f:4-EscapeSchem}(B), the radial director field ``escapes into the third dimension'', such that  $n_{z} \neq 0$, hence the name escaped-radial.
-In the one-constant approximation, the ER director field is analytically solvable, with $\mathbf{n} = \{\sin(\Omega),0,\cos(\Omega)\}$, where $\Omega = 2 \arctan(r/a)$ gives the director angle measured off of $\hat{z}$, with $a$ the cylinder radius, as shown by the blue curve in Figure~\ref{f:4-EscapeSchem}(D)~\cite{RN179,RN290}.
-Provided $a \gtrsim 0.1$ $\upmu$m, the ER configuration is the ground state solution~\cite{RN194}; the costly splay distortion in the vicinity of the singular line is relieved by a less-costly bend distortion, with the cost of the bend distortion varying inversely with $a$.
-When $a \lesssim 0.1$ $\upmu$m, the cost of the bend distortion in the escape is too great and the $s = +1$ line defect is stable.
-For NLC where $K_{11} \neq K_{33}$, $\Omega$ changes, with $K_{11} < K_{33}$ causing the director to escape more gradually and $K_{11} > K_{33}$ to escape more abruptly, as seen by the red contours in Figure~\ref{f:4-EscapeSchem}(D).
+In the one-constant approximation, the ER director field is analytically solvable, with $\mathbf{n} = \{\sin(\Omega),0,\cos(\Omega)\}$, where $\Omega(r) = 2 \arctan(r/a)$ gives the director angle measured off of $\hat{z}$, with $a$ the cylinder radius, as shown by the blue curve in Figure~\ref{f:4-EscapeSchem}(D)~\cite{RN179,RN290}.
+Provided $a \gtrsim 0.1$ $\upmu$m, the ER configuration is the ground state solution~\cite{RN194}; the costly splay distortion in the vicinity of the singular line is relieved by a less-costly bend distortion, with the cost of the bend distortion increasing as $a$ decreases.
+When $a \lesssim 0.1$ $\upmu$m, the cost of the bend distortion in the escape is too great and the $s = +1$ line defect is energetically stable.
+For NLC where $K_{11} \neq K_{33}$, $\Omega(r)$ changes~\cite{RN321}.
+When $K_{11} \ll K_{33}$, the $n_z$ component of the director only becomes appreciable when $r \approx 0$.
+Hence, when $K_{11} < K_{33}$ we say that the director escapes more gradually, or slower.
+In contrast,  when $K_{11} \gg K_{33}$, the $n_z$ component becomes appreciable for $r \approx a$; when $K_{11} > K_{33}$ we say that the director escapes more abruptly, or faster.
+These behaviors can be visualized by taking $\Omega(r) = (\pi/2)(r/a)^{\phi}$, where $\phi < 1$ produces a slower escape and $\phi > 1$ produces a faster escape [red contours, Figure~\ref{f:4-EscapeSchem}(D)].
+The $\phi = 1$ behavior is similar to the escape in the 1-constant approximation [blue line, Figure~\ref{f:4-EscapeSchem}(D)].
 \begin{figure}
   \centering
   \includegraphics{figures/C4/Ch4-Figs_EscapeSchem.png}
   \caption{Singular and escaped-radial distortions in cylindrical geometries.
   (A-C), Cross-sections showing the director fields for a (A) singular $s = +1$ distortion, a (B) escaped-radial distortion, and a (C) twisted escaped-radial distortion.
-  (D), Director angle $\Omega$ measured off of the cylinder axis as a function of normalized radius, $r/a$, with $a$ the cylinder radius. The blue curve corresponds the the equilibrium solution for the 1-constant approximation, while the red curves correspond to $\Omega = 90^{\circ}\,(r/a)^{\phi}$, with $\phi = 0.1,0.5,2,5$.
+  (D), Director angle $\Omega$ measured off of the cylinder axis as a function of normalized radius, $r/a$, with $a$ the cylinder radius. The blue curve corresponds the the equilibrium solution for the 1-constant approximation, while the red curves correspond to $\Omega = (\pi/2)\,(r/a)^{\phi}$, with $\phi = 0.1,0.5,2,5$.
   The curves with $\phi = 0.1,0.5$ escape slower than the equilibrium solution, while the curves with $\phi = 2, 5$ escape faster than the equilibrium solution.}\label{f:4-EscapeSchem}
-\end{figure}
+\end{figure}\fxnote{complete the lower axis with -yhat}
 
-Now with an ER configuration in the 1-constant expression, let $K_{22}$ vary while keeping $K_{11} = K_{33} = K$.
-When $K_{22} \gtrsim 0.27K$~\cite{RN192}, the system can relieve some of the bend and spay distortions in the ER configuration by twisting, yielding the twisted escaped-radial configuration shown in Figure~\ref{f:4-EscapeSchem}(C), where now $\mathbf{n}$ has components along $\hat{r}$, $\hat{\theta}$, and $\hat{z}$.
+Now with an ER configuration in the 1-constant approximation, let $K_{22}$ vary while keeping $K_{11} = K_{33} = K$.
+When $K_{22} \lesssim 0.27K$~\cite{RN192}, the system can relieve some of the bend and splay distortions in the ER configuration by twisting, yielding the twisted escaped-radial configuration shown in Figure~\ref{f:4-EscapeSchem}(C), where now $\mathbf{n}$ has components along $\hat{r}$, $\hat{\theta}$, and $\hat{z}$.
 This configuration was first observed using LCLC~\cite{RN192}.
-LCLC are an aqueous dispersion of plank-like molecules that self-assemble into columnar aggregates; these aggregates then form a nematic at appropriate temperature and concentration~\cite{RN303}.
-Since $K_{22} \sim 10^{-1}K$ for LCLC systems, they frequently exhibit spontaneous reflection symmetry breaking~\cite{RN192,RN191,RN293,RN193,RN302}.
-
-We fill cylindrical capillaries with either 5CB or with a 31.5\% w/w aqueous solution of SSY; at this concentration, SSY is in the nematic phase~\cite{RN303}.
-To enforce homeotropic anchoring for the 5CB-filled capillaries, we first fill the capillary with $0.1\%$ w/w lecithin in hexane and then let the hexane dry, depositing the lecithin on the inner surface of the capillary.
-For the SSY-filled capillaries, we coat the entire capillary with paralyene using chemical vapor deposition~\cite{RN192}.
-Bright-field images, shown in Figure~\ref{f:4-StraightCaps}(A,C), depict a 5CB and a SSY capillary, respectively.
+Since $K_{22} \sim 10^{-1}K$ for LCLCs, they frequently exhibit spontaneous reflection symmetry breaking~\cite{RN192,RN191,RN293,RN193,RN302}.
 
 
 \subsection{Intensity profile and intensity ratio}
-By eye, it is easy to see that the ER and the TER OPM textures shown in Figure~\ref{f:4-StraightCaps}(B,D) are different; this makes sense when we consider the director field in each configuration and its impact on the intensity profile across the capillary.
-When the polarizer and analyzer (PA) are aligned along $\hat{z}$ and $\hat{r}$ projected onto the plane of the image, an OPM texture of an ER capillary [Figure~\ref{f:4-StraightCaps}(B)] should have three regions of extinction corresponding to the edges and  to the center of the capillary.
-In these regions, $\mathbf{n}$ is along the PA directions.
-Between these three dark regions there are two bright regions, corresponding to locations where $\mathbf{n}$ has components along both $\hat{r}$ and $\hat{z}$.
+We fill cylindrical capillaries with either 5CB or with a 31.5\% w/w aqueous solution of SSY; at this concentration, SSY is in the nematic phase~\cite{RN303}.
+We use capillaries that are at least 4 cm long with diameters from $50$ $\upmu$m to 400 $\upmu$m.
+To enforce homeotropic anchoring for the 5CB-filled capillaries, we first fill the capillary with $0.1\%$ w/w lecithin in hexane and then let the hexane dry, depositing the lecithin on the inner surface of the capillary.
+We check each capillary with a microscope to make ensure the hexane has fully evaporated; this process can take anywhere from 10 minutes for the largest diameter capillaries to several hours for the smallest capillaries.
+For the SSY-filled capillaries, the capillaries were coated with parylene by Karthick Nayani and Rui Chang using chemical vapor deposition~\cite{RN192}.\fxnote{need Karthick here}
+Bright-field images, shown in Figure~\ref{f:4-StraightCaps}(A,C), depict a 5CB and a SSY capillary, respectively.
+The corresponding OPM images are shown in Figure~\ref{f:4-StraightCaps}(B,D); from previous results, we expect the configurations to be ER and TER, respectively~\cite{RN179,RN192}.
+By eye, it is easy to see that the OPM textures shown in Figure~\ref{f:4-StraightCaps}(B,D) are different; this makes sense when we consider the director field in each configuration and its impact on the intensity profile across the capillary.
+When the polarizer and analyzer (PA) are aligned along $\hat{z}$ and $\hat{x}$, an OPM texture of an ER capillary [Figure~\ref{f:4-StraightCaps}(B)] should have three regions of extinction corresponding to the regions near the boundary and to the center of the capillary.
+In these regions, $\mathbf{n}$ is along the P or A direction.
+Between these three dark regions there are two bright regions, corresponding to locations where $\mathbf{n}$ has components along both $\hat{x}$ and $\hat{z}$.
 This dark-bright-dark-bright-dark pattern is the signature of an ER capillary; now plotting the intensity profile across the capillary in Figure~\ref{f:4-StraightCaps}(E), we see that there are two clear intensity peaks corresponding to the bright regions, and an intensity minimum in the middle of the profile corresponding to the dark central region.
-% We take the distance between the peaks as the ``escape core,'' the regions where $\mathbf{n} \sim \hat{z}$.
-% When $K_{11} < K_{33}$, the slower escape corresponds to a smaller escape core, while the faster escape when $K_{11} > K_{33}$ results in a larger escape core.
+Note that the intensity minimum is greater than zero; we believe this is due to scattering from thermal fluctuations in the director~\cite{RN33}.
 \begin{figure}
   \centering
   \includegraphics{figures/C4/Ch4-Figs_StraightCaps.png}
   \caption{ER and TER capillaries and intensity profiles.
   (A,C), Bright field images of a capillary filled with (A) 5CB and (C) SSY with homeotropic anchoring.
   (B,D), corresponding OPM images showing that (A,B) 5CB has an ER configuration and (C,D) SSY has a TER configuration.
-  (E,F), Intensity profiles measured across the capillary for (E) the 5CB texture in (B), and (F), the SSY texture in (D).}\label{f:4-StraightCaps}
+  (E,F), Intensity profiles measured across the capillary for (E) the 5CB texture in (B), and (F), the SSY texture in (D). The intensity scale is the grayscale intensity, with $1$ corresponding to the maximum intensity value of the camera and $0$ corresponding to no recorded intensity.}\label{f:4-StraightCaps}
 \end{figure}
 
-Conversely, when we look at the OPM texture for a TER configuration [Figure~\ref{f:4-StraightCaps}(D)], we see that the central region is no longer dark, but now has an appreciable intensity that is comparable to the intensity of the two ``bright'' regions flanking the central region.
-In a TER configuration, the nonzero $n_{\theta}$ component makes the projection of $\mathbf{n}$ onto the plane of the image deviate from the PA directions, causing the transmitted intensity in the central region to grow.
+Conversely, when we look at the OPM texture for a TER configuration [Figure~\ref{f:4-StraightCaps}(D)], we see that the central region is no longer dark, but that it has an intensity comparable to the intensity of the two ``bright'' regions flanking the central region.
+We can rationalize this by following the director schematic in Figure~\ref{f:4-EscapeSchem}(C) along $\hat{y}$ through the center of the capillary.
+We see that the nonzero $n_{\theta}$ component results in $\mathbf{n}$ having components along both $\hat{x}$ and $\hat{z}$, the P and A directions, causing the transmitted intensity in this central region to grow [Figure~\ref{f:4-StraightCaps}(D)].
 Plotting the intensity profile across the capillary in Figure~\ref{f:4-StraightCaps}(F), we see that there is still a central minimum surrounded by two peaks; however, the central minimum in the TER configuration is much higher than the central minimum in an ER configuration.
+In addition, we see that the peaks in the intensity profile do not have the same intensity value.
+This is a common feature of the TER profiles, and there is no trend in which side has a higher value.
 We quantify each intensity profile with an intensity ratio $I_{max}/I_{min}$, with $I_{max}$ the average intensity of the two peaks flanking the central minimum and $I_{min}$ the intensity of the central minimum.
 Our ER capillaries have $I_{max}/I_{min} \approx 4$ while our TER capillaries have $I_{max}/I_{min} \gtrsim 1$.
-We check that this phenomenon is not dependent on the LC chosen by comparing with the intensity profile of an ER SSY capillary; while the ground state in a homeotropic SSY capillary is a TER configuration, just after being filled the SSY capillary will have a transient ER configuration that spontaneously breaks reflection symmetry after a few minutes.
+We check that this phenomenon is not dependent on the LC chosen by comparing with the intensity profile of an ER SSY capillary; while the ground state in a homeotropic SSY capillary is a TER configuration, just after being filled the SSY capillary has a transient ER configuration that spontaneously breaks reflection symmetry after a few minutes.
 As with the ER textures from the 5CB capillaries, $I_{max}/I_{min} \approx 4$ in the transient ER SSY capillary.
 
 
@@ -185,12 +206,12 @@ As with the ER textures from the 5CB capillaries, $I_{max}/I_{min} \approx 4$ in
 We make stable toroidal droplets as detailed in Chapter~\ref{c:3}, with 5CB as our inner liquid and an aqueous yield-stress material.
 Our yield-stress material for homeotropic nematic toroids is similar to that used in our prior work with planar-anchored nematic toroids~\cite{RN24}, except here, we have replaced the polyvinyl alcohol used to enforce degenerate planar anchoring with sodium dodecyl sulfate (SDS) to enforce homeotropic anchoring.
 The yield-stress material consists of (i) 1.5\% w/w polyacrylamide microgels (Carbopol ETD 2020), (ii) 30\% w/w Ethanol, (iii) 3\% w/w Glycerol, (iv) 25\% w/w 32 mM SDS in ultrapure water, and (v) 40.5\% w/w ultrapure water.
-Thus, the final mixture has approximately 8 mM SDS, a concentration that yields strong homeotropic anchoring.
-To make the yield-stress material, we mix all the ingredients together, wait for $\sim 24$ hrs to allow the Carbopol to hydrate, and then neutralize the mixture by adding 2M NaOH until the pH$\approx 7$.
+Thus, the final mixture has approximately 8 mM SDS, a concentration that yields strong homeotropic anchoring~\cite{RN235}.
+To make the yield-stress material, we mix all the ingredients together, wait for $\sim 24$ hrs to allow the Carbopol to hydrate, and then neutralize the mixture by adding a volume of 2M NaOH solution until the pH$\approx 7$.
 Neutralizing the dispersion causes the polyacrylamide microgels to swell, increasing both the yield-stress and the transparency~\cite{RN24,RN47}.
 
 We view our toroidal droplets from the top under both bright-field and with crossed polarizers, as shown in Figure~\ref{f:4-HomeoToroidsExp}(A,D) and Figure~\ref{f:4-HomeoToroidsExp}(B,E), respectively.
-In the OPM texture in Figure~\ref{f:4-HomeoToroidsExp}(B) for a toroid with $\xi = 5$, the regions where the tube of the torus is along the orientation of the polarizer and analyzer (PA), the intensity pattern has the characteristic dark-light-dark-light-dark profile associated with an ER texture where the cylinder axis is along PA.
+In the OPM texture in Figure~\ref{f:4-HomeoToroidsExp}(B) for a toroid with $\xi = 5$, the regions where the tube of the torus is along the orientation of the polarizer and analyzer (P and A), the intensity pattern has the characteristic dark-light-dark-light-dark profile associated with an ER texture where the cylinder axis is oriented along the P and A directions.
 However, for the toroid with $\xi = 1.8$, the OPM texture in Figure~\ref{f:4-HomeoToroidsExp}(E) has more of a spiral-like texture.
 To quantify these patterns, we measure the intensity profile across the tube of the torus.
 \begin{figure}
@@ -213,36 +234,44 @@ To quantify these patterns, we measure the intensity profile across the tube of 
 From the top view, the azimuthal angle $\varphi$ in toroidal coordinates, $\{r,\theta,\varphi \}$ [see Figure~\ref{f:3-EqDefs}(B)], corresponds to the polar angle in a set of polar coordinates, $\{p,\varphi \}$, in the image itself.
 As $\varphi$ is measured along the central ring of the torus, $\mathbf{p}_0 = (0,\varphi)$ corresponds to the center of the central ring of the torus in the image, as displayed on the bright-field image in Figure~\ref{f:4-HomeoToroidsExp}(A).
 We take our intensity profiles in the OPM textures across the tube of the torus for a constant $\varphi$ from $p = R_0 - a(\varphi)$ to $p = R_0+ a(\varphi)$, where $R_0$ is the radius of the central ring of the torus and $a$ is the tube radius.
-We parameterize each intensity profile with a variable $\rho \in [-1,1]$ corresponding to $p = \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
-While for a perfect torus $a$ is constant, our toroidal droplets are not perfectly axisymmetric and thus $a$ has some $\varphi$-dependence.
+We parameterize each intensity profile with a variable $\rho = (p - R_0)/a(\varphi)$, such that $\rho \in [-1,1]$ corresponds to $p = \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
+We note that while for a perfect torus $a$ is constant, our toroidal droplets are not perfectly axisymmetric and thus $a$ has some $\varphi$-dependence.
 
 We find the central ring, find $a(\varphi)$, and determine the intensity profiles with a custom MATLAB script.
+We start by converting each image to grayscale using MATLAB's \texttt{rgb2gray} algorithm: $\mathit{gray} = 0.299 R + 0.587 G + 0.114 B$, where $R,G,B$ are the intensities in the red, green, and blue channels, respectively.
+In the grayscale images, $1$ corresponds to white and $0$ to black.
 From our top-view image, we start by selecting points along the inner and outer contours of the toroid in the image.
 We then fit the points on each contour to a circle, giving us the radii $R_{in}$, $R_{out}$ and centers $\mathbf{p}_{in}$, $\mathbf{p}_{out}$ of the inner and outer contours, respectively.
 Examples of these contours are drawn on the OPM texture in Figure~\ref{f:4-HomeoToroidsExp}(B).
+Note how $\mathbf{p}_{in}$ and $\mathbf{p}_{out}$ in Figure~\ref{f:4-HomeoToroidsExp}(B) are close to each other but are not the same; this reflects the fact that we do not have a perfect torus.
 
 For a given torus, we then take the average aspect ratio $\xi = R_0/a_{av} = (R_{out}+R_{in})/(R_{out}-R_{in})$, with the central ring radius $R_0=(R_{out}+R_{in})/2$ and the average tube radius $a_{av} = (R_{out}-R_{in})/2$.
 We also calculate the origin of our polar coordinate system in the image, $\mathbf{p}_0 = (\mathbf{p}_{in}+\mathbf{p}_{out})/2$.
-For a given $\varphi_0$, we take the intensity contour starting at the inner contour $(\mathbf{p}-\mathbf{p}_{in})^2 = R^2_{in}$ and increasing $p$ until we reach the outer contour $(\mathbf{p}-\mathbf{p}_{out})^2 = R^2_{out}$.
-The length of this contour is $2 a(\varphi_0)$, allowing us to calculate a local aspect ratio $\xi(\varphi_0) = R_0/a(\varphi)$.
-We then parameterize each intensity profile in terms of $\rho$; example profiles at $\varphi = 0$ for the OPM textures  in Figure~\ref{f:4-HomeoToroidsExp}(B,E) are shown in Figure~\ref{f:4-HomeoToroidsExp}(C,F), respectively.
+For a given $\varphi$, we take the intensity profile starting at the inner contour $|\mathbf{p}-\mathbf{p}_{in}| = R_{in}$ and increasing $p$ until we reach the outer contour $|\mathbf{p}-\mathbf{p}_{out}| = R_{out}$.
+The length of this profile is $2 a(\varphi)$, allowing us to calculate a local aspect ratio $\xi(\varphi) = R_0/a(\varphi)$.
+We then parameterize each intensity profile in terms of $\rho$; example profiles for $\varphi = 0$ for the OPM textures  in Figure~\ref{f:4-HomeoToroidsExp}(B,E) are shown in Figure~\ref{f:4-HomeoToroidsExp}(C,F), respectively.
+These [Figure~\ref{f:4-HomeoToroidsExp}(C,F)] are typical intensity profiles for our homeotropic toroids, where we always take our intensity profiles with $\hat{\varphi}$ along either the P or A direction.
+Like the intensity profiles of the TER capillaries [see Figue~\ref{f:4-StraightCaps}(F)], the maxima in the intensity profiles of our toroids do not always have the same value.
+Similarly, there is no general trend in which maximum is larger.
 
 
 \subsection{Large aspect ratio toroids}
 We first look at our larger $\xi$ toroids [see Figure~\ref{f:4-HomeoToroidsExp}(A,B)]; the OPM texture resembles an ER texture and the intensity profiles [Figure~\ref{f:4-HomeoToroidsExp}(C)] show a central minimum flanked by two maxima.
-However, we find that $I_{max}/I_{min} < 4$, the value we observed in our ER capillaries.
-In the example profile in Figure~\ref{f:4-HomeoToroidsExp}(C), $I_{max}/I_{min} = 1.45$ for $\xi(\varphi) = 4.8$.
+However, we find that $I_{max}/I_{min} < 4$, with $4$ the value we observed in our ER capillaries.
+In the example profile in Figure~\ref{f:4-HomeoToroidsExp}(C), $I_{max}/I_{min} = 1.45$ for $\xi(0) = 4.8$.
 Thus, we hypothesize that our larger aspect ratio toroids have a TER configuration.
+We emphasize that this twist occurs despite the fact that we have homeotropic anchoring.
+With homeotropic anchoring, the saddle-splay distortion does not drive the formation of a twisted state, as it did in our previous work with NLC toroids with degnerate planar anchoring~\cite{RN24}.
 
 
 \subsection{Small aspect ratio toroids}
-When we look at toroids with smaller $\xi$, we initially see that the intensity pattern has changed to a spiral texture of alternating dark and light regions [Figure~\ref{f:4-HomeoToroidsExp}(E)], no longer resembling the dark-bright-dark-bright-dark texture of an ER capillary or even the texture of a highly twisted TER capillary.
-However, when we examine the intensity profile of the spiral textures, we still find qualitative similarities with the intensity profile of an TER configuration, with a central minimum surrounded by two maxima and $I_{max}/I_{min} < 4$.
-For the example profile in Figure~\ref{f:4-HomeoToroidsExp}(F), $I_{max}/I_{min} =1.38$ and $\xi(\varphi) = 2$.
+When we look at toroids with smaller $\xi$, we initially see that the intensity pattern has changed to a spiral texture of alternating dark and light regions [Figure~\ref{f:4-HomeoToroidsExp}(E)], no longer so clearly resembling the dark-bright-dark-bright-dark texture of an ER or TER texture.
+However, when we examine the intensity profile of the spiral textures, we still find qualitative similarities with the intensity profile of a TER configuration, with a central minimum surrounded by two maxima and $I_{max}/I_{min} < 4$.
+For the example profile in Figure~\ref{f:4-HomeoToroidsExp}(F), $I_{max}/I_{min} =1.38$ and $\xi(0) = 2$.
 
 For a series of toroids with different $\xi$ and $a$, we plot $I_{max}/I_{min}$ vs $\xi(\varphi)$ [(${\color{blue} \circ}$), Figure~\ref{f:4-HomeoToroidsExp}(G)] and find that $I_{max}/I_{min}$ increases with increasing $\xi(\varphi)$, approaching $I_{max}/I_{min} = 4$ as $\xi(\varphi) \gg 1$.
 From this trend, we hypothesize that the twist in our TER toroids decreases as $\xi$ increases.
-In order to both qualitatively investigate the role of twist in the intensity ratio as well as to test director configurations that could yield this spiral texture, we simulate OPM textures.
+In order to both qualitatively investigate the role of twist in the intensity ratio as well as to test director configurations that could yield this spiral-like texture, we perform computer simulations of the OPM textures using Jones Calculus.
 
 
 
