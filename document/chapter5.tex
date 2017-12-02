@@ -169,7 +169,7 @@ Note that since $\Gamma$ is measured in the middle of the two plates, $r(s = 0) 
 We then numerically integrate Eqs.~\ref{e:5-ShapeSolveA}--\ref{e:5-ShapeSolveC} from $s = 0$ to $s = s_{lim}$, where $z(s = s_{lim}) = 1/2$, varying $\theta_0$ and $\Delta P$ until the numerical contours capture the experimental data, see Figure~\ref{f:5-ShapeEnvelope}(B,C).
 For an ideal bridge where $r(s = 0) = r(s = s_{lim})$ and $\theta(s_{lim}) = \pi - \theta_0$ [blue contour, Figure~\ref{f:5-ShapeEnvelope}(B)], $\Delta P$ is not a free parameter but is determined by the constraints on $r(s = s_{lim})$ and $\theta(s_{lim})$.
 However, the contact areas on the plates are not always equal in our experiments, making $r(s = 0) \neq r(s = s_{lim})$ [black contour, Figure~\ref{f:5-ShapeEnvelope}(C)].
-Here, we vary $\Delta P$ for a given $\theta_0$ to best fit the data, changing $r(s = s_{lim})$ and $\theta(s_{lim})$. 
+Here, we vary $\Delta P$ for a given $\theta_0$ to best fit the data, changing $r(s = s_{lim})$ and $\theta(s_{lim})$.
 We average the contact angles from the numerically-integrated contours for the waists and barrels to get $\theta^{waist}_0 = 36^{\circ} \pm 8^{\circ}$ and $\theta^{barrel}_0 = 127^{\circ} \pm 9^{\circ}$.
 We compare the contact angles determined from our calculated contours with contact angles measured from sessile droplets with both air and water as the outer medium, finding $\theta_0^{air} = 37^{\circ} \pm 5^{\circ}$ and $\theta_0^{water} = 123^{\circ} \pm 5^{\circ}$.
 This is in agreement with our data from the bridges, confirming that the contact angle is the main parameter determining the shape of our bridges.
@@ -200,24 +200,27 @@ We view the bridge from the top to determine whether the defect is a ring or a p
 We start at large $\Gamma$, where the equilibrium state has a ring defect, and determine the radius of the ring, $R_{ring}$, as we decrease $\Gamma$ by increasing $H$ in discrete steps.
 At each $H$, we monitor the bridge over time to ensure that the defect state no longer changes and the system is in equilibrium.
 In addition, as we decrease $\Gamma$ in each bridge, we also determine the effective aspect ratio for the defect transition, $\Gamma_c$.
-Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\ref{f:5-ExpWaistTop}(E), where we have plotted each observation of a stable ring defect with open circles and of a stable point defect with ``x'' symbols.
-The ring radius, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\ref{f:5-ExpWaistTop}(F), where we have again plotted every measurement we have performed.
+Using results for 21 different bridges, we find an average $\Gamma_c = 2.7 \pm 0.3$, as shown in the upper contour in Figure~\ref{f:5-ExpWaistTop}(E), where we have plotted each observation of a stable ring defect with a (${\color{red} \circ}$) symbol and each observation of a stable point defect with a (${\color{blue} \times}$) symbol.
+The ring diameter, scaled by the bridge height, varies linearly with $\Gamma$ for $\Gamma > \Gamma_c$, as indicated by the squares in Figure~\ref{f:5-ExpWaistTop}(F), where we have again plotted every measurement we have performed.
 At $\Gamma_c$, the  ring becomes unstable, and collapses to a point defect, yielding the discontinuity in $R_{ring}$ shown with a dashed line in Figure~\ref{f:5-ExpWaistTop}(F), where the point defect is represented as having a vanishing $R_{ring}$.
 
 However, when we start at $\Gamma < \Gamma_c$ in a point defect state and increase $\Gamma$, the point defect never transitions to a ring, as seen in the lower contour in Figure~\ref{f:5-ExpWaistTop}(E).
-Interestingly, if for $\Gamma > \Gamma_c$, we melt the nematic phase in a bridge containing a point defect, we always  recover a ring defect state when we let the bridge cool back to the nematic phase.
+Interestingly, if for $\Gamma > \Gamma_c$, we melt the nematic phase in a bridge containing a point defect, we always recover a ring defect state when we let the bridge cool back to the nematic phase.
+In contrast, when we do this for $\Gamma < \Gamma_c$, we still find a point defect when we let the bridge cool back to the nematic phase.
 This suggests that the point defect is metastable for $\Gamma > \Gamma_c$.
 
 
 \subsection{Defect transitions in a barrel}
-Since every barrel-shaped bridge we make initially starts as a waist, we need to make sure the defect state in the waist does not affect the final state in the barrel.
-Thus, we make our barrels both from waists with the 5CB in the nematic phase and from waists where the 5CB has been melted to the isotropic phase before adding the water and SDS mixture.
-For the barrels made with the 5CB in the isotropic phase, we also heat the water and SDS mixture before making the barrel so that the 5CB does not cool to the nematic phase before the barrel shape has been established.
-
-As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step, as shown in the bright field images of a barrel for four values of $\Gamma$ in Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G), with the associated crossed-polar image in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H).
-However, over time the SDS forms micelles in the 5CB that self-assemble onto the ring defect and produce filimentary structures in the NLC~\cite{RN279}.
-These structures are visible in the crossed-polar images [see Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H)] before they are clearly visible in the bright-field images [Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G)], indicating that they affect the NLC director.
-In addition, we see that the self-assembled micelles can even stabilize non-circular ring shapes in some of our measurements [see Figure~\ref{f:5-ExpBarrelTop}(G), Figure~\ref{f:5-ExpBarrelRing}(B)], indicating that the SDS is clearly affecting the defect state we measure~\cite{RN279,RN280}.
+% Since every barrel-shaped bridge we make initially starts as a waist, we need to make sure the defect state in the waist does not affect the final state in the barrel.
+% Thus, we make our barrels both from waists with the 5CB in the nematic phase and from waists where the 5CB has been melted to the isotropic phase before adding the water and SDS mixture.
+% For the barrels made with the 5CB in the isotropic phase, we also heat the water and SDS mixture before making the barrel so that the 5CB does not cool to the nematic phase before the barrel shape has been established.
+As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step, as shown in the bright field images of a barrel for four values of $\Gamma$ in Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G), with the associated crossed-polar images in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H).
+However, over time the SDS forms micelles in the 5CB that self-assemble onto the ring defect and form visible structures [see Figure~\ref{f:5-ExpBarrelTop}(E,G)] in the NLC~\cite{RN279}.
+In addition, note how the area inside the ring defect in the OPM images in in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H) becomes progressively brighter over time.
+Since the SDS micelles themselves are not birefringent, this brightening implies that the micelles are affecting the director field inside the bridge.
+Recall that the director field for a ring defect viewed from the top [see Figure~\ref{f:2-3DMeas}(C,D)] indicates that the area bounded by the ring should be dark when the polarizer and analyzer are crossed.
+For a waist, where there is no SDS, this is always true [see Figure~\ref{f:5-ExpWaistTop}(B)].
+In addition, we see that the self-assembled micelles can even stabilize non-circular ring shapes [see Figure~\ref{f:5-ExpBarrelTop}(G)] and off-center rings [see Figure~\ref{f:5-ExpBarrelRing}(B)], further indicating that the SDS can affect the director field in our bridges~\cite{RN279,RN280}.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_ExpBarrelTop.png}
@@ -227,30 +230,36 @@ In addition, we see that the self-assembled micelles can even stabilize non-circ
   (B,D,F,H), Corresponding crossed-polar images of the bridges in (A,C,E,G), respectively.
   Note how the sodium dodecyl sulfate (SDS) used to enforce homeotropic anchoring in the barrels forms micelles and disrupts the director in the bridge over time, from the initial measurement in (A,B) to the final measurement pictured in (G,H).
   The scale bar in (A) is $250$ $\upmu$m.}\label{f:5-ExpBarrelTop}
-\end{figure}
+\end{figure}\fxnote{add time arrow}
 
-Thus, we restrict our measurements to ring defects that are circular and centered in the bridge.
-We also make sure that the region within the ring in the crossed-polar images is dark, indicating that the SDS has not yet affected the entire bridge.
-For example, we exclude the data in Figure~\ref{f:5-ExpBarrelTop}(E-H).
-We then plot the ring radius scaled by the bridge height as a function of measurement number for each bridge, as seen in Figure~\ref{f:5-ExpBarrelRing}(A), with the initial measurement for a bridge indicated by (${\blacksquare,\, \square}$), the second measurement for a bridge indicated by (${\color{red} \blacksquare,\, \square}$), the third measurement by (${\color{blue} \blacksquare,\, \square}$), and the fourth by (${\color{magenta} \blacksquare,\, \square}$).
-The few magenta and blue points compared to the number of black and red points in Figure~\ref{f:5-ExpBarrelRing}(A) indicate that the effect of the micelles grows in time, such that we rarely have good data to make a fourth measurement and we never have good enough data to make a fifth measurement for a given bridge.
-Thus, even though for large $\Gamma$ we see that the scaled ring radius varies linearly with $\Gamma$, we cannot make a quantitative prediction about a ring-to-point defect transition in our barrel-shaped bridges.
-Even when we make barrels with the 5CB in the isotropic phase with low $\Gamma$, we do not see a clear collapse to a point defect; instead, we typically see a small ring defect with $2 R_{ring}/H < 0.3$, as pictured in Figure~\ref{f:5-ExpBarrelRing}(B,C) for a barrel made with $\Gamma = 2.4$.
-In all our measurements, we see only three instances of a clear point defect in a barrel-shaped bridge, with one of the instances of a point defect shown in Figure~\ref{f:5-ExpBarrelRing}(D,E).
-Finally, we note that as shown in Figure~\ref{f:5-ExpBarrelRing}(A), we see no difference between barrels made with the 5CB in the nematic phase (filled squares) and barrels made with 5CB in the isotropic phase (open squares).
+To minimize the effect of the SDS micelles, we restrict our measurements to ring defects that are circular and centered in the bridge.
+We also make sure that the region within the ring in the crossed-polar images is dark, indicating that the SDS micelles have not yet significantly affected the NLC.
+For example, we exclude the data in Figure~\ref{f:5-ExpBarrelTop}(E-H) and in Figure~\ref{f:5-ExpBarrelRing}(B,C).
+We then plot the ring diameter scaled by the bridge height as a function of $\Gamma$ for each bridge, as seen in Figure~\ref{f:5-ExpBarrelRing}(A).
+Here, the data are color coded by the measurement number for each bridge; the first measurement we make on a particular bridge is indicated by the (${\blacksquare,\, \square}$) symbols.
+We then decrease $\Gamma$ and make the second measurement for that bridge, plotting the data with the (${\color{red} \blacksquare,\, \square}$) symbols.
+Similarly, the the third and fourth measurements on a bridge are indicated by the (${\color{blue} \blacksquare,\, \square}$) and (${\color{magenta} \blacksquare,\, \square}$) symbols, respectively.
+The few magenta and blue points compared to the number of black and red points in Figure~\ref{f:5-ExpBarrelRing}(A) indicate that the effect of the micelles grows in time; we, in fact, rarely have good data to make a fourth measurement and we never have good enough data to make a fifth measurement for a given bridge.
+Thus, even though we see that the scaled ring diameter varies linearly with $\Gamma$, [Figure~\ref{f:5-ExpBarrelRing}(A)], we cannot make a quantitative prediction about a ring-to-point defect transition in our barrel-shaped bridges.
+This is true regardless of whether we make a barrel by adding the water + SDS to a waist with the 5CB in the nematic state [open squares, Figure~\ref{f:5-ExpBarrelRing}(A)] or with the 5CB in the isotropic state [closed squares, Figure~\ref{f:5-ExpBarrelRing}(A)].
+In addition, note that the protocol used to make the barrel does not affect how the scaled ring diameter depends on $\Gamma$, indicating that the defect state in a barrel is not affected by the waist it was made from.
+
+Even when we make barrels where the first measurement has low $\Gamma$, we do not see a clear collapse to a point defect; instead, we see a small ring defect with $0 < 2 R_{ring}/H < 0.3$, as pictured in Figure~\ref{f:5-ExpBarrelRing}(B,C) and Figure~\ref{f:5-ExpBarrelRing}(D,E) for barrels made with $\Gamma = 2.4$ and $\Gamma = 2.8$, respectively.
+Since the ring in Figure~\ref{f:5-ExpBarrelRing}(B) is off-center, we exclude this data.
+For the ring in Figure~\ref{f:5-ExpBarrelRing}(D), we measure $2 R_{ring}/H =0.1$, and plot the data in Figure~\ref{f:5-ExpBarrelRing}(A).
+We made ten barrels with an initial $\Gamma < 5$, we excluded seven of the barrels due to SDS effects.
+The remaining three barrels all have $0 < 2 R_{ring}/H < 0.3$, as plotted in Figure~\ref{f:5-ExpBarrelRing}(A).
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_ExpBarrelRing.png}
-  \caption{Ring and point defects in barrel-shaped NLC bridges viewed from the top.
+  \caption{Ring defects in barrel-shaped NLC bridges viewed from the top.
   (A), The ring defect diameter in a barrel-shaped bridge scaled by height of the bridge divided by 2, plotted as a function of the bridge aspect ratio, $\Gamma$.
-  A vanishing ring radius corresponds to a point defect.
   The experimental points include barrels made with the 5CB in the [open squares] nematic phase and the 5CB in the [filled squares] isotropic phase.
   We label the experimental points with their measurement number, with (${\blacksquare,\, \square}$) corresponding to the first measurement, (${\color{red} \blacksquare,\, \square}$) the second measurement, (${\color{blue} \blacksquare,\, \square}$) the third measurement, and (${\color{magenta} \blacksquare,\, \square}$) the fourth measurement, where we start at a large $\Gamma$ and decrease $\Gamma$ with each subsequent measurement in a single barrel.
   The (${\color{olive} \bullet}$) correspond to computations in a barrel structure using the elastic constants for 5CB.\@
-  (B-C), First measurement of a barrel with $\Gamma = 2.4$ made with the 5CB in the isotropic phase and viewed from the top just after the (B) bright field and (C) corresponding crossed-polar image indicate the director field has stopped changing.
-  We exclude this bridge from the plot in (A) due to the presence of micelles; we cannot say if the micelles are preventing the ring from collapsing to a point defect of if the measured $2 R_{ring}/H = 0.2$ is the equilibrium state.
-  (D,E), First measurement of a barrel with $\Gamma = 2.8$ made with the 5CB in the isotropic phase and viewed from the top just after the (D) bright field and (E) corresponding crossed-polar image indicate the director field has stopped changing.
-  Here, the defect structure is a point and is plotted in (A) as such.
+  (B--E), First measurement of a barrel with (B,C) $\Gamma = 2.4$ and (D,E) $\Gamma = 2.8$ made with the 5CB in the isotropic phase and viewed from the top just after the (B,D) bright field and (C,E) corresponding crossed-polar image indicate the director field has stopped changing.
+  We exclude this bridge in (B,C) from the plot in (A) due to the presence of micelles; we cannot say if the micelles are preventing the ring from collapsing to a point defect of if the measured $2 R_{ring}/H = 0.2$ is the equilibrium state.
+  The defect structure in (D,E) is a ring with $2 R_{ring}/H = 0.1$ and is plotted in (A) as such.
   The scale bar in (B) is 250 $\upmu$m.}\label{f:5-ExpBarrelRing}
 \end{figure}
 
