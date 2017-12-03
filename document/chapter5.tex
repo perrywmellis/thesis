@@ -290,7 +290,7 @@ However, the understanding that fluorescent emission could be polarized came fro
 Individual fluorophores absorb and emit light like dipoles, with the absorption/excitation dipole and the emission dipole not necessarily parallel to each other~\cite{RN282}.
 Consequently, while an isotropic distribution of fluorophores will absorb and emit light isotropically, individual fluorophores are sensitive to the polarization of the excitation light and emit linearly polarized light along the emission dipole~\cite{RN282}.
 
-Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community, from techniques like F\"oster Resonance Energy Transfer (FRET, \cite{fret}), used to measure cellular or molecular mobility, to the myriad of assays designed to measure quantities such as enzyme content~\cite{RN282,RN284}.
+Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community; for example, it is commonly used used to measure molecular or cellular mobility~\cite{RN282,RN284}.
 Recently, the liquid crystal community has developed a renewed interest in polarized fluorescence, with techniques like Polarized Epifluorescent Confocal Microscopy (PCFM), enabling 3D resolution of a liquid-crystalline director~\cite{RN148,RN174}.
 Here, we take inspiration from PCFM and develop Polarized Epifluorescent Microscopy (PFM), its wide-field cousin.
 At its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
@@ -330,27 +330,36 @@ Using the extracted $\delta'$ values, we can then plot the associated director f
   (A,B), Optical-polarized microscopy images with no sample, P and A crossed, and the dichroic mirror in the light path.
   $\Phi_A$ is indicated by the white arrow in the bottom-right of each image.
   (C), Transmitted intensity as a function of $\Phi_A$ for the same setup as in (A,B), with $\Phi_A$ measured CCW off of $\hat{y}$.
-  The maximum at $\Phi_A = 45^o$ and minima at $\Phi_A = 0^o,\, 90^o$ implies that the optic axis of the mirror is along either $\hat{x}$ or $\hat{y}$.}\label{f:5-DichroicMirror}
+  The maximum at $\Phi_A = 45^{\circ}$ and minima at $\Phi_A = 0^{\circ},\, 90^{\circ}$ implies that the optic axis of the mirror is along either $\hat{x}$ or $\hat{y}$.}\label{f:5-DichroicMirror}
 \end{figure}
 
 
-We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$, as seen for the example images of a planar cell with the rubbing direction along $90^{\circ}$ and different analyzer angles in Figure~\ref{f:5-PFM_FlatCell}(E,F).
-The transmitted intensity as a function of $\Phi_A$ [see Figure~\ref{f:5-PFM_FlatCell}(G)] is a minimum for $\Phi_A = 0^{\circ}$ [Figure~\ref{f:5-PFM_FlatCell}(E)] and a maximum for $\Phi_A = 90^{\circ}$ [~\ref{f:5-PFM_FlatCell}(F)], with the fit returning $\delta' = 89^{\circ}$, as expected.
-However, when the rubbing direction is not perfectly parallel to or perpendicular to the optic axis of the dichroic mirror, we see that the fit returns values that are biased towards $0^{\circ}$ or $90^{\circ}$, as seen in the transmitted intensities and associated fits in Figure~\ref{f:5-PFM_FlatCell}(H,I) for rubbing directions $25^{\circ}$ and $45^{\circ}$, respectively.
-Here, the fits [blue curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)] return $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively, in constrast to the expected values [black dashed curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)].
-% Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
-We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$, as shown by the relatively flat transmitted intensity curve in Figure~\ref{f:5-PFM_FlatCell}(J).
+We initially test our analysis on planar cells (INSTEC LC2-9.0) that we fill with 5CB via capillary action.
+We image the cell with PFM and find that the fluorescence is much brighter when $\Phi_A$ is parallel to the rubbing direction than when $\Phi_A$ is perpendicular to the rubbing direction, as shown in Figure~\ref{f:5-PFM_FlatCell}(B,C), respectively, for a rubbing direction oriented along $\hat{x}$.
+Plotting the average intensity in each image as a function of $\Phi_A$ with the (${\color{red} \bullet}$) symbols in Figure~\ref{f:5-PFM_FlatCell}(D), where $\Phi_A$ is measured off of $\hat{y}$, we see that the intensity varies as we would expect for such a rubbing direction: the intensity is a maximum when $\Phi_A = 90^{\circ}$ and a minimum when $\Phi_A = 0^{\circ}, \, 180^{\circ}$.
+We fit the data in Figure~\ref{f:5-PFM_FlatCell}(D) to the expression in Eq.~\ref{e:5-IntFit} [blue curve] and find $\delta' = 89^{\circ}$, as expected.
+
+We next change the rubbing direction to $25^{\circ}$ measured from $\hat{y}$ and plot the intensity as a function of $\Phi_A$ with the (${\color{red} \bullet}$) symbols in Figure~\ref{f:5-PFM_FlatCell}(E).
+However, when we fit the data to Eq.~\ref{e:5-IntFit} [blue curve], we find $\delta' = 2^{\circ}$.
+Plotting the theoretical curve for $\delta' =25^o$ [blue dashed line, Figure~\ref{f:5-PFM_FlatCell}(E)], we see that the data are shifted to the left of the expected values.
+In addition, we see that the total intensity variation in the sample has decreased.
+Similarly, when we do the same for a rubbing direction of $45^{\circ}$ [see Figure~\ref{f:5-PFM_FlatCell}(F)], the fit returns $\delta' = 67^{\circ}$, with the data showing even less intensity variation and now shifted to the right of the expected values [blue dashed line, Figure~\ref{f:5-PFM_FlatCell}(F)].
+We hypothesize that there is another birefringent element in the light path with its optic axis along $\hat{x}$ or $\hat{y}$; the additional retardation changes the linearly polarized light to elliptically polarized light.
+This both shifts the $I$ vs $\Phi_A$ curve and decreases the variation in the light intensity as a function of $\Phi_A$.
+
+We confirm this by taking OPM images with no sample and just the dichroic mirror still in the light path, as seen for P and A at $0^{\circ}$ and $90^{\circ}$ and at $45^{\circ}$ and $135^{\circ}$ in Figure~\ref{f:5-DichroicMirror}(A,B), respectively.
+The bright image in Figure~\ref{f:5-DichroicMirror}(B) indicates the mirror is birefringent; plotting the transmitted intensity for crossed P and A as a function of $\Phi_A$ in Figure~\ref{f:5-DichroicMirror}(C), we see that the optic axis of the mirror is indeed along either $\hat{x}$ or $\hat{y}$.
+While the mirror affects the quantitative results, we see from our experiments with the planar cell that we can still distinguish between different rubbing directions.
+Finally, we also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$, as shown by the relatively flat transmitted intensity curve in Figure~\ref{f:5-PFM_FlatCell}(J).
+With the 5CB in the isotropic, we measure the range in the intensity variation as a function of $\Phi_A$ to be 6\% of the mean intensity.
+We compare this to the cell with the rubbing direction along $45^{\circ}$, where our intensity variation with the 5CB in the nematic phase is the smallest, and fin that that the range in $I$ is 25\% of the mean.
+This indicates that the intensity variation is due to the 5CB and not to some property of the cell.
 \begin{figure}
   \includegraphics{figures/C5/Ch5-Figs_IsotropicPlanar.png}
   \caption{Recorded intensity as a function of $\Phi_A$ of a planar NLC cell filled with 5CB and melted to the isotropic.
-  The rubbing direction is along $90^o$.
-  The range  in $I$ is 6\% of the mean.}
+  The rubbing direction is along $90^o$ and the range in $I$ is 6\% of the mean.}
   \label{f:5-IsotropicPlanar}
 \end{figure}
-
-Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the transmitted light images with the polarizer and analyzer crossed and the mirror in the light path in Figure~\ref{f:5-PFM_FlatCell}(B,C), where the analyzer angle is indicated in each image.
-By plotting the average transmitted intensity under crossed polarizers with the mirror in the light path as a function of $\Phi_A$, as seen in Figuure~\ref{f:5-PFM_FlatCell}(D) with $\Phi_A$ measured CCW from $\hat{y}$, we see that the optic axis of the dichroic mirror must lie along either $\hat{x}$ or $\hat{y}$.
-Thus, we will take all our angle measurements CCW from $\hat{y}$ for the remainder of the Chapter.
 
 
 \subsection{Validation in spherical droplets and cylindrical capillaries}
