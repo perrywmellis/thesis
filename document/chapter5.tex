@@ -269,9 +269,10 @@ The remaining three barrels all have $0 < 2 R_{ring}/H < 0.3$, as plotted in Fig
 \section{Measuring defect conformation using fluorescence microscopy}
 We return to viewing bridges from the side to determine if the defects are radial or hyperbolic.
 We start by viewing the bridges with OPM and rotating the crossed polarizer and analyzer; the texture for a radial defect rotates in the same direction as the polarizer and analyzer, while the texture for a hyperbolic defect rotates with the opposite sense~\cite{RN177}.
-However, due to the large curvature of the waist and barrel shapes when $\Gamma$ is large, we cannot clearly distinguish the rotation of the texture.
+However, due to the large curvature of the waist and barrel shapes, especially when $\Gamma$ is large, we cannot clearly distinguish the rotation of the texture.
 This is demonstrated in Figure~\ref{f:5-PA_Rot} for a bridge with small $\Gamma$ [see Figure~\ref{f:5-PA_Rot}(A-C)] and a bridge with large $\Gamma$ [see Figure~\ref{f:5-PA_Rot}(D-F)].
-Changing the polarizer and analyzer (PA) orientations by 45$^{\circ}$ for the bridge with small $\Gamma$ [Figure~\ref{f:5-PA_Rot}(B,C)] produces a noticeable change in the texture; in contrast, rotating PA by 45$^{\circ}$ for the bridge with large $\Gamma$ [Figure~\ref{f:5-PA_Rot}(E,F)] produces no discernible change in the texture.
+Changing the polarizer and analyzer (PA) orientations by 45$^{\circ}$ for the bridge with small $\Gamma$ [Figure~\ref{f:5-PA_Rot}(B,C)] produces a change in the texture, but it still does not clearly allow us to determine the brush rotation.
+Rotating PA by 45$^{\circ}$ for the bridge with large $\Gamma$ [Figure~\ref{f:5-PA_Rot}(E,F)] produces an even smaller change in the texture.
 As an alternative approach, we develop and use polarized epifluorescent microscopy (PFM) to see whether the defect is radial or hyperbolic.
 \begin{figure}
   \centering
@@ -283,40 +284,38 @@ As an alternative approach, we develop and use polarized epifluorescent microsco
 \end{figure}
 
 \subsection{Theoretical overview of polarized epifluorescent microscopy}
-Fluorescence occurs when a material absorbs and then re-emits light, where the initial absorption excites a singlet state in the material which then decays via photon emission.
+As mentioned earlier, fluorescence is an inelastic process where a material absorbs and then re-emits light.
 The realization that this process consists of both absorption and emission of light is attributed to Stokes, as is the name ``fluorescence'' itself.~\cite{RN286,RN287}.
 However, the understanding that fluorescent emission could be polarized came from Weigert's work with small fluorescent molecules, or fluorophores~\cite{RN285}.
 Individual fluorophores absorb and emit light like dipoles, with the absorption/excitation dipole and the emission dipole not necessarily parallel to each other~\cite{RN282}.
 Consequently, while an isotropic distribution of fluorophores will absorb and emit light isotropically, individual fluorophores are sensitive to the polarization of the excitation light and emit linearly polarized light along the emission dipole~\cite{RN282}.
 
-Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community, from techniques like F\"oster Resonance Energy Transfer (FRET), to the myriad of assays designed to measure quantities such as protease content, kinase content, and even cellular or molecular mobility~\cite{RN282,RN284}.
+Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community, from techniques like F\"oster Resonance Energy Transfer (FRET, \cite{fret}), used to measure cellular or molecular mobility, to the myriad of assays designed to measure quantities such as enzyme content~\cite{RN282,RN284}.
 Recently, the liquid crystal community has developed a renewed interest in polarized fluorescence, with techniques like Polarized Epifluorescent Confocal Microscopy (PCFM), enabling 3D resolution of a liquid-crystalline director~\cite{RN148,RN174}.
 Here, we take inspiration from PCFM and develop Polarized Epifluorescent Microscopy (PFM), its wide-field cousin.
-As its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
-Introducing the fluorophores in a NLC at low concentrations, the long axis of the fluorophores will align along the nematic director without affecting the director configuration~\cite{RN148,RN174}.
+At its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
+By introducing fluorophores in a NLC at low concentrations, the long axis of the fluorophores aligns along the nematic director without affecting the director configuration~\cite{RN148,RN174}.
 Thus, the fluorescent emission of the mixed fluorophore and NLC system will be linearly polarized along the director.
 If we excite the sample with unpolarized light and place an analyzer in the emitted light path, as depicted schematically in Figure~\ref{f:5-PFM_FlatCell}(A) then the emitted intensity from each point in the sample will be $\propto \cos^2{(\Phi_A-\delta)}$, where $\Phi_A$ is the orientation of the analyzer and $\delta$ is the orientation of $\mathbf{n}$ in the plane of the output image~\cite{RN174}.
-However, as we use wide-field fluorescent microscopy, the recorded intensity at each point in the output images reflects an averaging of the director along the light path.
+However, as we use wide-field fluorescent microscopy, the recorded intensity at each point in the output image reflects an averaging of the director along the light path.
 Hence, we have sacrificed the three-dimensional spatial resolution of PCFM for the simplicity of PFM.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_PFM_FlatCell.png}
   \caption{Polarized epifluorescent microscopy on a planar NLC cell filled with a mixture of 5CB and Nile Red.
   (A), Schematic from the side of the setup for polarized epifluorescent microscopy (PFM).
-  (B-D), Optical-polarized microscopy (B,C) images and (D) transmitted intensity as a function of analyzer angle $\Phi_A$, with no sample, PA crossed, and the dichroic mirror with the optic axis along $\hat{y}$ or $\hat{x}$ in the light path.
-  $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
-  (E-G), PFM (E,F) images and (G) recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$.
+  (B--D), PFM (B,C) images and (D) recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$.
   $\Phi_A$ is indicated in the images in (B,C), and is measured in (D) with respect to $\hat{y}$.
   The blue curve is a fit of the data to Eq.~\ref{e:5-IntFit}, returning $\delta' = 89^{\circ}$.
-  (H,I) Recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction (H) 25$^{\circ}$ CCW from $\hat{y}$ and (I) 45$^{\circ}$ CCW from $\hat{y}$.
+  (E,F), Recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction (E) 25$^{\circ}$ CCW from $\hat{y}$ and (F) 45$^{\circ}$ CCW from $\hat{y}$.
   The blue curves are fits of the data to Eq.~\ref{e:5-IntFit} and have $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively.
-  The black dashed lines correspond to theoretical curves for $\delta' = 25^{\circ}$ and $\delta' = 45^{\circ}$, respectively.
-  (J), Recorded intensity as a function of $\Phi_A$ of the planar NLC cell with rubbing direction along $\hat{x}$ and the 5CB melted to the isotropic.}\label{f:5-PFM_FlatCell}
+  The black dashed lines correspond to theoretical curves for $\delta' = 25^{\circ}$ and $\delta' = 45^{\circ}$, respectively.}\label{f:5-PFM_FlatCell}
 \end{figure}
+
 
 \subsection{Experimental realization}
 We add $0.01$ wt\% Nile red to 5CB; at this concentration, Nile red does not affect the director configuration~\cite{RN173}.
-We image our sample using with a standard epifluorescent setup with an analyzer in the emitted light path [Figure~\ref{f:5-PFM_FlatCell}(A)] and a short-arc lamp as our light source.
+We image our sample using a standard epifluorescent setup with an analyzer in the emitted light path [Figure~\ref{f:5-PFM_FlatCell}(A)] and a short-arc lamp as our light source.
 We use filter set \#20 from Zeiss, with a 534~nm~--~558~nm bandpass excitation filter, a 560~nm longpass dichroic mirror, and a 575~--~640~nm emission filter~\cite{RN288}.
 For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$ and then fit the intensity at every pixel to the form:
 \begin{equation}
@@ -324,10 +323,16 @@ For a sample, we record the output intensity $I(x,y)$ as a function of $\Phi_A$ 
 \end{equation}
 where $A$, $B$ and $\delta'$ are fitting parameters; $A$ and $B$ set the minimum value and range of $I$, respectively, and $\delta'$ reflects an average of the director orientation along the light path.
 Using the extracted $\delta'$ values, we can then plot the associated director field for a sample.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C5/Ch5-Figs_DichroicMirror.png}
+  \caption{The dichroic mirror is birefringent.
+  (A,B), Optical-polarized microscopy images with no sample, P and A crossed, and the dichroic mirror in the light path.
+  $\Phi_A$ is indicated by the white arrow in the bottom-right of each image.
+  (C), Transmitted intensity as a function of $\Phi_A$ for the same setup as in (A,B), with $\Phi_A$ measured CCW off of $\hat{y}$.
+  The maximum at $\Phi_A = 45^o$ and minima at $\Phi_A = 0^o,\, 90^o$ implies that the optic axis of the mirror is along either $\hat{x}$ or $\hat{y}$.}\label{f:5-DichroicMirror}
+\end{figure}
 
-Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the transmitted light images with the polarizer and analyzer crossed and the mirror in the light path in Figure~\ref{f:5-PFM_FlatCell}(B,C), where the analyzer angle is indicated in each image.
-By plotting the average transmitted intensity under crossed polarizers with the mirror in the light path as a function of $\Phi_A$, as seen in Figuure~\ref{f:5-PFM_FlatCell}(D) with $\Phi_A$ measured CCW from $\hat{y}$, we see that the optic axis of the dichroic mirror must lie along either $\hat{x}$ or $\hat{y}$.
-Thus, we will take all our angle measurements CCW from $\hat{y}$ for the remainder of the Chapter.
 
 We initially test our analysis on planar cells; we see that our fit returns good results when the rubbing direction is along $0^{\circ}$ or $90^{\circ}$, as seen for the example images of a planar cell with the rubbing direction along $90^{\circ}$ and different analyzer angles in Figure~\ref{f:5-PFM_FlatCell}(E,F).
 The transmitted intensity as a function of $\Phi_A$ [see Figure~\ref{f:5-PFM_FlatCell}(G)] is a minimum for $\Phi_A = 0^{\circ}$ [Figure~\ref{f:5-PFM_FlatCell}(E)] and a maximum for $\Phi_A = 90^{\circ}$ [~\ref{f:5-PFM_FlatCell}(F)], with the fit returning $\delta' = 89^{\circ}$, as expected.
@@ -335,6 +340,17 @@ However, when the rubbing direction is not perfectly parallel to or perpendicula
 Here, the fits [blue curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)] return $\delta' = 2^{\circ}$ and $\delta' = 67^{\circ}$, respectively, in constrast to the expected values [black dashed curves, Figure~\ref{f:5-PFM_FlatCell}(H,I)].
 % Thus, for samples where we wish to distinguish between radial and hyperbolic defects, we will orient the samples with the symmetry axis of the defect at $45^{\circ}$ to maximize our ability to determine the director at the most important parts of the texture.
 We also melt the 5CB in the cell to the isotropic to ensure that there is no appreciable intensity variation with changing $\Phi_A$, as shown by the relatively flat transmitted intensity curve in Figure~\ref{f:5-PFM_FlatCell}(J).
+\begin{figure}
+  \includegraphics{figures/C5/Ch5-Figs_IsotropicPlanar.png}
+  \caption{Recorded intensity as a function of $\Phi_A$ of a planar NLC cell filled with 5CB and melted to the isotropic.
+  The rubbing direction is along $90^o$.
+  The range  in $I$ is 6\% of the mean.}
+  \label{f:5-IsotropicPlanar}
+\end{figure}
+
+Importantly, we note that the dichroic mirror in our filter set is birefringent, as seen in the transmitted light images with the polarizer and analyzer crossed and the mirror in the light path in Figure~\ref{f:5-PFM_FlatCell}(B,C), where the analyzer angle is indicated in each image.
+By plotting the average transmitted intensity under crossed polarizers with the mirror in the light path as a function of $\Phi_A$, as seen in Figuure~\ref{f:5-PFM_FlatCell}(D) with $\Phi_A$ measured CCW from $\hat{y}$, we see that the optic axis of the dichroic mirror must lie along either $\hat{x}$ or $\hat{y}$.
+Thus, we will take all our angle measurements CCW from $\hat{y}$ for the remainder of the Chapter.
 
 
 \subsection{Validation in spherical droplets and cylindrical capillaries}
