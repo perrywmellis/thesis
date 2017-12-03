@@ -392,7 +392,7 @@ This means that to properly consider $\delta'(x,y)$ as a function of $\Phi_A$, w
 \end{figure}
 
 We accomplish this by translating all the images along their respective $\Phi_W$ by a fixed magnitude $\Delta \rho$, removing the effect of the displacement due to the analyzer wedge angle for each image.
-Since $\Phi_W \in [0,\pi]$ while $\Phi_A \in [0 2 \pi]$, we use $\Phi_A$ to determine $\Phi_W$ up to a factor of $\pi$ in each set of images; we translate an entire set by $\Delta \rho$ along both $\Phi_W = \Phi_A$ and along $\Phi_W = \Phi_A + \pi$ and keep the set where the displacement has been removed.
+Since $\Phi_W \in [0,\pi]$ while $\Phi_A \in [0, 2 \pi]$, we use $\Phi_A$ to determine $\Phi_W$ up to a factor of $\pi$ in each set of images; we translate an entire set by $\Delta \rho$ along both $\Phi_W = \Phi_A$ and along $\Phi_W = \Phi_A + \pi$ and keep the set where the displacement has been removed.
 Note that in our microscope, $\Phi_A$ and $\Phi_W$ also differ by $30^{\circ}$ [see Figure~\ref{f:5-AnalyzerShift}(B)].
 Our standard microscope setup with a $5\times$ objective and a $0.5 \times$ adapter in front of the camera (The Imaging Source, DMK 41BU02) has $\Delta \rho = 6$ px.
 
@@ -471,13 +471,12 @@ We then minimize the free-energy using a version of the finite difference method
 Although the free energy in the algorithm presented there depends on the cut-off length of the defect core, the equilibrium defect configuration is independent of this length scale provided it is reasonably small.
 We modify the algorithm to treat the small region containing the defect separately from the remainder of the computation volume, such that the calculated free energy converges as the mesh size grows~\cite{RN199,RN200,RN201}.
 
-We start by modeling a cylindrical bridge.
+A cylindrical bridge is considered first.
 For the 5CB values of $K_{11}/K_{33} = 0.74$, a bridge should undergo a defect transition between a radial ring and a hyperbolic point, as highlighted by the dashed line in the phase diagram in Figure~\ref{f:5-Calcs}(A).
 This result is consistent with prior computational modeling~\cite{RN144}, and highlights the peculiarity of the cylindrical case.
-However, we predict ring-to-point defect transitions at aspect ratios that are significantly smaller than previously reported~\cite{RN144}.
-In addition, in contrast to prior modeling, we find that there is no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [Figure~\ref{f:5-Calcs}(A)].
-Instead, our numerical calculations predict that the radius of the radial ring should vary linearly with $\Gamma$, smoothly collapsing to a point defect for low enough $\Gamma$.
-Recent experimental results examining the structure of radial point defects in cylindrical capillaries where $\Gamma \rightarrow \infty$ validate this prediction, finding that radial point defects are instead radial rings with a ring radius $R \sim \mathcal{O}(10^{-8})$ m~\cite{RN280}. For comparison, an individual 5CB molecule has a length of approximately $2$-nm~\cite{RN33}.
+However, the calculations find ring-to-point defect transitions at aspect ratios that are significantly smaller than previously reported~\cite{RN144}.
+In addition, in contrast to prior modeling, the calculations show no transition to a radial point structure~\cite{RN144}; only the hyperbolic point structure is stable [Figure~\ref{f:5-Calcs}(A)].
+Instead, the numerical calculations predict that the radius of the radial ring should vary linearly with $\Gamma$ for the entire range of $\Gamma$ explored.
 \begin{figure}
   \centering
   \includegraphics{figures/C5/Ch5-Figs_Calcs.png}
@@ -485,25 +484,25 @@ Recent experimental results examining the structure of radial point defects in c
   (A), Phase diagram of the defect structure in a cylinder as a function of aspect ratio $\Gamma$ and the ratio, $K_{11}/K_{33}$, of the splay and bend elastic constants.
   (B), Phase diagram of the defect structure in a waist-shaped bridge as a function of $\Gamma$ and $K_{11}/K_{33}$.
   In (A,B), the minimum-energy state is indicated in each region, and the dashed line corresponds to $K_{11} / K_{33}$ for 5CB.\@
-  (C), Free energy of a director configuration in a waist-shaped bridge relative to the free energy in the presence of the point defect and normalized by $H K_{33}$, shown as a function of scaled ring radius $R_{ring}/R_{bridge}$.
+  (C,D), Free energy of a director configuration in a waist-shaped bridge relative to the free energy in the presence of the point defect and normalized by $H K_{33}$, shown as a function of scaled ring radius $R_{ring}/R_{bridge}$.
   The curves correspond to (${\blacksquare}$) $\Gamma = 3.5$, (${\color{red} \bullet}$) $\Gamma = 2.8$, (${\color{blue} \blacktriangle}$) $\Gamma = 2.5$, and (${\color{green} \blacktriangledown}$) $\Gamma = 2.0$.}\label{f:5-Calcs}
 \end{figure}
 
-We then change the shape of the boundaries in the numerical calculations.
-Consistent with our experiments, we see that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ that we used, as shown in Figure~\ref{f:5-Calcs}(B).
-Furthermore, we find that the ring defect radius in Figure~\ref{f:5-ExpWaistTop}(F) predicted by our calculations (${\color{red} \bullet}$) for a waist-like shape agrees well with our experimental data ($\blacksquare$).
-In addition, we see that the hyperbolic-ring to hyperbolic-point transition happens at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$ [dashed line, Figure~\ref{f:5-Calcs}(B)], in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
+Next, the shape of the boundaries in the numerical calculations are changed.
+Consistent with our experiments, it is found that the radial defects in the phase diagram for a waist-shaped bridge disappear for all values of $K_{11}/K_{33}$ used, as shown in Figure~\ref{f:5-Calcs}(B).
+Furthermore, the ring defect radius in Figure~\ref{f:5-ExpWaistTop}(F) predicted by the calculations (${\color{red} \bullet}$) for a waist-like shape agrees very well with our experimental data ($\blacksquare$).
+In addition, the hyperbolic-ring to hyperbolic-point transition is found to happen at $\Gamma_c = 2.7$ for $K_{11}/K_{33} = 0.74$ [dashed line, Figure~\ref{f:5-Calcs}(B)], in agreement with our experimental measurement of $\Gamma_c = 2.7 \pm 0.3$ for decreasing $\Gamma$.
 
-We also investigate the hysteresis in our experimental hyperbolic ring to hyperbolic point transition by calculating the energy landscape of a waist-shaped nematic bridge as a function of ring radius.
-Results for for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\ref{f:5-Calcs}(C), where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
-As the free energy exhibits a local minimum at $R_{ring} = 0$, we indeed see that the point defect is metastable for $\Gamma > \Gamma_c$, consistent with our interpretation of the experimental results.
-In addition, given a representative bridge height of $H = 100$ $\upmu$m and $K_{33} \approx 10^{-11}$ N, we note that the height of the barrier is always $\mathcal{O} \left ( 10^{4} \right )$ k$_\textrm{B}$T, implying that a point defect will not spontaneously transform into a ring defect over the duration of our experiments, also consistent with our experimental observations.
+To investigate the hysteresis in our experimental hyperbolic ring to hyperbolic point transition, the energy landscape of a waist-shaped nematic bridge as a function of ring radius is calculated.
+Results for two bridges having $\Gamma > \Gamma_c$ and for two bridges having $\Gamma < \Gamma_c$ are shown in Figure~\ref{f:5-Calcs}(C,D), where we have taken $K_{11}/K_{33} = 0.74$; recall that the point defect is represented by the free energy for a vanishing ring radius.
+As the free energy exhibits a local minimum at $R_{ring} = 0$ [Figure~\ref{f:5-Calcs}(D)], we indeed see that the point defect is metastable for $\Gamma > \Gamma_c$, consistent with our interpretation of the experimental results.
+In addition, given a representative bridge height of $H = 100$ $\upmu$m and $K_{33} \approx 10^{-11}$ N, we find that the height of the barrier is always $\mathcal{O} \left ( 10^{4} \right )$ k$_\textrm{B}$T, implying that a point defect will not spontaneously transform into a ring defect over the duration of our experiments, also consistent with our experimental observations.
 For $\Gamma < \Gamma_c$, this metastability disappears, and the hyperbolic point defect is the only stable defect state.
 
-Turning to barrel-shaped bridges, our calculations show that all hyperbolic defects disappear from the phase diagram, leaving the radial ring as the only equilibrium state for the range of $\Gamma$ and $K_{11/K_{33}}$ explored.
-Thus, we confirm that the shape of the free surface determines if the enclosed defect is radial or hyperbolic.
+Turning to barrel-shaped bridges, the calculations show that all hyperbolic defects disappear from the phase diagram, leaving the radial ring as the only equilibrium state for the range of $\Gamma$ and $K_{11/K_{33}}$ explored.
+This confirms that the shape of the free surface determines if the enclosed defect is radial or hyperbolic.
 Barrel-like shapes with positive Gaussian curvature favor radial defects and waist-like shapes with negative Gaussian curvature favor hyperbolic defects.
-We also see that the ring radius in Figure~\ref{f:5-ExpBarrelRing}(A) predicted by our calculations (${\color{olive} \bullet}$) in a barrel-shaped bridge qualitatively agrees with our experimental results (squares), despite the influence of the SDS micelles in the experiments.
+We also see that the ring radius in Figure~\ref{f:5-ExpBarrelRing}(A) predicted by the calculations (${\color{olive} \bullet}$) in a barrel-shaped bridge also agrees with our experimental results (squares), despite the influence of the SDS micelles in the experiments.
 
 
 
