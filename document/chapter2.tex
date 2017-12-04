@@ -387,18 +387,17 @@ We can then write our director in terms the angle $\phi$ in the $xz$-plane measu
 Let the director field have the form $\phi_n(z) = \phi_d + \beta ((z/d)^n-1)$, such that $\phi(0) = \phi_d - \beta$ and $\phi(d) = \phi_d$, with $\phi_d$ and $\beta$ fixed angles that give the boundary conditions.
 In this case, $n$ is a positive integer that governs how the director varies between the two plates.
 This geometry is known as the splay-bend geometry.
-For simplicity, we take $K_{11} = K_{33} = K$, and assume $n$ is large, allowing us to approximate the free-energy as
+For simplicity, we take $K_{11} = K_{33} = K$, and assume $n$ is large, allowing us to approximate the free-energy as,
 \begin{align}
-  F &= \frac{1}{4}\frac{K \beta^2}{d^2}n + \frac{K_{13} \sin (2 \phi_d)\beta}{2d}n \\
-  &= \frac{1}{4}\frac{K \beta^2}{d^2} \left ( 1 + \frac{2 K_{13} \sin(2 \phi_d)}{K \beta}  \right) n.\label{e:2-UnboundedFromBelow}
+  F &\approx \frac{1}{4}\frac{K \beta^2}{d^2} \left ( 1 + \frac{2 K_{13} \sin(2 \phi_d)}{K \beta}  \right) n.\label{e:2-UnboundedFromBelow}
 \end{align}
-If we require $\beta < -2 K_{13} \sin(2 \phi_d) /K$ and $\phi_d \neq 0, \pi/2$, we see that the \\ $1 + 2 K_{13} \sin(2 \phi_d)/(K \beta) $ term in Eq.~\ref{e:2-UnboundedFromBelow} is negative, and
+If we require $|\beta|K < 2| K_{13} \sin(2 \phi_d)| $ and $K_{13} \sin(2 \phi_d)/\beta < 0$, then the \\ $1 + 2 K_{13} \sin(2 \phi_d)/(K \beta) $ term in Eq.~\ref{e:2-UnboundedFromBelow} is negative, and
 \begin{align}
   \lim_{n\to\infty} &F = -\infty, \\
   \lim_{n\to\infty} &\phi_n(z) =
   \begin{cases}
-    \phi(d) - \beta \quad \textrm{if }  0 \leq z  < d \\
-    \phi_d \quad \textrm{if} z = d.
+    \phi_d - \beta \quad \textrm{if }  0 \leq z  < d \\
+    \phi_d \quad \textrm{if } z = d.
   \end{cases}
 \end{align}
 Here, we see that that our director field has a free energy that diverges to $- \infty$, leading to a discontinuity in our director field.
