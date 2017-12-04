@@ -5,7 +5,7 @@
 A system with broken reflection symmetry cannot be superimposed onto its reflection using only translations and rotations; it has a handedness and thus is chiral~\cite{RN175}.
 Chirality can have important consequences for a system.
 For example, as first shown by Pasteur~\cite{RN291}, a material's ability to rotate the polarization state of linearly polarized light results from broken reflection symmetry.
-This phenomenon is called optical activity and the handedness of the system determines the the rotation sense of the light polarization~\cite{RN291}.
+This phenomenon is called optical activity and the handedness of the system determines the rotation sense of the light polarization~\cite{RN291}.
 Chiral systems can also exhibit ``structural color,'' where light interacting with a microscopic pattern produces color; for example, jeweled beetles appear iridescent due to light interacting with the chiral patterns on a beetle's exoskeleton~\cite{RN308,RN307}.
  % and can even be doped to form microlasers~\cite{RN305,RN306}.
 
@@ -41,7 +41,7 @@ Consequently, the system will have a greater probability to have $\tau = \pi/4$,
 If we want to explore scenarios where the NLC has equal probability to adopt either handedness with $|\tau| \neq \pi/2$, we need scenarios where more than one distortion is at play.
 For example, consider a standard bipolar drop with degenerate planar anchoring, as shown schematically in Figure~\ref{f:2-OPMDrops}(A).
 Here, there are both splay and bend distortions, and the structure is achiral.
-If $K_{22}$ and $K_{33}$ are small enough compared to $K_{11}$, the bipolar drop will twist, [see Figure~\ref{f:4-SSB}(B)] relieving some some of the splay distortions with the less costly twist and bend distortions~\cite{RN297,RN296,RN295}.
+If $K_{22}$ and $K_{33}$ are small enough compared to $K_{11}$, the bipolar drop will twist, [see Figure~\ref{f:4-SSB}(B)] relieving some of the splay distortions with the less costly twist and bend distortions~\cite{RN297,RN296,RN295}.
 The criterion governing this instability is called the Williams criterion, $K_{11} > K_{22}+ 0.431 K_{33}$~\cite{RN297, williamsCrit}.
 As with the twisted NLC cell with $|\tau| = \pi/2$, the handedness of the twist is randomly chosen.
 Provided $K_{11}$, $K_{22}$, and $K_{33}$ satisfy the Williams criterion, the magnitude of the twist is determined by the elastic constants; in this scenario there is no way to tune the twist apart from changing the material properties of the NLC.
@@ -158,7 +158,7 @@ The $\phi = 1$ behavior is similar to the escape in the 1-constant approximation
   \caption{Singular and escaped-radial distortions in cylindrical geometries.
   (A-C), Cross-sections showing the director fields for a (A) singular $s = +1$ distortion, a (B) escaped-radial distortion, and a (C) twisted escaped-radial distortion.
   The nails represent the director going into the page.
-  (D), Director angle $\Omega$ measured off of the cylinder axis as a function of normalized radius, $r/a$, with $a$ the cylinder radius. The blue curve corresponds the the equilibrium solution for the 1-constant approximation, while the red curves correspond to $\Omega = (\pi/2)\,(r/a)^{\phi}$, with $\phi = 0.1,0.5,2,5$.
+  (D), Director angle $\Omega$ measured off of the cylinder axis as a function of normalized radius, $r/a$, with $a$ the cylinder radius. The blue curve corresponds the equilibrium solution for the 1-constant approximation, while the red curves correspond to $\Omega = (\pi/2)\,(r/a)^{\phi}$, with $\phi = 0.1,0.5,2,5$.
   The curves with $\phi = 0.1,0.5$ escape slower than the equilibrium solution, while the curves with $\phi = 2, 5$ escape faster than the equilibrium solution.}\label{f:4-EscapeSchem}
 \end{figure}
 
@@ -240,7 +240,7 @@ To quantify these patterns, we measure the intensity profile across the tube of 
 From the top view, the azimuthal angle $\varphi$ in toroidal coordinates, $\{r,\theta,\varphi \}$ [see Figure~\ref{f:3-EqDefs}(B)], corresponds to the polar angle in a set of polar coordinates, $\{p,\varphi \}$, in the image itself.
 As $\varphi$ is measured along the central ring of the torus, $\mathbf{p}_0 = (0,\varphi)$ corresponds to the center of the central ring of the torus in the image, as displayed on the bright-field image in Figure~\ref{f:4-HomeoToroidsExp}(A).
 We take our intensity profiles in the OPM textures across the tube of the torus for a constant $\varphi$ from $p = R_0 - a(\varphi)$ to $p = R_0+ a(\varphi)$, where $R_0$ is the radius of the central ring of the torus and $a$ is the tube radius.
-We parameterize each intensity profile with a variable $\rho = (p - R_0)/a(\varphi)$, such that $\rho \in [-1,1]$ corresponds to $p = \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
+We parameterize each intensity profile with a variable $\rho = (p - R_0)/a(\varphi)$, such that $\rho \in [-1,1]$ corresponds to $p \in [R_0 - a(\varphi),R_0 + a(\varphi)]$.
 We note that while for a perfect torus $a$ is constant, our toroidal droplets are not perfectly axisymmetric and thus $a$ has some $\varphi$-dependence.
 
 We find the central ring, find $a(\varphi)$, and determine the intensity profiles with a custom MATLAB script.
@@ -300,7 +300,7 @@ In order to propagate a polarization state through an optical element, such as a
 \mathbf{E}^{trans} = \left ( \begin{array}{c} E^{trans}_{x} \\ E^{trans}_{y} \end{array} \right ) &= \left ( \begin{array}{c} A E^{init}_{x} + B E^{init}_{y} \\ C E^{init}_{x}+ D E^{init}_{y} \end{array} \right ) \nonumber \\
 &= \left ( \begin{array}{cc} A & B \\C & D \end{array} \right )\left ( \begin{array}{c} E^{init}_{x} \\ E^{init}_{y} \end{array} \right ) = \bm{\Theta} \mathbf{E}^{init},
 \end{align}
-where $\bm{\Theta}$ is is our transformation operator, which can be written as a $2 \times 2$ Jones matrix.
+where $\bm{\Theta}$ is our transformation operator, which can be written as a $2 \times 2$ Jones matrix.
 To propagate a Jones vector through multiple optical elements, the Jones matrix for each element is applied to the initial Jones vector sequentially.
 For a series of $N$ elements:
 \begin{equation}
@@ -376,7 +376,7 @@ where
 and $\bm{\Theta}_A \mathbf{R}(\alpha_A)$ is the operator and associated rotation accounting for the analyzer angle, $\alpha_A$.
 Taking advantage of the associative property of matrix multiplication and the fact that the product of two rotation matrices is the rotation matrix of the sum of the angles, we can re-write Eq.~\ref{e:4-general_operator_one} as:
 \begin{equation}
-\bm{\vartheta}(\bm{\rho}) =  \mathbf{R}(-\alpha_{N}(\bm{\rho})
+\bm{\vartheta}(\bm{\rho}) =  \mathbf{R}(-\alpha_{N}(\bm{\rho}))
  \prod\limits_{\nu = 2}^{N(\bm{\rho})}
  \!\Big \{ \bm{\Theta}_{\nu}(\bm{\rho}) \mathbf{R}(\alpha_{\nu}(\bm{\rho})-\alpha_{\nu-1}(\bm{\rho})) \Big \}
  \bm{\Theta}_{1}(\bm{\rho}) \mathbf{R}(\alpha_{1}(\bm{\rho}))\,
@@ -506,7 +506,7 @@ Now looking at the inner portion of the tubes, indicated by the cyan dashed line
 (E,F), $I_0/I_{45}$ versus $\xi$ for (E) simulated and (F) experimental OPM textures from the top-view. }\label{f:4-PlanarIntRatio}
 \end{figure}
 
-We quantify the difference between the brightness of the central region of a side-view OPM texture when P and A are aligned at $0^{\circ}$ and $90^{\circ}$ ($I_0$) versus when P and A are aligned at $45^{\circ}$ and $135^{\circ}$ ($I_{45}$), as seen in Figure~\ref{f:4-PlanarIntRatio}(A), by taking the ratio of the the two measurements $I_0/I_{45}$ as a function of $\xi$.
+We quantify the difference between the brightness of the central region of a side-view OPM texture when P and A are aligned at $0^{\circ}$ and $90^{\circ}$ ($I_0$) versus when P and A are aligned at $45^{\circ}$ and $135^{\circ}$ ($I_{45}$), as seen in Figure~\ref{f:4-PlanarIntRatio}(A), by taking the ratio of the two measurements $I_0/I_{45}$ as a function of $\xi$.
 We find that for both the experimental and simulated OPM textures the intensity ratio decreases as $\xi$ increases. In addition, $I_0/I_{45}$ also passes through 1 around $\xi = 5$ for both the simulated and experimental textures, as seen in Figure~\ref{f:4-PlanarIntRatio}(B,C).
 Physically, this corresponds to the aspect ratio where the entry director is oriented at approximately $67.5^o$ with respect to $\mathbf{n}_d$.
 Thus the incident light at $0^{\circ}$ for the $I_0$ measurement and the incident light at $45^{\circ}$ for the $I_{45}$ measurement have the same angular difference from the entry director, yielding similar output polarization states, reflected by the fact that $I_0/I_{45} \approx 1$.
@@ -689,7 +689,7 @@ As a result, it seems that we need to introduce an extra bend distortion by bend
 
 
 \subsection{Intensity ratio as a function of escape rate}
-When we look closely at the escape core in the simulated TER textures in tori, we see that the escape core appears to spiral, similar to the the experimental textures for NLC confined to toroids with low $\xi$.
+When we look closely at the escape core in the simulated TER textures in tori, we see that the escape core appears to spiral, similar to the experimental textures for NLC confined to toroids with low $\xi$.
 To test if we can obtain a spiral texture in our simulations similar to that in the experiments by changing the escape rate, we modify the ER and TER ansatzes from Eq.~\ref{e:4-TERansatz} by taking $\Omega = (\pi/2)(r/a)^{\phi}$.
 Recall that choosing $\phi = 1$ well approximates $2 \arctan(r/a)$, the one-constant solution [blue curve, Figure~\ref{f:4-EscapeSchem}(D)]; choosing $\phi < 1$ yields a slower escape [red curves, Figure~\ref{f:4-EscapeSchem}(D)]; and $\phi > 1$ yields a faster escape [red curves in Figure~\ref{f:4-EscapeSchem}(D)].
 
