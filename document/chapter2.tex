@@ -290,7 +290,7 @@ This is a phenomenological approach similar to Hooke's elasticity theory of a so
 This is again a reflection that there is no restriction to the center-of-mass positions of the mesogens; the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
-Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
+Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i\hat{e}_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
 If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point and consider situations where $x_i \ll 1$, we can locally expand $n_i$ as:
 \begin{align}
   n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
@@ -405,9 +405,9 @@ The discontinuity is called the Oldano-Barbero discontinuity.
 Recall that we initially derived the Frank-Oseen free energy assuming small deformations --- however, we have just shown a situation where the Frank-Oseen free energy diverges and leads to a discontinuity in the director field.
 This situation is called the Oldano-Barbero paradox~\cite{RN216,RN220,RN219,RN221}.
 
-The easiest way to solve the paradox is to set $K_{13} = 0$.
-It is worth noting that there has been a concerted effort to solve the paradox without setting $K_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
-However, careful experiments in the splay-bend geometry have found $K_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
+The easiest way to solve the paradox is to set $K'_{13} = 0$.
+It is worth noting that there has been a concerted effort to solve the paradox without setting $K'_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
+However, careful experiments in the splay-bend geometry have found $K'_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
 Consequently, the most common approach is to neglect the splay-bend term altogether~\cite{RN55,RN222}.
 
 
@@ -739,7 +739,7 @@ However, due to its simplicity and the fact that the $K_{ij}$ are associated wit
 
 \subsection{The scaling of the Frank elastic constants}
 From the relations in Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, we see that to leading order the Frank-Oseen elastic constants scale with $S^2$; the $S^3$ scaling comes entirely from the single higher-order term [see Eq.~\ref{e:2-LdGHigherOrderInvariant}].
-Since $S$ is a monotomic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
+Since $S$ is a monotonic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
 However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S(T < T_{NI}) \approx S(T_{NI})$, the temperature scaling predicted by the Landau-de Gennes free energy can still be used throughout the nematic phase~\cite{RN198}.
 
 In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsC} to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range~\cite{RN198}.
