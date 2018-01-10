@@ -4,7 +4,7 @@
 \section{Summary and conclusions}
 Confining ordered materials can lead to interesting phenomonology due to the interplay between the order and the confinement geometry.
 For the nematic materials used in this Thesis, it is often the curvature of the confining volume or surface that affects the nematic order.
-This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $(\nabla \mathbf{n})^2$, indicating that curvature in the director field costs energy.
+This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $|\nabla \mathbf{n}|^2$, indicating that curvature in the director field costs energy.
 The influence of curvature on a nematic material is even more explicit when considering a 2D nematic constrained to lie on a surface.
 In this situation, the free energy can be written to resemble that of a plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
 Thus, if the surface has both positive and negative Guassian curvature and the nematic has both positive and negative defects, the defects are predicted to segregate, with the positive defects migrating to the regions of positive Gaussian curvature and vice versa.
@@ -25,15 +25,15 @@ So far we have only examined the behavior of the average topological charge $\ov
 This is only one of the things that our setup can explore.
 For example, we have preliminary data showing the time-averaged number density $\overbar{N}_{\Theta}/A_{\Theta} = (\overbar{N}^{+}_{\Theta} + \overbar{N}^{-}_{\Theta})/A_{\Theta}$ depends on not only the local curvature, but also the aspect ratio of the toroid.
 It is not clear why the topological charge depends only on local interactions while the defect number density depends on the size and shape of the toroidal droplet.
-In addition, there is work with this active nematic in flat space showing that the $s = +1/2$ defects can themselves assemble to form a nematic phase, where $S$ associated to this higher-order nematic phase grows as $\overbar{N}_{\Theta}$ grows.
+In addition, there is work with this active nematic system in flat space showing that the $s = +1/2$ defects can themselves assemble to form a nematic phase, where $S$ associated to this higher-order nematic phase grows as $\overbar{N}_{\Theta}$ grows.
 However, our preliminary data suggest that on a toroid, the $s = +1/2$ defects do not form a nematic phase but instead a polar phase, and that the strength of this polar phase grows as the $\overbar{N}_{\Theta}$ decreases.
 These are just two examples of future directions that we are currently working on that further explore the role of curvature and activity in partially ordered matter.
 
 We also consider a NLC confined to toroidal droplets and bent capillaries under homeotropic boundary conditions.
 We observe spontaneous reflection symmetry breaking due to a twist distortion relieving the energetic cost of two competing bend distortions.
 The competition between the distortions is given by the local aspect ratio, $\xi$, comparing the radii of curvature of the two bend distortions.
-Thus, $\xi$ also governs the amount of twist in the system, resulting in a geometrically-tuned chirality.
-This relationship between twist and $\xi$ is similar to previous results in our group with NLC confined to toroidal droplets with degenerate planar anchoring, showing that tuning a ratio of curvatures to control chirality in NLC does not depend on the anchoring.
+Thus, $\xi$ also governs the amount of twist in the system, with the twist decreasing with increasing $\xi$.
+This geometrically-tuned chirality is similar to previous results in our group with NLC confined to toroidal droplets with degenerate planar anchoring, showing that tuning a ratio of curvatures to control chirality in NLC does not depend on the anchoring.
 
 Lastly, we explore the equilibrium defect structure in NLC confined to capillary bridges under homeotropic boundary conditions.
 We find that the defect structure in our bridges depends on both the shape of the bounding surface as well as the aspect ratio of the bridge.
@@ -46,8 +46,8 @@ The specific pathways for these transitions are unclear and would be an interest
 
 \section{Defect orientation on curved surfaces: current status}
 Prior work with a microtubule-kinesin active nematic on a flat surface demonstrated that the $s = +1/2$ defects self-organize into a higher-order nematic phase~\cite{RN27}.
-The orientation of each $s = +1/2$ defect is given by its velocity; calculating $\mathbf{Q}$ for a collection of defects uncovers long-range nematic order~\cite{RN27}.
-The strength of the order increases with increasing defect density and the higher-order nematic is typically defect-free, with a homogeneous director over the entire sample~\cite{RN27}.
+The orientation of each $s = +1/2$ defect is given by its velocity; calculating $\mathbf{Q}$ for a collection of defect orientations uncovers long-range nematic order~\cite{RN27}.
+The strength of the order increases with increasing defect density and this higher-order nematic is typically defect-free, with a homogeneous director over the entire sample~\cite{RN27}.
 We are currently investigating how the $s = \pm 1/2$ defect orientations couple to the curvature of our toroidal droplets.
 
 
@@ -62,14 +62,14 @@ For a single $s = +1/2$ defect, this orientation $\mathbf{p}$ is calculated by:
 where $Q_{ij}$ is the tensor order parameter and the average is taken along a closed contour encircling the defect.
 Reference~\cite{RN6} also proposed a method to characterize the orientation of $s = -1/2$ disclinations; however, their method requires a coordinate basis to be chosen.
 
-Alternately, Jonathan Selinger has a method to calculate disclination orientation by constructing tensors of the appropriate rank.
+Alternately, Ref.~\cite{jsel} has a method to calculate disclination orientation by constructing tensors of the appropriate rank.
 For example, the orientations of $s = +1/2$ and $s = -1/2$ disclinations are calculated via:
 \begin{align}
     b_i &= \left \langle \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSpositive} \\
     T_{ijk} &= \left \langle \partial_i (n_{j}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_j (n_{i}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_k (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSnegative}
 \end{align}
 respectively, where the average is again taken over a path encircling the disclination.
-Importantly, the orientation of a disclination as calculated via Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} does not depend on the choice of coordinate basis.
+Importantly, the orientations of the $s = \pm 1/2$ disclinations calculated via Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} are both tensors; they do not depend on the choice of a coordinate basis.
 
 Comparing the two methods to calculate the orientation of an $s = +1/2$ disclination, we have:
 \begin{align}
@@ -80,13 +80,13 @@ Comparing the two methods to calculate the orientation of an $s = +1/2$ disclina
   &= \left \langle \frac{\partial_j S^{(\alpha)}}{S^{(\alpha)}} Q_{ij}^{(\alpha)}\right \rangle_{\alpha}
       + \left \langle S^{(\alpha)} \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha}\label{e:7-comparison}.
 \end{align}
-If we choose a contour where $S$ is constant, we can rewrite Eq.~\ref{e:7-comparison} as:
+If we choose a contour where $S$ is constant, Eq.~\ref{e:7-comparison} becomes
 \begin{equation}
-  p_i = \left \langle \frac{\partial_j S^{(\alpha)}}{S} Q_{ij}^{(\alpha)}\right \rangle_{\alpha}
-      +  S \, b_i.
+  p_i = S \, b_i.
 \end{equation}
-Thus, we see that Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
-We will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.
+Under this condition, both approaches give the same orienation.
+However, in general, Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
+Since the methodology in Ref~\cite{jsel} produces a tensor for both $s = \pm 1/2$ disclinations, we will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.\fxnote{now tell how we do this in a given coord system}
 
 
 \subsection{Experiment}
@@ -108,7 +108,7 @@ Transforming between $\mathbf{r} \in \mathbb{R}^2$ to $\mathbf{r}'$ on the surfa
 However, since $\{ \hat{u},\hat{v}\}$ depend on $\hat{k}$, $\{ \hat{u},\hat{v}\}$ will change over the surface of our droplet, making it difficult to compare defect orientations between different points on the surface.
 Instead, we will record our defect orientations on the surface of the torus in terms of a pair of curvilinear coordinate systems.
 The first coordinate system is the standard toroidal coordinate system, $\{\hat{\theta}, \hat{\varphi}, \hat{r}  \}$, where $\hat{r} = \mathbf{k}$, the surface normal.
-The second coordinate system is $\{\hat{\theta}', \hat{\varphi}',\mathbf{k}$, with $\hat{\theta}' = (\nabla K)/|\nabla K|$ $\hat{\varphi}' = \mathbf{k} \times \hat{\theta}'$.
+The second coordinate system is $\{\hat{\theta}', \hat{\varphi}',\mathbf{k} \}$, with $\hat{\theta}' = (\nabla K)/|\nabla K|$ $\hat{\varphi}' = \mathbf{k} \times \hat{\theta}'$.
 For a perfect toroid, the two coordinate systems are equivalent; however, in our case, the surface can be rough and our droplets are not perfectly axisymmetric.
 Thus, our two coordinate systems should allow us to distinguish between global effects driven by the toroidal geometry and local effects driven by $K$.
 
@@ -132,6 +132,21 @@ Note that we project $\nabla K$ from the image to the surface of the toroid usin
 
 As a first attempt, we will bin the surface by $K$ and compute the order parameters in each bin.
 We will use overlapping bins of constant area in the 2D image.
+
+We start by choosing a binsize $N$, in pixels.
+For a total area, $A$, in pixels, in the 2D image of the toroid, we consider a total of $A-N$ bins.
+With this protocol, two adjacent bins share all but a single pixel.
+We characterize each bin with $\langle K \rangle$, and then calculate the relevant order parameters in the bin using all $s = \pm 1/2$ defects in the bin over all time frames.
+For the $s = +1/2$ disclinations, we calculate the polar and nematic order parameters
+\begin{align}
+  S_{polar} \bm{\nu} &= \frac{1}{n} \sum\limits_{\alpha=1}^n \mathbf{b}^{(\alpha)},\label{e:7-polarorder} \\
+  \mathbf{Q} &= S_{nem} \left (\mathbf{n} \otimes \mathbf{n} \right ) - \frac{1}{2}\mathbb{1} = \frac{1}{n} \sum\limits_{\alpha=1}^n \mathbf{b}^{(\alpha)} \otimes \mathbf{b}^{(\alpha)} - \frac{1}{2}\mathbb{1}\label{e:7-nematicorder},
+\end{align}
+where $S_{polar}$ and $S_{nem}$ is the magnitude of the order and $\bm{\nu}$ and $\mathbf{n}$ unit vectors describing the direction of the order, for polar order and nematic order, respectively.
+We note that Eq.~\ref{e:7-nematicorder} is equivalent to Eq.~\ref{e:2-2DOrderRaw} and Eq.~\ref{e:2-2DOrderDiag}.
+
+For the $s = -1/2$ disclinations, we calculate the orientation of the  $T_{ijk}$ and 
+
 \subsection{Future Work}
 
 \section{Determining the saddle-splay elastic constant: current status}
