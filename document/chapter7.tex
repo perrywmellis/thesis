@@ -86,7 +86,7 @@ If we choose a contour where $S$ is constant, Eq.~\ref{e:7-comparison} becomes
 \end{equation}
 Under this condition, both approaches give the same orienation.
 However, in general, Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
-Since the methodology in Ref~\cite{jsel} produces a tensor for both $s = \pm 1/2$ disclinations, we will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.\fxnote{now tell how we do this in a given coord system}
+Since the methodology in Ref~\cite{jsel} produces a tensor for both $s = \pm 1/2$ disclinations, we will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.
 
 
 \subsection{Experiment}
@@ -145,9 +145,52 @@ For the $s = +1/2$ disclinations, we calculate the polar and nematic order param
 where $S_{polar}$ and $S_{nem}$ is the magnitude of the order and $\bm{\nu}$ and $\mathbf{n}$ unit vectors describing the direction of the order, for polar order and nematic order, respectively.
 We note that Eq.~\ref{e:7-nematicorder} is equivalent to Eq.~\ref{e:2-2DOrderRaw} and Eq.~\ref{e:2-2DOrderDiag}.
 
-For the $s = -1/2$ disclinations, we calculate the orientation of the  $T_{ijk}$ and 
+For the $s = -1/2$ disclinations, we take the orientation of $T_{ijk}$ to be the angle $\phi_0 \in [-\pi/3,\pi/3)$, the orientation of one of the three axes of symmetry of an $s = -1/2$ disclination.
+Consider $\mathbf{n} = (n_x \hat{x}, n_y \hat{y})$ surrounding an $s = -1/2$ disclination, where $\theta = \arctan (y/x)$ is the polar angle describing the position.
+Then, if $\phi = \theta + \phi_0$ describes the director orientation, we can write the director field surrounding the disclination as $\mathbf{n} = (\cos(\phi/2)\hat{x},-\sin(\phi/2)\hat{y})$.
+Computing $T_{ijk}$ according to Eq.~\ref{e:7-JSnegative} and averaging over all $\theta$, we have:
+ \begin{align}
+   \langle T_{ij1}(\theta) \rangle_{\theta} &=
+        \frac{3}{4}\begin{pmatrix}
+          \cos \phi_0 & -\sin \phi_0 \\
+          -\sin \phi_0 & -\cos \phi_0
+        \end{pmatrix}\nonumber \\
+  \langle T_{ij2}(\theta) \rangle_{\theta} &=
+       \frac{3}{4}\begin{pmatrix}
+         -\sin \phi_0 & -\cos \phi_0 \\
+         -\cos \phi_0 & \sin \phi_0
+       \end{pmatrix}\label{e:7-TijkBIG}
+ \end{align}
+From Eq.~\ref{e:7-TijkBIG}, we can now obtain $\phi_0$ from $\langle T_{ijk}(\theta) \rangle_{\theta}$ via:
+\begin{equation}\label{e:7-phi0Calc}
+  \phi_0 = \arctan \left ( \frac{\langle T_{222}(\theta) - T_{121}(\theta) - T_{112}(\theta) - T_{211}(\theta)  \rangle_{\theta}} {\langle T_{111}(\theta) - T_{221}(\theta) - T_{122}(\theta) - T_{212}(\theta)  \rangle_{\theta}} \right).
+\end{equation}
+
+Now, we use $\phi_0$ to calculate the bond-angle order parameter for three-fold symmetry for the $s = -1/2$ disclinations in the bin
+\begin{equation}\label{e:7-hexorder}
+  S_{bond} \exp(i 3 \Phi_o) = \frac{1}{n}\sum\limits_{\alpha = 1}^n \exp (i 3 \phi_o^{(\alpha)}),
+\end{equation}
+where $S_{bond}$ is the magnitude of the order and $\Phi_o$ is an angle giving the orientation of the order.
+
+We plot the magnitude and orientation of the nematic and polar order for the $s = +1/2$ defects and the three-fold bond order for the $s = -1/2$ defects as a function of the mean Gaussian curvature in each bin for an example toroid with blah\fxnote{Here} in Figure blah\fxnote{Figure of one torus, talk about the difference between coord systems and the type of order we see}.
+We see that blah\fxnote{Here}.
+When also compare the defect order to the the defect density and the gradient of the Gaussian curvature in each bin.
+
+Our preliminary results seem to indicate that the $s = +1/2$ posess polar order and that the magnitude of the order for both $S = \pm 1/2$ defects is greater for low defect densities; this is opposite of the results in Ref.~\cite{RN27}.
+We hypothesize that the Gaussian curvature of the underlaying substrate is responsible for this difference, but more work is necessary to reach a definite conclusion.
+
 
 \subsection{Future Work}
+To understand the nature of the ordering on the toroidal droplets, we need more data that focuses on the regions of the toroids that have a large Gaussian curvature magnitude.
+These regions are where we see the ordering arise and where we have the least amount of data.
+We are currently taking more data that looks specifically at these highly curved regions.
+In addition, we are currently taking data on cylindrical surfaces in order to better understand how the global properties of a surface affect the defect ordering.
+
+We also with to understand defect orientation correlations in space at a given time.
+To do this, we need to be able to calculate discrete geodesics on the surface of the torus.
+We are currently working on implementing the algorithm in Rer.~\fxnote{Sabetta's discrete geo}.
+
+
 
 \section{Determining the saddle-splay elastic constant: current status}
 \subsection{Prior estimates in tori}
