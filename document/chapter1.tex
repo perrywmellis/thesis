@@ -10,7 +10,7 @@ Hence, the ordered phase has lower symmetry than the isotropic phase.
 
 The advent of order as a result of the spontaneous breaking of continuous symmetry is general and is a hallmark of transitions between a multitude of different phases.
 In addition, the phases do not have to be formed by collections of molecules; they can be built from a variety of constituent units, from angstrom-scale atoms to micron-scale colloidal particles or even larger building blocks.
-Regardless of the nature of the constituent particles, the isotropic-to-crystalline phase transition in three dimensions (3D) breaks continuous translational and rotational symmetry in all directions\fxnote{more of a note about what directions mean? introduce idea of generators?}.
+Regardless of the nature of the constituent particles, the isotropic-to-crystalline phase transition in three dimensions (3D) breaks continuous translational and rotational symmetry in all directions.
 However, a system can also transition from an isotropic phase to a phase where the continuous translational and rotational symmetry is not broken in all directions.
 For example, an isotropic-to-smectic phase transition in 3D breaks continuous translation symmetry in only one direction and continuous rotational symmetry in two directions, while the isotropic-to-uniaxial nematic and isotropic-to-ferromagnetic transitions break no translational symmetries and only break rotational symmetry in two directions~\cite{RN175}.
 Breaking continuous translational symmetry results in positional order while breaking continuous rotational symmetry results in orientational order.
@@ -23,9 +23,9 @@ Breaking continuous translational symmetry results in positional order while bre
 \end{figure}
 
 With the development of order as a result of breaking one or more continuous symmetries comes the rigidity needed to maintain that order.
-For example, due to their broken symmetries, crystalline, smectic, and nematic phases in a material do not flow as easily as the isotropic phase of the material.
+For example, due to their broken symmetries, crystalline, smectic, and nematic phases in a material cannot be made to flow as easily as the isotropic phase of the material.
 However, since a nematic phase has no broken continuous translational symmetries, in contrast to smectic and crystalline phases, the nematic phase of a material will flow easier than the smectic and crystalline phases of that material.
-This because the constituent particles in a nematic only need to maintain their orientation and not their position.\fxnote{ideas of stress and strain rate?}
+This because the constituent particles in a nematic only need to maintain their orientation and not their position.
 In addition, systems with anisotropic order have a correspondingly anisotropic rigidity.
 Consider a smectic phase with its broken translational symmetry in one direction, defined by a unit vector $\bm{\nu}$, as drawn schematically in Figure~\ref{f:1-SmecticNematic}(A).
 Along $\bm{\nu}$, the material will resist flow like a crystal, but will flow easily like an isotropic fluid along directions orthogonal to $\bm{\nu}$.
@@ -48,13 +48,23 @@ In addition, defects can also directly mediate phase transitions, as in the cele
 In two or fewer dimensions, a system cannot spontaneously break continuous symmetry.
 This is known as the Mermin-Wagner theorem~\cite{RN175}.
 However, in 2D, a system can still have ordered phases.
-The order and associated rigidity arise from correlations between the constituent particles in the material; the two-particle correlation function decays as a power law in the separation distance between the particles.
+The order and associated rigidity arise from correlations between the constituent particles in the material; the two-particle correlation function decays as a power law in the separation distance between the particles~\cite{RN175}.
 In this case, the increase in symmetry when a 2D crystalline phase melts to the isotropic phase is a two-step process.
-First, beginning in the crystalline phase and raising the temperature will induce pairs of rotational defects, or disclinations, to proliferate~\cite{RN61,RN203}.
-Each disclination pair is ``bound'' together, forming a single translational defect, or dislocation.
-The dislocations destroy the translational order of the crystalline phase, driving the system into an intermediate hexatic phase characterized by six-fold orientational order.
-Raising the temperature even further will eventually induce the disclination pairs forming each dislocation to unbind, destroying the orintational order and transforming the hexatic phase into the isotropic phase.\fxnote{figure for this}
+First, beginning in the crystalline phase, the crystalline phase will always possess pairs of thermally excited dislocations, or translational defects.
+While a single dislocation will always reduce the translational order of the crystal, a pair of dislocations can have no net effect on the order.
+Raising the temperature in the crystalline phase will eventually induce the dislocation pairs to \emph{unbind}.
+The free dislocations reduce the translational order of the crystalline phase, but do not affect the orientational order of the system, inducing a transition from the crystalline phase to an intermediate hexatic phase characterized by six-fold orientational order~\cite{RN61,RN203}.
+We note that each dislocation is composed of a pair of disclinations, or rotational defects; isolated disclinations reduce the orientational order of the system, but a pair of disclinations \emph{bound} together to form a dislocation have no net effect on the orientational order.
+Raising the temperature even further will eventually induce the disclination pairs to unbind, destroying the orientational order and transforming the hexatic phase into the isotropic phase.
+This phase map for this two-step process is illustrated schematically in Figure~\ref{f:1-KTHNY}.
 Furthermore, defects in soft matter have been used as tools to investigate a wide range of phenomena from knot theory~\cite{RN156,RN277} to controlled self-assembly~\cite{RN43,RN50,RN150,RN157}, to hierarchical materials~\cite{RN164,RN159,RN27}.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C1/Ch1-Figs_KTHNY.png}
+  \caption{Schematic of the phase behavior for melting in 2D.
+  $T_{ch}$ and $T_{hi}$ are the transition temperatures for the crystalline-hexatic transition and the hexatic-isotropic transition, respectively.
+  }\label{f:1-KTHNY}
+\end{figure}
 
 Apart from both their effect on physical systems and their use as tools, defects are fascinating objects in their own right as they can interact with the topology and geometry of the space they inhabit.
 Consider, for example, a dense packing of rods in a plane at zero temperature.
@@ -73,7 +83,7 @@ Since one ``cannot comb a hairy ball without a cowlick,'' or singularity in the 
   (A) On a plane, the alignment can be homogeneous everywhere.
   (B,C) On a sphere, there must be singularities (${\color{red} \bullet}$) in the alignment directions, as shown for alignment directions along (B) the latitude or longitude lines on a globe and an alignment direction along (C) the stitching on a baseball.
   Note that there while only one singularity is visible in (B,C), there are 2 singularities in (B) and 4 in (C).}\label{f:1-RodsPlane}
-\end{figure}\fxnote{add axes to panel A}
+\end{figure}
 
 To formally relate the topology of the sphere with the presence of singularities, we need a few topological notions.
 The sphere is an example of a differentiable surface that is compact, has no boundary, and is orientable.
