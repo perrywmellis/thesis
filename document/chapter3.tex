@@ -1110,7 +1110,7 @@ We then repeat the entire fitting process for another point on the surface.
 
 
 \subsection{Finding the area element}
-Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric~\cite{RN35},%\fxnote{prove it?}
+Once we have the re-estimated normal vectors everywhere on the surface, we can calculate the determinant of the metric~\cite{RN35},
 \begin{equation}
 g = \frac{1}{(\mathbf{k}^{(p)} \cdot \mathbf{\hat{z}})^2}.
 \end{equation}
@@ -1360,7 +1360,8 @@ For increasing $v'_0$, we find that $C'$ decreases [see Figure~\ref{f:3-SimDefec
 At this point, activity dominates over the elastic forces associated to defect-curvature interactions, confirming that, from this perspective, the role of activity is reminiscent of the expected role of thermal fluctuations close to the nematic-isotropic phase transition in passive nematics.
 However, we emphasize that in equilibrium, both the $s = +1/2$ and the $s = -1/2$ defects would randomly explore the toroid as a result of thermal motion.
 This is in contrast to our active system, where only the $s = +1/2$ defects are driven by activity.
-In addition, the direction of the velocity of an $s = +1/2$ defect is determined by the defect's structure, while in passive nematics thermal fluctuations will cause the defect to diffuse isotropically. %\fxnote{persistant random walkers?}
+In addition, the direction of the velocity of an $s = +1/2$ defect is determined by the defect's structure, while in passive nematics thermal fluctuations will cause the defect to diffuse isotropically.
+The motion of the $s = +1/2$ defects can thus be thought of as a persistent, or correlated, random walk, where the defect's current trajectory influences its future trajectory.
 Finally, we see that the observed behavior of $C'$ with $v'_0$ is maintained irrespective of $\lambda'$, as shown in Figure~\ref{f:3-SimDefectUnbinding}(C).
 
 
@@ -1423,11 +1424,11 @@ Finally, we in our experiments, we managed to change $\alpha$ while keeping $\la
 Since $v_0'$ also doesn't change when we change $\alpha$, we see that one or more of $\mu$, $k_F$, and $\eta$ must also depend on $\alpha$.
 
 
-\subsection{Estimates of material parameters}\fxnote{remind what is alpha again.}
+\subsection{Estimates of material parameters}
 The agreement between the experiment and the theory prompts us to use the topological defects as micro-rheological tracers and perform “topological micro-rheology” to estimate the material parameters of our active material.
 From our confocal data, we measure the typical value of the defect speed for both ATP concentrations, $v_0 \approx 1.5$ $\upmu$m/s and $v_0 \approx 0.25$ $\upmu$m/s for toroids with 144 $\upmu$M ATP and 36 $\upmu$M ATP, respectively.
-Since $v_0$ clearly depends on $\alpha$, but $v'_0$ does not, we see that $\mu$ and/or $k_F$ must depend on $\alpha$.
-We use an estimate of the viscosity in 3D, $\eta_{3D} \approx 13$ Pa s from Ref.~\cite{RN135, activeViscosity}, and take $\lambda = \ell_a$ in the expressions for $v_0$ and $\ell_a$:
+Since $v_0$ clearly depends on the active stress, $\alpha$, but $v'_0$ does not, we see that the defect mobility, $\mu$, and/or the Frank constant in 2D, $k_F$, must depend on $\alpha$.
+We use an estimate of the viscosity in 3D, $\eta_{3D} \approx 13$ Pa s from Ref.~\cite{RN135, activeViscosity}, and take the average distance between defect, $\lambda$, to be equal to the active length scale, $\lambda = \ell_a$, in the expressions for $v_0$ and $\ell_a$:
 \begin{align}
   v_0 &= \frac{\alpha \lambda}{\eta} = \frac{\alpha_{3D} \lambda}{\eta_{3D}} \\
   \lambda &  = \sqrt{\frac{k_F}{|\alpha|}} = \sqrt{\frac{k_{F,\,3D}}{|\alpha_{3D}|}}
@@ -1439,7 +1440,10 @@ In addition, since $k_F \approx k_{F,\,3D}l_{layer}$, we estimate the nematic la
 Combining this with the average tube radius $a = 260 \pm 40$ $\upmu$m and $a = 320 \pm 70$ $\upmu$m, for the 144 $\upmu$M and 36 $\upmu$M ATP concentrations, respectively, and the dimensionless defect velocity $v'_0 \approx 80$ for both ATP concentrations, we find $\mu \approx 200$ m/(N s) for both ATP concentrations.
 These values are summarized in Table~\ref{t:3-MaterialParams}.
 From these measurements, we see that $k_F$ is proportional to $\alpha$; it is this dependence that is responsible for $v'_0$ not changing in our experiments with different $\alpha$ but constant $\lambda'$.
-In addition, this result is consistent with the fact that when the ATP runs out in an experiment and the activity ceases, the nematic configuration becomes static and does not relax to the ground state; the elasticity in the experiments vanishes when $\alpha = 0$.\fxnote{this isn't right. what is the role of thermal fluctuations in the relaxation? connect to kT in active like in presentation. talk about active stress going in wrong direction. connect mobility with relaxation timescale.}
+In addition, this result is consistent with the fact that when the ATP runs out in an experiment and the activity ceases, the nematic configuration becomes static and does not relax to the ground state; the elasticity in the experiments is too weak when $\alpha = 0$.
+This also indicates that thermal fluctuations are not strong enough to cause the defects to move in the absence of activity.
+We can illustrate this by estimating a stress due to thermal fluctuations in the active nematic, $k_b T/({\rm microtubule length})^3 \approx (4 \times 10^{-21} ){\rm J}/((1.5 \times 10^{-6}) {\rm m})^3 \approx 1 {\rm mPa}$.
+Comparing with Table~\ref{t:3-MaterialParams}, we see that the stress due to thermal fluctuations is significantly weaker than $|\alpha|$.
 
 Notably, topological defect micro-rheology is in principle geometry independent, and solely dependent on the fact that the nematic is in the turbulent regime and away from boundaries.
 To illustrate this, we consider experiments using an active nematic formulation identical to ours depleted onto a flat surface~\cite{RN134}. We consider the region highlighted in Figure~4D of Ref.~\cite{RN134} far from the boundary for an active nematic with 140 $\upmu$M ATP.
