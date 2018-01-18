@@ -473,6 +473,7 @@ We produce textures using a weighted average over 200 wavelengths evenly-spaced 
 The normalized weights are provided by approximating the spectrum of the tungsten lamp in the microscope used to take the experimental OPM textures~\cite{RN288}.
 We use the functional form $\mathit{weight}(\lambda)  = \sqrt{(\lambda-375)/500} $, where $\lambda$ is in nm; after calculating the individual weights, we normalize them so that the sum of all the weights must equal to 1.
 The normalized weights for 20 and 200 evenly-spaced wavelengths between 400 nm and 700 nm are plotted in Figure~\ref{f:4-Spectrum}, respectively.
+We note that to better capture the output images, we could have also considered the spectral response of the camera in our experiments (The Imaging Source, DFK 41B02), plotted for the individual channels and the total luminance in Figure~\ref{f:4-CameraResponse}(A,B), respectively~\cite{camera}.
 We simulate the side-view OPM texture by propagating the incident light perpendicular to $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(C), and we simulate the top-view OPM texture by propagating the light along $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(D).
 \begin{figure}
   \includegraphics{figures/C4/Ch4-Figs_OmegaG.png}
@@ -491,6 +492,12 @@ As with the bipolar and twisted bipolar spherical droplets, the presence of twis
   \caption{Normalized weights as a function of wavelength to approximate the spectrum of a tungsten lamp.
   (A,B), the weights for 20 and 200 evenly-spaced wavelengths between 400 nm and 700 nm, respectively.}\label{f:4-Spectrum}
 \end{figure}
+\begin{figure}
+  \includegraphics{figures/C4/Ch4-Figs_CameraResponse.png}
+  \caption{Relative response for the sensor in our color camera (DFK 41BU02).
+  (A,B), the (A) individual R, G, and B channel and (B) total luminance relative response as a function of wavelength~\cite{camera}.
+  }\label{f:4-CameraResponse}
+\end{figure}
 
 The role of twist in preventing complete extinction is also present when looking at the brightness of the central region in both experimental side-view textures and the simulated side-view textures, as highlighted by the red dashed lines in Figure~\ref{f:4-PlanarTorusComparison}(E,F) and Figure~\ref{f:4-PlanarTorusComparison}(G,H), respectively.
 In addition, we see that the central region of both the experimental and simulated textures viewed with P and A aligned at $0^{\circ}$ and $90^{\circ}$, respectively, measured with respect to $\mathbf{n}_d$ [Figure~\ref{f:4-PlanarTorusComparison}(E,G)], is brighter than when P and A are aligned at $45^{\circ}$ and $135^{\circ}$, measured with respect to $\mathbf{n}_d$ [Figure~\ref{f:4-PlanarTorusComparison}(F,H)].
@@ -503,7 +510,7 @@ Now looking at the inner portion of the tubes, indicated by the cyan dashed line
 (B,C), $I_0/I_{45}$ versus $\xi$ for (B) simulated and (C) experimental OPM textures from the side-view.
 (D) Schematic detailing the $I_0$ and $I_{45}$ measurements from the top-view.
 (E,F), $I_0/I_{45}$ versus $\xi$ for (E) simulated and (F) experimental OPM textures from the top-view. }\label{f:4-PlanarIntRatio}
-\end{figure}\fxnote{include camera spectra from manufacturer and comment on it}
+\end{figure}
 
 We quantify the difference between the brightness of the central region of a side-view OPM texture when P and A are aligned at $0^{\circ}$ and $90^{\circ}$ ($I_0$) versus when P and A are aligned at $45^{\circ}$ and $135^{\circ}$ ($I_{45}$), as seen in Figure~\ref{f:4-PlanarIntRatio}(A), by taking the ratio of the two measurements $I_0/I_{45}$ as a function of $\xi$.
 We find that for both the experimental and simulated OPM textures the intensity ratio decreases as $\xi$ increases. In addition, $I_0/I_{45}$ also passes through 1 around $\xi = 5$ for both the simulated and experimental textures, as seen in Figure~\ref{f:4-PlanarIntRatio}(B,C).
