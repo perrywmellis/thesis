@@ -290,7 +290,7 @@ This is a phenomenological approach similar to Hooke's elasticity theory of a so
 This is again a reflection that there is no restriction to the center-of-mass positions of the mesogens; the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
-Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
+Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i\hat{e}_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
 If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point and consider situations where $x_i \ll 1$, we can locally expand $n_i$ as:
 \begin{align}
   n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
@@ -405,9 +405,9 @@ The discontinuity is called the Oldano-Barbero discontinuity.
 Recall that we initially derived the Frank-Oseen free energy assuming small deformations --- however, we have just shown a situation where the Frank-Oseen free energy diverges and leads to a discontinuity in the director field.
 This situation is called the Oldano-Barbero paradox~\cite{RN216,RN220,RN219,RN221}.
 
-The easiest way to solve the paradox is to set $K_{13} = 0$.
-It is worth noting that there has been a concerted effort to solve the paradox without setting $K_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
-However, careful experiments in the splay-bend geometry have found $K_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
+The easiest way to solve the paradox is to set $K'_{13} = 0$.
+It is worth noting that there has been a concerted effort to solve the paradox without setting $K'_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
+However, careful experiments in the splay-bend geometry have found $K'_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
 Consequently, the most common approach is to neglect the splay-bend term altogether~\cite{RN55,RN222}.
 
 
@@ -415,7 +415,6 @@ Consequently, the most common approach is to neglect the splay-bend term altoget
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
 At the most basic level, the total interaction energy for a system is the sum over the pairwise interaction energy for all pairs of mesogens in the system.
-% Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.
 
 However, an energy constructed upon the physical mesogens themselves requires us to know the position and orientation of each individual mesogen.
 Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible pairs of points in the volume~\cite{RN222}.
@@ -425,10 +424,10 @@ This is a density functional theoretic approach~\cite{RN223} and thus yields an 
 \end{equation}
 where $\mathbf{R}$ and $\mathbf{R}'$ are positions, and $G(\mathbf{R},\mathbf{R}')$ is an interaction energy density satisfying $G(\mathbf{R},\mathbf{R}') = 0$ for $|\mathbf{R}-\mathbf{R}'| \gg 0$, reflecting the finite interaction range between the mesogens.
 However, we are looking for a free energy and not just the interaction energy of the system.
-Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy; this is similar to how we derived the Frank-Oseen free energy earlier.
+Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy, $\delta F$; this is similar to how we derived the Frank-Oseen free energy earlier.
 Since we are looking to derive an expression for the free energy as a functional of director field, we must satisfy
 \begin{equation}
-  F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
+  \delta F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
   = \int \textrm{d} \mathbf{r} \, f(\mathbf{r}),\label{e:2-NonlocalLocal}
 \end{equation}
 where $f(\mathbf{r})$ is a function of position, $\mathbf{r}$.
@@ -436,12 +435,11 @@ Note that there is not a unique relation between $f(\mathbf{r})$ and $G(\mathbf{
 For example, if $\mathbf{r} = \mathbf{R}$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(\mathbf{r},\mathbf{R}')$.
 However, if $\mathbf{r} = (\mathbf{R} + \mathbf{R}')/2$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(2\mathbf{r} - \mathbf{R}',\mathbf{R}')$.
 Since there are an infinite number of possibilities to choose $\mathbf{r}$ and thus determine $f$, any elastic constants in $f(\mathbf{r})$ cannot depend on how we choose $\mathbf{r}$~\cite{RN55}.
-In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
+% In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
 % Thus, we must also satisfy:
 % \begin{equation}
-%   F[\mathbf{n}] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{r} \, f \big ( \rho(\mathbf{r},\mathbf{\omega}) \big),\label{e:2-LessInfo}
+%   F[\mathbf{n}(\mathbf{r})] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}(\mathbf{r})) = \int \textrm{d} \mathbf{r}\,\textrm{d} \omega \, f \big ( \rho(\mathbf{r},\mathbf{\omega}) \big).\label{e:2-LessInfo}
 % \end{equation}
-% where $\mathbf{n}$ is a function of $\mathbf{r}$.
 % Since the director contains less information than the complete density function, in general there is not a unique way to determine $\mathbf{n}(\mathbf{r})$ from $\rho(\mathbf{r},\mathbf{\omega})$~\cite{RN55}.
 % For a distortion of wavelength $\xi$ and amplitude $\epsilon$, we can only uniquely determine $\mathbf{n}(\mathbf{r})$ if we restrict ourselves to the lowest energy distortions in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
 % These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175,RN226,RN227,RN228}.
@@ -449,16 +447,20 @@ In addition, the microscopic calculations are performed with a density function 
 
 Given this condition, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties~\cite{RN55,RN56,RN225,RN224,RN217,RN222}.
 However, $K'_{13}$ depends on the choice of $\mathbf{r}$, and therefore cannot be a real material parameter.
-% Consequently, $K'_{13} = 0$~\cite{RN55,RN225}.
+Physically, we can think about this result in terms of how the free energy scales in terms of the amplitude, $\epsilon$, and wavelength, $\zeta$, of an arbitrary distortion in a NLC.
+Since $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are all composed of only $1^{\rm st}$ derivatives, their contribution to the free energy $\sim (\epsilon/\zeta)^2$.
+However, $K_{13}'$ is a $2^{\rm nd}$ derivative with a contribution to the free energy $\sim \epsilon/(\zeta^2)$.
+This linear dependence on the amplitude in the $K_{13}'$ distortion makes the homogeneous director state unstable to long wavelength ($\zeta \rightarrow \infty$) distortions, where the energetic cost of a distortion vanishes~\cite{RN55}.
+Consequently, $K'_{13} = 0$ and the common approach of neglecting splay-bend is valid.~\cite{RN55,RN225}.
+With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 % The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
 % Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
 % Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations~\cite{RN224,RN217,RN222} have specified a $(\mathbf{R},\mathbf{R}') \rightarrow \mathbf{r}$ mapping, rendering their $K'_{13}$ values invalid.
-Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
-With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 
 Microscopic calculations also show that close to a boundary, $K_{ij}$ in general deviate from their bulk values and become position-dependent.
 This is because the mesogens are now interacting with the material outside of the nematic volume~\cite{RN56,RN57,RN55}.
 However, this interaction is limited by the range of the intermolecular potential, such that the position dependence of the $K_{ij}$ vanishes over a small boundary layer --- beyond this layer the $K_{ij}$ return to their bulk values, which depend only on the specific nematic material.
+
 In summary, microscopic calculations show that the free energy of a NLC is composed of terms quadratic in $|\nabla \mathbf{n}|$.
 Even though terms linear in $|\nabla ^2 \mathbf{n}|$ could in principle contribute to the free energy to the same order as terms quadratic in the 1$^\textup{\rm st}$ derivatives, microscopic calculations show that the coefficients associated with 2$^\textup{\rm nd}$-derivative distortions vanish, thus removing the problems that the 2$^\textup{\rm nd}$-derivative distortions bring.
 % In addition, since the free energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free energy expressions must be greater than or equal to 0.
@@ -739,7 +741,7 @@ However, due to its simplicity and the fact that the $K_{ij}$ are associated wit
 
 \subsection{The scaling of the Frank elastic constants}
 From the relations in Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, we see that to leading order the Frank-Oseen elastic constants scale with $S^2$; the $S^3$ scaling comes entirely from the single higher-order term [see Eq.~\ref{e:2-LdGHigherOrderInvariant}].
-Since $S$ is a monotomic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
+Since $S$ is a monotonic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
 However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S(T < T_{NI}) \approx S(T_{NI})$, the temperature scaling predicted by the Landau-de Gennes free energy can still be used throughout the nematic phase~\cite{RN198}.
 
 In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsC} to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range~\cite{RN198}.
@@ -819,7 +821,6 @@ While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring
 Thus, surface is often coated with a polymer such that the polymer orientations on the surface are random.
 Since the polymers have no preferred alignment in the plane of the surface, the mesogens are free to choose their own director in the plane~\cite{RN313}, as seen schematically in Figure~\ref{f:2-Anchor}(B).
 
-% For example, electrospinning poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB~\fxnote{reference}.
 If a preferred anchoring direction in the plane, $\bm{\sigma}$, is desired, the polymer coating can be rubbed along $\bm{\sigma}$, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
 The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring~\cite{RN33,}.
 Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle~\cite{RN232}.

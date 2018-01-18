@@ -264,7 +264,7 @@ Similarly, there is no general trend in which maximum is larger.
 \subsection{Large aspect ratio toroids}
 We first look at our larger $\xi$ toroids [see Figure~\ref{f:4-HomeoToroidsExp}(A,B)]; the OPM texture resembles an ER texture and the intensity profiles [Figure~\ref{f:4-HomeoToroidsExp}(C)] show a central minimum flanked by two maxima.
 However, we find that $I_{max}/I_{min} < 4$, with $4$ the value we observed in our ER capillaries.
-In the example profile in Figure~\ref{f:4-HomeoToroidsExp}(C), $I_{max}/I_{min} = 1.45$ for $\xi(0) = 4.8$.
+In the example profile in Figure~\ref{f:4-HomeoToroidsExp}(C), $I_{max}/I_{min} = 1.45$ for $\xi(0) = 2.8$.
 Thus, we hypothesize that our larger aspect ratio toroids have a TER configuration.
 We emphasize that this twist occurs despite the fact that we have homeotropic anchoring.
 With homeotropic anchoring, the saddle-splay distortion does not drive the formation of a twisted state, as it did in our previous work with NLC toroids with degnerate planar anchoring~\cite{RN24}.
@@ -461,9 +461,8 @@ Note that $g = 1$ only for $\xi \approx 3$; the minimum energy configuration typ
 \includegraphics{figures/C4/Ch4-Figs_PlanarToroids.png}
 \caption{Simulated OPM textures of nematic tori and experimental images of nematic toroids. (A,D--F), Experimental images of a tangentially-anchored nematic toroid with $\xi \approx 1.8$ from Ref.~\cite{RN24}.
 (A), OPM view from the top, (D), bright field view from the side, and (E,F), OPM views from the side with PA oriented at $0^{\circ}$ and $45^{\circ}$, respectively.
-(D,G,H), Simulated OPM textures for a torus of $\xi = 1.8$ using the ansatz from Eq.~\ref{e:4-planransatz} with $\omega= 0.420$ and $g=0.750$ from minimizing the free energy.
-(B), OPM texture viewed from the top.
-(G,H), OPM extures viewed from the side with PA oriented at $0^o$ and $45^o$, respectively.
+(B,G,H), Simulated OPM textures for a torus of $\xi = 1.8$ using the ansatz from Eq.~\ref{e:4-planransatz} with $\omega= 0.420$ and $g=0.750$ from minimizing the free energy.
+The OPM textures are viewed from the (B) top and from the side with P and A oriented at (G) $0^o$ and (H) $45^o$.
 The intensity along the central ring for (A) ($\color{red}\blacksquare$) and (B) ($\color{blue}\blacktriangle$) is plotted in (C).
 Scale bar is $100$ $\upmu$m in (E,F) and $200$ $\upmu$m in (A).}\label{f:4-PlanarTorusComparison}
 \end{figure}
@@ -474,6 +473,7 @@ We produce textures using a weighted average over 200 wavelengths evenly-spaced 
 The normalized weights are provided by approximating the spectrum of the tungsten lamp in the microscope used to take the experimental OPM textures~\cite{RN288}.
 We use the functional form $\mathit{weight}(\lambda)  = \sqrt{(\lambda-375)/500} $, where $\lambda$ is in nm; after calculating the individual weights, we normalize them so that the sum of all the weights must equal to 1.
 The normalized weights for 20 and 200 evenly-spaced wavelengths between 400 nm and 700 nm are plotted in Figure~\ref{f:4-Spectrum}, respectively.
+We note that to better capture the output images, we could have also considered the spectral response of the camera in our experiments (The Imaging Source, DFK 41B02), plotted for the individual channels and the total luminance in Figure~\ref{f:4-CameraResponse}(A,B), respectively~\cite{camera}.
 We simulate the side-view OPM texture by propagating the incident light perpendicular to $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(C), and we simulate the top-view OPM texture by propagating the light along $\mathbf{n}_d$, as seen in Figure~\ref{f:4-generalcoords}(D).
 \begin{figure}
   \includegraphics{figures/C4/Ch4-Figs_OmegaG.png}
@@ -491,6 +491,12 @@ As with the bipolar and twisted bipolar spherical droplets, the presence of twis
   \includegraphics{figures/C4/Ch4-Figs_Spectrum.png}
   \caption{Normalized weights as a function of wavelength to approximate the spectrum of a tungsten lamp.
   (A,B), the weights for 20 and 200 evenly-spaced wavelengths between 400 nm and 700 nm, respectively.}\label{f:4-Spectrum}
+\end{figure}
+\begin{figure}
+  \includegraphics{figures/C4/Ch4-Figs_CameraResponse.png}
+  \caption{Relative response for the sensor in our color camera (DFK 41BU02).
+  (A,B), the (A) individual R, G, and B channel and (B) total luminance relative response as a function of wavelength~\cite{camera}.
+  }\label{f:4-CameraResponse}
 \end{figure}
 
 The role of twist in preventing complete extinction is also present when looking at the brightness of the central region in both experimental side-view textures and the simulated side-view textures, as highlighted by the red dashed lines in Figure~\ref{f:4-PlanarTorusComparison}(E,F) and Figure~\ref{f:4-PlanarTorusComparison}(G,H), respectively.
@@ -515,7 +521,7 @@ When $\xi \gtrsim 5$, the opposite is true; the entry director is closer to $45^
 
 For $I_0/I_{45}$ from the top-view OPM textures, we take the intensity in a region  $0^{\circ}$ measured from the polarizer axis for $I_0$ and the intensity in a region $45^{\circ}$ measured from the polarizer axis for $I_{45}$, as seen in Figure~\ref{f:4-PlanarIntRatio}(D).
 As with the intensity ratio for the side view, $I_0/I_{45}$ for the top view also decreases with increasing $\xi$. However, $I_0/I_{45}<1$ always for the top view.
-This is due to the fact that there is no aspect ratio where the entry director at $0^{\circ}$ and at $45^{\circ}$ posses the same angular difference from the incident direction of polarization.
+This is due to the fact that there is no aspect ratio where the entry director at $0^{\circ}$ and at $45^{\circ}$ possess the same angular difference from the incident direction of polarization.
 The angular difference between the director at $0^{\circ}$ and the P and A orientation is always less than the angular difference between the director at $45^{\circ}$ and the P and A orientation.
 This implies that $I_0 < I_{45}$ always, and is reflected in the fact that $I_0/I_{45}<1$ always for the top view.
 For both the top view and the side view, the $I_0/I_{45}$ from the experimental textures shows good qualitative agreement with the $I_0/I_{45}$ from the simulated textures.
@@ -584,7 +590,7 @@ Comparing $\Delta /a = 0.04$ in Figure~\ref{f:4-PlanarVoxel}(A,D) with $\Delta /
 In contrast, the difference between $\Delta /a = 0.01$ [Figure~\ref{f:4-PlanarVoxel}(B,E)] and the textures simulated for $\Delta /a = 0.001$ [see Figure~\ref{f:4-PlanarVoxel}(C,F)] is much less noticible.
 Continuing to reduce the voxel size below $\Delta /a = 0.001$ produces no noticeable difference in the resulting textures.
 
-While the individual textures show changes as $\Delta /a$ decreases towards $\Delta /a = 0.001$, the ratio $I_0/I_{45}$ over the central region of the simulated side-vies OPM textures does not change, as seen in Figure~\ref{f:4-PlanarVoxel}(G) for $\Delta /a = 0.04$ ($\square$), $\Delta /a = 0.01$ (${\color{red}\square}$), and $\Delta /a = 0.001$ (${\color{cyan}\blacksquare}$).
+While the individual textures show changes as $\Delta /a$ decreases towards $\Delta /a = 0.001$, the ratio $I_0/I_{45}$ over the central region of the simulated side-view OPM textures does not change, as seen in Figure~\ref{f:4-PlanarVoxel}(G) for $\Delta /a = 0.04$ ($\square$), $\Delta /a = 0.01$ (${\color{red}\square}$), and $\Delta /a = 0.001$ (${\color{cyan}\blacksquare}$).
 All three curves fall on top of each other.
 This is because $I_0/I_{45}$ is taken using the average intensity over the central region.
 \begin{figure}
@@ -622,7 +628,7 @@ Images simulated using Autodesk Maya.}\label{f:4-refraction}
 \end{figure}
 
 \subsubsection{The star feature in side-view simulated OPM textures of planar nematic tori}
-While the general intensity trends agree, the simulated side-view OPM textures posses a star-like feature in the center that is not present in the experimental side-view OPM textures.
+While the general intensity trends agree, the simulated side-view OPM textures possess a star-like feature in the center that is not present in the experimental side-view OPM textures.
 This feature does not affect the intensity measurements, as $I_0/I_{45}$ is calculated using the average intensity in the central region.
 Given that the star feature is present in the single-wavelength images for $\lambda \in [400,700]$~nm with even a small voxel size of $\Delta/a = 0.0001$, the star is a real consequence of the director ansatz from Eq.~\ref{e:4-planransatz} confined to a perfect torus.
 We further confirm this by simulating side-view OPM textures from truncated tori, where we truncate a torus by slicing the torus perpendicular to $\mathbf{k}_0$ at a truncation length $\ell_t$ measured along $\mathbf{k}_0$ from the end of the torus closest to the analyzer, as schematically shown in Figure~\ref{f:4-nostar}(D) for three truncation lengths.
