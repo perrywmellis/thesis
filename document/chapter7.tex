@@ -70,6 +70,13 @@ For example, the orientations of $s = +1/2$ and $s = -1/2$ disclinations are cal
 \end{align}
 respectively, where the average is again taken over a path encircling the disclination.
 Importantly, the orientations of the $s = \pm 1/2$ disclinations calculated via Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} are both tensors; they do not depend on the choice of a coordinate basis.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_BasicOrients.png}
+  \caption{Example director fields and axes of symmetry for an (A) $s = +1/2$ and an (B) $s=-1/2$ defect.
+  The axes of symmetry were calculated with Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative}.
+  }\label{f:7-BasicOrients}
+\end{figure}
 
 Comparing the two methods to calculate the orientation of an $s = +1/2$ disclination, we have:
 \begin{align}
@@ -84,7 +91,7 @@ If we choose a contour where $S$ is constant, Eq.~\ref{e:7-comparison} becomes
 \begin{equation}
   p_i = S \, b_i.
 \end{equation}
-Under this condition, both approaches give the same orienation.
+Under this condition, both approaches give the same orientation.
 However, in general, Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
 Since the methodology in Ref~\cite{jsel} produces a tensor for both $s = \pm 1/2$ disclinations, we will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.
 
@@ -105,7 +112,7 @@ Transforming between $\mathbf{r} \in \mathbb{R}^2$ to $\mathbf{r}'$ on the surfa
   \end{pmatrix}
   \mathbf{r} = \bm{H}\mathbf{r}.
 \end{equation}
-However, since $\{ \hat{u},\hat{v}\}$ depend on $\hat{k}$, $\{ \hat{u},\hat{v}\}$ will change over the surface of our droplet, making it difficult to compare defect orientations between different points on the surface.
+However, since $\{ \hat{u},\hat{v}\}$ depends on $\hat{k}$, $\{ \hat{u},\hat{v}\}$ will change over the surface of our droplet, making it difficult to compare defect orientations between different points on the surface.
 Instead, we will record our defect orientations on the surface of the torus in terms of a pair of curvilinear coordinate systems.
 The first coordinate system is the standard toroidal coordinate system, $\{\hat{\theta}, \hat{\varphi}, \hat{r}  \}$, where $\hat{r} = \mathbf{k}$, the surface normal.
 The second coordinate system is $\{\hat{\theta}', \hat{\varphi}',\mathbf{k} \}$, with $\hat{\theta}' = (\nabla K)/|\nabla K|$, and $\hat{\varphi}' = \mathbf{k} \times \hat{\theta}'$.
@@ -171,13 +178,34 @@ Now, we use $\phi_0$ to calculate the bond-angle order parameter for three-fold 
   S_{bond} \exp(i 3 \Phi_o) = \frac{1}{n}\sum\limits_{\alpha = 1}^n \exp (i 3 \phi_o^{(\alpha)}),
 \end{equation}
 where $S_{bond}$ is the magnitude of the order and $\Phi_o$ is an angle giving the orientation of the order.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/C7/Ch7-Figs_Orient_MeanK.png}
+  \caption{$s = \pm 1/2$ defect ordering on a toroid with $\xi = 2.4$, $a = 268$ $\upmu$m, and an ATP concentration of 144 $\upmu$M.
+  Magnitude and direction of (A--C) polar and (D--F) nematic order calculated for the $s = +1/2$ defects and (G--I) three-fold bond angle order calculated for the $s = -1/2$ defects.
+  The order in (A,D,G) and (B,E,H) is calculated for the $\{\theta,\varphi \}$ and the $\{\nabla K = \theta',\varphi' \}$ coordinate systems, respectively, with (C,F,I) indicating the color scales used to denote orientation.
+  }\label{f:7-Orient_MeanK}
+\end{figure}
 
-We plot the magnitude and orientation of the nematic and polar order for the $s = +1/2$ defects and the three-fold bond order for the $s = -1/2$ defects as a function of the mean Gaussian curvature in each bin for an example toroid with blah\fxnote{Here} in Figure blah\fxnote{Figure of one torus, talk about the difference between coord systems and the type of order we see}.
-We see that blah\fxnote{Here}.
-When also compare the defect order to the the defect density and the gradient of the Gaussian curvature in each bin.
+For an example toroid with with $\xi = 2.4$, $a = 268$ $\upmu$m, and an ATP concentration of 144 $\upmu$M, we plot the magnitude and orientation of the nematic and polar order for the $s = +1/2$ defects and the three-fold bond order for the $s = -1/2$ defects as a function of the mean Gaussian curvature in each bin  in Figure~\ref{f:7-Orient_MeanK}(A--C), Figure~\ref{f:7-Orient_MeanK}(D--F), and Figure~\ref{f:7-Orient_MeanK}(H--J) respectively.
+We see that for both the $\{\Theta,\varphi\}$ [Figure~\ref{f:7-Orient_MeanK}(A,D,G)] and the $\{ \nabla K = \theta',\varphi' \}$ [Figure~\ref{f:7-Orient_MeanK}(B,E,H)] coordinate systems, the $s = \pm 1/2$ defects order in the regions where the magnitude of $K$ is larger.
+Interestingly, we note that the $s = +1/2$ defects exhibit polar order on our toroidal droplets, rather than nematic order seen in flat space~\cite{RN27}.
+Repeating this analysis for the remainder of our toroids, our preliminary results indicate that the $s = +1/2$ posses polar order and that the magnitude of the order grows with increasing $|K|$ for both defect species.
+We note that since we consider the defects at all time points when calculating the order, Figure~\ref{f:7-Orient_MeanK} reflect a persistent steady state.
 
-Our preliminary results seem to indicate that the $s = +1/2$ posess polar order and that the magnitude of the order for both $S = \pm 1/2$ defects is greater for low defect densities; this is opposite of the results in Ref.~\cite{RN27}.
-We hypothesize that the Gaussian curvature of the underlaying substrate is responsible for this difference, but more work is necessary to reach a definite conclusion.
+To investigate the origin of this order, we plot the polar order for the $s = +1/2$ defects and the three-fold bond angle order for the $s = -1/2$ defects against the mean $K$, the mean defect density, and against the mean $|K|$ in each bin in Figure~\ref{f:7-Orient_PolarHex}(A--F) and Figure~\ref{f:7-Orient_PolarHex}(H--M), respectively.
+We see from the plotting the order against the mean defect density in each bin, that the magnitude of the order grows as the defect density decreases [polar order, Figure~\ref{f:7-Orient_PolarHex}(B,E) and three-fold bond angle order, Figure~\ref{f:7-Orient_PolarHex}(I,L)]; this is the opposite of the results in flat space~\cite{RN27}.
+We also see that the magnitude of the defect order grows with increasing $|K|$ [polar order, Figure~\ref{f:7-Orient_PolarHex}(C,F) and three-fold bond angle order, Figure~\ref{f:7-Orient_PolarHex}(J,M)]; this makes intuitive sense as the defects \fxnote{blah blah, need proper cvolors}.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{figures/C7/Ch7-Figs_Orient_PolarHex.png}
+  \caption{$s = \pm 1/2$ defect order plotted as a function of the mean Gaussian curvature, of the mean defect density, and of the magnitude of the gradient of the Gaussian curvature.
+  Magnitude and direction of the (A--F) polar order for the $s = +1/2$ defects and the (H--M) three-fold bond angle order for the $s = -1/2$ defects.
+  (A--C) and (H--J) are calculated in the $\{\theta,\varphi \}$ coordinate system, while (D--F) and (K--M) are calculated in the $\{ \nabla K = \theta',\varphi' \}$ coordinate system.
+  The magnitude and direction of the order are plotted in (A,D,H,K), (B,E,I,L), and (C,F,J,M) as a function of the mean Gaussian curvature, of the mean defect density, and of the magnitude of the gradient of the Gaussian curvature, respectively.
+  The polar and three-fold bond angle color scales are displayed in (G,N), respectively.
+  }\label{f:7-Orient_PolarHex}
+\end{figure}
 
 
 \subsection{Future Work}
@@ -188,7 +216,7 @@ In addition, we are currently taking data on cylindrical surfaces in order to be
 
 We also with to understand defect orientation correlations in space at a given time.
 To do this, we need to be able to calculate discrete geodesics on the surface of the torus.
-We are currently working on implementing the algorithm in Rer.~\fxnote{Sabetta's discrete geo}.
+We are currently working on implementing the algorithm in Ref.~\fxnote{Sabetta's discrete geo}.
 
 
 
