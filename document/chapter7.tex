@@ -233,14 +233,43 @@ $-(1/2)(K_{22} + K_{24})\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathb
 $-(1/2)K_{24}\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$,
 and $-K_{24}\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$ all found in the literature.
 As a result, the published measurements of $K_{24}$ often differ substantially.
-For example, the reported measurements of $K_{24}$ for 5CB, the most common thermotropic NLC in the literature, vary from BLAH to BLAH [see Table BLAH]\fxnote{make a trable}.
-Even after correcting for notational differences and representing the saddle splay distortion as in Eq.~\ref{e:2-FrankFinalExpansion}, we see in Table BLAH\fxnote{make a trable} that the published measurements are in general imprecise.
+For example, the reported measurements of $K_{24}$ for 5CB, the most common thermotropic NLC in the literature, vary from $\approx K$ in a 1-constant approximation  to $3.1 K_{22}$ [see Table~\ref{t:7-K24}]~\cite{RN24,allender1991determination,polak1994optical,sparavigna1994periodic}.
+Even after correcting for notational differences and representing the saddle splay distortion as in Eq.~\ref{e:2-FrankFinalExpansion}, we see in Table~\ref{t:7-K24} that the published measurements are in general imprecise due to large error or a reliance on a 1-constant approximation.
+\begin{table}[t]
+  \centering
+  \caption{Experimentally-obtained values for $K_{24}$ using 5CB for four literature sources, both as reported and after recasting the saddle-splay distortion in the form: $-(1/2)(K_{22} + K_{24})\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$.}
+  \begin{tabular}{l c l}
+    & {\bf As reported} & \\
+    \hline
+    Authors & $K_{24}/K_{22}$ & Notes \\
+    \hline
+    Allender \emph{et. al.}~\cite{allender1991determination} & $1.1 \pm 0.9$ & Used 1-constant approximation\\
+    Polak \emph{et. al.}~\cite{polak1994optical} & $3.1 \pm 4.4$ \\
+    Sparavigna \emph{et. al.}~\cite{sparavigna1994periodic} & $0.994 \pm 0.006$ \\
+    Pairam \emph{et. al.}~\cite{RN24} & $1.02 \pm .02$ \\
+    & {\bf Corrected notation} & \\
+    \hline
+    Authors & $K_{24}/K_{22}$ & Notes \\
+    \hline
+    Allender \emph{et. al.}~\cite{allender1991determination} & $1.2 \pm 0.8$ & Used 1-constant approximation. \\
+    Polak \emph{et. al.}~\cite{polak1994optical} & $2.5 \pm 3.0$ \\
+    Sparavigna \emph{et. al.}~\cite{sparavigna1994periodic} & $0.994 \pm 0.006$ & Used 1-constant approximation.\\
+    Pairam \emph{et. al.}~\cite{RN24} & $1.04 \pm 0.04$ \\
+  \end{tabular}
+  \label{t:7-K24}
 
+\end{table}
 \subsection{Prior estimates in tori}
-Recent work in NLC toroids with degenerate planar anchoring revealed the coupling between the saddle-splay distortion and the curvature of the bounding surface [see Eq.~\ref{e:2-K24SurfCouple}].
-This coupling was used to make precise estimates of $K_{24}$ not only in 5CB but also in the LCLCs SSY and DSCG confined in cylindrical capillaries.
+Recent work in NLC toroids with degenerate planar anchoring revealed the coupling between the saddle-splay distortion and the curvature of the bounding surface [see Eq.~\ref{e:2-K24SurfCouple}]~\cite{RN24,RN59}.
+This coupling was used to make precise estimates of $K_{24}$ not only in 5CB but also in the LCLCs SSY~\cite{RN191,RN293} and DSCG~\cite{RN293} confined in cylindrical capillaries.
 To illustrate this estimate, we refer to the example of a linear twist ansatz in a torus illustrated in Section 4.1.
-Taking the values of the twist parameter, $\omega$, that minimize the free energy [Eq.~\ref{e:4-omegaMinFFE}] and substituting into the expression for the twist angle [], we have:
-\fxnote{HERE}
+Taking the values of the twist parameter, $\omega$, that minimize the free energy [Eq.~\ref{e:4-omegaMinFFE}] and substituting into the expression for the twist angle [Eq.~\ref{e:4-twistAngle}], we have:
+\begin{equation}
+  K_{24} = K_{22} + \frac{K_{33}}{2}\sin ^2 \left( \frac{\tau}{2} \right ).\label{e:7-twistFuntionK24}
+\end{equation}
+Since the values of $K_{22}$ and $K_{33}$ are easy to establish independently, Eq.~\ref{e:7-twistFuntionK24} provides a relation between a single measurement of a twist angle to the value of $K_{24}$ for a given LC.
+
 \subsection{Results from spherical drops}
+Prior work with spherical emulsion droplets of 5CB in water and PVA found a size dependent transition, with bipolar configurations observed for droplets with radius $R \grtsim 1$ $\upmu$m and radial configurations for $R \lesssim 1$ $\upmu$`\cite{miller2013influence}.
+ \fxnote{HERE}
 \subsection{Distinguishing $K_{24}$ and surface contributions using twist angle and temperature}
