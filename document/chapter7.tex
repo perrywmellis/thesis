@@ -235,6 +235,7 @@ and $-K_{24}\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times 
 As a result, the published measurements of $K_{24}$ often differ substantially.
 For example, the reported measurements of $K_{24}$ for 5CB, the most common thermotropic NLC in the literature, vary from $\approx K$ in a 1-constant approximation  to $3.1 K_{22}$ [see Table~\ref{t:7-K24}]~\cite{RN24,allender1991determination,polak1994optical,sparavigna1994periodic}.
 Even after correcting for notational differences and representing the saddle splay distortion as in Eq.~\ref{e:2-FrankFinalExpansion}, we see in Table~\ref{t:7-K24} that the published measurements are in general imprecise due to large error or a reliance on a 1-constant approximation.
+Furthermore, there are reports in the literature that any measurement of $K_{24}$ is always affected by the boundary and by interactions between the nematic and the confining volume~\cite{RN55,RN191,sidky2018silico}.
 \begin{table}[t]
   \centering
   \caption{Experimentally-obtained values for $K_{24}$ using 5CB for four literature sources, both as reported and after recasting the saddle-splay distortion in the form: $-(1/2)(K_{22} + K_{24})\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$.}
@@ -257,8 +258,9 @@ Even after correcting for notational differences and representing the saddle spl
     Pairam \emph{et. al.}~\cite{RN24} & $1.04 \pm 0.04$ \\
   \end{tabular}
   \label{t:7-K24}
-
 \end{table}
+
+
 \subsection{Prior estimates in tori}
 Recent work in NLC toroids with degenerate planar anchoring revealed the coupling between the saddle-splay distortion and the curvature of the bounding surface [see Eq.~\ref{e:2-K24SurfCouple}]~\cite{RN24,RN59}.
 This coupling was used to make precise estimates of $K_{24}$ not only in 5CB but also in the LCLCs SSY~\cite{RN191,RN293} and DSCG~\cite{RN293} confined in cylindrical capillaries.
@@ -270,5 +272,37 @@ Taking the values of the twist parameter, $\omega$, that minimize the free energ
 Since the values of $K_{22}$ and $K_{33}$ are easy to establish independently, Eq.~\ref{e:7-twistFuntionK24} provides a relation between a single measurement of a twist angle to the value of $K_{24}$ for a given LC.
 
 \subsection{Results from spherical drops}
-Prior work with spherical emulsion droplets of 5CB in water and PVA found a size dependent transition, with bipolar configurations observed for droplets with radius $R \gtrsim 1$ $\upmu$m and radial configurations for $R \lesssim 1$ $\upmu$m~\cite{miller2013influence}.\fxnote{HERE}
+Prior work with spherical emulsion droplets of 5CB in phosphate-buffered saline (PBS) with various ionic strengths found a size dependent configuration, with bipolar configurations observed for droplets with radius $R \gtrsim 1$ $\upmu$m and radial configurations for $R \lesssim 1$ $\upmu$m~\cite{miller2013influence}.
+Writing the Frank-Oseen free energy for a radial droplet and a bipolar droplet in the presence of degenerate planar anchoring, we have:
+\begin{align}
+  F_{radial} &= 8 \pi K_{11} R - 4 \pi (K_{22} + K_{24}) R + 2 \pi W R^2\label{e:7-FFEradial} \\
+  F_{bipolar} &= 5 \pi K_{11} R - 2 \pi (K_{22}+ K_{24}) R,\label{e:7-FFEbipolar}
+\end{align}
+where $F_{anchoring} = (1/2) W (\mathbf{n} \times \mathbf{k})^2$ is the single-constant Rapini-Papoular energy for degenerate planar anchoring, with $W$ the strength of the anchoring and $\mathbf{k}$ the surface normal.
+Subtracting Eq.~\ref{e:7-FFEbipolar} from Eq.~\ref{e:7-FFEradial} and taking $2 K_{22} = K_{11}$ for 5CB yields
+\begin{equation}
+  \Delta F_{trans} = 2\pi R (2 K_{22}-K_{24} + W R).\label{e:7-FFEtrans}
+\end{equation}
+From E.~\ref{e:7-FFEtrans}, Ref.~\cite{miller2013influence} proposed saddle-splay as responsible for the size-dependent structures observed.
+If $K_{24} > 2 K_{22}$, then bringing $R$ small enough will eventually cause $\Delta F_{trans}$ to become negative, indicating that a radial structure has a lower free energy than a bipolar structure.
+While Table~\ref{t:7-K24} has measurements of $K_{24} > 2 K_{22}$, such a value of $K_{24}$ also implies that cylindrical or toroidal confinement of 5CB would result in a highly twisted configuration, far more so than measured in Ref.~\cite{RN24}.
+
+Recently, we found that a similar bipolar-to-radial transition can be induced in 5CB emulsion droplets in water with 1\% w/w PVA by bringing the temperature close to $T_{NI}$, the isotropic-nematic phase transition temperature~\cite{nayani2017role}.
+We observe the transition at $\tilde{T} \approx 0.99 T_{NI}$, where $\tilde{T} = T/T_{NI}$, the reduced temperature~\cite{nayani2017role}.
+By mapping the number of fringes in OPM textures of the bipolar droplets to the birefringence of the 5CB, we can determine a relationship between $\tilde{T}$ and $S$, the scalar order parameter~\cite{nayani2017role}.
+We find that the relationship derived from the bipolar droplets agrees well with Raman scattering data on pure 5CB, indicating that the bipolar-to-radial transformation occurs not only at a repeatable $\tilde{T}$, but also at a repeatable $S$~\cite{nayani2017role}.
+This data suggest that this transition could be a function of either temperature or order.
+
+We test this by making 5CB emulsion droplets in mixtures of water and ethanol, where the concentration of PVA is always 1\% w/w.
+The addition of ethanol to the continuous phase lowers $T_{NI}$; at concentrations of ethanol greater than 30 \% w/w, we find that 5CB is isotropic at room temperature.
+Irrespective of the concentration of ethanol, we find that the transition occurs repeatably at $\tilde{T} \approx 0.99 T_{NI}$.
+In addition, while we observe that small droplets tend to transform before large droplets, we do not have the sensitivity to quantitatively measure the transition as a function of size.
+This confirms that the transition is not a function of the absolute temperature, but depends on the reduced temperature through the scalar order parameter.
+Furthermore, the continuous phase here is very similar to that used in Ref.~\cite{RN24} to measure $K_{24} =(1.04 \pm 0.04)K_{22}$ for 5CB, indicating that it is not likely that saddle-splay is solely responsible for the bipolar-to-radial transition.
+However, we note that while we generally assume that the ratios of the elastic constants do not change with temperature, Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, indicate that there will be some variation.
+Finally, we note that if saddle-splay truly cannot be measured without influence from the confining phase, then we would need to repeat these measurements in the identical outer phase to Ref~\cite{RN24}.
+
+
 \subsection{Distinguishing $K_{24}$ and surface contributions using twist angle and temperature}
+We will address the temperature scaling of $K_{24}$ as well as the influence of the outer medium on the measured value of $K_{24}$ by performing measurements of the twist angle of 5CB confined under degenerate planar anchoring to cylindrical structure.
+In addition, we will search for a bipolar-to-radial transition in spherical droplets confined in the same outer medium as the cylindrical structures.
