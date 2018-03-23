@@ -1,10 +1,12 @@
 %!TEX root = thesis.tex
-\chapter{Summary and future work}
+\chapter{Summary, conclusions, and future work}
+
+\section{Summary and conclusions}
 Confining ordered materials can lead to interesting phenomonology due to the interplay between the order and the confinement geometry.
 For the nematic materials used in this Thesis, it is often the curvature of the confining volume or surface that affects the nematic order.
-This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $(\nabla \mathbf{n})^2$, indicating that curvature in the director field costs energy.
+This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $|\nabla \mathbf{n}|^2$, indicating that curvature in the director field costs energy.
 The influence of curvature on a nematic material is even more explicit when considering a 2D nematic constrained to lie on a surface.
-In this situation, the free energy can be written to resemble that of a multicomponent plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
+In this situation, the free energy can be written to resemble that of a plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
 Thus, if the surface has both positive and negative Guassian curvature and the nematic has both positive and negative defects, the defects are predicted to segregate, with the positive defects migrating to the regions of positive Gaussian curvature and vice versa.
 
 We explore this situation experimentally using an active polymeric nematic depleted to the surface of a toroidal droplet.
@@ -12,7 +14,7 @@ Due to the activity, the nematic is filled with pairs of constantly creating and
 We measure the time-averaged topological charge in regions on the toroidal droplet and find that the average charge varies linearly with the integrated Gaussian curvature in the region.
 The slope of this relationship is positive, indicating that our system exhibits defect unbinding.
 In contrast to predictions for a system at equilibrium, we find that the active unbinding depends only on the local geometry and is insensitive to the size and aspect ratio of our toroidal droplets.
-Comparing our experimental results to a numerical integration of the equations of motion of active nematic defects further illustrates that the defect unbinding also depends on the defect number density and that the unbinding can even be suppressed in the limit of high activity.
+Comparing our experimental results to a numerical integration of the equations of motion of active nematic defects further illustrates that the defect unbinding also depends on the defect number density, and that the unbinding can even be suppressed in the limit of high activity.
 Finally, by using topological defects as micro-rheological tracers and quantitatively comparing our experimental and theoretical results, we are able to estimate the Frank elastic constant, the active stress, and the defect mobility of a microtubule-kinesin active NLC.
 
 Overall, our results not only confirm the theory of topological defects on curved surfaces, but also demonstrate how adding activity to an ordered material changes and enriches equilibrium expectations.
@@ -23,15 +25,15 @@ So far we have only examined the behavior of the average topological charge $\ov
 This is only one of the things that our setup can explore.
 For example, we have preliminary data showing the time-averaged number density $\overbar{N}_{\Theta}/A_{\Theta} = (\overbar{N}^{+}_{\Theta} + \overbar{N}^{-}_{\Theta})/A_{\Theta}$ depends on not only the local curvature, but also the aspect ratio of the toroid.
 It is not clear why the topological charge depends only on local interactions while the defect number density depends on the size and shape of the toroidal droplet.
-In addition, there is work with this active nematic in flat space showing that the $s = +1/2$ defects can themselves assemble to form a nematic phase, where $S$ associated to this higher-order nematic phase grows as $\overbar{N}_{\Theta}$ grows.
+In addition, there is work with this active nematic system in flat space showing that the $s = +1/2$ defects can themselves assemble to form a nematic phase, where $S$ associated to this higher-order nematic phase grows as $\overbar{N}_{\Theta}$ grows.
 However, our preliminary data suggest that on a toroid, the $s = +1/2$ defects do not form a nematic phase but instead a polar phase, and that the strength of this polar phase grows as the $\overbar{N}_{\Theta}$ decreases.
-These are just two examples of future directions exploring the role of curvature and activity in partially ordered matter.
+These are just two examples of future directions that we are currently working on that further explore the role of curvature and activity in partially ordered matter.
 
 We also consider a NLC confined to toroidal droplets and bent capillaries under homeotropic boundary conditions.
 We observe spontaneous reflection symmetry breaking due to a twist distortion relieving the energetic cost of two competing bend distortions.
 The competition between the distortions is given by the local aspect ratio, $\xi$, comparing the radii of curvature of the two bend distortions.
-Thus, $\xi$ also governs the amount of twist in the system, resulting in a geometrically-tuned chirality.
-This relationship between twist and $\xi$ is similar to previous results in our group with NLC confined to toroidal droplets with degenerate planar anchoring, showing that tuning a ratio of curvatures to control chirality in NLC does not depend on the anchoring.
+Thus, $\xi$ also governs the amount of twist in the system, with the twist decreasing with increasing $\xi$.
+This geometrically-tuned chirality is similar to previous results in our group with NLC confined to toroidal droplets with degenerate planar anchoring, showing that tuning a ratio of curvatures to control chirality in NLC does not depend on the anchoring.
 
 Lastly, we explore the equilibrium defect structure in NLC confined to capillary bridges under homeotropic boundary conditions.
 We find that the defect structure in our bridges depends on both the shape of the bounding surface as well as the aspect ratio of the bridge.
@@ -41,3 +43,311 @@ We compare with numerical calculations and find good agreement with our experime
 Our work thus shows that shape can be used to influence and control the equilibrium defect states in confined NLC under homeotropic boundary conditions.
 Interestingly, the numerical calculations predict that a cylinder-like structure can have defect transitions between radial rings and hyperbolic points as well as between radial rings and hyperbolic rings.
 The specific pathways for these transitions are unclear and would be an interesting direction for future work.
+
+\section{Defect orientation on curved surfaces: current status}
+Prior work with a microtubule-kinesin active nematic on a flat surface demonstrated that the $s = +1/2$ defects self-organize into a higher-order nematic phase~\cite{RN27}.
+The orientation of each $s = +1/2$ defect is given by its velocity; calculating $\mathbf{Q}$ for a collection of defect orientations uncovers long-range nematic order~\cite{RN27}.
+The strength of the order increases with increasing defect density and this higher-order nematic is typically defect-free, with a homogeneous director over the entire sample~\cite{RN27}.
+We are currently investigating how the $s = \pm 1/2$ defect orientations couple to the curvature of our toroidal droplets.
+
+
+\subsection{Theory}
+The velocity of the $s = +1/2$ defects is not the only way to assign an orientation to each defect.
+Recent work showed that the polar structure of the $s = +1/2$ defect can be characterized by a vector, and that the distortion free energy of a pair of $s = +1/2$ defects is minimized when the orientation vectors are antiparallel~\cite{RN6}.
+Thus, a dense collection of $s = +1/2$ defects would minimize its free energy by aligning antiparallel to each other, forming a higher-order nematic phase.
+For a single $s = +1/2$ defect, this orientation $\mathbf{p}$ is calculated by:
+\begin{equation}
+  p_i = \left \langle \partial_j Q_{ij}^{(\alpha)} \right \rangle_{\alpha},\label{e:7-LGpositive}
+\end{equation}
+where $Q_{ij}$ is the tensor order parameter and the average is taken along a closed contour encircling the defect.
+Reference~\cite{RN6} also proposed a method to characterize the orientation of $s = -1/2$ disclinations; however, their method requires a coordinate basis to be chosen.
+
+Alternately, Ref.~\cite{jsel} has a method to calculate disclination orientation by constructing tensors of the appropriate rank.
+For example, the orientations of $s = +1/2$ and $s = -1/2$ disclinations are calculated via:
+\begin{align}
+    b_i &= \left \langle \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSpositive} \\
+    T_{ijk} &= \left \langle \partial_i (n_{j}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_j (n_{i}^{(\alpha)}n_{k}^{(\alpha)}) + \partial_k (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha},\label{e:7-JSnegative}
+\end{align}
+respectively, where the average is again taken over a path encircling the disclination.
+Importantly, the orientations of the $s = \pm 1/2$ disclinations calculated via Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} are both tensors; they do not depend on the choice of a coordinate basis.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_BasicOrients.png}
+  \caption{Example director fields and axes of symmetry for an (A) $s = +1/2$ and an (B) $s=-1/2$ defect.
+  The axes of symmetry were calculated with Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative}.
+  }\label{f:7-BasicOrients}
+\end{figure}
+
+Comparing the two methods to calculate the orientation of an $s = +1/2$ disclination, we have:
+\begin{align}
+ p_i &= \left \langle \partial_j Q_{ij}^{(\alpha)} \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle \partial_j \bigg(S^{(\alpha)}\bigg(n_{i}^{(\alpha)}n_{j}^{(\alpha)} - \frac{1}{2}\delta_{ij}\bigg)\bigg) \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle (\partial_j S^{(\alpha)}) \bigg(n_{i}^{(\alpha)}n_{j}^{(\alpha)} - \frac{1}{2}\delta_{ij}\bigg) \right \rangle_{\alpha}
+      + \left \langle S^{(\alpha)} \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha} \nonumber \\
+  &= \left \langle \frac{\partial_j S^{(\alpha)}}{S^{(\alpha)}} Q_{ij}^{(\alpha)}\right \rangle_{\alpha}
+      + \left \langle S^{(\alpha)} \partial_j (n_{i}^{(\alpha)}n_{j}^{(\alpha)}) \right \rangle_{\alpha}\label{e:7-comparison}.
+\end{align}
+If we choose a contour where $S$ is constant, Eq.~\ref{e:7-comparison} becomes
+\begin{equation}
+  p_i = S \, b_i.
+\end{equation}
+Under this condition, both approaches give the same orientation.
+However, in general, Eq.~\ref{e:7-LGpositive} includes additional information about the spatial variation of $S$ near the disclination.
+Since the methodology in Ref~\cite{jsel} produces a tensor for both $s = \pm 1/2$ disclinations, we will use Eqs.~\ref{e:7-JSpositive}~and~\ref{e:7-JSnegative} to calculate our defect orientations.
+
+
+\subsection{Experiment}
+Our goal is to examine the defect orientations on the curved surface of our toroidal droplets.
+However, we project our data from the surface of the toroid onto a plane, forming a 2D image from which we determine the director and the defects.
+Thus, we will find the defect orientations in the 2D image and then project the defect orientations back onto our toroidal surface.
+In the plane of the image, we have the Cartesian coordinate system $\{ \hat{x},\hat{y},\hat{z} \}$ with unit vectors $(1,0,0)$, $(0,1,0)$, and $(0,0,1)$, respectively.
+For an arbitrary unit surface normal $\mathbf{k} = (a, b, \sqrt{1-a^2-b^2})$, we define $\hat{v} = \hat{k} \times \hat{x}/|\hat{k} \times \hat{x}|$ and $\hat{u} = \hat{v} \times \hat{k}$, giving us an orthonormal coordinate frame on the surface $\{\hat{u},\hat{v},\hat{k} \}$.
+
+Transforming between $\mathbf{r} \in \mathbb{R}^2$ to $\mathbf{r}'$ on the surface of our toroid,
+\begin{equation}
+  \mathbf{r}' =
+  \begin{pmatrix}
+  \frac{1}{\sqrt{1-a^2}} & 0 \\
+  \frac{ab}{\sqrt{(1-a^2)(1-a^2-b^2)}} & \sqrt{\frac{1-a^2}{1-a^2-b^2}}
+  \end{pmatrix}
+  \mathbf{r} = \bm{H}\mathbf{r}.
+\end{equation}
+However, since $\{ \hat{u},\hat{v}\}$ depends on $\hat{k}$, $\{ \hat{u},\hat{v}\}$ will change over the surface of our droplet, making it difficult to compare defect orientations between different points on the surface.
+Instead, we will record our defect orientations on the surface of the torus in terms of a pair of curvilinear coordinate systems.
+The first coordinate system is the standard toroidal coordinate system, $\{\hat{\theta}, \hat{\varphi}, \hat{r}  \}$, where $\hat{r} = \mathbf{k}$, the surface normal.
+The second coordinate system is $\{\hat{\theta}', \hat{\varphi}',\mathbf{k} \}$, with $\hat{\theta}' = (\nabla K)/|\nabla K|$, and $\hat{\varphi}' = \mathbf{k} \times \hat{\theta}'$.
+For a perfect toroid, the two coordinate systems are equivalent; however, in our case, the surface can be rough and our droplets are not perfectly axisymmetric.
+Thus, our two coordinate systems should allow us to distinguish between global effects driven by the toroidal geometry and local effects driven by $K$.
+
+To calculate $\hat{\theta}$ and $\hat{\varphi}$, we start by finding the central circle from our data in $\mathbb{R}^2$.
+We fit circles to the outer and inner contours in the 2D image of the toroidal droplet and average these contours to get an estimate of the central circle of our toroidal droplet.
+From the central circle, we can define a set of polar coordinates in the image $\{\hat{\rho}, \hat{\phi}\}$.
+We project $\hat{\phi}$ onto the surface of the torus to yield $\bm{\varphi} = \bm{H}\hat{\phi}$, and then normalize to get $\hat{\varphi} = \bm{\varphi}/|\bm{\varphi}|$.
+Finally, we calculate $\hat{\theta} =  \hat{\varphi} \times \mathbf{k}$ to obtain the standard toroidal coordinate system on our toroidal droplet.
+
+To calculate $\hat{\theta}'$ and $\hat{\varphi}'$, we start by computing $\nabla K$ in the 2D image and projecting it to the surface of the toroid to get:
+\begin{equation}
+  \bm{\theta}' =
+  \begin{pmatrix}
+    \sqrt{1-a^2} & -\frac{ab}{\sqrt{1-a^2}} \\
+    0 & \sqrt{\frac{1-a^2-b^2}{1-a^2}}
+  \end{pmatrix}
+  \nabla K = \bm{H}^{-1} \nabla K.
+\end{equation}
+Normalizing, we get $\hat{\theta}' = \bm{\theta}'/|\bm{\theta}'|$, and then calculate $\hat{\phi}' = \mathbf{k} \times \hat{\theta}'$.
+Note that we project $\nabla K$ from the image to the surface of the toroid using $\bm{H}^{-1}$; $\nabla K$ is a covector and thus the transformation matrix is the inverse of that for a vector.
+
+As a first attempt, we will bin the surface by $K$ and compute the order parameters in each bin.
+We will use overlapping bins of constant area in the 2D image.
+
+We start by choosing a binsize $N$, in pixels.
+For a total area, $A$, in pixels, in the 2D image of the toroid, we consider a total of $A-N$ bins.
+With this protocol, two adjacent bins share all but a single pixel.
+We characterize each bin with $\langle K \rangle$, and then calculate the relevant order parameters in the bin using all $s = \pm 1/2$ defects in the bin over all time frames.
+For the $s = +1/2$ disclinations, we calculate the polar and nematic order parameters
+\begin{align}
+  S_{polar} \bm{\nu} &= \frac{1}{n} \sum\limits_{\alpha=1}^n \mathbf{b}^{(\alpha)},\label{e:7-polarorder} \\
+  \mathbf{Q} &= S_{nem} \left (\mathbf{n} \otimes \mathbf{n} \right ) - \frac{1}{2}\mathbb{1} = \frac{1}{n} \sum\limits_{\alpha=1}^n \mathbf{b}^{(\alpha)} \otimes \mathbf{b}^{(\alpha)} - \frac{1}{2}\mathbb{1}\label{e:7-nematicorder},
+\end{align}
+where $S_{polar}$ and $S_{nem}$ is the magnitude of the order and $\bm{\nu}$ and $\mathbf{n}$ unit vectors describing the direction of the order, for polar order and nematic order, respectively.
+We note that Eq.~\ref{e:7-nematicorder} is equivalent to Eq.~\ref{e:2-2DOrderRaw} and Eq.~\ref{e:2-2DOrderDiag}.
+
+For the $s = -1/2$ disclinations, we take the orientation of $T_{ijk}$ to be the angle $\phi_0 \in [-\pi/3,\pi/3)$, the orientation of one of the three axes of symmetry of an $s = -1/2$ disclination.
+Consider $\mathbf{n} = (n_x \hat{x}, n_y \hat{y})$ surrounding an $s = -1/2$ disclination, where $\theta = \arctan (y/x)$ is the polar angle describing the position.
+Then, if $\phi = \theta + \phi_0$ describes the director orientation, we can write the director field surrounding the disclination as $\mathbf{n} = (\cos(\phi/2)\hat{x},-\sin(\phi/2)\hat{y})$.
+Computing $T_{ijk}$ according to Eq.~\ref{e:7-JSnegative} and averaging over all $\theta$, we have:
+ \begin{align}
+   \langle T_{ij1}(\theta) \rangle_{\theta} &=
+        \frac{3}{4}\begin{pmatrix}
+          \cos \phi_0 & -\sin \phi_0 \\
+          -\sin \phi_0 & -\cos \phi_0
+        \end{pmatrix}\nonumber \\
+  \langle T_{ij2}(\theta) \rangle_{\theta} &=
+       \frac{3}{4}\begin{pmatrix}
+         -\sin \phi_0 & -\cos \phi_0 \\
+         -\cos \phi_0 & \sin \phi_0
+       \end{pmatrix}\label{e:7-TijkBIG}
+ \end{align}
+From Eq.~\ref{e:7-TijkBIG}, we can now obtain $\phi_0$ from $\langle T_{ijk}(\theta) \rangle_{\theta}$ via:
+\begin{equation}\label{e:7-phi0Calc}
+  \phi_0 = \arctan \left ( \frac{\langle T_{222}(\theta) - T_{121}(\theta) - T_{112}(\theta) - T_{211}(\theta)  \rangle_{\theta}} {\langle T_{111}(\theta) - T_{221}(\theta) - T_{122}(\theta) - T_{212}(\theta)  \rangle_{\theta}} \right).
+\end{equation}
+
+Now, we use $\phi_0$ to calculate the bond-angle order parameter for three-fold symmetry for the $s = -1/2$ disclinations in the bin
+\begin{equation}\label{e:7-hexorder}
+  S_{bond} \exp(i 3 \Phi_o) = \frac{1}{n}\sum\limits_{\alpha = 1}^n \exp (i 3 \phi_o^{(\alpha)}),
+\end{equation}
+where $S_{bond}$ is the magnitude of the order and $\Phi_o$ is an angle giving the orientation of the order.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_Orient_MeanK.png}
+  \caption{$s = \pm 1/2$ defect ordering on a toroid with $\xi = 2.4$, $a = 268$ $\upmu$m, and an ATP concentration of 144 $\upmu$M.
+  Magnitude and direction of (A--C) polar and (D--F) nematic order calculated for the $s = +1/2$ defects and (G--I) three-fold bond angle order calculated for the $s = -1/2$ defects.
+  The order in (A,D,G) and (B,E,H) is calculated for the $\{\theta,\varphi \}$ and the $\{\nabla K = \theta',\varphi' \}$ coordinate systems, respectively, with (C,F,I) indicating the color scales used to denote orientation.
+  }\label{f:7-Orient_MeanK}
+\end{figure}
+
+For an example toroid with with $\xi = 2.4$, $a = 268$ $\upmu$m, and an ATP concentration of 144 $\upmu$M, we plot the magnitude and orientation of the nematic and polar order for the $s = +1/2$ defects and the three-fold bond order for the $s = -1/2$ defects as a function of the mean Gaussian curvature in each bin  in Figure~\ref{f:7-Orient_MeanK}(A--C), Figure~\ref{f:7-Orient_MeanK}(D--F), and Figure~\ref{f:7-Orient_MeanK}(H--J) respectively.
+We see that for both the $\{\Theta,\varphi\}$ [Figure~\ref{f:7-Orient_MeanK}(A,D,G)] and the $\{ \nabla K = \theta',\varphi' \}$ [Figure~\ref{f:7-Orient_MeanK}(B,E,H)] coordinate systems, the $s = \pm 1/2$ defects exhibit order in the regions where the magnitude of $K$ is larger.
+Interestingly, we note that the $s = +1/2$ defects exhibit polar order on our toroidal droplets, rather than nematic order seen in flat space~\cite{RN27}.
+Since we consider the defects at all time points when calculating the order, Figure~\ref{f:7-Orient_MeanK} reflects a persistent steady state.
+In addition, the we see that the direction of the order is different in regions of negative and regions of positive Gaussian curvature.
+In regions where $K > 0$, the $s = +1/2$ defects align along $-\hat{\theta}$, consistent with the idea that the $s = +1/2$ defects migrate towards $\theta = \pi$ in order to minimize their contribution to the free energy.
+However, in regions where $K < 0$, the $s = +1/2$ defects align along $\hat{\theta}$, the opposite of what we expect; this indicates that on average, $s = +1/2$ defects in regions near the hold of the torus move further towards $\theta = 0$.
+We note that even if the $s = +1/2$ defects want to move towards the hole, this is still consistent with curvature-induced defect unbinding provided that the $s = -1/2$ defects migrate towards the hole at a higher rate than the $s = +1/2$ defects.
+Repeating this analysis for the remainder of our toroids, our preliminary results indicate that the $s = +1/2$defects posses steady state polar order, the $s = -1/2$ defects posses steady state three-fold bond angle order, and that the magnitude of the order grows with increasing $|K|$ for both defect species.
+
+To investigate the origin of this order, we plot the polar order for the $s = +1/2$ defects and the three-fold bond angle order for the $s = -1/2$ defects against the mean defect density and against the mean $|K|$ in each bin in Figure~\ref{f:7-Orient_PolarHex}(A--D) and Figure~\ref{f:7-Orient_PolarHex}(F--I), respectively.
+We see from the plotting the order against the mean defect density in each bin, that the magnitude of the order grows as the defect density decreases [polar order, Figure~\ref{f:7-Orient_PolarHex}(A.C) and three-fold bond angle order, Figure~\ref{f:7-Orient_PolarHex}(F,H)]; this is the opposite of the results in flat space~\cite{RN27}.
+We also see that the magnitude of the defect order grows with increasing $|K|$ [polar order, Figure~\ref{f:7-Orient_PolarHex}(B,D) and three-fold bond angle order, Figure~\ref{f:7-Orient_PolarHex}(G,I)]; this makes intuitive sense as the gradient of the Gaussian curvature reflects the change in the ``background charge'' influencing the defects.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_Orient_PolarHex.png}
+  \caption{$s = \pm 1/2$ defect order plotted as a function of the mean defect density and of the magnitude of the gradient of the Gaussian curvature.
+  Magnitude and direction of the (A--D) polar order for the $s = +1/2$ defects and the (F--I) three-fold bond angle order for the $s = -1/2$ defects.
+  (A,B) and (F,G) are calculated in the $\{\theta,\varphi \}$ coordinate system, while (C,D) and (H,I) are calculated in the $\{ \nabla K = \theta',\varphi' \}$ coordinate system.
+  The magnitude and direction of the order are plotted in (A,C,F,H) and (B,D,G,I) as a function of the mean defect density and of the mean magnitude of the gradient of the Gaussian curvature, respectively.
+  The polar and three-fold bond angle color scales are displayed in (E,J), respectively.
+  }\label{f:7-Orient_PolarHex}
+\end{figure}
+
+
+\subsection{Future Work}
+To understand the nature of the ordering on the toroidal droplets, we need more data that focuses on the regions of the toroids that have a large Gaussian curvature magnitude.
+These regions are where we see the ordering arise and where we have the least amount of data.
+We are currently taking more data that looks specifically at these highly curved regions.
+In addition, we are currently taking data on cylindrical surfaces in order to better understand how the global properties of a surface affect the defect ordering.
+In addition, now that we see that there is a persistent steady-state in the defect orientations, we are analyzing smaller time windows to obtain the fluctuations in the orientation.
+
+We also wish to understand defect orientation correlations in space at a given time.
+To do this, we need to be able to calculate discrete geodesics on the surface of the torus.
+We are currently working on implementing the algorithms in Refs.~\cite{RN322,RN323}.
+
+
+
+\section{Determining the saddle-splay elastic constant: current status}
+It is difficult to measure saddle-splay because it is difficult to achieve a pure saddle-splay distortion in a nematic volume [see Eq.~\ref{e:2-FrankPhysicalExpansion}].
+In addition, since the saddle-splay distortion in the bulk is intimately connected with the director behavior on the boundary of the material, there is concern that anchoring and surface elastic terms could prevent an accurate measurement of $K_{24}$~\cite{RN191,RN55,sidky2018silico}.
+Finally, there are discrepancies concerning the coefficient associated with the saddle-splay distortion, with
+$-(1/2)(K_{22} + K_{24})\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$,
+$-(1/2)K_{24}\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$,
+and $-K_{24}\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$ all found in the literature.
+As a result, the published measurements of $K_{24}$ often differ substantially.
+For example, the reported measurements of $K_{24}$ for 5CB, the most common thermotropic NLC in the literature, vary from $\approx K$ in a 1-constant approximation  to $3.1 K_{22}$ [see Table~\ref{t:7-K24}]~\cite{RN24,allender1991determination,polak1994optical,sparavigna1994periodic}.
+Even after correcting for notational differences and representing the saddle splay distortion as in Eq.~\ref{e:2-FrankFinalExpansion}, we see in Table~\ref{t:7-K24} that the published measurements are in general imprecise due to either a large error or a reliance on a 1-constant approximation.
+Furthermore, the concerns in the literature that any measurement of $K_{24}$ is always affected by interactions between the nematic and the confining volume cast further doubt on the measurements in Table~\ref{t:7-K24}~\cite{RN55,RN191,sidky2018silico}.
+\begin{table}[t]
+  \centering
+  \caption{Experimentally-obtained values for $K_{24}$ using 5CB for four literature sources, both as reported and after recasting the saddle-splay distortion in the form: $-(1/2)(K_{22} + K_{24})\nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n})$.}
+  \begin{tabular}{l c l}
+    & {\bf As reported} & \\
+    \hline
+    Authors & $K_{24}/K_{22}$ & Notes \\
+    \hline
+    Allender \emph{et. al.}~\cite{allender1991determination} & $1.1 \pm 0.9$ & Used 1-constant approximation\\
+    Polak \emph{et. al.}~\cite{polak1994optical} & $3.1 \pm 4.4$ \\
+    Sparavigna \emph{et. al.}~\cite{sparavigna1994periodic} & $0.994 \pm 0.006$ & Used 1-constant approximation \\
+    Pairam \emph{et. al.}~\cite{RN24} & $1.02 \pm .02$ \\
+    & {\bf Corrected notation} & \\
+    \hline
+    Authors & $K_{24}/K_{22}$ & Notes \\
+    \hline
+    Allender \emph{et. al.}~\cite{allender1991determination} & $1.2 \pm 0.8$ & Used 1-constant approximation. \\
+    Polak \emph{et. al.}~\cite{polak1994optical} & $2.5 \pm 3.0$ \\
+    Sparavigna \emph{et. al.}~\cite{sparavigna1994periodic} & $0.994 \pm 0.006$ & Used 1-constant approximation.\\
+    Pairam \emph{et. al.}~\cite{RN24} & $1.04 \pm 0.04$ \\
+  \end{tabular}
+  \label{t:7-K24}
+\end{table}
+
+
+\subsection{Prior estimates in tori}
+Recent work in NLC toroids with degenerate planar anchoring revealed the coupling between the saddle-splay distortion and the curvature of the bounding surface [see Eq.~\ref{e:2-K24SurfCouple}]~\cite{RN24,RN59}.
+This coupling was used to make precise estimates of $K_{24}$ not only in 5CB but also in the LCLCs SSY~\cite{RN191,RN293} and DSCG~\cite{RN293} confined in cylindrical capillaries.
+To illustrate this estimate, we refer to the example illustrated in Section 4.1 of a linear twist ansatz in a torus where $\xi \rightarrow \infty$.
+Taking the values of the twist parameter, $\omega$, that minimize the free energy [Eq.~\ref{e:4-omegaMinFFE}] and substituting into the expression for the twist angl, $\tau$ [Eq.~\ref{e:4-twistAngle}], we have:
+\begin{equation}
+  K_{24} = K_{22} + \frac{K_{33}}{2}\sin ^2 \left( \frac{\tau}{2} \right ).\label{e:7-twistFuntionK24}
+\end{equation}
+Since the values of $K_{22}$ and $K_{33}$ are easy to establish independently, Eq.~\ref{e:7-twistFuntionK24} provides a relation between a single measurement of a twist angle to the value of $K_{24}$ for a given NLC.
+For example, using the value of $K_{24}$ measured in Ref.~\cite{RN24}, $K_{24} = (1.04 \pm 0.04) K_{22}$, we calculate that $\tau_{\xi \rightarrow \infty} = 19^{\circ} \, [+ 8^{\circ}, - 19^{\circ}]$.
+
+\subsection{Results from spherical drops}
+Prior work with spherical emulsion droplets of 5CB in phosphate-buffered saline (PBS) with various ionic strengths found a size dependent configuration, with bipolar configurations observed for droplets with radius $R \gtrsim 1$ $\upmu$m and radial configurations for $R \lesssim 1$ $\upmu$m~\cite{miller2013influence}.
+As a potential explanation, the authors considered the Frank-Oseen free energy for a radial droplet and a bipolar droplet in the presence of degenerate planar anchoring:
+\begin{align}
+  F_{radial} &= 8 \pi K_{11} R - 4 \pi (K_{22} + K_{24}) R + 2 \pi W R^2\label{e:7-FFEradial} \\
+  F_{bipolar} &= 5 \pi K_{11} R - 2 \pi (K_{22}+ K_{24}) R,\label{e:7-FFEbipolar}
+\end{align}
+where $F_{anchoring} = (1/2) W (\mathbf{n} \times \mathbf{k})^2$ is the single-constant Rapini-Papoular energy for degenerate planar anchoring, with $W$ the strength of the anchoring and $\mathbf{k}$ the surface normal.
+Comparing these free energies, they subtract Eq.~\ref{e:7-FFEbipolar} from Eq.~\ref{e:7-FFEradial} with $2 K_{22} = K_{11}$ for 5CB:
+\begin{equation}
+  \Delta F_{trans} = 2\pi R (2 K_{22}-K_{24} + W R).\label{e:7-FFEtrans}
+\end{equation}
+If $K_{24} > 2 K_{22}$, we see that bringing $R$ small enough will eventually cause $\Delta F_{trans}$ to become negative, indicating that a radial structure has a lower free energy than a bipolar structure.
+From E.~\ref{e:7-FFEtrans}, Ref.~\cite{miller2013influence} proposed saddle-splay as responsible for the size-dependent structures observed.
+While Table~\ref{t:7-K24} has measurements of $K_{24} > 2 K_{22}$, such a value of $K_{24}$ also implies that cylindrical or toroidal confinement of 5CB would result in a highly twisted configuration, far more so than the values measured in Ref.~\cite{RN24}.
+
+Recently, we found that a similar bipolar-to-radial transition can be induced in 5CB emulsion droplets in water with 1\% w/w PVA by bringing the temperature close to $T_{NI}$, the isotropic-nematic phase transition temperature.
+This transition is shown in Figure~\ref{f:7-Emulsion_Eth}(A--C) for a sample with multiple droplets, and in Figure~\ref{f:7-Emulsion_Trans}(A--E) for a single droplet~\cite{nayani2017role}.
+We observe the transition at $\tilde{T} \gtrsim 0.995 T_{NI}$, where $\tilde{T} = T/T_{NI}$ is the reduced temperature~\cite{nayani2017role}.
+We use Jones Calculus to simulate bipolar droplets with varying $\Delta N$, and compare the number of fringes in the simulated images with the number of fringes in our experimental images.
+This process is shown in Figures~\ref{f:7-Emulsion_Trans}(A--C) for the experimental OPM images and Figure~\ref{f:7-Emulsion_Trans}(F--H) for the simulated images as a function of increasing $\tilde{T}$.
+By matching the number of fringes, we can determine the birefringence, and therefor the sclar order paramter, $S$, in our experiments as a function of $\tilde{T}$~\cite{nayani2017role}.
+We find that the relationship derived from the bipolar droplets agrees well with Raman scattering data on pure 5CB, as plotted in Figure~\ref{f:7-Emulsion_Trans}(I), indicating that the bipolar-to-radial transformation occurs not only at a repeatable $\tilde{T}$, but also at a repeatable $S$~\cite{nayani2017role}.
+However, from this data we cannot distinguish betwen an efect driven by the absolute temperature or an effect driven by the reduced temperature.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_Emulsion_Eth.png}
+  \caption{OPM textures of an emulsion of 5CB undergoing a bipolar-to-radial transformation.
+      (A--C), The outer medium consists of 99\% w/w Millipore water with 1\% w/w PVA.
+      (D--F), The outer medium consists of 69\% w/w Millipore water, 30\% w/w Ethanol, and 1\% w/w PVA.
+      In all images the absolute and reduced temperature are displayed below the image.
+      The scale bar is: 50 $\upmu$m.
+      }\label{f:7-Emulsion_Eth}
+\end{figure}
+
+We test this by making 5CB emulsion droplets in mixtures of water and ethanol, where the concentration of PVA is always 1\% w/w.
+The addition of ethanol to the continuous phase lowers $T_{NI}$; at concentrations of ethanol greater than 30 \% w/w, we find that 5CB is isotropic at room temperature.
+Irrespective of the concentration of ethanol, we find that the transition occurs consistantly at $\tilde{T} \gtrsim 0.995 T_{NI}$, shown in Figure~\ref{f:7-Emulsion_Eth}(D--F) for an outer medium of 1\% w/w PVA, 30\% w/w ethanol, and 69\% w/w Millipore water.
+In addition, while we observe that small droplets tend to transform before large droplets, we do not have the sensitivity to quantitatively measure the transition as a function of size.
+This confirms that the transition is not a function of the absolute temperature, but depends on the reduced temperature through the scalar order parameter.
+Furthermore, the continuous phase here is very similar to that used in Ref.~\cite{RN24} to measure $K_{24} =(1.04 \pm 0.04)K_{22}$ for 5CB, indicating that it is not likely that saddle-splay is solely responsible for the bipolar-to-radial transition.
+However, we note that if saddle-splay truly cannot be measured without influence from the confining phase, then we would need to repeat these measurements in the identical outer phase to Ref~\cite{RN24}.
+When we do this, we find that irrespective of the carbopol or ethanol concentration in the outer phase, all our spherical emulsions demonstrate a bipolar-to-radial transition at $\tilde{T}\gtrsim 0.995 T_{NI}$.
+Finally, we note that while we generally assume that the ratios of the elastic constants do not change with temperature, Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, indicate that there will be some variation, possibly reaching a regime where $K_{24}$ could drive the bipolar-to-radial transition.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_Emulsion_Trans.png}
+  \caption{The transition from bipolar-to-radial happens as the order paramter decreases.
+    (A--E), Experimental images showing how a 40 $\upmu$m diameter bipolar droplet transforms into a raial droplet.
+    As the reduced temperature increases, the number of fringes in the (A--C) bipolar OPM textures decrease.
+    The saturn ring mediated the bipolar-to-radial transformation is clearly visible under bright-field illumination in (D), with the final radial structure visible in the OPM texture in (E).
+    (F--H), Simulated OPM textures of bipolar droplets with varing $\Delta n$; the $\Delta n$ were chosen to match the number of fringes in the experimental OPM textures in (A--C), respectively.
+    (I), Plot of the scalar order parameter vs. the reduced temperature with data from Raman scattering measurements (${\color{red} \bullet}$) and from matching the simulated and experimental OPM textures (${\color{blue} \blacktriangle}$)
+     }\label{f:7-Emulsion_Trans}
+\end{figure}
+
+\subsection{Distinguishing $K_{24}$ and surface contributions using twist angle and temperature}
+To test whether the temperature scaling of $K_{24}$ could result in $K_{24} > 2 K_{22}$, we will measure the the twist angle of 5CB confined under degenerate planar anchoring to cylindrical structures.
+We make cylindrical structures by inserting a 27 Ga (410  $\upmu$m OD) needle completely into a yield stress fluid and then slowly removing the needle as we pump 5CB into the void left by the withdrawing needle.
+The needle is 2 inches long, and we control the speed of withdrawl using a mechanical stage controlled by a MATLAB script.
+We set the volume flowrate of the 5CB between 0\% and 10\% in excess of the volume/time vacated by the needle; flowrates in this range generally produce smooth, cylindrical structures, as shown in the example image in Figure~\ref{f:7-CapStructure}(A).
+Currently, we have tested cylindrical structues in yield-stress media containing 1\% w/w PVA, 3\% w/w Glycerol, 0\%--2\% w/w carbopol, 0\%--30\% w/w ethanol, with the remaining percentage taken by Millipore water.
+Example OPM textures of the structure in Figure~\ref{f:7-CapStructure}(A) are shown in Figures~\ref{f:7-CapStructure}(B,C), while images for a structure made in a yield-stress medium with no ethanol are shown in Figures~\ref{f:7-CapStructure}(D,E).
+We measure the twist angle by first varying both P and A until the minimum transmitted intensity is reached.
+We then fix P, measure the transmitted intensity every 5$^\circ$ in the A orientation, and fit the resulting data to the expected transmitted intensity for a twisted nematic cell [Eq.~\ref{e:4-tn}].
+For the two examples in Figures~\ref{f:7-CapStructure}(B,C) and Figures~\ref{f:7-CapStructure}(D,E), we measure a twist angles of $\tau = 13^{\circ} \pm 1^{\circ}$ and $\tau = 7^{\circ} \pm 1^{\circ}$, respectively.
+Our preliminary data show twist angles consistent with the value of $K_{24}$ measured in Ref.~\cite{RN24}, regardless of the concentration of carbopol or ethanol in the outer yield-stress medium.
+We are currently working on measurements of twist angle as a function of temperature.
+However, we note that our samples with higher concentrations of ethanol have a lower clearing point and thus the measurements corresponds to a higher $\tilde{T}$, indicating that it is not likely that increasing temperature for a given sample will cahuse $K_{24} \approx 2 K_{22}$.
+\begin{figure}
+  \centering
+  \includegraphics{figures/C7/Ch7-Figs_CapStructures.png}
+  \caption{Cylindrical structures of 5CB in a yield-stress material.
+  (A), Bright-field image of a cylindrical structure of 5CB in a yield-stress medium consisting of 1\% w/w PVA, 1.5\% w/w Carbopol, 3\% w/w glycerol, 30\% w/w ethanol, 64.5 w/w \% Millipore water.
+  (B--E), OPM textures of cylindrical structures of 5CB with (B,D) having aligned P and A, and (C,E) having P and A oriented for minimum transmission through the 5CB structure.
+  (B,C) are a section of the structure in (A), while (D,E) are a section from a structure in an outer medium consisting of 1\% w/w PVA, 1.8\% w/w Carbopol, 3\% w/w glycerol, 94.2 w/w \% Millipore water.
+  Scale bar for (A--C) is 500 $\upmu$m; for (D,E) the scale bar is 250 $\upmu$m.
+  }\label{f:7-CapStructure}
+\end{figure}
