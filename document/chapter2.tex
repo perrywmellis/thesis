@@ -173,7 +173,7 @@ In addition, we know that winding numbers are additive~\cite{RN196}, such that c
 The additivity can be seen in Figure~\ref{f:2-2DMeas}(F), where a contour surrounding two $s = +1/2$ defects has the same winding number in $\mathbb{R}\mathbb{P}^1$ as the contour encircling the single $s = +1$ defect in Figure~\ref{f:2-2DMeas}(E).
 Similarly, the additivity of defects also means that the (additive) inverse of a defect with winding number $+k$ is a defect with winding number $-k$.
 For example, combining an $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
-Finally, we note that the homogeneous state acts as the identity element for for the set of defects as $k + 0 = k$.
+Finally, we note that the homogeneous state acts as the identity element for the set of defects as $k + 0 = k$.
 Since we have satisfied the axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
 Thus, we can characterize the homotopy classes of point defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1) = \mathbb{Z}/2$, the first \emph{homotopy group}, also known as the \emph{fundamental group}, of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
 Hence, the quantity $s$ is a topological quantity often referred to as ``topological charge.''
@@ -191,7 +191,7 @@ Hence, the quantity $s$ is a topological quantity often referred to as ``topolog
   The red contour spans $\mathbb{RP}^1$, and thus has a winding number of +1 in $\mathbb{R}\mathbb{P}^1$ and +1/2 in $\mathbb{S}^1$.
   (D), An $S = -1/2$ defect with the singularity at the blue point.
   In $\mathbb{R}\mathbb{P}^1$, the blue contour would have the same winding as the red contour in (C), but would go the opposite direction.
-  (E), An $s = +1$ defect (green dot) encircled by the the green contour.
+  (E), An $s = +1$ defect (green dot) encircled by the green contour.
   In $\mathbb{R}\mathbb{P}^1$, the contour would have the same direction as the red contour in (C), but would cover $\mathbb{R}\mathbb{P}^1$ twice and $\mathbb{S}^1$ once.
   (F), Two $s = +1/2$ defects (red dots) placed near to each other such that the green contour encircling both defects sees the same winding in order parameter space as the green contour in (E)
   Thus, far from the defects, we cannot distinguish between structures resulting from a single $s = +1$ defect and two $s = +1/2$ defects, reflecting the additivity of topological charge in 2D.}\label{f:2-2DMeas}
@@ -290,13 +290,13 @@ This is a phenomenological approach similar to Hooke's elasticity theory of a so
 This is again a reflection that there is no restriction to the center-of-mass positions of the mesogens; the nematic elasticity only opposes deformations in the orientations of the mesogens.
 
 \subsection{A brief derivation}
-Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
+Let a local coordinate system at a point be defined by $\{x_1, x_2, x_3 \}$ such that we can define $\mathbf{n} = (\mathbf{n} \cdot \hat{e}_i) \hat{e}_i = n_i\hat{e}_i$, where we again sum over repeated indices, and $\hat{e}_i$ is the unit vector associated with $x_i$ and $\{\hat{e}_1, \hat{e}_2, \hat{e}_3 \}$ forms an orthonormal basis.
 If we let $\hat{e}_3$ be parallel to $\mathbf{n}$ at the point and consider situations where $x_i \ll 1$, we can locally expand $n_i$ as:
 \begin{align}
   n_1 &= \frac{\partial n_1}{\partial x_1}x_1 + \frac{\partial n_1}{\partial x_2}x_2 + \frac{\partial n_1}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber \\
-      &= a_1 x_1 + a_2 x_2 + a_3 x_3 + + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordA}  \\
+      &= a_1 x_1 + a_2 x_2 + a_3 x_3 + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordA}  \\
   n_2 &= \frac{\partial n_2}{\partial x_1}x_1 + \frac{\partial n_2}{\partial x_2}x_2 + \frac{\partial n_2}{\partial x_3}x_3 + \mathcal{O}\big (x^2 \big ) \nonumber  \\
-      &= a_4 x_1 + a_5 x_2 + a_6 x_3 + + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordB}  \\
+      &= a_4 x_1 + a_5 x_2 + a_6 x_3 + \mathcal{O}\big (x^2 \big )\label{e:2-LocalCoordB}  \\
   n_3 &= 1 + \mathcal{O}\big (x^2 \big ). \nonumber
 \end{align}
 Now expanding about the undistorted state, we can write the free energy density to quadratic order in the first derivatives as:
@@ -325,7 +325,7 @@ Substituting Eq.~\ref{e:2-Kijreduced} into Eq.~\ref{e:2-FrankGeneralExpansion} a
 If we return to the source of the $a_i$ coefficients in Eqs.~\ref{e:2-LocalCoordA}, \ref{e:2-LocalCoordB}, we can uncover the physical significance of the distortions:
 \begin{align}
   s_1 = a_1 = \frac{\partial n_1}{\partial x_1} \quad & \quad s_2 = a_5 = \frac{\partial n_2}{\partial x_2}\label{e:2-PhysicalDistortionsA} \\
-  t_1 = - a_4 = \frac{\partial n_2}{\partial x_1} \quad & \quad t_2 = a_2 = \frac{\partial n_1}{\partial x_2}\label{e:2-PhysicalDistortionsB} \\
+  t_1 = - a_4 = -\frac{\partial n_2}{\partial x_1} \quad & \quad t_2 = a_2 = \frac{\partial n_1}{\partial x_2}\label{e:2-PhysicalDistortionsB} \\
   b_1 =  a_3 = \frac{\partial n_1}{\partial x_3} \quad & \quad b_2 = a_6 = \frac{\partial n_2}{\partial x_3},\label{e:2-PhysicalDistortionsC}
 \end{align}
 where we have renamed the coefficients to reflect their associated distortion, with $s_1$ and $s_2$ signifying a ``splay'' distortion, $t_1$ and $t_2$ signifying a ``twist'' distortion, and $b_1$ and $b_2$ signifying a ``bend'' distortion.
@@ -367,7 +367,7 @@ However, as Nehring and Saupe pointed out, a full expansion to the lowest order 
 In fact, Oseen's original free energy expression also included terms depending on 2$^\textup{\rm nd}$ derivatives of $\mathbf{n}$ that Frank neglected~\cite{RN205}.
 Thus, Eq.~\ref{e:2-FrankGeneralExpansion} becomes:
 \begin{equation}
-  f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{a,j},\label{e:2-NSGeneralExpansion}
+  f(\mathbf{n}) = K_i a_i + K_{ij} a_i a_j + K'_{ij} a_{i,j},\label{e:2-NSGeneralExpansion}
 \end{equation}
 where $a_{i,j}$ represents $\dfrac{\partial a_i}{\partial x_j}$, giving us 18 terms in the $K'_{ij}$ coefficient matrix.
 Again using the symmetries of a nematic, collecting terms, and rewriting the expression in terms of vector calculus manipulations, we arrive at a new expression for the free energy:
@@ -387,28 +387,27 @@ We can then write our director in terms the angle $\phi$ in the $xz$-plane measu
 Let the director field have the form $\phi_n(z) = \phi_d + \beta ((z/d)^n-1)$, such that $\phi(0) = \phi_d - \beta$ and $\phi(d) = \phi_d$, with $\phi_d$ and $\beta$ fixed angles that give the boundary conditions.
 In this case, $n$ is a positive integer that governs how the director varies between the two plates.
 This geometry is known as the splay-bend geometry.
-For simplicity, we take $K_{11} = K_{33} = K$, and assume $n$ is large, allowing us to approximate the free-energy as
+For simplicity, we take $K_{11} = K_{33} = K$, and assume $n$ is large, allowing us to approximate the free-energy as,
 \begin{align}
-  F &= \frac{1}{4}\frac{K \beta^2}{d^2}n + \frac{K_{13} \sin (2 \phi_d)\beta}{2d}n \\
-  &= \frac{1}{4}\frac{K \beta^2}{d^2} \left ( 1 + \frac{2 K_{13} \sin(2 \phi_d)}{K \beta}  \right) n.\label{e:2-UnboundedFromBelow}
+  F &\approx \frac{1}{4}\frac{K \beta^2}{d^2} \left ( 1 + \frac{2 K_{13} \sin(2 \phi_d)}{K \beta}  \right) n.\label{e:2-UnboundedFromBelow}
 \end{align}
-If we require $\beta < -2 (K_{13}/K) \sin(2 \phi_d)$ and $\phi_d \neq 0, \pi/2$, we see that the the $1 + (2 K_{13})/(K \beta) \sin(2 \phi_d)$ term in Eq.~\ref{e:2-UnboundedFromBelow} is negative, and
+If we require $|\beta|K < 2| K_{13} \sin(2 \phi_d)| $ and $K_{13} \sin(2 \phi_d)/\beta < 0$, then the \\ $1 + 2 K_{13} \sin(2 \phi_d)/(K \beta) $ term in Eq.~\ref{e:2-UnboundedFromBelow} is negative, and
 \begin{align}
   \lim_{n\to\infty} &F = -\infty, \\
   \lim_{n\to\infty} &\phi_n(z) =
   \begin{cases}
-    \phi(d) - \beta \quad \textrm{if} 0 \leq z  < d \\
-    \phi_d \quad \textrm{if} z = 0.
+    \phi_d - \beta \quad \textrm{if }  0 \leq z  < d \\
+    \phi_d \quad \textrm{if } z = d.
   \end{cases}
 \end{align}
 Here, we see that that our director field has a free energy that diverges to $- \infty$, leading to a discontinuity in our director field.
 The discontinuity is called the Oldano-Barbero discontinuity.
-Recall that we initially derived the Frank-Oseen free energy assuming small deformations --- however, we have just shown a discontinuity in the director field using Frank-Oseen free energy.
+Recall that we initially derived the Frank-Oseen free energy assuming small deformations --- however, we have just shown a situation where the Frank-Oseen free energy diverges and leads to a discontinuity in the director field.
 This situation is called the Oldano-Barbero paradox~\cite{RN216,RN220,RN219,RN221}.
 
-The easiest way to solve the paradox is to set $K_{13} = 0$.
-It is worth noting that there has been a concerted effort to solve the paradox without setting $K_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
-However, careful experiments in the splay-bend geometry have found $K_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
+The easiest way to solve the paradox is to set $K'_{13} = 0$.
+It is worth noting that there has been a concerted effort to solve the paradox without setting $K'_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
+However, careful experiments in the splay-bend geometry have found $K'_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
 Consequently, the most common approach is to neglect the splay-bend term altogether~\cite{RN55,RN222}.
 
 
@@ -416,7 +415,6 @@ Consequently, the most common approach is to neglect the splay-bend term altoget
 There has been significant theoretical effort, starting with the pioneering work of Oseen, to relate the microscopic interactions between the nematic mesogens to the macroscopic, measurable $K_{ij}$ of the nematic phase~\cite{RN56,RN55,RN205,RN217,RN225,RN224,RN218,RN222}.
 While an in-depth discussion of the various methods and results is beyond the scope of this document, it is worthwhile to examine the general process and consider the implications for the $K_{ij}$ in the phenomenological expressions derived earlier.
 At the most basic level, the total interaction energy for a system is the sum over the pairwise interaction energy for all pairs of mesogens in the system.
-% Since the interaction potential is positive definite, we see from the microscopics that any elastic constant in Eq~\ref{e:2-FrankFinalExpansion} or Eq.~\ref{e:2-NSFinalExpansion} must be greater than or equal to 0~\cite{RN205}.
 
 However, an energy constructed upon the physical mesogens themselves requires us to know the position and orientation of each individual mesogen.
 Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible pairs of points in the volume~\cite{RN222}.
@@ -426,10 +424,10 @@ This is a density functional theoretic approach~\cite{RN223} and thus yields an 
 \end{equation}
 where $\mathbf{R}$ and $\mathbf{R}'$ are positions, and $G(\mathbf{R},\mathbf{R}')$ is an interaction energy density satisfying $G(\mathbf{R},\mathbf{R}') = 0$ for $|\mathbf{R}-\mathbf{R}'| \gg 0$, reflecting the finite interaction range between the mesogens.
 However, we are looking for a free energy and not just the interaction energy of the system.
-Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy; this is similar to how we derived the Frank-Oseen free energy earlier.
+Thus, it is common to calculate the energy for a homogeneous state and then expand about the homogeneous state to get an expression for a distortion free energy, $\delta F$; this is similar to how we derived the Frank-Oseen free energy earlier.
 Since we are looking to derive an expression for the free energy as a functional of director field, we must satisfy
 \begin{equation}
-  F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
+  \delta F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
   = \int \textrm{d} \mathbf{r} \, f(\mathbf{r}),\label{e:2-NonlocalLocal}
 \end{equation}
 where $f(\mathbf{r})$ is a function of position, $\mathbf{r}$.
@@ -437,29 +435,32 @@ Note that there is not a unique relation between $f(\mathbf{r})$ and $G(\mathbf{
 For example, if $\mathbf{r} = \mathbf{R}$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(\mathbf{r},\mathbf{R}')$.
 However, if $\mathbf{r} = (\mathbf{R} + \mathbf{R}')/2$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(2\mathbf{r} - \mathbf{R}',\mathbf{R}')$.
 Since there are an infinite number of possibilities to choose $\mathbf{r}$ and thus determine $f$, any elastic constants in $f(\mathbf{r})$ cannot depend on how we choose $\mathbf{r}$~\cite{RN55}.
-In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
+% In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
 % Thus, we must also satisfy:
 % \begin{equation}
-%   F[\mathbf{n}] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}) = \int \textrm{d} \mathbf{r} \, f \big ( \rho(\mathbf{r},\mathbf{\omega}) \big),\label{e:2-LessInfo}
+%   F[\mathbf{n}(\mathbf{r})] = \int \textrm{d} \mathbf{r} \, f(\mathbf{n}(\mathbf{r})) = \int \textrm{d} \mathbf{r}\,\textrm{d} \omega \, f \big ( \rho(\mathbf{r},\mathbf{\omega}) \big).\label{e:2-LessInfo}
 % \end{equation}
-% where $\mathbf{n}$ is a function of $\mathbf{r}$.
 % Since the director contains less information than the complete density function, in general there is not a unique way to determine $\mathbf{n}(\mathbf{r})$ from $\rho(\mathbf{r},\mathbf{\omega})$~\cite{RN55}.
-% For a distortion of wavelength $\xi$ and amplitude $\epsilon$, we can only uniquely determine $\mathbf{n}(\mathbf{r})$ if we restrict ourselves to the lowest energy distortions in the the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
+% For a distortion of wavelength $\xi$ and amplitude $\epsilon$, we can only uniquely determine $\mathbf{n}(\mathbf{r})$ if we restrict ourselves to the lowest energy distortions in the long-wavelength $(\xi \rightarrow \infty)$ and small amplitude $(\epsilon \ll 1)$ regime.
 % These modes come from the Nambu-Goldstone theorem, which requires that any broken continuous symmetry results in a soft mode, i.e.\ a mode whose distortion cost vanishes as $\xi^{-2}$ and whose susceptibility diverges in the limit $\xi \rightarrow \infty$~\cite{RN175,RN226,RN227,RN228}.
 % These soft modes are the weakest modes possible and thus will define the leading order in the free energy, making the free energy a unique functional of $\mathbf{n}$~\cite{RN55}. \\
 
 Given this condition, microscopic calculations show that $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are real physical material properties~\cite{RN55,RN56,RN225,RN224,RN217,RN222}.
-However, $K'_{13}$ depends on the choice of $\mathbf{r}$, and thus cannot be a real material parameter.
-% Consequently, $K'_{13} = 0$~\cite{RN55,RN225}.
+However, $K'_{13}$ depends on the choice of $\mathbf{r}$, and therefore cannot be a real material parameter.
+Physically, we can think about this result in terms of how the free energy scales in terms of the amplitude, $\epsilon$, and wavelength, $\zeta$, of an arbitrary distortion in a NLC.
+Since $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are all composed of only $1^{\rm st}$ derivatives, their contribution to the free energy $\sim (\epsilon/\zeta)^2$.
+However, $K_{13}'$ is a $2^{\rm nd}$ derivative with a contribution to the free energy $\sim \epsilon/(\zeta^2)$.
+This linear dependence on the amplitude in the $K_{13}'$ distortion makes the homogeneous director state unstable to long wavelength ($\zeta \rightarrow \infty$) distortions, where the energetic cost of a distortion vanishes~\cite{RN55}.
+Consequently, $K'_{13} = 0$ and the common approach of neglecting splay-bend is valid.~\cite{RN55,RN225}.
+With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 % The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
 % Since inversion symmetry is assumed in deriving the phenomenological expressions in Eqs.~\ref{e:2-NSFinalExpansion} and~\ref{e:2-FrankFinalExpansion}, situations that violate inversion symmetry create far more issues than simply the inclusion of a $K_{13}'$ term.
 % Note that while there have been microscopic calculations that predict a nontrivial $K'_{13}$, these calculations~\cite{RN224,RN217,RN222} have specified a $(\mathbf{R},\mathbf{R}') \rightarrow \mathbf{r}$ mapping, rendering their $K'_{13}$ values invalid.
-Thus, the Oldano-Barbero paradox is resolved and the common approach of neglecting splay-bend is valid.
-With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 
 Microscopic calculations also show that close to a boundary, $K_{ij}$ in general deviate from their bulk values and become position-dependent.
-This is because the mesogens are now interacting with whatever material is outside of the nematic volume~\cite{RN56,RN57,RN55}.
+This is because the mesogens are now interacting with the material outside of the nematic volume~\cite{RN56,RN57,RN55}.
 However, this interaction is limited by the range of the intermolecular potential, such that the position dependence of the $K_{ij}$ vanishes over a small boundary layer --- beyond this layer the $K_{ij}$ return to their bulk values, which depend only on the specific nematic material.
+
 In summary, microscopic calculations show that the free energy of a NLC is composed of terms quadratic in $|\nabla \mathbf{n}|$.
 Even though terms linear in $|\nabla ^2 \mathbf{n}|$ could in principle contribute to the free energy to the same order as terms quadratic in the 1$^\textup{\rm st}$ derivatives, microscopic calculations show that the coefficients associated with 2$^\textup{\rm nd}$-derivative distortions vanish, thus removing the problems that the 2$^\textup{\rm nd}$-derivative distortions bring.
 % In addition, since the free energy is constructed using a positive-definite pairwise potential, all the elastic constants in the phenomenological free energy expressions must be greater than or equal to 0.
@@ -658,7 +659,7 @@ However, the nematic-isotropic phase transition in 2D has been explored heavily 
 
 \subsection{The distortion free energy}
 If we consider $\mathbf{Q}(\mathbf{r})$ instead of the mean approximation $\bm{\mathcal{Q}}$, we can write a distortion free energy similar to the Frank-Oseen free energy.
-Since a Landau-type free energy is an expansion in the scalar order parameter near the phase transition, in general is is only valid near the phase transition.
+Since a Landau-type free energy is an expansion in the scalar order parameter near the phase transition, in general is only valid near the phase transition.
 However, in NLC, $S(T_{NI}) \approx 0.3 \textup{ to } 0.4$, and $S(T \ll T_{NI}) \approx 0.6 \textup{ to } 0.8$.
 Hence, we see that $S$ near $T_{NI}$ is not so different than $S$ well below $T_{NI}$, indicating that we may still use a Landau-de Gennes free energy inside the nematic phase~\cite{RN198}.
 
@@ -740,7 +741,7 @@ However, due to its simplicity and the fact that the $K_{ij}$ are associated wit
 
 \subsection{The scaling of the Frank elastic constants}
 From the relations in Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, we see that to leading order the Frank-Oseen elastic constants scale with $S^2$; the $S^3$ scaling comes entirely from the single higher-order term [see Eq.~\ref{e:2-LdGHigherOrderInvariant}].
-Since $S$ is a monotomic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
+Since $S$ is a monotonic function of $T$~\cite{RN33}, the $S$-dependence of $K_{ij}$ also reflects the temperature dependence near the phase transition.
 However, as $S(T_{NI})$ is not infinitely small at the phase transition and $S(T < T_{NI}) \approx S(T_{NI})$, the temperature scaling predicted by the Landau-de Gennes free energy can still be used throughout the nematic phase~\cite{RN198}.
 
 In fact, there is work that finds that fitting $L_1$, $L_2$, and $L_4$ from Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsC} to the measured $K_{ii}$ captures qualitatively the behavior of the $K_{ii}$ throughout the nematic range~\cite{RN198}.
@@ -798,10 +799,10 @@ If the temperature is too high, the nematic phase will melt to the isotropic pha
 Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as to temperature.
 
 In this Thesis, we will primarily use 4-cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
-5CB belongs to the cyanobiphenyl family of NLC, which are characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of Carbon atoms in the group~\cite{RN33}.
+5CB belongs to the cyanobiphenyl family of NLC, which are characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of carbon atoms in the group~\cite{RN33}.
 In the case of 5CB, the chemical formula is: (CN)(C$_6$H$_4$)(C$_6$H$_4$)(C$_5$H$_{11}$).
-Thus, we see that the ``5'' in 5CB refers to the number of Carbon atoms in the alkyl group.
-Since the different cyanobiphenyls generally only differ in the number of Carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply to any $p$CB.
+Thus, we see that the ``5'' in 5CB refers to the number of carbon atoms in the alkyl group.
+Since the different cyanobiphenyls generally only differ in the number of carbon atoms in the alkyl group, the anchoring techniques we cover below for 5CB are general and should apply to any $p$CB.
 
 To enforce homeotropic anchoring for 5CB against a smooth, isotropic solid boundary such as a glass capillary or glass slide, it is common to either deposit surfactant molecules or bond silanes to the surface.
 In both cases, the smooth surface becomes decorated with long chains that stick up normal to the surface.
@@ -820,7 +821,6 @@ While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring
 Thus, surface is often coated with a polymer such that the polymer orientations on the surface are random.
 Since the polymers have no preferred alignment in the plane of the surface, the mesogens are free to choose their own director in the plane~\cite{RN313}, as seen schematically in Figure~\ref{f:2-Anchor}(B).
 
-% For example, electrospinning poly(vinyl alcohol) (PVA) or poly(ethylene oxide) (PEO) onto glass yields degenerate planar anchoring for 5CB~\fxnote{reference}.
 If a preferred anchoring direction in the plane, $\bm{\sigma}$, is desired, the polymer coating can be rubbed along $\bm{\sigma}$, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
 The NLC will the align along the rubbing direction, breaking the degeneracy in the anchoring~\cite{RN33,}.
 Note that rubbed polymer surfaces do not have perfect planar anchoring but rather exhibit a small tilt angle~\cite{RN232}.
@@ -897,10 +897,10 @@ The radial texture only rotates with the polarizer and analyzer but does not cha
 
 \begin{table}[t]
   \centering
-\caption{Basic group theory definitions~\cite{RN320,RN319}}
+\caption{Basic group theory definitions~\cite{RN320,RN319}.}
 \begin{tabular}{|r l|}
 \hline
-{\bf set}:& A collection of objects\\ \\
+{\bf set}:& A collection of objects\\[10 pt]
 {\bf group}:& \begin{minipage}[t]{0.65\textwidth}
 A set, $\Sigma$, and a binary operation, or group multiplication, $\cdot$, that combines two elements in the set to form a third element in the set, satisfying:
     \begin{itemize}
@@ -909,16 +909,16 @@ A set, $\Sigma$, and a binary operation, or group multiplication, $\cdot$, that 
       \item[]{\bf invertability}: $\forall \; a \in \Sigma$, $\exists! \; a^{-1} \in \Sigma$ s.t. $a a^{-1} = a^{-1} a = e$, with $e$ the identity.
     \end{itemize}
     If $\forall \; a,b \in \Sigma, \, a \cdot b = b \cdot a$, the group is said to be Abelian.
-    Note that the requirement $\forall \; a,b \in \Sigma, \; a \cdot b \in \Sigma$ is known as {\bf closure}.
-\end{minipage}\\ \\
+    Note that the requirement $\forall \; a,b \in \Sigma, \; a \cdot b \in \Sigma$ is known as {\bf closure}.\\
+\end{minipage}\\
 {\bf Lie group}:& \begin{minipage}[t]{0.65\textwidth}
-A group that is also a differentiable manifold, whose group operation is also differentiable. Lie groups are associated with continuous symmetries, for example, SO(3), the set of all rotations in 3D Euclidean space under multiplication. Other common Lie groups include $n$-dimensional Euclidean space $\mathbb{R}^n$ under vector addition, and GL(2), the group of $2 \times 2$ invertible matrices, also under multiplication.
-\end{minipage}\\ \\
+A group that is also a differentiable manifold, whose group operation is also differentiable. Lie groups are associated with continuous symmetries, for example, SO(3), the set of all rotations in 3D Euclidean space under multiplication. Other common Lie groups include $n$-dimensional Euclidean space $\mathbb{R}^n$ under vector addition, and GL(2), the group of $2 \times 2$ invertible matrices, also under multiplication.\\
+\end{minipage}\\
 {\bf discrete group}:& \begin{minipage}[t]{0.65\textwidth}
-A group whose elements must be countable. This is instantly satisfied if there are a finite number of elements in the group. In this case the order of the group is given by the number of elements in the group. If there are an infinite number of elements, there must be a one-to-one mapping from the elements to the integers.
-\end{minipage}\\ \\
+A group whose elements must be countable. This is instantly satisfied if there are a finite number of elements in the group. In this case the order of the group is given by the number of elements in the group. If there are an infinite number of elements, there must be a one-to-one mapping from the elements to the integers.\\
+\end{minipage}\\
 {\bf homomorphism}:& \begin{minipage}[t]{0.65\textwidth}
-A structure-preserving map, $\varphi$, between the groups $G$ and $H$, $\varphi : G \to H$. A homomorphism must satisfy, $\forall \; a, b \in G$, $\varphi(a \cdot b) = \varphi(a) \cdot \varphi(b)$. Since $\forall \; a \in G, \; \varphi(a) \in H$, we see that a homomorphism preserves the group multiplication. A homomorphism is not necessarily a one-to-one mapping. If the homomorphism is one-to-one, then the homeomorphism is an {\bf isomorphism}.
+A structure-preserving map, $\varphi$, between the groups $G$ and $H$, $\varphi : G \to H$. A homomorphism must satisfy, $\forall \; a, b \in G$, $\varphi(a \cdot b) = \varphi(a) \cdot \varphi(b)$. Since $\forall \; a \in G, \; \varphi(a) \in H$, we see that a homomorphism preserves the group multiplication. A homomorphism is not necessarily a one-to-one mapping. If the homomorphism is one-to-one, then the homeomorphism is an {\bf isomorphism}.\\
 \end{minipage}\\
 \hline
 \end{tabular}
