@@ -311,7 +311,13 @@ Bulk singularities that are points are known as hedgehogs and are characterized 
 \end{equation}
 where the integral is taken over a topologically spherical surface enclosing the defect, and $\theta$ and $\phi$ are, respectively, the polar and azimuthal angles on that surface~\cite{RN153}.
 In this case, instead of counting the number of times the director wraps around $\mathbb{S}^1$, as we did for the topological charge, we consider the orientation of $\mathbf{n}$ on the spherical surface enclosing the defect mapped to $\mathbb{S}^2$, the unit sphere.
-The integrand in Eq.~\ref{e:1-HedgehogCharge} is the determinant of the Jacobian from the director on the topologically spherical surface in real space to $\mathbb{S}^2$; it tells us how much area on $\mathbb{S}^2$ is covered by $\mathbf{n}$ on the surface enclosing the defect.
+The director serves as the map,
+\begin{align}
+  \mathbf{n} :& \mathbb{S}^2 \rightarrow \mathbb{S}^2 \nonumber \\
+              & (\theta, \phi) \mapsto \mathbf{k}(\theta,\phi), \nonumber
+\end{align}
+where $\mathbf{k}$ is a vector normal to the ``surface'' defined by the the director.
+The integrand in Eq.~\ref{e:1-HedgehogCharge} is the determinant of the Jacobian matrix of the map; it counts the area swept out on the target sphere by $\mathbf{n}$ on the surface enclosing the defect.
 Thus, the hedgehog charge is then the number of times the orientations of $\mathbf{n}$ cover $\mathbb{S}^2$~\cite{RN153}.
 Therefore, confining a NLC to a volume that is topologically spherical with homeotropic boundary conditions must yield a total ``hedgehog charge'' $|q|=1$.
 
@@ -334,7 +340,7 @@ This is new; prior experiments in cylinders found a twisted ground state only wh
 In our case, the confining geometry induces twist even in NLC that do not preferentially favor twist distortions.
 
 In Chapter 5, we return to a spherical topology, confining NLC to a capillary bridge with homeotropic anchoring to study the influence of confinement shape on defect type.
-We generate waist-shaped and barrel-shaped bridges and find that waist-shaped bridges contain hyperbolic defects with negative hedgehog charge while barrel-shaped bridge contain radial defects with positive hedgehog charge.
+We generate waist-shaped and barrel-shaped bridges and find that waist-shaped bridges contain hyperbolic defects with negative hedgehog charge while barrel-shaped bridges contain radial defects with positive hedgehog charge.
 In addition, we find that the ratio of the bridge height to its width determines whether the singularity is a ring defect or a hedgehog.
 
 In Chapter 6, we summarize, conclude, and present results that open the door to future work that builds on this Thesis.
