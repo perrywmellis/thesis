@@ -36,12 +36,13 @@ However, in this Thesis, we will focus only on uniaxial NLC whose constituent pa
 
 \subsection{The director and the order parameter}
 Given a group of rods, we want to determine if the system is in the isotropic or the nematic phase, in addition to finding the director, $\mathbf{n}$, provided that the rods are in the nematic phase.
-Since we have a collection of rods with no specified head nor tail, the director has inversion symmetry such that $\mathbf{n} = -\mathbf{n}$ and $\mathbf{n}\cdot\mathbf{n} = 1$.
+Since we have a collection of rods with no specified head nor tail, the director possesses inversion symmetry, where $\mathbf{n}$ and $-\mathbf{n}$ describe the same physical state.
+In addition, we take the director to have unit length, $\mathbf{n}\cdot\mathbf{n} = 1$.
 Thus, to indicate nematic order, we need an order parameter that goes to $0$ in the isotropic phase, is nonzero in the nematic phase, and describes the broken symmetry~\cite{RN33,RN175}.
 We will first derive this quantity for a collection of rods laying in a 2D plane and then generalize to rods in 3D.
 Let a 2D collection of rods laying in a plane be indexed by $\alpha = 1,2,\dots, N$, such that the orientation of a given rod can be specified with the unit vector $\mathbf{u}^{(\alpha)} = u^{(\alpha)}_i\hat{e}_i$, as seen in Figure~\ref{f:2-NematicSym}(A), where we use the Einstein summation convention to sum over repeated indices and $\{\hat{e}_1,\hat{e}_2  \}$ is the standard basis in $\mathbb{R}^2$.
 Note that due to the inversion symmetry of the nematic phase $\langle \mathbf{u}^{(\alpha)}\rangle_{\alpha} = 0$, where $\langle \cdot \rangle_{\alpha}$ represents an ensemble average over all $\alpha$.
-Thus, to accommodate the $\mathbf{u}^{(\alpha)} = -\mathbf{u}^{(\alpha)}$ inversion symmetry of a nematic, we will construct a symmetric rank-2 tensor from $\mathbf{u}^{(\alpha)}$.
+Thus, to accommodate the inversion symmetry of $\mathbf{u}^{(\alpha)}$, we will construct a symmetric rank-2 tensor from $\mathbf{u}^{(\alpha)}$.
 Let:
 \begin{equation}
   \mathbf{Q} = \left \langle \mathbf{u}^{(\alpha)} \otimes \mathbf{u}^{(\alpha)} - \frac{1}{2} \mathbb{1} \right \rangle_{\alpha},\label{e:2-2DOrderRaw}
@@ -65,7 +66,7 @@ We then have:
 \end{align}
 where $\cos \theta'^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_1'$ and $\sin \theta'^{(\alpha)} = \mathbf{u}^{(\alpha)} \cdot \hat{e}_2'$.
 
-Since $\mathbf{Q}$ is symmetric, we can find a basis of eigenvectors where $\mathbf{Q}'$ is diagonal.
+Since $\mathbf{Q}$ is symmetric, we can always find a basis of eigenvectors where $\mathbf{Q}'$ is diagonal.
 Choose the $\hat{e}'_i$ to be the eigenvectors of $\mathbf{Q}$.
 This implies $ \mathbf{V} \mathbf{Q} \mathbf{V}^T$ must be diagonal such that $\langle \sin \theta'^{(\alpha)} \cos \theta'^{(\alpha)} \rangle_{\alpha} = \langle \sin (2 \theta'^{(\alpha)}) \rangle_{\alpha} = 0$.
 This can occur in two instances.
@@ -113,16 +114,17 @@ that can be written in terms of the director as:
 with $S = \frac{1}{2} \big \langle 3 \cos^2 \theta'^{(\alpha)}  - 1 \big  \rangle_{\alpha} = \big \langle P_2(\cos \theta'^{(\alpha)}) \big \rangle_{\alpha} $,
 where again $\theta'^{\alpha} = \arccos (\mathbf{u}^{\alpha} \cdot \mathbf{n})$, and $P_2(\cdot)$ is the Legendre Polynomial of order 2~\cite{RN33,RN175}.
 As in two dimensions, we take the eigenvector associated with the largest eigenvalue to be $\mathbf{n}$.
-Thus, for a collection of rods, we can determine the phase and, if applicable, $\mathbf{n}$ by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
+Thus, for a collection of rods, we can determine if the collection is nematic or isotropic and, if applicable, $\mathbf{n}$ by calculating $\mathbf{Q}$ according to Eqs.~\ref{e:2-2DOrderRaw} or~\ref{e:2-3DOrderRaw} and diagonalizing.
 
 
 \subsection{Defects in a nematic}\label{c:2-defects}
 While we briefly mentioned the dimensionality of defects and their associated classification schemes in Section~\ref{c:1}, here we take a deeper look and use homotopy theory as laid out in references~\cite{RN196,RN236,RN153} to introduce a more complete theory of defects in nematic materials.
+Homotopy theory deals with classifying elements of topological spaces using a group structure; in this case, we will classify defects as members of the first and second homotopy groups.
 As mentioned in Chapter~\ref{c:1}, defects in ordered media are defined generally as regions where the characteristic order of the phase is not satisfied.
 In a nematic phase, defects are locations where $\mathbf{n}$ is undefined.
 For a nematic in 3D, these locations can be $0$-dimensional ($0$D) (point defects), $1$-dimensional ($1$D) (line defects), or $2$D (wall defects).
 General examples of defects with different dimensionality in 3D and 2D are drawn schematically in Figure~\ref{f:2-GenDef}.
-Note that when a 3D defects structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D.
+Note that when a 3D defect structure depends only on 2 coordinates, as seen in the invariance along $\hat{z}$ in the wall and line defects in Figure~\ref{f:2-GenDef}, the director in the $xy$ plane appears as if we were in 2D.
 For example, a wall in 3D is similar to a line in 2D and a line in 3D is similar to a point in 2D, as highlighted by the arrows in Figure~\ref{f:2-GenDef}.
 
 However, while it is appealing to equate similar-looking structures in 2D and 3D, the additional possible director orientations in a 3D nematic mean that a 3D nematic is fundamentally different than a 2D nematic.
@@ -135,15 +137,15 @@ For clarity, we refer to Table~\ref{t:2-GroupTheory} for definitions of some use
   In 3D, there is the 2D wall defect, the 1D line defect, and the 0D point defect.
   Cross-sections of these three structures are shown schematically in the $xy$ plane and the $xz$ plane.
   The defects are marked with either a dot or a dashed line.
-  The head of the``nails'' in the $xz$ cross-section of the wall point into the page.
+  The heads of the``nails'' in the $xz$ cross-section of the wall, point into the page.
   In 2D, a nematic can have 1D line defefcts and 0D point defects, where the singular region is highlighted with either a dashed line or a point.
   Note that the wall and line structures in 3D are invariant along the $\hat{z}$-direction.
   This invariance means that the $xy$ cross-section of the wall and line structure in 3D map to the line and point structure in 2D, as shown by the arrows in the schematic.}\label{f:2-GenDef}
 \end{figure}
 
-Consider a 2D set of vectors such that their orientations can be described by a single angle.
+Consider a set of vectors in 2D such that their orientations can be described by a single angle.
 We can map these vector orientations onto an \emph{order parameter space} given by the 1-sphere, $\mathbb{S}^1$, the unit circle in the plane, such that $\mathbb{S}^1$ describes all the possible orientations of the vectors.
-If instead we consider a nematic where $\mathbf{n} = -\mathbf{n}$, $\mathbb{S}^1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not on the interval $[0,2 \pi)$.
+If instead we consider a nematic, $\mathbb{S}^1$ is no longer an appropriate order parameter space as the orientations of $\mathbf{n}$ are periodic on the interval $[0,\pi)$ and not on the interval $[0,2 \pi)$.
 Instead, for 2D nematics the order parameter space is $\mathbb{R}\mathbb{P}^1$, the real projective plane in 1D, which corresponds to $\mathbb{S}^1$ with antipodal points identified~\cite{RN196,RN153,RN236}.
 This means that specifying the director along a contour in real space will determine a mapping to the order parameter space.
 
@@ -224,7 +226,7 @@ Thus it can be ``slid'' to one side of the sphere and deformed to a point on $\m
 This means that the only stable contours in $\mathbb{R}\mathbb{P}^2$ are those that start and end at antipodal points [see Figure~\ref{f:2-RP2}(C)], wrapping $\mathbb{R}\mathbb{P}^2$ exactly once.
 This also means that contours starting and ending at the same point on $\mathbb{R}\mathbb{P}^2$ can be freely added and subtracted from a contour starting and ending at antipodal points on $\mathbb{R}\mathbb{P}^2$; thus, all contours starting and ending at antipodal points on $\mathbb{R}\mathbb{P}^2$ are homotopic.
 Explicitly, this means that contours with $s = -1/2$ are homotopic to contours with $s = 1/2$ such that $\pi_1(\mathbb{R}\mathbb{P}^2)$ has only one nontrivial element, resulting in $s \in \{ 0,1/2\}$~\cite{RN153}.
-As with walls in 3D and lines in 2D, this does not mean that $s = +1$ structures in 3D are impossible to create, it only means that they are not topologically stable structures and thus can only be stabilized by energetics.
+As with walls in 3D and lines in 2D, this does not mean that $s = +1$ lines in 3D are impossible to create, it only means that they are not topologically stable structures and thus can only be stabilized by energetics.
 Similarly, since an $s = -1/2$ line and an $s = +1/2$ line are homotopic, preferentially generating one structure over the other is a matter of tuning the free energy of each structure.
 \begin{figure}
   \centering
@@ -243,13 +245,13 @@ In real space, we restate Eq.~\ref{e:1-HedgehogCharge} and calculate the topolog
 \end{equation}
  where $\theta$ and $\phi$ are the polar and azimuthal spherical angles, respectively, and $\partial V$ is the bounding surface of the closed volume $V$ containing the defect.
 The volume $V$ must be homotopic to a sphere and thus can have no holes or handles.
-From Chapter~\ref{c:1}, we know that this means that the Euler characteristic of $V$ is $\chi = 2$.
+From Chapter~\ref{c:1}, we know that this means that the Euler characteristic of $\partial V$ is $\chi = 2$.
 Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a topologically spherical surface enclosing the defect to the number of times the orientations cover $\mathbb{S}^2$~\cite{RN153}.
 Hedgehog charge is additive such that calculating $q$ for a volume containing only a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$.
 Thus, $\pi_{2}(\mathbb{R}\mathbb{P}^2) = (\mathbb{Z}, +)$, the Abelian group consisting of the integers under addition.
 
 It is important to note that there are 2 possible ways to turn a given director field into a vector field; either we take the vectors as $\mathbf{n}$ or as -$\mathbf{n}$.
-Since we measure the hedgehog charge by considering how $\mathbf{n}$ on a surface homeomorphic to $\mathbb{S}^2$ covers $\mathbf{RP}^2$, this ambiguity means that any defect in isolation can only be determined up to $|q|$~\cite{RN153}.
+Since we measure the hedgehog charge by considering how $\mathbf{n}$ on a surface homeomorphic to $\mathbb{S}^2$ covers $\mathbb{RP}^2$, this ambiguity means that any defect in isolation can only be determined up to $|q|$~\cite{RN153}.
 Thus, while topological character is determined by homotopy theory, the sign of charge can only be determined relative to a \emph{basepoint} defining the projection from $\mathbb{R}\mathbb{P}^2$ to $\mathbb{S}^2$~\cite{RN153}.
 For example, the defect structures drawn schematically in Figure~\ref{f:2-3DMeas}(A,B) cannot be distinguished \emph{a priori} in order parameter space.
 However, if we choose a basepoint such that the structure in Figure~\ref{f:2-3DMeas}(A) has $q = +1$, evaluating the structure in Figure~\ref{f:2-3DMeas}(B) under the same basepoint will yield $q = -1$.
@@ -275,7 +277,6 @@ Hence, if we were to draw a closed 1D contour that passed through the ring and `
 Finally, we briefly want to touch on the use of the term ``charge'' to characterize defects in NLC.\@
 The choice of this term is no accident and reflects an analogy with electric charges.
 This analogy is born out not only in the additivity of both defect charges and electric charges, but also in their pairwise interactions~\cite{RN33,RN175,RN207}.
-Recall from Eq.~\ref{e:1-TopTheoryofDefects} that the free energy of a nematic configuration with defects on a surface has the exact form of the free energy of a plasma, where the defects act like the charges in the plasma.
 Defects in 2D and 3D with like-signed charge repel and defects with opposite-signed charge attract and even annihilate.
 
 
@@ -383,7 +384,7 @@ This leaves the addition of the splay-bend term as the most significant effect o
 The splay-bend term itself is subject to controversy as its inclusion to the free energy makes the free energy unbounded from below~\cite{RN214,RN215,RN216}.
 We follow Ref.~\cite{RN219} and illustrate this with a simple example of a NLC confined between two parallel plates.
 Let one plate be at $z = 0$ and the other at $z=d$, and let the director vary only in the $xz$-plane.
-We can then write our director in terms the angle $\phi$ in the $xz$-plane measured off of the $x$-axis.
+We can then write our director in terms of the angle $\phi$ in the $xz$-plane measured off of the $x$-axis.
 Let the director field have the form $\phi_n(z) = \phi_d + \beta ((z/d)^n-1)$, such that $\phi(0) = \phi_d - \beta$ and $\phi(d) = \phi_d$, with $\phi_d$ and $\beta$ fixed angles that give the boundary conditions.
 In this case, $n$ is a positive integer that governs how the director varies between the two plates.
 This geometry is known as the splay-bend geometry.
@@ -407,7 +408,7 @@ This situation is called the Oldano-Barbero paradox~\cite{RN216,RN220,RN219,RN22
 
 The easiest way to solve the paradox is to set $K'_{13} = 0$.
 It is worth noting that there has been a concerted effort to solve the paradox without setting $K'_{13} = 0$~\cite{RN220,RN221,RN55,RN222}.
-However, careful experiments in the splay-bend geometry have found $K'_{13} = 0$ within the experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
+However, careful experiments in the splay-bend geometry have found $K'_{13} = 0$ within experimental error, and the experimenters never observe a discontinuity in the director field~\cite{RN312}.
 Consequently, the most common approach is to neglect the splay-bend term altogether~\cite{RN55,RN222}.
 
 
