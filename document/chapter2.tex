@@ -418,7 +418,7 @@ While an in-depth discussion of the various methods and results is beyond the sc
 At the most basic level, the total interaction energy for a system is the sum over the pairwise interaction energy for all pairs of mesogens in the system.
 
 However, an energy constructed upon the physical mesogens themselves requires us to know the position and orientation of each individual mesogen.
-Thus, it is common to consider instead the particle density as a function of orientation and position and integrate over all possible pairs of points in the volume~\cite{RN222}.
+Instead, it is typical to consider instead the particle density as a function of orientation and position and integrate over all possible pairs of points in the volume~\cite{RN222}.
 This is a density functional theoretic approach~\cite{RN223} and thus yields an energy similar to the general expression~\cite{RN56,RN55}:
 \begin{equation}
   F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}'),
@@ -431,11 +431,11 @@ Since we are looking to derive an expression for the free energy as a functional
   \delta F = \int \textrm{d}\mathbf{R} \textrm{d}\mathbf{R}' \, G(\mathbf{R},\mathbf{R}')
   = \int \textrm{d} \mathbf{r} \, f(\mathbf{r}),\label{e:2-NonlocalLocal}
 \end{equation}
-where $f(\mathbf{r})$ is a function of position, $\mathbf{r}$.
-Note that there is not a unique relation between $f(\mathbf{r})$ and $G(\mathbf{R},\mathbf{R}')$; more specifically, $f$ will be determined by how we choose $r$.
+where $f(\mathbf{r})$ is a function of position, $\mathbf{r}$, and here $G(\mathbf{R},\mathbf{R}')$ represents the energy of the distorted state relative to the homogeneous state.
+Note that there is not a unique relation between $f(\mathbf{r})$ and $G(\mathbf{R},\mathbf{R}')$; more specifically, $f$ will be determined by how we choose $\mathbf{r}$.
 For example, if $\mathbf{r} = \mathbf{R}$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(\mathbf{r},\mathbf{R}')$.
 However, if $\mathbf{r} = (\mathbf{R} + \mathbf{R}')/2$, then $f(\mathbf{r}) = \int \textrm{d}\mathbf{R}' \, G(2\mathbf{r} - \mathbf{R}',\mathbf{R}')$.
-Since there are an infinite number of possibilities to choose $\mathbf{r}$ and thus determine $f$, any elastic constants in $f(\mathbf{r})$ cannot depend on how we choose $\mathbf{r}$~\cite{RN55}.
+This provides a condition on the elastic constants we use to calculate $f(\mathbf{r})$: the elastic constants in $f(\mathbf{r})$ cannot depend on how we choose $\mathbf{r}$~\cite{RN55}.
 % In addition, the microscopic calculations are performed with a density function that is dependent on position and orientation, $\rho(\mathbf{r},\mathbf{\omega})$, where $\mathbf{\omega}$ specifies an orientation; however, the phenomenological free energy expressions are only a function of the director field.
 % Thus, we must also satisfy:
 % \begin{equation}
@@ -451,7 +451,8 @@ However, $K'_{13}$ depends on the choice of $\mathbf{r}$, and therefore cannot b
 Physically, we can think about this result in terms of how the free energy scales in terms of the amplitude, $\epsilon$, and wavelength, $\zeta$, of an arbitrary distortion in a NLC.
 Since $K_{11}$, $K_{22}$, $K_{33}$, and $K_{24}$ are all composed of only $1^{\rm st}$ derivatives, their contribution to the free energy $\sim (\epsilon/\zeta)^2$.
 However, $K_{13}'$ is a $2^{\rm nd}$ derivative with a contribution to the free energy $\sim \epsilon/(\zeta^2)$.
-This linear dependence on the amplitude in the $K_{13}'$ distortion makes the homogeneous director state unstable to long wavelength ($\zeta \rightarrow \infty$) distortions, where the energetic cost of a distortion vanishes~\cite{RN55}.
+If we consider a distortion with $|\epsilon| <1$ and $\zeta \gg 1$, the linear dependence on the amplitude in the $K_{13}'$ term means that it will dominate the other $K_{ij}$ that are $\sim \epsilon^2$~\cite{RN55}.
+Thus, $K_{13}'$ makes a homogeneous director field unstable to long wavelength distortions.
 Consequently, $K'_{13} = 0$ and the common approach of neglecting splay-bend is valid.~\cite{RN55,RN225}.
 With $K_{13}'=0$, we see that Eq.~\ref{e:2-NSFinalExpansion} reduces to the expression for the Frank-Oseen free energy in Eq.~\ref{e:2-FrankFinalExpansion}.
 % The conclusion that $K'_{13} = 0$ also holds when calculations are done close to a boundary provided the $\mathbf{n} = -\mathbf{n}$ inversion symmetry is maintained~\cite{RN56}.
@@ -478,7 +479,7 @@ In addition, the saddle-splay distortion is the divergence of a vector, giving u
 \end{align}
 where $V$ is a volume, $\partial V$ is a piecewise-smooth manifold bounding $V$, and $\mathbf{k}$ is the unit surface normal.
 
-Note that the $\mathbf{n}$ needs to be continuous and differentiable everywhere on $\partial V$, meaning that the manifold needs to be defect-free.
+Note that $\mathbf{n}$ needs to be continuous and differentiable everywhere on $\partial V$, meaning that the manifold needs to be defect-free.
 However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
 Therefore, the divergence theorem can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
 In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
