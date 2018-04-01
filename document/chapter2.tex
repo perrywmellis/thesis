@@ -164,7 +164,7 @@ More generally, any contour in $\mathbb{R}\mathbb{P}^1$ with winding number $k$ 
 For example, note that as a single point in $\mathbb{R}\mathbb{P}^1$ corresponds to a homogeneous $\mathbf{n}$-field in real space, we see that the singularity-free director field with $k=0$ bounded by the purple contour in Figure~\ref{f:2-2DMeas}(A) is homotopic to the homogeneous state of any orientation, but is not homotopic to the director field with $k=1$ bounded by the red contour in Figure~\ref{f:2-2DMeas}(A).
 Thus, contours with the same winding number form a homotopy class, where we can now start to think about categorizing the different homotopy classes of defects using a group structure.
 
-While we could form the group using the winding numbers in $\mathbb{R}\mathbb{P}^1$ themselves, it is more common to use the winding number about $\mathbb{S}^1$ such that the winding number is equivalent to measuring the amount of director rotation around a contour in real space~\cite{RN23,RN153,RN203}.
+While we could form the group using the winding numbers in $\mathbb{R}\mathbb{P}^1$ themselves, we will instead use the winding number about $\mathbb{S}^1$, such that the winding number is equivalent to measuring the amount of director rotation around a contour in real space~\cite{RN23,RN153,RN203}.
 Reproducing Eq.~\ref{eq:1-topCharge} from Chapter~\ref{c:1} for a director field parametrized by the angle $\phi(\mathbf{r})$, we characterize the defects with their winding number, $s$~\cite{RN153,RN236}:
 \begin{equation}
   s = \frac{1}{2 \pi}\oint_{\partial A} \textrm{d}\mathbf{r} \cdot \nabla\phi(\mathbf{r}),\label{eq:2-topCharge}
@@ -177,8 +177,8 @@ Similarly, the additivity of defects also means that the (additive) inverse of a
 For example, combining an $s = +1/2$ defect and an $s = -1/2$ defect will result in the homogeneous state.
 Finally, we note that the homogeneous state acts as the identity element for the set of defects as $k + 0 = k$.
 Since we have satisfied the axioms for a group laid out in Table~\ref{t:2-GroupTheory}, we see that these defects belong to the group $(\mathbb{Z}/2, +)$, the Abelian group formed from the set of half-integers with addition.
-Thus, we can characterize the homotopy classes of point defects in $\mathbb{R}\mathbb{P}^1$ with $\pi_1 (\mathbb{R}\mathbb{P}^1) = \mathbb{Z}/2$, the first \emph{homotopy group}, also known as the \emph{fundamental group}, of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
-Hence, the quantity $s$ is a topological quantity often referred to as ``topological charge.''
+In addition, because we calculate our winding numbers in $\mathbb{S}^1$, the group $(\mathbb{Z}/2, +) = \pi_1 (\mathbb{R}\mathbb{P}^1)$, where $\pi_1 (\mathbb{R}\mathbb{P}^1)$ is the first \emph{homotopy group}, also known as the \emph{fundamental group}, of $\mathbb{R}\mathbb{P}^1$~\cite{RN196,RN153,RN236}.
+As $s \in \pi_1(\mathbb{R}\mathbb{P}^1)$, $s$ is a topological quantity that is consequently often referred to as ``topological charge.''
 \begin{figure}[h]
   \centering
   \includegraphics{figures/C2/Ch2-Figs_2DMeas.png}
@@ -219,7 +219,7 @@ Immediately, we see that the order parameter space is no longer $\mathbb{R}\math
 Another way to visualize $\mathbb{R}\mathbb{P}^2$ is as a hemisphere where only the base has antipodal points identified.
 We first consider line defects with $d=1$ such that we characterize them with $\pi_{1}(\mathbb{R}\mathbb{P}^2)$, the fundamental group of $\mathbb{R}\mathbb{P}^2$.
 
-Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the winding number.
+Again, we consider $\mathbf{n}$ along a closed 1D contour in real space and the associated 1D contour in $\mathbb{R}\mathbb{P}^2$, with the topological charge given by the winding number in $\mathbb{S}^1$.
 However, we note that in $\mathbb{R}\mathbb{P}^2$, we can only have defects with $s =0,1/2$, as any contour on $\mathbb{R}\mathbb{P}^2$ with an integer value of $s$ can be continuously deformed into a point on $\mathbb{R}\mathbb{P}^2$ since ``you cannot lasso a sphere''~\cite{RN153}.
 More explicitly, any contour on  $\mathbb{R}\mathbb{P}^2$ with integer $s$ must start and end at the same point.
 Thus it can be ``slid'' to one side of the sphere and deformed to a point on $\mathbb{R}\mathbb{P}^2$, as illustrated schematically in Figure~\ref{f:2-RP2}(A,B).
@@ -247,6 +247,7 @@ In real space, we restate Eq.~\ref{e:1-HedgehogCharge} and calculate the topolog
 The volume $V$ must be homotopic to a sphere and thus can have no holes or handles.
 From Chapter~\ref{c:1}, we know that this means that the Euler characteristic of $\partial V$ is $\chi = 2$.
 Physically, $q$ relates the orientations of $\mathbf{n}$ taken on a topologically spherical surface enclosing the defect to the number of times the orientations cover $\mathbb{S}^2$~\cite{RN153}.
+Similar to how the winding numbers for the fundamental group are characterized with $\mathbb{S}^1$, here we are calculating a ``covering number'' using $\mathbb{S}^2$.
 Hedgehog charge is additive such that calculating $q$ for a volume containing only a $+q$ point defect and $-q$ point defect charge will yield $q_{net} = 0$.
 Thus, $\pi_{2}(\mathbb{R}\mathbb{P}^2) = (\mathbb{Z}, +)$, the Abelian group consisting of the integers under addition.
 
@@ -477,17 +478,17 @@ In addition, the saddle-splay distortion is the divergence of a vector, giving u
   F_{24}[\mathbf{n}] &= - \frac{1}{2}\int_{V} \textup{d}^3  \mathbf{r} \bigg \{ (K_{22} + K_{24})  \nabla \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \}\label{e:2-F24GaussA}  \\ &=
   - \frac{1}{2}(K_{22} + K_{24}) \oint_{\partial V} \textup{d}^2  \mathbf{r} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},\label{e:2-F24GaussB}
 \end{align}
-where $V$ is a volume, $\partial V$ is a piecewise-smooth manifold bounding $V$, and $\mathbf{k}$ is the unit surface normal.
+where $V$ is a volume, $\partial V$ is a piecewise smooth manifold bounding $V$, and $\mathbf{k}$ is the unit surface normal.
 
-Note that $\mathbf{n}$ needs to be continuous and differentiable everywhere on $\partial V$, meaning that the manifold needs to be defect-free.
-However, since $\partial V$ only needs to be piecewise continuous, we can always draw the manifold to exclude any defects.
-Therefore, the divergence theorem can always be applied, implying that any nontrivial saddle-splay distortion in $V$ must affect $\mathbf{n}$ on $\partial V$.
-In contrast, nontrivial splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
+Note that $\mathbf{n}$ needs to be continuous and differentiable everywhere on $V$.
+However, since $\partial V$ only needs to be piecewise smooth, we can always draw the manifold to exclude any regions where $\mathbf{n}$ is not continuous and differentiable.
+Therefore, the divergence theorem can always be applied, implying that any saddle-splay distortion in $V$ must affect $\mathbf{n}$ or its derivatives on $\partial V$.
+In contrast, splay, bend, and twist distortions can exist purely in the bulk, such that $\mathbf{n}$ is affected in $V$ but not on $\partial V$.
 In fact, the ability to generate pure bulk distortions for splay, twist, and bend allow for easy measurements of $K_{ij}$ via the Freederickz transition, for example~\cite{RN212,RN213,RN33,RN188,RN182,RN183}.
 In these measurements, the bulk volume is always large enough such that any contribution from the position-dependence of $K_{ij}$ near the boundaries is negligible.
 
 Due to the connection between the bulk saddle-splay distortion and the director orientation on a bounding manifold, the saddle-splay distortion term is often referred to as a surface-like term and sometimes even referred to as an effective anchoring term~\cite{RN206,RN33,RN194,RN58,RN57,RN151}.
-Since any measurement of $K_{24}$ requires $\mathbf{n}$ to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
+Since any measurement of $K_{24}$ requires $\mathbf{n}$ or its derivatives to change at an interface, there is concern that the position-dependence of $K_{ij}$ near an interface leads to the inability to measure the bulk value of $K_{24}$ without contamination from the interface.
 However, we emphasize that while it is tempting to treat $F_{24}$ as a surface term where the energy cost is calculated using the value of $K_{ij}$ at the interface like,
 \begin{equation}
   F_{24}[\mathbf{n}] = - \frac{1}{2}(K_{22}(\mathbf{r}) + K_{24}(\mathbf{r}))_{\mathbf{r} \rightarrow \partial V} \oint_{\partial V} \textup{d}^2  \mathbf{r} \bigg \{   \mathbf{k} \cdot (\mathbf{n}\nabla \cdot \mathbf{n} + \mathbf{n} \times \nabla \times \mathbf{n}) \bigg \},
@@ -506,7 +507,7 @@ Integrating Eq.~\ref{e:2-F24GaussPosition} by parts with $\mathbf{A}(\mathbf{r})
   \oint_{\partial V}\textup{d}^2 \mathbf{r} \left \{ \mathbf{k} \cdot (K_{*} (\bm{\alpha}) \mathbf{A}(\bm{\alpha}) \right \} -  \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}  \\ &=
   K_*(\bm{\alpha}) \oint_{\partial V} \textup{d}^2\mathbf{r} \left \{ \mathbf{k} \cdot \mathbf{A}(\bm{\alpha})\right \} - \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*} (\mathbf{r}) \right \}, \label{e:2-pos_stokes1}
 \end{align}
-where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\partial V)$ out of the integral as $K_*$ only depends on the distance from the boundary~\cite{RN55}.
+where we have chosen $\mathbf{k}$ as the outward-pointing unit normal and we have pulled $K_*(\bm{\alpha})$ out of the integral as $K_*$ only depends on the distance from the boundary~\cite{RN55}.
 Now, we separate $K_*(\mathbf{r}) = K_* + K_*^s(\mathbf{r})$ into the bulk material constant $K_*$ and the position-dependent contribution $K_*^s(\mathbf{r})$, where $K_*^s(\mathbf{r})$ decays across a boundary layer of thickness $d_l$.
 Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
 \begin{align}
@@ -516,12 +517,12 @@ Substituting this into Eq.~\ref{e:2-pos_stokes1}, we are left with:
 \end{align}
 If we now expand $\mathbf{A}(\mathbf{r})$ and $\nabla K_*^s(\mathbf{r})$ over the boundary layer with $\mathbf{r} = \bm{\alpha} - \zeta \mathbf{k}$, where $\zeta$ is the distance from the boundary, we have:
 \begin{align}
-  \mathbf{A}(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{A}(\bm{\alpha}) - \zeta (\mathbf{k} \cdot \nabla \mathbf{A}(\bm{\alpha}))_{\zeta = 0} \label{e:2-expandA} \\
+  \mathbf{A}(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{A}(\bm{\alpha}) - \zeta (\mathbf{k} \cdot \nabla \mathbf{A}(\bm{\alpha})) \label{e:2-expandA} \\
   \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}) &\approx \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k}))_{\zeta = 0} - \zeta\, \mathbf{k}(\mathbf{k} \cdot \nabla (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k})))_{\zeta = 0}
 \end{align}
 As $K_*^s(\mathbf{r})$ decays across a boundary layer of thickness $d_l$, we can approximate the leading order term in $\nabla K_*^s(\bm{\alpha} - \zeta \mathbf{k})$ as:
 \begin{equation}
-  \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}))_{\zeta = 0} =
+  \mathbf{k} (\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha})) =
   \begin{cases}
     \mathbf{k}\frac{K_*^s(\bm{\alpha})}{d_l} & 0 \leq \zeta \leq d_l \\
     0 & \textup{otherwise}
@@ -532,7 +533,7 @@ Thus, to leading order we can write the 2$^\textrm{\rm nd}$ term in Eq.~\ref{e:2
   \int_{V} \textup{d}^3\mathbf{r} \left \{ \mathbf{A} \cdot \nabla K_{*}^s (\mathbf{r}) \right \} & \approx
   \int_{V} \textup{d}^3\mathbf{r} \left \{\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k}(\mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}))  + \mathcal{O}(\zeta) \right \} \\ & \approx
   \mathbf{k} \cdot \nabla K_*^s(\bm{\alpha}) \int_{V} \textup{d}^3\mathbf{r}\left \{\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k} + \mathcal{O}(\zeta) \right \} \\ & \approx
-  \frac{K_*^s(\bm{\alpha})}{d_l} \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{d_l\,\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k} \right \} \\ & \approx
+  \frac{K_*^s(\bm{\alpha})}{d_l} \oint_{\partial V} \textup{d}^2\mathbf{r} \, d_l\left \{\mathbf{A}(\bm{\alpha}) \cdot \mathbf{k} \right \} \\ & \approx
   K_*^s(\bm{\alpha}) \oint_{\partial V} \textup{d}^2\mathbf{r}\left \{ \mathbf{k}  \cdot \mathbf{A}(\bm{\alpha}) \right \} + \mathcal{O}(d_l^2).
 \end{align}
 Substituting back into Eq.~\ref{e:2-pos_stokes2}, we have:
@@ -600,9 +601,10 @@ However, this $\mathbf{Q}$-based phenomenological free energy can also be used t
 
 \subsection{The isotropic-nematic phase transition}
 We consider a free energy density built on an expansion in powers of $\mathbf{Q}(\mathbf{r})$.
-Crucially, the symmetry of a Landau-type free energy describing a phase transition needs to be the same as the lower-symmetry phase~\cite{RN33,RN175}.
-To describe the isotropic-nematic phase transition we need the free energy to be rotation and translation invariant; we expand not just in powers of $\mathbf{Q}$, but in terms of scalar invariants of powers of $\mathbf{Q}$.
-Given that we wish to predict the phase transition, the positional dependence of $\mathbf{Q}(\mathbf{r})$ is unnecessary, so we will instead consider a mean approximation $\langle \mathbf{Q}(\mathbf{r}) \rangle = \bm{\mathcal{Q}}$, such that we can write $\bm{\mathcal{Q}}$ in 3D without loss of generality as:
+Crucially, the symmetry of a Landau-type free energy describing a phase transition needs to be the same as the higher-symmetry phase~\cite{RN33,RN175}.
+In addition, the value of the free energy cannot depend on the choice of coordinate system, such that we expand not just in powers of $\mathbf{Q}$, but in terms of scalar invariants of powers of $\mathbf{Q}$.
+For this example, we neglect the positional dependence of $\mathbf{Q}(\mathbf{r})$ and instead consider a mean approximation $\langle \mathbf{Q}(\mathbf{r}) \rangle = \bm{\mathcal{Q}}$.
+We now write $\bm{\mathcal{Q}}$ in 3D without loss of generality as:
 \begin{equation}
   \bm{\mathcal{Q}} =
     \begin{pmatrix}
@@ -617,7 +619,9 @@ Therefore, we can write the Landau-de Gennes free energy for the phase transitio
 \begin{equation}
   f_{phase}(\bm{\mathcal{Q}}) = f(S) = f_0 + \frac{1}{2}A S^2 + \frac{1}{3}B S^3 + \frac{1}{4}C S^4 + \mathcal{O} \left (S^5 \right ),\label{e:2-LdGTransGeneral}
 \end{equation}
-where $f_{phase}(S) > 0$ implies the isotropic phase is stable against the nematic phase and $f_{phase}(S) < 0$ corresponds to the nematic phase as the stable phase, with the phase transition occurring at $f_{phase}(S) = 0$. Since $\bm{\mathcal{Q}}$ is traceless, there is not linear dependence on $S$ in Eq.~\ref{e:2-LdGTransGeneral}.
+where $f_0$ is a constant that we can take to be $0$.
+Then, $f_{phase}(S) > 0$ implies the isotropic phase is the equlibrium phase while $f_{phase}(S) < 0$ corresponds to the nematic phase as the equilibrium phase, with the phase transition occurring at $f_{phase}(S) = 0$.
+Since $\bm{\mathcal{Q}}$ is traceless, there is no linear dependence on $S$ in Eq.~\ref{e:2-LdGTransGeneral}.
 \begin{table}[t]
   \centering
   \caption{Scalar invariants of powers of $\bm{\mathcal{Q}}$ in 3D}
@@ -798,7 +802,7 @@ In order to discuss specific strategies for enforcing anchoring, we must first n
 NLC can be divided into two broad categories, thermotropics and lyotropics~\cite{RN33}.
 In thermotropic LC's, temperature is an important control parameter.
 If the temperature is too high, the nematic phase will melt to the isotropic phase and if the temperature is too low, the nematic phase will phase transition to a less symmetric LC phase or to a crystalline phase.
-Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as to temperature.
+Lyotropic LC's are suspensions of particles in a solvent and therefore are sensitive to both concentration as well as temperature.
 
 In this Thesis, we will primarily use 4-cyano-4'-pentylbiphenyl (5CB), a thermotropic liquid crystal whose mesogens are $\sim 2$ nm long~\cite{RN33}.\@
 5CB belongs to the cyanobiphenyl family of NLC, which are characterized by a cyano (CN) group  bonded to a biphenyl (C$_6$H$_4$)(C$_6$H$_4$) group bonded to an alkyl group of given length, C$_p$H$_{2p+1}$, where $p$ is the number of carbon atoms in the group~\cite{RN33}.
@@ -812,15 +816,16 @@ The nematic mesogens at the surface are aligned by the chains, enforcing homeotr
 For example, to enforce homeotropic anchoring for 5CB on glass, we dip coat glass slides in a $0.1$\% w/w lecithin in hexane solution and then let the slides dry.
 When the hexane evaporates, the polar head of the lecithin molecule is attached to the glass surface, leaving the long tails sticking up from the glass~\cite{RN140}.
 
-Similarly, it is common to enforce homeotropic anchoring in solution again using surfactants.
+Similarly, it is common to enforce homeotropic anchoring in solution also using surfactants.
 Here, for an organic NLC dispersed in an aqueous phase, the polar head of the surfactant sits in the aqueous phase while the hydrophobic tail inserts itself into the NLC volume, aligning the NLC at the interface~\cite{RN150,RN235}.
 For example, we use sodium dodecyl sulfate (SDS) in water to enforce homeotropic anchoring in 5CB emulsions and liquid bridges.
 While homeotropic anchoring can be enforced with as little as 1 mM SDS in H$_2$O, we use a solution of 8 mM SDS in H$_2$O for the strongest possible anchoring~\cite{RN235}.
-At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in the solution that could potentially adsorb to the interface and contribute to a larger anchoring strength~\cite{RN234}.
+At concentrations above 8 mM, SDS forms micelles in H$_2$O such that working with higher concentrations does not yield any more free SDS in solution that could potentially adsorb to the interface and contribute to a larger anchoring strength~\cite{RN234}.
 This concentration is known as the critical micelle concentration (CMC) and is a common feature in solutions of surfactants or other amphiphilic molecules~\cite{RN233,RN234}. \\
 
 While smooth, isotropic solid boundaries can exhibit degenerate planar anchoring, in general the anchoring will be degenerate and tilted.
-Thus, surface is often coated with a polymer such that the polymer orientations on the surface are random.
+Thus, a surface is often coated with a polymer such that the polymer orientations on the surface are random.
+For example, spin coating poly(methyl methacrylate) onto glass produces planar degenerate anchoring for 5CB~\cite{syed2005planar}.
 Since the polymers have no preferred alignment in the plane of the surface, the mesogens are free to choose their own director in the plane~\cite{RN313}, as seen schematically in Figure~\ref{f:2-Anchor}(B).
 
 If a preferred anchoring direction in the plane, $\bm{\sigma}$, is desired, the polymer coating can be rubbed along $\bm{\sigma}$, aligning the polymers and creating ``grooves'' in the polymer coating along the rubbing direction, as seen schematically in Figure~\ref{f:2-Anchor}(C).
