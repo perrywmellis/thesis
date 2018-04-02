@@ -825,8 +825,8 @@ Finally, we calculate $\phi' = \psi-\phi$ and numerically evaluate Eq.~\ref{e:3-
   (E), Circular region containing a director field from an active nematic toroid with $s = \pm 1/2$ defects found with our algorithm and labeled by (${\color{magenta} \times}$), (${\color{yellow} \circ}$), respectively, giving $s_{bulk} = \sum_i s_i = -1/2$.
   (F), $\int\limits_{\theta = 0}^{2\pi} \textrm{d}\phi'$ along the boundary yields $s_{boundary} = 3/2$ as $\theta \rightarrow 2 \pi$.
   (G), $s_{bulk} + s_{boundary}$ for 262 frames evaluated using the region in (A) applied to a torus with $\xi = 2.4$ and $a = 268$ $\upmu$m.
-  There are 76 frames with $s_{bulk} + s_{boundary} \neq 1$ and 186 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.29$ and mean$(error) = 0.026$.}\label{f:3-EdgeChargeErr}
-\end{figure}\fxnote{Check actual pluses and minuses}
+  There are 55 frames with $s_{bulk} + s_{boundary} \neq 1$ and 207 frames with $s_{bulk} + s_{boundary} = 1$, leading to $P(error) = 0.21$ and mean$(error) = 0.004$.}\label{f:3-EdgeChargeErr}
+\end{figure}
 
 We test our routine by first integrating the normal vectors along $\partial \Theta$, as shown in Figure~\ref{f:3-EdgeChargeErr}(D), finding $\oint_{\partial \Theta} \textrm{d}(\psi-\pi/2) = \oint_{\partial \Theta} \textrm{d}\psi = 2\pi$, as desired.
 We now consider a small circular region and validate the algorithm using director fields from our active nematic toroids, as shown in the example in Figure~\ref{f:3-EdgeChargeErr}(E).
@@ -835,10 +835,9 @@ Plotting $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\re
 
 We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
 For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(G).
-We see in this example that 76 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$\fxnote{Check actual pluses and minuses}.
-Importantly, we see that ${\rm mean}(error) = 0.026$ when we consider all the frames.
-Since the mean error is much less than $1/2$, we see that the error in our analysis is random and we can trust the time-averaged topological charge.
-% When we do this for multiple toroids, we find that in general there is $\approx 50$\% chance that a measurement will have an error, but the error is random and not systematic such that $\overbar{s}_{bulk} + \overbar{s}_{boundary} = 1$ if we average for enough frames.\fxnote{explain the calculation a bit better in terms of the number of defects in a region}
+We see in this example that 55 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$.
+Calulating ${\rm mean}(error) = {\rm mean}(s_{bulk}(t) + s_{boundary}(t) - 1)$, for Figure~\ref{f:3-EdgeChargeErr}(G), we have ${\rm mean}(error) = [26(1/2) + 26(-1/2) + 2(1) + 1(-1)]/262 = 0.004$.
+Importantly, since $|{\rm mean}(error)| \ll 1/2$, we see that the error in our analysis is random and we can trust the time-averaged topological charge.
 
 
 
@@ -1453,9 +1452,9 @@ We emphasize that these values are the first estimates of their kind.
 In addition, since $k_F \approx k_{F,\,3D}l_{layer}$, we estimate the nematic layer thickness, $l_{layer} \approx 15$ $\upmu$m from our confocal data for both ATP concentrations and calculate $k_F \approx 2.4 \times 10^{-14}$ N m for the 144 $\upmu$M ATP concentration and $k_F \approx 5.1 \times 10^{-15}$ N m for the 36 $\upmu$M ATP concentration.
 Combining this with the average tube radius $a = 260 \pm 40$ $\upmu$m and $a = 320 \pm 70$ $\upmu$m, for the 144 $\upmu$M and 36 $\upmu$M ATP concentrations, respectively, and the dimensionless defect velocity $v'_0 \approx 80$ for both ATP concentrations, we find $\mu \approx 200$ m/(N s) for both ATP concentrations.
 These values are summarized in Table~\ref{t:3-MaterialParams}.
-From these measurements, we see that $k_F$ is proportional to $\alpha$; it is this dependence that is responsible for $v'_0$ not changing in our experiments with different $\alpha$ but constant $\lambda'$.
-In addition, this result is consistent with the fact that when the ATP runs out in an experiment and the activity ceases, the nematic configuration becomes static and does not relax to the ground state; the elasticity in the experiments is too weak\fxnote{rethink about this} when $\alpha = 0$.
-This also indicates that thermal fluctuations are not strong enough to cause the defects to move in the absence of activity.
+From these measurements, we see that $k_F$ is depends somewhat on $\alpha$; it is this dependence that is responsible for $v'_0$ not changing in our experiments with different $\alpha$ but constant $\lambda'$.
+The estimated values of $k_F$ are also much larger than typical elastic constants for thermotropic liquid crystals ($\mathcal{O}(10^{-11}\, {\rm N})$).
+One consequence of these large $k_F$ values is that thermal fluctuations are not strong enough to cause the defects to move in the absence of activity.
 We can illustrate this by estimating a stress due to thermal fluctuations in the active nematic, $k_b T/({\rm microtubule\, length})^3 \approx (4 \times 10^{-21} ){\rm J}/((1.5 \times 10^{-6}) {\rm m})^3 \approx 1 {\rm mPa}$.
 Comparing with Table~\ref{t:3-MaterialParams}, we see that the stress due to thermal fluctuations is significantly weaker than $|\alpha|$.
 
