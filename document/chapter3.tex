@@ -508,7 +508,7 @@ The excitation filter is necessary in wide-field fluorescence microscopy when il
   \caption{Fluorophore spectra and detector quantum efficiencies for our experimental system.
   (A), AlexaFluor 647 (red dashed line) excitation and (shaded red area) emission spectra.
   Spectra from Ref.~\cite{RN264}.
-  (B), Quantum effieciency as a function of wavelength for a (green line) standard PMT and a (red line) GaAsP PMT as a function of wavelength.
+  (B), Quantum efficiency as a function of wavelength for a (green line) standard PMT and a (red line) GaAsP PMT as a function of wavelength.
   Plot from Ref.~\cite{RN263}.}\label{f:3-Spectra}
 \end{figure}
 
@@ -627,7 +627,7 @@ The rank-2 gradient tensor is symmetric and is the same whether it is constructe
 Thus, we use the gradient tensor to ``remove the head'' from the gradient vector.
 
 We now define the coherence direction of a symmetric rank-2 tensor as the direction of the eigenvector associated with the smallest eigenvalue.
-Recall that according to the Spectral theorem, any symmetric real matrix is diagonalizible, with the diagonal elements the eigenvalues of the matrix and the associated orthonormal basis formed by the eigenvectors.
+Recall that according to the Spectral theorem, any symmetric real matrix is diagonalizable, with the diagonal elements the eigenvalues of the matrix and the associated orthonormal basis formed by the eigenvectors.
 The coherence direction represents the direction along which the spatial intensity fluctuations are the weakest and is defined on the interval $[0^{\circ}, 180^{\circ})$.
 The coherence direction calculated for the gradient tensor of each pixel for $I_\sigma$ shown in the main image and inset of Figure~\ref{f:3-CEDF2}(B) is seen in the main image and inset of Figure~\ref{f:3-CEDF2}(C), where the orientation of the coherence direction on the interval $[0^{\circ}, 180^{\circ})$ measured clockwise (CW) off of the horizontal axis has been mapped to the grayscale intensity values $[0,255)$, with 0 corresponding to black and 255 to white.
 We see that there are still too many fluctuations in the coherence directions shown in Figure~\ref{f:3-CEDF2}(C) to determine $\mathbf{n}$.
@@ -666,7 +666,7 @@ Inset: The same operation applied to the image in the inset of (B).
 (E), The scalar order parameter $S$ obtained by diagonalizing the $\mathbf{Q}$ formed from the directions in image (D).
 $\mathbf{Q}$ is formed for each point by considering the directions of all points in a 5 pixel radius.
 Inset: The same operation applied to the image in the inset of (D).
-(F), The director obtained by diagonalizing the $\mathbf{Q}$ formed from the direcions in image (D).
+(F), The director obtained by diagonalizing the $\mathbf{Q}$ formed from the directions in image (D).
 $\mathbf{Q}$ is formed for each point by considering the directions of all points in a 5 pixel radius.
 The defects are calculated by considering points of low $S$ and calculating the $\mathbf{n}$-rotation along a path encircling the point.
 $s = +1/2$ defects are represented by ${\color{red} \blacktriangle  } $  and $s = -1/2$ defects are represented by ${ \color{blue} \blacktriangledown  } $.
@@ -836,7 +836,7 @@ Plotting $\oint_{\partial \Theta} \textrm{d}\phi'$ for the example in Figure~\re
 We now consider a region in the intensity projection for a torus and monitor  $s_{bulk}$ and $s_{boundary}$ over time.
 For the example region in Figure~\ref{f:3-EdgeChargeErr}(A), we plot $s_{bulk}+s_{boundary}$ for every time frame in Figure~\ref{f:3-EdgeChargeErr}(G).
 We see in this example that 55 frames out of 262 frames have an error; however, the error is typically only $\pm 1/2$, with only three frames having an error of $\pm 1$.
-Calulating ${\rm mean}(error) = {\rm mean}(s_{bulk}(t) + s_{boundary}(t) - 1)$, for Figure~\ref{f:3-EdgeChargeErr}(G), we have ${\rm mean}(error) = [26(1/2) + 26(-1/2) + 2(1) + 1(-1)]/262 = 0.004$.
+Calculating ${\rm mean}(error) = {\rm mean}(s_{bulk}(t) + s_{boundary}(t) - 1)$, for Figure~\ref{f:3-EdgeChargeErr}(G), we have ${\rm mean}(error) = [26(1/2) + 26(-1/2) + 2(1) + 1(-1)]/262 = 0.004$.
 Importantly, since $|{\rm mean}(error)| \ll 1/2$, we see that the error in our analysis is random and we can trust the time-averaged topological charge.
 
 
@@ -1097,7 +1097,7 @@ The initial output of the least squares fit is passed to the Fair function and d
 Note how the {\it cost} changes largely between the 0$^{\rm th}$ and 2$^{\rm nd}$, but changes very little between the 2$^{\rm nd}$ and 4$^{\rm th}$ iterations [Figure~\ref{f:3-IRLSexample}(A)].
 The Fair fit converges on the 4$^{\rm th}$ iteration; the values are then passed the GMC fit [Figure~\ref{f:3-IRLSexample}(B)].
 
-In the subsequnt GMC fit displayed in Figure~\ref{f:3-IRLSexample}(B), the dashed line indicates the outlier rejection criterion; residuals above the dashed line have their weight set to 0.
+In the subsequent GMC fit displayed in Figure~\ref{f:3-IRLSexample}(B), the dashed line indicates the outlier rejection criterion; residuals above the dashed line have their weight set to 0.
 Note how the ability to reject outliers lets the GMC fit in Figure~\ref{f:3-IRLSexample}(B) find a solution where a majority of the residuals are small.
 Similar to the Fair fit, the cost in the GMC fit drops rapidly; by the 8$^{\rm th}$ iteration both the cost and the Gaussian curvature are very close to their final values [Figure~\ref{f:3-IRLSexample}(B)].
 The GMC fit converges on the 10$^{th}$ iteration.
@@ -1431,7 +1431,7 @@ From the intercept of the line plotted in Figure~\ref{f:3-ExpDistribution}(G), w
 The agreement between the experiments and the theory reveals that the interaction between curvature and topological charge depends only on two parameters: (i) the dimensionless mean distance between defects, $\lambda'$, and (ii) the dimensionless speed of the defects, $v_0'$, which relates to the intrinsic activity of the system.
 We emphasize that both of these parameters reflect local interactions that do not depend on the global size or geometry of the system.
 We find that because of the large number of defects and their constant motion, the average topological charge becomes a continuous variable.
-In addition, our results confirm that that in the turbulent regime and free of any influence by a boundary, the mean distance between defects acts as a
+In addition, our results confirm that in the turbulent regime and free of any influence by a boundary, the mean distance between defects acts as a
 proxy for $\ell_a$.
 Finally, in our experiments, we managed to change $\alpha$ while keeping $\lambda'$ constant.
 Since $v_0'$ also doesn't change when we change $\alpha$, we see that one or more of $\mu$, $k_F$, and $\eta$ must also depend on $\alpha$.

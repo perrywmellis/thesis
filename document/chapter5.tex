@@ -9,7 +9,7 @@ Using a single defect, this condition can be is satisfied by $d=-1$ hyperbolic p
 The myriad of possible defect configurations satisfying the topological constraints gives the system a richness that has been well-explored for the spherical case, where the confinement can only be modified through changing the sphere radius~\cite{RN150,RN277,RN278,RN275,RN276}.
 However, the role of shape when confining NLC in geometries with more than one characteristic lengthscale is not completely understood.
 
-Consider the case of a cylindrical geometry of aspect ratio $\Gamma = 2 R/H$, where $R$ is the radius of the cylinder and $H$ is its height.
+Consider the case of a NLC under homeotropic anchoring in a cylindrical geometry of aspect ratio $\Gamma = 2 R/H$, where $R$ is the radius of the cylinder and $H$ is its height.
 With this notation, the classic case of a cylindrical capillary corresponds to $\Gamma \ll 1$. The $\Gamma \gg 1$ situation corresponds to confinement between narrowly separated plates.
 When $\Gamma \sim \mathcal{O}\left( 1 \right)$, the equilibrium defect configuration undergoes a transition from a ring defect, found when $\Gamma \gg 1$, to a point defect, seen when $\Gamma \ll 1$.
 Prior experimental work on the defect structure in liquid crystal bridges focused on the transition between the ring and the point defect as a function of $\Gamma$~\cite{RN139,RN147}.
@@ -52,7 +52,7 @@ We then epoxy the lecithin-coated slide to the base, applying epoxy to only one 
 Once the epoxy has hardened, we remove the blocks and place the second lecithin-coated glass slide vertically on the base and against the previously-epoxied glass slide.
 We then use the rod attached to the micromanipulator to hold the two vertical slides together while we epoxy the second lecithin-coated glass slide to the rod.
 This protocol ensures that the two lecithin-coated glass slides are parallel to each other and perpendicular to the base.
-After the epoxy hardens, we use the mircomanipulator to move the adjustable plate as far as possible from the fixed plate and place a $\sim$nl-volume drop of 5CB onto the fixed vertical plate as close to the base as we can.
+After the epoxy hardens, we use the micromanipulator to move the adjustable plate as far as possible from the fixed plate and place a $\sim$nl-volume drop of 5CB onto the fixed vertical plate as close to the base as we can.
 Finally, we bring the adjustable plate closer to the fixed plate until it makes contact with the sessile drop and forms a capillary bridge.
 The final experimental setup for a side view is depicted schematically in Figure~\ref{f:5-BuildSchemaic}(B).
 
@@ -110,7 +110,7 @@ We can gain further insight into the shape of our bridges by writing Eq.~\ref{e:
 We can characterize such a contour in cylindrical coordinates $\{r,\varphi, z\}$, as schematically illustrated by the blue line in Figure~\ref{f:5-ShapeEnvelope}(A), with the arclength parameter, $s$, and the angle between the $r$-axis and the tangent to the contour at $s$,  $\theta$, the elevation angle.
 The elevation angle naturally provides the contact angle for the surface, $\theta_0 = \theta(s=0)$, with $\theta_0$ the contact angle [blue circle, Figure~\ref{f:5-ShapeEnvelope}(A)].
 
-For a surface of revolution in cylindrical coordinates, the principle curvatures are given by~\cite{RN35}:
+For a surface of revolution in cylindrical coordinates, the principal curvatures are given by~\cite{RN35}:
 \begin{equation}
   \kappa_1 = \frac{z''(r)}{(1+z'(r))^{3/2}}, \quad \kappa_2 = -\frac{z'(r)}{r\sqrt{1 + z'(r)^2}}.\label{e:5-SoRcurvatures}
 \end{equation}
@@ -123,7 +123,7 @@ We can easily write ${\rm d}r/{\rm d}s$ and ${\rm d}z/{\rm d}s$ in terms of the 
 %   z'(r) &= \tan \theta, \label{e:4-zprime}
 % \end{align}
 % as desired.
-Now, substituting this into Eqs.~\ref{e:5-SoRcurvatures}, we can write our principle curvatures in terms of $\theta$:
+Now, substituting this into Eqs.~\ref{e:5-SoRcurvatures}, we can write our principal curvatures in terms of $\theta$:
 \begin{align}
   \kappa_1 = \frac{1}{R_1} &= \frac{\frac{\rm d}{{\rm d}r} \tan \theta}{(1 + \tan ^2 \theta)^{(3/2)}}, \\
            &= \frac{\frac{{\rm d}\theta}{{\rm d}r} \frac{\rm d}{{\rm d}\theta} \tan \theta}{\sec^3 \theta}, \\
@@ -133,7 +133,7 @@ Now, substituting this into Eqs.~\ref{e:5-SoRcurvatures}, we can write our princ
            &= -\frac{\sin \theta}{r}.\label{e:5-kappa2}
 \end{align}
 
-From Eq.~\ref{e:5-kappa1}, we can write $ds = R_1 d\theta$, which makes sense considering that $\theta(s)$ is also the angle between $\hat{z}$ and the normal to the curve at $s$; the first principle curvature describes how the surface changes in the $rz$-plane.
+From Eq.~\ref{e:5-kappa1}, we can write $ds = R_1 d\theta$, which makes sense considering that $\theta(s)$ is also the angle between $\hat{z}$ and the normal to the curve at $s$; the first principal curvature describes how the surface changes in the $rz$-plane.
 Similarly, from Eq.~\ref{e:5-kappa2}, we can write $R_2 = r/\sin\theta$, showing that the second radius of curvature is the distance from the contour to the z-axis along the normal to the contour.
 More importantly, this shows that $R_2$ always originates on the $z$-axis for a surface of revolution.
 Finally, if our bridges truly are surfaces of revolution with constant mean curvature, then the contours in Figure~\ref{f:5-ShapeContour}(B,D) must satisfy:
@@ -216,7 +216,7 @@ This suggests that the point defect is metastable for $\Gamma > \Gamma_c$.
 % For the barrels made with the 5CB in the isotropic phase, we also heat the water and SDS mixture before making the barrel so that the 5CB does not cool to the nematic phase before the barrel shape has been established.
 As with the waist structures, we start with a large $\Gamma$ where the bridge contains a ring defect and decrease $\Gamma$ in discrete steps, measuring the ring radius at each step, as shown in the bright field images of a barrel for four values of $\Gamma$ in Figure~\ref{f:5-ExpBarrelTop}(A,C,E,G), with the associated crossed-polar images in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H).
 However, over time the SDS forms micelles in the 5CB that self-assemble onto the ring defect and form visible structures [see Figure~\ref{f:5-ExpBarrelTop}(E,G)] in the NLC~\cite{RN279}.
-In addition, note how the area inside the ring defect in the OPM images in in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H) becomes progressively brighter over time.
+In addition, note how the area inside the ring defect in the OPM images in Figure~\ref{f:5-ExpBarrelTop}(B,D,F,H) becomes progressively brighter over time.
 Since the SDS micelles themselves are not birefringent, this brightening implies that the micelles are affecting the director field inside the bridge.
 Recall that the director field for a ring defect viewed from the top [see Figure~\ref{f:2-3DMeas}(C,D)] indicates that the area bounded by the ring should be dark when the polarizer and analyzer are crossed.
 For a waist, where there is no SDS, this is always true [see Figure~\ref{f:5-ExpWaistTop}(B)].
@@ -290,7 +290,7 @@ However, the understanding that fluorescent emission could be polarized came fro
 Individual fluorophores absorb and emit light like dipoles, with the absorption/excitation dipole and the emission dipole not necessarily parallel to each other~\cite{RN282}.
 Consequently, while an isotropic distribution of fluorophores will absorb and emit light isotropically, individual fluorophores are sensitive to the polarization of the excitation light and emit linearly polarized light along the emission dipole~\cite{RN282}.
 
-Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community; for example, it is commonly used used to measure molecular or cellular mobility~\cite{RN282,RN284}.
+Polarized fluorescence has proven to be an incredibly effective tool in diagnostic imaging and the medical community; for example, it is commonly used to measure molecular or cellular mobility~\cite{RN282,RN284}.
 Recently, the liquid crystal community has developed a renewed interest in polarized fluorescence, with techniques like Polarized Epifluorescent Confocal Microscopy (PCFM), enabling 3D resolution of a liquid-crystalline director~\cite{RN148,RN174}.
 Here, we take inspiration from PCFM and develop Polarized Epifluorescent Microscopy (PFM), its wide-field cousin.
 At its core, PFM relies on anisotropic fluorophores whose emission axis is aligned along the long axis of the fluorophore.
@@ -401,7 +401,7 @@ While in principle we could consider $\delta'(x,y)$ for every pixel, that is mor
 Instead, we blur each image with a mean filter to both remove noise and locally average the $\delta'$, and then downsample each image to reduce the number of fits we need to perform.
 We illustrate this with the example PFM images in Figure~\ref{f:5-PFM_Spheres}(F-I), where the analyzer angle is indicated in each image.
 The original image is convolved with a mean filter of side length 7 px, yielding the blurred image in Figure~\ref{f:5-PFM_Spheres}(F) and then downsampled by a factor of 7, as displayed in Figure~\ref{f:5-PFM_Spheres}(G).
-Here, we focus on the highlighted pixel in the downsampled images in Figure~\ref{f:5-PFM_Spheres}(G-I) and plot the intensity in Figure~\ref{f:5-PFM_Spheres}(J).
+Here, we focus on the highlighted pixel in the downsampled images in Figure~\ref{f:5-PFM_Spheres}(G--I) and plot the intensity in Figure~\ref{f:5-PFM_Spheres}(J).
 A fit of Eq~\ref{e:5-IntFit} to the data in Figure~\ref{f:5-PFM_Spheres}(J) yields $\delta' = 88^{\circ}$.
 We do this for every pixel in the downsampled images and plot $\delta'(x,y)$ on top of the epifluorescent image in Figure~\ref{f:5-PFM_Spheres}(K).
 Indeed, we see that we qualitatively capture the radial texture.

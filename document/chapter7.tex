@@ -7,7 +7,7 @@ For the nematic materials used in this Thesis, it is often the curvature of the 
 This is a consequence of the fact that nematic materials possess only orientational order; with the order defined by the director $\mathbf{n}$, the free energy has order $|\nabla \mathbf{n}|^2$, indicating that curvature in the director field costs energy.
 The influence of curvature on a nematic material is even more explicit when considering a 2D nematic constrained to lie on a surface.
 In this situation, the free energy can be written to resemble that of a plasma, with defects in the nematic acting like discrete charges in the plasma and the Gaussian curvature of the surface as background charge in the plasma  [see Eq~\ref{e:1-TopTheoryofDefects}].
-Thus, if the surface has both positive and negative Guassian curvature and the nematic has both positive and negative defects, the defects are predicted to segregate, with the positive defects migrating to the regions of positive Gaussian curvature and vice versa.
+Thus, if the surface has both positive and negative Gaussian curvature and the nematic has both positive and negative defects, the defects are predicted to segregate, with the positive defects migrating to the regions of positive Gaussian curvature and vice versa.
 
 We explore this situation experimentally using an active polymeric nematic depleted to the surface of a toroidal droplet.
 Due to the activity, the nematic is filled with pairs of constantly creating and annihilating $s = \pm 1/2$ defects, with the $s = +1/2$ defects acting as self-propelled particles driving the nematic into a turbulent state.
@@ -265,7 +265,7 @@ Furthermore, the concerns in the literature that any measurement of $K_{24}$ is 
 Recent work in NLC toroids with degenerate planar anchoring revealed the coupling between the saddle-splay distortion and the curvature of the bounding surface [see Eq.~\ref{e:2-K24SurfCouple}]~\cite{RN24,RN59}.
 This coupling was used to make precise estimates of $K_{24}$ not only in 5CB but also in the LCLCs SSY~\cite{RN191,RN293} and DSCG~\cite{RN293} confined in cylindrical capillaries.
 To illustrate this estimate, we refer to the example illustrated in Section 4.1 of a linear twist ansatz in a torus where $\xi \rightarrow \infty$.
-Taking the values of the twist parameter, $\omega$, that minimize the free energy [Eq.~\ref{e:4-omegaMinFFE}] and substituting into the expression for the twist angl, $\tau$ [Eq.~\ref{e:4-twistAngle}], we have:
+Taking the values of the twist parameter, $\omega$, that minimize the free energy [Eq.~\ref{e:4-omegaMinFFE}] and substituting into the expression for the twist angle, $\tau$ [Eq.~\ref{e:4-twistAngle}], we have:
 \begin{equation}
   K_{24} = K_{22} + \frac{K_{33}}{2}\sin ^2 \left( \frac{\tau}{2} \right ).\label{e:7-twistFuntionK24}
 \end{equation}
@@ -279,13 +279,13 @@ As a potential explanation, the authors considered the Frank-Oseen free energy f
   F_{radial} &= 8 \pi K_{11} R - 4 \pi (K_{22} + K_{24}) R + 2 \pi W R^2\label{e:7-FFEradial} \\
   F_{bipolar} &= 5 \pi K_{11} R - 2 \pi (K_{22}+ K_{24}) R,\label{e:7-FFEbipolar}
 \end{align}
-where $F_{anchoring} = (1/2) W (\mathbf{n} \times \mathbf{k})^2$ is the single-constant Rapini-Papoular energy for degenerate planar anchoring, with $W$ the strength of the anchoring and $\mathbf{k}$ the surface normal.
+where $f_{anchoring}(\mathbf{r}) = (1/2) W (\mathbf{n}(\mathbf{r}) \times \mathbf{k}(\mathbf{r}))^2$ is the single-constant Rapini-Papoular energy density for degenerate planar anchoring, with $W$ the strength of the anchoring and $\mathbf{k}$ the surface normal.
 Comparing these free energies, they subtract Eq.~\ref{e:7-FFEbipolar} from Eq.~\ref{e:7-FFEradial} with $2 K_{22} = K_{11}$ for 5CB:
 \begin{equation}
   \Delta F_{trans} = 2\pi R (2 K_{22}-K_{24} + W R).\label{e:7-FFEtrans}
 \end{equation}
 If $K_{24} > 2 K_{22}$, we see that bringing $R$ small enough will eventually cause $\Delta F_{trans}$ to become negative, indicating that a radial structure has a lower free energy than a bipolar structure.
-From E.~\ref{e:7-FFEtrans}, Ref.~\cite{miller2013influence} proposed saddle-splay as responsible for the size-dependent structures observed.
+From Eq.~\ref{e:7-FFEtrans}, Ref.~\cite{miller2013influence} proposed saddle-splay as responsible for the size-dependent structures observed.
 While Table~\ref{t:7-K24} has measurements of $K_{24} > 2 K_{22}$, such a value of $K_{24}$ also implies that cylindrical or toroidal confinement of 5CB would result in a highly twisted configuration, far more so than the values measured in Ref.~\cite{RN24}.
 
 Recently, we found that a similar bipolar-to-radial transition can be induced in 5CB emulsion droplets in water with 1\% w/w PVA by bringing the temperature close to $T_{NI}$, the isotropic-nematic phase transition temperature.
@@ -293,9 +293,9 @@ This transition is shown in Figure~\ref{f:7-Emulsion_Eth}(A--C) for a sample wit
 We observe the transition at $\tilde{T} \gtrsim 0.995 T_{NI}$, where $\tilde{T} = T/T_{NI}$ is the reduced temperature~\cite{nayani2017role}.
 We use Jones Calculus to simulate bipolar droplets with varying $\Delta N$, and compare the number of fringes in the simulated images with the number of fringes in our experimental images.
 This process is shown in Figures~\ref{f:7-Emulsion_Trans}(A--C) for the experimental OPM images and Figure~\ref{f:7-Emulsion_Trans}(F--H) for the simulated images as a function of increasing $\tilde{T}$.
-By matching the number of fringes, we can determine the birefringence, and therefor the sclar order paramter, $S$, in our experiments as a function of $\tilde{T}$~\cite{nayani2017role}.
+By matching the number of fringes, we can determine the birefringence, and therefore the scalar order parameter, $S$, in our experiments as a function of $\tilde{T}$~\cite{nayani2017role}.
 We find that the relationship derived from the bipolar droplets agrees well with Raman scattering data on pure 5CB, as plotted in Figure~\ref{f:7-Emulsion_Trans}(I), indicating that the bipolar-to-radial transformation occurs not only at a repeatable $\tilde{T}$, but also at a repeatable $S$~\cite{nayani2017role}.
-However, from this data we cannot distinguish betwen an efect driven by the absolute temperature or an effect driven by the reduced temperature.
+However, from this data we cannot distinguish between an effect driven by the absolute temperature or an effect driven by the reduced temperature.
 \begin{figure}
   \centering
   \includegraphics{figures/C7/Ch7-Figs_Emulsion_Eth.png}
@@ -314,40 +314,40 @@ In addition, while we observe that small droplets tend to transform before large
 This confirms that the transition is not a function of the absolute temperature, but depends on the reduced temperature through the scalar order parameter.
 Furthermore, the continuous phase here is very similar to that used in Ref.~\cite{RN24} to measure $K_{24} =(1.04 \pm 0.04)K_{22}$ for 5CB, indicating that it is not likely that saddle-splay is solely responsible for the bipolar-to-radial transition.
 However, we note that if saddle-splay truly cannot be measured without influence from the confining phase, then we would need to repeat these measurements in the identical outer phase to Ref~\cite{RN24}.
-When we do this, we find that irrespective of the carbopol or ethanol concentration in the outer phase, all our spherical emulsions demonstrate a bipolar-to-radial transition at $\tilde{T}\gtrsim 0.995 T_{NI}$.
+When we do this, we find that regardless of the carbopol or ethanol concentration in the outer phase, all our spherical emulsions demonstrate a bipolar-to-radial transition at $\tilde{T}\gtrsim 0.995 T_{NI}$.
 Finally, we note that while we generally assume that the ratios of the elastic constants do not change with temperature, Eqs.~\ref{e:2-LdGFrankRelationsA}--\ref{e:2-LdGFrankRelationsD}, indicate that there will be some variation, possibly reaching a regime where $K_{24}$ could drive the bipolar-to-radial transition.
 \begin{figure}
   \centering
   \includegraphics{figures/C7/Ch7-Figs_Emulsion_Trans.png}
   \caption{The transition from bipolar-to-radial happens as the order paramter decreases.
-    (A--E), Experimental images showing how a 40 $\upmu$m diameter bipolar droplet transforms into a raial droplet.
+    (A--E), Experimental images showing how a 40 $\upmu$m diameter bipolar droplet transforms into a radial droplet.
     As the reduced temperature increases, the number of fringes in the (A--C) bipolar OPM textures decrease.
     The saturn ring mediated the bipolar-to-radial transformation is clearly visible under bright-field illumination in (D), with the final radial structure visible in the OPM texture in (E).
-    (F--H), Simulated OPM textures of bipolar droplets with varing $\Delta n$; the $\Delta n$ were chosen to match the number of fringes in the experimental OPM textures in (A--C), respectively.
+    (F--H), Simulated OPM textures of bipolar droplets with varying $\Delta n$; the $\Delta n$ were chosen to match the number of fringes in the experimental OPM textures in (A--C), respectively.
     (I), Plot of the scalar order parameter vs. the reduced temperature with data from Raman scattering measurements (${\color{red} \bullet}$) and from matching the simulated and experimental OPM textures (${\color{blue} \blacktriangle}$)
      }\label{f:7-Emulsion_Trans}
 \end{figure}
 
 \subsection{Distinguishing $K_{24}$ and surface contributions using twist angle and temperature}
-To test whether the temperature scaling of $K_{24}$ could result in $K_{24} > 2 K_{22}$, we will measure the the twist angle of 5CB confined under degenerate planar anchoring to cylindrical structures.
-We make cylindrical structures by inserting a 27 Ga (410  $\upmu$m OD) needle completely into a yield stress fluid and then slowly removing the needle as we pump 5CB into the void left by the withdrawing needle.
-The needle is 2 inches long, and we control the speed of withdrawl using a mechanical stage controlled by a MATLAB script.
-We set the volume flowrate of the 5CB between 0\% and 10\% in excess of the volume/time vacated by the needle; flowrates in this range generally produce smooth, cylindrical structures, as shown in the example image in Figure~\ref{f:7-CapStructure}(A).
-Currently, we have tested cylindrical structues in yield-stress media containing 1\% w/w PVA, 3\% w/w Glycerol, 0\%--2\% w/w carbopol, 0\%--30\% w/w ethanol, with the remaining percentage taken by Millipore water.
+To test whether the temperature scaling of $K_{24}$ could result in $K_{24} > 2 K_{22}$, we will measure the twist angle of 5CB confined under degenerate planar anchoring to cylindrical structures.
+We make cylindrical structures by inserting a 27 Ga (410  $\upmu$m outer diameter) needle completely into a yield stress fluid and then slowly removing the needle as we pump 5CB into the void left by the withdrawing needle.
+The needle is $\approx 5$~cm long, and we control the speed of withdrawal using a mechanical stage controlled by a MATLAB script.
+We set the volume flowrate of the 5CB between 0\% and 20\% in excess of the volume/time vacated by the needle; flowrates in this range generally produce smooth, cylindrical structures, as shown in the example image in Figure~\ref{f:7-CapStructure}(A).
+Currently, we have tested cylindrical structures in yield-stress media containing 1\% w/w PVA, 3\% w/w Glycerol, 0\%--2\% w/w carbopol, 0\%--30\% w/w ethanol, with the remaining percentage taken by Millipore water.
 Example OPM textures of the structure in Figure~\ref{f:7-CapStructure}(A) are shown in Figures~\ref{f:7-CapStructure}(B,C), while images for a structure made in a yield-stress medium with no ethanol are shown in Figures~\ref{f:7-CapStructure}(D,E).
 We measure the twist angle by first varying both P and A until the minimum transmitted intensity is reached.
 We then fix P, measure the transmitted intensity every 5$^\circ$ in the A orientation, and fit the resulting data to the expected transmitted intensity for a twisted nematic cell [Eq.~\ref{e:4-tn}].
 For the two examples in Figures~\ref{f:7-CapStructure}(B,C) and Figures~\ref{f:7-CapStructure}(D,E), we measure a twist angles of $\tau = 13^{\circ} \pm 1^{\circ}$ and $\tau = 7^{\circ} \pm 1^{\circ}$, respectively.
 Our preliminary data show twist angles consistent with the value of $K_{24}$ measured in Ref.~\cite{RN24}, regardless of the concentration of carbopol or ethanol in the outer yield-stress medium.
 We are currently working on measurements of twist angle as a function of temperature.
-However, we note that our samples with higher concentrations of ethanol have a lower clearing point and thus the measurements corresponds to a higher $\tilde{T}$, indicating that it is not likely that increasing temperature for a given sample will cahuse $K_{24} \approx 2 K_{22}$.
+However, we note that our samples with higher concentrations of ethanol have a lower clearing point and thus the measurements corresponds to a higher $\tilde{T}$, indicating that it is not likely that increasing temperature for a given sample will cause $K_{24} \approx 2 K_{22}$.
 \begin{figure}
   \centering
   \includegraphics{figures/C7/Ch7-Figs_CapStructures.png}
   \caption{Cylindrical structures of 5CB in a yield-stress material.
-  (A), Bright-field image of a cylindrical structure of 5CB in a yield-stress medium consisting of 1\% w/w PVA, 1.5\% w/w Carbopol, 3\% w/w glycerol, 30\% w/w ethanol, 64.5 w/w \% Millipore water.
+  (A), Bright-field image of a cylindrical structure of 5CB in a yield-stress medium consisting of 1\% w/w PVA, 1.5\% w/w carbopol, 3\% w/w glycerol, 30\% w/w ethanol, 64.5 w/w \% Millipore water.
   (B--E), OPM textures of cylindrical structures of 5CB with (B,D) having aligned P and A, and (C,E) having P and A oriented for minimum transmission through the 5CB structure.
-  (B,C) are a section of the structure in (A), while (D,E) are a section from a structure in an outer medium consisting of 1\% w/w PVA, 1.8\% w/w Carbopol, 3\% w/w glycerol, 94.2 w/w \% Millipore water.
+  (B,C) are a section of the structure in (A), while (D,E) are a section from a structure in an outer medium consisting of 1\% w/w PVA, 1.8\% w/w carbopol, 3\% w/w glycerol, 94.2 w/w \% Millipore water.
   Scale bar for (A--C) is 500 $\upmu$m; for (D,E) the scale bar is 250 $\upmu$m.
   }\label{f:7-CapStructure}
 \end{figure}
